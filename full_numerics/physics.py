@@ -71,7 +71,8 @@ class ShellModel:
         """
         Full Phi-dependent energy mismatch:
           <h_n>_{G^(Phi)} - rho(n)
-        = g_n*(Nbar_n^2 - 1)*beta0*t0^2/2  +  V0*g_n*(N_n-1)/2 * 1_{core}
+        = g_n*(Nbar_n^2 - 1)*beta0*t0^2/2
+        The V0 defect is bare (no lapse dependence), so it cancels in the mismatch.
         """
         N = self.N
         lapse, Nbar = self.lapse_nbar(Phi)
@@ -79,9 +80,6 @@ class ShellModel:
         mismatch = np.zeros(N)
         # Hopping response: bond (n, n+1) assigned to site n
         mismatch[:N-1] += self.g[:N-1] * (Nbar**2 - 1.0) * self.beta0 * self.t0**2 / 2.0
-        # Core on-site response
-        mismatch[:self.n_core] += (self.V0 * self.g[:self.n_core]
-                                   * (lapse[:self.n_core] - 1.0) / 2.0)
         return mismatch
 
     def el_correction(self, Phi):
@@ -176,10 +174,7 @@ class ShellModel:
                 diag[n] -= d_hop
                 sup[n] -= d_hop
 
-                # Core on-site: d/dPhi_n of V0*g_n*(N_n-1)/2
-                if n < self.n_core:
-                    d_core = pref * self.V0 * self.g[n] / (2.0 * self.cstar_sq)
-                    diag[n] -= d_core
+                # V0 defect is bare (no lapse), so no Jacobian contribution
 
         # Boundary row
         diag[N - 1] = 1.0

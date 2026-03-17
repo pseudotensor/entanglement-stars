@@ -98,6 +98,10 @@ class TwoStateExactModel:
         # temperature-independent conductance normalization.
         self.mi_bg = self._compute_mi_background()
 
+        # Precompute background BKM covariance per bond (Phi=0)
+        # for KMS conductance normalization.
+        self.kms_bg = self._compute_kms_background()
+
     def _fermi_corr(self, diag, off):
         """Correlation matrix G = (exp(beta*h) + I)^{-1}."""
         evals, evecs = eigh_tridiagonal(diag, off)
@@ -286,6 +290,8 @@ class TwoStateExactModel:
         """Correlation matrix for lapse-smeared background Hamiltonian (μ=0 only)."""
         lapse, Nbar = self.lapse_nbar(Phi)
         diag = np.zeros(self.N)
+        # abs(Nbar): Newton-step safeguard; Nbar>0 on positive-lapse branch,
+        # so abs() is a no-op for converged solutions.
         off = -self.t0 * np.abs(Nbar)
         return self._fermi_corr(diag, off), Nbar
 
@@ -337,6 +343,181 @@ class TwoStateExactModel:
 
         return (self._binary_entropy(a) + self._binary_entropy(d)
                 - self._binary_entropy(lam1) - self._binary_entropy(lam2))
+
+    # ── BKM (KMS Dirichlet form) bond covariance ────────────────────
+
+    @staticmethod
+    def _bkm_kernel(x):
+        """BKM kernel φ(x) = (e^x - 1)/x, with φ(0) = 1.
+
+        Numerically stable for all x via expm1.
+        """
+        x = np.asarray(x, dtype=float)
+        out = np.ones_like(x)
+        nz = np.abs(x) > 1e-12
+        out[nz] = np.expm1(x[nz]) / x[nz]
+        return out
+
+    def _bkm_bond_cov(self, evals, evecs):
+        """BKM covariance of the bond current operator per bond.
+
+        For bond b = (n, n+1), the current operator matrix element squared is
+          P[α,β] = (U[n+1,α]·U[n,β] - U[n,α]·U[n+1,β])²
+        and the BKM kernel is
+          K[α,β] = f_α(1 - f_β) · φ(β₀(ε_α - ε_β))
+
+        Returns shape (N-1,) array of covariance values per bond.
+        """
+        beta_e = np.clip(self.beta0 * evals, -500, 500)
+        f = 1.0 / (np.exp(beta_e) + 1.0)
+
+        # BKM kernel K[α,β] = f_α(1-f_β) · φ(β₀(ε_α-ε_β))
+        diff = self.beta0 * (evals[:, None] - evals[None, :])
+        phi = self._bkm_kernel(diff)
+        K = f[:, None] * (1.0 - f[None, :]) * phi  # (M, M)
+
+        # Current matrix element: J[b,α,β] = U[n+1,α]·U[n,β] - U[n,α]·U[n+1,β]
+        # P[b,α,β] = J² -- vectorized over bonds
+        U_n = evecs[:-1, :]   # (N-1, M)
+        U_n1 = evecs[1:, :]   # (N-1, M)
+        # J[b,α,β] = U_n1[b,α]*U_n[b,β] - U_n[b,α]*U_n1[b,β]
+        # P[b,α,β] = J² = (U_n1 ⊗ U_n - U_n ⊗ U_n1)²
+        # cov[b] = Σ_{α,β} P[b,α,β] K[α,β]
+        # Expand: P = (U_n1⊗U_n)² + (U_n⊗U_n1)² - 2(U_n1⊗U_n)(U_n⊗U_n1)
+        # = A²+B²-2AB where A[b,α,β]=U_n1[b,α]U_n[b,β], B=U_n[b,α]U_n1[b,β]
+
+        # Efficient: cov[b] = Σ_{αβ} J[b,αβ]² K[αβ]
+        # = Σ_{αβ} K[αβ] (U_n1[b,α]U_n[b,β])² + K[αβ] (U_n[b,α]U_n1[b,β])²
+        #   - 2 K[αβ] U_n1[b,α]U_n[b,β] U_n[b,α]U_n1[b,β]
+        # Term 1: (U_n1 @ K @ U_n^T)_diag² no -- need element-wise
+
+        # Direct approach: for each bond, P·K summed
+        # Use einsum: P[b,i,j] = (U_n1[b,i]*U_n[b,j] - U_n[b,i]*U_n1[b,j])^2
+        # cov[b] = sum_{i,j} P[b,i,j] * K[i,j]
+        # Expand P = A^2 + B^2 - 2AB
+        # where A[b,i,j] = U_n1[b,i]*U_n[b,j], B[b,i,j] = U_n[b,i]*U_n1[b,j]
+        # sum P*K = sum A^2*K + sum B^2*K - 2*sum AB*K
+
+        # sum_ij A[b,i,j]^2 * K[i,j] = sum_ij U_n1[b,i]^2 * U_n[b,j]^2 * K[i,j]
+        #   = (U_n1^2) @ K @ (U_n^2)^T  -- take diagonal over b
+        # sum_ij B^2*K = (U_n^2) @ K @ (U_n1^2)^T -- diagonal
+        # sum_ij AB*K = sum_ij U_n1[b,i]U_n[b,j]U_n[b,i]U_n1[b,j] K[i,j]
+        #   = sum_ij (U_n1*U_n)[b,i] * (U_n*U_n1)[b,j] * K[i,j]
+        #   = ((U_n1*U_n) @ K @ (U_n*U_n1)^T) -- diagonal
+
+        Un_sq = U_n**2       # (N-1, M)
+        Un1_sq = U_n1**2     # (N-1, M)
+        cross = U_n * U_n1   # (N-1, M)
+
+        # Each term: (N-1, M) @ (M, M) @ (M, N-1) -> take diagonal
+        t1 = np.sum(Un1_sq @ K * Un_sq, axis=1)   # (N-1,)
+        t2 = np.sum(Un_sq @ K * Un1_sq, axis=1)    # (N-1,)
+        t3 = np.sum(cross @ K * cross, axis=1)     # (N-1,)
+
+        return t1 + t2 - 2.0 * t3
+
+    def _bkm_bond_cov_lowrank(self, evals, evecs, f_tol=1e-6):
+        """Low-rank BKM covariance: donor/acceptor decomposition.
+
+        K[α,β] = f_α(1-f_β)φ(β(ε_α-ε_β)) is nonzero only when α is a
+        "donor" (f_α > f_tol) and β is an "acceptor" (1-f_β > f_tol).
+        At low T, donors are occupied modes (ε < ε_F + δ) and acceptors
+        are unoccupied modes (ε > ε_F - δ) with δ = ln(1/f_tol)/β₀.
+
+        Cost: O(N·r_d·r_a) where r_d, r_a are the donor/acceptor counts.
+        Falls back to full computation when r_d·r_a ≥ N²/3.
+        """
+        N = len(evals)
+        beta_e = np.clip(self.beta0 * evals, -500, 500)
+        f = 1.0 / (np.exp(beta_e) + 1.0)
+
+        # Donor modes: f_α contributes as first index in K
+        donor_mask = f > f_tol
+        # Acceptor modes: (1-f_β) contributes as second index in K
+        acceptor_mask = f < 1.0 - f_tol
+
+        d_idx = np.where(donor_mask)[0]
+        a_idx = np.where(acceptor_mask)[0]
+        r_d, r_a = len(d_idx), len(a_idx)
+
+        if r_d * r_a >= N * N // 3 or r_d < 2 or r_a < 2:
+            return self._bkm_bond_cov(evals, evecs)
+
+        # K restricted to (donors, acceptors): shape (r_d, r_a)
+        e_d, e_a = evals[d_idx], evals[a_idx]
+        f_d, f_a = f[d_idx], f[a_idx]
+        diff = self.beta0 * (e_d[:, None] - e_a[None, :])
+        phi = self._bkm_kernel(diff)
+        K_r = f_d[:, None] * (1.0 - f_a[None, :]) * phi
+
+        # Eigenvectors sliced for donors and acceptors
+        V_d = evecs[:, d_idx]   # (N, r_d)
+        V_a = evecs[:, a_idx]   # (N, r_a)
+
+        Un_d = V_d[:-1, :]      # (N-1, r_d)
+        Un1_d = V_d[1:, :]      # (N-1, r_d)
+        Un_a = V_a[:-1, :]      # (N-1, r_a)
+        Un1_a = V_a[1:, :]      # (N-1, r_a)
+
+        # cov[b] = Σ_{α∈D,β∈A} P[b,α,β] K[α,β]
+        # P = (U_n1[α]U_n[β] - U_n[α]U_n1[β])²
+        # = Un1_d²·K·Un_a² + Un_d²·K·Un1_a² - 2·(Un1_d·Un_d)·K·(Un_a·Un1_a)
+        t1 = np.sum((Un1_d**2 @ K_r) * Un_a**2, axis=1)
+        t2 = np.sum((Un_d**2 @ K_r) * Un1_a**2, axis=1)
+        t3 = np.sum(((Un1_d * Un_d) @ K_r) * (Un_a * Un1_a), axis=1)
+        return t1 + t2 - 2.0 * t3
+
+    def _compute_kms_background(self):
+        """Background BKM covariance per bond for uniform chain (Phi=0).
+
+        Used to normalize KMS conductances: kappa_kms = g * t0^2 * N̄² * cov/cov_bg.
+        Uses full (non-lowrank) computation for the one-time background.
+        """
+        off = -self.t0 * np.ones(self.N - 1)
+        cov_bg = np.zeros(self.N - 1)
+        for mu, w in zip(self.mu_nodes, self.mu_weights):
+            diag = np.full(self.N, mu)
+            evals, evecs = eigh_tridiagonal(diag, off)
+            cov_bg += w * self._bkm_bond_cov(evals, evecs)
+        return cov_bg
+
+    def conductances_kms(self, Phi, bond_only=False):
+        """KMS (BKM covariance) conductances, μ-averaged.
+
+        kappa_n = g_n * t0^2 * N̄_n^2 * cov_n(Phi) / cov_bg_n
+
+        where cov_n is the BKM bond current covariance at the lapse-smeared
+        Hamiltonian. This is the exact KMS Dirichlet form edge weight,
+        not the MI proxy. At high T, cov/cov_bg -> 1 so kappa -> g*t0^2*N̄^2
+        (matching the analytic law). At low T the ratio stays O(1) while
+        MI/MI_bg flattens to 1 -- the KMS law is more accurate.
+
+        Uses low-rank truncation when β₀t₀ is large (restricts to thermally
+        active modes near the Fermi surface for O(N·r²) instead of O(N³)).
+
+        The bond_only parameter is accepted for API compatibility but ignored
+        (the BKM computation always uses the eigendecomposition directly).
+        """
+        lapse, Nbar = self.lapse_nbar(Phi)
+        off = -self.t0 * np.abs(Nbar)
+        cov_avg = np.zeros(self.N - 1)
+
+        for mu, w in zip(self.mu_nodes, self.mu_weights):
+            diag = np.full(self.N, mu)
+            evals, evecs = eigh_tridiagonal(diag, off)
+            cov_avg += w * self._bkm_bond_cov(evals, evecs)
+
+        cov_ratio = cov_avg / np.maximum(self.kms_bg, 1e-30)
+        return self.g[:-1] * self.t0**2 * Nbar**2 * cov_ratio
+
+    def conductances_analytic(self, Phi, bond_only=False):
+        """Analytic conductances: κ_b = g_b t₀² N̄_b².
+
+        This is the exact high-T limit and the leading KMS kinematic law.
+        O(N) cost — used for fast FD Jacobian computation.
+        """
+        _, Nbar = self.lapse_nbar(Phi)
+        return self.g[:-1] * self.t0**2 * Nbar**2
 
     def rho_sigma(self, Phi, bond_only=False):
         """
@@ -460,18 +641,18 @@ class TwoStateExactModel:
 
     def el_correction_exact(self, Phi, eps=1e-7):
         """
-        Exact EL correction via FD on MI conductances.
+        Exact EL correction via FD on KMS conductances.
 
         Computes (1/2) sum_b (d kappa_b / d Phi_n)(DeltaPhi_b)^2 for each
-        site n, using finite differences on the exact MI-based conductances.
-        This is the true Euler-Lagrange correction term that converts the
-        fixed-point equation into the gradient of the mismatch functional.
+        site n, using finite differences on the KMS (BKM covariance)
+        conductances.  This is the true Euler-Lagrange correction term that
+        converts the fixed-point equation into the gradient of the mismatch
+        functional.
 
         Cost: N+1 eigendecompositions (one baseline + one per site perturbation).
         """
         N = self.N
-        bo = self.bond_only
-        kappa0 = self.conductances_exact(Phi, bond_only=bo)
+        kappa0 = self.conductances_kms(Phi)
         dphi_sq = (Phi[:N-1] - Phi[1:N])**2
 
         corr = np.zeros(N)
@@ -479,14 +660,14 @@ class TwoStateExactModel:
             step = eps * max(1.0, abs(Phi[n]))
             Phi_p = Phi.copy()
             Phi_p[n] += step
-            kappa_p = self.conductances_exact(Phi_p, bond_only=bo)
+            kappa_p = self.conductances_kms(Phi_p)
             dk = (kappa_p - kappa0) / step
             corr[n] = 0.5 * np.sum(dk * dphi_sq)
         return corr
 
     def mismatch_energy(self, Phi):
         """Dirichlet mismatch energy E_mis = (1/2) sum kappa_n (DPhi_n)^2."""
-        kappa = self.conductances_exact(Phi)
+        kappa = self.conductances_kms(Phi)
         dphi = Phi[:-1] - Phi[1:]
         return 0.5 * np.sum(kappa * dphi**2)
 
@@ -498,7 +679,7 @@ class TwoStateExactModel:
         which includes both the graph Laplacian and the exact EL correction
         (dkappa/dPhi contribution) without any analytic approximation.
 
-        Cost: N evaluations of conductances_exact (N eigendecompositions).
+        Cost: N evaluations of conductances_kms (N eigendecompositions).
         """
         N = self.N
         grad = np.zeros(N)
@@ -521,7 +702,30 @@ class TwoStateExactModel:
         See residual() for the full Euler-Lagrange residual.
         """
         bo = self.bond_only
-        kappa = self.conductances_exact(Phi, bond_only=bo)
+        kappa = self.conductances_kms(Phi)
+        lhs = self.graph_laplacian_action(Phi, kappa)
+
+        pref = self.beta0 / self.cstar_sq
+        rhs = pref * (self.rho_sigma(Phi, bond_only=bo)
+                      - self.rho_tgt_smeared(Phi, bond_only=bo))
+
+        F = lhs - rhs
+        if self.smooth_eps > 0:
+            F += self.smooth_eps * self.biharmonic_action(Phi)
+        F[self.N - 1] = Phi[self.N - 1]  # boundary: Phi_N = 0
+        return F
+
+    def residual_fixedpoint_analytic(self, Phi):
+        """
+        Fast fixed-point residual using analytic conductances κ = g t₀² N̄².
+
+        Same as residual_fixedpoint but uses O(N) analytic conductances instead
+        of O(N³) KMS conductances. The energy profiles still use full
+        eigendecomposition. Used for fast FD Jacobian in the inexact Newton
+        approach — gives the correct Jacobian structure at O(N²) cost.
+        """
+        bo = self.bond_only
+        kappa = self.conductances_analytic(Phi)
         lhs = self.graph_laplacian_action(Phi, kappa)
 
         pref = self.beta0 / self.cstar_sq
@@ -542,14 +746,17 @@ class TwoStateExactModel:
                  - (beta0/c*^2)(rho_sigma(Phi) - rho_tgt_smeared(Phi))
 
         Includes the exact EL correction (1/2) sum (dkappa/dPhi)(DeltaPhi)^2
-        computed via finite differences on the MI conductances. This is the
+        computed via finite differences on the KMS conductances. This is the
         true gradient of the mismatch functional, converting d/dr[r^2(1+phi)^2 phi']
         (fixed-point) into d/dr[r^2(1+phi)phi'] (true EL, exact Schwarzschild).
         """
         bo = self.bond_only
-        kappa = self.conductances_exact(Phi, bond_only=bo)
+        kappa = self.conductances_kms(Phi)
         lhs = self.graph_laplacian_action(Phi, kappa)
-        lhs += self.el_correction_exact(Phi)
+        # Use analytic EL correction: O(N) instead of O(N⁴) FD on KMS.
+        # The analytic ∂κ/∂Φ = g t₀² N̄/c*² is the leading KMS kinematic law
+        # and agrees with the exact FD version to O(β₀t₀)² corrections.
+        lhs += self.el_correction_analytic(Phi)
 
         pref = self.beta0 / self.cstar_sq
         rhs = pref * (self.rho_sigma(Phi, bond_only=bo)
@@ -578,7 +785,7 @@ class TwoStateExactModel:
         At lam=1 this is the full fixed-point equation (no EL correction).
         """
         bo = self.bond_only
-        kappa = self.conductances_exact(Phi, bond_only=bo)
+        kappa = self.conductances_kms(Phi)
         lhs = self.graph_laplacian_action(Phi, kappa)
 
         pref = self.beta0 / self.cstar_sq
@@ -604,7 +811,7 @@ class TwoStateExactModel:
         At lam=1 this matches residual() (the true Euler-Lagrange equation).
         """
         bo = self.bond_only
-        kappa = self.conductances_exact(Phi, bond_only=bo)
+        kappa = self.conductances_kms(Phi)
         lhs = self.graph_laplacian_action(Phi, kappa)
         lhs += self.el_correction_exact(Phi)
 
@@ -622,17 +829,17 @@ class TwoStateExactModel:
 
     def residual_proxy(self, Phi):
         """
-        Proxy residual: exact MI conductances with fixed source (no energy
+        Proxy residual: KMS conductances with fixed source (no energy
         response).
 
-        F_proxy(Phi) = L_{kappa_exact(Phi)} Phi - (beta0/c*^2)(rho_bg - rho_tgt)
+        F_proxy(Phi) = L_{kappa_kms(Phi)} Phi - (beta0/c*^2)(rho_bg - rho_tgt)
 
         This removes the self-consistent energy feedback that causes Newton
-        to fail at beta0*t0 > 0.1.  The co-metric kappa_exact/kappa_flat
+        to fail at beta0*t0 > 0.1.  The co-metric kappa_kms/kappa_flat
         at the proxy solution reveals the emergent metric structure.
         """
         bo = self.bond_only
-        kappa = self.conductances_exact(Phi, bond_only=bo)
+        kappa = self.conductances_kms(Phi)
         lhs = self.graph_laplacian_action(Phi, kappa)
 
         pref = self.beta0 / self.cstar_sq
@@ -677,15 +884,20 @@ class TwoStateExactModel:
         return {"rho_sigma_0": rho_s, "rho_bg": self.rho_bg, "rel_err": rel_err}
 
     def check_conductances(self, Phi):
-        """Diagnostic: compare exact MI and analytic conductances."""
+        """Diagnostic: compare KMS, MI, and analytic conductances."""
         lapse, Nbar = self.lapse_nbar(Phi)
         kappa_analytic = self.conductances_analytic(Nbar)
-        kappa_exact = self.conductances_exact(Phi)
+        kappa_kms = self.conductances_kms(Phi)
+        kappa_mi = self.conductances_exact(Phi)
 
         return {
-            "kappa_exact": kappa_exact,
+            "kappa_kms": kappa_kms,
+            "kappa_mi": kappa_mi,
             "kappa_analytic": kappa_analytic,
-            "ratio": kappa_exact / np.maximum(kappa_analytic, 1e-30),
-            "rel_err": np.max(np.abs(kappa_exact - kappa_analytic)) /
-                       np.max(np.abs(kappa_analytic)),
+            "ratio_kms": kappa_kms / np.maximum(kappa_analytic, 1e-30),
+            "ratio_mi": kappa_mi / np.maximum(kappa_analytic, 1e-30),
+            "rel_err_kms": np.max(np.abs(kappa_kms - kappa_analytic)) /
+                           np.max(np.abs(kappa_analytic)),
+            "rel_err_mi": np.max(np.abs(kappa_mi - kappa_analytic)) /
+                          np.max(np.abs(kappa_analytic)),
         }

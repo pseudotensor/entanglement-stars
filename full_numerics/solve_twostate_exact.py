@@ -728,7 +728,7 @@ def solve_exact(N=200, t0=1.0, V0=0.01, n_core=5, beta0=0.1,
     Phi_ex, conv_ex, nit = newton_fd_exact(
         model_ex, Phi_an, tol=tol, max_iter=50,
         lapse_guard=True, verbose=verbose,
-        jacobian_func=model_ex.residual_fixedpoint)
+        jacobian_func=model_ex.residual_fixedpoint_analytic)
 
     lapse_ex = 1.0 + Phi_ex / cstar_sq
     rs_ex = extract_rs(Phi_ex, model_ex, vacuum=True)

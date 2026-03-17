@@ -13,10 +13,10 @@ Conductances use ratio normalization: κ_n = g_n J₀² MI(n;Φ) / MI_bg(n).
 
 Source model: reduced coupling J_core = J₀(1-ε) at n < n_core.
 """
-import sys, os
-_REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, _REPO)
-os.chdir(_REPO)
+import os, sys
+_REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if _REPO_ROOT not in sys.path:
+    sys.path.insert(0, _REPO_ROOT)
 import numpy as np
 from scipy.optimize import least_squares
 from scipy.sparse import diags

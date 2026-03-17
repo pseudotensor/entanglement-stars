@@ -83,6 +83,70 @@ def compute_alpha_S(NN, t0, this_beta0, n_cut=None):
     return I_1ch / 2.0
 
 
+def compute_alpha_bond(NN, t0, this_beta0):
+    """Local bond MI coefficient alpha_S = I^bond_1ch / 2.
+
+    I^bond is the nearest-neighbor (bond) MI at the chain midpoint.
+    This is the local, finite-at-all-T coefficient that enters S_ent.
+    """
+    def binary_entropy(x, eps=1e-14):
+        x = np.clip(x, eps, 1.0 - eps)
+        return -x * np.log(x) - (1.0 - x) * np.log(1.0 - x)
+
+    diag = np.zeros(NN)
+    off = -t0 * np.ones(NN - 1)
+    evals, evecs = eigh_tridiagonal(diag, off)
+    beta_e = np.clip(this_beta0 * evals, -500, 500)
+    f = 1.0 / (np.exp(beta_e) + 1.0)
+    G = (evecs * f[None, :]) @ evecs.T
+
+    # Bond MI at midpoint
+    n = NN // 2
+    a = G[n, n]
+    d = G[n + 1, n + 1]
+    b = G[n, n + 1]
+    tr = a + d
+    det = a * d - b**2
+    disc = max(tr**2 - 4.0 * det, 0.0)
+    sqrt_disc = np.sqrt(disc)
+    lam1 = 0.5 * (tr + sqrt_disc)
+    lam2 = 0.5 * (tr - sqrt_disc)
+    I_bond = (binary_entropy(a) + binary_entropy(d)
+              - binary_entropy(lam1) - binary_entropy(lam2))
+    return float(I_bond) / 2.0
+
+
+def compute_alpha_S_source(NN, t0, this_beta0, Phi, V0, n_core, cstar_sq,
+                           n_cut=None):
+    """Per-mode alpha_S for the source Hamiltonian with self-consistent lapse."""
+    if n_cut is None:
+        n_cut = NN // 2
+
+    def binary_entropy(x, eps=1e-14):
+        x = np.clip(x, eps, 1.0 - eps)
+        return -x * np.log(x) - (1.0 - x) * np.log(1.0 - x)
+
+    lapse = 1.0 + Phi / cstar_sq
+    Nbar = 0.5 * (lapse[:-1] + lapse[1:])
+    diag = np.zeros(NN)
+    diag[:n_core] += V0
+    off = -t0 * np.abs(Nbar)
+    evals, evecs = eigh_tridiagonal(diag, off)
+    beta_e = np.clip(this_beta0 * evals, -500, 500)
+    f = 1.0 / (np.exp(beta_e) + 1.0)
+    G = (evecs * f[None, :]) @ evecs.T
+
+    G_A = G[:n_cut, :n_cut]
+    G_B = G[n_cut:, n_cut:]
+    nu_A = np.linalg.eigvalsh(G_A)
+    nu_B = np.linalg.eigvalsh(G_B)
+    S_A = np.sum(binary_entropy(nu_A))
+    S_B = np.sum(binary_entropy(nu_B))
+    S_AB = np.sum(binary_entropy(f))
+    I_1ch = S_A + S_B - S_AB
+    return I_1ch / 2.0
+
+
 # ── Style ─────────────────────────────────────────────────────────
 rcParams.update({
     "text.usetex": False, "font.family": "serif", "font.size": 11,
@@ -138,8 +202,10 @@ def get_sol(V0):
 
 
 def get_proxy(V0):
-    """Get proxy solution data for a V0 value."""
+    """Get proxy solution data for a V0 value (or None if missing)."""
     tag = f"proxy_{V0:.4f}"
+    if f"{tag}_Phi" not in D.files:
+        return None
     d = {
         "Phi": D[f"{tag}_Phi"],
         "lapse": D[f"{tag}_lapse"],
@@ -156,8 +222,10 @@ def get_proxy(V0):
 
 
 def get_analytic(V0):
-    """Get analytic solution data for a V0 value."""
+    """Get analytic solution data for a V0 value (or None if missing)."""
     tag = f"analytic_{V0:.4f}"
+    if f"{tag}_Phi" not in D.files:
+        return None
     d = {
         "Phi": D[f"{tag}_Phi"],
         "lapse": D[f"{tag}_lapse"],
@@ -211,40 +279,40 @@ for V0, c in zip(V0_pot, colors):
     s = get_sol(V0)
     label = f"$V_0={V0}$"
 
-    axes[0].plot(r_arr, s["Phi"] / cstar_sq, "-", color=c, lw=2,
+    # Extend to r=0 with flat extrapolation of innermost value
+    r_ext = np.concatenate(([0.0], r_arr))
+    Phi_ext = np.concatenate(([s["Phi"][0]], s["Phi"]))
+    lapse_ext = np.concatenate(([s["lapse"][0]], s["lapse"]))
+
+    axes[0].plot(r_ext, Phi_ext / cstar_sq, "-", color=c, lw=2,
                  label=label)
-    if V0 in proxy_V0s:
-        p = get_proxy(V0)
-        axes[0].plot(r_arr, p["Phi"] / cstar_sq,
-                     "--", color=c, lw=1, alpha=0.5)
 
     rs = s["rs"]
     if rs > 0.01:
-        r_ref = np.linspace(max(1, rs / 2), 200, 500)
-        axes[0].plot(r_ref, -rs / (2 * r_ref), "--", color=c, lw=1.2, alpha=0.6)
+        r_ref = np.linspace(0.05, 200, 2000)
+        axes[0].plot(r_ref, -rs / (2 * r_ref), ":", color=c, lw=1.2, alpha=0.7)
 
-    axes[1].plot(r_arr, s["lapse"], "-", color=c, lw=1.5, label=label)
-    if V0 in proxy_V0s:
-        p = get_proxy(V0)
-        axes[1].plot(r_arr, p["lapse"],
-                     "--", color=c, lw=1, alpha=0.5)
+    axes[1].plot(r_ext, lapse_ext, "-", color=c, lw=1.5, label=label)
 
     if rs > 0.01:
-        r_an = np.linspace(max(1, rs * 1.01), 200, 500)
-        axes[1].plot(r_an, np.sqrt(1.0 - rs / r_an), "--", color=c,
-                     lw=1.2, alpha=0.6)
+        r_an = np.linspace(rs * 1.0001, 200, 2000)
+        axes[1].plot(r_an, np.sqrt(1.0 - rs / r_an), ":", color=c,
+                     lw=1.2, alpha=0.7)
 
+axes[0].plot([], [], ":", color="gray", lw=1.2, alpha=0.7, label=r"Newtonian $-r_s/2r$")
 axes[0].set_xlabel("$r / a$")
 axes[0].set_ylabel(r"$\Phi(r) / c_*^2$")
 axes[0].set_xlim(0, 40)
+axes[0].set_ylim(-1.0, 0.05)
 axes[0].set_title("Gravitational potential")
 axes[0].legend(fontsize=7, loc="lower right", ncol=2)
+axes[1].plot([], [], ":", color="gray", lw=1.2, alpha=0.7, label=r"Schwarzschild $\sqrt{1-r_s/r}$")
 axes[1].set_xlabel("$r / a$")
 axes[1].set_ylabel("Lapse $N(r)$")
 axes[1].set_xlim(0, 40)
+axes[1].set_ylim(-0.05, 1.05)
 axes[1].set_title("Lapse profile")
 axes[1].legend(fontsize=7, ncol=2)
-axes[1].axhline(1, color="gray", lw=0.5, ls=":")
 
 fig.tight_layout()
 path = os.path.join(FIGDIR, "twostate_potential.pdf")
@@ -462,17 +530,20 @@ axes[0, 1].set_ylabel(r"$\kappa_n / \kappa_n^{\mathrm{flat}}$")
 axes[0, 1].set_title("(b) Conductance suppression")
 axes[0, 1].legend(fontsize=8)
 
-# (c) Super-critical: lapse hits floor
-V0_super = [0.07, 0.1]
-colors_sup2 = plt.cm.Reds(np.linspace(0.4, 0.8, len(V0_super)))
-for V0, c in zip(V0_super, colors_sup2):
-    s = get_sol(V0)
-    axes[1, 0].plot(r_arr[:30], s["lapse"][:30], "-", color=c, lw=2,
-                    label=f"$V_0={V0}$")
+# (c) Near-critical: deep lapse well
+V0_deep = [v for v in solution_V0s if 0.06 <= v <= 0.068][-3:]
+if len(V0_deep) == 0:
+    V0_deep = [0.063, 0.066, 0.067]
+colors_deep = plt.cm.Reds(np.linspace(0.4, 0.8, len(V0_deep)))
+for V0, c in zip(V0_deep, colors_deep):
+    if V0 in [float(v) for v in solution_V0s]:
+        s = get_sol(V0)
+        axes[1, 0].plot(r_arr[:30], s["lapse"][:30], "-", color=c, lw=2,
+                        label=f"$V_0={V0}$")
 axes[1, 0].axhline(0, color="red", lw=0.5, ls="--", alpha=0.4)
 axes[1, 0].set_xlabel("$r/a$")
 axes[1, 0].set_ylabel("Lapse $N(r)$")
-axes[1, 0].set_title("(c) Super-critical: lapse collapse")
+axes[1, 0].set_title("(c) Near-critical: deep lapse well")
 axes[1, 0].legend(fontsize=8)
 
 # (d) Proxy (dashed) vs exact (solid) comparison
@@ -481,8 +552,9 @@ for V0, c in zip(V0_int, colors_int):
     p = get_proxy(V0)
     axes[1, 1].plot(r_arr[:30], s["lapse"][:30], "-", color=c, lw=2,
                     label=f"full $V_0={V0}$")
-    axes[1, 1].plot(r_arr[:30], p["lapse"][:30], "--", color=c, lw=1.2,
-                    alpha=0.6)
+    if p is not None:
+        axes[1, 1].plot(r_arr[:30], p["lapse"][:30], "--", color=c, lw=1.2,
+                        alpha=0.6)
 axes[1, 1].axhline(0, color="red", lw=0.5, ls="--", alpha=0.4)
 axes[1, 1].set_xlabel("$r/a$")
 axes[1, 1].set_ylabel("Lapse $N(r)$")
@@ -509,19 +581,19 @@ rs_ref = a
 rho_schw, R_schw = schwarzschild_embedding(rs_ref, 30.0)
 rho_lim = 12
 
-# Key V0 values: sub-critical, near-critical, super-critical (floor)
-embed_V0s = [0.01, 0.057, 0.07]
-embed_colors = ['#1976D2', '#D32F2F', '#7B1FA2']
-embed_lws = [2.0, 2.0, 1.5]
+# Key V0 values: sub-critical, moderate, near-critical
+embed_V0s = list(D["embed_V0s"])
+embed_labels = ['sub-critical', 'moderate', 'near-critical'][:len(embed_V0s)]
+embed_colors = ['#1976D2', '#D32F2F', '#7B1FA2'][:len(embed_V0s)]
+embed_lws = [2.0] * len(embed_V0s)
 
-for V0, color, lw in zip(embed_V0s, embed_colors, embed_lws):
+for V0, color, lw, lab in zip(embed_V0s, embed_colors, embed_lws, embed_labels):
     ed = get_embed(V0)
     s = get_sol(V0)
     mask = ed['rho'] <= rho_lim
     Nmin = s["Nbar"].min()
-    floor_tag = ', floor' if V0 > 0.06 else ''
     ax.plot(ed['rho'][mask], ed['R'][mask], color=color, lw=lw,
-            label=f'$V_0={V0}$ ($\\bar{{N}}_{{\\min}}={Nmin:.2f}${floor_tag})')
+            label=f'$V_0={V0}$ ($\\bar{{N}}_{{\\min}}={Nmin:.2f}$, {lab})')
 
 # Schwarzschild reference
 mask_s = rho_schw <= rho_lim
@@ -537,17 +609,17 @@ ax.plot(rho_cl, R_cl, color='gray', ls='--', lw=1.0, alpha=0.6,
 # Minimal sphere marker
 ax.plot([0], [a], 'ko', ms=4, zorder=5)
 
-# Cone slope guide line for near-critical V0=0.057
-Nbar_057 = get_sol(0.057)["Nbar"]
-N057 = Nbar_057.min()
+# Cone slope guide line for near-critical V0
+Nbar_nc = get_sol(embed_V0s[-1])["Nbar"]
+Nnc = Nbar_nc.min()
 rg = np.linspace(0, 7, 50)
-ax.plot(rg, a + N057 * rg, ':', color=embed_colors[1], lw=0.8, alpha=0.5)
+ax.plot(rg, a + Nnc * rg, ':', color=embed_colors[2], lw=0.8, alpha=0.5)
 
 # Annotations
-ax.annotate(f'$dR/d\\rho = \\bar{{N}}_{{\\min}} = {N057:.2f}$',
-            xy=(4.5, a + N057 * 4.5), xytext=(6.5, 2.2),
-            fontsize=8, color=embed_colors[1],
-            arrowprops=dict(arrowstyle='->', color=embed_colors[1], lw=0.8))
+ax.annotate(f'$dR/d\\rho = \\bar{{N}}_{{\\min}} = {Nnc:.2f}$',
+            xy=(4.5, a + Nnc * 4.5), xytext=(6.5, 2.2),
+            fontsize=8, color=embed_colors[2],
+            arrowprops=dict(arrowstyle='->', color=embed_colors[2], lw=0.8))
 
 ax.annotate('$dR/d\\rho = 0$\n(horizon)',
             xy=(0.2, rs_ref), xytext=(3.5, 1.2),
@@ -567,8 +639,8 @@ ax.text(rho_lim - 0.2, a + 0.15, '$R_{\\min}=a$', fontsize=7,
 ax.text(4.5, 5.3, 'sub-critical', fontsize=8, color=embed_colors[0],
         ha='center', va='bottom', rotation=44,
         bbox=dict(facecolor='white', edgecolor='none', alpha=0.7, pad=1))
-ax.text(9, 8.3, 'near-critical', fontsize=8, color=embed_colors[1],
-        ha='center', va='bottom', rotation=42,
+ax.text(9, 6.3, 'near-critical', fontsize=8, color=embed_colors[2],
+        ha='left', va='bottom', rotation=40,
         bbox=dict(facecolor='white', edgecolor='none', alpha=0.7, pad=1))
 
 ax.set_xlabel(r'Proper distance $\rho\,/\,a$')
@@ -786,7 +858,7 @@ print(f"  Saved: {path}")
 print("\n--- Figure 10: T^QI profile ---")
 
 V0_tqi = list(D["tqi_V0s"])
-fig, ax = plt.subplots(figsize=(9, 6))
+fig, ax = plt.subplots(figsize=(6, 4.5))
 colors_tqi = plt.cm.viridis(np.linspace(0.15, 0.85, len(V0_tqi)))
 
 for V0, c in zip(V0_tqi, colors_tqi):
@@ -809,16 +881,22 @@ for V0, c in zip(V0_tqi, colors_tqi):
     ns = tqi_sc[-1] if abs(tqi_sc[-1]) > 1e-30 else 1.0
     np_ = tqi_pr[-1] if abs(tqi_pr[-1]) > 1e-30 else 1.0
 
-    ax.plot(r_arr, tqi_sc / ns, "-", color=c, lw=1.5,
-            label=f"$V_0={V0}$")
-    ax.plot(r_arr, tqi_pr / np_, "--", color=c, alpha=0.5, lw=1.0)
+    # Extend to r=0 with innermost value
+    r_ext = np.concatenate(([0.0], r_arr))
+    tqi_sc_ext = np.concatenate(([tqi_sc[0]], tqi_sc))
+    tqi_pr_ext = np.concatenate(([tqi_pr[0]], tqi_pr))
 
+    ax.plot(r_ext, tqi_sc_ext / ns, "-", color=c, lw=2,
+            label=f"$V_0={V0}$")
+    ax.plot(r_ext, tqi_pr_ext / np_, "--", color=c, alpha=0.7, lw=1.2)
+
+ax.plot([], [], "--", color="gray", lw=1.2, alpha=0.7, label="Schwarzschild prescribed")
 ax.set_xlabel(r"$r / a$")
 ax.set_ylabel(r"$T^{\mathrm{QI}}/T^{\mathrm{QI}}_\infty$")
 ax.set_title(r"Self-consistent vs. prescribed $T^{\mathrm{QI}}$")
 ax.set_xlim(0, 40)
 ax.set_ylim(-0.05, 1.15)
-ax.legend(fontsize=8)
+ax.legend(fontsize=9)
 
 fig.tight_layout()
 path = os.path.join(FIGDIR, "tqi_profile.pdf")
@@ -859,10 +937,10 @@ sweep_analytic_minN = D["sweep_analytic_minN"] if "sweep_analytic_minN" in D.fil
 
 # Fallback: discrete markers from per-V0 proxy/analytic solutions
 V0_comp = sorted(set(V0_core + V0_extended))
-minN_proxy = [get_proxy(V0)["lapse"].min() for V0 in V0_comp]
-rs_proxy_list = [get_proxy(V0)["rs"] for V0 in V0_comp]
-minN_analytic = [get_analytic(V0)["lapse"].min() for V0 in V0_comp]
-rs_analytic_list = [get_analytic(V0)["rs"] for V0 in V0_comp]
+minN_proxy = [get_proxy(V0)["lapse"].min() if get_proxy(V0) is not None else np.nan for V0 in V0_comp]
+rs_proxy_list = [get_proxy(V0)["rs"] if get_proxy(V0) is not None else np.nan for V0 in V0_comp]
+minN_analytic = [get_analytic(V0)["lapse"].min() if get_analytic(V0) is not None else np.nan for V0 in V0_comp]
+rs_analytic_list = [get_analytic(V0)["rs"] if get_analytic(V0) is not None else np.nan for V0 in V0_comp]
 
 # Cross-residuals — filter to converged V0 only
 cross_V0_all = D["cross_V0"]
@@ -879,15 +957,21 @@ cross_analytic = cross_analytic_all[cross_ok]
 
 # (a) min(N) vs V0
 axes[0].plot(V0_sw, minN_sw, "o-", ms=3, color="C0", lw=1.5, label="Full")
-if sweep_analytic_minN is not None:
+if sweep_analytic_minN is not None and len(sweep_analytic_minN) == len(V0_sw_all):
     axes[0].plot(V0_sw_all, sweep_analytic_minN, "--", color="C1", lw=1.2,
                  alpha=0.7, label="Analytic two-state")
+elif sweep_analytic_minN is not None:
+    axes[0].plot(V0_sw_all[:len(sweep_analytic_minN)], sweep_analytic_minN,
+                 "--", color="C1", lw=1.2, alpha=0.7, label="Analytic two-state")
 else:
     axes[0].plot(V0_comp, minN_analytic, "s--", ms=4, color="C1", lw=1.2,
                  alpha=0.7, label="Analytic two-state")
-if sweep_proxy_minN is not None:
+if sweep_proxy_minN is not None and len(sweep_proxy_minN) == len(V0_sw_all):
     axes[0].plot(V0_sw_all, sweep_proxy_minN, ":", color="C2", lw=1.2,
                  alpha=0.7, label="Proxy")
+elif sweep_proxy_minN is not None:
+    axes[0].plot(V0_sw_all[:len(sweep_proxy_minN)], sweep_proxy_minN,
+                 ":", color="C2", lw=1.2, alpha=0.7, label="Proxy")
 else:
     axes[0].plot(V0_comp, minN_proxy, "^:", ms=4, color="C2", lw=1.2,
                  alpha=0.7, label="Proxy")
@@ -899,15 +983,21 @@ axes[0].axhline(0, color="red", lw=0.5, ls="--", alpha=0.4)
 
 # (b) rs vs V0
 axes[1].plot(V0_sw, rs_sw, "o-", ms=3, color="C0", lw=1.5, label="Full")
-if sweep_analytic_rs is not None:
+if sweep_analytic_rs is not None and len(sweep_analytic_rs) == len(V0_sw_all):
     axes[1].plot(V0_sw_all, sweep_analytic_rs, "--", color="C1", lw=1.2,
                  alpha=0.7, label="Analytic two-state")
+elif sweep_analytic_rs is not None:
+    axes[1].plot(V0_sw_all[:len(sweep_analytic_rs)], sweep_analytic_rs,
+                 "--", color="C1", lw=1.2, alpha=0.7, label="Analytic two-state")
 else:
     axes[1].plot(V0_comp, rs_analytic_list, "s--", ms=4, color="C1", lw=1.2,
                  alpha=0.7, label="Analytic two-state")
-if sweep_proxy_rs is not None:
+if sweep_proxy_rs is not None and len(sweep_proxy_rs) == len(V0_sw_all):
     axes[1].plot(V0_sw_all, sweep_proxy_rs, ":", color="C2", lw=1.2,
                  alpha=0.7, label="Proxy")
+elif sweep_proxy_rs is not None:
+    axes[1].plot(V0_sw_all[:len(sweep_proxy_rs)], sweep_proxy_rs,
+                 ":", color="C2", lw=1.2, alpha=0.7, label="Proxy")
 else:
     axes[1].plot(V0_comp, rs_proxy_list, "^:", ms=4, color="C2", lw=1.2,
                  alpha=0.7, label="Proxy")
@@ -958,7 +1048,7 @@ n_plot = 40
 
 # (a) LHS and RHS
 axes[0].plot(n_sites[:n_plot], LHS_v[:n_plot], "-", color="C0", lw=2,
-             label="LHS: $L_{\\kappa[\\Phi]}\\,\\Phi$")
+             label="LHS: $L_{\\kappa[\\Phi]}\\,\\Phi + \\mathrm{EL}[\\Phi]$")
 axes[0].plot(n_sites[:n_plot], RHS_v[:n_plot], "--", color="C3", lw=2,
              label=r"RHS: $(\beta_0/c_*^2)\,\Delta\rho[\Phi]$")
 axes[0].set_xlabel("Shell index $n$")
@@ -1023,27 +1113,38 @@ if "temp_V0s" in D.files:
 
     V0_main = temp_V0s[0]  # 0.001
     tag_main = f"temp_{V0_main:.4f}"
+    # Use per-V0 bt0 array if available (supports fold-truncated sweeps)
+    bt0_main_key = f"{tag_main}_bt0"
+    bt0_main = D[bt0_main_key] if bt0_main_key in D.files else bt0_arr_all
     rs_main = D[f"{tag_main}_rs"]
     F_main = D[f"{tag_main}_F"]
     near_main = F_main < 1e-6
 
     # (a) Schwarzschild radius vs bt0 — both V0 values + proxy overlay
+    # Only positive-lapse solutions are plotted (no red X marks for post-fold)
     ax = axes[0, 0]
     for iv, V0_temp in enumerate(temp_V0s):
         tag_t = f"temp_{V0_temp:.4f}"
+        bt0_t_key = f"{tag_t}_bt0"
+        bt0_t = D[bt0_t_key] if bt0_t_key in D.files else bt0_arr_all
         rs_t = D[f"{tag_t}_rs"]
         F_t = D[f"{tag_t}_F"]
-        near_t = F_t < 1e-6
+        minN_t = D[f"{tag_t}_minN"]
+        # Filter: converged and positive lapse
+        good = (F_t < 1e-6) & (minN_t > 0)
         c_ex = f"C{2*iv}"
-        ax.plot(bt0_arr_all[near_t], rs_t[near_t], "o-", color=c_ex, ms=4,
-                label=f"Full $V_0={V0_temp}$")
-        if np.any(~near_t):
-            ax.plot(bt0_arr_all[~near_t], rs_t[~near_t], "x", color="red", ms=6, mew=2)
-        # Proxy rs overlay
+        n_good = int(np.sum(good))
+        ax.plot(bt0_t[good], rs_t[good], "o-", color=c_ex, ms=4,
+                label=f"Full $V_0={V0_temp}$ ({n_good} pts)")
+        # Proxy rs overlay — extend over full bt0 range (proxy is linear)
         prs_key = f"{tag_t}_proxy_rs"
         if prs_key in D.files:
             prs = D[prs_key]
-            ax.plot(bt0_arr_all, prs, "--", color=c_ex, lw=1, alpha=0.5,
+            # Extrapolate linearly to bt0_main range if this V0's data is shorter
+            slope = prs[1] / bt0_t[1] if len(prs) > 1 else prs[0] / bt0_t[0]
+            bt0_full = bt0_main
+            prs_full = slope * bt0_full
+            ax.plot(bt0_full, prs_full, "--", color=c_ex, lw=1, alpha=0.5,
                     label=f"Proxy $V_0={V0_temp}$")
     ax.set_xlabel(r"$\beta_0 t_0$")
     ax.set_ylabel(r"$r_s / a$")
@@ -1051,22 +1152,38 @@ if "temp_V0s" in D.files:
     ax.legend(fontsize=8)
 
     # (b) Per-mode entanglement entropy alpha_S vs bt0
+    # alpha_S is insensitive to V0 (bulk chain property), so we show V0=0 only
+    # and annotate where the V0=0.005 gravitating solution terminates (fold).
     ax = axes[0, 1]
-    print("    Computing alpha_S vs bt0 ...")
-    aS_arr = np.array([compute_alpha_S(N, t0, bt / t0) for bt in bt0_arr_all])
-    ax.plot(bt0_arr_all, aS_arr, "o-", color="C0", ms=4)
-    ax.axhline(0.25, ls=":", color="gray", lw=1, label=r"$\alpha_S = 1/4$")
-    # Mark the crossover bt0 where alpha_S = 1/4
-    crossings = np.where(np.diff(np.sign(aS_arr - 0.25)))[0]
-    if len(crossings) > 0:
-        idx_c = crossings[0]
-        bt0_cross = bt0_arr_all[idx_c] + (0.25 - aS_arr[idx_c]) / (aS_arr[idx_c+1] - aS_arr[idx_c]) * (bt0_arr_all[idx_c+1] - bt0_arr_all[idx_c])
-        ax.axvline(bt0_cross, ls="--", color="C3", lw=0.8, alpha=0.7)
-        ax.text(bt0_cross + 0.05, 0.05, rf"$\beta_0 t_0 \approx {bt0_cross:.2f}$",
-                fontsize=8, color="C3")
+    print("    Computing alpha_cut and alpha_S vs bt0 ...")
+    aS_arr = np.array([compute_alpha_S(N, t0, bt / t0) for bt in bt0_main])
+    aBond_arr = np.array([compute_alpha_bond(N, t0, bt / t0) for bt in bt0_main])
+    ax.plot(bt0_main, aS_arr, "o-", color="C0", ms=4, label=r"$\alpha_{\mathrm{cut}}$ (bipartition)")
+    ax.plot(bt0_main, aBond_arr, "s-", color="C1", ms=3, label=r"$\alpha_S$ (bond)")
+    ax.axhline(0.25, ls=":", color="gray", lw=1, label=r"$\alpha_{\mathrm{cut}} = 1/4$")
+    # Mark where V0=0.005 solution folds
+    if len(temp_V0s) > 1:
+        V0_005 = temp_V0s[1]
+        tag_005 = f"temp_{V0_005:.4f}"
+        bt0_005_key = f"{tag_005}_bt0"
+        bt0_005 = D[bt0_005_key] if bt0_005_key in D.files else bt0_arr_all
+        F_005 = D[f"{tag_005}_F"]
+        minN_005 = D[f"{tag_005}_minN"]
+        good_005 = (F_005 < 1e-6) & (minN_005 > 0)
+        bt0_max_005 = bt0_005[good_005][-1]
+        # Interpolate alpha_S at that bt0
+        aS_at_fold = np.interp(bt0_max_005, bt0_main, aS_arr)
+        ax.plot(bt0_max_005, aS_at_fold, "v", color="C2", ms=8, zorder=5)
+        ax.annotate(
+            rf"$V_0\!=\!{V0_005}$ fold" + "\n"
+            + rf"$\alpha_{{\mathrm{{cut}}}}\!\approx\!{aS_at_fold:.2f}$",
+            xy=(bt0_max_005, aS_at_fold),
+            xytext=(bt0_max_005 - 0.55, aS_at_fold + 0.02),
+            fontsize=7.5, color="C2", ha="right",
+            arrowprops=dict(arrowstyle="->", color="C2", lw=0.8))
     ax.set_xlabel(r"$\beta_0 t_0$")
-    ax.set_ylabel(r"$\alpha_S$ (nats per mode)")
-    ax.set_title(r"(b) Per-mode entanglement entropy $\alpha_S$")
+    ax.set_ylabel(r"$\alpha$ (nats per mode)")
+    ax.set_title(r"(b) Entanglement coefficients $\alpha_{\mathrm{cut}}$, $\alpha_S$")
     ax.legend(fontsize=8)
     ax.set_ylim(0, None)
 
@@ -1075,16 +1192,20 @@ if "temp_V0s" in D.files:
     Phi_2d = D[f"{tag_main}_Phi"]
     bt0_show = [0.1, 0.5, 1.0, 1.5, 2.0, 2.5]
     colors_T = plt.cm.coolwarm(np.linspace(0.0, 1.0, len(bt0_show)))
+    r_ext = np.concatenate(([0.0], r_arr))
     for i, bt0_target in enumerate(bt0_show):
-        idx = np.argmin(np.abs(bt0_arr_all - bt0_target))
+        idx = np.argmin(np.abs(bt0_main - bt0_target))
         if F_main[idx] < 1e-6:
-            ax.plot(r_arr, Phi_2d[idx] / cstar_sq, "-", color=colors_T[i],
-                    lw=1.5, label=rf"$\beta_0 t_0 = {bt0_arr_all[idx]:.1f}$")
+            Phi_ext = np.concatenate(([Phi_2d[idx][0]], Phi_2d[idx]))
+            ax.plot(r_ext, Phi_ext / cstar_sq, "-", color=colors_T[i],
+                    lw=1.5, label=rf"$\beta_0 t_0 = {bt0_main[idx]:.1f}$")
             # Proxy overlay (dashed)
-            bt0_val = bt0_arr_all[idx]
+            bt0_val = bt0_main[idx]
             Phi_proxy = compute_proxy_Phi(N, t0, V0_main, n_core, bt0_val / t0, cstar_sq)
-            ax.plot(r_arr, Phi_proxy / cstar_sq, "--", color=colors_T[i],
+            Phi_proxy_ext = np.concatenate(([Phi_proxy[0]], Phi_proxy))
+            ax.plot(r_ext, Phi_proxy_ext / cstar_sq, "--", color=colors_T[i],
                     lw=0.8, alpha=0.6)
+    ax.plot([], [], "--", color="gray", lw=0.8, alpha=0.6, label="proxy")
     ax.set_xlabel("$r / a$")
     ax.set_ylabel(r"$\Phi(r) / c_*^2$")
     ax.set_title(f"(c) Potential profiles, $V_0 = {V0_main}$")
@@ -1094,21 +1215,25 @@ if "temp_V0s" in D.files:
     # (d) -Phi*r test: plateau = 1/r (Newtonian) + proxy overlay
     ax = axes[1, 1]
     for i, bt0_target in enumerate(bt0_show):
-        idx = np.argmin(np.abs(bt0_arr_all - bt0_target))
+        idx = np.argmin(np.abs(bt0_main - bt0_target))
         if F_main[idx] < 1e-6:
             R_outer = float(r_arr[-1])
             GM_est = -Phi_2d[idx] * r_arr * R_outer / np.maximum(R_outer - r_arr, 1e-12)
-            ax.plot(r_arr, GM_est, "-", color=colors_T[i], lw=1.5,
-                    label=rf"$\beta_0 t_0 = {bt0_arr_all[idx]:.1f}$")
+            GM_ext = np.concatenate(([GM_est[0]], GM_est))
+            ax.plot(r_ext, GM_ext, "-", color=colors_T[i], lw=1.5,
+                    label=rf"$\beta_0 t_0 = {bt0_main[idx]:.1f}$")
             # Proxy overlay (dashed)
-            bt0_val = bt0_arr_all[idx]
+            bt0_val = bt0_main[idx]
             Phi_proxy = compute_proxy_Phi(N, t0, V0_main, n_core, bt0_val / t0, cstar_sq)
             GM_est_p = -Phi_proxy * r_arr * R_outer / np.maximum(R_outer - r_arr, 1e-12)
-            ax.plot(r_arr, GM_est_p, "--", color=colors_T[i], lw=0.8, alpha=0.6)
+            GM_ext_p = np.concatenate(([GM_est_p[0]], GM_est_p))
+            ax.plot(r_ext, GM_ext_p, "--", color=colors_T[i], lw=0.8, alpha=0.6)
+    ax.plot([], [], "--", color="gray", lw=0.8, alpha=0.6, label="proxy")
     ax.set_xlabel("$r / a$")
     ax.set_ylabel(r"$GM_{\mathrm{est}}(r)$")
     ax.set_title(r"(d) BC-corrected $1/r$ test (no Yukawa)")
     ax.set_xlim(0, 180)
+    ax.set_ylim(None, 0.18)
     ax.legend(fontsize=7, ncol=2)
 
     fig.tight_layout()

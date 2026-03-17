@@ -164,16 +164,51 @@ def main() -> None:
 
     t_page = 1.0 - (0.5) ** 1.5  # 1 - 2^{-3/2} ≈ 0.646
 
+    # Haar normalization: divide by n_star0 * log2 so Haar bound peaks at 0.5
+    haar_max = n_star0 * math.log(2.0)
+    s_rad_norm = s_rad_mean / haar_max
+    s_pred_norm = s_pred / haar_max
+
+    # Load quasi-static closure Page curve if available
+    closure_t = closure_sr = closure_alpha = None
+    npz_path = os.path.join("fermion", "numerical", "data",
+                            "evaporation_selfconsistent.npz")
+    if os.path.exists(npz_path):
+        d = np.load(npz_path, allow_pickle=False)
+        # n_S(0) for closure system = 4*pi*(rs_max/a)^2
+        rs_max = float(d["rs_max"])
+        a = float(d["a"])
+        n_S0_closure = 4.0 * math.pi * (rs_max / a) ** 2
+        haar_max_closure = n_S0_closure * math.log(2.0)
+        closure_t = d["t_norm"]
+        # Normalize by S_BH(0) = alpha_S * 4*pi*rs_max^2 (actual star entropy),
+        # not by the Haar maximum n_S0*log2.  This puts the closure curve on the
+        # same [0, 0.5] scale as the circuit (each normalized by its own S_max(0)).
+        S_BH_0 = float(d["S_max_0"])
+        closure_sr = d["S_page_bound"] / S_BH_0
+        closure_alpha = float(d["alpha_S_sat"])
+        idx = np.argsort(closure_t)
+        closure_t = closure_t[idx]
+        closure_sr = closure_sr[idx]
+
     fig, axes = plt.subplots(1, 2, figsize=(12, 4))
 
     ax = axes[0]
-    ax.plot(t_norm, s_rad_mean, linewidth=1.5, label="Gaussian unitary dynamics")
-    ax.plot(t_norm, s_pred, linestyle="--", linewidth=1.5, label=r"Kinematic min: $\log 2\,\min(k,N-k)$")
+    ax.plot(t_norm, s_rad_norm, linewidth=1.5,
+            label=r"Gaussian circuit ($n_S(0)=120$ modes)")
+    ax.plot(t_norm, s_pred_norm, linestyle="--", linewidth=1.5,
+            label=r"Haar upper bound: $\min(k,N{-}k)/n_S(0)$")
+    if closure_t is not None:
+        # closure_sr is already normalized by its own n_S(0)*log2 (peaks at ~0.5).
+        # Both systems share the same Page time and curve shape; they differ only
+        # in absolute entropy scale by alpha_S/log2 ~ 1/570.
+        ax.plot(closure_t, closure_sr, linewidth=1.5, color="red", linestyle="-.",
+                label=r"Self-consistent closure (norm. by $S_{\rm BH}(0)$)")
     ax.axvline(t_page, linestyle=":", linewidth=1, color="gray")
     ax.set_xlabel(r"Normalized time $t/t_{\mathrm{evap}}$")
-    ax.set_ylabel(r"Radiation entropy $S_R$ (nats)")
-    ax.set_title("Page curve from unitary Gaussian evolution")
-    ax.legend(frameon=False, fontsize=8)
+    ax.set_ylabel(r"$S_R(t)\,/\,S_{\rm max}(0)$")
+    ax.set_title("Page curve: Gaussian circuit vs self-consistent closure")
+    ax.legend(frameon=False, fontsize=8, loc="upper left")
 
     ax = axes[1]
     ax.plot(t_norm[1:], i_new_star_mean[1:], linewidth=1.5, label=r"$I(\mathrm{new};\mathrm{star})$")
