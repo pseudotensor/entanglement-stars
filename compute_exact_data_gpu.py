@@ -1517,7 +1517,10 @@ def main():
         if rs <= 0:
             continue
         kH = extract_kappa_H(rs, cstar_sq)
-        T_H = kH / (2 * np.pi * np.sqrt(cstar_sq))
+        # hbar = 2 t0 a / c_* from the HDA calibration; it is not 1 in these
+        # lattice units (2.828 at t0 = a = 1, c_*^2 = 0.5).
+        _hbar = 2.0 * t0 * a / np.sqrt(cstar_sq)
+        T_H = _hbar * kH / (2 * np.pi * np.sqrt(cstar_sq))
 
         kH_proxy = np.nan
         kH_analytic = np.nan

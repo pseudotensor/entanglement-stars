@@ -696,9 +696,16 @@ kH_exact = np.array(kH_exact_list)
 kH_analytic_arr = np.array(kH_analytic_list)
 kH_proxy_arr = np.array(kH_proxy_list)
 cstar = np.sqrt(cstar_sq)
-TH_exact = kH_exact / (2 * np.pi * cstar)
-TH_analytic_arr = kH_analytic_arr / (2 * np.pi * cstar)
-TH_proxy_arr = kH_proxy_arr / (2 * np.pi * cstar)
+# hbar is NOT 1 in these lattice units: the HDA calibration gives
+# hbar = 2 t0 a / c_* (Section num-method), i.e. 2.828 at t0 = a = 1,
+# c_*^2 = 0.5.  The axis label and the paper's caption both write
+# T_H = hbar kappa_H / (2 pi c_*), so the factor has to be carried; leaving it
+# out plotted T_H/hbar under a T_H label.  It is an overall constant, so the
+# three-solver comparison the figure is for is unaffected.
+hbar = 2.0 * t0 * a / cstar
+TH_exact = hbar * kH_exact / (2 * np.pi * cstar)
+TH_analytic_arr = hbar * kH_analytic_arr / (2 * np.pi * cstar)
+TH_proxy_arr = hbar * kH_proxy_arr / (2 * np.pi * cstar)
 
 print(f"  Using {len(conv_V0s)} converged V0 values: {list(conv_V0s)}")
 
