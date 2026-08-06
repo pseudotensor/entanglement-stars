@@ -405,7 +405,13 @@ def compute_source(Phi_np, lat, t0, V0, n_core, beta0, cstar_sq):
             evecs[lat.row_t[s:e]] * evecs[lat.col_t[s:e]] * f[None, :], dim=1)
 
     rho_sigma = torch.zeros(N, dtype=torch.float64, device=dev)
-    rho_sigma.scatter_add_(0, lat.row_t, t0 * Nbar_dir_t * G_off_d)
+    # BARE bond observable (the lapse is the conjugate multiplier; weighting
+    # the observable by Nbar as well would count it twice), and SIGNED: this is
+    # <h_bond> itself, negative at half filling.  It must carry the same sign
+    # convention as the on-site V0 channel below, which enters rho_tgt only --
+    # otherwise the residual kinetic mismatch between the two states enters the
+    # source backwards.  (1D equivalent: physics_twostate_exact module docstring.)
+    rho_sigma.scatter_add_(0, lat.row_t, -t0 * G_off_d)
     del evecs, evals, f, G_off_d
     torch.cuda.empty_cache()
 
@@ -425,7 +431,7 @@ def compute_source(Phi_np, lat, t0, V0, n_core, beta0, cstar_sq):
             evecs_s[lat.row_t[s:e]] * evecs_s[lat.col_t[s:e]] * f_s[None, :], dim=1)
 
     rho_tgt = torch.zeros(N, dtype=torch.float64, device=dev)
-    rho_tgt.scatter_add_(0, lat.row_t, t0 * Nbar_dir_t * G_bond_s)
+    rho_tgt.scatter_add_(0, lat.row_t, -t0 * G_bond_s)   # signed, cf. rho_sigma
     del G_bond_s
 
     # On-site V₀ in core

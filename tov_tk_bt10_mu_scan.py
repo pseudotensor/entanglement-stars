@@ -315,7 +315,8 @@ for mu_val in sample_mus:
 
 # ── Save ────────────────────────────────────────────────────────────────
 print("\nSaving...", flush=True)
-np.savez("tov_tk_bt10_mu_scan.npz",
+_out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "tov_tk_bt10_mu_scan.npz")
+np.savez(_out,
     beta0=BETA, m0=m0, csq=csq, N=N,
     mu_values=np.array([d[0] for d in all_data]),
     n_eff_values=np.array([d[1] for d in all_data]),

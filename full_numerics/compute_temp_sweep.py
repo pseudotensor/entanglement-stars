@@ -133,12 +133,14 @@ def make_residual_fixedpoint(N, t0, V0, n_core, beta0, cstar_sq):
 
         _, Gs_sig = bond_correlations(diag0, off, beta0)
         rho_sig = jnp.zeros(N, dtype=jnp.float64)
-        rho_sig = rho_sig.at[:-1].set(2.0 * t0 * jnp.abs(Nbar) * Gs_sig * g[:-1])
+        # BARE bond observable: the lapse is the multiplier conjugate to the
+        # shell energy, so the paired operator carries t0, not t0*Nbar.
+        rho_sig = rho_sig.at[:-1].set(2.0 * t0 * Gs_sig * g[:-1])
 
         diag_tgt = diag0 + V0 * core_mask
         Gd_tgt, Gs_tgt = bond_correlations(diag_tgt, off, beta0)
         rho_tgt = jnp.zeros(N, dtype=jnp.float64)
-        rho_tgt = rho_tgt.at[:-1].set(2.0 * t0 * jnp.abs(Nbar) * Gs_tgt * g[:-1])
+        rho_tgt = rho_tgt.at[:-1].set(2.0 * t0 * Gs_tgt * g[:-1])
         rho_tgt = rho_tgt.at[:n_core].add(V0 * Gd_tgt[:n_core] * g[:n_core])
 
         pref = beta0 / cstar_sq

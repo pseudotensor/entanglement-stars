@@ -2,15 +2,17 @@
 
 Purpose
 -------
-The evaporation section of the paper uses the Landauer/Pendry 1D energy-current
-formula per channel and multiplies it by an effective transmission probability
-\tau across the near-horizon "cap" (a weak link created by lapse-smearing of the
-hopping).
+A single weak bond of hopping gamma t_0 WOULD trap, with transmission
+tau_F = 4 gamma^2/(1+gamma^2)^2 at half filling.  This script calibrates that
+one-bond formula inside the same microscopic free-fermion model, by measuring the
+steady energy current through a single weak bond, and returns the small-gamma
+coefficient (3.93 against the analytic 4).
 
-A key modelling step is the scaling \tau \propto N_{\mathrm{sh}}^2 for small
-stretched-horizon lapse N_{\mathrm{sh}}.  This script validates (and calibrates)
-that scaling *inside the same microscopic free-fermion model*, by measuring the
-steady energy current through a single weak bond.
+That one-bond model is a FOIL, not the cap.  The realised near-horizon region is
+~r_s/a graded bonds, whose Landauer-Buettiker transmission is <tau> = 0.999
+(greybody_cap_transmission.py): the cap is ballistic and carries no power of M,
+so the luminosity's mass dependence comes from the angular barrier
+(eq:ev-dirac-radial), not from any weak link.
 
 Model
 -----
@@ -202,7 +204,8 @@ def run_sweep(args: argparse.Namespace) -> CurrentResult:
 
 
 def save_outputs(res: CurrentResult, args: argparse.Namespace) -> None:
-    out_data = os.path.join("fermion", "numerical", "data", "weak_link_conductance.npz")
+    _root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    out_data = os.path.join(_root, "fermion", "numerical", "data", "weak_link_conductance.npz")
     os.makedirs(os.path.dirname(out_data), exist_ok=True)
     np.savez(
         out_data,
@@ -241,7 +244,7 @@ def save_outputs(res: CurrentResult, args: argparse.Namespace) -> None:
     ax.legend(frameon=False, fontsize=8)
     fig.tight_layout()
 
-    out_fig = os.path.join("fermion", "numerical", "figures", "weak_link_conductance.pdf")
+    out_fig = os.path.join(_root, "fermion", "numerical", "figures", "weak_link_conductance.pdf")
     os.makedirs(os.path.dirname(out_fig), exist_ok=True)
     fig.savefig(out_fig)
 

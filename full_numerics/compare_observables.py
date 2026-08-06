@@ -30,13 +30,19 @@ from .solver import extract_rs
 # ---------------------------------------------------------------------------
 
 class FixedObservableExactModel(TwoStateExactModel):
-    """
-    Exact two-state model where the observable is the ORIGINAL Hamiltonian
-    (hopping t0), not the smeared Hamiltonian (hopping t0*Nbar).
+    """MISMATCHED-PAIR foil: bare observable on sigma, smeared on tau.
 
-    Only rho_sigma changes:  drop the Nbar factor.
-    rho_bg and rho_tgt stay the same (they are properties of the actual
-    physical states, not the reconstruction).
+    This drops the Nbar factor from rho_sigma ONLY, leaving rho_tgt smeared, so
+    the two states are measured with DIFFERENT observables.  Their kinetic parts
+    then cannot cancel and the source keeps a spurious Phi-dependent piece, which
+    is why no solution exists -- that is a consequence of the mismatch, NOT of
+    using the bare observable.
+
+    It is therefore not a test of the bare-observable convention.  The lapse is
+    the ADM multiplier conjugate to the shell energy, so the correct choice is the
+    bare shell Hamiltonian on BOTH states; done consistently the cancellation
+    rho_sigma - rho_tgt = -(V0/2) g_n survives untouched and the closure converges
+    at every subcritical V0.  Kept only as the contrast.
     """
 
     def rho_sigma(self, Phi):

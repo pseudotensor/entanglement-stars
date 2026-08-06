@@ -18,14 +18,16 @@ Results:
   - Gravitational BW: β_ent(Schw)/β_ent(flat) = 1/N̄ to <2%  [PASS]
 """
 
+import os
 import numpy as np
 from scipy.linalg import eigh_tridiagonal
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # ── Load data ───────────────────────────────────────────────────────
-data_path = 'fermion/numerical/data/exact_solutions.npz'
+data_path = os.path.join(_ROOT, 'fermion', 'numerical', 'data', 'exact_solutions.npz')
 d = np.load(data_path)
 
 N_chain  = int(d['N'])           # 200
@@ -303,8 +305,8 @@ ax.legend(fontsize=8)
 ax.set_ylim(0, 3)
 
 plt.tight_layout()
-plt.savefig('fermion/numerical/figures/bw_test.pdf', dpi=150, bbox_inches='tight')
-plt.savefig('fermion/numerical/figures/bw_test.png', dpi=150, bbox_inches='tight')
+plt.savefig(os.path.join(_ROOT, 'fermion', 'numerical', 'figures', 'bw_test.pdf'), dpi=150, bbox_inches='tight')
+plt.savefig(os.path.join(_ROOT, 'fermion', 'numerical', 'figures', 'bw_test.png'), dpi=150, bbox_inches='tight')
 print(f"\nFigures saved to fermion/numerical/figures/bw_test.{{pdf,png}}")
 
 

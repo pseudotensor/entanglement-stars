@@ -8,7 +8,8 @@ Host-side Newton loop avoids JIT compilation issues with lax.while_loop.
 
 Continuation seeding: each mu uses the previous solution as initial guess.
 
-Outputs figures to fermion/numerical/figures/ for the paper.
+Outputs data to tov_tk_chemical_el.npz (figures are made by the companion _fig.py
+script, per the data/figure separation in CLAUDE.md).
 """
 import os, time
 import numpy as np
@@ -387,7 +388,8 @@ for mu in sorted(results.keys()):
 
 
 # Save data
-np.savez("tov_tk_chemical_el.npz",
+_out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "tov_tk_chemical_el.npz")
+np.savez(_out,
          beta0=beta0, m0=m0, csq=csq, N=N_val,
          mu_values=[mu for mu in sorted(results.keys())],
          **{f"mu{mu:.2f}_Phi": results[mu]["d"]["Phi"] for mu in results},
@@ -398,5 +400,5 @@ np.savez("tov_tk_chemical_el.npz",
          **{f"mu{mu:.2f}_n_eff": results[mu]["n_eff"] for mu in results},
          **{f"mu{mu:.2f}_r_s_w": results[mu]["r_s_w"] for mu in results},
 )
-print("Saved tov_tk_chemical_el.npz")
+print(f"Saved {_out}")
 print("\nDone.", flush=True)

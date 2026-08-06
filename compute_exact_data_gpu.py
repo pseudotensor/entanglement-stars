@@ -148,15 +148,19 @@ def compute_rho_bg_tgt(N, t0, V0, n_core, beta0):
 
     g = 4.0 * jnp.pi * jnp.arange(1, N + 1, dtype=jnp.float64)**2
 
+    # Signed <h_n>: the hopping channel is negative at half filling, the
+    # repulsive defect channel positive.  The closure pairs the multiplier with
+    # ONE signed shell Hamiltonian, so the bond channel may not be taken as a
+    # magnitude while the on-site channel is signed (see rho_sigma_fn).
     # Background
     Gd_bg, Gs_bg = bond_correlations(h0_diag, h0_off, beta0)
     rho_bg = jnp.zeros(N, dtype=jnp.float64)
-    rho_bg = rho_bg.at[:-1].set(2.0 * t0 * Gs_bg * g[:-1])
+    rho_bg = rho_bg.at[:-1].set(-2.0 * t0 * Gs_bg * g[:-1])
 
     # Target
     Gd_tgt, Gs_tgt = bond_correlations(hV_diag, h0_off, beta0)
     rho_tgt = jnp.zeros(N, dtype=jnp.float64)
-    rho_tgt = rho_tgt.at[:-1].set(2.0 * t0 * Gs_tgt * g[:-1])
+    rho_tgt = rho_tgt.at[:-1].set(-2.0 * t0 * Gs_tgt * g[:-1])
     rho_tgt = rho_tgt.at[:n_core].add(V0 * Gd_tgt[:n_core] * g[:n_core])
 
     return rho_bg, rho_tgt
@@ -196,24 +200,38 @@ def _make_physics_fns(N, t0, n_core, beta0, cstar_sq):
         return g[:-1] * t0**2 * Nbar**2 * cov_ratio
 
     def rho_sigma_fn(Phi):
-        """Energy profile of reconstructed state sigma[Phi]."""
+        """Energy profile of reconstructed state sigma[Phi] (shell-centred observable).
+
+        Signed <h_n> and BARE amplitude t0 (not t0*Nbar): the lapse is the ADM
+        multiplier conjugate to the shell energy, so the paired observable is
+        the bare shell Hamiltonian and one power of Nbar comes from the smeared
+        correlator alone.  The sign must match the on-site channel of
+        rho_tgt_smeared_fn, which enters the target only -- otherwise the
+        residual kinetic mismatch between sigma and tau enters the source
+        backwards.  It cancels at leading high-T order, so the effect is 3e-6 in
+        r_s at beta0*t0=0.1 but ~3e-3 by beta0*t0=3.
+        """
         lapse = 1.0 + Phi / cstar_sq
         Nbar = 0.5 * (lapse[:-1] + lapse[1:])
         off = -t0 * jnp.abs(Nbar)
         _, Gs = bond_correlations(diag0, off, beta0)
+        bond_eng = -2.0 * t0 * Gs * g[:-1]
         prof = jnp.zeros(N, dtype=jnp.float64)
-        prof = prof.at[:-1].set(2.0 * t0 * jnp.abs(Nbar) * Gs * g[:-1])
+        prof = prof.at[:-1].add(0.5 * bond_eng)
+        prof = prof.at[1:].add(0.5 * bond_eng)
         return prof
 
     def rho_tgt_smeared_fn(Phi, V0):
-        """Target energy profile with lapse-smeared hopping AND V0."""
+        """Target energy profile with lapse-smeared hopping AND V0 (shell-centred observable)."""
         lapse = 1.0 + Phi / cstar_sq
         Nbar = 0.5 * (lapse[:-1] + lapse[1:])
         off = -t0 * jnp.abs(Nbar)
         diag = diag0 + V0 * core_mask
         Gd, Gs = bond_correlations(diag, off, beta0)
+        bond_eng = -2.0 * t0 * Gs * g[:-1]
         prof = jnp.zeros(N, dtype=jnp.float64)
-        prof = prof.at[:-1].set(2.0 * t0 * jnp.abs(Nbar) * Gs * g[:-1])
+        prof = prof.at[:-1].add(0.5 * bond_eng)
+        prof = prof.at[1:].add(0.5 * bond_eng)
         prof = prof.at[:n_core].add(V0 * Gd[:n_core] * g[:n_core])
         return prof
 
@@ -244,7 +262,14 @@ def make_residual_proxy(N, t0, V0, n_core, beta0, cstar_sq):
 
 
 def make_residual_fixedpoint(N, t0, n_core, beta0, cstar_sq):
-    """Return a JIT'd fixedpoint residual: self-consistent source.
+    """Return a JIT'd residual with the self-consistent (Phi-dependent) source.
+
+    NAMING, to avoid a collision with the paper: "fixedpoint" here refers to the
+    SOURCE being evaluated self-consistently at Phi, NOT to frozen conductances.
+    This residual carries the FULL Euler-Lagrange left-hand side.  The paper uses
+    "fixed-point" for the different, frozen-conductance equation
+    div[r^2 (1+phi)^2 grad phi] = 0, whose solution is (1 - 3 r_s/2r)^(2/3); the
+    true EL solved here is div[r^2 (1+phi) grad phi] = 0, giving 1 - r_s/r.
 
     V0 is an explicit argument (not closure) so JAX compiles once for all V0.
 
@@ -321,13 +346,17 @@ def make_residual_tempsweep(N, t0, n_core, cstar_sq):
         off = -t0 * jnp.abs(Nbar)
 
         _, Gs_sig = bond_correlations(diag0, off, beta0)
+        bond_eng_sig = -2.0 * t0 * Gs_sig * g[:-1]   # signed <h_n>, cf. rho_sigma_fn
         rho_sig = jnp.zeros(N, dtype=jnp.float64)
-        rho_sig = rho_sig.at[:-1].set(2.0 * t0 * jnp.abs(Nbar) * Gs_sig * g[:-1])
+        rho_sig = rho_sig.at[:-1].add(0.5 * bond_eng_sig)
+        rho_sig = rho_sig.at[1:].add(0.5 * bond_eng_sig)
 
         diag_tgt = diag0 + V0 * core_mask
         Gd_tgt, Gs_tgt = bond_correlations(diag_tgt, off, beta0)
+        bond_eng_tgt = -2.0 * t0 * Gs_tgt * g[:-1]   # signed <h_n>, cf. rho_sigma_fn
         rho_tgt = jnp.zeros(N, dtype=jnp.float64)
-        rho_tgt = rho_tgt.at[:-1].set(2.0 * t0 * jnp.abs(Nbar) * Gs_tgt * g[:-1])
+        rho_tgt = rho_tgt.at[:-1].add(0.5 * bond_eng_tgt)
+        rho_tgt = rho_tgt.at[1:].add(0.5 * bond_eng_tgt)
         rho_tgt = rho_tgt.at[:n_core].add(V0 * Gd_tgt[:n_core] * g[:n_core])
 
         pref = beta0 / cstar_sq
@@ -566,7 +595,9 @@ def solve_proxy_V0_continuation(N, t0, V0_target, n_core, beta0, cstar_sq,
               f"min(N)={float(jnp.min(lapse)):.6f}, conv={bool(conv)}",
               flush=True)
 
-    # Return kms_bg as mi_bg for backward-compatible caller signatures
+    # kms_bg is the BKM bond-current covariance of the flat background; it is what
+    # conductances_fn divides by.  (It was previously carried under the name
+    # 'mi_bg', which described the legacy MI path, not this one.)
     return Phi, bool(conv), float(res), kms_bg, rho_bg, rho_tgt
 
 
@@ -662,6 +693,13 @@ def solve_floored(V0, fp_solver, N, cstar_sq, n_core, t0, beta0,
             F_trial = np.array(resid_jit(jnp.array(Phi_trial), V0_jax))
             F_trial[Phi_trial <= floor_val + 1e-13] = 0.0
             F_trial[-1] = Phi_trial[-1]
+            # NOTE: this accepts up to a 10% INCREASE, unlike the strict descent
+            # test in full_numerics/solver.py.  It is deliberate here: this routine
+            # is run at supercritical V0 as well, past the fold, where no solution
+            # exists and |F| cannot be driven down; a strict test would stall on
+            # the first step and report a floor-dependent endpoint.  The clamped
+            # rows are projected out of F and J above, so the accepted step is
+            # still a Newton step on the free variables.
             if np.max(np.abs(F_trial)) < res * 1.1:
                 break
             alpha *= 0.5
@@ -780,19 +818,19 @@ def matter_U_S(Phi, N, t0, V0, n_core, beta0, cstar_sq):
     return float(U_src), float(S_src), float(U_bg), float(S_bg)
 
 
-def mismatch_energy_np(Phi, N, t0, n_core, beta0, cstar_sq, mi_bg):
+def mismatch_energy_np(Phi, N, t0, n_core, beta0, cstar_sq, kms_bg):
     """E_mis = (1/2) sum kappa_n (DPhi_n)^2."""
     cond_fn, _, _ = _make_physics_fns(N, t0, n_core, beta0, cstar_sq)
-    kappa = np.array(jit(lambda p: cond_fn(p, mi_bg))(jnp.array(Phi)))
+    kappa = np.array(jit(lambda p: cond_fn(p, kms_bg))(jnp.array(Phi)))
     Phi_np = np.asarray(Phi)
     dphi = Phi_np[:-1] - Phi_np[1:]
     return 0.5 * np.sum(kappa * dphi**2)
 
 
-def conductances_np(Phi, N, t0, n_core, beta0, cstar_sq, mi_bg):
+def conductances_np(Phi, N, t0, n_core, beta0, cstar_sq, kms_bg):
     """Compute kappa as numpy array (for host-side use)."""
     cond_fn, _, _ = _make_physics_fns(N, t0, n_core, beta0, cstar_sq)
-    return np.array(jit(lambda p: cond_fn(p, mi_bg))(jnp.array(Phi)))
+    return np.array(jit(lambda p: cond_fn(p, kms_bg))(jnp.array(Phi)))
 
 
 def shell_g_sum(nc):
@@ -877,7 +915,7 @@ def main():
     for V0 in sorted(V0_core + V0_extended):
         print(f"\n--- V0 = {V0:.4f} ---")
         # Proxy with V0 continuation
-        Phi_p, conv_p, res_p, mi_bg, rho_bg, rho_tgt = solve_proxy_V0_continuation(
+        Phi_p, conv_p, res_p, kms_bg, rho_bg, rho_tgt = solve_proxy_V0_continuation(
             N, t0, V0, n_core, beta0, cstar_sq,
             n_steps=max(8, int(V0 * 200)), tol=1e-8, Phi_seed=Phi_seed)
 
@@ -894,24 +932,24 @@ def main():
         seeds.append(("proxy", np.array(Phi_p)))
 
         # Try each seed, keep best
-        Phi_ex, conv_ex, res_ex, mi_bg_ex = None, False, 1e10, mi_bg
+        Phi_ex, conv_ex, res_ex, kms_bg_ex = None, False, 1e10, kms_bg
         for label, seed in seeds:
-            Phi_try, conv_try, res_try, mi_try = solve_fixedpoint_from_proxy(
+            Phi_try, conv_try, res_try, kms_try = solve_fixedpoint_from_proxy(
                 seed, V0, fp_solver, cstar_sq)
             if conv_try:
-                Phi_ex, conv_ex, res_ex, mi_bg_ex = Phi_try, True, res_try, mi_try
+                Phi_ex, conv_ex, res_ex, kms_bg_ex = Phi_try, True, res_try, kms_try
                 print(f"    (converged from {label})", flush=True)
                 break
             elif res_try < res_ex:
-                Phi_ex, conv_ex, res_ex, mi_bg_ex = Phi_try, False, res_try, mi_try
-        mi_bg = mi_bg_ex
+                Phi_ex, conv_ex, res_ex, kms_bg_ex = Phi_try, False, res_try, kms_try
+        kms_bg = kms_bg_ex
 
         Phi_np = np.array(Phi_ex)
         lapse = 1.0 + Phi_np / cstar_sq
         Nbar = 0.5 * (lapse[:-1] + lapse[1:])
         rs = extract_rs_np(Phi_np, N, n_core, cstar_sq)
 
-        kappa = conductances_np(Phi_np, N, t0, n_core, beta0, cstar_sq, mi_bg)
+        kappa = conductances_np(Phi_np, N, t0, n_core, beta0, cstar_sq, kms_bg)
         g = 4.0 * np.pi * np.arange(1, N + 1, dtype=float)**2
         kappa_flat = g[:-1] * t0**2
 
@@ -946,7 +984,7 @@ def main():
     V0_fine = [0.0675, 0.068]  # near-critical, approaching fold at V0*≈0.0683
     for V0 in V0_fine:
         print(f"\n--- V0 = {V0:.4f} (near-critical) ---")
-        Phi_p, conv_p, res_p, mi_bg, rho_bg, rho_tgt = solve_proxy_V0_continuation(
+        Phi_p, conv_p, res_p, kms_bg, rho_bg, rho_tgt = solve_proxy_V0_continuation(
             N, t0, V0, n_core, beta0, cstar_sq,
             n_steps=max(12, int(V0 * 300)), tol=1e-8, Phi_seed=Phi_seed)
 
@@ -960,23 +998,23 @@ def main():
             seeds_a2.append(("exact prev", exact_history[-1][1]))
         seeds_a2.append(("proxy", np.array(Phi_p)))
 
-        Phi_ex, conv_ex, res_ex, mi_bg_ex = None, False, 1e10, mi_bg
+        Phi_ex, conv_ex, res_ex, kms_bg_ex = None, False, 1e10, kms_bg
         for label, seed in seeds_a2:
-            Phi_try, conv_try, res_try, mi_try = solve_fixedpoint_from_proxy(
+            Phi_try, conv_try, res_try, kms_try = solve_fixedpoint_from_proxy(
                 seed, V0, fp_solver, cstar_sq)
             if conv_try:
-                Phi_ex, conv_ex, res_ex, mi_bg_ex = Phi_try, True, res_try, mi_try
+                Phi_ex, conv_ex, res_ex, kms_bg_ex = Phi_try, True, res_try, kms_try
                 print(f"    (converged from {label})", flush=True)
                 break
             elif res_try < res_ex:
-                Phi_ex, conv_ex, res_ex, mi_bg_ex = Phi_try, False, res_try, mi_try
-        mi_bg = mi_bg_ex
+                Phi_ex, conv_ex, res_ex, kms_bg_ex = Phi_try, False, res_try, kms_try
+        kms_bg = kms_bg_ex
 
         Phi_np = np.array(Phi_ex)
         lapse = 1.0 + Phi_np / cstar_sq
         Nbar = 0.5 * (lapse[:-1] + lapse[1:])
         rs = extract_rs_np(Phi_np, N, n_core, cstar_sq)
-        kappa = conductances_np(Phi_np, N, t0, n_core, beta0, cstar_sq, mi_bg)
+        kappa = conductances_np(Phi_np, N, t0, n_core, beta0, cstar_sq, kms_bg)
         g = 4.0 * np.pi * np.arange(1, N + 1, dtype=float)**2
         solutions[V0] = {
             "Phi": Phi_np, "lapse": lapse, "Nbar": Nbar,
@@ -995,7 +1033,7 @@ def main():
     # Try V0=0.069 to confirm fold (expect convergence failure or neg lapse)
     print("\n--- V0 = 0.0690 (fold test) ---")
     try:
-        Phi_p69, _, _, mi69, _, _ = solve_proxy_V0_continuation(
+        Phi_p69, _, _, kms69, _, _ = solve_proxy_V0_continuation(
             N, t0, 0.069, n_core, beta0, cstar_sq,
             n_steps=30, tol=1e-8, Phi_seed=Phi_seed)
         seed69 = exact_history[-1][1] if exact_history else Phi_p69
@@ -1009,12 +1047,19 @@ def main():
         lapse69 = 1.0 + np.array(Phi_ex69) / cstar_sq
         print(f"  V0=0.069: min(N)={lapse69.min():.6f}, |F|={res69:.2e}, "
               f"conv={conv69}")
-        if lapse69.min() < 0 or not conv69:
-            print("  => FOLD CONFIRMED: past V0*≈0.0683")
+        if lapse69.min() < 0:
+            print("  => negative lapse: no positive-lapse solution here")
+        elif not conv69:
+            print("  => did not converge from either seed.  On its own this is")
+            print("     NOT proof that the branch has ended -- it is consistent")
+            print("     with a solver limit.  What establishes the fold is the")
+            print("     floor-independence study (PHASE B: endpoint and min(N)")
+            print("     unchanged across lapse floors) together with the Jacobian")
+            print("     eigenvalue passing through zero (fold_transversality.py).")
         else:
             print(f"  => Still positive lapse (min(N)={lapse69.min():.4f})")
     except Exception as e:
-        print(f"  => FOLD CONFIRMED (solver failed): {e}")
+        print(f"  => solver raised, again not on its own a fold: {e}")
 
     # ═══════════════════════════════════════════════════════════════
     # PHASE A3: Proxy + analytic for comparison
@@ -1183,7 +1228,9 @@ def main():
             minN_ex = lapse_ex.min()
             rs_ex = extract_rs_np(Phi_ex_np, N, n_core, cstar_sq)
 
-            # Detect fold: negative-lapse branch or non-convergence
+            # Detect fold on NEGATIVE LAPSE ONLY.  Non-convergence is not used
+            # here, and should not be: it is consistent with a solver limit
+            # rather than the end of the branch (see the PHASE A2 note).
             if minN_ex < 0:
                 print(f"  bt0={bt0:.2f}: FOLD — min(N)={minN_ex:.4f} (negative lapse)")
                 fold_reached = True
@@ -1197,6 +1244,10 @@ def main():
                 Phi_cont = Phi_ex_np.copy()
 
             R_outer = float(r_arr[-1])
+            # NB: this is a second, independent estimator of the same quantity as
+            # extract_rs_np -- MEAN over r in [60,150] here, MEDIAN over
+            # [n_core+3, N/2] there.  They agree to the spread reported by
+            # GM_std_exact; rs_exact (median) is the one the paper quotes.
             GM_est = -Phi_ex_np[mask_far] * r_arr[mask_far] * R_outer / (R_outer - r_arr[mask_far])
             GM_ex = float(np.mean(GM_est))
             GM_std_ex = float(np.std(GM_est) / GM_ex) if GM_ex > 0 else np.nan
@@ -1342,7 +1393,7 @@ def main():
                 n_steps = min(n_steps, 40)
 
                 # Step 1: proxy seed via V0 continuation
-                Phi_p, conv_p, _, mi_bg_tov, _, _ = solve_proxy_V0_continuation(
+                Phi_p, conv_p, _, kms_bg_tov, _, _ = solve_proxy_V0_continuation(
                     N, t0, V0_nc, nc, beta0_tov, cstar_sq,
                     n_steps=n_steps, tol=1e-8, verbose=False)
 
@@ -1358,7 +1409,7 @@ def main():
                 minN_val = float(lapse.min())
 
                 rs_val = extract_rs_np(Phi_np, N, nc, cstar_sq)
-                Em = mismatch_energy_np(Phi_np, N, t0, nc, beta0_tov, cstar_sq, mi_bg_tov)
+                Em = mismatch_energy_np(Phi_np, N, t0, nc, beta0_tov, cstar_sq, kms_bg_tov)
 
                 U_src, S_src, U_bg, S_bg = matter_U_S(
                     Phi_np, N, t0, V0_nc, nc, beta0_tov, cstar_sq)
@@ -1706,6 +1757,12 @@ def main():
         data[f"{prefix}_I_grav"] = res["I_grav"]
         data[f"{prefix}_I_mat"] = res["I_mat"]
         data[f"{prefix}_I_tot"] = res["I_tot"]
+        # The corrected-prefactor variants were computed and reported to stdout
+        # but not saved, so nothing downstream could reach them from the npz.
+        data[f"{prefix}_I_grav_new"] = res["I_grav_new"]
+        data[f"{prefix}_I_mat_surf"] = res["I_mat_surf"]
+        data[f"{prefix}_I_tot_new"] = res["I_tot_new"]
+        data[f"{prefix}_I_tot_surf"] = res["I_tot_surf"]
         data[f"{prefix}_converged"] = res["converged"]
 
     outpath = os.path.join(DATADIR, "exact_solutions.npz")

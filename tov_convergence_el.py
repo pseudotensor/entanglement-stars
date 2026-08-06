@@ -9,6 +9,7 @@ Uses scipy eigh_tridiagonal (CPU) and hybrid analytical/FD Jacobian
 for scalability to large N.
 """
 import time
+import os
 import numpy as np
 from scipy.linalg import eigh_tridiagonal, solve_banded
 
@@ -400,7 +401,8 @@ for r in rob:
           f" {r['rn']:10.2e}")
 
 # Save
-np.savez("tov_convergence_el.npz",
+_out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "tov_convergence_el.npz")
+np.savez(_out,
          conv_N=[r["N"] for r in conv],
          conv_minPhi=[r["min_Phi"] for r in conv],
          conv_rs=[r["r_s"] for r in conv],

@@ -296,5 +296,6 @@ for bt_label, fold_data in [("bt12", fold12), ("bt15", fold15)]:
         for k, v in fold_data.items():
             save_data[f"{bt_label}_{k}"] = v
 
-np.savez("tov_tk_beta_chain.npz", **save_data)
+_out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "tov_tk_beta_chain.npz")
+np.savez(_out, **save_data)
 print("\nSaved tov_tk_beta_chain.npz")

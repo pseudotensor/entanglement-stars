@@ -1,8 +1,12 @@
 """
-Observable comparison: smeared vs fixed — residual minimization proof.
+Observable comparison: smeared vs MISMATCHED PAIR — residual minimization.
 
-For the fixed-observable model, performs trust-region minimization of ||F||^2
-to show that the global minimum is large (no solution exists).
+The "fixed" model here is FixedObservableExactModel, which makes rho_sigma bare
+while leaving rho_tgt smeared.  Measuring the two states with different
+observables destroys the kinetic cancellation, so the large global minimum of
+||F||^2 found below shows that the MISMATCH has no solution.  It says nothing
+about the bare observable applied consistently to both states, which preserves
+rho_sigma - rho_tgt = -(V0/2) g_n and does converge.
 Also computes the linearized IFT check at V0=0.
 
 Run: python3 -m full_numerics.study_observable_jacobian

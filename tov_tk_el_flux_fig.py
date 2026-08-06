@@ -9,12 +9,17 @@ Generate Figure tov-flux from EL chemical potential scan data.
 
 Loads data from tov_tk_chemical_el.npz.
 """
+import os
 import numpy as np
 import matplotlib; matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
+# Resolve paths from this file, not the caller's cwd.
+_HERE = os.path.dirname(os.path.abspath(__file__))
+_FIGDIR = os.path.join(_HERE, "fermion", "numerical", "figures")
+
 # Load EL data
-d = np.load("tov_tk_chemical_el.npz", allow_pickle=True)
+d = np.load(os.path.join(_HERE, "tov_tk_chemical_el.npz"), allow_pickle=True)
 beta0 = float(d["beta0"])
 m0 = float(d["m0"])
 csq = float(d["csq"])
@@ -48,7 +53,11 @@ for mu in mu_show:
     w = lapse**2
 
     # w-flux: J_w = g · Δw  (flat Dirichlet flux for w)
-    dw = w[:-1] - w[1:]
+    # Delta w_b := w_{n+1} - w_n, matching eq:tov-Jw in the paper (w rises
+    # outward, so the conserved flux is positive).  The reverse difference used
+    # here previously plotted -J_w; the delta-J_w diagnostic below is a
+    # normalised spread and is unaffected either way.
+    dw = w[1:] - w[:-1]
     J_w = g[:-1] * t0**2 * dw
 
     # w-fit: w = 1 - r_s/r in exterior
@@ -108,9 +117,9 @@ axes[2].set_xlim(0, 100)
 plt.suptitle(rf'Exterior diagnostics (full EL, $\beta_0={beta0:.0f}$, $N_s={N}$)',
              fontsize=14)
 plt.tight_layout()
-plt.savefig("fermion/numerical/figures/tov_tk_final_flux.png", dpi=150)
+plt.savefig(os.path.join(_FIGDIR, "tov_tk_final_flux.png"), dpi=150)
 plt.close()
-print("Saved fermion/numerical/figures/tov_tk_final_flux.png")
+print("Saved " + os.path.join(_FIGDIR, "tov_tk_final_flux.png"))
 
 # Also print diagnostic table
 print(f"\nFlux constancy diagnostics:")

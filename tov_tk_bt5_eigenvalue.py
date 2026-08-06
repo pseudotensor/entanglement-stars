@@ -263,7 +263,8 @@ while mu_current < 2.5 * m0 and consecutive_fails < 15:
 
 # ── Save ────────────────────────────────────────────────────────────────
 print(f"\nSaving {len(all_data)} data points...", flush=True)
-np.savez("tov_tk_bt5_eigenvalue.npz",
+_out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "tov_tk_bt5_eigenvalue.npz")
+np.savez(_out,
     beta0=beta0, m0=m0, csq=csq, N=N,
     mu_values=np.array([d[0] for d in all_data]),
     n_eff_values=np.array([d[1] for d in all_data]),

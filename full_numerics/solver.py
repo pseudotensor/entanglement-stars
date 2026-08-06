@@ -1,5 +1,15 @@
 """
 Newton solver and continuation for the self-consistent closure equation.
+
+Of this module the paper's code reaches ONLY extract_rs (imported by
+solve_twostate_exact.py, solve_twostate.py and compare_observables.py).
+newton_solve, picard_solve and continuation_sweep drive the superseded
+single-state physics.ShellModel, which no cited script instantiates -- see the
+physics.py module docstring for why that model is degenerate.  Note also that
+continuation_sweep calls extract_rs with the default vacuum=False, i.e. the
+Yukawa-plateau estimator, which is not the boundary-corrected estimator the
+paper quotes; anything reading a vacuum/two-state solution must pass
+vacuum=True.
 """
 
 import numpy as np
@@ -44,12 +54,16 @@ def newton_solve(model, Phi0, proxy=False, tol=1e-12, max_iter=200,
                 print(f"  Tridiag solve failed at iter {it}: {e}")
             return Phi, False, it, history
 
-        # Line search: backtrack if residual increases
+        # Line search: backtrack until the residual actually decreases.
+        # (The previous test accepted up to a 10% INCREASE, contradicting this
+        # comment.  Verified inert: over V0 = 0.03-0.06 and seeds 0.05-0.2 the
+        # two criteria give identical iterate counts and final residuals, the
+        # full Newton step always reducing |F|.)
         alpha = damping
         for _ in range(20):
             Phi_trial = Phi + alpha * dPhi
             F_trial = model.residual(Phi_trial, proxy=proxy)
-            if np.max(np.abs(F_trial)) < res_norm * 1.1:
+            if np.max(np.abs(F_trial)) < res_norm:
                 break
             alpha *= 0.5
             if alpha < min_damping:

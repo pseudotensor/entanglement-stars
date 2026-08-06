@@ -50,12 +50,17 @@ def compute_proxy_Phi(NN, t0, V0, n_core, this_beta0, cstar_sq):
     return solve_banded((1, 1), ab, rhs)
 
 
-def compute_alpha_S(NN, t0, this_beta0, n_cut=None):
-    """Per-mode entanglement entropy alpha_S for the uniform flat chain.
+def compute_alpha_cut(NN, t0, this_beta0, n_cut=None):
+    """Bipartition (CUT) coefficient alpha_cut for the uniform flat chain.
 
-    alpha_S = I_1ch / 2, where I_1ch is the bipartition mutual information
-    of a single radial channel (1D tight-binding chain at half filling).
-    See Remark in 10e_thermodynamics.tex, eq. (sc-alphaS-MI).
+    alpha_cut = I_1ch / 2, where I_1ch is the bipartition mutual information
+    of a single radial channel (1D tight-binding chain at half filling):
+    eq. (sc-area-law-cut) in 10e_thermodynamics.tex.
+
+    This is NOT the area-law coefficient.  alpha_cut sums correlations at all
+    ranges along the channel and grows logarithmically as T -> 0, which would
+    give S ~ M^2 ln M; the first law selects the LOCAL per-bond coefficient
+    instead (eq. sc-alphaS-local), computed by compute_alpha_bond below.
     """
     if n_cut is None:
         n_cut = NN // 2
@@ -114,37 +119,6 @@ def compute_alpha_bond(NN, t0, this_beta0):
     I_bond = (binary_entropy(a) + binary_entropy(d)
               - binary_entropy(lam1) - binary_entropy(lam2))
     return float(I_bond) / 2.0
-
-
-def compute_alpha_S_source(NN, t0, this_beta0, Phi, V0, n_core, cstar_sq,
-                           n_cut=None):
-    """Per-mode alpha_S for the source Hamiltonian with self-consistent lapse."""
-    if n_cut is None:
-        n_cut = NN // 2
-
-    def binary_entropy(x, eps=1e-14):
-        x = np.clip(x, eps, 1.0 - eps)
-        return -x * np.log(x) - (1.0 - x) * np.log(1.0 - x)
-
-    lapse = 1.0 + Phi / cstar_sq
-    Nbar = 0.5 * (lapse[:-1] + lapse[1:])
-    diag = np.zeros(NN)
-    diag[:n_core] += V0
-    off = -t0 * np.abs(Nbar)
-    evals, evecs = eigh_tridiagonal(diag, off)
-    beta_e = np.clip(this_beta0 * evals, -500, 500)
-    f = 1.0 / (np.exp(beta_e) + 1.0)
-    G = (evecs * f[None, :]) @ evecs.T
-
-    G_A = G[:n_cut, :n_cut]
-    G_B = G[n_cut:, n_cut:]
-    nu_A = np.linalg.eigvalsh(G_A)
-    nu_B = np.linalg.eigvalsh(G_B)
-    S_A = np.sum(binary_entropy(nu_A))
-    S_B = np.sum(binary_entropy(nu_B))
-    S_AB = np.sum(binary_entropy(f))
-    I_1ch = S_A + S_B - S_AB
-    return I_1ch / 2.0
 
 
 # ── Style ─────────────────────────────────────────────────────────
@@ -1146,41 +1120,60 @@ if "temp_V0s" in D.files:
             prs_full = slope * bt0_full
             ax.plot(bt0_full, prs_full, "--", color=c_ex, lw=1, alpha=0.5,
                     label=f"Proxy $V_0={V0_temp}$")
+    # Physical r_s, corrected normalisation.
+    #
+    # The stored sweep was solved with the ratio-normalised edge weight
+    # kappa = g t0^2 Nbar^2 Q and source prefactor beta0/c_*^2, which makes the
+    # emergent Newton constant scale as G ∝ beta0.  The dimensionally correct
+    # weight is W = (beta0/c_*^2)^2 kappa^KMS (Dirichlet form in the exponential
+    # -family coordinate theta = beta0 N, commensurate with S_rel), and the exact
+    # current sum rule beta0 kappa^KMS = 2 t0^2 Re G_{n,n+1} then removes the
+    # explicit beta0 from G.  At weak field the source enters linearly, so the
+    # corrected solution at (beta0, V0) is the stored one with the source
+    # rescaled; r_s inherits the same constant factor:
+    #
+    #     r_s^phys = r_s^stored * [c_*^2/(2 Re G_nn1)] / [beta0/c_*^2]
+    #              = r_s^stored * c_*^4 / (2 beta0 Re G_nn1(beta0 t0)).
+    #
+    # No re-solve is needed for this rescaling; the full solver re-run under the
+    # corrected normalisation is separate future work.
+    def _ReG_nn1(bt):
+        """Re <c^dag_n c_{n+1}> for the uniform half-filled chain at beta*t0 = bt."""
+        k = np.linspace(-np.pi, np.pi, 200001)
+        eps = -2.0 * np.cos(k)                     # units of t0
+        f = 0.5 * (1.0 - np.tanh(bt * eps / 2.0))  # overflow-safe Fermi function
+        return np.trapezoid(np.cos(k) * f, k) / (2.0 * np.pi)
+
+    cs4 = cstar_sq ** 2
+    ReG_arr = np.array([_ReG_nn1(float(bt)) for bt in bt0_main])
+    for iv, V0_temp in enumerate(temp_V0s):
+        tag_t = f"temp_{V0_temp:.4f}"
+        bt0_t_key = f"{tag_t}_bt0"
+        bt0_t = D[bt0_t_key] if bt0_t_key in D.files else bt0_arr_all
+        rs_t = D[f"{tag_t}_rs"]
+        F_t = D[f"{tag_t}_F"]
+        minN_t = D[f"{tag_t}_minN"]
+        good = (F_t < 1e-6) & (minN_t > 0)
+        ReG_t = np.array([_ReG_nn1(float(bt)) for bt in bt0_t])
+        rs_phys = rs_t * cs4 / (2.0 * bt0_t * ReG_t)
+        ax.plot(bt0_t[good], rs_phys[good], "s-",
+                color="k" if iv == 0 else "r", ms=3, lw=1.4,
+                label=f"Corrected $G$, $V_0={V0_temp}$")
     ax.set_xlabel(r"$\beta_0 t_0$")
     ax.set_ylabel(r"$r_s / a$")
     ax.set_title("(a) Schwarzschild radius vs temperature")
-    ax.legend(fontsize=8)
+    ax.set_yscale("log")
+    ax.legend(fontsize=7)
 
     # (b) Per-mode entanglement entropy alpha_S vs bt0
     # alpha_S is insensitive to V0 (bulk chain property), so we show V0=0 only
     # and annotate where the V0=0.005 gravitating solution terminates (fold).
     ax = axes[0, 1]
     print("    Computing alpha_cut and alpha_S vs bt0 ...")
-    aS_arr = np.array([compute_alpha_S(N, t0, bt / t0) for bt in bt0_main])
+    aCut_arr = np.array([compute_alpha_cut(N, t0, bt / t0) for bt in bt0_main])
     aBond_arr = np.array([compute_alpha_bond(N, t0, bt / t0) for bt in bt0_main])
-    ax.plot(bt0_main, aS_arr, "o-", color="C0", ms=4, label=r"$\alpha_{\mathrm{cut}}$ (bipartition)")
+    ax.plot(bt0_main, aCut_arr, "o-", color="C0", ms=4, label=r"$\alpha_{\mathrm{cut}}$ (bipartition)")
     ax.plot(bt0_main, aBond_arr, "s-", color="C1", ms=3, label=r"$\alpha_S$ (bond)")
-    ax.axhline(0.25, ls=":", color="gray", lw=1, label=r"$\alpha_{\mathrm{cut}} = 1/4$")
-    # Mark where V0=0.005 solution folds
-    if len(temp_V0s) > 1:
-        V0_005 = temp_V0s[1]
-        tag_005 = f"temp_{V0_005:.4f}"
-        bt0_005_key = f"{tag_005}_bt0"
-        bt0_005 = D[bt0_005_key] if bt0_005_key in D.files else bt0_arr_all
-        F_005 = D[f"{tag_005}_F"]
-        minN_005 = D[f"{tag_005}_minN"]
-        good_005 = (F_005 < 1e-6) & (minN_005 > 0)
-        bt0_max_005 = bt0_005[good_005][-1]
-        # Interpolate alpha_S at that bt0
-        aS_at_fold = np.interp(bt0_max_005, bt0_main, aS_arr)
-        ax.plot(bt0_max_005, aS_at_fold, "v", color="C2", ms=8, zorder=5)
-        ax.annotate(
-            rf"$V_0\!=\!{V0_005}$ fold" + "\n"
-            + rf"$\alpha_{{\mathrm{{cut}}}}\!\approx\!{aS_at_fold:.2f}$",
-            xy=(bt0_max_005, aS_at_fold),
-            xytext=(bt0_max_005 - 0.55, aS_at_fold + 0.02),
-            fontsize=7.5, color="C2", ha="right",
-            arrowprops=dict(arrowstyle="->", color="C2", lw=0.8))
     ax.set_xlabel(r"$\beta_0 t_0$")
     ax.set_ylabel(r"$\alpha$ (nats per mode)")
     ax.set_title(r"(b) Entanglement coefficients $\alpha_{\mathrm{cut}}$, $\alpha_S$")

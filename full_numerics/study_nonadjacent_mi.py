@@ -27,12 +27,14 @@ Two cases studied:
   (C) Source Hamiltonian (with V0) — also broken symmetry, generic
 """
 
+import os
 import numpy as np
 from scipy.linalg import eigh_tridiagonal
 import matplotlib
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # ---------------------------------------------------------------------------
 # Core MI computation
@@ -421,7 +423,7 @@ def run_study():
     ax.set_ylim(bottom=1e-18)
 
     plt.tight_layout()
-    outpath = "fermion/numerical/figures/nonadjacent_mi.pdf"
+    outpath = os.path.join(_ROOT, 'fermion', 'numerical', 'figures', 'nonadjacent_mi.pdf')
     fig.savefig(outpath, dpi=150, bbox_inches="tight")
     print(f"\n  Figure saved to {outpath}")
     plt.close(fig)

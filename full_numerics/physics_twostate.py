@@ -12,13 +12,27 @@ The two-state (background-subtracted) formulation removes this degeneracy:
 
 Then at Phi=0, sigma[0] = rho_bg != rho_src, so RHS != 0, forcing nontrivial Phi.
 
-Two modes for computing rho_sigma and rho_tgt:
-  mode="analytic":  use the high-T analytic formulas (like the paper)
-  mode="exact":     use exact free-fermion Gaussian correlators
+This module implements the high-T ANALYTIC profiles only.  A mode="exact"
+path used to live here; it was unreachable (no caller ever passed it) and was
+broken in two independent ways -- _setup_exact built rho_tgt from the kinetic
+term alone, dropping the defect's on-site V0 energy that rho_tgt_smeared
+included, and _full_energy_profile_from_G weighted the bond by |Nbar| while the
+rho_sigma path did not, so the kinetic parts could not cancel and left a large
+spurious source.  It has been removed.  For exact free-fermion profiles use
+physics_twostate_exact.TwoStateExactModel, which is the solver the paper uses.
+
+Sign and lapse-power convention (matches physics_twostate_exact):
+  rho_n is the SIGNED shell energy <h_n>, so the hopping channel is negative and
+  the repulsive defect channel positive, and the observable conjugate to the
+  lapse multiplier is the BARE shell Hamiltonian -- one power of Nbar, not two.
+  Both conventions cancel from energy_mismatch() here (the two states share the
+  same analytic kinetic term identically), so the closure residual is unchanged
+  by them; they matter for global_constraint()/dG_dPhi(), which use rho_sigma
+  on its own.
 """
 
 import numpy as np
-from scipy.linalg import eigh_tridiagonal, solve_banded
+from scipy.linalg import solve_banded
 
 
 class TwoStateShellModel:
@@ -39,12 +53,11 @@ class TwoStateShellModel:
         self.r = a * n
         self.g = 4.0 * np.pi * n**2
 
-        if mode == "analytic":
-            self._setup_analytic()
-        elif mode == "exact":
-            self._setup_exact()
-        else:
-            raise ValueError(f"Unknown mode: {mode}")
+        if mode != "analytic":
+            raise ValueError(
+                f"Unknown mode: {mode}. Only 'analytic' is supported here; "
+                "use physics_twostate_exact.TwoStateExactModel for exact profiles.")
+        self._setup_analytic()
 
         # For compatibility with picard_solve proxy path
         # Original proxy: L*Phi = -(beta0/c*^2)*rho_tilde
@@ -60,15 +73,17 @@ class TwoStateShellModel:
           h_n = hopping_n + V0 * n_hat_n * 1_{core}
 
         Background state (V0=0):
-          <h_n>_bg = g_n * beta0 * t0^2 / 2   (kinetic only)
+          <h_n>_bg = -g_n * beta0 * t0^2 / 2   (kinetic only, negative)
 
         Defect state (with V0):
-          <h_n>_src = g_n * beta0 * t0^2 / 2 + V0 * g_n / 2 * 1_{core}
+          <h_n>_src = -g_n * beta0 * t0^2 / 2 + V0 * g_n / 2 * 1_{core}
           (the V0 term is the on-site potential energy at half-filling)
 
         Reconstruction sigma[Phi] (built from background H with lapse):
-          <h_n>_{sigma} = g_n * Nbar^2 * beta0 * t0^2 / 2
-          (kinetic only, since reconstruction uses H_bg without V0)
+          <h_n>_{sigma} = -g_n * Nbar * beta0 * t0^2 / 2
+          (kinetic only, since reconstruction uses H_bg without V0; ONE power of
+          Nbar, from the smeared correlator -- the paired observable is the bare
+          shell Hamiltonian, so weighting it again would count the lapse twice)
 
         This means:
           rho_tgt > rho_bg in core  (V0 adds positive energy)
@@ -76,8 +91,8 @@ class TwoStateShellModel:
           → RHS at Phi=0 is NEGATIVE → drives Phi NEGATIVE → gravity ✓
         """
         N = self.N
-        # Background energy: <h_n>_bg = g_n * beta0 * t0^2 / 2
-        self.rho_bg = self.g * self.beta0 * self.t0**2 / 2.0
+        # Background energy: <h_n>_bg = -g_n * beta0 * t0^2 / 2 (signed)
+        self.rho_bg = -self.g * self.beta0 * self.t0**2 / 2.0
 
         # Defect target: includes the on-site V0 contribution
         self.rho_tgt = self.rho_bg.copy()
@@ -85,42 +100,6 @@ class TwoStateShellModel:
 
         # Source contrast: rho_tgt - rho_bg = V0*g/2 * 1_core (POSITIVE)
         self.rho_contrast = self.rho_tgt - self.rho_bg
-
-    def _setup_exact(self):
-        """Exact free-fermion Gaussian correlators."""
-        N = self.N
-        # Background single-particle Hamiltonian (tridiagonal)
-        h0_diag = np.zeros(N)
-        h0_off = -self.t0 * np.ones(N - 1)
-
-        # Defect Hamiltonian
-        hV_diag = h0_diag.copy()
-        hV_diag[:self.n_core] += self.V0
-
-        # Compute correlation matrices
-        G_bg = self._fermi_corr(h0_diag, h0_off)
-        G_src = self._fermi_corr(hV_diag, h0_off)
-
-        # Bond kinetic energy profiles
-        self.rho_bg = self._kinetic_profile(G_bg)
-        self.rho_tgt = self._kinetic_profile(G_src)
-        self.rho_contrast = self.rho_tgt - self.rho_bg
-
-    def _fermi_corr(self, diag, off):
-        """Correlation matrix G = (exp(beta*h) + I)^{-1}."""
-        evals, evecs = eigh_tridiagonal(diag, off)
-        # Clamp to avoid overflow
-        beta_e = np.clip(self.beta0 * evals, -500, 500)
-        f = 1.0 / (np.exp(beta_e) + 1.0)
-        return (evecs * f[None, :]) @ evecs.T
-
-    def _kinetic_profile(self, G):
-        """Bond kinetic energy <h_n> from correlation matrix (positive convention)."""
-        N = G.shape[0]
-        prof = np.zeros(N)
-        hop = np.real(np.diag(G, 1))  # G_{n,n+1} > 0 at high T
-        prof[:-1] = 2.0 * self.t0 * hop * self.g[:-1]
-        return prof
 
     def lapse_nbar(self, Phi):
         """Compute lapse N_n = 1 + Phi_n/c*^2 and bond-averaged Nbar."""
@@ -145,56 +124,32 @@ class TwoStateShellModel:
         Compute <h_n>_{sigma[Phi]} - the energy profile of the
         reconstructed state.
 
-        In analytic mode: <h_n>_{sigma[Phi]} = g_n * Nbar^2 * beta0 * t0^2 / 2
-        In exact mode: compute from lapse-smeared Hamiltonian.
+        <h_n>_{sigma[Phi]} = -g_n * Nbar * beta0 * t0^2 / 2
+        (signed, and one power of Nbar -- see module docstring).
         """
         lapse, Nbar = self.lapse_nbar(Phi)
-        if self.mode == "analytic":
-            rho = np.zeros(self.N)
-            rho[:self.N-1] = self.g[:self.N-1] * Nbar**2 * self.beta0 * self.t0**2 / 2.0
-            return rho
-        elif self.mode == "exact":
-            # Lapse-smeared Hamiltonian: off-diag = -t0 * Nbar
-            diag = np.zeros(self.N)
-            off = -self.t0 * np.abs(Nbar)  # abs for safety
-            G = self._fermi_corr(diag, off)
-            return self._kinetic_profile(G)
+        rho = np.zeros(self.N)
+        rho[:self.N-1] = -self.g[:self.N-1] * Nbar * self.beta0 * self.t0**2 / 2.0
+        return rho
 
     def rho_tgt_smeared(self, Phi):
         """
         Target energy profile with lapse-smeared hopping AND V0.
 
-        At high T the kinetic part is g_n * Nbar^2 * beta0 * t0^2 / 2
-        (identical to rho_sigma), so the difference
+        The kinetic part is -g_n * Nbar * beta0 * t0^2 / 2, identical to
+        rho_sigma, so the difference
         rho_sigma(Phi) - rho_tgt_smeared(Phi) = -V0 * g_n / 2 * 1_core
-        is localized and Phi-independent at leading order.
+        is localized and Phi-independent at leading order.  That cancellation is
+        exact here, so the closure residual does not depend on the sign or the
+        lapse power of the shared kinetic term.
         """
         lapse, Nbar = self.lapse_nbar(Phi)
-        if self.mode == "analytic":
-            # Kinetic part: same formula as rho_sigma
-            rho = np.zeros(self.N)
-            rho[:self.N-1] = self.g[:self.N-1] * Nbar**2 * self.beta0 * self.t0**2 / 2.0
-            # On-site V0 contribution (half-filling: <n> = 1/2)
-            rho[:self.n_core] += self.V0 * self.g[:self.n_core] / 2.0
-            return rho
-        elif self.mode == "exact":
-            # Lapse-smeared Hamiltonian with V0 on core
-            lapse, Nbar = self.lapse_nbar(Phi)
-            diag = np.zeros(self.N)
-            diag[:self.n_core] += self.V0
-            off = -self.t0 * np.abs(Nbar)
-            G = self._fermi_corr(diag, off)
-            return self._full_energy_profile_from_G(G, Nbar)
-
-    def _full_energy_profile_from_G(self, G, Nbar):
-        """Full energy profile from correlation matrix (kinetic + on-site)."""
-        N = G.shape[0]
-        prof = np.zeros(N)
-        hop = np.real(np.diag(G, 1))
-        prof[:-1] = 2.0 * self.t0 * np.abs(Nbar) * hop * self.g[:-1]
-        diag_occ = np.real(np.diag(G))
-        prof[:self.n_core] += self.V0 * diag_occ[:self.n_core] * self.g[:self.n_core]
-        return prof
+        # Kinetic part: same formula as rho_sigma
+        rho = np.zeros(self.N)
+        rho[:self.N-1] = -self.g[:self.N-1] * Nbar * self.beta0 * self.t0**2 / 2.0
+        # On-site V0 contribution (half-filling: <n> = 1/2)
+        rho[:self.n_core] += self.V0 * self.g[:self.n_core] / 2.0
+        return rho
 
     def energy_mismatch(self, Phi):
         """
@@ -225,7 +180,7 @@ class TwoStateShellModel:
         return corr
 
     def residual_fixedpoint(self, Phi, proxy=False):
-        """Fixed-point residual (graph Laplacian only).
+        r"""Fixed-point residual (graph Laplacian only).
 
         This drops the Euler--Lagrange (EL) correction that arises from the
         $\Phi$-dependence of the conductances.  It is retained as a cheap
@@ -245,7 +200,7 @@ class TwoStateShellModel:
         return F
 
     def residual(self, Phi, proxy=False):
-        """Residual for the two-state closure.
+        r"""Residual for the two-state closure.
 
         Full (two-state EL equation):
           LHS = L_{\kappa[\Phi]}\,\Phi + EL[\Phi]
@@ -275,7 +230,7 @@ class TwoStateShellModel:
         return F
 
     def jacobian(self, Phi, proxy=False):
-        """Tridiagonal Jacobian $\partial F/\partial\Phi$.
+        r"""Tridiagonal Jacobian $\partial F/\partial\Phi$.
 
         For the full two-state EL equation we include both:
           (i) the graph-Laplacian variation, and
@@ -337,10 +292,7 @@ class TwoStateShellModel:
     def set_beta0(self, beta0_new):
         """Update beta0 and recompute all beta0-dependent profiles."""
         self.beta0 = beta0_new
-        if self.mode == "analytic":
-            self._setup_analytic()
-        elif self.mode == "exact":
-            self._setup_exact()
+        self._setup_analytic()
         self.rho_tilde = self.rho_contrast.copy()
         self.rho_0 = self.rho_bg.copy()
 
@@ -349,9 +301,15 @@ class TwoStateShellModel:
         Global energy-matching constraint:
           G = sum_{n=0}^{N-2} (rho_sigma(n) - rho_tgt_smeared(n))
 
-        Stationarity in beta0 demands G = 0 (total reconstructed energy
-        equals total target energy). With smeared target, this simplifies to
-        G = -V0/2 * sum_{core} g_n at leading order.
+        Stationarity in beta0 would demand G = 0, but with the smeared target
+        that is UNREACHABLE: the shared kinetic term cancels exactly and leaves
+          G = -V0/2 * sum_{core} g_n,
+        a nonzero constant independent of both Phi and beta0 (verified to 12
+        digits: G = -10.367255756846 at N=60, V0=0.03, n_core=5).  No choice of
+        (Phi, beta0) can zero it, so solve_full_constrained cannot satisfy its
+        G-constraint and its |G| < 1 convergence test never passes at these
+        parameters.  Nothing in the paper uses that routine; this method is a
+        diagnostic of the constant, not a residual to be driven to zero.
         """
         rho_s = self.rho_sigma(Phi)
         rho_t = self.rho_tgt_smeared(Phi)
@@ -386,22 +344,14 @@ class TwoStateShellModel:
 
         G = sum_n (rho_sigma_n - rho_tgt_n)
 
-        rho_tgt is Phi-independent. For analytic mode:
-          rho_sigma_n = g_n * Nbar_n^2 * beta0 * t0^2 / 2
-          Nbar_n = (N_n + N_{n+1})/2, where N_k = 1 + Phi_k/c*^2
-
-        dG/dPhi_k = sum_{n: k in {n, n+1}} g_n * beta0 * t0^2 * Nbar_n / c*^2
+        This is IDENTICALLY ZERO.  rho_tgt_smeared carries the same lapse-smeared
+        kinetic term as rho_sigma, so the Phi-dependence cancels exactly inside
+        global_constraint and only the Phi-independent on-site term survives (see
+        global_constraint).  A previous version differentiated the rho_sigma term
+        alone and returned ~8.6e3 at the parameters of the V0=0.03 run, where the
+        true derivative is 0.
         """
-        N = self.N
-        dG = np.zeros(N)
-        if self.mode == "analytic":
-            _, Nbar = self.lapse_nbar(Phi)
-            coeff = self.beta0 * self.t0**2 / (2.0 * self.cstar_sq)
-            for n in range(N - 1):
-                contrib = coeff * self.g[n] * Nbar[n]
-                dG[n] += contrib
-                dG[n + 1] += contrib
-        return dG
+        return np.zeros(self.N)
 
     def dG_dbeta0(self, Phi):
         """

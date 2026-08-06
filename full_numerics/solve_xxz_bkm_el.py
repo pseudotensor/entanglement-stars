@@ -205,7 +205,10 @@ class XXZBKM:
         J = self._J_eff(Phi, defect=defect)
         e_over_J = xxz_bond_energy_over_J_vec(self.beta0 * J, self.Delta)
         rho = np.zeros(self.N)
-        rho[:self.N - 1] += self.g[:self.N - 1] * J * e_over_J
+        # BARE bond observable: the lapse is the multiplier conjugate to the
+        # shell energy, so the paired operator carries J0, not J_eff = J0*Nbar.
+        # (The BKM current operator above is already bare for the same reason.)
+        rho[:self.N - 1] += self.g[:self.N - 1] * self.J0 * e_over_J
         return rho
 
     def bkm_conductances(self, Phi):

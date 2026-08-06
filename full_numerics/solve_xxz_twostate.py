@@ -116,11 +116,19 @@ class XXZTwoState:
         return xxz_bond_mi_vec(self.beta0 * J, self.Delta)
 
     def _compute_energy(self, Phi, defect=False):
-        """Shell energy ρ_n = g_n · J_eff · <h>/J."""
+        """Shell energy with the BARE bond observable: rho_n = g_n · J0 · <h>/J.
+
+        The state is the smeared one (its bond coupling is J_eff = J0 Nbar), but
+        the observable paired with the lapse is the BARE bond Hamiltonian, since
+        the lapse is the multiplier conjugate to the shell energy.  Weighting the
+        observable by Nbar as well would count the lapse twice -- the same second
+        densitisation corrected in the fermion sector.  <h>/J still depends on
+        Phi through beta0*J_eff, so rho carries one power of Nbar, not two.
+        """
         J = self._J_eff(Phi, defect=defect)
         e_over_J = xxz_bond_energy_over_J_vec(self.beta0 * J, self.Delta)
         rho = np.zeros(self.N)
-        rho[:self.N - 1] += self.g[:self.N - 1] * J * e_over_J
+        rho[:self.N - 1] += self.g[:self.N - 1] * self.J0 * e_over_J
         return rho
 
     def conductances(self, Phi):
