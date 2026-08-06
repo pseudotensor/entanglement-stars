@@ -26,14 +26,14 @@ All nine publication figures are in [`fermion/numerical/figures/`](fermion/numer
 | Fig | File | Description | Script | Data |
 |-----|------|-------------|--------|------|
 | 1 | [twostate_potential.pdf](fermion/numerical/figures/twostate_potential.pdf) | Gravitational potential profiles | [plot_exact_figures.py](full_numerics/plot_exact_figures.py) | [exact_solutions.npz](fermion/numerical/data/exact_solutions.npz) |
-| 2 | [cometric_conductance_pn.pdf](fermion/numerical/figures/cometric_conductance_pn.pdf) | Co-metric, conductance, PN residual | [plot_exact_figures.py](full_numerics/plot_exact_figures.py) | [exact_solutions.npz](fermion/numerical/data/exact_solutions.npz) |
+| 2 | [cometric_conductance_pn.pdf](fermion/numerical/figures/cometric_conductance_pn.pdf) | Emergent *intrinsic* metric (Dirichlet-form, not the spatial co-metric), conductance, PN residual | [plot_exact_figures.py](full_numerics/plot_exact_figures.py) | [exact_solutions.npz](fermion/numerical/data/exact_solutions.npz) |
 | 3 | [twostate_embedding.pdf](fermion/numerical/figures/twostate_embedding.pdf) | Embedding diagram | [plot_exact_figures.py](full_numerics/plot_exact_figures.py) | [exact_solutions.npz](fermion/numerical/data/exact_solutions.npz) |
 | 4 | [twostate_thermodynamics.pdf](fermion/numerical/figures/twostate_thermodynamics.pdf) | Surface gravity and Hawking temperature | [plot_exact_figures.py](full_numerics/plot_exact_figures.py) | [exact_solutions.npz](fermion/numerical/data/exact_solutions.npz) |
 | 5 | [tqi_profile.pdf](fermion/numerical/figures/tqi_profile.pdf) | QI temperature profile | [plot_exact_figures.py](full_numerics/plot_exact_figures.py) | [exact_solutions.npz](fermion/numerical/data/exact_solutions.npz) |
 | 6 | [twostate_temperature_sweep.pdf](fermion/numerical/figures/twostate_temperature_sweep.pdf) | Temperature continuation | [plot_exact_figures.py](full_numerics/plot_exact_figures.py) | [exact_solutions.npz](fermion/numerical/data/exact_solutions.npz) |
 | 7 | [tov_tk_chemical.png](fermion/numerical/figures/tov_tk_chemical.png) | TK star chemical-potential scan: profiles, core size, Schwarzschild radius vs &mu; | [tov_tk_chemical_el_fig.py](tov_tk_chemical_el_fig.py) | [tov_tk_chemical_el.npz](tov_tk_chemical_el.npz) |
 | 8 | [tov_tk_final_flux.png](fermion/numerical/figures/tov_tk_final_flux.png) | TK star exterior diagnostics: *w*-flux, lapse vs Schwarzschild, residual | [tov_tk_el_flux_fig.py](tov_tk_el_flux_fig.py) | [tov_tk_chemical_el.npz](tov_tk_chemical_el.npz) |
-| 9 | [evaporation_gaussian_dynamics.pdf](fermion/numerical/figures/evaporation_gaussian_dynamics.pdf) | Unitary Page curve | [evaporation_gaussian_dynamics.py](full_numerics/evaporation_gaussian_dynamics.py) | generated at runtime |
+| 9 | [evaporation_page_dynamics.pdf](fermion/numerical/figures/evaporation_page_dynamics.pdf) | Page curve, entropy-to-energy ratio, monogamy with an emission register | [evaporation_page_dynamics_fig.py](full_numerics/evaporation_page_dynamics_fig.py) | [greybody_entropy_ratio.npz](fermion/numerical/data/greybody_entropy_ratio.npz), [amps_register.npz](fermion/numerical/data/amps_register.npz) |
 
 ## Code organization by paper section
 
@@ -49,7 +49,7 @@ Shared modules used by all solvers and plotters.
 | [solver.py](full_numerics/solver.py) | Newton solver, rs extraction (vacuum BC) |
 | [solve_twostate.py](full_numerics/solve_twostate.py) | Analytic high-T two-state solver |
 | [solve_twostate_exact.py](full_numerics/solve_twostate_exact.py) | Newton solver with finite-difference Jacobian |
-| [compare_observables.py](full_numerics/compare_observables.py) | Smeared vs fixed observable comparison |
+| [compare_observables.py](full_numerics/compare_observables.py) | Matched vs mismatched observable pair (foil: an extra lapse factor on one state only) |
 | [\_\_init\_\_.py](full_numerics/__init__.py) | Package init |
 
 ### Sec. 11c: Full self-consistent solution ([`full_numerics/`](full_numerics/))
