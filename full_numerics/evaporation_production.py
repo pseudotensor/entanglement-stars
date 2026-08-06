@@ -168,40 +168,6 @@ def register_mi(G, P, m_list, S_tot):
     return out
 
 
-def _unused_mode_register(G, sig_ad, n_det, m_list, S_tot):
-    """Mutual information between the produced-mode register and the rest.
-
-    The produced content in the detector region is Delta = G_D - sigma_ad,D.
-    Its eigenvectors with the largest |eigenvalue| are the produced modes.
-    Embedding the top-m of them into the full chain gives an orthonormal
-    subspace P; for a number-conserving Gaussian state any such splitting of
-    the single-particle space factorises Fock space, so
-
-        I(P : P^perp) = S_P + S_{P^perp} - S_tot
-
-    is well defined and, unlike a spatial excess entropy, is not confounded
-    by the near-maximal thermal background at beta0*t0 = 0.1.
-    """
-    N = G.shape[0]
-    D = G[n_det:, n_det:] - sig_ad[n_det:, n_det:]
-    w, U = np.linalg.eigh(0.5 * (D + D.T))
-    order = np.argsort(-np.abs(w))
-    out = np.zeros(len(m_list))
-    for i, m in enumerate(m_list):
-        m = int(min(m, N - n_det))
-        P = np.zeros((N, m))
-        P[n_det:, :] = U[:, order[:m]]
-        # complement basis
-        Q, _ = np.linalg.qr(np.eye(N) - P @ P.T)
-        Q = Q[:, :N - m]
-        GP = P.T @ G @ P
-        GQ = Q.T @ G @ Q
-        S_P = float(np.sum(_h(np.linalg.eigvalsh(0.5 * (GP + GP.conj().T)))))
-        S_Q = float(np.sum(_h(np.linalg.eigvalsh(0.5 * (GQ + GQ.conj().T)))))
-        out[i] = S_P + S_Q - S_tot
-    return out
-
-
 def build_parser():
     p = argparse.ArgumentParser()
     p.add_argument("--ladder-from", dest="ladder_from", required=True)
@@ -291,9 +257,15 @@ def run_rate(Phi_arr, t_norm, T_evap, n_sub, detectors, t0, beta0, cstar_sq,
             Phi_m = (1.0 - frac) * Phi_arr[k - 1] + frac * Phi_arr[k]
             dm, om = smeared_h(Phi_m, t0, cstar_sq)
             ev, V = eigh_tridiagonal(dm, om)
-            ph = np.exp(1j * ev * ds)            # G_ij = <c_i^dag c_j>: +i[h,G]
+            # G_ij = <c_i^dag c_j> obeys dG/dt = +i[h,G], i.e. G -> U G U^dag
+            # with U = exp(+i h ds).  (The previous form applied U^dag G U,
+            # which propagates the conjugate; for real h and real initial G
+            # that is G^T and every quantity measured below -- occupations,
+            # diagonal, spectrum of the symmetric part -- is unchanged, so no
+            # stored result moves.  It would not survive a complex h.)
+            ph = np.exp(1j * ev * ds)
             U = (V * ph[None, :]) @ V.T
-            G = U.conj().T @ G @ U
+            G = U @ G @ U.conj().T
         dk, ok = smeared_h(Phi_arr[k], t0, cstar_sq)
         eps_k, V_k = eigh_tridiagonal(dk, ok)
         measure(k, G, eps_k, V_k)

@@ -116,9 +116,9 @@ def alpha_bond(G, i):
                        - binary_entropy(lam[0]) - binary_entropy(lam[1]))
 
 
-def one_point(n0, n_out_fac=30, n_in_fac=5):
+def one_point(n0, n_out_fac=30, n_in_fac=5, n_in_min=200):
     rs = rs_at_offset(n0)
-    N, r, n_in = cold_chain(rs, n0, n_out_fac, n_in_fac)
+    N, r, n_in = cold_chain(rs, n0, n_out_fac, n_in_fac, n_in_min)
     beta = 2.0 * np.pi * rs / t0          # Hartle-Hawking branch
     G = corr_matrix(N, beta)
     L = len(N)
@@ -127,7 +127,7 @@ def one_point(n0, n_out_fac=30, n_in_fac=5):
     exterior = list(range(n_in + 1, L))
     far = [j for j in range(n_in + 1, L) if r[j] > 2.0 * rs]
     return dict(
-        rs=rs, beta0t0=beta, L=L, n_in=n_in,
+        rs=rs, beta0t0=beta, L=L, n_in=int(n_in),
         I_int=mutual_info(G, cap, interior),
         I_ext=mutual_info(G, cap, exterior),
         I_far=mutual_info(G, cap, far),
@@ -168,21 +168,33 @@ def main():
 
     print("\n  sensitivity (n0 = 40):")
     base = one_point(40)
+    # NOTE: n_in = max(n_in_min, n_in_fac*rs), and at n0=40 the base already
+    # sits on the n_in_min=200 floor (5*39=195 < 200).  Reducing n_in_fac alone
+    # therefore changes NOTHING -- the old "interior depth x1/2" case was
+    # floored to the same 200 as the base and reported 0.00% by construction.
+    # Shortening the interior has to go through n_in_min.
+    sens = []
     for lab, kw in (("interior depth x2", dict(n_in_fac=10)),
-                    ("interior depth x1/2", dict(n_in_fac=2.5)),
+                    ("interior 20 shells", dict(n_in_fac=0, n_in_min=20)),
+                    ("interior 50 shells", dict(n_in_fac=0, n_in_min=50)),
                     ("exterior length x2", dict(n_out_fac=60))):
         p = one_point(40, **kw)
-        print(f"    {lab:22s}: I(int) {p['I_int']:.6f} "
-              f"({100*(p['I_int']/base['I_int']-1):+.2f}%)  "
-              f"I(ext) {p['I_ext']:.6f} "
-              f"({100*(p['I_ext']/base['I_ext']-1):+.2f}%)")
+        d_int = 100 * (p["I_int"] / base["I_int"] - 1)
+        d_ext = 100 * (p["I_ext"] / base["I_ext"] - 1)
+        sens.append([p["n_in"], p["I_int"], p["I_ext"], d_int, d_ext])
+        print(f"    {lab:22s}: n_in={p['n_in']:4d}  I(int) {p['I_int']:.6f} "
+              f"({d_int:+.2f}%)  I(ext) {p['I_ext']:.6f} ({d_ext:+.2f}%)")
+    sens = np.array(sens, dtype=float)
 
     here = os.path.dirname(os.path.abspath(__file__))
     path = os.path.normpath(os.path.join(here, "..", "fermion", "numerical", "data",
                                          "amps_cold_branch.npz"))
     np.savez(path, t_norm=a[:, 0], rs=a[:, 1], beta0t0=a[:, 2], N_cap=a[:, 3],
              alpha_S=a[:, 4], I_int=a[:, 5], I_ext=a[:, 6], I_far=a[:, 7],
-             S_cap=a[:, 8], L=a[:, 9], rs0=rs0)
+             S_cap=a[:, 8], L=a[:, 9], rs0=rs0,
+             sens_n_in=sens[:, 0], sens_I_int=sens[:, 1], sens_I_ext=sens[:, 2],
+             sens_pct_int=sens[:, 3], sens_pct_ext=sens[:, 4],
+             sens_base_I_int=base["I_int"], sens_base_I_ext=base["I_ext"])
     print(f"\nwrote {path}")
 
 

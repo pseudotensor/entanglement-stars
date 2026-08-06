@@ -92,17 +92,22 @@ def make_solver(N, beta0, m0, csq):
 
         # Chemical potential threshold: V = max(m0*(1-N) - mu, 0)
         V_raw = m0 * (1.0 - lapse) - mu
+        # Source convention (eq. sc-rho, sec:ex-observable, compute_exact_data_gpu.py):
+        # the bond term is NEGATIVE against a positive V_defect term, carries ONE
+        # power of the lapse (the bare shell observable -- the smeared correlator
+        # Gs already supplies it, and a second factor would count the lapse twice),
+        # and is split half onto each endpoint of the bond.
         V_defect = jnp.maximum(V_raw, 0.0)
 
         # Sigma state (background Hamiltonian, same off-diag)
         Gd_s, Gs_s = _bond_correlations(diag0, off)
         rho_s = jnp.zeros(N, dtype=jnp.float64)
-        rho_s = rho_s.at[:-1].add(2.0 * t0 * Nbar_abs * Gs_s * g[:-1])
+        rho_s = rho_s.at[:-1].add(-1.0 * t0 * Gs_s * g[:-1]).at[1:].add(-1.0 * t0 * Gs_s * g[:-1])
 
         # Target state (with defect potential)
         Gd_t, Gs_t = _bond_correlations(V_defect, off)
         rho_t = jnp.zeros(N, dtype=jnp.float64)
-        rho_t = rho_t.at[:-1].add(2.0 * t0 * Nbar_abs * Gs_t * g[:-1])
+        rho_t = rho_t.at[:-1].add(-1.0 * t0 * Gs_t * g[:-1]).at[1:].add(-1.0 * t0 * Gs_t * g[:-1])
         rho_t = rho_t + V_defect * Gd_t * g
 
         pref = beta0 / csq
@@ -144,8 +149,17 @@ def make_solver(N, beta0, m0, csq):
 
         n_np = np.array(n_arr)
         g_np = np.array(g)
-        rho_s = np.zeros(N); rho_s[:-1] = 2.0*t0*Nbar_abs*Gs_s*g_np[:-1]
-        rho_t = np.zeros(N); rho_t[:-1] = 2.0*t0*Nbar_abs*Gs_t*g_np[:-1]
+        # Same convention as _residual above -- this array is SAVED as
+        # mu*_source, so if it disagreed with the residual the stored source
+        # would not be the one that produced the stored solution.
+        bond_s = -2.0 * t0 * Gs_s * g_np[:-1]
+        rho_s = np.zeros(N)
+        rho_s[:-1] += 0.5 * bond_s
+        rho_s[1:] += 0.5 * bond_s
+        bond_t = -2.0 * t0 * Gs_t * g_np[:-1]
+        rho_t = np.zeros(N)
+        rho_t[:-1] += 0.5 * bond_t
+        rho_t[1:] += 0.5 * bond_t
         rho_t += V_defect * Gd_t * g_np
         source = (beta0 / csq) * (rho_s - rho_t)
 

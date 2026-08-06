@@ -230,8 +230,10 @@ for d_off, val in enumerate(max_offdiag):
     label = "diagonal" if d_off == 0 else f"d={d_off}"
     print(f"    {label:10s}: max|k_A(i,i+{d_off})| = {val:.4e}")
 
-tridiag_frac = sum(max_offdiag[i]**2 for i in [0,1]) / sum(v**2 for v in max_offdiag)
-print(f"  Tridiagonal fraction (Frobenius): {tridiag_frac:.8f}")
+# This is built from the max |k_A(i,i+d)| per diagonal, not from Frobenius norms
+# of the diagonals, so call it what it is.
+tridiag_frac = sum(max_offdiag[i]**2 for i in [0, 1]) / sum(v**2 for v in max_offdiag)
+print(f"  Tridiagonal fraction (from per-diagonal maxima): {tridiag_frac:.8f}")
 
 
 # ══════════════════════════════════════════════════════════════════════
@@ -337,6 +339,30 @@ print()
 print("4. Entanglement Hamiltonian has exponentially decaying off-diagonal entries;")
 print(f"   tridiagonal fraction >99.99% even at T=0 (next-nearest: {max_offdiag[2]:.1e}).")
 print()
+# sec:ex-thermodynamics quotes the ground-state deviation and the two
+# gravitational-BW deviations from this run, so they must be in a data file and
+# not only on stdout.
+_dev_by_V0 = {}
+for _V0 in V0_list:
+    if _V0 in results_sc:
+        _r = results_sc[_V0]
+        _dev_by_V0[_V0] = float(np.max(np.abs(_r['ratios'][:8] - _r['inv_N'][:8])
+                                       / _r['inv_N'][:8]) * 100)
+_V0s = np.array(sorted(_dev_by_V0), dtype=float)
+np.savez(
+    os.path.join(_ROOT, 'fermion', 'numerical', 'data', 'bw_property.npz'),
+    gs_beta_ent_first=fb_gs,
+    gs_deviation_pct=abs(fb_gs - np.pi) / np.pi * 100,
+    gs_beta_ent=beta_ent_gs[:20],
+    thermal_beta0t0=np.array(beta_tests, dtype=float),
+    thermal_first_bond=np.array(fb_thermal, dtype=float),
+    sc_V0=_V0s,
+    sc_rs=np.array([results_sc[v]['rs'] for v in _V0s], dtype=float),
+    sc_max_dev_pct=np.array([_dev_by_V0[v] for v in _V0s], dtype=float),
+    sc_beta_test=beta_test_sc, sc_n_cut=nc,
+    tridiag_frac=tridiag_frac,
+)
+print(f"\nwrote fermion/numerical/data/bw_property.npz")
 print("CONCLUSION: The lattice BW property holds with the correct 2π normalization.")
 print("The gravitational lapse modifies β_ent as β_ent → β_ent/N̄, confirming")
 print("assumption (iv) numerically in the self-consistent model.")

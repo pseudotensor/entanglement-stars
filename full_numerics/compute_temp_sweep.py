@@ -94,7 +94,7 @@ def laplacian_action(kappa, Phi):
 # Residual + Newton solver
 # ═══════════════════════════════════════════════════════════════════
 
-def make_residual_fixedpoint(N, t0, V0, n_core, beta0, cstar_sq):
+def make_residual_fixedpoint(N, t0, V0, n_core, beta0, cstar_sq, lam=None):
     """JIT'd residual with full EL correction via jax.grad.
 
     The LHS is grad of the conductance energy E = (1/2) sum kappa_b (dPhi_b)^2,
@@ -131,19 +131,36 @@ def make_residual_fixedpoint(N, t0, V0, n_core, beta0, cstar_sq):
         Nbar = 0.5 * (lapse[:-1] + lapse[1:])
         off = -t0 * jnp.abs(Nbar)
 
-        _, Gs_sig = bond_correlations(diag0, off, beta0)
-        rho_sig = jnp.zeros(N, dtype=jnp.float64)
         # BARE bond observable: the lapse is the multiplier conjugate to the
         # shell energy, so the paired operator carries t0, not t0*Nbar.
-        rho_sig = rho_sig.at[:-1].set(2.0 * t0 * Gs_sig * g[:-1])
+        # Signed, and split half onto each endpoint of the bond, matching
+        # <h_n> of eq. sc-rho and compute_exact_data_gpu.py.  The bond term is
+        # NEGATIVE while the V0 defect term below is positive; that relative
+        # sign is the physical content and must not be flipped.
+        _, Gs_sig = bond_correlations(diag0, off, beta0)
+        bond_eng_sig = -2.0 * t0 * Gs_sig * g[:-1]
+        rho_sig = jnp.zeros(N, dtype=jnp.float64)
+        rho_sig = rho_sig.at[:-1].add(0.5 * bond_eng_sig)
+        rho_sig = rho_sig.at[1:].add(0.5 * bond_eng_sig)
 
         diag_tgt = diag0 + V0 * core_mask
         Gd_tgt, Gs_tgt = bond_correlations(diag_tgt, off, beta0)
+        bond_eng_tgt = -2.0 * t0 * Gs_tgt * g[:-1]
         rho_tgt = jnp.zeros(N, dtype=jnp.float64)
-        rho_tgt = rho_tgt.at[:-1].set(2.0 * t0 * Gs_tgt * g[:-1])
+        rho_tgt = rho_tgt.at[:-1].add(0.5 * bond_eng_tgt)
+        rho_tgt = rho_tgt.at[1:].add(0.5 * bond_eng_tgt)
         rho_tgt = rho_tgt.at[:n_core].add(V0 * Gd_tgt[:n_core] * g[:n_core])
 
-        pref = beta0 / cstar_sq
+        if lam is None:
+            pref = beta0 / cstar_sq
+        else:
+            # Paper's closure prefactor P = c_*^2 t0^2/(lam eps_b), with
+            # eps_b = 2 t0 Re[i tr(alpha^r G_{n,n+1})] on the flat reference
+            # chain (bulk value).  See sec:ex-method.
+            _, Gs_flat = bond_correlations(
+                diag0, -t0 * jnp.ones(N - 1, dtype=jnp.float64), beta0)
+            eps_b = 2.0 * t0 * Gs_flat[(N - 1) // 2]
+            pref = cstar_sq * t0**2 / (lam * eps_b)
         F = lhs - pref * (rho_sig - rho_tgt)
         F = F.at[N - 1].set(Phi[N - 1])
         return F
@@ -286,6 +303,10 @@ def main():
 
         results = []
         n_consecutive_fail = 0
+        # Corrected-normalisation branch carries its own continuation seed.
+        # lam = alpha_S = 0.217 D at D = 4 (eq. sc-alphaS-required).
+        LAM_ALPHA_S = 0.217 * 4.0
+        Phi_cont_corr = Phi_cont.copy()
 
         for i_bt, bt0 in enumerate(bt0_values):
             this_beta0 = bt0 / t0
@@ -340,16 +361,35 @@ def main():
             except Exception:
                 rs_proxy = 0.0
 
+            # Corrected-normalisation branch: the same closure re-solved with
+            # the paper's prefactor P.  Re-solved, never rescaled: the source
+            # is nonlinear in V0.
+            resid_c, _ = make_residual_fixedpoint(
+                N, t0, V0, n_core, this_beta0, cstar_sq, lam=LAM_ALPHA_S)
+            solver_c = make_newton_solver(resid_c, N, max_iter=100, tol=1e-8)
+            Phi_cj, conv_cj, _, res_cj = solver_c(jnp.array(Phi_cont_corr))
+            Phi_c = np.array(jax.block_until_ready(Phi_cj))
+            F_corr = float(res_cj)
+            minN_corr = float((1.0 + Phi_c / cstar_sq).min())
+            if minN_corr > 0:
+                rs_corr = extract_rs_np(Phi_c, N, n_core, cstar_sq)
+                if F_corr < 1e-6:
+                    Phi_cont_corr = Phi_c.copy()
+            else:
+                rs_corr = np.nan
+
             dt = time.time() - t_start
             status = "OK" if F_res < 1e-6 else "FAIL"
             print(f"  bt0={bt0:5.2f}: rs={rs:7.4f}  min(N)={minN:7.4f}  "
                   f"|F|={F_res:.2e}  nit={int(nit_j):3d}  "
-                  f"proxy_rs={rs_proxy:.4f}  {status}  [{dt:.1f}s]")
+                  f"proxy_rs={rs_proxy:.4f}  rs_corr={rs_corr:.4f}  "
+                  f"{status}  [{dt:.1f}s]")
 
             results.append({
                 "bt0": bt0, "rs": rs, "conv": F_res < 1e-6,
                 "F": F_res, "minN": minN, "Phi": Phi_ex.copy(),
                 "rs_proxy": rs_proxy,
+                "rs_corr": rs_corr, "F_corr": F_corr, "minN_corr": minN_corr,
             })
 
         temp_sweep[V0] = results
@@ -361,6 +401,21 @@ def main():
     data["temp_V0s"] = np.array(V0_temp_list)
     data["temp_bt0"] = bt0_values
 
+    # Drop any stale keys under the tags this run rewrites.  compute_exact_data_gpu.py
+    # writes 13 arrays per tag and stops at the fold; this script writes 10 and does
+    # not.  Merging without clearing left the extra three (GM, GM_std, stagger) at the
+    # GPU run's shorter length beside 45-long bt0/rs/minN under the SAME tag, so the
+    # arrays no longer corresponded index for index.  Nothing published reads them,
+    # but a file whose same-tag arrays disagree in length is a trap.
+    _written = {"rs", "conv", "F", "minN", "Phi", "proxy_rs", "bt0",
+                "rs_corr", "F_corr", "minN_corr"}
+    for V0 in V0_temp_list:
+        pre = f"temp_{V0:.4f}_"
+        for k in [k for k in list(data) if k.startswith(pre)]:
+            if k[len(pre):] not in _written:
+                del data[k]
+                print(f"  dropped stale merged key {k}")
+
     for V0 in V0_temp_list:
         tag = f"temp_{V0:.4f}"
         sw = temp_sweep[V0]
@@ -370,6 +425,12 @@ def main():
         data[f"{tag}_minN"] = np.array([e["minN"] for e in sw])
         data[f"{tag}_Phi"] = np.array([e["Phi"] for e in sw])
         data[f"{tag}_proxy_rs"] = np.array([e["rs_proxy"] for e in sw])
+        # bt0 grid actually used, so the plotting script pairs r_s with the
+        # right abscissa instead of falling back to the full grid.
+        data[f"{tag}_bt0"] = np.array([e["bt0"] for e in sw])
+        data[f"{tag}_rs_corr"] = np.array([e["rs_corr"] for e in sw])
+        data[f"{tag}_F_corr"] = np.array([e["F_corr"] for e in sw])
+        data[f"{tag}_minN_corr"] = np.array([e["minN_corr"] for e in sw])
 
     np.savez_compressed(npzpath, **data)
     print(f"Saved: {npzpath}")

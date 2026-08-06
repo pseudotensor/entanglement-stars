@@ -318,6 +318,28 @@ def run_study():
     print(f"    truncation error = {trunc_gen:.1e}.")
     print(f"\n    The single-chain ansatz is quantitatively justified.")
 
+    # sec:ex-truncation quotes MI(3)/MI(1), the total beyond-nearest-neighbour
+    # fraction, xi_MI and the staggered worst case from this run, so they belong
+    # in a data file rather than only on stdout.
+    _d = np.arange(1, d_max + 1)
+    np.savez(
+        os.path.join(_ROOT, "fermion", "numerical", "data",
+                     "nonadjacent_mi.npz"),
+        d=_d,
+        avg_mi_bg=np.array([res_bg["avg_mi"][k] for k in _d]),
+        avg_mi_src=np.array([res_src["avg_mi"][k] for k in _d]),
+        avg_mi_smeared=np.array([res_sm["avg_mi"][k] for k in _d]),
+        avg_mi_staggered=np.array([res_gen["avg_mi"][k] for k in _d]),
+        ratio3_smeared=res_sm["avg_mi"][3] / res_sm["avg_mi"][1],
+        ratio3_staggered=res_gen["avg_mi"][3] / res_gen["avg_mi"][1],
+        ratio2_staggered=res_gen["avg_mi"][2] / res_gen["avg_mi"][1],
+        trunc_smeared=trunc_sm, trunc_staggered=trunc_gen,
+        xi_MI_bg=res_bg["xi_MI"], xi_MI_smeared=res_sm["xi_MI"],
+        xi_MI_staggered=res_gen["xi_MI"],
+        xi_thermal=xi_corr, beta0=beta0, V0=V0, epsilon=epsilon, N=N,
+    )
+    print("    wrote fermion/numerical/data/nonadjacent_mi.npz")
+
     # ===================================================================
     # Figure
     # ===================================================================

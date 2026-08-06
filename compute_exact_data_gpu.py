@@ -306,11 +306,20 @@ def make_residual_fixedpoint(N, t0, n_core, beta0, cstar_sq):
     return residual, kms_bg
 
 
-def make_residual_tempsweep(N, t0, n_core, cstar_sq):
+def make_residual_tempsweep(N, t0, n_core, cstar_sq, lam=None):
     """Fully parametric residual(Phi, V0, beta0) for temperature sweep.
 
     Full EL correction via jax.grad of the conductance energy functional.
     V0 and beta0 are traced args so JAX compiles once for all combinations.
+
+    lam=None  -- solver's lattice-unit convention: source prefactor beta0/c_*^2.
+    lam=value -- the paper's prefactor P = c_*^2 t0^2 / (lam eps_b) of the
+                 closure equation, with lam the mismatch-functional
+                 normalisation (= alpha_S) and eps_b the bond energy scale.
+                 The two differ by lam beta0 eps_b / (c_*^4 t0^2), which is
+                 constant at fixed beta0 t0 but NOT across a temperature sweep,
+                 and the source is nonlinear in V0, so the corrected branch has
+                 to be solved rather than rescaled.
     """
     n_arr = jnp.arange(1, N + 1, dtype=jnp.float64)
     g = 4.0 * jnp.pi * n_arr**2
@@ -359,7 +368,16 @@ def make_residual_tempsweep(N, t0, n_core, cstar_sq):
         rho_tgt = rho_tgt.at[1:].add(0.5 * bond_eng_tgt)
         rho_tgt = rho_tgt.at[:n_core].add(V0 * Gd_tgt[:n_core] * g[:n_core])
 
-        pref = beta0 / cstar_sq
+        if lam is None:
+            pref = beta0 / cstar_sq
+        else:
+            # eps_b from the SAME correlator the solve uses, on the flat
+            # reference chain: eps_b = 2 t0 Re[i tr(alpha^r G_{n,n+1})] per
+            # channel (eq. sc-eps-b).  Bulk value, away from the open ends.
+            _, Gs_flat = bond_correlations(
+                diag0, -t0 * jnp.ones(N - 1, dtype=jnp.float64), beta0)
+            eps_b = 2.0 * t0 * Gs_flat[(N - 1) // 2]
+            pref = cstar_sq * t0**2 / (lam * eps_b)
         F = lhs - pref * (rho_sig - rho_tgt)
         F = F.at[N - 1].set(Phi[N - 1])
         return F
@@ -1180,6 +1198,14 @@ def main():
     t_ts = time.time()
     ts_resid = make_residual_tempsweep(N, t0, n_core, cstar_sq)
     ts_solver = make_newton_solver_3arg(ts_resid, N, max_iter=50, tol=1e-8)
+
+    # Corrected-normalisation branch: same closure, the paper's prefactor P.
+    # lam = alpha_S = 0.217 D at D = 4 (eq. sc-alphaS-required, sec:tov-entropy).
+    LAM_ALPHA_S = 0.217 * 4.0
+    ts_resid_corr = make_residual_tempsweep(N, t0, n_core, cstar_sq,
+                                            lam=LAM_ALPHA_S)
+    ts_solver_corr = make_newton_solver_3arg(ts_resid_corr, N, max_iter=50,
+                                             tol=1e-8)
     # Warmup
     _Phi0 = jnp.zeros(N, dtype=jnp.float64)
     _F0 = jax.block_until_ready(jit(ts_resid)(_Phi0, jnp.float64(0.001), jnp.float64(0.1)))
@@ -1210,6 +1236,7 @@ def main():
                 Phi_p, V0_temp, fp_solver, cstar_sq, verbose=False)
             Phi_cont = np.array(Phi_ex)
 
+        Phi_cont_corr = Phi_cont.copy()
         fold_reached = False
         for bt0 in bt0_values:
             if fold_reached:
@@ -1235,6 +1262,20 @@ def main():
                 print(f"  bt0={bt0:.2f}: FOLD — min(N)={minN_ex:.4f} (negative lapse)")
                 fold_reached = True
                 continue
+
+            # Corrected-normalisation branch, solved (not rescaled): same
+            # closure with the paper's prefactor P = c_*^2 t0^2/(lam eps_b).
+            Phi_c_j, conv_c_j, _, res_c_j = ts_solver_corr(
+                jnp.array(Phi_cont_corr), V0_temp, this_beta0)
+            Phi_c_np = np.array(jax.block_until_ready(Phi_c_j))
+            F_corr = float(res_c_j)
+            minN_corr = float((1.0 + Phi_c_np / cstar_sq).min())
+            if minN_corr > 0:
+                rs_corr = extract_rs_np(Phi_c_np, N, n_core, cstar_sq)
+                if bool(conv_c_j) or F_corr < 1e-6:
+                    Phi_cont_corr = Phi_c_np.copy()
+            else:
+                rs_corr = np.nan
 
             dPhi_core = np.max(np.abs(np.diff(Phi_ex_np[:50])))
             Phi_scale = max(np.max(np.abs(Phi_ex_np)), 1e-15)
@@ -1263,12 +1304,13 @@ def main():
                 "stagger": stagger, "Phi_exact": Phi_ex_np,
                 "GM_exact": GM_ex, "GM_std_exact": GM_std_ex,
                 "rs_proxy": rs_proxy_T,
+                "rs_corr": rs_corr, "F_corr": F_corr, "minN_corr": minN_corr,
             }
             temp_sweep[V0_temp].append(entry)
 
             print(f"  bt0={bt0:.2f}: rs={rs_ex:.4f} "
                   f"|F|={Fex:.2e} min(N)={minN_ex:.4f} "
-                  f"proxy_rs={rs_proxy_T:.4f} "
+                  f"proxy_rs={rs_proxy_T:.4f} rs_corr={rs_corr:.4f} "
                   f"{'OK' if conv_ex else 'NEAR' if Fex < 1e-6 else 'FAIL'}")
 
     dt_b2 = time.time() - t_b2
@@ -1732,6 +1774,9 @@ def main():
         data[f"{tag}_stagger"] = np.array([e["stagger"] for e in sw])
         data[f"{tag}_Phi"] = np.array([e["Phi_exact"] for e in sw])
         data[f"{tag}_GM"] = np.array([e["GM_exact"] for e in sw])
+        data[f"{tag}_rs_corr"] = np.array([e["rs_corr"] for e in sw])
+        data[f"{tag}_F_corr"] = np.array([e["F_corr"] for e in sw])
+        data[f"{tag}_minN_corr"] = np.array([e["minN_corr"] for e in sw])
         data[f"{tag}_GM_std"] = np.array([e["GM_std_exact"] for e in sw])
         data[f"{tag}_proxy_rs"] = np.array([e["rs_proxy"] for e in sw])
 

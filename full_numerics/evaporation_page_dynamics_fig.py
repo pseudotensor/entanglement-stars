@@ -16,8 +16,12 @@ Panels
 (c) Monogamy with an accumulating emission register: I(b : star) against
     I(b : early radiation), b being the newly exposed cap mode and the
     register the shells the cap has vacated.  They cross, as purity and
-    monogamy require, but at t/t_evap = 0.093 rather than at the Page time --
+    monogamy require, but at t/t_evap = 0.253 rather than at the Page time --
     the trade is over once the register is a few correlation lengths deep.
+    (0.253 is the k = 2 value, i.e. on the mass-loss law eq:ev-Mt this model's
+    own channel count gives, which is the variable t_Page is expressed in too.
+    This said 0.093, the k = 0 value, while the code below has always used
+    k = 2 -- so the figure was right and the docstring was not.)
 
 Output: fermion/numerical/figures/evaporation_page_dynamics.pdf
 Run: python3 full_numerics/evaporation_page_dynamics_fig.py

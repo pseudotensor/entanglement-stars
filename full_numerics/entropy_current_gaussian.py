@@ -156,9 +156,15 @@ def main():
         print(f"    reference run (T_L=0): linear term {arr[:,8].max():.2e} "
               f"(should be ~0), log coefficient {arr[:,7].mean():.4f}")
     ks = np.mean((a[:, 5] - 2.0) * a[:, 0]), np.mean((b[:, 5] - 2.0) * b[:, 0])
+    # Report the measured falloff, not an assumed one: c/(J_S t) predicts at
+    # least 1/t, and what is observed is steeper (the window also lengthens, so
+    # the fit separates the log term better as well).  Either way it decays and
+    # R -> 2; claiming exactly 1/t would be asserting more than the two points
+    # support.
+    expo = np.log(ks[0] / ks[1]) / np.log(650.0 / 170.0)
     print(f"\n  residual falls by {ks[0]/ks[1]:.2f} when the window centre "
-          f"moves out by {650/170:.2f}: the 1/t scaling of an unseparated "
-          "log term, so R -> 2.")
+          f"moves out by {650/170:.2f}, i.e. as t^-{expo:.2f} -- at least the "
+          "1/t\n  of an unseparated log term (c/(J_S t)), so R -> 2.")
     print(f"  R over the long window: {b[:,5].min():.4f}-{b[:,5].max():.4f}")
 
     here = os.path.dirname(os.path.abspath(__file__))

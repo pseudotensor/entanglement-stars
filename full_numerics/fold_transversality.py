@@ -89,11 +89,16 @@ def _residual(Phi, mu):
     lapse = jnp.maximum(1.0 + Phi / csq, N_floor)
     Nbar_abs = jnp.abs(0.5 * (lapse[:-1] + lapse[1:]))
     off = -t0 * Nbar_abs
+    # Source convention (eq. sc-rho, sec:ex-observable, compute_exact_data_gpu.py):
+    # the bond term is NEGATIVE against a positive V_defect term, carries ONE power
+    # of the lapse (the bare shell observable -- the smeared correlator Gs already
+    # supplies it, and a second factor would count the lapse twice), and is split
+    # half onto each endpoint of the bond.
     V_defect = jnp.maximum(m0 * (1.0 - lapse) - mu, 0.0)
     _, Gs_s = _bond_correlations(diag0, off)
-    rho_s = jnp.zeros(N).at[:-1].add(2.0 * t0 * Nbar_abs * Gs_s * g[:-1])
+    rho_s = jnp.zeros(N).at[:-1].add(-1.0 * t0 * Gs_s * g[:-1]).at[1:].add(-1.0 * t0 * Gs_s * g[:-1])
     Gd_t, Gs_t = _bond_correlations(V_defect, off)
-    rho_t = (jnp.zeros(N).at[:-1].add(2.0 * t0 * Nbar_abs * Gs_t * g[:-1])
+    rho_t = (jnp.zeros(N).at[:-1].add(-1.0 * t0 * Gs_t * g[:-1]).at[1:].add(-1.0 * t0 * Gs_t * g[:-1])
              + V_defect * Gd_t * g)
     F = lhs - (beta0 / csq) * (rho_s - rho_t)
     return F.at[N - 1].set(Phi[N - 1])

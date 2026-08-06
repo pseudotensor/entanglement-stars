@@ -302,7 +302,6 @@ C_dirac = sp.Symbol("C", positive=True)                # = 0.396 n_f, n_f = 2 D
 # L = C (pi/12 hbar) T_H^2 = C hbar c_*^6/(768 pi G^2 M^2)   [eq:ev-dMdt]
 L_ = sp.simplify(C_dirac * sp.pi * T_H ** 2 / (12 * hb))
 M_ = cs ** 2 * rs_ / (2 * G_)
-L_M = sp.simplify(L_.subs(rs_, 2 * G_ * M_sym / cs ** 2)) if False else None
 check(
     "L = C pi T_H^2/(12 hbar) == C hbar c_*^6/(768 pi G^2 M^2)   [eq:ev-dMdt]",
     sp.simplify(L_.subs(rs_, 2 * G_ * sp.Symbol("M", positive=True) / cs ** 2)
@@ -357,12 +356,26 @@ _lP = (_G * _hb / _c ** 3) ** 0.5
 _a = 2 * _aS ** 0.5 * _lP
 _rs = 2 * _G * _Msun / _c ** 2
 import math
-_eps = 0.3949 * (1 + math.log(_rs / _a)) * (_a / _rs) ** 2 / (128 * math.pi * _aS)
+# Use the SAME C and alpha_S everywhere.  This previously took C = 0.3949 --
+# the 0.396 of eq:ev-C without its n_f = 2D factor -- while keeping alpha_S with
+# its D, which reproduced the paper's "0.40/D" from two inconsistent
+# conventions.  With both carrying D the factor cancels (C/alpha_S = 3.65 for
+# any D) and the coefficient is 0.81, not 0.40/D.  The old assertion was only
+# eps < 1e-70, which passes for either, so it could not have caught this.
+_bracket = 1 + math.log(_rs / _a)
+_coeff = _C / (128 * math.pi * _aS)
+_eps = _coeff * _bracket * (_a / _rs) ** 2
 check(
-    "eps_ad(1 Msun) ~ 1e-77, i.e. 0.40/D (a/r_s)^2   [eq:ev-adiabatic]",
-    _eps < 1e-70,
-    f"eps_ad = {_eps:.2e}; coefficient 89 C/(128 pi alpha_S) = "
-    f"{89*0.3949/(128*math.pi*0.217):.3f}/D",
+    "eps_ad coefficient C[1+ln(r_s/a)]/(128 pi alpha_S) is D-independent = 0.81"
+    "   [eq:ev-adiabatic]",
+    abs(_coeff * 89.0 / 0.808 - 1.0) < 0.02
+    and abs((0.396 * 2 * 8) / (0.217 * 8) - (0.396 * 2 * 4) / (0.217 * 4)) < 1e-12,
+    f"C/alpha_S = {_C/_aS:.3f} (D-free), 89 C/(128 pi alpha_S) = {89*_coeff:.3f}",
+)
+check(
+    "eps_ad(1 Msun) ~ 1e-77   [eq:ev-adiabatic]",
+    1e-80 < _eps < 1e-74,
+    f"eps_ad = {_eps:.2e}",
 )
 
 print()

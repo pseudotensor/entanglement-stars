@@ -1028,8 +1028,14 @@ n_sites = np.arange(1, N + 1)
 n_plot = 40
 
 # (a) LHS and RHS
+# NB: verify_LHS as stored by compute_exact_data_gpu.py is the graph Laplacian
+# ALONE -- it does not carry the EL correction, whereas the solver's residual is
+# grad_energy(Phi) = Laplacian + EL.  The two curves therefore differ by exactly
+# the EL term and are not expected to coincide; labelling this as the full EL
+# left-hand side would misrepresent the check.  (Diagnostic only: this figure is
+# not included in the paper.)
 axes[0].plot(n_sites[:n_plot], LHS_v[:n_plot], "-", color="C0", lw=2,
-             label="LHS: $L_{\\kappa[\\Phi]}\\,\\Phi + \\mathrm{EL}[\\Phi]$")
+             label="$L_{\\kappa[\\Phi]}\\,\\Phi$ (Laplacian only, no EL term)")
 axes[0].plot(n_sites[:n_plot], RHS_v[:n_plot], "--", color="C3", lw=2,
              label=r"RHS: $(\beta_0/c_*^2)\,\Delta\rho[\Phi]$")
 axes[0].set_xlabel("Shell index $n$")
@@ -1127,43 +1133,24 @@ if "temp_V0s" in D.files:
             prs_full = slope * bt0_full
             ax.plot(bt0_full, prs_full, "--", color=c_ex, lw=1, alpha=0.5,
                     label=f"Proxy $V_0={V0_temp}$")
-    # Physical r_s, corrected normalisation.
+    # Physical r_s, corrected normalisation -- SOLVED, not rescaled.
     #
-    # The stored sweep was solved with the ratio-normalised edge weight
-    # kappa = g t0^2 Nbar^2 Q and source prefactor beta0/c_*^2, which makes the
-    # emergent Newton constant scale as G ∝ beta0.  The dimensionally correct
-    # weight is W = (beta0/c_*^2)^2 kappa^KMS (Dirichlet form in the exponential
-    # -family coordinate theta = beta0 N, commensurate with S_rel), and the exact
-    # current sum rule beta0 kappa^KMS = 2 t0^2 Re G_{n,n+1} then removes the
-    # explicit beta0 from G.  At weak field the source enters linearly, so the
-    # corrected solution at (beta0, V0) is the stored one with the source
-    # rescaled; r_s inherits the same constant factor:
-    #
-    #     r_s^phys = r_s^stored * [c_*^2/(2 Re G_nn1)] / [beta0/c_*^2]
-    #              = r_s^stored * c_*^4 / (2 beta0 Re G_nn1(beta0 t0)).
-    #
-    # No re-solve is needed for this rescaling; the full solver re-run under the
-    # corrected normalisation is separate future work.
-    def _ReG_nn1(bt):
-        """Re <c^dag_n c_{n+1}> for the uniform half-filled chain at beta*t0 = bt."""
-        k = np.linspace(-np.pi, np.pi, 200001)
-        eps = -2.0 * np.cos(k)                     # units of t0
-        f = 0.5 * (1.0 - np.tanh(bt * eps / 2.0))  # overflow-safe Fermi function
-        return np.trapezoid(np.cos(k) * f, k) / (2.0 * np.pi)
-
-    cs4 = cstar_sq ** 2
-    ReG_arr = np.array([_ReG_nn1(float(bt)) for bt in bt0_main])
+    # The solver's lattice-unit convention uses source prefactor beta0/c_*^2,
+    # which makes the emergent Newton constant scale as G ∝ beta0.  The paper's
+    # closure carries P = c_*^2 t0^2/(lam eps_b) instead, with lam = alpha_S.
+    # These differ by lam beta0 eps_b/(c_*^4 t0^2) -- constant at fixed beta0 t0
+    # but not along a temperature sweep -- and the source is nonlinear in V0, so
+    # this branch is solved by compute_exact_data_gpu.py under the corrected
+    # prefactor and stored as {tag}_rs_corr.  It is not a post-hoc rescaling.
     for iv, V0_temp in enumerate(temp_V0s):
         tag_t = f"temp_{V0_temp:.4f}"
         bt0_t_key = f"{tag_t}_bt0"
         bt0_t = D[bt0_t_key] if bt0_t_key in D.files else bt0_arr_all
-        rs_t = D[f"{tag_t}_rs"]
-        F_t = D[f"{tag_t}_F"]
-        minN_t = D[f"{tag_t}_minN"]
-        good = (F_t < 1e-6) & (minN_t > 0)
-        ReG_t = np.array([_ReG_nn1(float(bt)) for bt in bt0_t])
-        rs_phys = rs_t * cs4 / (2.0 * bt0_t * ReG_t)
-        ax.plot(bt0_t[good], rs_phys[good], "s-",
+        rs_corr = D[f"{tag_t}_rs_corr"]
+        F_c = D[f"{tag_t}_F_corr"]
+        minN_c = D[f"{tag_t}_minN_corr"]
+        good_c = (F_c < 1e-6) & (minN_c > 0) & np.isfinite(rs_corr)
+        ax.plot(bt0_t[good_c], rs_corr[good_c], "s-",
                 color="k" if iv == 0 else "r", ms=3, lw=1.4,
                 label=f"Corrected $G$, $V_0={V0_temp}$")
     ax.set_xlabel(r"$\beta_0 t_0$")
@@ -1282,7 +1269,10 @@ for V0, c in zip(V0_fig14, cm14):
                 ax.plot(x_a[m_a], hrr_a[m_a], "--", color=c, lw=1.2, alpha=0.7)
 ax.set_xlabel(r"$r / r_s$")
 ax.set_ylabel(r"$h^{rr}/h_0 := \kappa/\kappa^{\mathrm{flat}}$")
-ax.set_title("(a) Emergent co-metric", fontsize=10)
+# The caption calls this the Dirichlet-form INTRINSIC metric and says explicitly
+# that it is NOT the co-metric of sec:shell-cometric -- the panel title must not
+# contradict it.
+ax.set_title("(a) Emergent intrinsic metric", fontsize=10)
 ax.set_xlim(0.8, 50)
 ax.set_ylim(-0.05, 1.1)
 ax.legend(fontsize=6, loc="lower right")

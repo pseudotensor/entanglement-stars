@@ -100,20 +100,6 @@ def xxz_bkm_cov(J_eff, Delta, beta0):
     return np.sum(I_eig**2 * K)
 
 
-def xxz_bkm_cov_vec(beta_J_arr, Delta, beta0_over_J):
-    """Vectorized BKM covariance for array of J_eff values.
-
-    beta0_over_J: β₀/J₀ (constant ratio), so that β₀ = beta0_over_J × J_eff / N̄
-    But actually β₀ is fixed (not per-bond). We pass beta0 directly.
-    """
-    # This is called per-bond, so just loop (cheap: 4×4 diag per bond)
-    result = np.empty(len(beta_J_arr))
-    for i, bJ in enumerate(beta_J_arr):
-        J_eff = bJ  # β₀ J_eff = bJ, so J_eff = bJ (if beta0=1) — need proper scaling
-        result[i] = xxz_bkm_cov(J_eff, Delta, 1.0)  # use β₀=1, scale J by β₀J_eff
-    return result
-
-
 def xxz_bond_mi_vec(beta_J_arr, Delta):
     """Exact MI from 2-site density matrix (same as solve_xxz_twostate.py)."""
     bJ = np.asarray(beta_J_arr, dtype=float)
@@ -208,7 +194,12 @@ class XXZBKM:
         # BARE bond observable: the lapse is the multiplier conjugate to the
         # shell energy, so the paired operator carries J0, not J_eff = J0*Nbar.
         # (The BKM current operator above is already bare for the same reason.)
-        rho[:self.N - 1] += self.g[:self.N - 1] * self.J0 * e_over_J
+        # Each bond's energy is split half onto each of its endpoints, the same
+        # assembly of <h_n> used by the free-fermion solvers; e_over_J already
+        # carries the sign, so no explicit minus belongs here.
+        bond_eng = self.g[:self.N - 1] * self.J0 * e_over_J
+        rho[:self.N - 1] += 0.5 * bond_eng
+        rho[1:] += 0.5 * bond_eng
         return rho
 
     def bkm_conductances(self, Phi):
@@ -375,15 +366,20 @@ def analyze_solution(model, Phi, kappa_bkm, kappa_mi, label=""):
     i_lo = 20;  i_hi = min(80, N - 20)
     exterior = slice(i_lo, i_hi)
 
+    # Boundary-corrected mass estimator, as in the free-fermion solver.
+    # The closure is solved with a Dirichlet wall, Phi(R) = 0, so the profile is
+    # Phi = -(c*^2 rs/2)(1/r - 1/R) and Phi*r = -(c*^2 rs/2)(1 - r/R) is LINEAR
+    # in r.  Fitting it to A + B/r fits the wrong function: it biases rs low and
+    # leaves a residual set by the misfit rather than by the solution, which is
+    # why the reported spread used to come out at the same 5.4e-2 for every case
+    # regardless of rs.  -Phi r R/(R-r) inverts the walled profile exactly.
+    R_outer = float(r[-1])
     if np.any(np.abs(Phi[exterior]) > 1e-15):
-        Phi_r_ext = (Phi * r)[exterior]
         r_ext = r[exterior]
-        X = np.column_stack([np.ones(len(r_ext)), 1.0 / r_ext])
-        coef = np.linalg.lstsq(X, Phi_r_ext, rcond=None)[0]
-        A_fit = coef[0]
-        resid = Phi_r_ext - X @ coef
-        spread = np.std(resid) / np.abs(A_fit) if abs(A_fit) > 1e-20 else float('inf')
-        rs = -2.0 * A_fit / model.cstar_sq
+        GM_est = -Phi[exterior] * r_ext * R_outer / (R_outer - r_ext)
+        GM = float(np.median(GM_est))
+        rs = 2.0 * GM / model.cstar_sq
+        spread = float(np.std(GM_est) / abs(GM)) if abs(GM) > 1e-20 else float('inf')
     else:
         spread = float('inf');  rs = 0.0
 
@@ -393,7 +389,11 @@ def analyze_solution(model, Phi, kappa_bkm, kappa_mi, label=""):
     core_src = np.sum(src_abs[:model.n_core + 2])
     core_frac = core_src / total_src if total_src > 1e-20 else 0.0
 
-    w = lapse**2
+    # w vs Schwarzschild must be compared on the asymptotically flat profile.
+    # The wall sets Phi(R)=0, whereas the flat-at-infinity solution has
+    # Phi(R) = -c*^2 rs/(2R); undo that constant offset before comparing.
+    Phi_inf = Phi - model.cstar_sq * rs / (2.0 * R_outer)
+    w = (1.0 + Phi_inf / model.cstar_sq)**2
     w_schw = 1.0 - rs / r
     w_err = np.max(np.abs(w[exterior] - w_schw[exterior]))
 
@@ -450,6 +450,7 @@ def run_case(N, J0, Delta, n_core, cstar_sq, bJ0, eps, label_extra=""):
     print(f"  |EL correction| = {el_corr:.3e}")
 
     info = analyze_solution(model, Phi_final, kappa_bkm, kappa_mi, label=label)
+    info['F_inf'] = float(np.max(np.abs(F_el[:-1])))
     info['Delta'] = Delta
     info['beta0_J0'] = bJ0
     info['n_core'] = n_core
@@ -487,14 +488,14 @@ if __name__ == '__main__':
         key = f"temp_bJ0={bJ0}"
         results[key] = run_case(N, J0, 1.0, 5, cstar_sq, bJ0, eps)
 
-    # ── Part 3: Resolved Schwarzschild (n_core=10, larger eps) ──
-    # rs ≳ 3 lattice spacings so w = 1-rs/r is verifiable across shells
+    # ── Part 3: Resolved Schwarzschild (n_core=20, larger eps) ──
+    # rs > 2 lattice spacings so w = 1-rs/r is verifiable across shells
     print("\n" + "█" * 90)
     print("PART 3: RESOLVED SCHWARZSCHILD (n_core=20)")
     print("█" * 90)
 
     resolved_cases = [
-        (1.0, 20, 0.10, 0.10),   # rs≈4.0, N_min≈0.49 — resolved showcase
+        (1.0, 20, 0.10, 0.10),   # resolved showcase; see the npz for rs/N_min
     ]
 
     for Delta, n_core, bJ0, eps in resolved_cases:
@@ -514,3 +515,19 @@ if __name__ == '__main__':
         print(f"{key:>30s} {info['n_core']:3d} {info['rs']:8.4f} {info['spread']:10.4e} "
               f"{info['core_frac']:6.4f} {info['N_min']:8.6f} "
               f"{info['w_err']:10.4e} {info['bkm_mi_ratio']:8.4f} {ok:>5s}")
+
+    # Persist: sec:ex-ising quotes rs, N_min, |F| and the BKM/MI ratio from
+    # this run, so they must come from a committed data file, not stdout.
+    here = os.path.dirname(os.path.abspath(__file__))
+    outp = os.path.normpath(os.path.join(
+        here, "..", "fermion", "numerical", "data", "xxz_bkm_el.npz"))
+    keys = list(results.keys())
+    np.savez(outp,
+             labels=np.array(keys),
+             **{f"{k}__{f}": np.array(results[k][f], dtype=float)
+                for k in keys
+                for f in ("rs", "spread", "core_frac", "w_err", "N_min",
+                          "bkm_mi_ratio", "Delta", "beta0_J0", "n_core", "eps")},
+             F_inf=np.array([results[k].get("F_inf", np.nan) for k in keys],
+                            dtype=float))
+    print(f"\nwrote {outp}")

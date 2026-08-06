@@ -26,7 +26,13 @@ Model
 
 We measure the energy current into the right half via
 
-  J_E(t) = d/dt <H_R> = -i Tr( [H_R, H] G(t) )
+  J_E(t) = d/dt <H_R> = +i Tr( [H_R, H] G(t) )
+
+with G_ij = <c_i^dag c_j>, so that G(t) = U G(0) U^dag with U = exp(+i h t) and
+dG/dt = i[h, G].  Then d/dt Tr(h_R G) = i Tr(h_R [h,G]) = i Tr([h_R,h] G).
+The sign matters and is checkable: with the LEFT half hot, energy must flow into
+the right half, so J_E > 0 and tau_eff > 0.  The minus sign this line used to
+carry made every transmission negative.
 
 and define an effective transmission
 
@@ -159,7 +165,10 @@ def energy_current_plateau(
     for i, t in enumerate(times):
         phase = np.exp(-1j * de * t)
         tr = np.sum(M * phase)  # complex
-        J[i] = float((-1j * tr).real)
+        # +i, not -i: see the derivation in the module docstring.  A negative
+        # tau_eff is unphysical -- it is a transmission probability -- and the
+        # committed data has always been positive, so code and data disagreed.
+        J[i] = float((1j * tr).real)
 
     return float(np.mean(J[mask]))
 
@@ -213,19 +222,21 @@ def save_outputs(res: CurrentResult, args: argparse.Namespace) -> None:
         tau_eff=res.tau_eff,
         tau_scatt=res.tau_scatt,
         c_small=res.c_small,
-        params=dict(
-            L_left=args.L_left,
-            L_right=args.L_right,
-            t0=args.t0,
-            T_left=args.T_left,
-            T_right=args.T_right,
-            mu=args.mu,
-            t_max=args.t_max,
-            dt=args.dt,
-            t_plateau_min=args.t_plateau_min,
-            t_plateau_max=args.t_plateau_max,
-            g_fit_max=args.g_fit_max,
-        ),
+        # Flat scalars, not a dict.  np.savez turns a dict into a 0-d object
+        # array, so np.load(...)["params"] raises unless the caller happens to
+        # pass allow_pickle=True -- a trap for anyone checking the run
+        # parameters behind a published number.
+        p_L_left=args.L_left,
+        p_L_right=args.L_right,
+        p_t0=args.t0,
+        p_T_left=args.T_left,
+        p_T_right=args.T_right,
+        p_mu=args.mu,
+        p_t_max=args.t_max,
+        p_dt=args.dt,
+        p_t_plateau_min=args.t_plateau_min,
+        p_t_plateau_max=args.t_plateau_max,
+        p_g_fit_max=args.g_fit_max,
     )
 
     fig = plt.figure(figsize=(6.4, 4.2))

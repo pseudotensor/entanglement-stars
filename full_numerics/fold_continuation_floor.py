@@ -67,10 +67,17 @@ def make_residual(N_floor):
         lapse = jnp.maximum(1.0 + Phi / csq, N_floor)
         Nb = jnp.abs(0.5 * (lapse[:-1] + lapse[1:]))
         V = jnp.maximum(m0 * (1.0 - lapse) - mu, 0.0)
+        # Source convention (eq. sc-rho, sec:ex-observable): bond term NEGATIVE
+        # against a positive V term, ONE power of the lapse (the smeared
+        # correlator Gs already supplies it -- a second factor "would count the
+        # lapse twice"), split half onto each endpoint of the bond.
         _, Gs_s = _bond_correlations(diag0, -t0 * Nb)
-        rho_s = jnp.zeros(N).at[:-1].add(2.0 * t0 * Nb * Gs_s * g[:-1])
+        rho_s = (jnp.zeros(N).at[:-1].add(-1.0 * t0 * Gs_s * g[:-1])
+                              .at[1:].add(-1.0 * t0 * Gs_s * g[:-1]))
         Gd_t, Gs_t = _bond_correlations(V, -t0 * Nb)
-        rho_t = (jnp.zeros(N).at[:-1].add(2.0 * t0 * Nb * Gs_t * g[:-1]) + V * Gd_t * g)
+        rho_t = (jnp.zeros(N).at[:-1].add(-1.0 * t0 * Gs_t * g[:-1])
+                              .at[1:].add(-1.0 * t0 * Gs_t * g[:-1])
+                 + V * Gd_t * g)
         return (ge(Phi, mu) - (beta0 / csq) * (rho_s - rho_t)).at[N - 1].set(Phi[N - 1])
     return _residual
 
@@ -126,15 +133,37 @@ def run(N_floor, Phi0, mu0, mu_cap=2.9999):
 
 def main():
     d = np.load("tov_tk_chemical_el.npz", allow_pickle=True)
-    # Seed on the STAR branch (n_eff = 10).  The same file also holds a
-    # disconnected n_eff = 1-3 family at mu/m0 = 0.90-0.97; seeding there
-    # continues that family instead and says nothing about the fold.
-    mus = sorted(float(m) for m in d["mu_values"] if f"mu{float(m):.2f}_Phi" in d
-                 and float(m) / m0 < 0.66
-                 and float(np.max(np.abs(np.array(d[f"mu{float(m):.2f}_Phi"])))) > 0.01)
-    Phi0, mu0 = np.array(d[f"mu{mus[-1]:.2f}_Phi"]), mus[-1]
-    ne0 = int(np.sum(np.maximum(m0 * (1.0 - (1 + Phi0 / csq)) - mu0, 0.0) > 1e-10))
-    print(f"seed: mu/m0 = {mu0/m0:.4f}, n_eff = {ne0}, quoted fold at 0.658\n", flush=True)
+    # Seed on the connected MULTI-SHELL star branch, selected by its own
+    # properties rather than by a hardcoded mu window.  The old code took the
+    # highest mu below mu/m0 = 0.66 on the assumption that the star branch ran
+    # to 0.658 with n_eff = 10.  Under the corrected source it does not: the
+    # multi-shell branch ends near mu/m0 ~ 0.23 and the region above it holds
+    # n_eff = 1 solutions pinned at the lapse floor.  That window would now seed
+    # on the pinned family -- exactly the failure the original comment warned
+    # about -- and report its endpoint as a fold.
+    cand = []
+    for m in d["mu_values"]:
+        mu = float(m)
+        k = f"mu{mu:.2f}_Phi"
+        if k not in d.files:
+            continue
+        P = np.array(d[k])
+        if float(np.max(np.abs(P))) <= 0.01:
+            continue
+        lap = 1.0 + P / csq
+        ne = int(np.sum(np.maximum(m0 * (1.0 - lap) - mu, 0.0) > 1e-10))
+        mn = float(np.min(lap))
+        # multi-shell and clear of the largest floor tested (5e-3) by 20x
+        if ne >= 2 and mn > 0.1:
+            cand.append((mu, ne, mn))
+    if not cand:
+        sys.exit("no multi-shell star-branch solution found to seed from")
+    cand.sort()
+    mu0, ne0, mn0 = cand[-1]
+    Phi0 = np.array(d[f"mu{mu0:.2f}_Phi"])
+    print(f"seed: mu/m0 = {mu0/m0:.4f}, n_eff = {ne0}, min N = {mn0:.4f}"
+          f"   (highest-mu multi-shell solution of {len(cand)} candidates)\n",
+          flush=True)
 
     out = {}
     for floor in [5e-3, 1e-3, 1e-4, 1e-5]:

@@ -12,6 +12,8 @@ Also computes the linearized IFT check at V0=0.
 Run: python3 -m full_numerics.study_observable_jacobian
 """
 
+import os
+
 import numpy as np
 import matplotlib
 matplotlib.use("Agg")
@@ -41,17 +43,9 @@ def global_residual_minimization(model, Phi_seed, cstar_sq=0.5,
         F[-1] = 0.0
         return 0.5 * np.sum(F**2)
 
-    def gradient(x):
-        """FD gradient of ||F||^2."""
-        eps = 1e-7
-        f0 = objective(x)
-        grad = np.zeros(N)
-        for j in range(N):
-            ej = np.zeros(N)
-            ej[j] = eps * max(1.0, abs(x[j]))
-            grad[j] = (objective(x + ej) - f0) / ej[j]
-        return grad
-
+    # NOTE: no analytic/FD jacobian is supplied to L-BFGS-B -- it builds its own.
+    # A hand-rolled FD gradient used to be defined here and never passed as jac=,
+    # so it cost nothing but read as though the minimiser were using it.
     bounds = [(floor_val, None)] * N
     result = minimize(objective, Phi_seed.copy(), method='L-BFGS-B',
                        bounds=bounds, options={'maxiter': 100, 'maxfun': 1000})
@@ -267,7 +261,9 @@ def main():
     ax.legend(fontsize=8)
 
     plt.tight_layout()
-    outpath = "fermion/numerical/figures/observable_jacobian.pdf"
+    _root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    outpath = os.path.join(_root, "fermion", "numerical", "figures",
+                           "observable_jacobian.pdf")
     plt.savefig(outpath, dpi=200, bbox_inches="tight")
     print(f"\n  Figure saved: {outpath}")
     plt.close()

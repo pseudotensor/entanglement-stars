@@ -43,10 +43,17 @@ def make_solver(N, beta0, m0):
         Gd_s, Gs_s = compute_state(np.zeros(N), off)
         Gd_t, Gs_t = compute_state(V_defect, off)
 
+        # Source convention (eq. sc-rho, sec:ex-observable): bond term NEGATIVE
+        # against a positive V_defect term, ONE power of the lapse (Gs already
+        # carries it), split half onto each endpoint of the bond.
+        bond_s = -2.0 * t0 * Gs_s * g[:-1]
         rho_s = np.zeros(N)
-        rho_s[:-1] = 2.0 * t0 * Nbar_abs * Gs_s * g[:-1]
+        rho_s[:-1] += 0.5 * bond_s
+        rho_s[1:] += 0.5 * bond_s
+        bond_t = -2.0 * t0 * Gs_t * g[:-1]
         rho_t = np.zeros(N)
-        rho_t[:-1] = 2.0 * t0 * Nbar_abs * Gs_t * g[:-1]
+        rho_t[:-1] += 0.5 * bond_t
+        rho_t[1:] += 0.5 * bond_t
         rho_t += V_defect * Gd_t * g
         source = (beta0 / csq) * (rho_s - rho_t)
 

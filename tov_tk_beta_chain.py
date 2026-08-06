@@ -59,11 +59,16 @@ def _residual(Phi, mu, beta0):
     Nbar = 0.5 * (lapse[:-1] + lapse[1:])
     Nbar_abs = jnp.abs(Nbar)
     off = -t0 * Nbar_abs
+    # Source convention (eq. sc-rho, sec:ex-observable, compute_exact_data_gpu.py):
+    # the bond term is NEGATIVE against a positive V_defect term, carries ONE power
+    # of the lapse (the bare shell observable -- the smeared correlator Gs already
+    # supplies it, and a second factor would count the lapse twice), and is split
+    # half onto each endpoint of the bond.
     V_defect = jnp.maximum(m0 * (1.0 - lapse) - mu, 0.0)
     Gd_s, Gs_s = _bond_correlations(diag0, off, beta0)
-    rho_s = jnp.zeros(N, dtype=jnp.float64).at[:-1].add(2.0 * t0 * Nbar_abs * Gs_s * g[:-1])
+    rho_s = jnp.zeros(N, dtype=jnp.float64).at[:-1].add(-1.0 * t0 * Gs_s * g[:-1]).at[1:].add(-1.0 * t0 * Gs_s * g[:-1])
     Gd_t, Gs_t = _bond_correlations(V_defect, off, beta0)
-    rho_t = (jnp.zeros(N, dtype=jnp.float64).at[:-1].add(2.0 * t0 * Nbar_abs * Gs_t * g[:-1])
+    rho_t = (jnp.zeros(N, dtype=jnp.float64).at[:-1].add(-1.0 * t0 * Gs_t * g[:-1]).at[1:].add(-1.0 * t0 * Gs_t * g[:-1])
              + V_defect * Gd_t * g)
     F = lhs - (beta0 / csq) * (rho_s - rho_t)
     return F.at[N - 1].set(Phi[N - 1])
@@ -142,7 +147,7 @@ def seed_and_scan(seeds, beta_target, label):
             Phi_sol, norm, ok, iters = newton_solve(Phi_seed * scale, mu_val, beta_target)
             if ok and np.max(np.abs(Phi_sol)) > 0.01:
                 ne, minN = get_props(np.array(Phi_sol), mu_val)
-                if minN > 0.01:
+                if ne >= 2 and minN > 0.1:
                     best = (np.array(Phi_sol), ne, minN)
                     break
         if best:
@@ -182,14 +187,18 @@ def seed_and_scan(seeds, beta_target, label):
         Phi_sol, norm, ok, iters = newton_solve(Phi_seed, mu_next, beta_target)
         if ok and np.max(np.abs(Phi_sol)) > 0.01:
             ne, minN = get_props(np.array(Phi_sol), mu_next)
-            if minN < 0.01:
+            # Star-branch condition, same as the seed filter: the continuation must
+        # not step onto the floor-pinned n_eff=1 family after the star branch
+        # folds. With minN>0.01 it did, and ran on to mu/m0 ~ 0.97 where
+        # |lambda_1| = 6, i.e. no fold at all.
+            if ne < 2 or minN < 0.1:
                 ok = False
 
         if not ok:
             Phi_sol, norm, ok, iters = newton_solve(Phi_cur, mu_next, beta_target)
             if ok and np.max(np.abs(Phi_sol)) > 0.01:
                 ne, minN = get_props(np.array(Phi_sol), mu_next)
-                if minN < 0.01:
+                if ne < 2 or minN < 0.1:
                     ok = False
 
         if not ok:
@@ -199,7 +208,7 @@ def seed_and_scan(seeds, beta_target, label):
                 Phi_sol, _, ok2, iters = newton_solve(Phi_sub, mu_cur + sub_dmu, beta_target)
                 if ok2 and np.max(np.abs(Phi_sol)) > 0.01:
                     ne2, minN2 = get_props(np.array(Phi_sol), mu_cur + sub_dmu)
-                    if minN2 > 0.01:
+                    if ne2 >= 2 and minN2 > 0.1:
                         mu_next = mu_cur + sub_dmu
                         dmu = sub_dmu
                         ne, minN = ne2, minN2
@@ -245,19 +254,20 @@ for mu_val in d5["mu_values"]:
     try:
         Phi = np.array(d5[f"{key}_Phi"])
         ne, minN = get_props(Phi, mu_val)
-        if minN > 0.01 and np.max(np.abs(Phi)) > 0.01:
+        # STAR branch only -- see the note in tov_tk_bt10_mu_scan.py.
+        if ne >= 2 and minN > 0.1 and np.max(np.abs(Phi)) > 0.01:
             bt5[mu_val] = (Phi, ne, minN)
     except KeyError:
         pass
 print(f"bt5: {len(bt5)} solutions")
 
 # ── Load bt10 seeds ─────────────────────────────────────────────────────
-d10 = np.load("tov_tk_bt10_mu_scan.npz", allow_pickle=True)
+# NOTE: this script does NOT read tov_tk_bt10_mu_scan.npz.  It used to load it
+# and never use it -- that scan stores mu/n_eff/minN but not the Phi arrays, so
+# the solutions have to be re-seeded here anyway.  The dead load created a hard
+# ordering dependency on that scan for no reason, which is what made this stage
+# fail when the TK family was first run in parallel.
 bt10 = {}
-# Reconstruct solutions by re-solving from the scan data
-# The scan stored mu_values but not individual Phi arrays
-# We need to re-seed from bt5 at bt10 — use the same approach
-# Actually, let's just re-seed quickly
 print("Re-seeding bt10 solutions from bt5 (fast)...", flush=True)
 for mu_val in sorted(bt5.keys()):
     Phi5, ne5, _ = bt5[mu_val]
@@ -265,7 +275,7 @@ for mu_val in sorted(bt5.keys()):
         Phi_sol, norm, ok, iters = newton_solve(Phi5 * scale, mu_val, 10.0)
         if ok and np.max(np.abs(Phi_sol)) > 0.01:
             ne, minN = get_props(np.array(Phi_sol), mu_val)
-            if minN > 0.01:
+            if ne >= 2 and minN > 0.1:
                 bt10[mu_val] = (np.array(Phi_sol), ne, minN)
                 break
 print(f"bt10: {len(bt10)} solutions")
@@ -280,8 +290,28 @@ bt15, fold15 = seed_and_scan(bt12 if bt12 else bt10, 15.0, "from bt12" if bt12 e
 print(f"\n{'='*60}")
 print("FOLD SUMMARY")
 print(f"{'='*60}")
-print(f"  β₀t₀=5:  μ*/m₀ ≈ 0.658, n_eff=10, min(N)≈0.055")
-print(f"  β₀t₀=10: μ*/m₀ ≈ 0.702, n_eff=8,  min(N)≈0.173")
+# bt5 and bt10 are NOT computed here -- this script only chains bt12 and bt15.
+# They used to be printed as hardcoded literals (0.658 and 0.702), which would
+# keep printing the old values after a convention change and read as though this
+# run had confirmed them.  Read them from the files that do compute them, and
+# say so plainly if those files are absent.
+def _fold_from(path, label):
+    try:
+        d = np.load(path, allow_pickle=True)
+        mus = np.asarray(d["mu_values"], dtype=float)
+        if mus.size == 0:
+            return f"  {label}: {path} has no solutions"
+        i = int(np.argmax(mus))
+        extra = ""
+        if "n_eff_values" in d.files:
+            extra = (f", n_eff={int(np.asarray(d['n_eff_values'])[i])}"
+                     f", min(N)={float(np.asarray(d['minN_values'])[i]):.3f}")
+        return f"  {label}: mu*/m0 = {mus[i]/m0:.4f}{extra}   [from {path}]"
+    except FileNotFoundError:
+        return f"  {label}: NOT AVAILABLE ({path} absent -- run it first)"
+
+print(_fold_from("tov_tk_chemical_el.npz", "b0t0=5 "))
+print(_fold_from("tov_tk_bt10_mu_scan.npz", "b0t0=10"))
 if fold12:
     print(f"  β₀t₀=12: μ*/m₀ ≈ {fold12['mu_star']/m0:.3f}, "
           f"n_eff={fold12['ne_star']}, min(N)≈{fold12['minN_star']:.3f}, |λ₁|={fold12['eig1_star']:.3f}")

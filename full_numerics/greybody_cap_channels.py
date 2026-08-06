@@ -19,7 +19,9 @@ of the lapse, with t_ang = t_0 on the conformal branch (sec:schw-hda).
 
 Data -> greybody_cap_channels.npz ; no figure (see CLAUDE.md convention).
 
-NOTE.  This script is no longer cited by the paper.  It counts channels on the
+NOTE.  This script's RESULTS are no longer cited by the paper, but the module is
+still live: sec:sc-cone names it as the dependency lapse_power_check.py imports
+(cap_chain and transmission_vec), so it must keep working.  It counts channels on the
 assumption that the angular energy adds LINEARLY to the radial band, which is a
 one-band metal with a Fermi surface and gives C ~ A_s/a^2 (mass-independent L).
 The Clifford algebra of eq:ff-clifford forbids that: alpha^perp anticommutes with

@@ -136,6 +136,9 @@ def main():
     a0 = np.array(rows0)
     sl = np.polyfit(np.log(a0[:, 0]), np.log(a0[:, 1]), 1)[0]
     print(f"  d log v / d log N = {sl:+.5f}   (1 = c_* N, 2 = c_* N^2)")
+    # sec:sc-cone quotes this slope as d log v / d log t = 1.000000, so it has
+    # to be in the data file and not only on stdout.
+    test0 = {"test0_N": a0[:, 0], "test0_v": a0[:, 1], "test0_slope": sl}
 
     print()
     print("=" * 74)
@@ -188,7 +191,7 @@ def main():
     path = os.path.normpath(os.path.join(here, "..", "fermion", "numerical", "data",
                                          "lapse_power_check.npz"))
     np.savez(path, r_start=a[:, 0], N_start=a[:, 1], r_measured=a[:, 2],
-             r_one_power=a[:, 3], r_two_powers=a[:, 4], **out)
+             r_one_power=a[:, 3], r_two_powers=a[:, 4], **test0, **out)
     print(f"\nwrote {path}")
 
 

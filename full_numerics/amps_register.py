@@ -77,10 +77,18 @@ def main():
     rows = []
     for n0 in n0_grid:
         p = one_point(int(n0), n0_init)
-        t0n = 1.0 - p["rs"] / rs0                       # k = 0: M linear in t
+        # Two conventions, and the physical one must be stored because it is
+        # the one sec:ev-amps quotes and compares against t_Page.
+        #   k=0: M linear in t                 -> t/t_evap = 1 - rs/rs0
+        #   k=2: eq:ev-Mt, M = M0 (1-t)^(1/3)  -> t/t_evap = 1 - (rs/rs0)^3
+        # t_Page of eq:ev-page-time is k=2, so the comparison needs k=2 on both
+        # sides; quoting the k=0 number against it would be comparing two
+        # different time variables.
+        t0n = 1.0 - p["rs"] / rs0
+        t2n = 1.0 - (p["rs"] / rs0) ** 3
         rows.append([p["n_shed"], p["rs"], t0n, p["S_cap"], p["I_S"],
                      p["I_early"], p["I_far"], p["I_ext"], p["deficit"],
-                     p["alpha_S"], p["N_cap"], p["beta0t0"]])
+                     p["alpha_S"], p["N_cap"], p["beta0t0"], t2n])
         print(f"  {p['n_shed']:5d}  {p['rs']:6.2f}   {t0n:10.4f}   "
               f"{p['S_cap']:.5f}  {p['I_S']:.5f}   {p['I_early']:.5f}     "
               f"{p['I_far']:.5f}   {p['deficit']:.5f}", flush=True)
@@ -93,8 +101,11 @@ def main():
         f = -d[i] / (d[i + 1] - d[i])
         m_x = a[i, 0] + f * (a[i + 1, 0] - a[i, 0])
         t_x = a[i, 2] + f * (a[i + 1, 2] - a[i, 2])
+        t_x2 = a[i, 12] + f * (a[i + 1, 12] - a[i, 12])
         print(f"    at m_shed = {m_x:.2f} shells, r_s/a = "
-              f"{a[i,1] + f*(a[i+1,1]-a[i,1]):.2f}, t/t_evap = {t_x:.4f}")
+              f"{a[i,1] + f*(a[i+1,1]-a[i,1]):.2f}, "
+              f"t/t_evap = {t_x2:.4f} (k=2, the physical law and the one "
+              f"comparable with t_Page); {t_x:.4f} if M were linear in t")
     print(f"  monogamy deficit 2S(b) - [I(b:S)+I(b:ext)]: "
           f"{a[:,8].min():.5f}-{a[:,8].max():.5f} nats against 2S(b) = "
           f"{2*a[0,3]:.5f}, i.e. {100*a[:,8].min()/(2*a[0,3]):.1f}-"
@@ -122,7 +133,7 @@ def main():
     np.savez(path, m_shed=a[:, 0], rs=a[:, 1], t_norm_k0=a[:, 2],
              S_cap=a[:, 3], I_S=a[:, 4], I_early=a[:, 5], I_far=a[:, 6],
              I_ext=a[:, 7], deficit=a[:, 8], alpha_S=a[:, 9], N_cap=a[:, 10],
-             beta0t0=a[:, 11], I_vs_m=np.array(Im), rs0=rs0)
+             beta0t0=a[:, 11], t_norm_k2=a[:, 12], I_vs_m=np.array(Im), rs0=rs0)
     print(f"\nwrote {path}")
 
 

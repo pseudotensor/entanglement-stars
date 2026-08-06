@@ -26,8 +26,23 @@ from scipy.special import polygamma
 t0 = 1.0
 
 
-def uniform_correlator(x, n=3000):
+def chain_len_for(x, xi_margin=12.0, n_min=3000):
+    """Chain long enough that the half-chain is xi_margin thermal lengths.
+
+    xi_T = 2x/pi, so half-chain >= xi_margin*xi_T means n >= 4*xi_margin*x/pi.
+    A FIXED n=3000 was used before, which is 23.6 xi at x=100 but only 5.9 xi at
+    x=400, and that point came out at S_2/x = 0.053181 against the converged
+    0.053051 -- a 0.25% error that dragged the stored cold-branch amplitude from
+    0.05305 to 0.05289.  Verified directly: at x=400, n=3000 gives 0.053181
+    while n=6000 (11.8 xi) and n=12000 (23.6 xi) both give 0.053051.
+    """
+    return int(max(n_min, np.ceil(4.0 * xi_margin * x / np.pi)))
+
+
+def uniform_correlator(x, n=None):
     """G_{n,n+m} for the half-filled uniform chain at beta t_0 = x."""
+    if n is None:
+        n = chain_len_for(x)
     h = np.diag(-t0 * np.ones(n - 1), 1) + np.diag(-t0 * np.ones(n - 1), -1)
     ev, U = np.linalg.eigh(h)
     occ = 1.0 / (np.exp(np.clip(x * ev / t0, -700, 700)) + 1.0)
@@ -68,20 +83,24 @@ def main():
     print("geometric-envelope formula q^2(1+q^2)/(1-q^2)^3, q = x/4\n")
     rows = []
     for x in [0.5, 1.0, 2.0, 4.0, 8.0, 20.0, 50.0, 100.0, 200.0, 400.0]:
-        row = uniform_correlator(x)
-        S2 = second_moment(row, m_max=min(2000, row.size - 1))
+        n_x = chain_len_for(x)
+        row = uniform_correlator(x, n_x)
+        S2 = second_moment(row, m_max=row.size - 1)
         q = x / 4.0
         geo = (q ** 2 * (1 + q ** 2) / (1 - q ** 2) ** 3) if q < 1 else np.inf
         xi = corr_length(row)
         rows.append((x, S2, geo, xi, 2 * x / np.pi))
-        print(f"  x={x:7.1f}  q={q:7.2f}  S_2={S2:11.4f}   "
-              f"geometric={geo:12.4g}   xi_T/a={xi:8.2f}  (2x/pi = {2*x/np.pi:7.2f})",
-              flush=True)
+        print(f"  x={x:7.1f}  q={q:7.2f}  n={n_x:6d} ({n_x/2/(2*x/np.pi):5.1f} xi)  "
+              f"S_2={S2:11.4f}  S_2/x={S2/x:.6f}   geometric={geo:12.4g}   "
+              f"xi_T/a={xi:8.2f}", flush=True)
 
     r = np.array(rows, dtype=float)
     cold = r[r[:, 0] >= 20]
     fit = np.polyfit(np.log(cold[:, 0]), np.log(cold[:, 1]), 1)
-    print(f"\n  cold branch: S_2 propto x^{fit[0]:.3f}, S_2 = {np.exp(fit[1]):.4f} x^{fit[0]:.3f}")
+    ratio = cold[:, 1] / cold[:, 0]
+    print(f"\n  cold branch: S_2 propto x^{fit[0]:.3f}, S_2 = {np.exp(fit[1]):.5f} x^{fit[0]:.3f}")
+    print(f"  slope-1 form (what the paper quotes): S_2/x = {ratio.mean():.6f}"
+          f"  spread {ratio.max()-ratio.min():.1e} over x = {cold[0,0]:.0f}-{cold[-1,0]:.0f}")
     print(f"  i.e. S_2 grows linearly in xi_T/a; the geometric formula diverges at q=1.")
 
     print("\nsame state factor measured directly at the surface bond of the model's")
@@ -123,6 +142,7 @@ def main():
     np.savez(_out,
              x=r[:, 0], S2=r[:, 1], S2_geometric=r[:, 2], xi_meas=r[:, 3],
              xi_pred=r[:, 4], cold_slope=fit[0], cold_amp=np.exp(fit[1]),
+             cold_ratio_mean=ratio.mean(), cold_ratio_spread=ratio.max() - ratio.min(),
              hz_rs=h[:, 0], hz_xstar=h[:, 1], hz_S2_cap=h[:, 2],
              hz_S2_uniform=h[:, 3], hz_frak_ratio=h[:, 4])
 

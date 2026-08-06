@@ -60,11 +60,16 @@ def _residual(Phi, mu, beta0):
     Nbar = 0.5 * (lapse[:-1] + lapse[1:])
     Nbar_abs = jnp.abs(Nbar)
     off = -t0 * Nbar_abs
+    # Source convention (eq. sc-rho, sec:ex-observable, compute_exact_data_gpu.py):
+    # the bond term is NEGATIVE against a positive V_defect term, carries ONE power
+    # of the lapse (the bare shell observable -- the smeared correlator Gs already
+    # supplies it, and a second factor would count the lapse twice), and is split
+    # half onto each endpoint of the bond.
     V_defect = jnp.maximum(m0 * (1.0 - lapse) - mu, 0.0)
     Gd_s, Gs_s = _bond_correlations(diag0, off, beta0)
-    rho_s = jnp.zeros(N, dtype=jnp.float64).at[:-1].add(2.0 * t0 * Nbar_abs * Gs_s * g[:-1])
+    rho_s = jnp.zeros(N, dtype=jnp.float64).at[:-1].add(-1.0 * t0 * Gs_s * g[:-1]).at[1:].add(-1.0 * t0 * Gs_s * g[:-1])
     Gd_t, Gs_t = _bond_correlations(V_defect, off, beta0)
-    rho_t = (jnp.zeros(N, dtype=jnp.float64).at[:-1].add(2.0 * t0 * Nbar_abs * Gs_t * g[:-1])
+    rho_t = (jnp.zeros(N, dtype=jnp.float64).at[:-1].add(-1.0 * t0 * Gs_t * g[:-1]).at[1:].add(-1.0 * t0 * Gs_t * g[:-1])
              + V_defect * Gd_t * g)
     F = lhs - (beta0 / csq) * (rho_s - rho_t)
     return F.at[N - 1].set(Phi[N - 1])
@@ -131,7 +136,10 @@ for mu_val in d5["mu_values"]:
     try:
         Phi = np.array(d5[f"{key}_Phi"])
         ne, minN = get_props(Phi, mu_val)
-        if minN > 0.01 and np.max(np.abs(Phi)) > 0.01:
+        # STAR branch only: n_eff >= 2 and min N clear of the lapse floor by 20x.
+        # "minN > 0.01" was calibrated on the old source and now admits the
+        # floor-pinned n_eff=1 family, whose |lambda_1| never approaches zero.
+        if ne >= 2 and minN > 0.1 and np.max(np.abs(Phi)) > 0.01:
             bt5[mu_val] = (Phi, ne, minN)
     except KeyError:
         pass
@@ -150,7 +158,7 @@ for mu_val in bt5_mus:
         Phi_sol, norm, ok, iters = newton_solve(Phi5 * scale, mu_val, BETA)
         if ok and np.max(np.abs(Phi_sol)) > 0.01:
             ne, minN = get_props(np.array(Phi_sol), mu_val)
-            if minN > 0.01:  # non-floor
+            if ne >= 2 and minN > 0.1:  # star branch, not the pinned family
                 if best is None or ne > best[1]:
                     best = (np.array(Phi_sol), ne, minN, scale)
                 if scale == 1.0:
@@ -205,15 +213,19 @@ while mu_cur < 3.0 * m0 and fails < 20:
     Phi_sol, norm, ok, iters = newton_solve(Phi_seed, mu_next, BETA)
     if ok and np.max(np.abs(Phi_sol)) > 0.01:
         ne, minN = get_props(np.array(Phi_sol), mu_next)
-        if minN < 0.01:
-            ok = False  # reject floor-bound
+        # Star-branch condition, same as the seed filter: the continuation must
+        # not step onto the floor-pinned n_eff=1 family after the star branch
+        # folds. With minN>0.01 it did, and ran on to mu/m0 ~ 0.97 where
+        # |lambda_1| = 6, i.e. no fold at all.
+        if ne < 2 or minN < 0.1:
+            ok = False
 
     if not ok:
         # Try direct seed
         Phi_sol, norm, ok, iters = newton_solve(Phi_cur, mu_next, BETA)
         if ok and np.max(np.abs(Phi_sol)) > 0.01:
             ne, minN = get_props(np.array(Phi_sol), mu_next)
-            if minN < 0.01:
+            if ne < 2 or minN < 0.1:
                 ok = False
 
     if not ok:
@@ -225,7 +237,7 @@ while mu_cur < 3.0 * m0 and fails < 20:
             Phi_sol, _, ok2, iters = newton_solve(Phi_sub, mu_sub, BETA)
             if ok2 and np.max(np.abs(Phi_sol)) > 0.01:
                 ne2, minN2 = get_props(np.array(Phi_sol), mu_sub)
-                if minN2 > 0.01:
+                if ne2 >= 2 and minN2 > 0.1:
                     mu_next = mu_sub
                     dmu = sub_dmu
                     ne, minN = ne2, minN2
@@ -261,19 +273,6 @@ print(f"Total: {len(all_data)} solutions")
 # ── Step 3: Eigenvalue analysis near fold ────────────────────────────────
 print(f"\n=== Eigenvalue analysis ===", flush=True)
 
-# Take last 15 solutions and sample earlier ones
-n_total = len(all_data)
-sample_idx = list(range(0, n_total-15, max(1, (n_total-15)//10))) + list(range(max(0, n_total-15), n_total))
-sample_idx = sorted(set(sample_idx))
-
-for i in sample_idx:
-    mu_val, ne, minN, _ = all_data[i]
-    # Find the solution (reconstruct from continuation)
-    # We only have the last Phi_cur. Need to recompute for earlier points.
-    # For now, just compute eigenvalue for solutions we can reconstruct.
-    pass
-
-# Actually, let's recompute eigenvalues by re-solving from nearby solutions
 print("Re-solving for eigenvalues at sampled points...", flush=True)
 
 # Start from the highest-mu bt10 seed and re-solve each sampled point
@@ -301,9 +300,20 @@ for mu_val in all_mus:
             Phi_chain = np.array(Phi_sol).copy()
             mu_chain = mu_val
 
-# Now compute eigenvalues at sampled points
+# Now compute eigenvalues at sampled points.
+# Build the indices against all_mus itself.  They used to be built from
+# all_data, which is longer (it carries duplicate mu values from the seeding
+# pass), and were then applied to the deduplicated all_mus -- so the tail index
+# fell off the end and was silently dropped by the `i < len(all_mus)` guard.
+# The dropped point is the LAST one, i.e. the fold, which is precisely the
+# solution sec:ff-tov quotes the eigenvalue of.
+n_mus = len(all_mus)
+n_tail = min(15, n_mus)
+step = max(1, (n_mus - n_tail) // 10) if n_mus > n_tail else 1
+sample_idx = sorted(set(list(range(0, n_mus - n_tail, step))
+                        + list(range(n_mus - n_tail, n_mus))))
 eig_data = []
-sample_mus = [all_mus[i] for i in sample_idx if i < len(all_mus)]
+sample_mus = [all_mus[i] for i in sample_idx]
 
 for mu_val in sample_mus:
     if mu_val not in Phi_cache:
