@@ -165,9 +165,16 @@ def run(N_floor, Phi0, mu0, mu_cap=2.9999):
                 and float(np.min(1.0 + P / csq)) > 1.5 * N_floor)
 
     mu, P = mu0, np.array(Phi0)
-    step = 0.005
+    # Step RELATIVE to m0.  This was the absolute 0.005, written when m0/t0 was
+    # 3.0, where it is a mu/m0 step of 0.0017.  At m0 = 0.03 the whole star
+    # branch spans mu = 1.5e-4 to 5.7e-3, so an absolute 0.005 first step is
+    # sixty times the entire branch and every halving from it is still coarse --
+    # the continuation reported "0 steps" and a NaN eigenvalue rather than a
+    # fold.  A step written in the physical variable does not depend on the
+    # parameter point.
+    step = 0.0017 * m0
     track = []
-    while step > 2e-7 and mu < mu_cap:
+    while step > 1e-7 * m0 and mu < mu_cap:
         Pt, conv = newton(P, mu + step)
         if conv and ok(Pt):
             mu, P = mu + step, Pt
@@ -177,7 +184,14 @@ def run(N_floor, Phi0, mu0, mu_cap=2.9999):
                           float(lam[0])))
         else:
             step *= 0.5
-    return mu, P, np.array(track)
+    # Evaluate the Jacobian at the endpoint whether or not any step was taken.
+    # It used to be computed only inside the accept branch, so a run that could
+    # not advance reported |lam_1| = NaN -- which reads as a broken test rather
+    # than as the branch ending exactly at the seed, and those are very
+    # different conclusions.
+    lam_end = np.sort(np.abs(np.linalg.eigvals(
+        np.array(jac(jnp.array(P), jnp.float64(mu)))[:-1, :-1])))
+    return mu, P, np.array(track), float(lam_end[0]), float(lam_end[1])
 
 
 def main():
@@ -209,7 +223,7 @@ def main():
         sys.exit("no multi-shell star-branch solution found to seed from")
     cand.sort()
     mu0, ne0, mn0 = cand[-1]
-    Phi0 = np.array(d[f"mu{mu0:.2f}_Phi"])
+    Phi0 = np.array(d[f"mu{mu0:.6f}_Phi"])
     print(f"seed: mu/m0 = {mu0/m0:.4f}, n_eff = {ne0}, min N = {mn0:.4f}"
           f"   (highest-mu multi-shell solution of {len(cand)} candidates)\n",
           flush=True)
@@ -217,18 +231,23 @@ def main():
     out = {}
     for floor in [5e-3, 1e-3, 1e-4, 1e-5]:
         t = time.time()
-        mu_end, P, track = run(floor, Phi0, mu0)
-        out[floor] = (mu_end, track)
+        mu_end, P, track, lam1, lam2 = run(floor, Phi0, mu0)
+        out[floor] = (mu_end, track, lam1, lam2)
         lastN = float(np.min(1.0 + P / csq))
+        _clamped = lastN < 3.0 * floor
         print(f"  N_floor={floor:.0e}:  branch reaches mu/m0 = {mu_end/m0:.5f}, "
-              f"min N = {lastN:.6f}, |lam_1| = {track[-1,3] if track.size else np.nan:.4g}"
-              f"   ({time.time()-t:.0f}s, {len(track)} steps)", flush=True)
+              f"min N = {lastN:.6f}, |lam_1| = {lam1:.4g}, |lam_2/lam_1| = "
+              f"{lam2/lam1 if lam1 > 0 else np.inf:.1f}"
+              f"   ({time.time()-t:.0f}s, {len(track)} steps)"
+              f"{'   <-- ON THE LAPSE CLAMP' if _clamped else ''}", flush=True)
 
     fl = np.array(sorted(out))
     mue = np.array([out[f][0] / m0 for f in fl])
     _here = os.path.dirname(os.path.abspath(__file__))
     _out = os.path.normpath(os.path.join(_here, "..", "fermion", "numerical", "data", "fold_continuation_floor.npz"))
     np.savez(_out, N_floor=fl, mu_end_over_m0=mue,
+             lam1=np.array([out[f][2] for f in fl]),
+             lam2=np.array([out[f][3] for f in fl]),
              **{f"track_{i}": out[f][1] for i, f in enumerate(fl)})
     print("\nIf mu_end tracks N_floor the stop is the clamp, not a fold.")
 

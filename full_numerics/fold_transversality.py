@@ -217,10 +217,15 @@ mus = sorted(float(m) for m in d["mu_values"]
              and _star(float(m), np.array(d[f"mu{float(m):.6f}_Phi"])))
 if not mus:
     sys.exit("no star-branch solution to seed from")
-Phi_lo = np.array(d[f"mu{mus[-1]:.2f}_Phi"])
-step = 0.01
+Phi_lo = np.array(d[f"mu{mus[-1]:.6f}_Phi"])
+# Step RELATIVE to m0.  This was the absolute 0.01, written when m0/t0 was 3.0.
+# At m0 = 0.03 that is a mu/m0 step of 0.333 -- a third of the whole branch --
+# and the sibling fold_continuation_floor.py hit exactly this, reporting "0
+# steps" and a NaN eigenvalue instead of a fold.  A continuation step belongs in
+# the physical variable mu/m0, not in absolute mu.
+step = 0.0033 * m0
 mu = mus[-1]
-while step > 2e-7:
+while step > 1e-7 * m0:
     Phi_try, nrm, ok = newton(Phi_lo, mu + step)
     # _star, NOT physical.  The seeds above were filtered to the star branch but
     # the bisection was not, so it accepted any solution clear of 1.5*N_floor --

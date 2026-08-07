@@ -222,7 +222,9 @@ def run_rate(Phi_arr, t_norm, T_evap, n_sub, detectors, t0, beta0, cstar_sq,
         N_prod_eq[k] = 0.5 * float(np.sum(np.abs(dn_eq)))
         sig_ad = (V_k * f_ad[None, :]) @ V_k.T
         dens_exc[k] = np.real(np.diag(G)) - np.diag(sig_ad)
-        Gr = np.real(G)
+        # see evaporation_page_dynamics.py: taking the real part before
+        # diagonalising discards the coherence and biases every entropy.
+        Gr = 0.5 * (G + G.conj().T)
         w = np.linalg.eigvalsh(0.5 * (Gr + Gr.T))
         S_glob[k] = float(np.sum(_h(w)))
         for j, n_det in enumerate(detectors):

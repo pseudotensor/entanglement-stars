@@ -58,7 +58,7 @@ def get_r_s_w(d, key, n_eff, N):
         return np.dot(basis, target) / np.dot(basis, basis)
 
 
-# Filter to main branch only: monotonically increasing r_s, n_eff >= 3
+# Filter to main branch only: monotonically increasing r_s, n_eff >= 2
 all_mus = sorted(mu_values)
 main_branch = []
 prev_rs = 0
@@ -66,11 +66,13 @@ for mu in all_mus:
     key = f"mu{mu:.6f}"
     n_eff = get_n_eff(d, key)
     rs = get_r_s_w(d, key, n_eff, N)
-    if n_eff >= 3 and rs > prev_rs * 0.9:  # monotonic r_s
+    if n_eff >= 2 and rs > prev_rs * 0.9:  # monotonic r_s
         main_branch.append(mu)
         prev_rs = rs
 
 # Representative subset for profile plots (top row): ~8-10 curves
+if not main_branch:
+    raise SystemExit('no star-branch points in the npz; nothing to plot')
 mu_show_profiles = [mu for mu in main_branch
                     if mu/m0 in [round(x, 3) for x in
                     [0.017, 0.033, 0.067, 0.1, 0.167, 0.233, 0.333, 0.5, 0.6, 0.657]]]
@@ -95,7 +97,8 @@ for idx, mu in enumerate(mu_show_profiles):
     n_eff = get_n_eff(d, key)
 
     c = colors_prof[idx]
-    lab = rf'$\mu/m_0={mu/m0:.2f}$'
+    _r = mu / m0
+    lab = rf'$\mu/m_0={_r:.4f}$' if _r > 0.15 else rf'$\mu/m_0={_r:.2f}$'
     zoom = min(max(n_eff + 15, 25), N)
 
     axes[0, 0].plot(n_arr[:zoom], Phi[:zoom], color=c, lw=1.5, label=lab)
@@ -124,7 +127,7 @@ axes[1, 2].set_title(r'Schwarzschild radius vs $\mu/m_0$ (from $w$-fit)')
 mu_fold = main_branch[-1] / m0
 for ax in [axes[1, 1], axes[1, 2]]:
     ax.axvline(mu_fold, color='k', ls=':', lw=1.2, alpha=0.6)
-    ax.set_xlim(0, 1)
+    ax.set_xlim(0, mu_fold * 1.15)
 
 # Formatting
 for ax in axes[0, :].flat:
@@ -141,7 +144,7 @@ axes[1, 0].set_title('Source'); axes[1, 0].set_ylabel('Source')
 axes[1, 0].axhline(0, color='gray', ls='--', lw=0.5)
 
 plt.suptitle(rf'TK star chemical potential scan: $\beta_0 t_0={beta0:.0f}$, '
-             rf'$m_0={m0:.1f}$, $c_*^2={csq:.1f}$, $N_s={N}$',
+             rf'$m_0={m0:g}$, $c_*^2={csq:g}$, $N_s={N}$',
              fontsize=14)
 plt.tight_layout()
 plt.savefig(os.path.join(_FIGDIR, "tov_tk_chemical.png"), dpi=150)

@@ -34,6 +34,7 @@ import jax
 jax.config.update("jax_enable_x64", True)
 import jax.numpy as jnp
 from jax import jit, jacfwd
+import tk_colored_jacobian as _tkcj
 
 print(f"JAX devices: {jax.devices()}", flush=True)
 
@@ -132,11 +133,35 @@ def _residual(Phi, mu, beta0):
 print("JIT compiling...", flush=True)
 t_jit = time.time()
 resid_jit = jit(_residual)
-jac_jit = jit(jacfwd(_residual, argnums=0))
+jac_full = jit(jacfwd(_residual, argnums=0))
+jac_jit = jac_full
 _d = jnp.zeros(N); _m = jnp.float64(0.1); _b = jnp.float64(5.0)
 jax.block_until_ready(resid_jit(_d, _m, _b))
 jax.block_until_ready(jac_jit(_d, _m, _b))
 print(f"JIT done in {time.time() - t_jit:.1f}s", flush=True)
+
+# Colored (banded) Jacobian -- see tk_colored_jacobian.py for the measurements
+# and the safety argument.  Calibrated on a STARLIKE probe, not the flat chain:
+# the band tracks the correlation length and the flat chain's is narrower.  A
+# colder beta0 t0 than the beta0 t0 = 5 reference widens it, which is exactly
+# why this is measured here rather than inherited.
+# Calibration probe.  Two things must be right or the band is measured on the
+# wrong problem:
+#   beta0 -- the band tracks the correlation length, and this script solves at
+#     beta0 = 15, not the 5.0 used for the JIT warm-up.  Calibrating at 5
+#     gives b = 48 where the honest value here is far wider, silently
+#     truncating entries thousands of times above tolerance.  Calibrate at the
+#     COLDEST beta0 this script reaches, so the band covers every solve it does.
+#   mu -- the warm-up used mu = 0.1 = 3.3 m0, which is 17x past the fold.  There
+#     m0(1-N) < mu on every shell, so V_defect vanishes identically, rho_s -
+#     rho_t is identically zero with zero derivative, and the calibration sees
+#     only the conductance-energy Hessian with the entire source sector absent.
+#     mu/m0 = 0.10 sits mid star branch and has a real core.
+_probe = (-3.0 * jnp.exp(-0.5 * (jnp.arange(1, N + 1) / 8.0) ** 2)).at[-1].set(0.0)
+_cal_mu = jnp.float64(round(0.10 * m0, 8))
+_cal_beta = jnp.float64(15.0)
+jac_jit, _tk_band = _tkcj.install(_residual, jac_full,
+                                  (_probe, _cal_mu, _cal_beta), N, label="")
 
 
 def newton_solve(Phi0, mu, beta0, max_iter=80, tol=1e-8):
@@ -175,7 +200,13 @@ def get_props(Phi, mu):
 
 
 def compute_eigenvalue(Phi, mu, beta0):
-    J = np.array(jax.block_until_ready(jac_jit(jnp.array(Phi), jnp.float64(mu), jnp.float64(beta0))))
+    # EXACT Jacobian, never the colored one.  The safety argument for
+    # truncation is that it perturbs the Newton DIRECTION while the fixed
+    # point is pinned by the fp64 residual test.  |lambda_1| is not a fixed
+    # point -- it is the published fold diagnostic, and the scripts report
+    # it down to 1e-3-1e-4, where a truncation-induced ||dJ||_2 of 4.6e-3
+    # at beta0 t0 = 15 would be an O(1) error on the quantity itself.
+    J = np.array(jax.block_until_ready(jac_full(jnp.array(Phi), jnp.float64(mu), jnp.float64(beta0))))
     J_int = J[:-1, :-1]
     eigs = np.sort(np.abs(np.linalg.eigvals(J_int)))
     return float(eigs[0])

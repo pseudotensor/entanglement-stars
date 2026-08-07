@@ -54,9 +54,18 @@ print(f"Page 1976 anchor: {R_page:.5f} (literature 1.4847)")
 print(f"massless Dirac (k=2): R = {R_dirac:.5f}, "
       f"t_Page = {t_page(R_dirac, 2):.5f}")
 
-PKG = ((2, R_dirac, "tab:blue", "massless Dirac barrier"),)
+# Panel (a) carries the SAME reference cases panel (b) marks, so the model's own
+# curve can be judged against them instead of standing alone.  Without the R = 1
+# case in particular there is no baseline: it is the unshifted Page curve, where
+# the radiation carries exactly the entropy the star loses, and its peak at 0.646
+# is what 0.512 should be read against.
+PKG = ((2, 1.0,       "0.55",      "reversible, $R=1$ (unshifted)"),
+       (2, 4.0/3.0,   "tab:green", "$3{+}1$D blackbody, $R=4/3$"),
+       (2, R_page,    "tab:olive", "Page 1976, $\\gamma+$graviton"),
+       (2, R_dirac,   "tab:blue",  "massless Dirac, this model"))
 
-fig, axes = plt.subplots(1, 3, figsize=(13.2, 3.9))
+_iy = [0]
+fig, axes = plt.subplots(1, 2, figsize=(9.4, 3.9))
 
 # -- (a) the Page curve ----------------------------------------------------
 ax = axes[0]
@@ -65,40 +74,27 @@ for k, R, col, lab in PKG:
     late = (1.0 - t) ** (2.0 / (k + 1.0))
     ax.plot(t, np.minimum(R * (1.0 - late), late), color=col, lw=2.0,
             label=rf"$k={k}$, $R={R:.3f}$ ({lab})")
-    ax.plot(t, late, color=col, lw=0.9, ls="--", alpha=0.6)
-    tp = t_page(R, k)
-    ax.axvline(tp, color=col, ls=":", lw=1.0)
-    ax.annotate(rf"${tp:.3f}$", xy=(tp + 0.015, 0.88),
-                fontsize=8, color=col)
+    if R == R_dirac:
+        ax.plot(t, late, color=col, lw=0.9, ls="--", alpha=0.6)
+    # No vertical markers or inline numbers here: four of them collided with each
+    # other and with the legend.  The Page times are quoted to three digits in
+    # the caption, and panel (b) locates them against R.
+    _iy[0] += 1
 ax.plot([], [], color="0.5", lw=0.9, ls="--",
         label=r"late branch $S_{\rm ent}(t)$")
 ax.set_xlabel(r"$t/t_{\rm evap}$")
 ax.set_ylabel(r"$S_R(t)\,/\,S_{\rm ent}(0)$")
 ax.set_title("(a) Page curve with entropy production", fontsize=10)
-ax.legend(fontsize=7.5, frameon=False, loc="lower center")
+ax.legend(fontsize=6.6, frameon=False, loc="upper right")
 ax.set_xlim(0, 1)
 ax.set_ylim(0, 1.02)
 
-# -- (b) t_Page vs R -------------------------------------------------------
-ax = axes[1]
-Rg = np.linspace(1.0, 2.15, 400)
-for k, _, col, lab in PKG:
-    ax.plot(Rg, t_page(Rg, k), color=col, lw=1.8, label=rf"$k={k}$ ({lab})")
-marks = [(1.0, 2, "reversible emission", "tab:red", "o"),
-         (4.0 / 3.0, 2, r"$3{+}1$D blackbody", "tab:green", "s"),
-         (R_page, 2, "Page 1976, $\\gamma+$graviton", "tab:olive", "^"),
-         (R_dirac, 2, "massless Dirac, this model", "tab:blue", "*")]
-for R, k, lab, col, mk in marks:
-    ax.plot([R], [t_page(R, k)], mk, color=col, ms=10 if mk == "*" else 5.5,
-            label=rf"$R={R:.3f}$: $t_{{\rm Page}}={t_page(R,k):.3f}$"
-                  rf"  {lab}")
-ax.set_xlabel(r"entropy-to-energy emission ratio $R=T_H J_S/J_E$")
-ax.set_ylabel(r"$t_{\rm Page}/t_{\rm evap}$")
-ax.set_title(r"(b) $t_{\rm Page}=1-[R/(1{+}R)]^{3/2}$", fontsize=10)
-ax.legend(fontsize=6.2, frameon=False, loc="upper right")
+# Panel (b) -- t_Page against R -- was removed: it plotted a closed-form
+# expression with four marked points, and the four values are quoted in the
+# caption.  R itself appears in panel (a)'s legend.
 
 # -- (c) monogamy against an accumulating emission register ----------------
-ax = axes[2]
+ax = axes[1]
 q = np.load(os.path.join(DATADIR, "amps_register.npz"))
 # same ladder, renormalised to the k = 2 lifetime: t/t_evap = 1 - (rs/rs0)^3
 tt = 1.0 - (q["rs"] / float(q["rs0"])) ** 3
@@ -109,30 +105,55 @@ ax.plot(tt, q["I_early"], "-s", color="tab:red", ms=3.5, lw=1.6,
 ax.plot(tt, q["I_far"], "-^", color="tab:blue", ms=3.5, lw=1.6,
         label=r"$I(b:\mathrm{not\ yet\ vacated})$")
 ax.axhline(2 * float(q["S_cap"][0]), color="0.6", lw=0.9, ls="--")
-ax.annotate(r"$2S(b)$", xy=(0.62, 2 * float(q["S_cap"][0]) - 0.06),
-            fontsize=7.5, color="0.4")
+_bud = 2 * float(q["S_cap"][0])
+ax.annotate(rf"$2S(b)={_bud:.3f}$: monogamy budget (exact on a pure state)",
+            xy=(0.02, _bud + 0.025), fontsize=7.0, color="0.35")
+ax.annotate("closes exactly on the purified state", xy=(0.30, _bud - 0.085),
+            fontsize=6.8, color="0.45")
+# The shortfall below that line is what b shares with the thermal purifier
+# rather than with either side -- see the caption.
+# The monogamy budget is shared with the WHOLE exterior, so the sum that must
+# reach 2S(b) on a pure state is I(b:S) + I(b:E) + I(b:not-yet-vacated).  An
+# earlier version of this line omitted the third term and so appeared to show a
+# large deficit; the deficit is small.
+# Monogamy, evaluated on the PURIFIED state.  I(b:S) + I(b:exterior) with the
+# exterior taken to include the thermofield-double purifier, so b, S and the
+# exterior exhaust a pure state and the identity 2S(b) is exact rather than
+# approached.  Plotting the chain alone leaves a 2.5-6.3% residue that is the
+# purifier omitted, not a physical deficit.
+_sum = q["I_S_pure"] + q["I_ext_pure"]
+ax.plot(tt, _sum, "-", color="0.45", lw=1.4, ls=(0, (5, 2)),
+        label=r"$I(b{:}S)+I(b{:}\mathrm{ext})$, purified")
 d = q["I_early"] - q["I_S"]
 i = int(np.where(np.diff(np.sign(d)))[0][0])
 f = -d[i] / (d[i + 1] - d[i])
 t_x = tt[i] + f * (tt[i + 1] - tt[i])
 ax.axvline(t_x, color="tab:red", ls=":", lw=1.0)
-ax.annotate(rf"trade at ${t_x:.3f}$", xy=(t_x + 0.03, 0.30), fontsize=7.5,
-            color="tab:red")
+ax.annotate(rf"trade at ${t_x:.3f}$", xy=(t_x + 0.02, 0.86),
+            fontsize=7.5, color="tab:red")
 ax.axvline(t_page(R_dirac, 2), color="0.4", ls=":", lw=1.2)
+ax.axvspan(t_x, t_page(R_dirac, 2), color="0.85", alpha=0.45, zorder=0)
 ax.annotate(rf"$t_{{\rm Page}}={t_page(R_dirac,2):.3f}$",
             xy=(t_page(R_dirac, 2) + 0.03, 0.16), fontsize=7.5, color="0.3")
 ax.set_xlabel(r"$t/t_{\rm evap}$")
 ax.set_ylabel("mutual information (nats)")
-ax.set_title("(c) monogamy with an emission register", fontsize=10)
-ax.legend(fontsize=7.0, frameon=False, loc="upper right")
+ax.set_title("(b) monogamy with an emission register", fontsize=10)
+# Upper right but BELOW the 2S(b) line and its annotation: the band between the
+# red curve's saturation (~0.71) and the "closes exactly" text (~1.30) is the
+# only clear space, and the legend collided with the curves everywhere else.
+ax.legend(fontsize=6.2, frameon=False, loc="upper right",
+          bbox_to_anchor=(0.995, 0.86))
 ax.set_xlim(-0.02, 0.95)
-ax.set_ylim(0, 1.95)
+_top = 2 * float(q["S_cap"][0]) * 1.06
+ax.set_ylim(0, _top)          # was a hard 1.95, which left the data in the bottom third
 print(f"AMPS register (beta0t0 = {q['beta0t0'][0]:.0f}..{q['beta0t0'][-1]:.0f},"
       f" r_s/a = {q['rs'][0]:.1f}..{q['rs'][-1]:.1f}): crossing at "
       f"t/t_evap = {t_x:.4f}, m_shed = "
       f"{q['m_shed'][i] + f*(q['m_shed'][i+1]-q['m_shed'][i]):.2f}; "
-      f"monogamy deficit {q['deficit'].min():.4f}-{q['deficit'].max():.4f} "
-      f"of 2S(b) = {2*q['S_cap'][0]:.4f}")
+      f"monogamy on the purified state closes to "
+      f"{abs(q['closure']).max():.1e} of 2S(b) = {2*q['S_cap'][0]:.4f} "
+      f"(chain alone leaves {q['deficit'].min():.4f}-{q['deficit'].max():.4f}, "
+      f"which is the purifier omitted)")
 
 fig.tight_layout()
 out = os.path.join(FIGDIR, "evaporation_page_dynamics.pdf")

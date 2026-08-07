@@ -45,7 +45,7 @@ _m0 = float(d["m0"])
 _avail = sorted(float(m) for m in d["mu_values"])
 def _pick(ratio):
     return min(_avail, key=lambda m: abs(m / _m0 - ratio))
-mu_show = sorted({_pick(r) for r in (0.02, 0.05, 0.10)})
+mu_show = sorted({_pick(r) for r in (0.02, 0.10, 0.19)})
 colors = {mu: c for mu, c in zip(mu_show, ['black', 'tab:red', 'tab:blue'])}
 m0 = float(d["m0"])
 
@@ -73,7 +73,7 @@ for mu in mu_show:
     J_w = g[:-1] * t0**2 * dw
 
     # w-fit: w = 1 - r_s/r in exterior
-    n_start = max(n_eff + 3, 5)
+    n_start = max(n_eff + 4, 5)
     n_end = min(N // 2, n_eff + 40)
     idx = np.arange(n_start - 1, n_end)
     r_fit = n_arr[idx]
@@ -106,7 +106,7 @@ for mu in mu_show:
 axes[0].set_title(r'(a) $w$-flux $J_w = g\,\Delta w$ (exterior)')
 axes[0].set_ylabel(r'$J_w$')
 axes[0].set_xlabel('$n$ (shell)')
-axes[0].legend(fontsize=8)
+axes[0].legend(fontsize=8, loc='center right')
 axes[0].grid(True, alpha=0.3)
 axes[0].set_xlim(0, 60)
 
@@ -124,9 +124,9 @@ axes[2].set_ylabel('Residual')
 axes[2].set_xlabel('$n$ (shell)')
 axes[2].legend(fontsize=8)
 axes[2].grid(True, alpha=0.3)
-axes[2].set_xlim(0, 100)
+axes[2].set_xlim(0, 70)
 
-plt.suptitle(rf'Exterior diagnostics (full EL, $\beta_0={beta0:.0f}$, $N_s={N}$)',
+plt.suptitle(rf'Exterior diagnostics (full EL, $\beta_0 t_0={beta0:g}$, $N_s={N}$)',
              fontsize=14)
 plt.tight_layout()
 plt.savefig(os.path.join(_FIGDIR, "tov_tk_final_flux.png"), dpi=150)
@@ -145,10 +145,10 @@ for mu in mu_values:
         n_eff = int(np.sum(V_defect > 1e-10))
 
         w = lapse**2
-        dw = w[:-1] - w[1:]
+        dw = w[1:] - w[:-1]   # same orientation as the plotted J_w above
         J_w = g[:-1] * t0**2 * dw
 
-        n_start = max(n_eff + 3, 5)
+        n_start = max(n_eff + 4, 5)
         n_end = min(N // 2, n_eff + 40)
         idx = np.arange(n_start - 1, n_end)
         r_fit = n_arr[idx]
@@ -167,6 +167,6 @@ for mu in mu_values:
         # with V > 0 on the 1-based shells 1..n_eff the surface is n_eff + 1.
         # This was float(n_eff), which put the compactness ~25% low.
         compact = float(n_eff + 1) / r_s_w if r_s_w > 0 else float('inf')
-        print(f"  {mu/m0:6.3f} {n_eff:6d} {r_s_w:8.3f} {compact:8.2f} {J_w_var:10.6f}")
+        print(f"  {mu/m0:8.5f} {n_eff:6d} {r_s_w:8.3f} {compact:8.2f} {J_w_var:10.6f}")
     except KeyError:
         pass

@@ -27,10 +27,17 @@ Both geometry and temperature track r_s (sec:tov-discrete-exterior,
 eq:tov-solar-beta), one rung per shell, cap held at the realized offset c=1/2.
 
 What this can and cannot settle is reported by the script itself: it prints
-the crossing, the monogamy deficit 2S(b) - [I(b:S) + I(b:ext)] which measures
-how far the model's KMS state is from the purity the identity above needs, and
-the number of vacated shells at the crossing, which is what tells you whether
-the crossing is a Page-time statement or a correlation-length statement.
+the crossing, and the number of vacated shells at the crossing, which is what
+tells you whether the crossing is a Page-time statement or a correlation-length
+statement.
+
+The monogamy identity is evaluated BOTH ways.  On the chain alone it misses by
+2S(b) - I(b:S) - I(b:ext); that residue was previously reported as a deficit
+measuring how far the KMS state is from pure.  It is not a physical deficit --
+it is the purifier left out of the exterior.  The script now also builds the
+thermofield double explicitly (a provably pure Gaussian state whose reduction is
+the chain's own G) and evaluates the identity with the purifier included in the
+exterior, where it closes to machine precision.
 
 Data -> amps_register.npz ; no figure (see CLAUDE.md convention).
 """
@@ -60,10 +67,50 @@ def one_point(n0, n0_init, n_out_fac=30, n_in_fac=5):
     I_S = mutual_info(G, cap, interior)
     I_E = mutual_info(G, cap, early)
     I_ext = mutual_info(G, cap, exterior)
+
+    # ---- purified (thermofield-double) evaluation -------------------------
+    # The monogamy identity I(b:S) + I(b:X) = 2S(b) holds when b, S, X exhaust a
+    # PURE state.  The KMS state is mixed, so on the chain alone the two sides
+    # miss by 2S(b) - I(b:S) - I(b:ext) -- which was being reported as a physical
+    # "deficit" attributed to mixedness.  It is not physical: it is the purifier
+    # left out of the exterior.
+    #
+    # Purify explicitly.  For a Gaussian fermion state with one-body correlation
+    # G, the doubled correlation
+    #        Gp = [[ G,          sqrt(G(1-G)) ],
+    #              [ sqrt(G(1-G)), I - G      ]]
+    # satisfies Gp^2 = Gp, so it is a PURE Gaussian state, and its reduction to
+    # the first copy is exactly G.  That is the thermofield double.  Taking the
+    # exterior to include the purifier makes b, S, X exhaust the pure state and
+    # the identity becomes exact.
+    Gs = 0.5 * (G + G.T)
+    w, U = np.linalg.eigh(Gs)
+    w = np.clip(w, 0.0, 1.0)
+    Off = (U * np.sqrt(w * (1.0 - w))[None, :]) @ U.T
+    Gp = np.block([[Gs, Off], [Off.T, np.eye(L) - Gs]])
+    anc = list(range(L, 2 * L))
+    I_S_p = mutual_info(Gp, cap, interior)
+    I_ext_p = mutual_info(Gp, cap, exterior + anc)   # exterior INCLUDING purifier
+    I_E_p = mutual_info(Gp, cap, early)
     return dict(rs=rs, beta0t0=beta, n_shed=n_shed, S_cap=S_cap,
                 I_S=I_S, I_early=I_E, I_far=mutual_info(G, cap, far),
                 I_ext=I_ext, deficit=2 * S_cap - I_S - I_ext,
+                # purified: these close the budget exactly
+                I_S_pure=I_S_p, I_ext_pure=I_ext_p, I_early_pure=I_E_p,
+                purity=float(np.abs(Gp @ Gp - Gp).max()),
+                closure=2 * S_cap - I_S_p - I_ext_p,
                 alpha_S=alpha_bond(G, n_in), N_cap=float(N[n_in]))
+
+
+# Column order of the `rows` array, in one place.  Indices have slipped twice
+# now -- once shifting beta0t0/t_norm_k2 when the five purified columns were
+# inserted (the banner then printed "beta0t0 = 0..1"), and once in the crossing
+# banner, which read `closure` as t_norm_k2 and reported a k=2 crossing of
+# 0.0000 instead of 0.2535.  Both times the asserts passed, because they guard
+# the savez block only.  Name the columns instead of counting them.
+_COLS = ["m_shed", "rs", "t_norm_k0", "S_cap", "I_S", "I_early", "I_far",
+         "I_ext", "deficit", "I_S_pure", "I_ext_pure", "I_early_pure",
+         "closure", "purity", "alpha_S", "N_cap", "beta0t0", "t_norm_k2"]
 
 
 def main():
@@ -88,6 +135,8 @@ def main():
         t2n = 1.0 - (p["rs"] / rs0) ** 3
         rows.append([p["n_shed"], p["rs"], t0n, p["S_cap"], p["I_S"],
                      p["I_early"], p["I_far"], p["I_ext"], p["deficit"],
+                     p["I_S_pure"], p["I_ext_pure"], p["I_early_pure"],
+                     p["closure"], p["purity"],
                      p["alpha_S"], p["N_cap"], p["beta0t0"], t2n])
         print(f"  {p['n_shed']:5d}  {p['rs']:6.2f}   {t0n:10.4f}   "
               f"{p['S_cap']:.5f}  {p['I_S']:.5f}   {p['I_early']:.5f}     "
@@ -101,18 +150,25 @@ def main():
         f = -d[i] / (d[i + 1] - d[i])
         m_x = a[i, 0] + f * (a[i + 1, 0] - a[i, 0])
         t_x = a[i, 2] + f * (a[i + 1, 2] - a[i, 2])
-        t_x2 = a[i, 12] + f * (a[i + 1, 12] - a[i, 12])
+        # Column 17 is t_norm_k2.  This read column 12 (`closure`, the ~1e-13
+        # monogamy residual), so the banner printed a k=2 crossing of 0.0000
+        # instead of 0.2535.  Second time a column index has slipped here after
+        # inserting columns; the asserts below guard the savez block only, so
+        # they passed.  Index by NAME from now on.
+        _k2 = _COLS.index('t_norm_k2')
+        t_x2 = a[i, _k2] + f * (a[i + 1, _k2] - a[i, _k2])
         print(f"    at m_shed = {m_x:.2f} shells, r_s/a = "
               f"{a[i,1] + f*(a[i+1,1]-a[i,1]):.2f}, "
               f"t/t_evap = {t_x2:.4f} (k=2, the physical law and the one "
               f"comparable with t_Page); {t_x:.4f} if M were linear in t")
-    print(f"  monogamy deficit 2S(b) - [I(b:S)+I(b:ext)]: "
-          f"{a[:,8].min():.5f}-{a[:,8].max():.5f} nats against 2S(b) = "
-          f"{2*a[0,3]:.5f}, i.e. {100*a[:,8].min()/(2*a[0,3]):.1f}-"
-          f"{100*a[:,8].max()/(2*a[0,3]):.1f}%")
-    print("  (the identity I(b:S) + I(b:R) = 2S(b) needs a pure global state; "
-          "the\n   KMS state at beta_0 is mixed, and that deficit is how far "
-          "off it is)")
+    print(f"  monogamy, chain alone:  2S(b) - [I(b:S)+I(b:ext)] = "
+          f"{a[:, 8].min():.5f}-{a[:, 8].max():.5f} of 2S(b) = {2*a[0, 3]:.5f}")
+    print(f"  monogamy, PURIFIED:     2S(b) - [I(b:S)+I(b:ext+anc)] = "
+          f"{np.abs(a[:, 12]).max():.2e}   <- closes exactly")
+    print(f"  purity of the double:   max|Gp^2 - Gp| = {a[:, 13].max():.2e}")
+    print("  (the chain-alone residue is NOT a physical deficit: it is the\n"
+          "   purifier left out of the exterior.  With the thermofield double\n"
+          "   included the identity is exact, so monogamy holds on its own terms.)")
 
     # how fast I(b : first m exterior shells) saturates -- the correlation
     # length, which is what sets the crossing if the crossing is not the Page
@@ -130,10 +186,15 @@ def main():
     here = os.path.dirname(os.path.abspath(__file__))
     path = os.path.normpath(os.path.join(here, "..", "fermion", "numerical", "data",
                                          "amps_register.npz"))
-    np.savez(path, m_shed=a[:, 0], rs=a[:, 1], t_norm_k0=a[:, 2],
-             S_cap=a[:, 3], I_S=a[:, 4], I_early=a[:, 5], I_far=a[:, 6],
-             I_ext=a[:, 7], deficit=a[:, 8], alpha_S=a[:, 9], N_cap=a[:, 10],
-             beta0t0=a[:, 11], t_norm_k2=a[:, 12], I_vs_m=np.array(Im), rs0=rs0)
+    # The savez indices below must track the rows.append order above.  They came
+    # apart once: inserting the five purified columns shifted beta0t0 and
+    # t_norm_k2 without their indices being updated, so beta0t0 silently read the
+    # purity column and the run banner printed "beta0t0 = 0..1".  Assert instead.
+    assert a.shape[1] == len(_COLS), (
+        f"row width {a.shape[1]}, expected {len(_COLS)} -- _COLS is stale")
+    assert a[:, _COLS.index("beta0t0")].min() > 1.0, "beta0t0 column is wrong"
+    np.savez(path, I_vs_m=np.array(Im), rs0=rs0,
+             **{name: a[:, i] for i, name in enumerate(_COLS)})
     print(f"\nwrote {path}")
 
 

@@ -641,3 +641,105 @@ def test_closure_prefactor_lambda_is_per_channel_everywhere():
 def test_the_two_lambdas_actually_differ():
     """Guard: if 0.217 and 0.217*D coincided, the test above would prove nothing."""
     assert abs(0.217 * 4 - 0.217) > 0.5, "the two lambda conventions must differ"
+
+
+def test_no_script_reads_npz_mu_keys_at_two_decimals():
+    """FAILS IF: any script formats an npz mu key as %.2f.
+
+    tov_tk_chemical_el.py writes keys at %.6f, because at m0/t0 = 0.03 every
+    physical mu rounds to "0.00" and the whole scan would collapse to one key.
+    Two sweeps missed sites here, both for the same reason: they enumerated the
+    variable names they expected (mu, mu_val, mu_t, ...) instead of matching any
+    name.  fold_continuation_floor.py uses `mu0` and fold_transversality.py uses
+    `mus[-1]`, so both survived, and the floor-control test -- the one that
+    decides whether the fold is real -- died with KeyError on the first read of
+    the regenerated data file.
+
+    Match ANY identifier.  An enumeration of expected names is what failed.
+    """
+    import re as _re
+    pat = _re.compile(r"""f["']mu\{[A-Za-z_][A-Za-z0-9_]*(?:\[[^\]]*\])?:\.2f\}_""")
+    bad = []
+    for rel in TK_SCRIPTS + ["tov_convergence_el.py", "tov_tk_chemical_el_fig.py",
+                             "tov_tk_el_flux_fig.py"]:
+        p = os.path.join(ROOT, rel)
+        if not os.path.isfile(p):
+            continue
+        for i, line in enumerate(open(p), 1):
+            if pat.search(line):
+                bad.append(f"{rel}:{i}: {line.strip()[:80]}")
+    assert not bad, (
+        "npz mu keys formatted at 2 decimals; they must be %.6f or every mu at "
+        "m0 = 0.03 collapses to one key:\n  " + "\n  ".join(bad))
+
+
+def test_the_key_format_actually_matters_at_this_m0():
+    """Guard: at m0 = 3 the old format was harmless, so the test above would have
+    proved nothing.  It only bites because m0 is now 0.03."""
+    ns, _ = _load_defs("tov_tk_chemical_el.py", ["_bond_correlations"])
+    m0 = float(ns.get("m0", M0))
+    # The real grid, so the collision count is the one the solver would hit.
+    ratios = ([0.005, 0.010, 0.015, 0.020, 0.030, 0.040, 0.050, 0.060, 0.070,
+               0.080, 0.090, 0.100] + [round(0.100 + 0.005 * i, 4) for i in range(1, 19)])
+    two = {f"{r * m0:.2f}" for r in ratios}
+    six = {f"{r * m0:.6f}" for r in ratios}
+    assert len(six) == len(ratios), (
+        f"%.6f must separate every mu at m0={m0}; it gives {len(six)} keys for "
+        f"{len(ratios)} values")
+    assert len(two) < len(ratios) / 2, (
+        f"at m0={m0} the %.2f format must collide badly, or this test proves "
+        f"nothing: it gives {len(two)} keys for {len(ratios)} values -> {sorted(two)}")
+
+
+def test_continuation_steps_scale_with_m0():
+    """FAILS IF: a mu-continuation step is written as an absolute constant.
+
+    m0/t0 is a free input, so a step in absolute mu means a different physical
+    step at every parameter point.  fold_continuation_floor.py used `step =
+    0.005` and fold_transversality.py `step = 0.01`, both sized for m0 = 3.0.
+    At m0 = 0.03 those are mu/m0 steps of 0.167 and 0.333 against a branch that
+    spans 0.005 to 0.190 -- so the first trial step overshoots the entire branch,
+    every halving stays coarse, and the floor-control test reported "0 steps"
+    with a NaN eigenvalue on the run that was supposed to decide whether the fold
+    is real.  The three mu-scan scripts already wrote `dmu = 0.005 * m0` and were
+    unaffected, which is what the fix makes uniform.
+    """
+    import re as _re
+    bad = []
+    for rel in TK_SCRIPTS:
+        p = os.path.join(ROOT, rel)
+        if not os.path.isfile(p):
+            continue
+        for i, line in enumerate(open(p), 1):
+            code = line.split("#")[0]
+            m = _re.match(r"\s*(step|dmu|d_mu)\s*=\s*([0-9.eE+-]+)\s*$", code)
+            if m:
+                bad.append(f"{rel}:{i}: {m.group(1)} = {m.group(2)} (absolute)")
+    assert not bad, (
+        "continuation step written in absolute mu; it must scale with m0:\n  "
+        + "\n  ".join(bad))
+
+
+def test_active_set_requires_complementarity():
+    """FAILS IF: the active-set loop accepts a set it has not verified.
+
+    Freezing the bound set makes the residual smooth, but the frozen problem
+    equals the ORIGINAL one only where V > 0 on the set and V <= 0 off it.
+    Without that check the frozen residual can be driven to 1e-9 by an
+    inconsistent set: the run at m0 = 0.03 produced "converged" points at
+    mu/m0 = 0.26-0.36 with cores of 8, 34, 9 and 70 shells whose V was negative
+    on shells they treated as bound.  They are not solutions.
+    """
+    src = open(os.path.join(ROOT, "tov_tk_chemical_el.py")).read()
+    assert "on_ok and off_ok" in src, \
+        "active_set_newton must verify complementarity before returning"
+    assert "keep the best" not in src, \
+        "the 2-cycle branch must REJECT, not return the current iterate"
+    code = ast.unparse(ast.parse(src))
+    fn = [n for n in ast.walk(ast.parse(src))
+          if isinstance(n, ast.FunctionDef) and n.name == "active_set_newton"]
+    assert fn, "active_set_newton not found"
+    body = ast.unparse(fn[0])
+    assert body.count("1e+30") >= 3 or body.count("1e30") >= 3, (
+        "each non-convergent exit (inconsistent set, 2-cycle, outer-loop "
+        "exhaustion) must return a rejecting residual")

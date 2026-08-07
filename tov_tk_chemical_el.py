@@ -38,252 +38,11 @@ print(f"JAX devices: {jax.devices()}", flush=True)
 t0 = 1.0; N_floor = 0.005
 
 
-def make_solver(N, beta0, m0, csq):
-    n_arr = jnp.arange(1, N+1, dtype=jnp.float64)
-    g = 4.0 * jnp.pi * n_arr**2
-    diag0 = jnp.zeros(N, dtype=jnp.float64)
-    nunk = N - 1
-
-    def _bond_correlations(diag_vals, off_vals):
-        """Diagonal and off-diagonal correlations from eigh."""
-        H = jnp.diag(diag_vals) + jnp.diag(off_vals, 1) + jnp.diag(off_vals, -1)
-        evals, evecs = jnp.linalg.eigh(H)
-        be = jnp.clip(beta0 * evals, -500.0, 500.0)
-        f = 1.0 / (jnp.exp(be) + 1.0)
-        vf = evecs * f[None, :]
-        Gd = jnp.sum(evecs * vf, axis=1)
-        Gs = jnp.sum(evecs[:-1] * vf[1:], axis=1)
-        return Gd, Gs
-
-    def _bkm_cov(diag_vals, off_vals):
-        """BKM bond-current covariance for each bond."""
-        H = jnp.diag(diag_vals) + jnp.diag(off_vals, 1) + jnp.diag(off_vals, -1)
-        evals, evecs = jnp.linalg.eigh(H)
-        be = jnp.clip(beta0 * evals, -500.0, 500.0)
-        f = 1.0 / (jnp.exp(be) + 1.0)
-        diff = beta0 * (evals[:, None] - evals[None, :])
-        phi = jnp.where(jnp.abs(diff) > 1e-12,
-                         jnp.expm1(diff) / jnp.where(jnp.abs(diff) > 1e-12, diff, 1.0),
-                         1.0)
-        K = f[:, None] * (1.0 - f[None, :]) * phi
-        U_n = evecs[:-1, :]; U_n1 = evecs[1:, :]
-        t1 = jnp.sum((U_n1**2) @ K * (U_n**2), axis=1)
-        t2 = jnp.sum((U_n**2) @ K * (U_n1**2), axis=1)
-        t3 = jnp.sum((U_n * U_n1) @ K * (U_n * U_n1), axis=1)
-        return t1 + t2 - 2.0 * t3
-
-    # Background BKM covariance (computed once)
-    off_bg = -t0 * jnp.ones(N-1, dtype=jnp.float64)
-    cov_bg = _bkm_cov(diag0, off_bg)
-    cov_bg = jnp.maximum(cov_bg, 1e-30)
-
-    # Closure prefactor of eq:sc-closure: P = c_*^2 t0^2/(lambda eps_b) = 36.825
-    # at the TK parameters, with eps_b = 2 t0 Re[...] per channel on the flat
-    # reference chain (eq:sc-sumrule), read at the BULK bond (the open-chain ends
-    # give 0.808 and 0.539 against the bulk 0.6257, and the bulk is flat to 3e-6
-    # over bonds 20..180).
-    #
-    # lambda here is the PER-CHANNEL alpha_S^bond = 0.217, NOT alpha_S = 0.217 D.
-    # The paper uses one symbol for two conventions, and this is the defect that
-    # makes eq:sc-closure read 9.206 instead of 36.825:
-    #   - In the CLOSURE, lambda multiplies a per-channel Dirichlet form against a
-    #     per-channel relative entropy.  kappa^KMS ~ D g_n and S_rel ~ D (the
-    #     alpha^r eigenbasis splits into D decoupled copies), so D factors out of
-    #     the stationarity condition entirely and lambda cannot itself carry D.
-    #     Hence lambda = alpha_S^bond = 0.217 here.
-    #   - In the GAUSS-LAW MATCH of eq:sc-GM, the same symbol absorbs one factor
-    #     D, because sec:sc-newton writes W_flat/g_n with D dropped while eq:sc-M
-    #     carries D explicitly.  There lambda = alpha_S = 0.217 D is right, and it
-    #     is what gives the physically correct G ~ 1/D (Phi is D-independent while
-    #     the gravitating mass is proportional to D).
-    # Both usages are internally consistent; only the shared symbol is wrong.
-    #
-    # The scripts previously used the solver shorthand beta0/c_*^2, which at
-    # (beta0=5, c*^2=5) is exactly 1.000.  For the defect model that is a
-    # relabelling of V0; for TK it is NOT, because mu enters V = m0(1-N) - mu
-    # without the prefactor.  Note m0/t0 is a FREE dimensionless input, so the
-    # published m0 = 3 does not survive the corrected P -- stars reappear at
-    # m0 ~ 0.03-0.06.
-    LAM_ALPHA_S = 0.217
-    _, _Gs_flat = _bond_correlations(diag0, off_bg)
-    _eps_b = 2.0 * t0 * _Gs_flat[(N - 1) // 2]
-    _pref = float(csq * t0 ** 2 / (LAM_ALPHA_S * _eps_b))
-    print(f"  closure prefactor P = {_pref:.4f}  (solver shorthand beta0/c*^2 = "
-          f"{beta0/csq:.4f}; eps_b = {float(_eps_b):.5f})", flush=True)
-
-    def _conductances(Phi, mu):
-        """BKM conductances kappa(Phi) = g t0^2 Nbar^2 cov/cov_bg."""
-        lapse = jnp.maximum(1.0 + Phi / csq, N_floor)
-        Nbar = 0.5 * (lapse[:-1] + lapse[1:])
-        off = -t0 * jnp.abs(Nbar)
-        cov = _bkm_cov(diag0, off)
-        cov_ratio = cov / cov_bg
-        return g[:-1] * t0**2 * Nbar**2 * cov_ratio
-
-    def _energy(Phi, mu):
-        """Conductance energy: (1/2) sum_b kappa_b(Phi) * (dPhi_b)^2."""
-        kappa = _conductances(Phi, mu)
-        dPhi = Phi[:-1] - Phi[1:]
-        return 0.5 * jnp.sum(kappa * dPhi**2)
-
-    _grad_energy = jax.grad(_energy, argnums=0)
-
-    def _residual(Phi, mu):
-        """JAX-traceable EL residual. mu is a traced scalar argument."""
-        # LHS = grad of energy functional (Laplacian + EL correction, exact)
-        lhs = _grad_energy(Phi, mu)
-
-        # Self-consistent source
-        lapse = jnp.maximum(1.0 + Phi / csq, N_floor)
-        Nbar = 0.5 * (lapse[:-1] + lapse[1:])
-        Nbar_abs = jnp.abs(Nbar)
-        off = -t0 * Nbar_abs
-
-        # Chemical potential threshold: V = max(m0*(1-N) - mu, 0)
-        V_raw = m0 * (1.0 - lapse) - mu
-        # Source convention (eq. sc-rho, sec:ex-observable, compute_exact_data_gpu.py):
-        # the bond term is NEGATIVE against a positive V_defect term, carries ONE
-        # power of the lapse (the bare shell observable -- the smeared correlator
-        # Gs already supplies it, and a second factor would count the lapse twice),
-        # and is split half onto each endpoint of the bond.
-        V_defect = jnp.maximum(V_raw, 0.0)
-
-        # Sigma state (background Hamiltonian, same off-diag)
-        Gd_s, Gs_s = _bond_correlations(diag0, off)
-        rho_s = jnp.zeros(N, dtype=jnp.float64)
-        rho_s = rho_s.at[:-1].add(-1.0 * t0 * Gs_s * g[:-1]).at[1:].add(-1.0 * t0 * Gs_s * g[:-1])
-
-        # Target state (with defect potential)
-        Gd_t, Gs_t = _bond_correlations(V_defect, off)
-        rho_t = jnp.zeros(N, dtype=jnp.float64)
-        rho_t = rho_t.at[:-1].add(-1.0 * t0 * Gs_t * g[:-1]).at[1:].add(-1.0 * t0 * Gs_t * g[:-1])
-        rho_t = rho_t + V_defect * Gd_t * g
-
-        # eq:sc-closure prefactor P = c_*^2 t0^2/(lambda eps_b), not the solver
-        # shorthand beta0/c_*^2.  See _closure_prefactor below.
-        F = lhs - _pref * (rho_s - rho_t)
-        # BC: Phi_N = 0 (last entry of full Phi vector)
-        F = F.at[N - 1].set(Phi[N - 1])
-        return F
-
-    # JIT compile residual and Jacobian (mu is traced → compiles once)
-    resid_jit = jit(_residual)
-    jac_jit = jit(jacfwd(_residual, argnums=0))
-
-    # Warm up JIT (one-time compilation cost)
-    print("  JIT compiling residual...", flush=True)
-    t_jit = time.time()
-    _dummy = jax.block_until_ready(resid_jit(jnp.zeros(N), jnp.float64(0.1)))
-    print(f"  Residual compiled in {time.time() - t_jit:.1f}s", flush=True)
-
-    t_jit = time.time()
-    _dummy = jax.block_until_ready(jac_jit(jnp.zeros(N), jnp.float64(0.1)))
-    print(f"  Jacobian (jacfwd) compiled in {time.time() - t_jit:.1f}s", flush=True)
-
-    def diagnostics(Phi_np, mu_val):
-        """Compute all diagnostic quantities from a solution (numpy)."""
-        Phi = np.array(Phi_np)
-        lapse = np.maximum(1.0 + Phi / csq, N_floor)
-        Nbar = 0.5 * (lapse[:-1] + lapse[1:])
-        Nbar_abs = np.abs(Nbar)
-        off = jnp.array(-t0 * Nbar_abs)
-
-        V_raw = m0 * (1.0 - lapse) - mu_val
-        V_defect = np.maximum(V_raw, 0.0)
-        n_eff = int(np.sum(V_defect > 1e-10))
-
-        Gd_s, Gs_s = _bond_correlations(diag0, off)
-        Gd_s = np.array(Gd_s); Gs_s = np.array(Gs_s)
-        Gd_t, Gs_t = _bond_correlations(jnp.array(V_defect), off)
-        Gd_t = np.array(Gd_t); Gs_t = np.array(Gs_t)
-
-        n_np = np.array(n_arr)
-        g_np = np.array(g)
-        # Same convention as _residual above -- this array is SAVED as
-        # mu*_source, so if it disagreed with the residual the stored source
-        # would not be the one that produced the stored solution.
-        bond_s = -2.0 * t0 * Gs_s * g_np[:-1]
-        rho_s = np.zeros(N)
-        rho_s[:-1] += 0.5 * bond_s
-        rho_s[1:] += 0.5 * bond_s
-        bond_t = -2.0 * t0 * Gs_t * g_np[:-1]
-        rho_t = np.zeros(N)
-        rho_t[:-1] += 0.5 * bond_t
-        rho_t[1:] += 0.5 * bond_t
-        rho_t += V_defect * Gd_t * g_np
-        source = _pref * (rho_s - rho_t)
-
-        cov = np.array(_bkm_cov(diag0, off))
-        cov_bg_np = np.array(cov_bg)
-        kappa_kms = g_np[:-1] * t0**2 * Nbar_abs**2 * (cov / cov_bg_np)
-
-        return {"Phi": Phi, "lapse": lapse, "source": source,
-                "V_defect": V_defect, "kappa_kms": kappa_kms,
-                "n_eff": n_eff, "Nbar": Nbar_abs,
-                "Gd_s": Gd_s, "Gd_t": Gd_t, "Gs_s": Gs_s, "Gs_t": Gs_t,
-                "rho_s": rho_s, "rho_t": rho_t}
-
-    def newton(mu_val, seed, max_iter=80, verbose=False):
-        """Newton solve with jacfwd Jacobian. Full N-vector (Phi_N=0 via BC)."""
-        Phi = jnp.array(seed, dtype=jnp.float64)
-        if Phi.shape[0] == nunk:
-            Phi = jnp.concatenate([Phi, jnp.array([0.0])])
-        mu_j = jnp.float64(mu_val)
-
-        best_Phi, best_rn = Phi, 1e30
-        stagnant = 0
-
-        for it in range(max_iter):
-            F = jax.block_until_ready(resid_jit(Phi, mu_j))
-            rn = float(jnp.max(jnp.abs(F)))
-            if rn < best_rn:
-                best_Phi = Phi; best_rn = rn
-            if verbose and (it % 5 == 0 or rn < 1e-8):
-                lapse_min = float(jnp.min(jnp.maximum(1.0 + Phi / csq, N_floor)))
-                print(f"    it={it:3d} |R|={rn:.3e} minN={lapse_min:.4f}", flush=True)
-            if rn < 1e-8:
-                if verbose: print(f"    CONVERGED at it={it}")
-                break
-
-            J = jax.block_until_ready(jac_jit(Phi, mu_j))
-            reg = 1e-10 * jnp.maximum(jnp.abs(jnp.diag(J)), 1e-10)
-            J_reg = J + jnp.diag(reg)
-            dPhi = jnp.linalg.solve(J_reg, -F)
-
-            # Line search
-            alpha = 1.0
-            improved = False
-            for _ in range(8):
-                Phi_trial = Phi + alpha * dPhi
-                lt = 1.0 + Phi_trial / csq
-                if float(jnp.min(lt)) < N_floor:
-                    alpha *= 0.5; continue
-                F_trial = jax.block_until_ready(resid_jit(Phi_trial, mu_j))
-                rn_trial = float(jnp.max(jnp.abs(F_trial)))
-                if rn_trial < rn:
-                    Phi = Phi_trial
-                    improved = True
-                    break
-                alpha *= 0.5
-
-            if not improved:
-                Phi = Phi + 0.01 * dPhi
-                stagnant += 1
-                if stagnant >= 10:
-                    break
-            else:
-                stagnant = 0
-
-            if float(jnp.any(jnp.isnan(Phi))):
-                break
-
-        F_final = jax.block_until_ready(resid_jit(best_Phi, mu_j))
-        final_rn = float(jnp.max(jnp.abs(F_final)))
-        return np.array(best_Phi), final_rn
-
-    return {"newton": newton, "diagnostics": diagnostics,
-            "n_arr": np.array(n_arr), "g": np.array(g), "N": N, "nunk": nunk}
-
+# The solver lives in tk_closure_solver.py so that tov_convergence_el.py runs
+# the SAME one.  It used to have its own -- scipy tridiagonal eigensolver plus a
+# finite-difference Jacobian -- which made the convergence study a test of a
+# different code path than the one being published.
+from tk_closure_solver import make_solver
 
 # Parameters.
 #
@@ -324,7 +83,14 @@ g = S["g"]
 # between 0.10 and 0.20.
 _mu_over_m0 = ([0.005, 0.010, 0.015, 0.020, 0.030, 0.040, 0.050, 0.060,
                 0.070, 0.080, 0.090, 0.100]
-               + [round(0.100 + 0.005*i, 4) for i in range(1, 21)]   # 0.105..0.200
+               + [round(0.100 + 0.005*i, 4) for i in range(1, 19)]   # 0.105..0.190
+               # Refined through the fold.  The active-set solver puts the
+               # saddle-node at mu*/m0 = 0.191087 (all three Crandall-Rabinowitz
+               # conditions, |lam_1| = 2.8e-4 against a next eigenvalue of 10.3),
+               # which is 0.0011 above the last coarse point -- well inside one
+               # 0.005 step, so the coarse grid cannot resolve the approach.
+               + [round(0.1900 + 0.0002*i, 5) for i in range(1, 6)]   # 0.1902..0.1910
+               + [0.19105, 0.19108, 0.19109]
                + [round(0.200 + 0.020*i, 4) for i in range(1, 11)])  # 0.220..0.400
 mu_values = [round(r * m0, 8) for r in _mu_over_m0]
 results = {}
@@ -366,14 +132,65 @@ for mu in mu_values:
     # never recovered.  Every downstream script reads this file and inherits it.
     ACCEPT_RN = 1e-8            # the paper's stated tolerance, not 1e-4
     MIN_LAPSE = 20.0 * N_floor  # same cut as the sibling scripts
+    NEAR_MISS_CAP = 10          # consecutive non-improving near-misses; see below
     _near_miss = []
-    for label, seed in seeds:
-        Phi, rn = S["newton"](mu, seed, max_iter=80, verbose=False)
+    _stall_best, _stall_count = np.inf, 0
+    # The cap may not fire until the seed list has been sampled BROADLY.  The
+    # list is ordered: 12-15 continuation seeds (scalings of the last three
+    # solutions) come first, and near the fold those are near-duplicates -- on
+    # the refined grid many pairs agree to under 1e-3 relative.  Ten
+    # consecutive stalls among them is one seed tried ten times, not ten
+    # independent probes agreeing, so the cap could fire before a single
+    # Gaussian seed was ever tried.
+    _n_cont = sum(1 for lb, _ in seeds if lb.startswith("cont"))
+    _CAP_FLOOR = _n_cont + max(6, len(seeds) // 8)   # past the continuations
+    for _seed_i, (label, seed) in enumerate(seeds, start=1):
+        # Active set first: it is the one that can cross the free boundary.
+        Phi, rn = S["active_set_newton"](mu, seed)
+        rn_as = rn                       # keep the ACTIVE-SET residual separately
+        if rn >= ACCEPT_RN:
+            Phi, rn = S["newton"](mu, seed, max_iter=80, verbose=False)
         d = S["diagnostics"](Phi, mu)
         _is_star = (abs(min(d["Phi"])) > 0.01 and d["n_eff"] >= 2
                     and min(d["lapse"]) > MIN_LAPSE)
         if _is_star and rn >= ACCEPT_RN:
             _near_miss.append((rn, label, d["n_eff"], min(d["lapse"])))
+            # No silent cap.  A mu PAST the fold has no solution, so the seed
+            # list runs to exhaustion: 2627 s measured at the first such point,
+            # against ~5 s for one that converges on its first seed, and eleven
+            # of the 48 grid points sit past the fold.
+            #
+            # Giving up early is safe here for a specific reason, not a general
+            # one: at that point all 26 star-shaped near-misses stalled at the
+            # SAME |R| = 1.22e-4 with the same n_eff = 6 and minN = 0.3577.
+            # They agree the branch has ended rather than disagreeing about
+            # where it is, which is what a saddle-node looks like from the
+            # solver's side.  So the cut is on a stalled BEST residual, never on
+            # a seed count alone -- any seed that improves |R| resets it, and
+            # the cut is printed with how many seeds went untried.
+            #
+            # Track the ACTIVE-SET residual, not the maskless newton() one.
+            # `rn` here is always newton()'s, because reaching this branch
+            # required the active-set solve to miss and be overwritten above.
+            # This file's own docstring records that the maskless residual
+            # STALLS wherever a shell crosses threshold, with a well-conditioned
+            # Jacobian -- i.e. a solution exists and is simply unreachable that
+            # way -- and that reading those stalls as branch ends is what
+            # produced the earlier spurious folds.  Capping on it would
+            # reinstate exactly that inference.
+            _track = rn_as if np.isfinite(rn_as) and rn_as < 1e29 else rn
+            if _track < 0.99 * _stall_best:
+                _stall_best, _stall_count = _track, 0
+            else:
+                _stall_count += 1
+            if _stall_count >= NEAR_MISS_CAP and _seed_i >= _CAP_FLOOR:
+                print(f"    giving up: {_stall_count} consecutive star-shaped "
+                      f"near-misses with no improvement on |R|={_stall_best:.2e}; "
+                      f"{_seed_i} of {len(seeds)} seeds tried "
+                      f"({_n_cont} continuation, "
+                      f"{max(0, _seed_i - _n_cont)} independent)",
+                      flush=True)
+                break
         if _is_star and rn < ACCEPT_RN:
             if rn < best_rn:
                 best_Phi, best_rn = Phi, rn
