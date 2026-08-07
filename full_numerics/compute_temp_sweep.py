@@ -305,7 +305,7 @@ def main():
         n_consecutive_fail = 0
         # Corrected-normalisation branch carries its own continuation seed.
         # lam = alpha_S = 0.217 D at D = 4 (eq. sc-alphaS-required).
-        LAM_ALPHA_S = 0.217 * 4.0
+        LAM_ALPHA_S = 0.217
         Phi_cont_corr = Phi_cont.copy()
 
         for i_bt, bt0 in enumerate(bt0_values):

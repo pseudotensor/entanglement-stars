@@ -9,11 +9,32 @@ mu moves with it.
 
 Data -> fold_continuation_floor.npz
 """
+
+# Post-compaction re-read gate.  This script regenerates PUBLISHED data, so the
+# protocol in .taskq/fermion_code_ledger.md requires the whole paper to have been
+# re-read first.  That ordering was violated on 2026-08-06 and again on
+# 2026-08-07; a rule that depends on being remembered has now failed twice, so it
+# is enforced here instead.  No-ops on the compute host, which carries no .taskq.
+import sys as _sys, os as _os
+_gd = _os.path.join(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))), ".taskq")
+_gd2 = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), ".taskq")
+for _d in (_gd2, _gd):
+    if _os.path.isfile(_os.path.join(_d, "gate_guard.py")):
+        _sys.path.insert(0, _d)
+        from gate_guard import require_reread as _rr
+        _rr(__file__)
+        break
 import os
 import sys
 import time
 
 import numpy as np
+
+# m0/t0 = 0.03, not 3.0: the published mass was chosen against a closure
+# prefactor 37x too small and admits no star at the correct P = 36.825.
+# See the parameter block of tov_tk_chemical_el.py.  The npz mu keys are
+# formatted %.6f for the same reason -- at m0 = 0.03 every physical mu
+# rounds to 0.00 under the old %.2f.
 
 os.environ.setdefault("JAX_PLATFORM_NAME", "gpu")
 os.environ.setdefault("XLA_PYTHON_CLIENT_PREALLOCATE", "false")
@@ -22,7 +43,7 @@ jax.config.update("jax_enable_x64", True)
 import jax.numpy as jnp
 from jax import jit, jacfwd
 
-beta0, m0, csq, N = 5.0, 3.0, 5.0, 200
+beta0, m0, csq, N = 5.0, 0.03, 5.0, 200
 t0 = 1.0
 n_arr = jnp.arange(1, N + 1, dtype=jnp.float64)
 g = 4.0 * jnp.pi * n_arr ** 2
@@ -49,6 +70,34 @@ def _bond_correlations(diag_vals, off_vals):
     f = 1.0 / (jnp.exp(jnp.clip(beta0 * evals, -500.0, 500.0)) + 1.0)
     vf = evecs * f[None, :]
     return jnp.sum(evecs * vf, axis=1), jnp.sum(evecs[:-1] * vf[1:], axis=1)
+
+# --- closure prefactor P of eq:sc-closure --------------------------------
+# P = c_*^2 t0^2 / (lambda eps_b) with lambda the PER-CHANNEL alpha_S^bond =
+# 0.217, and eps_b = 2 t0 Re[i tr(alpha^r G_{n,n+1})] per channel on the FLAT
+# reference chain (eq:sc-sumrule), taken at the bulk bond to avoid the open ends
+# (bond 1 gives 0.808 and bond 2 gives 0.539 against the bulk 0.6257).
+# The scripts previously used the solver shorthand beta0/c_*^2.  For the defect
+# model that is a relabelling of V0; here mu enters V = m0(1-N) - mu without the
+# prefactor, so it is NOT a relabelling and the fold moves.
+#
+# lambda is the PER-CHANNEL alpha_S^bond = 0.217, NOT alpha_S = 0.217 D.
+# eq:sc-alphaS-required displays lambda = alpha_S, and sec:tov-entropy gives
+# alpha_S = D alpha_S^bond, but that combination is not D-consistent here.
+# Count D through the paper's own linearized closure (sec:sc-newton): the
+# Laplacian carries kappa_n = D g_n t0^2 and the source carries -D V0 g_n/2, so
+# D cancels and Phi goes as 1/lambda.  eps_b is defined PER CHANNEL by
+# eq:sc-sumrule (the 2 t0/D prefactor), so P = c_*^2 t0^2/(lambda eps_b) is
+# D-free only if lambda is.  sec:num-method states outright that D "is carried
+# by both sides and so is omitted throughout", and sec:shell-dirichlet that D
+# "cancels from the closure" -- both require the per-channel value.  Using
+# 0.217 D makes P too small by exactly D = 4.
+LAM_ALPHA_S = 0.217
+
+
+def _closure_prefactor():
+    _, _Gs_flat = _bond_correlations(diag0, -t0 * jnp.ones(N - 1, dtype=jnp.float64))
+    _eps_b = 2.0 * t0 * _Gs_flat[(N - 1) // 2]
+    return csq * t0 ** 2 / (LAM_ALPHA_S * _eps_b)
 
 
 cov_bg = jnp.maximum(_bkm_cov(diag0, -t0 * jnp.ones(N - 1)), 1e-30)
@@ -78,7 +127,7 @@ def make_residual(N_floor):
         rho_t = (jnp.zeros(N).at[:-1].add(-1.0 * t0 * Gs_t * g[:-1])
                               .at[1:].add(-1.0 * t0 * Gs_t * g[:-1])
                  + V * Gd_t * g)
-        return (ge(Phi, mu) - (beta0 / csq) * (rho_s - rho_t)).at[N - 1].set(Phi[N - 1])
+        return (ge(Phi, mu) - _closure_prefactor() * (rho_s - rho_t)).at[N - 1].set(Phi[N - 1])
     return _residual
 
 
@@ -144,7 +193,7 @@ def main():
     cand = []
     for m in d["mu_values"]:
         mu = float(m)
-        k = f"mu{mu:.2f}_Phi"
+        k = f"mu{mu:.6f}_Phi"
         if k not in d.files:
             continue
         P = np.array(d[k])

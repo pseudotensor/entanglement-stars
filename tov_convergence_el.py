@@ -2,16 +2,39 @@
 """
 Full EL convergence + parameter robustness for TK stars.
 
-Study 1: N-convergence at beta0=3, mu=0.5, m0=3, csq=5
+Study 1: N-convergence at beta0=5, mu=0.5, m0=3, csq=5
+         (the docstring said beta0=3; the code has always run 5)
 Study 2: Robustness across (beta0, m0, csq) at N=200, mu=0.5
 
 Uses scipy eigh_tridiagonal (CPU) and hybrid analytical/FD Jacobian
 for scalability to large N.
 """
+
+# Post-compaction re-read gate.  This script regenerates PUBLISHED data, so the
+# protocol in .taskq/fermion_code_ledger.md requires the whole paper to have been
+# re-read first.  That ordering was violated on 2026-08-06 and again on
+# 2026-08-07; a rule that depends on being remembered has now failed twice, so it
+# is enforced here instead.  No-ops on the compute host, which carries no .taskq.
+import sys as _sys, os as _os
+_gd = _os.path.join(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))), ".taskq")
+_gd2 = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), ".taskq")
+for _d in (_gd2, _gd):
+    if _os.path.isfile(_os.path.join(_d, "gate_guard.py")):
+        _sys.path.insert(0, _d)
+        from gate_guard import require_reread as _rr
+        _rr(__file__)
+        break
 import time
 import os
 import numpy as np
 from scipy.linalg import eigh_tridiagonal, solve_banded
+
+os.environ.setdefault("JAX_PLATFORM_NAME", "gpu")
+os.environ.setdefault("XLA_PYTHON_CLIENT_PREALLOCATE", "false")
+import jax
+jax.config.update("jax_enable_x64", True)
+import jax.numpy as jnp
+from jax import jit
 
 t0 = 1.0
 N_FLOOR = 0.005
@@ -21,6 +44,69 @@ def make_solver(N, beta0, m0):
     n_arr = np.arange(1, N + 1, dtype=np.float64)
     g = 4.0 * np.pi * n_arr**2
     nunk = N - 1
+
+    # --- FULL KMS/BKM closure, as sec:tov-results describes and as every other
+    # TK script solves.  This study used the kinematic law kappa = g t0^2 Nbar^2
+    # with no covariance ratio, which is NOT the closure it was presented as
+    # validating, and left sec:tov-convergence attributing its residuals to
+    # "finite-beta_0 BKM corrections" that the computation did not contain.
+    # The EL term is now the exact gradient of the conductance energy via
+    # jax.grad, so it stays consistent with kappa automatically instead of being
+    # hand-derived for the kinematic law.
+    _g_j = jnp.asarray(g)
+    _diag0 = jnp.zeros(N, dtype=jnp.float64)
+
+    def _bkm_cov(diag_vals, off_vals):
+        H = (jnp.diag(diag_vals) + jnp.diag(off_vals, 1) + jnp.diag(off_vals, -1))
+        evals, evecs = jnp.linalg.eigh(H)
+        f = 1.0 / (jnp.exp(jnp.clip(beta0 * evals, -500.0, 500.0)) + 1.0)
+        diff = beta0 * (evals[:, None] - evals[None, :])
+        phi = jnp.where(jnp.abs(diff) > 1e-12,
+                        jnp.expm1(diff) / jnp.where(jnp.abs(diff) > 1e-12, diff, 1.0),
+                        1.0)
+        K = f[:, None] * (1.0 - f[None, :]) * phi
+        U_n, U_n1 = evecs[:-1, :], evecs[1:, :]
+        return (jnp.sum((U_n1 ** 2) @ K * (U_n ** 2), axis=1)
+                + jnp.sum((U_n ** 2) @ K * (U_n1 ** 2), axis=1)
+                - 2.0 * jnp.sum((U_n * U_n1) @ K * (U_n * U_n1), axis=1))
+
+    _cov_bg = jnp.maximum(_bkm_cov(_diag0, -t0 * jnp.ones(N - 1)), 1e-30)
+
+    def _energy(Phi_full, csq):
+        lapse = jnp.maximum(1.0 + Phi_full / csq, N_FLOOR)
+        Nbar = 0.5 * (lapse[:-1] + lapse[1:])
+        kappa = (_g_j[:-1] * t0 ** 2 * Nbar ** 2
+                 * (_bkm_cov(_diag0, -t0 * jnp.abs(Nbar)) / _cov_bg))
+        return 0.5 * jnp.sum(kappa * (Phi_full[:-1] - Phi_full[1:]) ** 2)
+
+    _grad_E = jit(jax.grad(_energy, argnums=0))
+    _kappa_j = jit(lambda Phi_full, csq: (
+        _g_j[:-1] * t0 ** 2
+        * (0.5 * (jnp.maximum(1.0 + Phi_full / csq, N_FLOOR)[:-1]
+                  + jnp.maximum(1.0 + Phi_full / csq, N_FLOOR)[1:])) ** 2
+        * (_bkm_cov(_diag0, -t0 * jnp.abs(
+            0.5 * (jnp.maximum(1.0 + Phi_full / csq, N_FLOOR)[:-1]
+                   + jnp.maximum(1.0 + Phi_full / csq, N_FLOOR)[1:]))) / _cov_bg)))
+
+    def _pref(csq_val):
+        """eq:sc-closure prefactor P = c_*^2 t0^2/(lambda eps_b), not beta0/c_*^2.
+
+        lambda is the PER-CHANNEL alpha_S^bond = 0.217, not alpha_S = 0.217 D.
+        This file kept 0.217*4 after the sibling scripts were corrected, because
+        the fix matched on the module-level constant `LAM_ALPHA_S = 0.217 * 4.0`
+        and this one is inline -- a reminder that a regex sweep is not a fix.
+        See the D-count in tov_tk_chemical_el.py's parameter block.
+        """
+        _, Gs_flat = _compute_state_np(np.zeros(N), -t0 * np.ones(N - 1))
+        eps_b = 2.0 * t0 * Gs_flat[(N - 1) // 2]
+        return csq_val * t0 ** 2 / (0.217 * eps_b)
+
+    def _compute_state_np(diag, off):
+        evals, evecs = eigh_tridiagonal(diag, off)
+        be = np.clip(beta0 * evals, -500.0, 500.0)
+        f = 1.0 / (np.exp(be) + 1.0)
+        vf = evecs * f[None, :]
+        return np.sum(evecs * vf, axis=1), np.sum(evecs[:-1] * vf[1:], axis=1)
 
     def compute_state(diag, off):
         evals, evecs = eigh_tridiagonal(diag, off)
@@ -55,25 +141,16 @@ def make_solver(N, beta0, m0):
         rho_t[:-1] += 0.5 * bond_t
         rho_t[1:] += 0.5 * bond_t
         rho_t += V_defect * Gd_t * g
-        source = (beta0 / csq) * (rho_s - rho_t)
+        source = _pref(csq) * (rho_s - rho_t)
 
-        kappa = g[:-1] * t0**2 * Nbar_abs**2
-
-        # L@Phi (matrix-free)
+        # LHS = exact dE/dPhi of the BKM conductance energy (Laplacian + EL
+        # correction together), so no hand-derived dkappa/dPhi can drift from
+        # the kappa actually used.
+        kappa = np.asarray(_kappa_j(jnp.asarray(Phi_full), float(csq)))
         dPhi = Phi_full[:-1] - Phi_full[1:]
-        flux = kappa * dPhi
-        LPhi = np.empty(nunk)
-        LPhi[0] = flux[0]
-        LPhi[1:] = flux[1:] - flux[:-1]
+        lhs_full = np.asarray(_grad_E(jnp.asarray(Phi_full), float(csq)))
 
-        # EL correction (vectorized)
-        dPhi_sq = dPhi**2
-        dkdPhi = g[:-1] * t0**2 * Nbar_abs / csq
-        C = (dkdPhi * dPhi_sq).copy()
-        C[1:] += dkdPhi[:-1] * dPhi_sq[:-1]
-        C *= 0.5
-
-        R = LPhi - source[:nunk] + C
+        R = lhs_full[:nunk] - source[:nunk]
         info = {"Phi": Phi_full, "lapse": lapse, "source": source,
                 "V_defect": V_defect, "kappa": kappa, "n_eff": n_eff,
                 "Nbar": Nbar_abs, "dPhi": dPhi,
@@ -222,6 +299,9 @@ def interp_seed(S, ref_Phi):
     return np.interp(n_arr[:nunk], n_ref, ref_Phi[:len(ref_Phi)])
 
 
+TOL = 1e-8   # sec:tov-convergence quotes ||F|| < 1e-8; enforce it
+
+
 def find_nontrivial(S, csq, mu, ref_Phi=None, max_iter=80, verbose=False):
     """Try multiple seeds with full Newton; keep best nontrivial solution."""
     n_arr = S["n_arr"]
@@ -244,11 +324,27 @@ def find_nontrivial(S, csq, mu, ref_Phi=None, max_iter=80, verbose=False):
                           verbose=False)
         if d is None or d["n_eff"] == 0 or abs(min(d["Phi"])) < 0.01:
             continue
+        # Star-branch AND actually-a-solution.  This had NO residual threshold at
+        # all, so a non-solution was returned as the answer: the committed
+        # tov_convergence_el.npz has rob_rn = 0.534948 for the m0=1.5 set, whose
+        # minPhi = -4.9615 puts min(N) = 0.0077 -- floor-pinned and unconverged --
+        # and sec:tov-convergence states "All parameter sets converge to
+        # ||F||_2 < 1e-8" on the strength of it.
+        # 0.1 is the same absolute cut the sibling scripts use (there they write
+        # it as 20*N_floor; this file applies no lapse clamp, so it is literal).
+        if d["n_eff"] < 2 or float(np.min(d["lapse"])) <= 0.1:
+            continue
         if best is None or rn < best[2]:
             best = (x, d, rn)
-        if rn < 1e-8:
+        if rn < TOL:
             break
 
+    # Never hand back something that is not a solution.  The caller cannot tell.
+    if best is not None and best[2] >= TOL:
+        print(f"    find_nontrivial: best |R| = {best[2]:.3e} >= tol {TOL:.0e} "
+              f"(n_eff={best[1]['n_eff']}, minN={float(np.min(best[1]['lapse'])):.4f})"
+              f" -- REJECTED, this is not a converged solution", flush=True)
+        return None
     return best
 
 

@@ -1201,7 +1201,7 @@ def main():
 
     # Corrected-normalisation branch: same closure, the paper's prefactor P.
     # lam = alpha_S = 0.217 D at D = 4 (eq. sc-alphaS-required, sec:tov-entropy).
-    LAM_ALPHA_S = 0.217 * 4.0
+    LAM_ALPHA_S = 0.217
     ts_resid_corr = make_residual_tempsweep(N, t0, n_core, cstar_sq,
                                             lam=LAM_ALPHA_S)
     ts_solver_corr = make_newton_solver_3arg(ts_resid_corr, N, max_iter=50,
