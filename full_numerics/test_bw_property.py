@@ -20,6 +20,8 @@ Results:
 
 import os
 import numpy as np
+
+_missing = []   # V0 values absent from the npz (see the report at exit)
 from scipy.linalg import eigh_tridiagonal
 import matplotlib
 matplotlib.use('Agg')
@@ -144,11 +146,12 @@ be_flat = extract_beta_ent(k_A_flat, off0[nc:])
 results_sc = {}
 
 for V0 in V0_list:
-    key = f"sol_{V0:.4f}"
+    key = f"sol_{V0:.8f}"
     try:
         lapse = d[f'{key}_lapse']
         rs    = float(d[f'{key}_rs'])
     except KeyError:
+        _missing.append(V0)
         continue
 
     Nbar = 0.5 * (lapse[:-1] + lapse[1:])
@@ -366,3 +369,12 @@ print(f"\nwrote fermion/numerical/data/bw_property.npz")
 print("CONCLUSION: The lattice BW property holds with the correct 2π normalization.")
 print("The gravitational lapse modifies β_ent as β_ent → β_ent/N̄, confirming")
 print("assumption (iv) numerically in the self-consistent model.")
+
+
+if _missing:
+    raise SystemExit(
+        "ERROR: %d V0 values were not found in the npz and were skipped: %s\n"
+        "This script printed a table built from the REMAINDER.  Most likely the\n"
+        "npz was regenerated under a different closure normalisation, so its V0\n"
+        "keys no longer match the literals here.  Select from the npz instead."
+        % (len(_missing), _missing[:8]))

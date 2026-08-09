@@ -14,6 +14,8 @@ from __future__ import annotations
 
 import ast
 import os
+import re
+import sys
 
 # Must precede any jax import: the extracted definitions build float64 arrays,
 # and the scripts' own `jax.config.update("jax_enable_x64", True)` is a bare
@@ -127,14 +129,53 @@ def _load_defs(relpath, names):
     return ns, src
 
 
+def _sources_for(relpath):
+    """The script's source, plus any FIRST-PARTY module it imports from.
+
+    tov_tk_chemical_el.py used to carry the closure solver inline; it is now a
+    driver that does `from tk_closure_solver import make_solver`.  Every text
+    check below kept scanning the driver and so stopped seeing the code that
+    runs -- five tests failed on absence, and the numerical ones would have
+    passed vacuously.  Following the import keeps the properties pinned to
+    wherever the implementation lives.
+
+    The driver's OWN source stays in the list, so a script that stops delegating
+    and inlines a wrong residual is still caught.
+    """
+    out = [(relpath, open(os.path.join(ROOT, relpath)).read())]
+    seen = {relpath}
+    queue = [out[0][1]]
+    while queue:
+        for node in ast.walk(ast.parse(queue.pop())):
+            mods = []
+            if isinstance(node, ast.ImportFrom) and node.level == 0 and node.module:
+                mods = [node.module]
+            elif isinstance(node, ast.Import):
+                mods = [a.name for a in node.names]
+            for m in mods:
+                cand = os.path.join(ROOT, m.replace(".", os.sep) + ".py")
+                rel = os.path.relpath(cand, ROOT)
+                if rel in seen or not os.path.exists(cand):
+                    continue
+                seen.add(rel)
+                text = open(cand).read()
+                out.append((rel, text))
+                queue.append(text)
+    return out
+
+
 def _residual_source(relpath):
-    """The source text of the script's residual function."""
-    src = open(os.path.join(ROOT, relpath)).read()
-    tree = ast.parse(src)
-    for node in ast.walk(tree):
-        if isinstance(node, ast.FunctionDef) and node.name in ("_residual", "residual"):
-            return ast.get_source_segment(src, node)
-    raise AssertionError(f"no residual function found in {relpath}")
+    """The source text of the script's residual function.
+
+    Searched in the script and then in the modules it delegates to.
+    """
+    for rel, src in _sources_for(relpath):
+        for node in ast.walk(ast.parse(src)):
+            if isinstance(node, ast.FunctionDef) and node.name in ("_residual",
+                                                                   "residual"):
+                return ast.get_source_segment(src, node)
+    raise AssertionError(
+        f"no residual function found in {relpath} or the modules it imports")
 
 
 # ==========================================================================
@@ -431,7 +472,7 @@ def test_closure_prefactor_is_P_not_the_solver_shorthand():
     are not related by any rescaling and the fold location differs.
     """
     for rel in TK_SCRIPTS + ["tov_convergence_el.py"]:
-        src = open(os.path.join(ROOT, rel)).read()
+        src = "\n".join(s for _, s in _sources_for(rel))
         assert "(beta0 / csq) * (rho_s - rho_t)" not in src, (
             f"{rel}: still applies the solver shorthand as the closure prefactor")
         assert ("_closure_prefactor" in src or "_pref" in src), (
@@ -730,16 +771,333 @@ def test_active_set_requires_complementarity():
     mu/m0 = 0.26-0.36 with cores of 8, 34, 9 and 70 shells whose V was negative
     on shells they treated as bound.  They are not solutions.
     """
-    src = open(os.path.join(ROOT, "tov_tk_chemical_el.py")).read()
+    fn, src = None, None
+    for _rel, _src in _sources_for("tov_tk_chemical_el.py"):
+        hit = [n for n in ast.walk(ast.parse(_src))
+               if isinstance(n, ast.FunctionDef) and n.name == "active_set_newton"]
+        if hit:
+            fn, src = hit, _src
+            break
+    assert fn, "active_set_newton not found in the driver or its solver module"
     assert "on_ok and off_ok" in src, \
         "active_set_newton must verify complementarity before returning"
     assert "keep the best" not in src, \
         "the 2-cycle branch must REJECT, not return the current iterate"
-    code = ast.unparse(ast.parse(src))
-    fn = [n for n in ast.walk(ast.parse(src))
-          if isinstance(n, ast.FunctionDef) and n.name == "active_set_newton"]
-    assert fn, "active_set_newton not found"
     body = ast.unparse(fn[0])
     assert body.count("1e+30") >= 3 or body.count("1e30") >= 3, (
         "each non-convergent exit (inconsistent set, 2-cycle, outer-loop "
         "exhaustion) must return a rejecting residual")
+
+
+# ── compute_exact_data_gpu.py: the defect-model path ─────────────────────────
+# The red team of 2026-08-08 found this file had NO test coverage at all, and
+# that a PARTIAL conversion to the derived prefactor kills Phase A on its first
+# point (|F| = 4.3e6, lapse negative) because proxy seeds at P = 46.2 get handed
+# to a residual running the shorthand 0.2.  These pin the conversion.
+
+def test_exact_gpu_prefactor_threaded_through_every_path():
+    """Every solver factory in the defect path must get the same convention."""
+    src = open(os.path.join(ROOT, "compute_exact_data_gpu.py")).read()
+    # the switch exists and is on
+    assert re.search(r"^LAM_CLOSURE\s*=\s*0\.217\s*$", src, re.M), \
+        "LAM_CLOSURE must be the per-channel alpha_S^bond = 0.217"
+    # and every factory/constructor call passes it
+    for pat, what in (
+        (r"make_residual_proxy\(\s*\n?\s*N, t0, V0_s, n_core, beta0, cstar_sq, lam=LAM_CLOSURE",
+         "make_residual_proxy"),
+        (r"FixedpointSolver\(N, t0, n_core, beta0, cstar_sq, lam=LAM_CLOSURE",
+         "FixedpointSolver (Phase A/B/C)"),
+        (r"FixedpointSolver\(N, t0, nc, beta0_tov, cstar_sq,[\s\S]{0,120}?lam=LAM_CLOSURE",
+         "FixedpointSolver (TOV, per-nc)"),
+        (r"make_residual_tempsweep\(N, t0, n_core, cstar_sq, lam=LAM_CLOSURE",
+         "make_residual_tempsweep (rs_exact)"),
+        (r"TwoStateShellModel\([\s\S]{0,200}?lam=LAM_CLOSURE",
+         "TwoStateShellModel (reference curves)"),
+    ):
+        assert re.search(pat, src), (
+            f"{what} does not receive lam=LAM_CLOSURE.  Mixing conventions puts "
+            f"proxy seeds at P into a shorthand residual, a factor 231 apart.")
+
+
+def test_exact_gpu_every_V0_literal_is_converted():
+    """ENUMERATE every V0 assignment in main(); none may carry a raw literal.
+
+    Written after a hand-written list missed six grids on 2026-08-08
+    (V0_floor_test, V0_proxy_floor, V0_embed, V0_tqi, V0_verify, the analytic
+    cut) plus the thermodynamics window.  The run reached Phase B producing
+    garbage -- V0 = 0.066 is 231x supercritical under P, so every floor point
+    pinned at the lapse floor with conv=False -- and never raised anything.
+    A checklist of grids is exactly as good as whoever wrote the checklist;
+    enumeration is not.
+    """
+    src = open(os.path.join(ROOT, "compute_exact_data_gpu.py")).read()
+    body = src[src.index("def main("):]
+    pat = re.compile(r"^\s*(_?[A-Za-z][A-Za-z0-9_]*)\s*=\s*(.+)$", re.M)
+    offenders = []
+    for m in pat.finditer(body):
+        name, rhs = m.group(1), m.group(2)
+        if "V0" not in name or name.endswith("_shorthand"):
+            continue
+        if not re.search(r"\d\.\d", rhs):
+            continue
+        if re.search(r"M0|shell_g_sum", rhs):
+            continue
+        window = rhs + body[m.end():m.end() + 220].split("\n\n")[0]
+        if "convert_V0" in window:
+            continue
+        offenders.append(name + " = " + rhs.strip()[:60])
+    assert not offenders, (
+        "V0 literals still in SHORTHAND units (~231x too large at beta0=0.1): "
+        + "; ".join(offenders))
+
+
+def test_exact_gpu_V0_thresholds_are_converted():
+    """A bare V0-scale threshold compared against converted values is a no-op.
+
+    `V0_analytic = [v for v in V0_core if v <= 0.04]` stopped filtering the
+    moment V0_core was converted: every converted value is below 0.04.  Silent
+    -- it just selects a larger set.
+
+    Two traps this test fell into before working.  The comparison variable is
+    `v`, not `V0`, so keying on the line misses it.  And exempting anything with
+    `convert_V0` nearby also misses it, because the converted cut is defined on
+    the line above -- a matched LITERAL is bare by construction, so there is no
+    such thing as an exempt one.
+    """
+    src = open(os.path.join(ROOT, "compute_exact_data_gpu.py")).read()
+    body = src[src.index("def main("):]
+    bad = []
+    for m in re.finditer(r"(\w+)\s*(?:<=|<|>=|>)\s*(0\.0\d+)", body):
+        var = m.group(1)
+        line_start = body.rfind("\n", 0, m.start()) + 1
+        stmt = body[max(0, line_start - 240):body.find("\n", m.start())]
+        # a V0-valued operand: V0 itself, a V0_* name, or a comprehension
+        # variable bound over a V0 list
+        v0_valued = ("V0" in var) or (var in ("v", "x") and "V0" in stmt)
+        if v0_valued:
+            bad.append(body[line_start:body.find("\n", m.start())].strip()[:70])
+    assert not bad, ("bare V0-scale thresholds compared against converted "
+                     "values: " + "; ".join(sorted(set(bad))))
+
+
+def test_exact_gpu_convert_V0_is_the_ratio_of_prefactors():
+    """convert_V0 must map to the same physical point, and be a no-op at lam=None."""
+    import importlib.util
+    spec = importlib.util.spec_from_file_location(
+        "_cegpu", os.path.join(ROOT, "compute_exact_data_gpu.py"))
+    # exercised numerically only where the module imports cleanly (needs jax+GPU
+    # deps); the algebraic identity is what matters and is checked here.
+    src = open(os.path.join(ROOT, "compute_exact_data_gpu.py")).read()
+    assert "return V0_old * (beta0 / cstar_sq) / P" in src, \
+        "convert_V0 must be V0 * shorthand / P (equal source to linear order)"
+    assert re.search(r"def convert_V0[\s\S]{0,900}?if lam is None:\s*\n\s*return V0_old",
+                     src), "convert_V0 must be the identity when lam is None"
+
+
+def test_exact_gpu_npz_keys_resolve_converted_V0():
+    """npz keys must carry enough digits for the CONVERTED V0 values.
+
+    Keys were f"sol_{V0:.4f}".  Under the derived prefactor V0 runs 2.2e-5 to
+    2.9e-4, so every one formats as 0.0000/0.0001/0.0002/0.0003: distinct
+    solutions collide and overwrite each other.  The first regenerated file had
+    216 keys where the old one had 351 -- 135 solutions silently lost, with no
+    error anywhere.  Same defect as the TK npz %.2f -> %.6f fix.
+
+    Writers and readers must agree, so this checks both.
+    """
+    tags = ("sol", "proxy", "analytic", "floor", "pfloor", "embed", "pembed",
+            "tqi", "temp")
+    files = ["compute_exact_data_gpu.py",
+             "full_numerics/plot_exact_figures.py",
+             "full_numerics/compute_temp_sweep.py",
+             "full_numerics/compute_exact_data.py",
+             "selfconsistency_check.py"]
+    bad = []
+    for rel in files:
+        path = os.path.join(ROOT, rel)
+        if not os.path.exists(path):
+            continue
+        src = open(path).read()
+        for t in tags:
+            for m in re.finditer(r'f"' + t + r'_\{[A-Za-z0-9_]+:\.(\d)f\}', src):
+                if int(m.group(1)) < 8:
+                    bad.append(rel + ": " + m.group(0))
+    assert not bad, (
+        "npz key formats too coarse for converted V0 (collisions overwrite "
+        "solutions silently): " + "; ".join(bad))
+
+
+def test_v0_units_matches_the_solver_prefactor():
+    """v0_units' numpy eps_b must equal the solver's jax eps_b exactly.
+
+    v0_units.py transcribes bond_correlations() into numpy so that plotters and
+    probes can convert shorthand V0 without dragging jax in.  A transcription
+    that drifts from the original silently selects NEIGHBOURING solutions while
+    the labels keep claiming the requested ones -- which is what the earlier
+    nearest-match heuristic did in seven of eight calls.  Bind the two here.
+    """
+    jnp = pytest.importorskip("jax.numpy")
+    sys.path.insert(0, ROOT)
+    import v0_units
+
+    assert v0_units.LAM_CLOSURE == 0.217, \
+        "v0_units.LAM_CLOSURE must match compute_exact_data_gpu.py"
+
+    for (N, t0, beta0) in ((200, 1.0, 0.1), (120, 1.0, 0.5), (200, 1.0, 3.0)):
+        off = -t0 * jnp.ones(N - 1, dtype=jnp.float64)
+        H = jnp.diag(off, 1) + jnp.diag(off, -1)
+        evals, evecs = jnp.linalg.eigh(H)
+        f = 1.0 / (jnp.exp(jnp.clip(beta0 * evals, -500.0, 500.0)) + 1.0)
+        vf = evecs * f[None, :]
+        G_super = jnp.sum(evecs[:-1] * vf[1:], axis=1)
+        eps_jax = float(2.0 * t0 * G_super[(N - 1) // 2])
+
+        eps_np = float(v0_units.flat_bond_energy(N, t0, beta0))
+        assert abs(eps_np - eps_jax) <= 1e-12 * abs(eps_jax), (
+            f"v0_units eps_b drifted from the solver at N={N}, beta0={beta0}: "
+            f"{eps_np!r} vs {eps_jax!r}")
+
+
+def test_v0_units_never_falls_back_to_nearest_V0():
+    """A requested V0 absent from the grid must be a hard error, not a guess.
+
+    The first fix mapped shorthand onto the grid by nearest neighbour with a 20%
+    tolerance and a per-call scale of avail.max()/max(wanted).  That scale is
+    wrong whenever a call does not request the largest solved point -- the grid
+    runs to the fold at 0.068 while most calls stop at 0.05 -- so it silently
+    substituted adjacent solutions.  Only an exact map with a hard failure is
+    safe, because hitting a whole grid to 1e-9 is itself the proof that the
+    conversion factor is right.
+    """
+    src = open(os.path.join(ROOT, "v0_units.py")).read()
+    m = re.search(r"^def resolve_shorthand\(.*?(?=^\S|\Z)", src, re.M | re.S)
+    assert m, "resolve_shorthand missing from v0_units.py"
+    body = m.group(0)
+    assert "raise SystemExit" in body, \
+        "resolve_shorthand must fail hard on a missing V0, not drop or substitute it"
+    assert re.search(r"1e-9\s*\*", body), \
+        "resolve_shorthand must require an exact grid hit (rel 1e-9)"
+    assert "avail.max() / max(wanted)" not in body, \
+        "per-call scale inference reintroduced; use scale_from_npz"
+
+
+def test_every_consumer_uses_the_shared_V0_conversion():
+    """No script may reimplement the shorthand map or the npz key format.
+
+    Three copies of this conversion existed at once (solver, plotter, probe) and
+    they disagreed.  Consumers must import v0_units; a fourth private copy is
+    how the labels and the data drift apart again.
+    """
+    consumers = ["full_numerics/plot_exact_figures.py",
+                 "probe_v0_critical.py",
+                 "full_numerics/greybody_shell_chain.py"]
+    bad = []
+    for rel in consumers:
+        path = os.path.join(ROOT, rel)
+        if not os.path.exists(path):
+            continue
+        raw = open(path).read()
+        # strip comments: the fixes explain the old key literals in prose, and a
+        # check that reads its own explanation as a violation is useless
+        src = "\n".join(re.sub(r"#.*$", "", ln) for ln in raw.splitlines())
+        if "v0_units" not in src:
+            bad.append(f"{rel}: does not import v0_units")
+        for m in re.finditer(r'f"sol_\{[A-Za-z0-9_.()\[\]]+:0?\.(\d)f\}', src):
+            if int(m.group(1)) < 8:
+                bad.append(f"{rel}: builds an npz key at {m.group(1)} decimals")
+        if re.search(r'"sol_0\.\d{1,4}_', src):
+            bad.append(f"{rel}: hardcodes a shorthand-era npz key literal")
+    assert not bad, "; ".join(bad)
+
+
+def test_figures_are_labelled_in_the_quoted_V0_units():
+    """Figure labels and V0 axes must use the units section 11c quotes.
+
+    The closure is solved with the derived prefactor P, under which the grid runs
+    2.2e-5 .. 2.9e-4, but the text names those points 0.005 .. 0.068.  When the
+    regenerated figures went out carrying the solved values, every legend
+    disagreed with the prose describing it.  Labels go through sh()/shv().
+    """
+    src = open(os.path.join(ROOT, "full_numerics",
+                            "plot_exact_figures.py")).read()
+    code = "\n".join(re.sub(r"#.*$", "", ln) for ln in src.splitlines())
+    bad = re.findall(r"\$V_0\s*=\s*\{(?!sh\()[^}]*\}", code)
+    assert not bad, f"V0 labels not routed through sh(): {bad[:5]}"
+    axis = re.findall(
+        r"axes\[\d\]\.(?:plot|semilogy|loglog|scatter)\(\s*(?!shv\()"
+        r"(conv_V0s|V0_sw\w*|V0_comp|V0_lin|cross_V0)\b", code)
+    assert not axis, f"V0 axes not routed through shv(): {axis[:5]}"
+
+
+def test_no_corrected_G_branch_survives():
+    """The duplicate "corrected G" curve and the branch behind it must stay gone.
+
+    It re-solved the temperature sweep with lam = LAM_ALPHA_S, a constant set to
+    0.217 -- identical to LAM_CLOSURE -- under a comment claiming alpha_S =
+    0.217 D.  rs_corr came out BITWISE equal to rs, so the figure plotted a copy
+    of a curve on top of itself and read as a validated cross-check.
+    """
+    gen = open(os.path.join(ROOT, "compute_exact_data_gpu.py")).read()
+    plot = open(os.path.join(ROOT, "full_numerics",
+                             "plot_exact_figures.py")).read()
+    for name, src in (("compute_exact_data_gpu.py", gen),
+                      ("plot_exact_figures.py", plot)):
+        code = "\n".join(re.sub(r"#.*$", "", ln) for ln in src.splitlines())
+        assert "LAM_ALPHA_S" not in code, f"{name}: corrected-G branch is back"
+        assert "rs_corr" not in code, f"{name}: still computes/plots rs_corr"
+        assert "Corrected $G$" not in code, f"{name}: corrected-G label is back"
+
+
+def test_plot_proxy_uses_the_derived_prefactor():
+    """The plotter's proxy must source with P, not the lattice-unit shorthand.
+
+    compute_proxy_Phi() built its source as -(beta0*V0/(2 c_*^2))*g while V0 is
+    given in DERIVED units, so the overlay came out 231x too small at
+    beta0 t0 = 0.1, 2.8x too small at 1.0 and 1.6x too LARGE at 3.0 -- the ratio
+    crosses one near beta0 t0 = 2.  On the figure the proxy collapsed onto zero
+    at the hot end and overshot at the cold end, reading as a broken proxy
+    rather than a units error in the plot.  It agrees to 0.44% when sourced
+    correctly.
+    """
+    src = open(os.path.join(ROOT, "full_numerics",
+                            "plot_exact_figures.py")).read()
+    m = re.search(r"^def compute_proxy_Phi\(.*?(?=^def |\Z)", src, re.M | re.S)
+    assert m, "compute_proxy_Phi missing"
+    body = "\n".join(re.sub(r"#.*$", "", ln) for ln in m.group(0).splitlines())
+    assert "this_beta0 * V0" not in body, \
+        "proxy source reverted to the beta0/c_*^2 shorthand"
+    assert "flat_bond_energy" in body and "LAM_CLOSURE" in body, \
+        "proxy source must build P = c_*^2 t0^2/(lam eps_b)"
+
+
+def test_temperature_sweep_plots_proxy_data_not_a_line_fit():
+    """Panel (a)'s proxy must be the stored solve, not slope*bt0.
+
+    It used to draw a straight line through the origin with the slope taken
+    from a single point.  That held only while r_s grew linearly with beta0 t0,
+    which was an artifact of ramping the bare source; at fixed physical source
+    r_s falls, so the extrapolation drew a rising curve unrelated to the proxy
+    and, on the log axis, looked like an exponential blow-up.
+    """
+    src = open(os.path.join(ROOT, "full_numerics",
+                            "plot_exact_figures.py")).read()
+    code = "\n".join(re.sub(r"#.*$", "", ln) for ln in src.splitlines())
+    assert "prs_full = slope * bt0_full" not in code, \
+        "panel (a) proxy is a line fit again, not the stored proxy_rs"
+    assert not re.search(r"slope\s*=\s*prs\[1\]\s*/", code), \
+        "panel (a) proxy slope is being inferred from one point again"
+
+
+def test_temperature_sweep_has_no_hardcoded_y_limit():
+    """Panel (d) must autoscale.
+
+    set_ylim(None, 0.18) was calibrated to the old sweep, where GM_est reached
+    0.145 because the bare source was being ramped.  At fixed physical source it
+    peaks near 0.006, so every curve was crushed onto the axis and the panel
+    read as blank.
+    """
+    src = open(os.path.join(ROOT, "full_numerics",
+                            "plot_exact_figures.py")).read()
+    code = "\n".join(re.sub(r"#.*$", "", ln) for ln in src.splitlines())
+    assert "set_ylim(None, 0.18)" not in code, \
+        "panel (d) hardcoded y-limit is back; it hides the data"

@@ -95,7 +95,10 @@ from jax import jit, jacfwd
 print(f"JAX devices: {jax.devices()}", flush=True)
 
 N = int(sys.argv[1]) if len(sys.argv) > 1 else 120
-beta0, m0, csq, t0 = 5.0, 3.0, 5.0, 1.0
+# m0/t0 is a FREE dimensionless input (sec:ff-tov); pass it, since the correct
+# closure prefactor fixes the coupling and m0 must be chosen against it.
+m0 = float(sys.argv[3]) if len(sys.argv) > 3 else 3.0
+beta0, csq, t0 = 5.0, 5.0, 1.0
 N_floor = 0.005
 n_arr = jnp.arange(1, N + 1, dtype=jnp.float64)
 g = 4.0 * jnp.pi * n_arr ** 2
@@ -164,15 +167,20 @@ def _residual(Phi, mu):
     lapse = jnp.maximum(1.0 + Phi / csq, N_floor)
     Nbar = 0.5 * (lapse[:-1] + lapse[1:])
     off = -t0 * Nbar
-    mu_inf = m0 - mu
+    mu_inf = mu   # mu IS the Klein constant here; surface at N_* = mu_inf/m0
 
     # (1) Hamiltonian diagonals.  No max(.,0): localization is by clustering.
-    diag_s = jnp.full(N, mu, dtype=jnp.float64)        # gravity switched off
+    diag_s = jnp.full(N, m0 - mu_inf, dtype=jnp.float64)   # same matter, gravity off
     diag_t = lapse * m0 - mu_inf                        # Klein, in coordinate time
 
-    # (2) On-site ENERGY -- the redshifted rest energy, identical in both states,
-    #     so the mismatch is carried entirely by the occupations.
-    e_on = lapse * m0
+    # (2) On-site observable -- the BARE rest mass m0, NOT the redshifted
+    #     lapse*m0.  The on-site multiplier IS the lapse (sec:sc-maxent), so the
+    #     operator conjugate to it is the bare rest-mass term, exactly as the
+    #     bond observable is bare t0 rather than the smeared t0*Nbar
+    #     (sec:ex-observable: "weighting it again would count the multiplier
+    #     twice").  The single power of the lapse comes from the state.
+    #     An earlier version of this file used lapse*m0 and double-counted.
+    e_on = m0
 
     Gd_s, Gs_s = _bond_correlations(diag_s, off)
     Gd_t, Gs_t = _bond_correlations(diag_t, off)
@@ -222,47 +230,92 @@ def props(Phi, mu):
     """Occupation excess is the physical core here -- there is no V to count."""
     lapse = np.maximum(1.0 + np.asarray(Phi) / csq, N_floor)
     off = jnp.array(-t0 * 0.5 * (lapse[:-1] + lapse[1:]))
-    mu_inf = m0 - mu
-    Gd_s, _ = _bond_correlations(jnp.full(N, mu), off)
+    mu_inf = mu   # mu IS the Klein constant here; surface at N_* = mu_inf/m0
+    Gd_s, _ = _bond_correlations(jnp.full(N, m0 - mu_inf), off)
     Gd_t, _ = _bond_correlations(jnp.array(lapse * m0 - mu_inf), off)
     dn = np.array(Gd_t) - np.array(Gd_s)
     gn = np.array(g)
     return dict(lapse=lapse, dn=dn, N_B=float(np.sum(gn * dn)),
                 n_bound=int(np.sum(dn > 1e-6)),
-                n_star=int(np.sum(lapse < 1.0 - mu / m0)),
+                n_star=int(np.sum(lapse < mu / m0)),
                 minN=float(lapse.min()), minPhi=float(np.min(Phi)))
 
 
+
+# ---------------------------------------------------------------------------
+# Branch following from the bifurcation off flat space.
+#
+# Reuses the continuation pattern that located the TK fold, rather than cold
+# starting.  Cold starts cannot work here: the Picard ratio crosses unity from
+# BELOW (0.902, 0.947, 1.2 at m0 = 0.11), so the nontrivial fixed point is
+# unstable for the natural iteration and nothing contracts onto it.  What IS
+# known exactly is the bifurcation point -- Phi = 0 is an exact solution at
+# every m0, and the branch leaves it where the Jacobian at Phi = 0 goes
+# singular.  So: find that m0, take the null vector, seed with a small multiple
+# of it, and continue in m0.  That is branch following from a known point, the
+# same thing the fold continuation does.
+# ---------------------------------------------------------------------------
 if __name__ == "__main__":
-    print(f"\n{'mu/m0':>7} {'|R|':>10} {'minN':>8} {'minPhi':>10} {'N_B':>10} "
-          f"{'n_bound':>8} {'innermost dn':>13}   verdict", flush=True)
-    prev = None
-    for r in [0.02, 0.05, 0.10, 0.15, 0.20, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80]:
-        mu = r * m0
-        best = None
-        seeds = ([prev] if prev is not None else []) + \
-                [-a * np.exp(-0.5 * (np.asarray(n_arr) / w) ** 2)
-                 for a in (0.05, 0.2, 0.8, 2.0, 5.0) for w in (2.0, 4.0, 8.0, 15.0)]
-        for sd in seeds:
-            sd = np.asarray(sd, float).copy()
-            sd[-1] = 0.0
-            if 1 + sd.min() / csq < 1.5 * N_floor:
-                continue
-            Phi, rn = newton(sd, mu)
-            if rn < 1e-9 and abs(np.min(Phi)) > 1e-4:
-                if best is None or rn < best[1]:
-                    best = (Phi, rn)
-            if best is not None and best[1] < 1e-10:
+    import numpy as _np
+    mu_ratio = float(sys.argv[4]) if len(sys.argv) > 4 else 0.90   # N_* = mu_inf/m0
+
+    def jac0(m0v):
+        """Jacobian of the residual at Phi = 0, which is an exact solution."""
+        global m0
+        m0 = m0v
+        return _np.array(jacfwd(_residual, argnums=0)(jnp.zeros(N),
+                                                      jnp.float64(mu_ratio * m0v)))[:-1, :-1]
+
+    print(f"N={N}  P={PREF:.4f}  N_* = mu_inf/m0 = {mu_ratio}", flush=True)
+    print("locating the bifurcation off flat space (smallest |eig| of J at Phi=0):", flush=True)
+    lo, hi = 0.02, 1.0
+    def smallest(m):
+        w = _np.linalg.eigvals(jac0(m))
+        return _np.min(_np.abs(w))
+    for m in (0.02, 0.05, 0.1, 0.2, 0.4, 0.7, 1.0):
+        print(f"   m0={m:5.2f}  min|eig| = {smallest(m):.5g}", flush=True)
+    # bisect on the sign of det, i.e. where an eigenvalue passes through zero
+    def det_sign(m):
+        return _np.sign(_np.real(_np.linalg.det(jac0(m))))
+    s_lo = det_sign(lo)
+    hi_b = None
+    for m in _np.linspace(0.03, 1.0, 40):
+        if det_sign(m) != s_lo:
+            hi_b = m; break
+    if hi_b is None:
+        print("\n  no sign change in det J(Phi=0) over m0 = 0.02..1.0 --")
+        print("  the trivial branch never goes singular, so no branch bifurcates from it.")
+        sys.exit(0)
+    a, b = hi_b - (1.0 - 0.03) / 39, hi_b
+    for _ in range(50):
+        mid = 0.5 * (a + b)
+        if det_sign(mid) == s_lo: a = mid
+        else: b = mid
+    m_c = 0.5 * (a + b)
+    print(f"\n  BIFURCATION at m0_c = {m_c:.6f}   min|eig| there = {smallest(m_c):.3e}", flush=True)
+    J = jac0(m_c); w, V = _np.linalg.eig(J); i0 = int(_np.argmin(_np.abs(w)))
+    v = _np.real(V[:, i0]); v = v / _np.max(_np.abs(v))
+    if v[_np.argmax(_np.abs(v))] > 0: v = -v          # orient into a WELL
+    v = _np.append(v, 0.0)
+    print(f"  null vector: peak at shell {int(_np.argmax(_np.abs(v)))+1}, "
+          f"support to shell {int(_np.max(_np.where(_np.abs(v) > 0.01)))+1}", flush=True)
+
+    print(f"\n{'m0':>8} {'eps':>7} {'|R|':>10} {'minN':>9} {'minPhi':>9} {'N_B':>10} {'n_bound':>8}",
+          flush=True)
+    found = 0
+    for dm in (0.002, 0.01, 0.05, 0.15, 0.4):
+        m0 = m_c + dm
+        mu = mu_ratio * m0
+        for eps in (0.01, 0.05, 0.2, 0.6, 1.5, 4.0):
+            Phi, rn = newton(eps * v * csq, mu)
+            if rn < 1e-9 and abs(_np.min(Phi)) > 1e-5:
+                p = props(Phi, mu)
+                print(f"{m0:8.4f} {eps:7.2f} {rn:10.2e} {p['minN']:9.5f} "
+                      f"{p['minPhi']:9.4f} {p['N_B']:10.3f} {p['n_bound']:8d}   "
+                      f"{'MATTER CONDENSES' if p['N_B'] > 0 else 'deficit'}", flush=True)
+                found += 1
                 break
-        if best is None:
-            print(f"{r:7.3f} {'--':>10} {'-':>8} {'-':>10} {'-':>10} {'-':>8} "
-                  f"{'-':>13}   only the trivial branch", flush=True)
-            continue
-        Phi, rn = best
-        p = props(Phi, mu)
-        verdict = ("MATTER CONDENSES" if p["N_B"] > 0 else
-                   "still a deficit" if p["N_B"] < 0 else "flat")
-        print(f"{r:7.3f} {rn:10.2e} {p['minN']:8.5f} {p['minPhi']:10.4f} "
-              f"{p['N_B']:10.3f} {p['n_bound']:8d} {p['dn'][0]:13.5f}   {verdict}",
-              flush=True)
-        prev = Phi.copy()
+        else:
+            print(f"{m0:8.4f} {'--':>7} {'--':>10} {'-':>9} {'-':>9} {'-':>10} {'-':>8}   trivial only",
+                  flush=True)
+    print(f"\n{found}/5 masses above the bifurcation carry a nontrivial branch", flush=True)

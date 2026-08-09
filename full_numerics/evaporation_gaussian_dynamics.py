@@ -203,7 +203,7 @@ def main() -> None:
         # Both systems share the same Page time and curve shape; they differ only
         # in absolute entropy scale by alpha_S/log2 ~ 1/570.
         ax.plot(closure_t, closure_sr, linewidth=1.5, color="red", linestyle="-.",
-                label=r"Self-consistent closure (norm. by $S_{\rm BH}(0)$)")
+                label=r"Page bound, closure capacity (norm. by $S_{\rm BH}(0)$)")
     ax.axvline(t_page, linestyle=":", linewidth=1, color="gray")
     ax.set_xlabel(r"Normalized time $t/t_{\mathrm{evap}}$")
     ax.set_ylabel(r"$S_R(t)\,/\,S_{\rm max}(0)$")

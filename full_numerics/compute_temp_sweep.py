@@ -283,7 +283,7 @@ def main():
         print(f"{'='*60}")
 
         # Get seed from existing solution at base temperature
-        tag_base = f"sol_{V0:.4f}"
+        tag_base = f"sol_{V0:.8f}"
         if f"{tag_base}_Phi" in D.files:
             Phi_cont = np.array(D[f"{tag_base}_Phi"], dtype=np.float64)
             print(f"  Seed from existing solution at beta0={base_beta0}")
@@ -410,14 +410,14 @@ def main():
     _written = {"rs", "conv", "F", "minN", "Phi", "proxy_rs", "bt0",
                 "rs_corr", "F_corr", "minN_corr"}
     for V0 in V0_temp_list:
-        pre = f"temp_{V0:.4f}_"
+        pre = f"temp_{V0:.8f}_"
         for k in [k for k in list(data) if k.startswith(pre)]:
             if k[len(pre):] not in _written:
                 del data[k]
                 print(f"  dropped stale merged key {k}")
 
     for V0 in V0_temp_list:
-        tag = f"temp_{V0:.4f}"
+        tag = f"temp_{V0:.8f}"
         sw = temp_sweep[V0]
         data[f"{tag}_rs"] = np.array([e["rs"] for e in sw])
         data[f"{tag}_conv"] = np.array([e["conv"] for e in sw])

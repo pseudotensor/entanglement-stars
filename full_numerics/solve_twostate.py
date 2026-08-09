@@ -38,7 +38,9 @@ def picard_proxy(model, Phi0, tol=1e-8, max_iter=2000,
     """
     N = model.N
     Phi = Phi0.copy()
-    pref = model.beta0 / model.cstar_sq
+    # Same convention as the model it is handed; see
+    # physics_twostate.TwoStateShellModel._closure_pref.
+    pref = model._closure_pref()
     floor_val = -(1.0 - lapse_floor) * model.cstar_sq if lapse_floor else None
 
     # Fixed RHS for proxy: (beta0/c*^2) * (rho_bg - rho_tgt)

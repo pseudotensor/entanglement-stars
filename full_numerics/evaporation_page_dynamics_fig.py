@@ -59,10 +59,13 @@ print(f"massless Dirac (k=2): R = {R_dirac:.5f}, "
 # case in particular there is no baseline: it is the unshifted Page curve, where
 # the radiation carries exactly the entropy the star loses, and its peak at 0.646
 # is what 0.512 should be read against.
-PKG = ((2, 1.0,       "0.55",      "reversible, $R=1$ (unshifted)"),
-       (2, 4.0/3.0,   "tab:green", "$3{+}1$D blackbody, $R=4/3$"),
-       (2, R_page,    "tab:olive", "Page 1976, $\\gamma+$graviton"),
-       (2, R_dirac,   "tab:blue",  "massless Dirac, this model"))
+# Marker per curve, as in panel (b): the four differ only by R, so in
+# greyscale colour alone leaves them unreadable.  Markers carry the
+# identification and the legend shows them, so the panel survives printing.
+PKG = ((2, 1.0,       "0.55",      "o", "reversible, $R=1$ (unshifted)"),
+       (2, 4.0/3.0,   "tab:green", "s", "$3{+}1$D blackbody, $R=4/3$"),
+       (2, R_page,    "darkgoldenrod", "^", "Page 1976, $\\gamma+$graviton"),
+       (2, R_dirac,   "tab:blue",  "D", "massless Dirac, this model"))
 
 _iy = [0]
 fig, axes = plt.subplots(1, 2, figsize=(9.4, 3.9))
@@ -70,9 +73,15 @@ fig, axes = plt.subplots(1, 2, figsize=(9.4, 3.9))
 # -- (a) the Page curve ----------------------------------------------------
 ax = axes[0]
 t = np.linspace(0.0, 1.0, 801)
-for k, R, col, lab in PKG:
+for _j, (k, R, col, mk, lab) in enumerate(PKG):
     late = (1.0 - t) ** (2.0 / (k + 1.0))
-    ax.plot(t, np.minimum(R * (1.0 - late), late), color=col, lw=2.0,
+    ax.plot(t, np.minimum(R * (1.0 - late), late), color=col, lw=1.8,
+            # Larger than panel (b)'s ms=3.5: those sit on every data point, so
+            # they read as a dense dotted line, whereas these are sparse samples
+            # on a smooth analytic curve and have to be identifiable one at a
+            # time.  At 3.5 the circle, square and diamond were hard to tell
+            # apart.
+            marker=mk, ms=6.0, mew=0, markevery=(40 + 26 * _j, 130),
             label=rf"$k={k}$, $R={R:.3f}$ ({lab})")
     if R == R_dirac:
         ax.plot(t, late, color=col, lw=0.9, ls="--", alpha=0.6)

@@ -278,16 +278,25 @@ for mu in mu_values:
         compact_w = r_star / r_s_w if r_s_w > 0 else float('inf')
         compact_phi = r_star / r_s_phi if r_s_phi > 0 else float('inf')
 
-        # Baryon number
+        # Occupation shift of the target state relative to the background.
+        # This was labelled "baryon number" and computed as
+        #     N_B = sum g * max(dN, 0),
+        # which is meaningless here: dN < 0 on EVERY core shell (the on-site
+        # V_n > 0 raises the level and empties the site), so the max() kept only
+        # ~1e-6 exterior round-off and returned 1.1e-2 against a true integrated
+        # shift of -0.227.  Signed, and named for what it is.  Not saved and not
+        # used by the paper; kept as a diagnostic of the interior reading, which
+        # is a modular-energy excess from a repulsive on-site potential rather
+        # than a condensate -- see sec:tov-tk.
         dN = d["Gd_t"] - d["Gd_s"]
-        N_B = np.sum(g * np.maximum(dN, 0))
+        dN_total = float(np.sum(g * dN))
 
         results[mu] = {"d": d, "rn": best_rn, "n_eff": n_eff,
-                        "A_fit": A_fit, "r_s_phi": r_s_phi,
+                        "A_fit": A_fit, "r_s_phi": r_s_phi, "dN_total": dN_total,
                         "phi_rel_err": phi_rel_err,
                         "r_s_w": r_s_w, "w_rel_err": w_rel_err,
                         "compact_w": compact_w, "compact_phi": compact_phi,
-                        "J_w_var": J_w_var, "N_B": N_B}
+                        "J_w_var": J_w_var, "dN_total": dN_total}
 
         print(f"\n  RESULTS (mu={mu:.6f}):")
         print(f"    Time:      {dt:.1f}s")

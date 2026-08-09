@@ -39,7 +39,14 @@ class TwoStateShellModel:
     """Shell chain with two-state (background-subtracted) closure."""
 
     def __init__(self, N=200, t0=1.0, V0=0.01, n_core=5, beta0=0.1,
-                 cstar_sq=0.5, a=1.0, mode="analytic"):
+                 cstar_sq=0.5, a=1.0, mode="analytic", lam=None):
+        # lam=None keeps the historical lattice-unit shorthand beta0/c_*^2.
+        # lam=value uses the DERIVED closure prefactor P = c_*^2 t0^2/(lam eps_b)
+        # of eq:sc-closure.  This model supplies the analytic and proxy
+        # reference curves that the paper plots AGAINST the exact solver, so it
+        # must be on the same convention as compute_exact_data_gpu.py or the
+        # comparison is between two different equations.
+        self.lam = lam
         self.N = N
         self.t0 = t0
         self.V0 = V0
@@ -65,6 +72,20 @@ class TwoStateShellModel:
         # So rho_tilde = rho_tgt - rho_bg = rho_contrast
         self.rho_tilde = self.rho_contrast.copy()
         self.rho_0 = self.rho_bg.copy()
+
+    def _closure_pref(self):
+        """beta0/c_*^2 (shorthand) or c_*^2 t0^2/(lam eps_b) (derived)."""
+        if getattr(self, "lam", None) is None:
+            return self.beta0 / self.cstar_sq
+        import numpy as _np
+        n = self.N
+        h = (_np.diag(-self.t0*_np.ones(n-1), 1)
+             + _np.diag(-self.t0*_np.ones(n-1), -1))
+        w, v = _np.linalg.eigh(h)
+        fo = 1.0/(_np.exp(self.beta0*w) + 1.0)
+        G = (v*fo[None, :]) @ v.T
+        eps_b = 2.0*self.t0*G[(n-1)//2, (n-1)//2 + 1]
+        return self.cstar_sq*self.t0**2/(self.lam*eps_b)
 
     def _setup_analytic(self):
         """High-T analytic formulas for energy profiles.
@@ -190,7 +211,7 @@ class TwoStateShellModel:
         lapse, Nbar = self.lapse_nbar(Phi)
         kappa = self.conductances(Nbar)
         lhs = self.graph_laplacian_action(Phi, kappa)
-        pref = self.beta0 / self.cstar_sq
+        pref = self._closure_pref()
         if proxy:
             rhs = pref * (self.rho_bg - self.rho_tgt)
         else:
@@ -217,7 +238,7 @@ class TwoStateShellModel:
         kappa = self.conductances(Nbar)
         lhs = self.graph_laplacian_action(Phi, kappa)
 
-        pref = self.beta0 / self.cstar_sq
+        pref = self._closure_pref()
 
         if proxy:
             rhs = pref * (self.rho_bg - self.rho_tgt)

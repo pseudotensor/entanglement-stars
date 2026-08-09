@@ -242,11 +242,91 @@ def _make_physics_fns(N, t0, n_core, beta0, cstar_sq):
 # RESIDUALS
 # ═══════════════════════════════════════════════════════════════════
 
-def make_residual_proxy(N, t0, V0, n_core, beta0, cstar_sq):
+
+# The convention for this module, in ONE place.
+#
+# 0.217 -- the DERIVED closure prefactor P = c_*^2 t0^2/(lam eps_b), with lam
+# the per-channel alpha_S^bond.  Set 2026-08-08 after threading it through every
+# solver path and converting every V0 grid at its own temperature; a red team
+# had shown that doing only part of that kills Phase A on its first point
+# (|F| = 4.3e6, lapse negative).  What had to land together, and did:
+#
+#  1. THREADED EVERYWHERE: make_residual_proxy, both FixedpointSolver
+#     constructions, make_residual_tempsweep's rs_exact branch, and the
+#     verification block.  Mixing them puts proxy seeds at P = 46.2 into a
+#     residual running 0.2, a factor 231 apart.
+#  2. V0 GRIDS CONVERTED, PER TEMPERATURE, via convert_V0().  V0* moves
+#     0.0683 -> 2.96e-4.  There is no single factor: P/shorthand is 231.0,
+#     9.78, 2.84, 0.64 at beta0 = 0.1, 0.5, 1, 3, crossing 1.0 near bt = 2, so
+#     the four tov_configs each convert at their own beta0.
+#  3. REFERENCE CURVES: solve_analytic_proxy/full route through
+#     full_numerics/physics_twostate.py and solve_twostate.py.  The paper plots
+#     these AGAINST the exact curve, so they must use the same convention.
+#
+# And rescaling instead of re-solving is not available: measured mismatch is
+# 2.5e-4 at V0 = 0.005 rising to 8.5e-3 at 0.066.
+#
+# closure_prefactor() itself is verified correct: it agrees with the independent
+# implementation in make_residual_tempsweep to 1.2e-16 over ten parameter sets,
+# and reads eps_b at the bulk bond for both parities.
+LAM_CLOSURE = 0.217
+
+
+def closure_prefactor(N, t0, beta0, cstar_sq, lam=None):
+    """Source prefactor for the closure equation.
+
+    lam=None  -- the solver's lattice-unit shorthand beta0/c_*^2.  At the
+                 production point (beta0 t0 = 0.1, c_*^2 = 0.5) this is 0.2,
+                 and at the TK point it is exactly 1.0, which is why it went
+                 unnoticed: it looks like no factor at all.
+    lam=value -- the DERIVED prefactor P = c_*^2 t0^2 / (lam eps_b) of
+                 eq:sc-closure, with lam the mismatch normalisation and eps_b
+                 the per-channel flat-chain bond energy of eq:sc-sumrule, read
+                 at the BULK bond (the open-chain ends differ).
+                 lam is the PER-CHANNEL alpha_S^bond = 0.217 here, NOT
+                 alpha_S = 0.217 D: D cancels between the conductances and the
+                 modular energy density, so lam cannot carry it.  The Gauss-law
+                 match of eq:sc-GM uses the other convention; see
+                 09_selfconsistent_setup.tex:179.
+
+    The two differ by f = lam beta0 eps_b / (c_*^4 t0^2).  Rescaling V0 by f is
+    NOT an exact relabel -- the closure is nonlinear in V0, so the same physical
+    point solved both ways agrees only to 0.03% at weak field and 1.36% at
+    V0 = 0.066, measured directly.  Convert and re-solve; do not rescale.
+    """
+    if lam is None:
+        return float(beta0 / cstar_sq)
+    diag0 = jnp.zeros(N, dtype=jnp.float64)
+    _, Gs_flat = bond_correlations(
+        diag0, -t0 * jnp.ones(N - 1, dtype=jnp.float64), beta0)
+    eps_b = 2.0 * t0 * Gs_flat[(N - 1) // 2]
+    return float(cstar_sq * t0**2 / (lam * eps_b))
+
+
+def convert_V0(V0_old, N, t0, beta0, cstar_sq, lam=None):
+    """Map a V0 chosen under the shorthand onto the same PHYSICAL point under P.
+
+    To linear order the source is pref * c * V0, so holding pref*V0 fixed holds
+    the physics fixed: V0_new = V0_old * shorthand / P.  Exact only to that
+    order -- the closure is nonlinear in V0, and the residual mismatch of a
+    pure rescale is 2.5e-4 at V0_old = 0.005 rising to 8.5e-3 at 0.066 -- which
+    is why grids are converted and then RE-SOLVED, never rescaled in place.
+
+    f depends on beta0 through eps_b, so every grid must be converted at ITS OWN
+    temperature.  f = 4.33e-3, 0.102, 0.352, 1.57 at beta0 = 0.1, 0.5, 1, 3:
+    it crosses 1 near beta0 t0 = 2, so there is no single factor.
+    """
+    if lam is None:
+        return V0_old
+    P = closure_prefactor(N, t0, beta0, cstar_sq, lam)
+    return V0_old * (beta0 / cstar_sq) / P
+
+
+def make_residual_proxy(N, t0, V0, n_core, beta0, cstar_sq, lam=None):
     """Return a JIT'd proxy residual: fixed source, KMS conductances."""
     kms_bg = compute_kms_bg(N, t0, beta0)
     rho_bg, rho_tgt = compute_rho_bg_tgt(N, t0, V0, n_core, beta0)
-    pref = beta0 / cstar_sq
+    pref = closure_prefactor(N, t0, beta0, cstar_sq, lam)
     source = pref * (rho_bg - rho_tgt)
     cond_fn, _, _ = _make_physics_fns(N, t0, n_core, beta0, cstar_sq)
 
@@ -261,7 +341,7 @@ def make_residual_proxy(N, t0, V0, n_core, beta0, cstar_sq):
     return residual, kms_bg, rho_bg, rho_tgt
 
 
-def make_residual_fixedpoint(N, t0, n_core, beta0, cstar_sq):
+def make_residual_fixedpoint(N, t0, n_core, beta0, cstar_sq, lam=None):
     """Return a JIT'd residual with the self-consistent (Phi-dependent) source.
 
     NAMING, to avoid a collision with the paper: "fixedpoint" here refers to the
@@ -290,12 +370,14 @@ def make_residual_fixedpoint(N, t0, n_core, beta0, cstar_sq):
 
     grad_energy = jax.grad(energy_lhs)
 
+    _pref_val = closure_prefactor(N, t0, beta0, cstar_sq, lam)
+
     @jit
     def residual(Phi, V0):
         # LHS = grad of energy = Laplacian_action + EL correction (exact)
         lhs = grad_energy(Phi)
 
-        pref = beta0 / cstar_sq
+        pref = _pref_val
         rs = rho_sigma_fn(Phi)
         rt = rho_tgt_fn(Phi, V0)
         rhs = pref * (rs - rt)
@@ -306,8 +388,37 @@ def make_residual_fixedpoint(N, t0, n_core, beta0, cstar_sq):
     return residual, kms_bg
 
 
-def make_residual_tempsweep(N, t0, n_core, cstar_sq, lam=None):
+
+def tempsweep_background(N, t0, beta0):
+    """The two beta0-ONLY quantities the closure residual needs.
+
+    Both are constant in Phi, so recomputing them inside the residual is pure
+    waste -- and because they sit inside the AD graph, jacfwd differentiates
+    them with N tangents for a derivative that is identically zero.  Measured
+    at N = 400: they are 46.5% of a residual evaluation, and about 1.6 s of
+    jacfwd's 3.45 s.
+
+    Returns (kms_bg, eps_b): the flat-chain BKM covariance per bond, which
+    normalises the conductance ratio, and the bulk bond energy of
+    eq:sc-sumrule, which sets the derived prefactor P.
+    """
+    flat_off = -t0 * jnp.ones(N - 1, dtype=jnp.float64)
+    diag0 = jnp.zeros(N, dtype=jnp.float64)
+    kms_bg = bkm_bond_cov(diag0, flat_off, beta0)
+    _, Gs_flat = bond_correlations(diag0, flat_off, beta0)
+    eps_b = 2.0 * t0 * Gs_flat[(N - 1) // 2]
+    return kms_bg, eps_b
+
+
+def make_residual_tempsweep(N, t0, n_core, cstar_sq, lam=None, hoist_bg=False):
     """Fully parametric residual(Phi, V0, beta0) for temperature sweep.
+
+    hoist_bg=True returns residual(Phi, V0, beta0, kms_bg, eps_b) instead, with
+    the two beta0-only quantities supplied by tempsweep_background().  They are
+    constant in Phi, so this removes them from the AD graph as well as from the
+    inner loop -- 46.5% of a residual at N=400, and ~1.6 s of jacfwd's 3.45 s.
+    The answer is unchanged by construction: the derivative of a constant is
+    zero, and tests/test_tk_closure.py pins the two paths against each other.
 
     Full EL correction via jax.grad of the conductance energy functional.
     V0 and beta0 are traced args so JAX compiles once for all combinations.
@@ -326,19 +437,21 @@ def make_residual_tempsweep(N, t0, n_core, cstar_sq, lam=None):
     diag0 = jnp.zeros(N, dtype=jnp.float64)
     core_mask = (jnp.arange(N) < n_core).astype(jnp.float64)
 
-    def _conductances(Phi, beta0):
+    def _conductances(Phi, beta0, kms_bg=None):
         """KMS conductances as function of (Phi, beta0)."""
         lapse = 1.0 + Phi / cstar_sq
         Nbar = 0.5 * (lapse[:-1] + lapse[1:])
         off = -t0 * jnp.abs(Nbar)
-        kms_bg = bkm_bond_cov(diag0, -t0 * jnp.ones(N - 1, dtype=jnp.float64), beta0)
+        if kms_bg is None:
+            kms_bg = bkm_bond_cov(
+                diag0, -t0 * jnp.ones(N - 1, dtype=jnp.float64), beta0)
         cov = bkm_bond_cov(diag0, off, beta0)
         cov_ratio = cov / jnp.maximum(kms_bg, 1e-30)
         return g[:-1] * t0**2 * Nbar**2 * cov_ratio
 
-    def _energy(Phi, beta0):
+    def _energy(Phi, beta0, kms_bg=None):
         """Conductance energy: (1/2) sum_b kappa_b(Phi) * (dPhi_b)^2."""
-        kappa = _conductances(Phi, beta0)
+        kappa = _conductances(Phi, beta0, kms_bg)
         dPhi = Phi[:-1] - Phi[1:]
         return 0.5 * jnp.sum(kappa * dPhi**2)
 
@@ -382,7 +495,42 @@ def make_residual_tempsweep(N, t0, n_core, cstar_sq, lam=None):
         F = F.at[N - 1].set(Phi[N - 1])
         return F
 
-    return residual
+    @jit
+    def residual_hoisted(Phi, V0, beta0, kms_bg, eps_b):
+        """Identical to residual(), with the two beta0-only constants supplied.
+
+        kms_bg and eps_b come from tempsweep_background(N, t0, beta0).  Nothing
+        else differs: same conductances, same source, same Dirichlet row.
+        """
+        lhs = _grad_energy(Phi, beta0, kms_bg)
+
+        lapse = 1.0 + Phi / cstar_sq
+        Nbar = 0.5 * (lapse[:-1] + lapse[1:])
+        off = -t0 * jnp.abs(Nbar)
+
+        _, Gs_sig = bond_correlations(diag0, off, beta0)
+        bond_eng_sig = -2.0 * t0 * Gs_sig * g[:-1]
+        rho_sig = jnp.zeros(N, dtype=jnp.float64)
+        rho_sig = rho_sig.at[:-1].add(0.5 * bond_eng_sig)
+        rho_sig = rho_sig.at[1:].add(0.5 * bond_eng_sig)
+
+        diag_tgt = diag0 + V0 * core_mask
+        Gd_tgt, Gs_tgt = bond_correlations(diag_tgt, off, beta0)
+        bond_eng_tgt = -2.0 * t0 * Gs_tgt * g[:-1]
+        rho_tgt = jnp.zeros(N, dtype=jnp.float64)
+        rho_tgt = rho_tgt.at[:-1].add(0.5 * bond_eng_tgt)
+        rho_tgt = rho_tgt.at[1:].add(0.5 * bond_eng_tgt)
+        rho_tgt = rho_tgt.at[:n_core].add(V0 * Gd_tgt[:n_core] * g[:n_core])
+
+        if lam is None:
+            pref = beta0 / cstar_sq
+        else:
+            pref = cstar_sq * t0**2 / (lam * eps_b)
+        F = lhs - pref * (rho_sig - rho_tgt)
+        F = F.at[N - 1].set(Phi[N - 1])
+        return F
+
+    return residual_hoisted if hoist_bg else residual
 
 
 def make_newton_solver_3arg(residual_fn, N, max_iter=60, tol=1e-8):
@@ -602,7 +750,7 @@ def solve_proxy_V0_continuation(N, t0, V0_target, n_core, beta0, cstar_sq,
     for iv, V0_step in enumerate(V0_values):
         V0_s = float(V0_step)
         resid_fn, kms_bg, rho_bg, rho_tgt = make_residual_proxy(
-            N, t0, V0_s, n_core, beta0, cstar_sq)
+            N, t0, V0_s, n_core, beta0, cstar_sq, lam=LAM_CLOSURE)
         solver = make_newton_solver(resid_fn, N, max_iter=40, tol=tol)
         Phi, conv, nit, res = solver(Phi)
         Phi = jax.block_until_ready(Phi)
@@ -640,9 +788,14 @@ def solve_fixedpoint_from_proxy(Phi_proxy, V0, fp_solver, cstar_sq,
 class FixedpointSolver:
     """Pre-compiled fixedpoint solver that can be reused for any V0."""
 
-    def __init__(self, N, t0, n_core, beta0, cstar_sq, max_iter=60, tol=1e-6):
+    def __init__(self, N, t0, n_core, beta0, cstar_sq, max_iter=60, tol=1e-6,
+                 lam=LAM_CLOSURE):
+        # Defaults to the DERIVED prefactor, not lam=None.  Every live call site
+        # passes LAM_CLOSURE explicitly, so no shipped number depends on this,
+        # but a None default silently selects the lattice-unit shorthand
+        # beta0/c_*^2 -- the convention this whole conversion removed.
         self.resid_fn, self.kms_bg = make_residual_fixedpoint(
-            N, t0, n_core, beta0, cstar_sq)
+            N, t0, n_core, beta0, cstar_sq, lam=lam)
         self.solver = make_newton_solver_2arg(
             self.resid_fn, N, max_iter=max_iter, tol=tol)
 
@@ -768,8 +921,10 @@ from full_numerics.solve_twostate import solve_full as _solve_full_analytic
 def solve_analytic_proxy(N, t0, V0, n_core, beta0, cstar_sq, lapse_floor=0.01,
                          Phi_seed=None):
     """Solve proxy equation with analytic (Nbar^2) conductances."""
+    # Same convention as the exact solver -- these curves are plotted against it.
     model = TwoStateShellModel(N=N, t0=t0, V0=V0, n_core=n_core,
-                                beta0=beta0, cstar_sq=cstar_sq)
+                                beta0=beta0, cstar_sq=cstar_sq,
+                                lam=LAM_CLOSURE)
     Phi, _ = _solve_proxy_analytic(model, Phi_seed, tol=1e-8,
                                     lapse_floor=lapse_floor)
     return Phi
@@ -778,8 +933,10 @@ def solve_analytic_proxy(N, t0, V0, n_core, beta0, cstar_sq, lapse_floor=0.01,
 def solve_analytic_full(N, t0, V0, n_core, beta0, cstar_sq, lapse_floor=0.01,
                         Phi_seed=None):
     """Solve full equation with analytic conductances (Picard+Newton)."""
+    # Same convention as the exact solver -- these curves are plotted against it.
     model = TwoStateShellModel(N=N, t0=t0, V0=V0, n_core=n_core,
-                                beta0=beta0, cstar_sq=cstar_sq)
+                                beta0=beta0, cstar_sq=cstar_sq,
+                                lam=LAM_CLOSURE)
     Phi, _, _ = _solve_full_analytic(model, Phi_seed, tol=1e-8,
                                       lapse_floor=lapse_floor)
     return Phi
@@ -898,7 +1055,7 @@ def main():
     # Create shared fixedpoint solver (compiled once, reused for all V0)
     print("Building fixedpoint solver...", flush=True)
     t_warm = time.time()
-    fp_solver = FixedpointSolver(N, t0, n_core, beta0, cstar_sq,
+    fp_solver = FixedpointSolver(N, t0, n_core, beta0, cstar_sq, lam=LAM_CLOSURE,
                                   max_iter=120, tol=1e-6)
     print(f"  Created in {time.time() - t_warm:.1f}s", flush=True)
 
@@ -913,10 +1070,16 @@ def main():
     # PHASE A: Core V0 solutions
     # ═══════════════════════════════════════════════════════════════
 
-    # With full EL (jax.grad), V0* ≈ 0.0683 (confirmed by pseudo-arclength
-    # continuation). All V0 below this are subcritical.
-    V0_core = [0.005, 0.01, 0.02, 0.03, 0.04, 0.05, 0.055, 0.057,
-               0.06, 0.063, 0.065, 0.066, 0.067]
+    # With full EL (jax.grad), V0* ≈ 0.0683 in the SHORTHAND units this grid was
+    # chosen in (confirmed by pseudo-arclength continuation); under the derived
+    # prefactor that is V0* ≈ 2.96e-4.  All V0 below it are subcritical.
+    # Chosen under the shorthand; converted to the derived normalisation at
+    # THIS beta0 so the physical points are unchanged.  Under P the fold moves
+    # from V0* ~ 0.0683 to ~2.96e-4, so these are ~231x smaller.
+    _V0_core_shorthand = [0.005, 0.01, 0.02, 0.03, 0.04, 0.05, 0.055, 0.057,
+                          0.06, 0.063, 0.065, 0.066, 0.067]
+    V0_core = [convert_V0(v, N, t0, beta0, cstar_sq, LAM_CLOSURE)
+               for v in _V0_core_shorthand]
     V0_extended = []
     V0_supercrit = []
 
@@ -931,7 +1094,7 @@ def main():
 
     t_a = time.time()
     for V0 in sorted(V0_core + V0_extended):
-        print(f"\n--- V0 = {V0:.4f} ---")
+        print(f"\n--- V0 = {V0:.6g} ---")
         # Proxy with V0 continuation
         Phi_p, conv_p, res_p, kms_bg, rho_bg, rho_tgt = solve_proxy_V0_continuation(
             N, t0, V0, n_core, beta0, cstar_sq,
@@ -999,9 +1162,11 @@ def main():
     print("PHASE A2: Near-critical fine scan + fold test")
     print("=" * 70)
 
-    V0_fine = [0.0675, 0.068]  # near-critical, approaching fold at V0*≈0.0683
+    # near-critical, approaching the fold (V0* ~ 0.0683 shorthand, ~2.96e-4 under P)
+    V0_fine = [convert_V0(v, N, t0, beta0, cstar_sq, LAM_CLOSURE)
+               for v in (0.0675, 0.068)]
     for V0 in V0_fine:
-        print(f"\n--- V0 = {V0:.4f} (near-critical) ---")
+        print(f"\n--- V0 = {V0:.6g} (near-critical) ---")
         Phi_p, conv_p, res_p, kms_bg, rho_bg, rho_tgt = solve_proxy_V0_continuation(
             N, t0, V0, n_core, beta0, cstar_sq,
             n_steps=max(12, int(V0 * 300)), tol=1e-8, Phi_seed=Phi_seed)
@@ -1048,22 +1213,23 @@ def main():
             if len(exact_history) > 3:
                 exact_history = exact_history[-3:]
 
-    # Try V0=0.069 to confirm fold (expect convergence failure or neg lapse)
-    print("\n--- V0 = 0.0690 (fold test) ---")
+    # Just past the fold: expect convergence failure or negative lapse.
+    _V0_fold_test = convert_V0(0.069, N, t0, beta0, cstar_sq, LAM_CLOSURE)
+    print(f"\n--- V0 = {_V0_fold_test:.6g} (fold test, past V0*) ---")
     try:
         Phi_p69, _, _, kms69, _, _ = solve_proxy_V0_continuation(
-            N, t0, 0.069, n_core, beta0, cstar_sq,
+            N, t0, _V0_fold_test, n_core, beta0, cstar_sq,
             n_steps=30, tol=1e-8, Phi_seed=Phi_seed)
         seed69 = exact_history[-1][1] if exact_history else Phi_p69
         Phi_ex69, conv69, res69, _ = solve_fixedpoint_from_proxy(
-            seed69, 0.069, fp_solver, cstar_sq)
+            seed69, _V0_fold_test, fp_solver, cstar_sq)
         if not conv69:
             Phi_ex69b, conv69b, res69b, _ = solve_fixedpoint_from_proxy(
-                Phi_p69, 0.069, fp_solver, cstar_sq)
+                Phi_p69, _V0_fold_test, fp_solver, cstar_sq)
             if res69b < res69:
                 Phi_ex69, conv69, res69 = Phi_ex69b, conv69b, res69b
         lapse69 = 1.0 + np.array(Phi_ex69) / cstar_sq
-        print(f"  V0=0.069: min(N)={lapse69.min():.6f}, |F|={res69:.2e}, "
+        print(f"  V0={_V0_fold_test:.6g}: min(N)={lapse69.min():.6f}, |F|={res69:.2e}, "
               f"conv={conv69}")
         if lapse69.min() < 0:
             print("  => negative lapse: no positive-lapse solution here")
@@ -1099,9 +1265,13 @@ def main():
     analytic_solutions = {}
     # Skip near-critical V0 for analytic model (Picard/Newton too slow there,
     # and the analytic Nbar^2 approximation breaks down anyway).
-    V0_analytic = [v for v in sorted(set(V0_core + V0_extended)) if v <= 0.04]
+    # threshold converted too: V0_core is already in derived units, so a bare
+    # 0.04 would admit everything and silently make this filter a no-op.
+    _V0_analytic_cut = convert_V0(0.04, N, t0, beta0, cstar_sq, LAM_CLOSURE)
+    V0_analytic = [v for v in sorted(set(V0_core + V0_extended))
+                   if v <= _V0_analytic_cut]
     for V0 in V0_analytic:
-        print(f"  V0 = {V0:.4f} ... ", end="", flush=True)
+        print(f"  V0 = {V0:.6g} ... ", end="", flush=True)
         # Use exact GPU solution as seed — dramatically speeds up Picard
         seed = solutions[V0]["Phi"] if V0 in solutions else None
 
@@ -1154,11 +1324,12 @@ def main():
     print("=" * 70)
 
     floors = [0.1, 0.05, 0.01, 0.005, 0.001, 0.0005, 0.0001, 0.00001]
-    V0_floor_test = [0.03, 0.05, 0.057, 0.066]
+    V0_floor_test = [convert_V0(v, N, t0, beta0, cstar_sq, LAM_CLOSURE)
+                     for v in (0.03, 0.05, 0.057, 0.066)]
 
     floor_data = {}
     for V0 in V0_floor_test:
-        print(f"\n  V0 = {V0:.3f}")
+        print(f"\n  V0 = {V0:.6g}")
         floor_data[V0] = []
 
         for floor in floors:
@@ -1173,7 +1344,8 @@ def main():
 
     # Proxy floor study
     print("\n  Proxy floor study:")
-    V0_proxy_floor = [0.05, 0.057, 0.063, 0.066]
+    V0_proxy_floor = [convert_V0(v, N, t0, beta0, cstar_sq, LAM_CLOSURE)
+                      for v in (0.05, 0.057, 0.063, 0.066)]
     proxy_floor_data = {}
     for V0 in V0_proxy_floor:
         proxy_floor_data[V0] = []
@@ -1183,7 +1355,7 @@ def main():
             lapse_pf = 1 + Phi_pf / cstar_sq
             proxy_floor_data[V0].append({"floor": floor, "min_N": lapse_pf.min()})
         minNs_p = [d["min_N"] for d in proxy_floor_data[V0]]
-        print(f"    V0={V0:.3f}: min(N) range [{min(minNs_p):.6f}, {max(minNs_p):.6f}]")
+        print(f"    V0={V0:.6g}: min(N) range [{min(minNs_p):.6f}, {max(minNs_p):.6f}]")
 
     # ═══════════════════════════════════════════════════════════════
     # PHASE B2: Temperature sweep
@@ -1196,16 +1368,17 @@ def main():
     # Build 3-arg solver for temperature sweep (compiled once for all V0, beta0)
     print("  Compiling temperature sweep solver...", flush=True)
     t_ts = time.time()
-    ts_resid = make_residual_tempsweep(N, t0, n_core, cstar_sq)
+    ts_resid = make_residual_tempsweep(N, t0, n_core, cstar_sq, lam=LAM_CLOSURE)
     ts_solver = make_newton_solver_3arg(ts_resid, N, max_iter=50, tol=1e-8)
 
-    # Corrected-normalisation branch: same closure, the paper's prefactor P.
-    # lam = alpha_S = 0.217 D at D = 4 (eq. sc-alphaS-required, sec:tov-entropy).
-    LAM_ALPHA_S = 0.217
-    ts_resid_corr = make_residual_tempsweep(N, t0, n_core, cstar_sq,
-                                            lam=LAM_ALPHA_S)
-    ts_solver_corr = make_newton_solver_3arg(ts_resid_corr, N, max_iter=50,
-                                             tol=1e-8)
+    # There is no second "corrected-normalisation" branch here any more.
+    # It re-solved the same closure with lam = LAM_ALPHA_S, and the comment on
+    # that constant claimed alpha_S = 0.217 D at D = 4 while the value assigned
+    # was 0.217 -- LAM_CLOSURE exactly.  So the branch computed the main solve a
+    # second time: rs_corr was BITWISE equal to rs on both V0 (max|diff| = 0),
+    # the figure drew one curve on top of the other, and the panel looked like a
+    # cross-check that had in fact tested nothing.  The closure is sourced with
+    # the derived prefactor P throughout, so there is nothing left to compare.
     # Warmup
     _Phi0 = jnp.zeros(N, dtype=jnp.float64)
     _F0 = jax.block_until_ready(jit(ts_resid)(_Phi0, jnp.float64(0.001), jnp.float64(0.1)))
@@ -1217,28 +1390,67 @@ def main():
     bt0_coarse = np.arange(0.1, 1.51, 0.1)
     bt0_fine = np.arange(1.5, 3.01, 0.05)
     bt0_values = np.unique(np.round(np.concatenate([bt0_coarse, bt0_fine]), 4))
-    V0_temp_list = [0.001, 0.005]
+    # A temperature sweep holds V0 fixed while beta0 varies, so it cannot be
+    # converted "at its own temperature" -- there isn't one.  Converted at the
+    # sweep's reference beta0 (the Phase-A value), which fixes the physical
+    # defect and lets beta0 vary, as the sweep intends.  Note this changes the
+    # sweep's MEANING under the shorthand, where a fixed V0 was a
+    # temperature-dependent physical defect; that is A3, and the figure must be
+    # re-solved rather than relabelled.
+    # V0 values, and the direction each one has to be swept.
+    #
+    # 0.001 and 0.005 were chosen under the shorthand prefactor beta0/c_*^2,
+    # which GROWS with beta0: a fixed V0 ramped the bare defect, so the branch
+    # strengthened on cooling and reached a fold at beta0 t0 ~ 1.65.  Under the
+    # derived P = c_*^2 t0^2/(lam eps_b) the prefactor FALLS with beta0, so
+    # those same values give min(N) >= 0.982 across the whole sweep -- pure
+    # linear response, where the proxy is right to 0.44% and nothing happens.
+    # Scaled by ~27 they put GM_est back in the range the old figure covered.
+    #
+    # Direction.  The critical source RISES with beta0 t0 (V0* ~ 0.068, 0.32,
+    # 0.56, 0.83 at beta0 t0 = 0.1, 0.5, 1.0, 3.0), because the field a fixed
+    # bare defect produces is strongest when hot.  So a large V0 is
+    # SUPERCRITICAL at the hot end and has no solution there to seed from:
+    # 0.135 must be seeded cold and swept toward hot, where its branch ends.
+    # Must match what the shipped figure plots, or a full rerun silently
+    # changes the paper: exact_solutions.npz carries three curves.
+    V0_TEMP_SPEC = ((0.027, False),    # subcritical throughout; seed hot, cool
+                    (0.005, False),    # weak-field linear-response reference
+                    (0.135, True))     # supercritical at bt0=0.1; seed cold, heat
+    V0_temp_list = [convert_V0(v, N, t0, beta0, cstar_sq, LAM_CLOSURE)
+                    for v, _ in V0_TEMP_SPEC]
+    V0_temp_reverse = {V0t: rev
+                       for V0t, (_, rev) in zip(V0_temp_list, V0_TEMP_SPEC)}
     temp_sweep = {V0t: [] for V0t in V0_temp_list}
+    temp_endpoint = {}
     mask_far = (r_arr >= 60) & (r_arr <= 150)
 
     t_b2 = time.time()
     for V0_temp in V0_temp_list:
-        print(f"\n  V0 = {V0_temp} temperature sweep")
+        reverse = V0_temp_reverse[V0_temp]
+        this_bt0_values = bt0_values[::-1] if reverse else bt0_values
+        seed_bt0 = float(this_bt0_values[0])
+        print(f"\n  V0 = {V0_temp} temperature sweep "
+              f"({'cold->hot' if reverse else 'hot->cold'}, seed at "
+              f"bt0={seed_bt0})")
 
-        # Initial seed at bt0=0.1
-        if V0_temp in solutions:
+        # Seed at whichever end the sweep starts from.
+        if (not reverse) and V0_temp in solutions:
             Phi_cont = solutions[V0_temp]["Phi"].copy()
         else:
+            seed_solver = (fp_solver if abs(seed_bt0 - beta0 * t0) < 1e-12
+                           else FixedpointSolver(N, t0, n_core, seed_bt0 / t0,
+                                                 cstar_sq, lam=LAM_CLOSURE,
+                                                 max_iter=120, tol=1e-6))
             Phi_p, _, _, _, _, _ = solve_proxy_V0_continuation(
-                N, t0, V0_temp, n_core, beta0, cstar_sq,
-                n_steps=8, tol=1e-8, verbose=False)
+                N, t0, V0_temp, n_core, seed_bt0 / t0, cstar_sq,
+                n_steps=12, tol=1e-8, verbose=False)
             Phi_ex, _, _, _ = solve_fixedpoint_from_proxy(
-                Phi_p, V0_temp, fp_solver, cstar_sq, verbose=False)
+                Phi_p, V0_temp, seed_solver, cstar_sq, verbose=False)
             Phi_cont = np.array(Phi_ex)
 
-        Phi_cont_corr = Phi_cont.copy()
         fold_reached = False
-        for bt0 in bt0_values:
+        for bt0 in this_bt0_values:
             if fold_reached:
                 break
 
@@ -1260,22 +1472,23 @@ def main():
             # rather than the end of the branch (see the PHASE A2 note).
             if minN_ex < 0:
                 print(f"  bt0={bt0:.2f}: FOLD — min(N)={minN_ex:.4f} (negative lapse)")
+                temp_endpoint[V0_temp] = dict(bt0=float(bt0), minN=minN_ex,
+                                              reason="negative lapse")
                 fold_reached = True
                 continue
 
-            # Corrected-normalisation branch, solved (not rescaled): same
-            # closure with the paper's prefactor P = c_*^2 t0^2/(lam eps_b).
-            Phi_c_j, conv_c_j, _, res_c_j = ts_solver_corr(
-                jnp.array(Phi_cont_corr), V0_temp, this_beta0)
-            Phi_c_np = np.array(jax.block_until_ready(Phi_c_j))
-            F_corr = float(res_c_j)
-            minN_corr = float((1.0 + Phi_c_np / cstar_sq).min())
-            if minN_corr > 0:
-                rs_corr = extract_rs_np(Phi_c_np, N, n_core, cstar_sq)
-                if bool(conv_c_j) or F_corr < 1e-6:
-                    Phi_cont_corr = Phi_c_np.copy()
-            else:
-                rs_corr = np.nan
+            # The branch can also simply stop converging.  Recorded as the END
+            # OF THE COMPUTED BRANCH, not as a verified fold: non-convergence
+            # alone is consistent with a solver limit, and establishing a fold
+            # needs floor-independence plus a vanishing Jacobian eigenvalue
+            # (the PHASE A2 convention).  The figure and caption say "ends".
+            if (not conv_ex) and Fex > 1e-6:
+                print(f"  bt0={bt0:.2f}: branch ends — no convergence "
+                      f"(|F|={Fex:.2e}, min(N)={minN_ex:.4f}); NOT a verified fold")
+                temp_endpoint[V0_temp] = dict(bt0=float(bt0), minN=minN_ex,
+                                              reason="no convergence")
+                fold_reached = True
+                continue
 
             dPhi_core = np.max(np.abs(np.diff(Phi_ex_np[:50])))
             Phi_scale = max(np.max(np.abs(Phi_ex_np)), 1e-15)
@@ -1304,13 +1517,12 @@ def main():
                 "stagger": stagger, "Phi_exact": Phi_ex_np,
                 "GM_exact": GM_ex, "GM_std_exact": GM_std_ex,
                 "rs_proxy": rs_proxy_T,
-                "rs_corr": rs_corr, "F_corr": F_corr, "minN_corr": minN_corr,
             }
             temp_sweep[V0_temp].append(entry)
 
             print(f"  bt0={bt0:.2f}: rs={rs_ex:.4f} "
                   f"|F|={Fex:.2e} min(N)={minN_ex:.4f} "
-                  f"proxy_rs={rs_proxy_T:.4f} rs_corr={rs_corr:.4f} "
+                  f"proxy_rs={rs_proxy_T:.4f} "
                   f"{'OK' if conv_ex else 'NEAR' if Fex < 1e-6 else 'FAIL'}")
 
     dt_b2 = time.time() - t_b2
@@ -1325,7 +1537,8 @@ def main():
     print("=" * 70)
 
     V0_sweep = np.array(sorted(set(
-        list(np.linspace(0.005, 0.067, 15)) +
+        [convert_V0(v, N, t0, beta0, cstar_sq, LAM_CLOSURE)
+         for v in np.linspace(0.005, 0.067, 15)] +
         list(V0_core) + list(V0_extended)
     )))
 
@@ -1350,10 +1563,10 @@ def main():
         sweep_results.append({"V0": V0, "rs": rs, "min_N": lapse.min()})
         if conv_ex:
             Phi_seed_sw = Phi_np
-        print(f"  V0={V0:.4f}: rs={rs:.4f}, min(N)={lapse.min():.6f}")
+        print(f"  V0={V0:.6g}: rs={rs:.4f}, min(N)={lapse.min():.6f}")
 
     # Proxy + analytic V0 sweep (skip near-critical V0 where analytic is slow)
-    V0_sweep_analytic = V0_sweep[V0_sweep <= 0.04]
+    V0_sweep_analytic = V0_sweep[V0_sweep <= _V0_analytic_cut]
     print(f"\n  Proxy + analytic V0 sweep ({len(V0_sweep_analytic)} pts up to 0.04):")
     sweep_proxy_rs = []
     sweep_analytic_rs = []
@@ -1383,11 +1596,17 @@ def main():
     print("PHASE TOV: n_core scan at fixed mass")
     print("=" * 70)
 
-    tov_configs = [
+    # Each entry is converted at ITS OWN beta0: f = 4.33e-3, 4.33e-3, 0.102,
+    # 0.352 respectively, so no single factor would do.
+    _tov_configs_shorthand = [
         (0.1, 0.03, 5),
         (0.1, 0.05, 5),
         (0.5, 0.005, 5),
         (1.0, 0.003, 5),
+    ]
+    tov_configs = [
+        (b, convert_V0(v, N, t0, b, cstar_sq, LAM_CLOSURE), nc)
+        for (b, v, nc) in _tov_configs_shorthand
     ]
     nc_min, nc_max = 2, 20
     tov_results = {}
@@ -1413,7 +1632,8 @@ def main():
         I_tot_surf_arr = []  # I_grav_new + I_mat_surf
         conv_arr = []
 
-        V0_cap = 0.015 / max(beta0_tov, 0.05)
+        V0_cap = convert_V0(0.015 / max(beta0_tov, 0.05), N, t0,
+                            beta0_tov, cstar_sq, LAM_CLOSURE)
 
         for nc in ncs:
             V0_nc = M0 * 2.0 * cstar_sq / shell_g_sum(nc)
@@ -1442,7 +1662,8 @@ def main():
                 # Step 2: fully self-consistent fixedpoint
                 # TOV uses varying n_core, so build per-nc solver
                 fp_tov_nc = FixedpointSolver(N, t0, nc, beta0_tov, cstar_sq,
-                                              max_iter=60, tol=1e-6)
+                                              max_iter=60, tol=1e-6,
+                                              lam=LAM_CLOSURE)
                 Phi_ex, conv_ex, res_ex, _ = solve_fixedpoint_from_proxy(
                     Phi_p, V0_nc, fp_tov_nc, cstar_sq, verbose=False)
 
@@ -1535,7 +1756,8 @@ def main():
     print("=" * 70)
 
     # Embeddings
-    V0_embed = [0.01, 0.05, 0.066]
+    V0_embed = [convert_V0(v, N, t0, beta0, cstar_sq, LAM_CLOSURE)
+                for v in (0.01, 0.05, 0.066)]
     embed_rho = {}
     embed_R = {}
     proxy_embed_rho = {}
@@ -1550,8 +1772,12 @@ def main():
             proxy_embed_R[V0] = R_p
 
     # Thermodynamics
+    # Window in SHORTHAND units, converted -- solutions.keys() are derived-unit
+    # V0, so bare 0.01/0.068 would select everything and silently widen the set.
+    _thermo_lo = convert_V0(0.01, N, t0, beta0, cstar_sq, LAM_CLOSURE)
+    _thermo_hi = convert_V0(0.068, N, t0, beta0, cstar_sq, LAM_CLOSURE)
     V0_thermo = [V0 for V0 in sorted(solutions.keys())
-                 if 0.01 <= V0 <= 0.068]
+                 if _thermo_lo <= V0 <= _thermo_hi]
     thermo_data = []
     for V0 in V0_thermo:
         s = solutions[V0]
@@ -1594,7 +1820,8 @@ def main():
             cross_analytic.append(np.nan)
 
     # T^QI profiles
-    V0_tqi = [0.01, 0.02, 0.03, 0.05, 0.057]
+    V0_tqi = [convert_V0(v, N, t0, beta0, cstar_sq, LAM_CLOSURE)
+              for v in (0.01, 0.02, 0.03, 0.05, 0.057)]
     tqi_sc_dict = {}
     tqi_pr_dict = {}
     for V0 in V0_tqi:
@@ -1617,7 +1844,7 @@ def main():
         tqi_pr_dict[V0] = tqi_pr
 
     # Verification data (V0=0.05)
-    V0_verify = 0.05
+    V0_verify = convert_V0(0.05, N, t0, beta0, cstar_sq, LAM_CLOSURE)
     s_v = solutions[V0_verify]
     Phi_v = s_v["Phi"]
     kappa_v = s_v["kappa"]
@@ -1625,7 +1852,7 @@ def main():
     LHS_v[:-1] += kappa_v * (Phi_v[:-1] - Phi_v[1:])
     LHS_v[1:] += kappa_v * (Phi_v[1:] - Phi_v[:-1])
 
-    pref_v = beta0 / cstar_sq
+    pref_v = closure_prefactor(N, t0, beta0, cstar_sq, LAM_CLOSURE)
     _, rho_sigma_fn_v, rho_tgt_fn_v = _make_physics_fns(
         N, t0, n_core, beta0, cstar_sq)
     rho_sigma_v = np.array(jit(rho_sigma_fn_v)(jnp.array(Phi_v)))
@@ -1667,7 +1894,7 @@ def main():
     data["solution_V0s"] = np.array(all_V0)
     for V0 in all_V0:
         s = solutions[V0]
-        tag = f"sol_{V0:.4f}"
+        tag = f"sol_{V0:.8f}"
         data[f"{tag}_Phi"] = s["Phi"]
         data[f"{tag}_lapse"] = s["lapse"]
         data[f"{tag}_Nbar"] = s["Nbar"]
@@ -1682,7 +1909,7 @@ def main():
     proxy_V0s = sorted(proxy_solutions.keys())
     data["proxy_V0s"] = np.array(proxy_V0s)
     for V0 in proxy_V0s:
-        tag = f"proxy_{V0:.4f}"
+        tag = f"proxy_{V0:.8f}"
         data[f"{tag}_Phi"] = proxy_solutions[V0]["Phi"]
         data[f"{tag}_lapse"] = proxy_solutions[V0]["lapse"]
         data[f"{tag}_rs"] = proxy_solutions[V0]["rs"]
@@ -1694,7 +1921,7 @@ def main():
     analytic_V0s = sorted(analytic_solutions.keys())
     data["analytic_V0s"] = np.array(analytic_V0s)
     for V0 in analytic_V0s:
-        tag = f"analytic_{V0:.4f}"
+        tag = f"analytic_{V0:.8f}"
         data[f"{tag}_Phi"] = analytic_solutions[V0]["Phi"]
         data[f"{tag}_lapse"] = analytic_solutions[V0]["lapse"]
         data[f"{tag}_rs"] = analytic_solutions[V0]["rs"]
@@ -1707,7 +1934,7 @@ def main():
     data["floors"] = np.array(floors)
     data["V0_floor_test"] = np.array(V0_floor_test)
     for V0 in V0_floor_test:
-        tag = f"floor_{V0:.4f}"
+        tag = f"floor_{V0:.8f}"
         data[f"{tag}_min_N"] = np.array([d["min_N"] for d in floor_data[V0]])
         data[f"{tag}_rs"] = np.array([d["rs"] for d in floor_data[V0]])
         data[f"{tag}_converged"] = np.array([d["converged"] for d in floor_data[V0]])
@@ -1715,7 +1942,7 @@ def main():
     # Floor study — proxy
     data["V0_proxy_floor"] = np.array(V0_proxy_floor)
     for V0 in V0_proxy_floor:
-        tag = f"pfloor_{V0:.4f}"
+        tag = f"pfloor_{V0:.8f}"
         data[f"{tag}_min_N"] = np.array([d["min_N"] for d in proxy_floor_data[V0]])
 
     # Sweep
@@ -1730,12 +1957,12 @@ def main():
     # Embeddings
     data["embed_V0s"] = np.array(V0_embed)
     for V0 in V0_embed:
-        tag = f"embed_{V0:.4f}"
+        tag = f"embed_{V0:.8f}"
         data[f"{tag}_rho"] = embed_rho[V0]
         data[f"{tag}_R"] = embed_R[V0]
     for V0 in V0_embed:
         if V0 in proxy_embed_rho:
-            ptag = f"pembed_{V0:.4f}"
+            ptag = f"pembed_{V0:.8f}"
             data[f"{ptag}_rho"] = proxy_embed_rho[V0]
             data[f"{ptag}_R"] = proxy_embed_R[V0]
 
@@ -1756,15 +1983,26 @@ def main():
     # T^QI profiles
     data["tqi_V0s"] = np.array(sorted(tqi_sc_dict.keys()))
     for V0 in sorted(tqi_sc_dict.keys()):
-        tag = f"tqi_{V0:.4f}"
+        tag = f"tqi_{V0:.8f}"
         data[f"{tag}_sc"] = tqi_sc_dict[V0]
         data[f"{tag}_pr"] = tqi_pr_dict[V0]
 
     # Temperature sweep (per-V0 bt0 arrays may differ in length due to fold)
     data["temp_V0s"] = np.array(V0_temp_list)
     data["temp_bt0"] = bt0_values  # full grid (for reference)
+    data["temp_V0_shorthand"] = np.array([v for v, _ in V0_TEMP_SPEC])
+    data["temp_reverse"] = np.array([rev for _, rev in V0_TEMP_SPEC])
+    # Endpoint of each branch, where it has one.  bt0 = nan means the branch
+    # spans the whole grid.  "reason" distinguishes a negative lapse from mere
+    # non-convergence; neither is a VERIFIED fold (see the PHASE A2 note).
+    data["temp_end_bt0"] = np.array(
+        [temp_endpoint.get(v, {}).get("bt0", np.nan) for v in V0_temp_list])
+    data["temp_end_minN"] = np.array(
+        [temp_endpoint.get(v, {}).get("minN", np.nan) for v in V0_temp_list])
+    data["temp_end_reason"] = np.array(
+        [temp_endpoint.get(v, {}).get("reason", "") for v in V0_temp_list])
     for V0_temp in V0_temp_list:
-        tag = f"temp_{V0_temp:.4f}"
+        tag = f"temp_{V0_temp:.8f}"
         sw = temp_sweep[V0_temp]
         data[f"{tag}_bt0"] = np.array([e["bt0"] for e in sw])
         data[f"{tag}_rs"] = np.array([e["rs_exact"] for e in sw])
@@ -1774,9 +2012,6 @@ def main():
         data[f"{tag}_stagger"] = np.array([e["stagger"] for e in sw])
         data[f"{tag}_Phi"] = np.array([e["Phi_exact"] for e in sw])
         data[f"{tag}_GM"] = np.array([e["GM_exact"] for e in sw])
-        data[f"{tag}_rs_corr"] = np.array([e["rs_corr"] for e in sw])
-        data[f"{tag}_F_corr"] = np.array([e["F_corr"] for e in sw])
-        data[f"{tag}_minN_corr"] = np.array([e["minN_corr"] for e in sw])
         data[f"{tag}_GM_std"] = np.array([e["GM_std_exact"] for e in sw])
         data[f"{tag}_proxy_rs"] = np.array([e["rs_proxy"] for e in sw])
 

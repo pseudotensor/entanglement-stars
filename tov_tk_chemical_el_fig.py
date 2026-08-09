@@ -101,10 +101,14 @@ for idx, mu in enumerate(mu_show_profiles):
     lab = rf'$\mu/m_0={_r:.4f}$' if _r > 0.15 else rf'$\mu/m_0={_r:.2f}$'
     zoom = min(max(n_eff + 15, 25), N)
 
-    axes[0, 0].plot(n_arr[:zoom], Phi[:zoom], color=c, lw=1.5, label=lab)
-    axes[0, 1].plot(n_arr[:zoom], lapse[:zoom], color=c, lw=1.5, label=lab)
-    axes[0, 2].plot(n_arr[:zoom], V_defect[:zoom], color=c, lw=1.5, label=lab)
-    axes[1, 0].plot(n_arr[:zoom], source[:zoom], color=c, lw=1.5, label=lab)
+    axes[0, 0].plot(n_arr[:zoom], Phi[:zoom], color=c, lw=1.5, label=lab,
+                    marker='o', ms=2.2, markevery=1, mew=0)
+    axes[0, 1].plot(n_arr[:zoom], lapse[:zoom], color=c, lw=1.5, label=lab,
+                    marker='o', ms=2.2, markevery=1, mew=0)
+    axes[0, 2].plot(n_arr[:zoom], V_defect[:zoom], color=c, lw=1.5, label=lab,
+                    marker='o', ms=2.2, markevery=1, mew=0)
+    axes[1, 0].plot(n_arr[:zoom], source[:zoom], color=c, lw=1.5, label=lab,
+                    marker='o', ms=2.2, markevery=1, mew=0)
 
 # Bottom row: summary panels over main branch
 mus_main = np.array(main_branch)
@@ -118,13 +122,29 @@ axes[1, 1].plot(mu_ratio, neffs, 'ko-', lw=1.5, ms=3)
 axes[1, 1].set_xlabel(r'$\mu/m_0$'); axes[1, 1].set_ylabel(r'$n_{\rm eff}$')
 axes[1, 1].set_title(r'Emergent core size vs $\mu/m_0$')
 
-axes[1, 2].plot(mu_ratio, r_s_vals, 'ro-', lw=1.5, ms=3)
-axes[1, 2].set_xlabel(r'$\mu/m_0$')
-axes[1, 2].set_ylabel(r'$r_s$')
-axes[1, 2].set_title(r'Schwarzschild radius vs $\mu/m_0$ (from $w$-fit)')
-
-# Mark fold point
 mu_fold = main_branch[-1] / m0
+
+# Relativistic compactness C = r_s/r_* = 2GM/(r_* c_*^2).  This is the
+# dimensionless, convention-free way to say what the branch does: r_s alone is
+# in lattice units and is arbitrary, and r_s/M with the proper gravitating mass
+# is 2G/c_*^2, constant by construction, so it only restates the definition
+# of G.  C runs 0 (flat) to 1 (horizon) and puts the branch on the same axis as
+# any other relativistic star.
+_rstar = np.array([(get_n_eff(d, f"mu{mu:.6f}") + 1.0) for mu in main_branch])
+_rs = np.array(r_s_vals)
+_ok = _rs > 0
+axes[1, 2].plot(np.array(mu_ratio)[_ok], _rs[_ok] / _rstar[_ok], 'bo-', lw=1.5, ms=3)
+axes[1, 2].axhline(1.0, color='k', lw=1.2)
+axes[1, 2].axhline(8.0 / 9.0, color='k', ls='--', lw=1.0, alpha=0.7)
+axes[1, 2].axhspan(0.3, 0.4, color='tab:green', alpha=0.15, lw=0)
+axes[1, 2].text(0.004, 1.02, 'horizon', fontsize=7)
+axes[1, 2].text(0.004, 0.90, 'Buchdahl $8/9$', fontsize=7, alpha=0.8)
+axes[1, 2].text(0.004, 0.33, 'neutron stars', fontsize=7, color='tab:green')
+axes[1, 2].set_ylim(0, 1.08)
+axes[1, 2].set_xlabel(r'$\mu/m_0$')
+axes[1, 2].set_ylabel(r'$C = r_s/r_*$')
+axes[1, 2].set_title(r'Compactness $C = 2GM/(r_* c_*^2)$ vs $\mu/m_0$')
+
 for ax in [axes[1, 1], axes[1, 2]]:
     ax.axvline(mu_fold, color='k', ls=':', lw=1.2, alpha=0.6)
     ax.set_xlim(0, mu_fold * 1.15)
@@ -133,8 +153,10 @@ for ax in [axes[1, 1], axes[1, 2]]:
 for ax in axes[0, :].flat:
     ax.grid(True, alpha=0.3); ax.legend(fontsize=7, loc='best')
     ax.set_xlabel('$n$ (shell)')
+    ax.set_xlim(1, None)
 axes[1, 0].grid(True, alpha=0.3); axes[1, 0].legend(fontsize=7, loc='best')
 axes[1, 0].set_xlabel('$n$ (shell)')
+axes[1, 0].set_xlim(1, None)
 axes[1, 1].grid(True, alpha=0.3); axes[1, 2].grid(True, alpha=0.3)
 axes[0, 0].set_title(r'$\Phi(r)$'); axes[0, 0].set_ylabel(r'$\Phi$')
 axes[0, 1].set_title(r'Lapse $N(r)$'); axes[0, 1].set_ylabel(r'$N$')
