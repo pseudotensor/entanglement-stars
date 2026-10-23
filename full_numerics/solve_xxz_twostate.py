@@ -116,11 +116,19 @@ class XXZTwoState:
         return xxz_bond_mi_vec(self.beta0 * J, self.Delta)
 
     def _compute_energy(self, Phi, defect=False):
-        """Shell energy ρ_n = g_n · J_eff · <h>/J."""
+        """Shell energy with the BARE bond observable: rho_n = g_n · J0 · <h>/J.
+
+        The state is the smeared one (its bond coupling is J_eff = J0 Nbar), but
+        the observable paired with the lapse is the BARE bond Hamiltonian, since
+        the lapse is the multiplier conjugate to the shell energy.  Weighting the
+        observable by Nbar as well would count the lapse twice -- the same second
+        densitisation corrected in the fermion sector.  <h>/J still depends on
+        Phi through beta0*J_eff, so rho carries one power of Nbar, not two.
+        """
         J = self._J_eff(Phi, defect=defect)
         e_over_J = xxz_bond_energy_over_J_vec(self.beta0 * J, self.Delta)
         rho = np.zeros(self.N)
-        rho[:self.N - 1] += self.g[:self.N - 1] * J * e_over_J
+        rho[:self.N - 1] += self.g[:self.N - 1] * self.J0 * e_over_J
         return rho
 
     def conductances(self, Phi):
@@ -217,15 +225,22 @@ def analyze_solution(model, Phi, label=""):
     i_lo = 20;  i_hi = min(80, N - 20)
     exterior = slice(i_lo, i_hi)
 
+    # Boundary-corrected mass estimator, as in the free-fermion solver and in
+    # solve_xxz_bkm_el.py.  The closure is solved with a Dirichlet wall, so
+    # Phi = -(c*^2 rs/2)(1/r - 1/R) and Phi*r = -(c*^2 rs/2)(1 - r/R) is LINEAR
+    # in r.  Fitting it to A + B/r fits the wrong function: it biases rs low --
+    # by 45% on a synthetic profile -- and leaves a residual set by the misfit
+    # rather than by the solution, so the reported spread stops being a
+    # diagnostic.  -Phi r R/(R-r) inverts the walled profile exactly.
+    R_outer = float(r[-1])
     if np.any(np.abs(Phi[exterior]) > 1e-15):
-        Phi_r_ext = (Phi * r)[exterior]
         r_ext = r[exterior]
-        X = np.column_stack([np.ones(len(r_ext)), 1.0 / r_ext])
-        coef = np.linalg.lstsq(X, Phi_r_ext, rcond=None)[0]
-        A_fit, B_fit = coef
-        resid = Phi_r_ext - X @ coef
-        spread = np.std(resid) / np.abs(A_fit) if abs(A_fit) > 1e-20 else float('inf')
-        rs = -2.0 * A_fit / model.cstar_sq
+        GM_est = -Phi[exterior] * r_ext * R_outer / (R_outer - r_ext)
+        GM = float(np.median(GM_est))
+        rs = 2.0 * GM / model.cstar_sq
+        spread = float(np.std(GM_est) / abs(GM)) if abs(GM) > 1e-20 else float('inf')
+        A_fit = -0.5 * model.cstar_sq * rs   # the 1/r coefficient, for the print
+        B_fit = 0.0
     else:
         A_fit = B_fit = 0.0;  spread = float('inf');  rs = 0.0
 
@@ -237,13 +252,16 @@ def analyze_solution(model, Phi, label=""):
     core_frac = core_src / total_src if total_src > 1e-20 else 0.0
 
     # w = N² vs Schwarzschild
-    w = lapse**2
+    # Compare on the asymptotically flat profile: the wall sets Phi(R)=0 whereas
+    # the flat-at-infinity solution has Phi(R) = -c*^2 rs/(2R).
+    Phi_inf = Phi - model.cstar_sq * rs / (2.0 * R_outer)
+    w = (1.0 + Phi_inf / model.cstar_sq)**2
     w_schw = 1.0 - rs / r
     w_err_ext = np.max(np.abs(w[exterior] - w_schw[exterior]))
 
     print(f"\n  Analysis [{label}]:")
-    print(f"    1/r fit: Phi*r = {A_fit:.6e} + {B_fit:.6e}/r")
-    print(f"    Fit residual (CV):   {spread:.4e}")
+    print(f"    boundary-corrected GM estimator: Phi ~ {A_fit:.6e} (1/r - 1/R)")
+    print(f"    GM_est spread (CV):  {spread:.4e}")
     print(f"    Extracted rs:        {rs:.6f}")
     print(f"    N_min:               {lapse.min():.6f} at shell {np.argmin(lapse)}")
     print(f"    Source core frac:    {core_frac:.4f}")
@@ -342,3 +360,21 @@ if __name__ == '__main__':
         print(f"{Delta:5.1f} {bJ0:6.2f} {info['rs']:8.4f} {info['spread']:10.4e} "
               f"{info['core_frac']:10.4f} {info['N_min']:8.6f} "
               f"{info['w_err']:12.4e} {ok:>6s}")
+
+    # sec:ex-ising cites this solver beside the BKM one, so its results belong in
+    # a data file rather than only on stdout.
+    import os as _os
+    _keys = sorted(results)
+    _out = _os.path.normpath(_os.path.join(
+        _os.path.dirname(_os.path.abspath(__file__)), "..",
+        "fermion", "numerical", "data", "xxz_twostate.npz"))
+    np.savez(_out,
+             Delta=np.array([k[0] for k in _keys], dtype=float),
+             beta0_J0=np.array([k[1] for k in _keys], dtype=float),
+             rs=np.array([results[k]["rs"] for k in _keys], dtype=float),
+             spread=np.array([results[k]["spread"] for k in _keys], dtype=float),
+             core_frac=np.array([results[k]["core_frac"] for k in _keys], dtype=float),
+             N_min=np.array([results[k]["N_min"] for k in _keys], dtype=float),
+             w_err=np.array([results[k]["w_err"] for k in _keys], dtype=float),
+             N=N, J0=J0, n_core=n_core, cstar_sq=cstar_sq)
+    print(f"\nwrote {_out}")

@@ -2,15 +2,17 @@
 
 Purpose
 -------
-The evaporation section of the paper uses the Landauer/Pendry 1D energy-current
-formula per channel and multiplies it by an effective transmission probability
-\tau across the near-horizon "cap" (a weak link created by lapse-smearing of the
-hopping).
+A single weak bond of hopping gamma t_0 WOULD trap, with transmission
+tau_F = 4 gamma^2/(1+gamma^2)^2 at half filling.  This script calibrates that
+one-bond formula inside the same microscopic free-fermion model, by measuring the
+steady energy current through a single weak bond, and returns the small-gamma
+coefficient (3.93 against the analytic 4).
 
-A key modelling step is the scaling \tau \propto N_{\mathrm{sh}}^2 for small
-stretched-horizon lapse N_{\mathrm{sh}}.  This script validates (and calibrates)
-that scaling *inside the same microscopic free-fermion model*, by measuring the
-steady energy current through a single weak bond.
+That one-bond model is a FOIL, not the cap.  The realised near-horizon region is
+~r_s/a graded bonds, whose Landauer-Buettiker transmission is <tau> = 0.999
+(greybody_cap_transmission.py): the cap is ballistic and carries no power of M,
+so the luminosity's mass dependence comes from the angular barrier
+(eq:ev-dirac-radial), not from any weak link.
 
 Model
 -----
@@ -24,7 +26,13 @@ Model
 
 We measure the energy current into the right half via
 
-  J_E(t) = d/dt <H_R> = -i Tr( [H_R, H] G(t) )
+  J_E(t) = d/dt <H_R> = +i Tr( [H_R, H] G(t) )
+
+with G_ij = <c_i^dag c_j>, so that G(t) = U G(0) U^dag with U = exp(+i h t) and
+dG/dt = i[h, G].  Then d/dt Tr(h_R G) = i Tr(h_R [h,G]) = i Tr([h_R,h] G).
+The sign matters and is checkable: with the LEFT half hot, energy must flow into
+the right half, so J_E > 0 and tau_eff > 0.  The minus sign this line used to
+carry made every transmission negative.
 
 and define an effective transmission
 
@@ -157,7 +165,10 @@ def energy_current_plateau(
     for i, t in enumerate(times):
         phase = np.exp(-1j * de * t)
         tr = np.sum(M * phase)  # complex
-        J[i] = float((-1j * tr).real)
+        # +i, not -i: see the derivation in the module docstring.  A negative
+        # tau_eff is unphysical -- it is a transmission probability -- and the
+        # committed data has always been positive, so code and data disagreed.
+        J[i] = float((1j * tr).real)
 
     return float(np.mean(J[mask]))
 
@@ -202,7 +213,8 @@ def run_sweep(args: argparse.Namespace) -> CurrentResult:
 
 
 def save_outputs(res: CurrentResult, args: argparse.Namespace) -> None:
-    out_data = os.path.join("fermion", "numerical", "data", "weak_link_conductance.npz")
+    _root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    out_data = os.path.join(_root, "fermion", "numerical", "data", "weak_link_conductance.npz")
     os.makedirs(os.path.dirname(out_data), exist_ok=True)
     np.savez(
         out_data,
@@ -210,19 +222,21 @@ def save_outputs(res: CurrentResult, args: argparse.Namespace) -> None:
         tau_eff=res.tau_eff,
         tau_scatt=res.tau_scatt,
         c_small=res.c_small,
-        params=dict(
-            L_left=args.L_left,
-            L_right=args.L_right,
-            t0=args.t0,
-            T_left=args.T_left,
-            T_right=args.T_right,
-            mu=args.mu,
-            t_max=args.t_max,
-            dt=args.dt,
-            t_plateau_min=args.t_plateau_min,
-            t_plateau_max=args.t_plateau_max,
-            g_fit_max=args.g_fit_max,
-        ),
+        # Flat scalars, not a dict.  np.savez turns a dict into a 0-d object
+        # array, so np.load(...)["params"] raises unless the caller happens to
+        # pass allow_pickle=True -- a trap for anyone checking the run
+        # parameters behind a published number.
+        p_L_left=args.L_left,
+        p_L_right=args.L_right,
+        p_t0=args.t0,
+        p_T_left=args.T_left,
+        p_T_right=args.T_right,
+        p_mu=args.mu,
+        p_t_max=args.t_max,
+        p_dt=args.dt,
+        p_t_plateau_min=args.t_plateau_min,
+        p_t_plateau_max=args.t_plateau_max,
+        p_g_fit_max=args.g_fit_max,
     )
 
     fig = plt.figure(figsize=(6.4, 4.2))
@@ -241,7 +255,7 @@ def save_outputs(res: CurrentResult, args: argparse.Namespace) -> None:
     ax.legend(frameon=False, fontsize=8)
     fig.tight_layout()
 
-    out_fig = os.path.join("fermion", "numerical", "figures", "weak_link_conductance.pdf")
+    out_fig = os.path.join(_root, "fermion", "numerical", "figures", "weak_link_conductance.pdf")
     os.makedirs(os.path.dirname(out_fig), exist_ok=True)
     fig.savefig(out_fig)
 

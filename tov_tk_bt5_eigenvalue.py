@@ -7,8 +7,29 @@ pin down the fold.
 
 Saves results to tov_tk_bt5_eigenvalue.npz.
 """
+
+# Post-compaction re-read gate.  This script regenerates PUBLISHED data, so the
+# protocol in .taskq/fermion_code_ledger.md requires the whole paper to have been
+# re-read first.  That ordering was violated on 2026-08-06 and again on
+# 2026-08-07; a rule that depends on being remembered has now failed twice, so it
+# is enforced here instead.  No-ops on the compute host, which carries no .taskq.
+import sys as _sys, os as _os
+_gd = _os.path.join(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))), ".taskq")
+_gd2 = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), ".taskq")
+for _d in (_gd2, _gd):
+    if _os.path.isfile(_os.path.join(_d, "gate_guard.py")):
+        _sys.path.insert(0, _d)
+        from gate_guard import require_reread as _rr
+        _rr(__file__)
+        break
 import os, time
 import numpy as np
+
+# m0/t0 = 0.03, not 3.0: the published mass was chosen against a closure
+# prefactor 37x too small and admits no star at the correct P = 36.825.
+# See the parameter block of tov_tk_chemical_el.py.  The npz mu keys are
+# formatted %.6f for the same reason -- at m0 = 0.03 every physical mu
+# rounds to 0.00 under the old %.2f.
 
 os.environ["JAX_PLATFORM_NAME"] = "gpu"
 os.environ["XLA_PYTHON_CLIENT_PREALLOCATE"] = "false"
@@ -20,7 +41,7 @@ from jax import jit, jacfwd
 print(f"JAX devices: {jax.devices()}", flush=True)
 
 # ── Parameters ──────────────────────────────────────────────────────────
-beta0 = 5.0; m0 = 3.0; csq = 5.0; N = 200
+beta0 = 5.0; m0 = 0.03; csq = 5.0; N = 200
 t0 = 1.0; N_floor = 0.005
 n_arr = jnp.arange(1, N+1, dtype=jnp.float64)
 g = 4.0 * jnp.pi * n_arr**2
@@ -49,6 +70,34 @@ def _bond_correlations(diag_vals, off_vals):
     vf = evecs * f[None, :]
     return jnp.sum(evecs * vf, axis=1), jnp.sum(evecs[:-1] * vf[1:], axis=1)
 
+# --- closure prefactor P of eq:sc-closure --------------------------------
+# P = c_*^2 t0^2 / (lambda eps_b) with lambda the PER-CHANNEL alpha_S^bond =
+# 0.217, and eps_b = 2 t0 Re[i tr(alpha^r G_{n,n+1})] per channel on the FLAT
+# reference chain (eq:sc-sumrule), taken at the bulk bond to avoid the open ends
+# (bond 1 gives 0.808 and bond 2 gives 0.539 against the bulk 0.6257).
+# The scripts previously used the solver shorthand beta0/c_*^2.  For the defect
+# model that is a relabelling of V0; here mu enters V = m0(1-N) - mu without the
+# prefactor, so it is NOT a relabelling and the fold moves.
+#
+# lambda is the PER-CHANNEL alpha_S^bond = 0.217, NOT alpha_S = 0.217 D.
+# eq:sc-alphaS-required displays lambda = alpha_S, and sec:tov-entropy gives
+# alpha_S = D alpha_S^bond, but that combination is not D-consistent here.
+# Count D through the paper's own linearized closure (sec:sc-newton): the
+# Laplacian carries kappa_n = D g_n t0^2 and the source carries -D V0 g_n/2, so
+# D cancels and Phi goes as 1/lambda.  eps_b is defined PER CHANNEL by
+# eq:sc-sumrule (the 2 t0/D prefactor), so P = c_*^2 t0^2/(lambda eps_b) is
+# D-free only if lambda is.  sec:num-method states outright that D "is carried
+# by both sides and so is omitted throughout", and sec:shell-dirichlet that D
+# "cancels from the closure" -- both require the per-channel value.  Using
+# 0.217 D makes P too small by exactly D = 4.
+LAM_ALPHA_S = 0.217
+
+
+def _closure_prefactor():
+    _, _Gs_flat = _bond_correlations(diag0, -t0 * jnp.ones(N - 1, dtype=jnp.float64))
+    _eps_b = 2.0 * t0 * _Gs_flat[(N - 1) // 2]
+    return csq * t0 ** 2 / (LAM_ALPHA_S * _eps_b)
+
 off_bg = -t0 * jnp.ones(N-1, dtype=jnp.float64)
 cov_bg = jnp.maximum(_bkm_cov(diag0, off_bg), 1e-30)
 
@@ -68,13 +117,18 @@ def _residual(Phi, mu):
     Nbar = 0.5 * (lapse[:-1] + lapse[1:])
     Nbar_abs = jnp.abs(Nbar)
     off = -t0 * Nbar_abs
+    # Source convention (eq. sc-rho, sec:ex-observable, compute_exact_data_gpu.py):
+    # the bond term is NEGATIVE against a positive V_defect term, carries ONE power
+    # of the lapse (the bare shell observable -- the smeared correlator Gs already
+    # supplies it, and a second factor would count the lapse twice), and is split
+    # half onto each endpoint of the bond.
     V_defect = jnp.maximum(m0 * (1.0 - lapse) - mu, 0.0)
     Gd_s, Gs_s = _bond_correlations(diag0, off)
-    rho_s = jnp.zeros(N, dtype=jnp.float64).at[:-1].add(2.0 * t0 * Nbar_abs * Gs_s * g[:-1])
+    rho_s = jnp.zeros(N, dtype=jnp.float64).at[:-1].add(-1.0 * t0 * Gs_s * g[:-1]).at[1:].add(-1.0 * t0 * Gs_s * g[:-1])
     Gd_t, Gs_t = _bond_correlations(V_defect, off)
-    rho_t = (jnp.zeros(N, dtype=jnp.float64).at[:-1].add(2.0 * t0 * Nbar_abs * Gs_t * g[:-1])
+    rho_t = (jnp.zeros(N, dtype=jnp.float64).at[:-1].add(-1.0 * t0 * Gs_t * g[:-1]).at[1:].add(-1.0 * t0 * Gs_t * g[:-1])
              + V_defect * Gd_t * g)
-    F = lhs - (beta0 / csq) * (rho_s - rho_t)
+    F = lhs - _closure_prefactor() * (rho_s - rho_t)
     return F.at[N - 1].set(Phi[N - 1])
 
 # ── JIT compile ─────────────────────────────────────────────────────────
@@ -135,6 +189,30 @@ def get_props(Phi, mu):
     return ne, minN
 
 
+def on_star_branch(Phi, mu):
+    """Nontrivial AND a multi-shell star AND clear of the lapse floor.
+
+    is_nontrivial() alone used to be the ONLY acceptance test in this file: the
+    star filter the sibling scripts received (tov_tk_bt10_mu_scan.py:139-141,
+    fold_continuation_floor.py:136-143) was never added here.  The damage is
+    visible in the committed npz -- 81 of its 85 stored solutions are the
+    floor-pinned n_eff=1 family (their r_s sticks at 0.775 across mu/m0 =
+    0.35..0.78, the giveaway), the continuation starts from that family, and it
+    terminates at min(N) = 0.005000, EXACTLY N_floor.
+
+    That endpoint is the clamp, not a bifurcation.  lapse = max(1+Phi/csq,
+    N_floor) kills both dkappa/dPhi and dV/dPhi on a pinned shell, so every
+    clamped shell contributes a near-null Jacobian direction by construction --
+    which is why |lam1| = 7.28e-4 there arrives with |lam2| = 4.26e-3, a ratio
+    of 5.8.  The kernel is not simple, so Crandall-Rabinowitz (i) fails at the
+    very point the paper called a fold.
+    """
+    if not is_nontrivial(Phi):
+        return False
+    ne, minN = get_props(np.asarray(Phi), mu)
+    return ne >= 2 and minN > 20.0 * N_floor
+
+
 # ── Load existing data ──────────────────────────────────────────────────
 print("Loading existing data...", flush=True)
 d = np.load("tov_tk_chemical_el.npz", allow_pickle=True)
@@ -144,18 +222,24 @@ mu_values = d["mu_values"]
 mus_existing = []
 Phis_existing = {}
 for mu in mu_values:
-    key = f"mu{mu:.2f}"
+    key = f"mu{mu:.6f}"
     try:
         Phi = np.array(d[f"{key}_Phi"])
         lapse = np.array(d[f"{key}_lapse"])
-        if is_nontrivial(Phi):
+        if on_star_branch(Phi, mu):
             mus_existing.append(mu)
             Phis_existing[mu] = Phi
     except KeyError:
         pass
 
 mus_existing.sort()
-print(f"Loaded {len(mus_existing)} nontrivial solutions, "
+if len(mus_existing) < 2:
+    raise SystemExit(
+        f"only {len(mus_existing)} star-branch solution(s) in tov_tk_chemical_el.npz; "
+        "need >= 2 to seed the continuation.  Rerun tov_tk_chemical_el.py first -- "
+        "its own acceptance test has to keep the star branch for this one to have "
+        "anything to continue.")
+print(f"Loaded {len(mus_existing)} STAR-BRANCH solutions, "
       f"mu/m0: {mus_existing[0]/m0:.4f} to {mus_existing[-1]/m0:.4f}", flush=True)
 
 # ── Eigenvalues for sampled existing solutions ──────────────────────────
@@ -196,7 +280,7 @@ while mu_current < 2.5 * m0 and consecutive_fails < 15:
 
     Phi_sol, norm, converged, iters = newton_solve(Phi_seed, mu_next)
 
-    if converged and not is_nontrivial(Phi_sol):
+    if converged and not on_star_branch(Phi_sol, mu_next):
         converged = False
         norm = -1.0
 
@@ -206,7 +290,7 @@ while mu_current < 2.5 * m0 and consecutive_fails < 15:
             mu_sub = mu_current + sub_dmu
             Phi_sub = Phi_prev + dPhi_dmu * sub_dmu
             Phi_sol, norm_s, converged, iters = newton_solve(Phi_sub, mu_sub)
-            if converged and is_nontrivial(Phi_sol):
+            if converged and on_star_branch(Phi_sol, mu_sub):
                 mu_next = mu_sub
                 dmu = sub_dmu
                 norm = norm_s
@@ -218,7 +302,7 @@ while mu_current < 2.5 * m0 and consecutive_fails < 15:
             for frac in [1.0, 0.5, 0.25]:
                 mu_try = mu_current + dmu * frac
                 Phi_sol, norm_s, conv, iters = newton_solve(Phi_prev * scale, mu_try)
-                if conv and is_nontrivial(Phi_sol):
+                if conv and on_star_branch(Phi_sol, mu_try):
                     mu_next = mu_try
                     dmu = dmu * frac if frac < 1 else dmu
                     norm = norm_s
@@ -263,7 +347,8 @@ while mu_current < 2.5 * m0 and consecutive_fails < 15:
 
 # ── Save ────────────────────────────────────────────────────────────────
 print(f"\nSaving {len(all_data)} data points...", flush=True)
-np.savez("tov_tk_bt5_eigenvalue.npz",
+_out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "tov_tk_bt5_eigenvalue.npz")
+np.savez(_out,
     beta0=beta0, m0=m0, csq=csq, N=N,
     mu_values=np.array([d[0] for d in all_data]),
     n_eff_values=np.array([d[1] for d in all_data]),

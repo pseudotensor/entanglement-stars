@@ -26,16 +26,25 @@ All nine publication figures are in [`fermion/numerical/figures/`](fermion/numer
 | Fig | File | Description | Script | Data |
 |-----|------|-------------|--------|------|
 | 1 | [twostate_potential.pdf](fermion/numerical/figures/twostate_potential.pdf) | Gravitational potential profiles | [plot_exact_figures.py](full_numerics/plot_exact_figures.py) | [exact_solutions.npz](fermion/numerical/data/exact_solutions.npz) |
-| 2 | [cometric_conductance_pn.pdf](fermion/numerical/figures/cometric_conductance_pn.pdf) | Co-metric, conductance, PN residual | [plot_exact_figures.py](full_numerics/plot_exact_figures.py) | [exact_solutions.npz](fermion/numerical/data/exact_solutions.npz) |
+| 2 | [cometric_conductance_pn.pdf](fermion/numerical/figures/cometric_conductance_pn.pdf) | Emergent *intrinsic* metric (Dirichlet-form, not the spatial co-metric), conductance, PN residual | [plot_exact_figures.py](full_numerics/plot_exact_figures.py) | [exact_solutions.npz](fermion/numerical/data/exact_solutions.npz) |
 | 3 | [twostate_embedding.pdf](fermion/numerical/figures/twostate_embedding.pdf) | Embedding diagram | [plot_exact_figures.py](full_numerics/plot_exact_figures.py) | [exact_solutions.npz](fermion/numerical/data/exact_solutions.npz) |
 | 4 | [twostate_thermodynamics.pdf](fermion/numerical/figures/twostate_thermodynamics.pdf) | Surface gravity and Hawking temperature | [plot_exact_figures.py](full_numerics/plot_exact_figures.py) | [exact_solutions.npz](fermion/numerical/data/exact_solutions.npz) |
 | 5 | [tqi_profile.pdf](fermion/numerical/figures/tqi_profile.pdf) | QI temperature profile | [plot_exact_figures.py](full_numerics/plot_exact_figures.py) | [exact_solutions.npz](fermion/numerical/data/exact_solutions.npz) |
 | 6 | [twostate_temperature_sweep.pdf](fermion/numerical/figures/twostate_temperature_sweep.pdf) | Temperature continuation | [plot_exact_figures.py](full_numerics/plot_exact_figures.py) | [exact_solutions.npz](fermion/numerical/data/exact_solutions.npz) |
 | 7 | [tov_tk_chemical.png](fermion/numerical/figures/tov_tk_chemical.png) | TK star chemical-potential scan: profiles, core size, Schwarzschild radius vs &mu; | [tov_tk_chemical_el_fig.py](tov_tk_chemical_el_fig.py) | [tov_tk_chemical_el.npz](tov_tk_chemical_el.npz) |
 | 8 | [tov_tk_final_flux.png](fermion/numerical/figures/tov_tk_final_flux.png) | TK star exterior diagnostics: *w*-flux, lapse vs Schwarzschild, residual | [tov_tk_el_flux_fig.py](tov_tk_el_flux_fig.py) | [tov_tk_chemical_el.npz](tov_tk_chemical_el.npz) |
-| 9 | [evaporation_gaussian_dynamics.pdf](fermion/numerical/figures/evaporation_gaussian_dynamics.pdf) | Unitary Page curve | [evaporation_gaussian_dynamics.py](full_numerics/evaporation_gaussian_dynamics.py) | generated at runtime |
+| 9 | [evaporation_page_dynamics.pdf](fermion/numerical/figures/evaporation_page_dynamics.pdf) | Page curve, entropy-to-energy ratio, monogamy with an emission register | [evaporation_page_dynamics_fig.py](full_numerics/evaporation_page_dynamics_fig.py) | [greybody_entropy_ratio.npz](fermion/numerical/data/greybody_entropy_ratio.npz), [amps_register.npz](fermion/numerical/data/amps_register.npz) |
 
 ## Code organization by paper section
+
+**Two conventions worth knowing before reading the code.**  Values of `V0` are
+*quoted* in the lattice-unit variable used in the paper, while the closure is
+*solved* with the derived prefactor `P = c_*^2 t_0^2 / (lambda eps_b)`; the two
+differ by a factor of `4.33e-3` at `beta_0 t_0 = 0.1`, and
+[v0_units.py](v0_units.py) is the single place that conversion lives.  And
+`beta_0` labels the reference state — it is not a temperature of anything the
+construction builds — so sweeps in `beta_0 t_0` are sweeps in a state label.
+
 
 ### Core library ([`full_numerics/`](full_numerics/))
 
@@ -49,7 +58,7 @@ Shared modules used by all solvers and plotters.
 | [solver.py](full_numerics/solver.py) | Newton solver, rs extraction (vacuum BC) |
 | [solve_twostate.py](full_numerics/solve_twostate.py) | Analytic high-T two-state solver |
 | [solve_twostate_exact.py](full_numerics/solve_twostate_exact.py) | Newton solver with finite-difference Jacobian |
-| [compare_observables.py](full_numerics/compare_observables.py) | Smeared vs fixed observable comparison |
+| [compare_observables.py](full_numerics/compare_observables.py) | Matched vs mismatched observable pair (foil: an extra lapse factor on one state only) |
 | [\_\_init\_\_.py](full_numerics/__init__.py) | Package init |
 
 ### Sec. 11c: Full self-consistent solution ([`full_numerics/`](full_numerics/))
@@ -65,6 +74,10 @@ Main computational pipeline for Figs. 1–6. The GPU Newton solver
 | [plot_exact_figures.py](full_numerics/plot_exact_figures.py) | Plot Figs. 1–6 from pre-computed data | Figs. 1–6 |
 | [pseudoarc_continuation.py](pseudoarc_continuation.py) | Pseudo-arclength continuation for fold identification | [pseudoarc_fold.npz](pseudoarc_fold.npz) |
 | [compute_temp_sweep.py](full_numerics/compute_temp_sweep.py) | Temperature-continuation sweep | contributes to [exact_solutions.npz](fermion/numerical/data/exact_solutions.npz) |
+| [v0_units.py](v0_units.py) | Source-strength units: converts quoted `V0` to the derived closure prefactor, and the npz key format | imported by the solver and plotting scripts |
+| [temp_sweep_probe.py](temp_sweep_probe.py) | Standalone state-label (`beta_0 t_0`) sweep at one `V0`, matrix-free Newton-Krylov solver | [proxy_cold_limit.npz](fermion/numerical/data/proxy_cold_limit.npz) |
+| [install_temp_sweep.py](install_temp_sweep.py) | Installs sweep results into `exact_solutions.npz`, leaving all other keys byte-identical | [exact_solutions.npz](fermion/numerical/data/exact_solutions.npz) |
+| [bench_newton_krylov.py](bench_newton_krylov.py) | Benchmarks the matrix-free solver against the `jacfwd` baseline | — |
 
 #### Additional Sec. 11c analysis
 
@@ -118,6 +131,7 @@ Self-consistent TK star solutions. All scripts and data files live at the reposi
 | [exact_solutions.npz](fermion/numerical/data/exact_solutions.npz) | [plot_exact_figures.py](full_numerics/plot_exact_figures.py) | Sec. 11c (Figs. 1–6) |
 | [pseudoarc_fold.npz](pseudoarc_fold.npz) | [pseudoarc_continuation.py](pseudoarc_continuation.py) | Sec. 11c (fold bifurcation) |
 | [3d_bkm_el_R10.npz](full_numerics/3d_bkm_el_R10.npz) | [solve_3d_bkm_el.py](full_numerics/solve_3d_bkm_el.py) | Sec. 11c (3D verification) |
+| [proxy_cold_limit.npz](fermion/numerical/data/proxy_cold_limit.npz) | [temp_sweep_probe.py](temp_sweep_probe.py) | Sec. 11c (cold-limit proxy test, `N = 800/1600/3200`) |
 | [tov_tk_chemical_el.npz](tov_tk_chemical_el.npz) | [tov_tk_chemical_el_fig.py](tov_tk_chemical_el_fig.py), [tov_tk_el_flux_fig.py](tov_tk_el_flux_fig.py) | Sec. 11e (Figs. 7–8) |
 | [tov_tk_bt5_eigenvalue.npz](tov_tk_bt5_eigenvalue.npz) | [tov_tk_bt5_eigenvalue.py](tov_tk_bt5_eigenvalue.py) | Sec. 11e |
 | [tov_tk_bt10_mu_scan.npz](tov_tk_bt10_mu_scan.npz) | [tov_tk_bt10_mu_scan.py](tov_tk_bt10_mu_scan.py) | Sec. 11e |

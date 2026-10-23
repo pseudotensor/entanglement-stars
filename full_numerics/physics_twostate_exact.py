@@ -20,18 +20,34 @@ Correlation matrix: G = (exp(beta0*h) + I)^{-1}
   G_{n,n+1} > 0 at half-filling for H = -t0 sum(c†c + h.c.)
   G_{nn} = 1/2 at half-filling (particle-hole symmetric w/o V0)
 
-Bond energy (positive convention, matching analytic):
-  rho_n = +2*t0*G_{n,n+1}*g_n > 0
+Bond energy -- SIGNED, i.e. <h_n> itself, not its magnitude:
+  rho_n = -2*t0*G_{n,n+1}*g_n < 0
+
+The exponential-family identity that defines the closure,
+    d/dtheta_n S_rel(tau || sigma[theta]) = <h_n>_tau - <h_n>_sigma,
+pairs the multiplier with ONE signed shell Hamiltonian.  Both channels must
+therefore carry the sign they have in h_n: the hopping term is negative at half
+filling, the repulsive defect term is positive.  Taking the magnitude of the
+bond channel alone (as this module formerly did) leaves the on-site channel --
+which is the dominant source and appears in rho_tgt only -- with the opposite
+relative sign, which reverses the sign of the residual kinetic mismatch between
+sigma and tau.  That residual cancels identically at leading high-T order, so
+the error is invisible at beta0*t0 = 0.1 (3e-6 relative in r_s), but it grows to
+~3e-3 by beta0*t0 = 3, i.e. into the range of the quoted exterior fit residuals.
 
 Analytic high-T limit:
   G_{n,n+1} ~ beta0*t0/4 > 0
-  => rho_bg = 2*t0*(beta0*t0/4)*g = g*beta0*t0^2/2  ✓
+  => rho_bg = -2*t0*(beta0*t0/4)*g = -g*beta0*t0^2/2  ✓
 
 Smeared energy (for rho_sigma):
   Smeared Hamiltonian: off-diag = -t0*Nbar
-  rho_sigma = 2*(t0*Nbar)*G^smear_{n,n+1}*g
+  rho_sigma = -2*t0*G^smear_{n,n+1}*g         (BARE observable, no extra Nbar)
   High-T: G^smear_{n,n+1} ~ beta0*t0*Nbar/4
-  => rho_sigma ~ g*Nbar^2*beta0*t0^2/2  ✓
+  => rho_sigma ~ -g*Nbar*beta0*t0^2/2  ✓
+  One power of Nbar, not two: the lapse is the ADM multiplier conjugate to the
+  shell energy, so the paired observable is the bare shell Hamiltonian.  The
+  conductance carries the second power for a different reason (covariance of a
+  current linear in the bond amplitude).
 """
 
 import numpy as np
@@ -44,9 +60,14 @@ class TwoStateExactModel:
     When w_perp > 0, angular dispersion is modeled by averaging over
     n_mu chemical-potential channels via Gauss-Legendre quadrature.
     Each angular mode on shell n has an effective on-site energy μ_α
-    drawn from the angular bandwidth [-w_perp*t0, +w_perp*t0].  This
-    dephases the commensurate 2k_F Peierls oscillation that causes
-    lattice staggering in the single-channel (μ=0) model.
+    drawn from the angular band of TOTAL width w_perp*t0, i.e. the nodes
+    span [-w_perp*t0/2, +w_perp*t0/2] (see __init__: the Legendre nodes on
+    [-1,1] are scaled by 0.5*w_perp*t0, and the weights by 0.5 so they sum
+    to 1).  This dephases the commensurate 2k_F Peierls oscillation that
+    causes lattice staggering in the single-channel (μ=0) model.
+
+    The paper's results use the default w_perp = 0, n_mu = 1, i.e. the
+    single-channel μ=0 path; the quadrature is an optional dephasing study.
     """
 
     def __init__(self, N=200, t0=1.0, V0=0.01, n_core=5, beta0=0.1,
@@ -152,11 +173,12 @@ class TwoStateExactModel:
             kin_tgt += w * np.real(np.diag(G_tgt, 1))
             occ_tgt += w * np.real(np.diag(G_tgt))[:self.n_core]
 
+        # Signed <h_n>: hopping negative, defect positive (see module docstring).
         rho_bg = np.zeros(self.N)
-        rho_bg[:-1] = 2.0 * self.t0 * kin_bg * self.g[:-1]
+        rho_bg[:-1] = -2.0 * self.t0 * kin_bg * self.g[:-1]
 
         rho_tgt = np.zeros(self.N)
-        rho_tgt[:-1] = 2.0 * self.t0 * kin_tgt * self.g[:-1]
+        rho_tgt[:-1] = -2.0 * self.t0 * kin_tgt * self.g[:-1]
         rho_tgt[:self.n_core] += self.V0 * occ_tgt * self.g[:self.n_core]
 
         return rho_bg, rho_tgt
@@ -180,20 +202,20 @@ class TwoStateExactModel:
 
     def _kinetic_profile(self, G):
         """
-        Bond kinetic energy from correlation matrix (positive convention).
+        Bond kinetic energy from correlation matrix (signed convention).
 
-        The physical kinetic energy <H_bond> = 2*h_{n,n+1}*G_{n,n+1} < 0
-        (negative for half-filled tight-binding). The analytic closure
-        equation uses the magnitude convention rho_bg = g*beta0*t0^2/2 > 0.
-        To match, we use rho_n = +2*t0*G_{n,n+1}*g_n > 0.
+        This is <h_bond> itself, which is negative for half-filled
+        tight-binding: rho_n = -2*t0*G_{n,n+1}*g_n < 0.  The closure pairs the
+        multiplier with one signed shell Hamiltonian, so the bond channel may
+        not be replaced by its magnitude (module docstring).
 
         High-T check: G_{n,n+1} ~ beta0*t0/4 > 0
-          => rho = 2*t0*(beta0*t0/4)*g = g*beta0*t0^2/2  ✓
+          => rho = -2*t0*(beta0*t0/4)*g = -g*beta0*t0^2/2  ✓
         """
         N = G.shape[0]
         prof = np.zeros(N)
         hop = np.real(np.diag(G, 1))  # G_{n,n+1}, n=0..N-2
-        prof[:-1] = 2.0 * self.t0 * hop * self.g[:-1]
+        prof[:-1] = -2.0 * self.t0 * hop * self.g[:-1]
         return prof
 
     def _full_energy_profile(self, G):
@@ -214,10 +236,6 @@ class TwoStateExactModel:
         Nbar = 0.5 * (lapse[:-1] + lapse[1:])
         return lapse, Nbar
 
-    def conductances_analytic(self, Nbar):
-        """Analytic bond conductances kappa_n = g_n * t0^2 * Nbar_n^2."""
-        return self.g[:-1] * self.t0**2 * Nbar**2
-
     def _fermi_corr_with_f(self, diag, off):
         """Correlation matrix G and Fermi occupations f."""
         evals, evecs = eigh_tridiagonal(diag, off)
@@ -232,8 +250,13 @@ class TwoStateExactModel:
         for the uniform (Phi=0) chain, cut at site n_cut,
         averaged over angular dispersion channels.
 
-        This is the correct measure for alpha_S = I/(2 g_nH).
-        Uses all correlations across the cut, not just nearest-neighbor.
+        This is alpha_CUT (times 2), NOT the area-law coefficient alpha_S.
+        It sums correlations at all ranges across the cut and therefore grows
+        logarithmically as T -> 0, which would give S ~ M^2 ln M.  The first law
+        selects the LOCAL per-bond coefficient instead, alpha_S = I^bond/2,
+        which is what _mi_single_channel / _mi_from_bond compute and what enters
+        S_ent.  The two coincide only for xi <~ a (beta0*t0 <~ 1.34), which is
+        not the regime of the cold surface bond.
         """
         mi_total = 0.0
         h = self._binary_entropy
@@ -527,8 +550,8 @@ class TwoStateExactModel:
         Built from lapse-smeared background Hamiltonian:
           h_smear(μ): diag = μ, off = -t0 * |Nbar|
 
-        Energy (positive convention, per channel before g_n):
-          rho_sigma_n = +2*(t0*Nbar_n)*<G^smear_{n,n+1}>_mu * g_n
+        Energy (signed <h_n>, per channel before g_n):
+          rho_sigma_n = -2*t0*<G^smear_{n,n+1}>_mu * g_n
 
         When bond_only=True, uses O(N^2) bond correlation extraction.
         """
@@ -545,10 +568,15 @@ class TwoStateExactModel:
                 G = self._fermi_corr(diag, off)
                 hop_avg += w * np.real(np.diag(G, 1))
 
+        # Shell-centred observable: bond energy attributed half to each adjacent shell.
+        # BARE observable: the lapse is the ADM multiplier conjugate to the shell
+        # energy, so the quantity paired with it is the bare shell Hamiltonian.
+        # Weighting it by Nbar again would count the lapse twice.
+        # SIGNED: -<h_bond>, matching the on-site channel of rho_tgt_smeared.
+        bond_eng = -2.0 * self.t0 * hop_avg * self.g[:-1]
         prof = np.zeros(self.N)
-        # Use |Nbar| consistently (physical branch is Nbar>0; during Newton
-        # iterations Nbar may transiently change sign under the lapse guard).
-        prof[:-1] = 2.0 * self.t0 * np.abs(Nbar) * hop_avg * self.g[:-1]
+        prof[:-1] += 0.5 * bond_eng
+        prof[1:] += 0.5 * bond_eng
         return prof
 
     def rho_tgt_smeared(self, Phi, bond_only=False):
@@ -588,8 +616,12 @@ class TwoStateExactModel:
                 kin_avg += w * np.sum(evecs[:-1] * vf[1:], axis=1)
                 occ_avg += w * np.sum(evecs * vf, axis=1)[:self.n_core]
 
+        # Shell-centred observable: bond energy attributed half to each adjacent shell.
+        # Signed <h_n>: hopping negative, defect positive.
+        bond_eng = -2.0 * self.t0 * kin_avg * self.g[:-1]
         prof = np.zeros(self.N)
-        prof[:-1] = 2.0 * self.t0 * np.abs(Nbar) * kin_avg * self.g[:-1]
+        prof[:-1] += 0.5 * bond_eng
+        prof[1:] += 0.5 * bond_eng
         prof[:self.n_core] += self.V0 * occ_avg * self.g[:self.n_core]
         return prof
 
@@ -853,7 +885,8 @@ class TwoStateExactModel:
 
     def check_energy_profiles(self):
         """Diagnostic: compare exact and analytic energy profiles."""
-        rho_bg_analytic = self.g * self.beta0 * self.t0**2 / 2.0
+        # Signed convention: hopping negative, defect positive.
+        rho_bg_analytic = -self.g * self.beta0 * self.t0**2 / 2.0
         rho_tgt_analytic = rho_bg_analytic.copy()
         rho_tgt_analytic[:self.n_core] += self.V0 * self.g[:self.n_core] / 2.0
 
@@ -885,8 +918,7 @@ class TwoStateExactModel:
 
     def check_conductances(self, Phi):
         """Diagnostic: compare KMS, MI, and analytic conductances."""
-        lapse, Nbar = self.lapse_nbar(Phi)
-        kappa_analytic = self.conductances_analytic(Nbar)
+        kappa_analytic = self.conductances_analytic(Phi)
         kappa_kms = self.conductances_kms(Phi)
         kappa_mi = self.conductances_exact(Phi)
 

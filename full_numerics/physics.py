@@ -1,20 +1,40 @@
 """
-Physical model: self-consistent closure equation on radial shell chain.
+SUPERSEDED single-state closure on the radial shell chain.
+
+STATUS.  Nothing the paper reports comes from this model.  Of this package only
+solver.extract_rs is reached by the paper's code; ShellModel is imported by
+solver.py but never instantiated by any cited script.  The paper's results use
+the two-state models: physics_twostate.TwoStateShellModel (high-T analytic) and
+physics_twostate_exact.TwoStateExactModel (exact correlators).
+
+WHY IT WAS SUPERSEDED.  With proxy=False both sides use the same Hamiltonian, so
+the V0 defect is bare and cancels from the mismatch, leaving no source at all:
+Phi = 0 solves the non-proxy residual EXACTLY (verified: max|F(0)| = 0.0, against
+0.942 for the proxy form at N=60, V0=0.03, n_core=5).  That is the
+trivial-solution problem the paper describes, and it is what the two-state
+formulation exists to remove.  Only the proxy=True path, whose source is frozen
+at the fixed contrast rho_tilde, is non-degenerate here.
 
 The closure equation (eq sc-closure in the paper) is:
 
   sum_{m~n} kappa_n[Phi] (Phi_n - Phi_m)
       = (beta0/c*^2) * (<h_n>_{G^(Phi)} - rho(n))
 
-where:
+where, in the SIGNED convention the exponential-family identity requires (one
+signed h_n for every channel; see the physics_twostate_exact module docstring):
   kappa_n[Phi] = g_n * t0^2 * Nbar_n^2          (Phi-dependent conductances)
-  <h_n>_{G^(Phi)} ~ g_n*Nbar^2*beta0*t0^2/2     (Phi-dependent energy)
-                     + V0*g_n*N_n/2 * 1_{core}
-  rho(n) = g_n*beta0*t0^2/2 + V0*g_n/2*1_{core} (reference energy, fixed)
+  <h_n>_{G^(Phi)} ~ -g_n*Nbar*beta0*t0^2/2      (ONE power of Nbar: the paired
+                                                 observable is the bare shell
+                                                 Hamiltonian, so weighting it by
+                                                 Nbar again would double-count
+                                                 the lapse.  The V0 defect is
+                                                 bare and carries no lapse.)
+  rho(n) = -g_n*beta0*t0^2/2 + V0*g_n/2*1_{core}   (reference energy, fixed)
 
 Two modes:
-  proxy=True:  drops the Phi-dependent RHS (existing code's approach)
-  proxy=False: includes the full Phi-dependent energy mismatch
+  proxy=True:  drops the Phi-dependent RHS (the only usable path here)
+  proxy=False: includes the full Phi-dependent energy mismatch -- degenerate,
+               see above
 """
 
 import numpy as np
@@ -38,12 +58,13 @@ class ShellModel:
         self.r = a * n
         self.g = 4.0 * np.pi * n**2
 
-        # Reference energy rho(n) = g_n*beta0*t0^2/2 + V0*g_n/2 * 1_{core}
-        self.rho_ref = self.g * beta0 * t0**2 / 2.0
+        # Reference energy rho(n) = -g_n*beta0*t0^2/2 + V0*g_n/2 * 1_{core}
+        # (signed: hopping negative, repulsive defect positive)
+        self.rho_ref = -self.g * beta0 * t0**2 / 2.0
         self.rho_ref[:n_core] += V0 * self.g[:n_core] / 2.0
 
         # Source contrast rho_tilde = rho - rho_0
-        self.rho_0 = self.g * beta0 * t0**2 / 2.0  # uniform background
+        self.rho_0 = -self.g * beta0 * t0**2 / 2.0  # uniform background
         self.rho_tilde = np.zeros(N)
         self.rho_tilde[:n_core] = self.g[:n_core] * V0 / 2.0
 
@@ -71,15 +92,20 @@ class ShellModel:
         """
         Full Phi-dependent energy mismatch:
           <h_n>_{G^(Phi)} - rho(n)
-        = g_n*(Nbar_n^2 - 1)*beta0*t0^2/2
-        The V0 defect is bare (no lapse dependence), so it cancels in the mismatch.
+        = -g_n*(Nbar_n - 1)*beta0*t0^2/2
+        signed, and ONE power of Nbar (bare conjugate observable).
+
+        The V0 defect is bare (no lapse dependence), so it cancels in the
+        mismatch -- which is exactly why this single-state form is degenerate:
+        the mismatch vanishes at Phi = 0 and carries no defect term, so Phi = 0
+        solves it identically.  See the module docstring.
         """
         N = self.N
         lapse, Nbar = self.lapse_nbar(Phi)
 
         mismatch = np.zeros(N)
         # Hopping response: bond (n, n+1) assigned to site n
-        mismatch[:N-1] += self.g[:N-1] * (Nbar**2 - 1.0) * self.beta0 * self.t0**2 / 2.0
+        mismatch[:N-1] += -self.g[:N-1] * (Nbar - 1.0) * self.beta0 * self.t0**2 / 2.0
         return mismatch
 
     def el_correction(self, Phi):
@@ -169,8 +195,8 @@ class ShellModel:
             dNbar_dPhi = 1.0 / (2.0 * self.cstar_sq)
 
             for n in range(N - 1):
-                # Hopping: d/dPhi_n and d/dPhi_{n+1} of g_n*(Nbar^2-1)*beta0*t0^2/2
-                d_hop = pref * self.g[n] * 2.0 * Nbar[n] * dNbar_dPhi * self.beta0 * self.t0**2 / 2.0
+                # Hopping: d/dPhi_n and d/dPhi_{n+1} of -g_n*(Nbar-1)*beta0*t0^2/2
+                d_hop = -pref * self.g[n] * dNbar_dPhi * self.beta0 * self.t0**2 / 2.0
                 diag[n] -= d_hop
                 sup[n] -= d_hop
 

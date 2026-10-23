@@ -126,11 +126,18 @@ class CubicLattice3D:
 def compute_persite_source(lat, t0, V0, n_core, beta0):
     """Compute per-site source = rho_bg - rho_tgt from full 3D eigh.
 
-    Energy per site (positive convention):
-      rho_i = sum_{j~i} t0 * G_{ij}
+    Energy per site, SIGNED <h_i> (bond channel negative at half filling, the
+    repulsive on-site channel positive -- one convention for both, as the
+    exponential-family identity requires; see the physics_twostate_exact module
+    docstring):
+      rho_i = -sum_{j~i} t0 * G_{ij}
 
     Target includes V0:
-      rho_tgt_i = sum_{j~i} t0 * G^tgt_{ij} + V0 * G^tgt_{ii} * 1_core(i)
+      rho_tgt_i = -sum_{j~i} t0 * G^tgt_{ij} + V0 * G^tgt_{ii} * 1_core(i)
+
+    The bond channel cancels between bg and tgt at leading order; what survives
+    is the V0-induced kinetic perturbation, which the old positive convention
+    fed into the source with the wrong sign relative to the on-site term.
     """
     from scipy.linalg import eigh
 
@@ -154,7 +161,7 @@ def compute_persite_source(lat, t0, V0, n_core, beta0):
         end = min(start + 10000, lat.N_bonds_directed)
         ri, ci = lat.row[start:end], lat.col[start:end]
         G_bond = np.sum(evecs_bg[ri] * (evecs_bg[ci] * f_bg[None, :]), axis=1)
-        np.add.at(rho_bg, ri, t0 * G_bond)
+        np.add.at(rho_bg, ri, -t0 * G_bond)
     del evecs_bg, evals_bg
 
     # Target Hamiltonian (with V0 in core)
@@ -180,7 +187,7 @@ def compute_persite_source(lat, t0, V0, n_core, beta0):
         end = min(start + 10000, lat.N_bonds_directed)
         ri, ci = lat.row[start:end], lat.col[start:end]
         G_bond = np.sum(evecs_tgt[ri] * (evecs_tgt[ci] * f_tgt[None, :]), axis=1)
-        np.add.at(rho_tgt, ri, t0 * G_bond)
+        np.add.at(rho_tgt, ri, -t0 * G_bond)
     # Add on-site V0 contribution in core
     G_diag_tgt = np.sum(evecs_tgt * (evecs_tgt * f_tgt[None, :]), axis=1)
     rho_tgt[core_idx] += V0 * G_diag_tgt[core_idx]
@@ -218,7 +225,8 @@ def compute_persite_source_gpu(lat, t0, V0, n_core, beta0):
 
     rho_bg = torch.zeros(N, dtype=torch.float64, device=device)
     G_bond_bg = torch.sum(evecs_bg[row_t] * evecs_bg[col_t] * f_bg[None, :], dim=1)
-    rho_bg.scatter_add_(0, row_t, t0 * G_bond_bg)
+    rho_bg.scatter_add_(0, row_t, -t0 * G_bond_bg)   # signed <h_bond>
+
     del G_bond_bg
 
     rho_bg_np = rho_bg.cpu().numpy()
@@ -246,7 +254,8 @@ def compute_persite_source_gpu(lat, t0, V0, n_core, beta0):
 
     rho_tgt = torch.zeros(N, dtype=torch.float64, device=device)
     G_bond_tgt = torch.sum(evecs_tgt[row_t] * evecs_tgt[col_t] * f_tgt[None, :], dim=1)
-    rho_tgt.scatter_add_(0, row_t, t0 * G_bond_tgt)
+    rho_tgt.scatter_add_(0, row_t, -t0 * G_bond_tgt)   # signed <h_bond>
+
     del G_bond_tgt
     # On-site V0
     G_diag = torch.sum(evecs_tgt * evecs_tgt * f_tgt[None, :], dim=1)
@@ -465,7 +474,9 @@ def picard_persite_mi_gpu(lat, t0, V0, n_core, beta0, cstar_sq,
                 evecs[row_t[s:e]] * evecs[col_t[s:e]] * f[None, :], dim=1)
 
         rho_sigma = torch.zeros(N, dtype=torch.float64, device=device)
-        rho_sigma.scatter_add_(0, row_t, t0 * Nbar_dir_t * G_off_d)
+        # Signed <h_bond> (negative at half filling), matching the on-site V0
+        # channel of rho_tgt below; bare amplitude t0, not t0*Nbar.
+        rho_sigma.scatter_add_(0, row_t, -t0 * G_off_d)
 
         del evecs, evals, f, G_diag, G_off_d
         torch.cuda.empty_cache()
@@ -489,7 +500,7 @@ def picard_persite_mi_gpu(lat, t0, V0, n_core, beta0, cstar_sq,
                 dim=1)
 
         rho_tgt = torch.zeros(N, dtype=torch.float64, device=device)
-        rho_tgt.scatter_add_(0, row_t, t0 * Nbar_dir_t * G_bond_s)
+        rho_tgt.scatter_add_(0, row_t, -t0 * G_bond_s)   # signed, cf. rho_sigma
         del G_bond_s
 
         G_diag_s = torch.sum(evecs_s**2 * f_s[None, :], dim=1)

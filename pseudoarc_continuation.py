@@ -277,7 +277,8 @@ else:
     print("\nV0 did not clearly turn around. May need more steps or smaller ds.")
 
 # Save
-np.savez("pseudoarc_fold.npz",
+_out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "pseudoarc_fold.npz")
+np.savez(_out,
          V0s=np.array(V0_vals),
          min_Ns=np.array(minN_vals),
          V0_fold=V0_fold,

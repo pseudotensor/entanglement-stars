@@ -1,14 +1,25 @@
 """
-Compare two observable choices for the exact two-state closure equation.
+Compare a MATCHED and a MISMATCHED observable pair for the two-state closure.
 
-"Smeared observable" (current): rho_sigma = 2*t0*Nbar*G^smear_{n,n+1}*g_n
-  The energy of the SMEARED Hamiltonian in its own thermal state.
+Matched (the model, TwoStateExactModel): both states carry the BARE shell
+  observable, rho = -2*t0*<G^smear_{n,n+1}>*g_n, split half onto each endpoint.
+  The lapse is the ADM multiplier conjugate to the shell energy, so its
+  expectation in the smeared state already carries one power of Nbar and
+  weighting it again would count the lapse twice (sec:ex-observable).  The
+  kinetic parts then cancel exactly and the source reduces to the V0 term.
 
-"Fixed observable":             rho_sigma = 2*t0*G^smear_{n,n+1}*g_n
-  The energy of the ORIGINAL Hamiltonian (hopping t0) measured in
-  the smeared thermal state.  No Nbar factor.
+Mismatched (the foil, FixedObservableExactModel): sigma gets an EXTRA Nbar
+  while tau stays bare.  The kinetic parts no longer cancel, a spurious
+  Phi-dependent source survives into the exterior, and no solution exists.
 
-The question: which gives correct Newtonian gravity in the exterior?
+The question the foil answers is what a mismatched pair does -- NOT whether the
+bare observable is right, which is settled by the derivation.
+
+This docstring described the opposite arrangement until 2026-08-06: back then
+the model's rho_sigma carried an Nbar and the foil dropped it.  The sign and
+lapse-power corrections moved the model to the bare observable on both states,
+which silently turned the old foil into something else entirely (see the class
+docstring).
 
 Run: python3 -m full_numerics.compare_observables
 """
@@ -30,28 +41,50 @@ from .solver import extract_rs
 # ---------------------------------------------------------------------------
 
 class FixedObservableExactModel(TwoStateExactModel):
-    """
-    Exact two-state model where the observable is the ORIGINAL Hamiltonian
-    (hopping t0), not the smeared Hamiltonian (hopping t0*Nbar).
+    """MISMATCHED-PAIR foil: an EXTRA lapse factor on sigma, bare on tau.
 
-    Only rho_sigma changes:  drop the Nbar factor.
-    rho_bg and rho_tgt stay the same (they are properties of the actual
-    physical states, not the reconstruction).
+    The point of the foil is that measuring the two states with DIFFERENT
+    observables destroys the kinetic cancellation, leaving a spurious
+    Phi-dependent source, so no solution exists.  That is a consequence of the
+    MISMATCH, not of either observable used consistently.
+
+    NOTE on what changed.  This class used to drop an Nbar from rho_sigma, back
+    when the parent's rho_sigma carried one.  The parent is now the bare
+    observable on BOTH states -- sec:ex-observable, "weighting it a second time
+    would count the lapse twice" -- so dropping an Nbar is no longer a mismatch
+    at all: there is none to drop.  Left as it was, this override differed from
+    the parent by a SIGN and by left-endpoint instead of half-split assembly,
+    neither of which was the intended contrast, and the "no solution" result it
+    produced was a statement about a sign-flipped source rather than about a
+    mismatched pair.
+
+    So the mismatch is now made in the other direction: sigma carries an EXTRA
+    Nbar while tau stays bare.  That is exactly the double-counting the paper
+    rules out, which is the claim the foil is meant to support.  Everything else
+    -- the minus sign and the half-onto-each-endpoint assembly -- matches the
+    parent, so the ONLY difference is the lapse factor.
     """
 
     def rho_sigma(self, Phi):
         """
-        Fixed-observable energy profile of reconstructed state sigma[Phi].
+        Mismatched-observable energy profile of the reconstructed state.
 
-        rho_sigma_n = 2*t0*G^smear_{n,n+1}*g_n   (NO Nbar factor)
-
-        This measures the original (unsmeared) bond Hamiltonian
-        in the smeared thermal state.
+        rho_sigma_n = -2*t0*Nbar*<G^smear_{n,n+1}>*g_n, split half onto each
+        endpoint -- the parent's expression times an EXTRA Nbar, i.e. the lapse
+        counted twice.  tau is left bare, so the kinetic parts no longer cancel.
         """
-        G, Nbar = self._smeared_corr(Phi)
-        hop = np.real(np.diag(G, 1))  # G^smear_{n,n+1}
+        lapse, Nbar = self.lapse_nbar(Phi)
+        off = -self.t0 * np.abs(Nbar)
+        hop_avg = np.zeros(self.N - 1)
+        for mu, w in zip(self.mu_nodes, self.mu_weights):
+            diag = np.full(self.N, mu)
+            G = self._fermi_corr(diag, off)
+            hop_avg += w * np.real(np.diag(G, 1))
+        # parent: bond_eng = -2 t0 hop_avg g.  Foil: the same, times Nbar.
+        bond_eng = -2.0 * self.t0 * np.abs(Nbar) * hop_avg * self.g[:-1]
         prof = np.zeros(self.N)
-        prof[:-1] = 2.0 * self.t0 * hop * self.g[:-1]  # NO Nbar
+        prof[:-1] += 0.5 * bond_eng
+        prof[1:] += 0.5 * bond_eng
         return prof
 
     def check_rho_sigma_at_zero(self):

@@ -9,12 +9,23 @@ Generate Figure tov-flux from EL chemical potential scan data.
 
 Loads data from tov_tk_chemical_el.npz.
 """
+import os
 import numpy as np
+
+# m0/t0 = 0.03, not 3.0: the published mass was chosen against a closure
+# prefactor 37x too small and admits no star at the correct P = 36.825.
+# See the parameter block of tov_tk_chemical_el.py.  The npz mu keys are
+# formatted %.6f for the same reason -- at m0 = 0.03 every physical mu
+# rounds to 0.00 under the old %.2f.
 import matplotlib; matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
+# Resolve paths from this file, not the caller's cwd.
+_HERE = os.path.dirname(os.path.abspath(__file__))
+_FIGDIR = os.path.join(_HERE, "fermion", "numerical", "figures")
+
 # Load EL data
-d = np.load("tov_tk_chemical_el.npz", allow_pickle=True)
+d = np.load(os.path.join(_HERE, "tov_tk_chemical_el.npz"), allow_pickle=True)
 beta0 = float(d["beta0"])
 m0 = float(d["m0"])
 csq = float(d["csq"])
@@ -26,16 +37,22 @@ g = 4.0 * np.pi * n_arr**2
 t0 = 1.0
 
 # Select μ values to plot (3 representative: low, mid, high compactness)
-mu_show = [0.1, 0.5, 1.0]
-if 0.7 in mu_values:
-    mu_show = [0.1, 0.5, 0.7]
+# Select representative mu by mu/m0 RATIO, not absolute mu.  The absolute values
+# were hard-coded (0.1, 0.5, 1.0), which silently selects nothing once m0 changes
+# -- and m0 moved 3.0 -> 0.03 when the closure prefactor was corrected.  Pick the
+# available mu closest to each target ratio instead.
+_m0 = float(d["m0"])
+_avail = sorted(float(m) for m in d["mu_values"])
+def _pick(ratio):
+    return min(_avail, key=lambda m: abs(m / _m0 - ratio))
+mu_show = sorted({_pick(r) for r in (0.02, 0.10, 0.19)})
 colors = {mu: c for mu, c in zip(mu_show, ['black', 'tab:red', 'tab:blue'])}
 m0 = float(d["m0"])
 
 fig, axes = plt.subplots(1, 3, figsize=(16, 5))
 
 for mu in mu_show:
-    key = f"mu{mu:.2f}"
+    key = f"mu{mu:.6f}"
     Phi = d[f"{key}_Phi"]
     lapse = d[f"{key}_lapse"]
     kappa_kms = d[f"{key}_kappa_kms"]
@@ -48,11 +65,15 @@ for mu in mu_show:
     w = lapse**2
 
     # w-flux: J_w = g · Δw  (flat Dirichlet flux for w)
-    dw = w[:-1] - w[1:]
+    # Delta w_b := w_{n+1} - w_n, matching eq:tov-Jw in the paper (w rises
+    # outward, so the conserved flux is positive).  The reverse difference used
+    # here previously plotted -J_w; the delta-J_w diagnostic below is a
+    # normalised spread and is unaffected either way.
+    dw = w[1:] - w[:-1]
     J_w = g[:-1] * t0**2 * dw
 
     # w-fit: w = 1 - r_s/r in exterior
-    n_start = max(n_eff + 3, 5)
+    n_start = max(n_eff + 4, 5)
     n_end = min(N // 2, n_eff + 40)
     idx = np.arange(n_start - 1, n_end)
     r_fit = n_arr[idx]
@@ -85,7 +106,7 @@ for mu in mu_show:
 axes[0].set_title(r'(a) $w$-flux $J_w = g\,\Delta w$ (exterior)')
 axes[0].set_ylabel(r'$J_w$')
 axes[0].set_xlabel('$n$ (shell)')
-axes[0].legend(fontsize=8)
+axes[0].legend(fontsize=8, loc='center right')
 axes[0].grid(True, alpha=0.3)
 axes[0].set_xlim(0, 60)
 
@@ -103,20 +124,20 @@ axes[2].set_ylabel('Residual')
 axes[2].set_xlabel('$n$ (shell)')
 axes[2].legend(fontsize=8)
 axes[2].grid(True, alpha=0.3)
-axes[2].set_xlim(0, 100)
+axes[2].set_xlim(0, 70)
 
-plt.suptitle(rf'Exterior diagnostics (full EL, $\beta_0={beta0:.0f}$, $N_s={N}$)',
+plt.suptitle(rf'Exterior diagnostics (full EL, $\beta_0 t_0={beta0:g}$, $N_s={N}$)',
              fontsize=14)
 plt.tight_layout()
-plt.savefig("fermion/numerical/figures/tov_tk_final_flux.png", dpi=150)
+plt.savefig(os.path.join(_FIGDIR, "tov_tk_final_flux.png"), dpi=150)
 plt.close()
-print("Saved fermion/numerical/figures/tov_tk_final_flux.png")
+print("Saved " + os.path.join(_FIGDIR, "tov_tk_final_flux.png"))
 
 # Also print diagnostic table
 print(f"\nFlux constancy diagnostics:")
 print(f"  {'μ/m₀':>6s} {'n_eff':>6s} {'r_s(w)':>8s} {'r*/r_s':>8s} {'δJ_w':>10s}")
 for mu in mu_values:
-    key = f"mu{mu:.2f}"
+    key = f"mu{mu:.6f}"
     try:
         Phi = d[f"{key}_Phi"]
         lapse = d[f"{key}_lapse"]
@@ -124,10 +145,10 @@ for mu in mu_values:
         n_eff = int(np.sum(V_defect > 1e-10))
 
         w = lapse**2
-        dw = w[:-1] - w[1:]
+        dw = w[1:] - w[:-1]   # same orientation as the plotted J_w above
         J_w = g[:-1] * t0**2 * dw
 
-        n_start = max(n_eff + 3, 5)
+        n_start = max(n_eff + 4, 5)
         n_end = min(N // 2, n_eff + 40)
         idx = np.arange(n_start - 1, n_end)
         r_fit = n_arr[idx]
@@ -142,7 +163,10 @@ for mu in mu_values:
         J_w_var = (np.max(np.abs(J_w_ext - J_w_mean)) / abs(J_w_mean)
                    if abs(J_w_mean) > 1e-30 and len(J_w_ext) > 1 else 0)
 
-        compact = float(n_eff) / r_s_w if r_s_w > 0 else float('inf')
-        print(f"  {mu/m0:6.3f} {n_eff:6d} {r_s_w:8.3f} {compact:8.2f} {J_w_var:10.6f}")
+        # r_* is the FIRST shell where V vanishes (sec:tov-discrete-exterior), so
+        # with V > 0 on the 1-based shells 1..n_eff the surface is n_eff + 1.
+        # This was float(n_eff), which put the compactness ~25% low.
+        compact = float(n_eff + 1) / r_s_w if r_s_w > 0 else float('inf')
+        print(f"  {mu/m0:8.5f} {n_eff:6d} {r_s_w:8.3f} {compact:8.2f} {J_w_var:10.6f}")
     except KeyError:
         pass

@@ -280,7 +280,15 @@ def main() -> None:
             N_sh = max(1e-8, xi / (2.0 * rs))
         elif args.profile == "exact_solutions":
             data = np.load(args.exact_path)
-            prefix = f"sol_{args.V0:0.4f}"
+            # --V0 is given in SHORTHAND units, as every other script's V0 is.
+            # The solved grid is 231x smaller under the derived prefactor and
+            # keys carry 8 decimals; at "%.4f" the whole grid formatted as
+            # 0.0000-0.0003 and distinct solutions collided.  See v0_units.py.
+            import sys as _sys
+            _sys.path.insert(0, os.path.dirname(os.path.dirname(
+                os.path.abspath(__file__))))
+            from v0_units import resolve_shorthand, sol_tag
+            prefix = sol_tag(resolve_shorthand(data, args.V0)[0])
             if f"{prefix}_lapse" not in data or f"{prefix}_Nbar" not in data:
                 raise SystemExit(f"could not find keys for V0={args.V0} in {args.exact_path}")
             rs = float(data[f"{prefix}_rs"]) * a
