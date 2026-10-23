@@ -1,0 +1,193 @@
+{
+  "scope": "T10 ordinary planar cut of the specified four-component free sine projectors; the full Brillouin zone already contains all valleys. This file evaluates only the lower-bound integral, not the Toeplitz entropy or thermodynamic route.",
+  "normalization": {
+    "I": "BZ average sin(q_x)^2 / sqrt(mu^2 + sin(q_x)^2 + sin(q_y)^2 + sin(q_z)^2)",
+    "measure": "d^3q/(2pi)^3 over [-pi,pi)^3",
+    "momentum_grid": "uniform midpoint grid, half-step shifted in all three directions",
+    "separate_valley_factor": 1,
+    "logarithms": "natural",
+    "single_packet_eta_inequality_from_reviewer B": "eta_s >= 4 ln(2) I(mu_s)^2 >= ln(2)/(mu_s^2+3)",
+    "four_packet_rule": "sum four positive packet contributions; equal-mass columns are diagnostics, not a matched rectangle"
+  },
+  "grid_sizes": [
+    32,
+    64,
+    128,
+    256
+  ],
+  "masses": [
+    0.0,
+    0.01,
+    0.02,
+    0.04
+  ],
+  "rows": [
+    {
+      "N_BZ": 32,
+      "mu": 0.0,
+      "I_quadrature": 0.3979347242303487,
+      "I_change_from_previous_grid": null,
+      "single_packet_4ln2_I_squared_estimate": 0.4390450934127005,
+      "single_packet_analytic_lower_bound_ln2_over_mu_squared_plus_3": 0.23104906018664842,
+      "four_equal_mass_packets_analytic_lower_bound": 0.9241962407465937,
+      "four_equal_mass_packets_4ln2_I_squared_estimate": 1.756180373650802
+    },
+    {
+      "N_BZ": 32,
+      "mu": 0.01,
+      "I_quadrature": 0.3979195647121334,
+      "I_change_from_previous_grid": null,
+      "single_packet_4ln2_I_squared_estimate": 0.4390116427741442,
+      "single_packet_analytic_lower_bound_ln2_over_mu_squared_plus_3": 0.23104135880802149,
+      "four_equal_mass_packets_analytic_lower_bound": 0.9241654352320859,
+      "four_equal_mass_packets_4ln2_I_squared_estimate": 1.7560465710965767
+    },
+    {
+      "N_BZ": 32,
+      "mu": 0.02,
+      "I_quadrature": 0.39787410858815864,
+      "I_change_from_previous_grid": null,
+      "single_packet_4ln2_I_squared_estimate": 0.4389113479929281,
+      "single_packet_analytic_lower_bound_ln2_over_mu_squared_plus_3": 0.23101825775228146,
+      "four_equal_mass_packets_analytic_lower_bound": 0.9240730310091259,
+      "four_equal_mass_packets_4ln2_I_squared_estimate": 1.7556453919717123
+    },
+    {
+      "N_BZ": 32,
+      "mu": 0.04,
+      "I_quadrature": 0.39769261563732033,
+      "I_change_from_previous_grid": null,
+      "single_packet_4ln2_I_squared_estimate": 0.43851101459390435,
+      "single_packet_analytic_lower_bound_ln2_over_mu_squared_plus_3": 0.23092589970680483,
+      "four_equal_mass_packets_analytic_lower_bound": 0.9237035988272193,
+      "four_equal_mass_packets_4ln2_I_squared_estimate": 1.7540440583756174
+    },
+    {
+      "N_BZ": 64,
+      "mu": 0.0,
+      "I_quadrature": 0.39793376969120287,
+      "I_change_from_previous_grid": -9.545391458365415e-07,
+      "single_packet_4ln2_I_squared_estimate": 0.43904298711133855,
+      "single_packet_analytic_lower_bound_ln2_over_mu_squared_plus_3": 0.23104906018664842,
+      "four_equal_mass_packets_analytic_lower_bound": 0.9241962407465937,
+      "four_equal_mass_packets_4ln2_I_squared_estimate": 1.7561719484453542
+    },
+    {
+      "N_BZ": 64,
+      "mu": 0.01,
+      "I_quadrature": 0.3979185979421241,
+      "I_change_from_previous_grid": -9.66770009325213e-07,
+      "single_packet_4ln2_I_squared_estimate": 0.43900950956526463,
+      "single_packet_analytic_lower_bound_ln2_over_mu_squared_plus_3": 0.23104135880802149,
+      "four_equal_mass_packets_analytic_lower_bound": 0.9241654352320859,
+      "four_equal_mass_packets_4ln2_I_squared_estimate": 1.7560380382610585
+    },
+    {
+      "N_BZ": 64,
+      "mu": 0.02,
+      "I_quadrature": 0.3978731090593538,
+      "I_change_from_previous_grid": -9.995288048347817e-07,
+      "single_packet_4ln2_I_squared_estimate": 0.438909142752755,
+      "single_packet_analytic_lower_bound_ln2_over_mu_squared_plus_3": 0.23101825775228146,
+      "four_equal_mass_packets_analytic_lower_bound": 0.9240730310091259,
+      "four_equal_mass_packets_4ln2_I_squared_estimate": 1.75563657101102
+    },
+    {
+      "N_BZ": 64,
+      "mu": 0.04,
+      "I_quadrature": 0.3976915324093974,
+      "I_change_from_previous_grid": -1.0832279229155972e-06,
+      "single_packet_4ln2_I_squared_estimate": 0.4385086257804845,
+      "single_packet_analytic_lower_bound_ln2_over_mu_squared_plus_3": 0.23092589970680483,
+      "four_equal_mass_packets_analytic_lower_bound": 0.9237035988272193,
+      "four_equal_mass_packets_4ln2_I_squared_estimate": 1.754034503121938
+    },
+    {
+      "N_BZ": 128,
+      "mu": 0.0,
+      "I_quadrature": 0.3979337110368666,
+      "I_change_from_previous_grid": -5.865433627683103e-08,
+      "single_packet_4ln2_I_squared_estimate": 0.4390428576839057,
+      "single_packet_analytic_lower_bound_ln2_over_mu_squared_plus_3": 0.23104906018664842,
+      "four_equal_mass_packets_analytic_lower_bound": 0.9241962407465937,
+      "four_equal_mass_packets_4ln2_I_squared_estimate": 1.7561714307356229
+    },
+    {
+      "N_BZ": 128,
+      "mu": 0.01,
+      "I_quadrature": 0.39791853649638703,
+      "I_change_from_previous_grid": -6.144573705402223e-08,
+      "single_packet_4ln2_I_squared_estimate": 0.43900937398345996,
+      "single_packet_analytic_lower_bound_ln2_over_mu_squared_plus_3": 0.23104135880802149,
+      "four_equal_mass_packets_analytic_lower_bound": 0.9241654352320859,
+      "four_equal_mass_packets_4ln2_I_squared_estimate": 1.7560374959338398
+    },
+    {
+      "N_BZ": 128,
+      "mu": 0.02,
+      "I_quadrature": 0.3978730424331365,
+      "I_change_from_previous_grid": -6.66262173210086e-08,
+      "single_packet_4ln2_I_squared_estimate": 0.43890899575687714,
+      "single_packet_analytic_lower_bound_ln2_over_mu_squared_plus_3": 0.23101825775228146,
+      "four_equal_mass_packets_analytic_lower_bound": 0.9240730310091259,
+      "four_equal_mass_packets_4ln2_I_squared_estimate": 1.7556359830275086
+    },
+    {
+      "N_BZ": 128,
+      "mu": 0.04,
+      "I_quadrature": 0.39769146755490786,
+      "I_change_from_previous_grid": -6.485448955650952e-08,
+      "single_packet_4ln2_I_squared_estimate": 0.4385084827588285,
+      "single_packet_analytic_lower_bound_ln2_over_mu_squared_plus_3": 0.23092589970680483,
+      "four_equal_mass_packets_analytic_lower_bound": 0.9237035988272193,
+      "four_equal_mass_packets_4ln2_I_squared_estimate": 1.754033931035314
+    },
+    {
+      "N_BZ": 256,
+      "mu": 0.0,
+      "I_quadrature": 0.3979337073863716,
+      "I_change_from_previous_grid": -3.650494961870976e-09,
+      "single_packet_4ln2_I_squared_estimate": 0.439042849628676,
+      "single_packet_analytic_lower_bound_ln2_over_mu_squared_plus_3": 0.23104906018664842,
+      "four_equal_mass_packets_analytic_lower_bound": 0.9241962407465937,
+      "four_equal_mass_packets_4ln2_I_squared_estimate": 1.756171398514704
+    },
+    {
+      "N_BZ": 256,
+      "mu": 0.01,
+      "I_quadrature": 0.397918532348751,
+      "I_change_from_previous_grid": -4.147636012419298e-09,
+      "single_packet_4ln2_I_squared_estimate": 0.4390093648315813,
+      "single_packet_analytic_lower_bound_ln2_over_mu_squared_plus_3": 0.23104135880802149,
+      "four_equal_mass_packets_analytic_lower_bound": 0.9241654352320859,
+      "four_equal_mass_packets_4ln2_I_squared_estimate": 1.7560374593263253
+    },
+    {
+      "N_BZ": 256,
+      "mu": 0.02,
+      "I_quadrature": 0.39787303839775123,
+      "I_change_from_previous_grid": -4.0353852481800345e-09,
+      "single_packet_4ln2_I_squared_estimate": 0.43890898685370106,
+      "single_packet_analytic_lower_bound_ln2_over_mu_squared_plus_3": 0.23101825775228146,
+      "four_equal_mass_packets_analytic_lower_bound": 0.9240730310091259,
+      "four_equal_mass_packets_4ln2_I_squared_estimate": 1.7556359474148042
+    },
+    {
+      "N_BZ": 256,
+      "mu": 0.04,
+      "I_quadrature": 0.39769146596664107,
+      "I_change_from_previous_grid": -1.5882667958599939e-09,
+      "single_packet_4ln2_I_squared_estimate": 0.43850847925627173,
+      "single_packet_analytic_lower_bound_ln2_over_mu_squared_plus_3": 0.23092589970680483,
+      "four_equal_mass_packets_analytic_lower_bound": 0.9237035988272193,
+      "four_equal_mass_packets_4ln2_I_squared_estimate": 1.754033917025087
+    }
+  ],
+  "uniform_resolved_window_comparison": {
+    "condition_from_reviewer B": "all four mu_s <= 1, and a^2/(4G) <= 1e-4",
+    "four_packet_analytic_lower_bound_ln2": 0.6931471805599453,
+    "comparison_area_coefficient_upper": 0.0001,
+    "analytic_lower_bound_to_comparison_upper_ratio": 6931.471805599453
+  },
+  "caveat": "The integral values and 4 ln(2) I^2 columns have grid differences but no certified quadrature error; the closed analytic bound is stated as the T10 author's inequality, not inferred from floating-point integration."
+}

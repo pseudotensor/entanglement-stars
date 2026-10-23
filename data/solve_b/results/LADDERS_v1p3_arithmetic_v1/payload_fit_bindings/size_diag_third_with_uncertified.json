@@ -1,0 +1,4136 @@
+{
+  "old": [
+    {
+      "path": "/fits/size_diag_third_with_uncertified",
+      "target": {
+        "type": "object",
+        "keys": [
+          "R_t_over_2gE",
+          "R_t_over_rs",
+          "T_f",
+          "coefficients",
+          "dof",
+          "members",
+          "model",
+          "n",
+          "uncertified",
+          "value_at_other_members",
+          "x"
+        ],
+        "length": 11
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "object",
+          "keys": [
+            "R_t_over_2gE",
+            "R_t_over_rs",
+            "T_f",
+            "coefficients",
+            "dof",
+            "members",
+            "model",
+            "n",
+            "uncertified",
+            "value_at_other_members",
+            "x"
+          ],
+          "length": 11
+        },
+        "target_shape": {
+          "type": "object",
+          "keys": [
+            "R_t_over_2gE",
+            "R_t_over_rs",
+            "T_f",
+            "coefficients",
+            "dof",
+            "members",
+            "model",
+            "n",
+            "uncertified",
+            "value_at_other_members",
+            "x"
+          ],
+          "length": 11
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/model",
+      "target": {
+        "type": "string",
+        "value": "2-coefficient diagnostic Y = c0 + c1 (a/r_s)^(1/3) including uncertified formation records (labelled; no law)"
+      },
+      "own_arithmetic": {
+        "status": "adopted_definition",
+        "reason": "The model string names the fixed descriptive design in the frozen manual map; no physical law is fitted.",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "model",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/members",
+      "target": {
+        "type": "list",
+        "length": 3
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "members",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 3
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 3
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/members/0",
+      "target": {
+        "type": "string",
+        "value": "RS32_s4"
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "members/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "string",
+          "value": "RS32_s4"
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/members/1",
+      "target": {
+        "type": "string",
+        "value": "P64_s4"
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "members/1",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "string",
+          "value": "P64_s4"
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/members/2",
+      "target": {
+        "type": "string",
+        "value": "S4_128_s4"
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "members/2",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "string",
+          "value": "S4_128_s4"
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/n",
+      "target": {
+        "type": "integer",
+        "value": 3
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "n",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "integer",
+          "value": 3
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/coefficients",
+      "target": {
+        "type": "integer",
+        "value": 2
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "coefficients",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "integer",
+          "value": 2
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/dof",
+      "target": {
+        "type": "integer",
+        "value": 1
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "dof",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "integer",
+          "value": 1
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/T_f",
+      "target": {
+        "type": "object",
+        "keys": [
+          "coef",
+          "max_abs",
+          "pred",
+          "residual",
+          "rms",
+          "y"
+        ],
+        "length": 6
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "T_f",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "object",
+          "keys": [
+            "coef",
+            "max_abs",
+            "pred",
+            "residual",
+            "rms",
+            "y"
+          ],
+          "length": 6
+        },
+        "target_shape": {
+          "type": "object",
+          "keys": [
+            "coef",
+            "max_abs",
+            "pred",
+            "residual",
+            "rms",
+            "y"
+          ],
+          "length": 6
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/T_f/coef",
+      "target": {
+        "type": "list",
+        "length": 2
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "T_f/coef",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 2
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 2
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/T_f/coef/0",
+      "target": {
+        "type": "float",
+        "value": 2.4563600080751975
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "T_f/coef/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 2.4563600080752024
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-4.884981308350688777863979339599609375E-15",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/T_f/coef/1",
+      "target": {
+        "type": "float",
+        "value": 41.43397495699127
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "T_f/coef/1",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 41.433974956991264
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "7.10542735760100185871124267578125E-15",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/T_f/pred",
+      "target": {
+        "type": "list",
+        "length": 3
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "T_f/pred",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 3
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 3
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/T_f/pred/0",
+      "target": {
+        "type": "float",
+        "value": 15.507244315357779
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "T_f/pred/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 15.507244315357783
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-3.5527136788005009293556213378906250E-15",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/T_f/pred/1",
+      "target": {
+        "type": "float",
+        "value": 12.814853747323015
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "T_f/pred/1",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 12.814853747323019
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-3.5527136788005009293556213378906250E-15",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/T_f/pred/2",
+      "target": {
+        "type": "float",
+        "value": 10.677901937319195
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "T_f/pred/2",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 10.677901937319199
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-3.552713678800500929355621337890625E-15",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/T_f/residual",
+      "target": {
+        "type": "list",
+        "length": 3
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "T_f/residual",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 3
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 3
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/T_f/residual/0",
+      "target": {
+        "type": "float",
+        "value": 0.30525568464222097
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "T_f/residual/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.3052556846422178
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "3.164135620181696140207350254058837890625E-15",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/T_f/residual/1",
+      "target": {
+        "type": "float",
+        "value": -0.6898537473230153
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "T_f/residual/1",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": -0.6898537473230192
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "3.88578058618804789148271083831787109375E-15",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/T_f/residual/2",
+      "target": {
+        "type": "float",
+        "value": 0.384598062680805
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "T_f/residual/2",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.3845980626808014
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "3.608224830031758756376802921295166015625E-15",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/T_f/rms",
+      "target": {
+        "type": "float",
+        "value": 0.48887452225147576
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "T_f/rms",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.488874522251476
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-2.2204460492503130808472633361816406250E-16",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/T_f/max_abs",
+      "target": {
+        "type": "float",
+        "value": 0.6898537473230153
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "T_f/max_abs",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.6898537473230192
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-3.88578058618804789148271083831787109375E-15",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/T_f/y",
+      "target": {
+        "type": "list",
+        "length": 3
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "T_f/y",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 3
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 3
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/T_f/y/0",
+      "target": {
+        "type": "float",
+        "value": 15.8125
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "T_f/y/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 15.8125
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/T_f/y/1",
+      "target": {
+        "type": "float",
+        "value": 12.125
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "T_f/y/1",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 12.125
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/T_f/y/2",
+      "target": {
+        "type": "float",
+        "value": 11.0625
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "T_f/y/2",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 11.0625
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_rs",
+      "target": {
+        "type": "object",
+        "keys": [
+          "coef",
+          "max_abs",
+          "pred",
+          "residual",
+          "rms",
+          "y"
+        ],
+        "length": 6
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "R_t_over_rs",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "object",
+          "keys": [
+            "coef",
+            "max_abs",
+            "pred",
+            "residual",
+            "rms",
+            "y"
+          ],
+          "length": 6
+        },
+        "target_shape": {
+          "type": "object",
+          "keys": [
+            "coef",
+            "max_abs",
+            "pred",
+            "residual",
+            "rms",
+            "y"
+          ],
+          "length": 6
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_rs/coef",
+      "target": {
+        "type": "list",
+        "length": 2
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "R_t_over_rs/coef",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 2
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 2
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_rs/coef/0",
+      "target": {
+        "type": "float",
+        "value": 0.1740337386074004
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "R_t_over_rs/coef/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.17403373860740046
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-5.5511151231257827021181583404541015625E-17",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_rs/coef/1",
+      "target": {
+        "type": "float",
+        "value": 1.6214785697580834
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "R_t_over_rs/coef/1",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 1.6214785697580834
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "0E-52",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_rs/pred",
+      "target": {
+        "type": "list",
+        "length": 3
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "R_t_over_rs/pred",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 3
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 3
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_rs/pred/0",
+      "target": {
+        "type": "float",
+        "value": 0.6847674841053109
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "R_t_over_rs/pred/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.6847674841053109
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "0E-51",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_rs/pred/1",
+      "target": {
+        "type": "float",
+        "value": 0.5794033810469212
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "R_t_over_rs/pred/1",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.5794033810469214
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-1.1102230246251565404236316680908203125E-16",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_rs/pred/2",
+      "target": {
+        "type": "float",
+        "value": 0.49577583702963457
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "R_t_over_rs/pred/2",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.49577583702963457
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "0E-51",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_rs/residual",
+      "target": {
+        "type": "list",
+        "length": 3
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "R_t_over_rs/residual",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 3
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 3
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_rs/residual/0",
+      "target": {
+        "type": "float",
+        "value": -0.010193971923592393
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "R_t_over_rs/residual/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": -0.01019397192359243
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "3.642919299551294898265041410923004150390625E-17",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_rs/residual/1",
+      "target": {
+        "type": "float",
+        "value": 0.02303757173216392
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "R_t_over_rs/residual/1",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.02303757173216386
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "5.89805981832114412100054323673248291015625E-17",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_rs/residual/2",
+      "target": {
+        "type": "float",
+        "value": -0.012843599808571415
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "R_t_over_rs/residual/2",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": -0.012843599808571433
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "1.73472347597680709441192448139190673828125E-17",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_rs/rms",
+      "target": {
+        "type": "float",
+        "value": 0.016325897943005808
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "R_t_over_rs/rms",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.016325897943005794
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "1.38777878078144567552953958511352539062500E-17",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_rs/max_abs",
+      "target": {
+        "type": "float",
+        "value": 0.02303757173216392
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "R_t_over_rs/max_abs",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.02303757173216386
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "5.89805981832114412100054323673248291015625E-17",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_rs/y",
+      "target": {
+        "type": "list",
+        "length": 3
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "R_t_over_rs/y",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 3
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 3
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_rs/y/0",
+      "target": {
+        "type": "float",
+        "value": 0.6745735121817185
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "R_t_over_rs/y/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.6745735121817185
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "0E-51",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_rs/y/1",
+      "target": {
+        "type": "float",
+        "value": 0.6024409527790852
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "R_t_over_rs/y/1",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.6024409527790852
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "0E-53",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_rs/y/2",
+      "target": {
+        "type": "float",
+        "value": 0.48293223722106315
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "R_t_over_rs/y/2",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.48293223722106315
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "0E-50",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_2gE",
+      "target": {
+        "type": "object",
+        "keys": [
+          "coef",
+          "max_abs",
+          "pred",
+          "residual",
+          "rms",
+          "y"
+        ],
+        "length": 6
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "R_t_over_2gE",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "object",
+          "keys": [
+            "coef",
+            "max_abs",
+            "pred",
+            "residual",
+            "rms",
+            "y"
+          ],
+          "length": 6
+        },
+        "target_shape": {
+          "type": "object",
+          "keys": [
+            "coef",
+            "max_abs",
+            "pred",
+            "residual",
+            "rms",
+            "y"
+          ],
+          "length": 6
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_2gE/coef",
+      "target": {
+        "type": "list",
+        "length": 2
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "R_t_over_2gE/coef",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 2
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 2
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_2gE/coef/0",
+      "target": {
+        "type": "float",
+        "value": 0.22039579692111308
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "R_t_over_2gE/coef/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.22039579692111305
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "2.77555756156289135105907917022705078125E-17",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_2gE/coef/1",
+      "target": {
+        "type": "float",
+        "value": 1.644306905774445
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "R_t_over_2gE/coef/1",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 1.6443069057744462
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-1.1102230246251565404236316680908203125E-15",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_2gE/pred",
+      "target": {
+        "type": "list",
+        "length": 3
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "R_t_over_2gE/pred",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 3
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 3
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_2gE/pred/0",
+      "target": {
+        "type": "float",
+        "value": 0.7383200176892953
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "R_t_over_2gE/pred/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.7383200176892957
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-3.3306690738754696212708950042724609375E-16",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_2gE/pred/1",
+      "target": {
+        "type": "float",
+        "value": 0.6314725233647244
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "R_t_over_2gE/pred/1",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.6314725233647246
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-2.2204460492503130808472633361816406250E-16",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_2gE/pred/2",
+      "target": {
+        "type": "float",
+        "value": 0.5466676109192292
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "R_t_over_2gE/pred/2",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.5466676109192294
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-2.220446049250313080847263336181640625E-16",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_2gE/residual",
+      "target": {
+        "type": "list",
+        "length": 3
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "R_t_over_2gE/residual",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 3
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 3
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_2gE/residual/0",
+      "target": {
+        "type": "float",
+        "value": -0.013205835873298488
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "R_t_over_2gE/residual/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": -0.013205835873298773
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "2.84494650060196363483555614948272705078125E-16",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_2gE/residual/1",
+      "target": {
+        "type": "float",
+        "value": 0.029844146471525
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "R_t_over_2gE/residual/1",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.02984414647152474
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "2.602085213965210641617886722087860107421875E-16",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_2gE/residual/2",
+      "target": {
+        "type": "float",
+        "value": -0.016638310598225736
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "R_t_over_2gE/residual/2",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": -0.01663831059822597
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "2.324529457808921506511978805065155029296875E-16",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_2gE/rms",
+      "target": {
+        "type": "float",
+        "value": 0.02114947248585148
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "R_t_over_2gE/rms",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.021149472485851476
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "3.4694469519536141888238489627838134765625E-18",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_2gE/max_abs",
+      "target": {
+        "type": "float",
+        "value": 0.029844146471525
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "R_t_over_2gE/max_abs",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.02984414647152474
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "2.602085213965210641617886722087860107421875E-16",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_2gE/y",
+      "target": {
+        "type": "list",
+        "length": 3
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "R_t_over_2gE/y",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 3
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 3
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_2gE/y/0",
+      "target": {
+        "type": "float",
+        "value": 0.7251141818159968
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "R_t_over_2gE/y/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.7251141818159968
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "0E-53",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_2gE/y/1",
+      "target": {
+        "type": "float",
+        "value": 0.6613166698362494
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "R_t_over_2gE/y/1",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.6613166698362494
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "0E-51",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_2gE/y/2",
+      "target": {
+        "type": "float",
+        "value": 0.5300293003210035
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "R_t_over_2gE/y/2",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.5300293003210035
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "0E-50",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/x",
+      "target": {
+        "type": "list",
+        "length": 3
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "x",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 3
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 3
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/x/0",
+      "target": {
+        "type": "float",
+        "value": 0.3149802624737183
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "x/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.3149802624737183
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "0E-54",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/x/1",
+      "target": {
+        "type": "float",
+        "value": 0.25
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "x/1",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.25
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "0.00",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/x/2",
+      "target": {
+        "type": "float",
+        "value": 0.19842513149602495
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "x/2",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.19842513149602495
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "0E-55",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/uncertified",
+      "target": {
+        "type": "list",
+        "length": 1
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "uncertified",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 1
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 1
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/uncertified/0",
+      "target": {
+        "type": "string",
+        "value": "S4_128_s4"
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "uncertified/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "string",
+          "value": "S4_128_s4"
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/value_at_other_members",
+      "target": {
+        "type": "object",
+        "keys": [
+          "S4_16_s4"
+        ],
+        "length": 1
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "value_at_other_members",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "object",
+          "keys": [
+            "S4_16_s4"
+          ],
+          "length": 1
+        },
+        "target_shape": {
+          "type": "object",
+          "keys": [
+            "S4_16_s4"
+          ],
+          "length": 1
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/value_at_other_members/S4_16_s4",
+      "target": {
+        "type": "object",
+        "keys": [
+          "R_t_over_2gE",
+          "R_t_over_rs",
+          "T_f",
+          "basis",
+          "record"
+        ],
+        "length": 5
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "value_at_other_members/S4_16_s4",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "object",
+          "keys": [
+            "R_t_over_2gE",
+            "R_t_over_rs",
+            "T_f",
+            "basis",
+            "record"
+          ],
+          "length": 5
+        },
+        "target_shape": {
+          "type": "object",
+          "keys": [
+            "R_t_over_2gE",
+            "R_t_over_rs",
+            "T_f",
+            "basis",
+            "record"
+          ],
+          "length": 5
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/value_at_other_members/S4_16_s4/basis",
+      "target": {
+        "type": "list",
+        "length": 2
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "value_at_other_members/S4_16_s4/basis",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 2
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 2
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/value_at_other_members/S4_16_s4/basis/0",
+      "target": {
+        "type": "float",
+        "value": 1.0
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "value_at_other_members/S4_16_s4/basis/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 1.0
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "0",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/value_at_other_members/S4_16_s4/basis/1",
+      "target": {
+        "type": "float",
+        "value": 0.3968502629920499
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "value_at_other_members/S4_16_s4/basis/1",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.3968502629920499
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "0E-54",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/value_at_other_members/S4_16_s4/record",
+      "target": {
+        "type": "object",
+        "keys": [
+          "none_to"
+        ],
+        "length": 1
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "value_at_other_members/S4_16_s4/record",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "object",
+          "keys": [
+            "none_to"
+          ],
+          "length": 1
+        },
+        "target_shape": {
+          "type": "object",
+          "keys": [
+            "none_to"
+          ],
+          "length": 1
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/value_at_other_members/S4_16_s4/record/none_to",
+      "target": {
+        "type": "float",
+        "value": 40.0
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "value_at_other_members/S4_16_s4/record/none_to",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 40.0
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/value_at_other_members/S4_16_s4/T_f",
+      "target": {
+        "type": "float",
+        "value": 18.899443866563193
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "value_at_other_members/S4_16_s4/T_f",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 18.899443866563196
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-3.552713678800500929355621337890625E-15",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/value_at_other_members/S4_16_s4/R_t_over_rs",
+      "target": {
+        "type": "float",
+        "value": 0.8175179354518687
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "value_at_other_members/S4_16_s4/R_t_over_rs",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.8175179354518687
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "0E-52",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/value_at_other_members/S4_16_s4/R_t_over_2gE",
+      "target": {
+        "type": "float",
+        "value": 0.8729394249173454
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "old",
+          "path": "value_at_other_members/S4_16_s4/R_t_over_2gE",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.8729394249173458
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-3.3306690738754696212708950042724609375E-16",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    }
+  ],
+  "current": [
+    {
+      "path": "/fits/size_diag_third_with_uncertified",
+      "target": {
+        "type": "object",
+        "keys": [
+          "R_t_over_2gE",
+          "R_t_over_rs",
+          "T_f",
+          "coefficients",
+          "dof",
+          "members",
+          "model",
+          "n",
+          "uncertified",
+          "value_at_other_members",
+          "x"
+        ],
+        "length": 11
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "object",
+          "keys": [
+            "R_t_over_2gE",
+            "R_t_over_rs",
+            "T_f",
+            "coefficients",
+            "dof",
+            "members",
+            "model",
+            "n",
+            "uncertified",
+            "value_at_other_members",
+            "x"
+          ],
+          "length": 11
+        },
+        "target_shape": {
+          "type": "object",
+          "keys": [
+            "R_t_over_2gE",
+            "R_t_over_rs",
+            "T_f",
+            "coefficients",
+            "dof",
+            "members",
+            "model",
+            "n",
+            "uncertified",
+            "value_at_other_members",
+            "x"
+          ],
+          "length": 11
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/model",
+      "target": {
+        "type": "string",
+        "value": "2-coefficient diagnostic Y = c0 + c1 (a/r_s)^(1/3) including uncertified formation records (labelled; no law)"
+      },
+      "own_arithmetic": {
+        "status": "adopted_definition",
+        "reason": "The model string names the fixed descriptive design in the frozen manual map; no physical law is fitted.",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "model",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/members",
+      "target": {
+        "type": "list",
+        "length": 3
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "members",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 3
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 3
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/members/0",
+      "target": {
+        "type": "string",
+        "value": "RS32_s4"
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "members/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "string",
+          "value": "RS32_s4"
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/members/1",
+      "target": {
+        "type": "string",
+        "value": "P64_s4"
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "members/1",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "string",
+          "value": "P64_s4"
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/members/2",
+      "target": {
+        "type": "string",
+        "value": "S4_128_s4"
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "members/2",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "string",
+          "value": "S4_128_s4"
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/n",
+      "target": {
+        "type": "integer",
+        "value": 3
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "n",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "integer",
+          "value": 3
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/coefficients",
+      "target": {
+        "type": "integer",
+        "value": 2
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "coefficients",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "integer",
+          "value": 2
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/dof",
+      "target": {
+        "type": "integer",
+        "value": 1
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "dof",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "integer",
+          "value": 1
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/T_f",
+      "target": {
+        "type": "object",
+        "keys": [
+          "coef",
+          "max_abs",
+          "pred",
+          "residual",
+          "rms",
+          "y"
+        ],
+        "length": 6
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "T_f",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "object",
+          "keys": [
+            "coef",
+            "max_abs",
+            "pred",
+            "residual",
+            "rms",
+            "y"
+          ],
+          "length": 6
+        },
+        "target_shape": {
+          "type": "object",
+          "keys": [
+            "coef",
+            "max_abs",
+            "pred",
+            "residual",
+            "rms",
+            "y"
+          ],
+          "length": 6
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/T_f/coef",
+      "target": {
+        "type": "list",
+        "length": 2
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "T_f/coef",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 2
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 2
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/T_f/coef/0",
+      "target": {
+        "type": "float",
+        "value": 2.4563600080751975
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "T_f/coef/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 2.4563600080752024
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-4.884981308350688777863979339599609375E-15",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/T_f/coef/1",
+      "target": {
+        "type": "float",
+        "value": 41.43397495699127
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "T_f/coef/1",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 41.433974956991264
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "7.10542735760100185871124267578125E-15",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/T_f/pred",
+      "target": {
+        "type": "list",
+        "length": 3
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "T_f/pred",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 3
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 3
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/T_f/pred/0",
+      "target": {
+        "type": "float",
+        "value": 15.507244315357779
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "T_f/pred/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 15.507244315357783
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-3.5527136788005009293556213378906250E-15",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/T_f/pred/1",
+      "target": {
+        "type": "float",
+        "value": 12.814853747323015
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "T_f/pred/1",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 12.814853747323019
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-3.5527136788005009293556213378906250E-15",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/T_f/pred/2",
+      "target": {
+        "type": "float",
+        "value": 10.677901937319195
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "T_f/pred/2",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 10.677901937319199
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-3.552713678800500929355621337890625E-15",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/T_f/residual",
+      "target": {
+        "type": "list",
+        "length": 3
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "T_f/residual",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 3
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 3
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/T_f/residual/0",
+      "target": {
+        "type": "float",
+        "value": 0.30525568464222097
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "T_f/residual/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.3052556846422178
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "3.164135620181696140207350254058837890625E-15",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/T_f/residual/1",
+      "target": {
+        "type": "float",
+        "value": -0.6898537473230153
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "T_f/residual/1",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": -0.6898537473230192
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "3.88578058618804789148271083831787109375E-15",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/T_f/residual/2",
+      "target": {
+        "type": "float",
+        "value": 0.384598062680805
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "T_f/residual/2",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.3845980626808014
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "3.608224830031758756376802921295166015625E-15",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/T_f/rms",
+      "target": {
+        "type": "float",
+        "value": 0.48887452225147576
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "T_f/rms",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.488874522251476
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-2.2204460492503130808472633361816406250E-16",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/T_f/max_abs",
+      "target": {
+        "type": "float",
+        "value": 0.6898537473230153
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "T_f/max_abs",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.6898537473230192
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-3.88578058618804789148271083831787109375E-15",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/T_f/y",
+      "target": {
+        "type": "list",
+        "length": 3
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "T_f/y",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 3
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 3
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/T_f/y/0",
+      "target": {
+        "type": "float",
+        "value": 15.8125
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "T_f/y/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 15.8125
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/T_f/y/1",
+      "target": {
+        "type": "float",
+        "value": 12.125
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "T_f/y/1",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 12.125
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/T_f/y/2",
+      "target": {
+        "type": "float",
+        "value": 11.0625
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "T_f/y/2",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 11.0625
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_rs",
+      "target": {
+        "type": "object",
+        "keys": [
+          "coef",
+          "max_abs",
+          "pred",
+          "residual",
+          "rms",
+          "y"
+        ],
+        "length": 6
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "R_t_over_rs",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "object",
+          "keys": [
+            "coef",
+            "max_abs",
+            "pred",
+            "residual",
+            "rms",
+            "y"
+          ],
+          "length": 6
+        },
+        "target_shape": {
+          "type": "object",
+          "keys": [
+            "coef",
+            "max_abs",
+            "pred",
+            "residual",
+            "rms",
+            "y"
+          ],
+          "length": 6
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_rs/coef",
+      "target": {
+        "type": "list",
+        "length": 2
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "R_t_over_rs/coef",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 2
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 2
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_rs/coef/0",
+      "target": {
+        "type": "float",
+        "value": 0.1740337386074004
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "R_t_over_rs/coef/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.17403373860740046
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-5.5511151231257827021181583404541015625E-17",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_rs/coef/1",
+      "target": {
+        "type": "float",
+        "value": 1.6214785697580834
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "R_t_over_rs/coef/1",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 1.6214785697580834
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "0E-52",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_rs/pred",
+      "target": {
+        "type": "list",
+        "length": 3
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "R_t_over_rs/pred",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 3
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 3
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_rs/pred/0",
+      "target": {
+        "type": "float",
+        "value": 0.6847674841053109
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "R_t_over_rs/pred/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.6847674841053109
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "0E-51",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_rs/pred/1",
+      "target": {
+        "type": "float",
+        "value": 0.5794033810469212
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "R_t_over_rs/pred/1",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.5794033810469214
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-1.1102230246251565404236316680908203125E-16",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_rs/pred/2",
+      "target": {
+        "type": "float",
+        "value": 0.49577583702963457
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "R_t_over_rs/pred/2",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.49577583702963457
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "0E-51",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_rs/residual",
+      "target": {
+        "type": "list",
+        "length": 3
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "R_t_over_rs/residual",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 3
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 3
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_rs/residual/0",
+      "target": {
+        "type": "float",
+        "value": -0.010193971923592393
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "R_t_over_rs/residual/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": -0.01019397192359243
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "3.642919299551294898265041410923004150390625E-17",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_rs/residual/1",
+      "target": {
+        "type": "float",
+        "value": 0.02303757173216392
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "R_t_over_rs/residual/1",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.02303757173216386
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "5.89805981832114412100054323673248291015625E-17",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_rs/residual/2",
+      "target": {
+        "type": "float",
+        "value": -0.012843599808571415
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "R_t_over_rs/residual/2",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": -0.012843599808571433
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "1.73472347597680709441192448139190673828125E-17",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_rs/rms",
+      "target": {
+        "type": "float",
+        "value": 0.016325897943005808
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "R_t_over_rs/rms",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.016325897943005794
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "1.38777878078144567552953958511352539062500E-17",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_rs/max_abs",
+      "target": {
+        "type": "float",
+        "value": 0.02303757173216392
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "R_t_over_rs/max_abs",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.02303757173216386
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "5.89805981832114412100054323673248291015625E-17",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_rs/y",
+      "target": {
+        "type": "list",
+        "length": 3
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "R_t_over_rs/y",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 3
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 3
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_rs/y/0",
+      "target": {
+        "type": "float",
+        "value": 0.6745735121817185
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "R_t_over_rs/y/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.6745735121817185
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "0E-51",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_rs/y/1",
+      "target": {
+        "type": "float",
+        "value": 0.6024409527790852
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "R_t_over_rs/y/1",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.6024409527790852
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "0E-53",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_rs/y/2",
+      "target": {
+        "type": "float",
+        "value": 0.48293223722106315
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "R_t_over_rs/y/2",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.48293223722106315
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "0E-50",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_2gE",
+      "target": {
+        "type": "object",
+        "keys": [
+          "coef",
+          "max_abs",
+          "pred",
+          "residual",
+          "rms",
+          "y"
+        ],
+        "length": 6
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "R_t_over_2gE",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "object",
+          "keys": [
+            "coef",
+            "max_abs",
+            "pred",
+            "residual",
+            "rms",
+            "y"
+          ],
+          "length": 6
+        },
+        "target_shape": {
+          "type": "object",
+          "keys": [
+            "coef",
+            "max_abs",
+            "pred",
+            "residual",
+            "rms",
+            "y"
+          ],
+          "length": 6
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_2gE/coef",
+      "target": {
+        "type": "list",
+        "length": 2
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "R_t_over_2gE/coef",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 2
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 2
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_2gE/coef/0",
+      "target": {
+        "type": "float",
+        "value": 0.22039579692111308
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "R_t_over_2gE/coef/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.22039579692111305
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "2.77555756156289135105907917022705078125E-17",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_2gE/coef/1",
+      "target": {
+        "type": "float",
+        "value": 1.644306905774445
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "R_t_over_2gE/coef/1",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 1.6443069057744462
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-1.1102230246251565404236316680908203125E-15",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_2gE/pred",
+      "target": {
+        "type": "list",
+        "length": 3
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "R_t_over_2gE/pred",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 3
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 3
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_2gE/pred/0",
+      "target": {
+        "type": "float",
+        "value": 0.7383200176892953
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "R_t_over_2gE/pred/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.7383200176892957
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-3.3306690738754696212708950042724609375E-16",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_2gE/pred/1",
+      "target": {
+        "type": "float",
+        "value": 0.6314725233647244
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "R_t_over_2gE/pred/1",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.6314725233647246
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-2.2204460492503130808472633361816406250E-16",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_2gE/pred/2",
+      "target": {
+        "type": "float",
+        "value": 0.5466676109192292
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "R_t_over_2gE/pred/2",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.5466676109192294
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-2.220446049250313080847263336181640625E-16",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_2gE/residual",
+      "target": {
+        "type": "list",
+        "length": 3
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "R_t_over_2gE/residual",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 3
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 3
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_2gE/residual/0",
+      "target": {
+        "type": "float",
+        "value": -0.013205835873298488
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "R_t_over_2gE/residual/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": -0.013205835873298773
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "2.84494650060196363483555614948272705078125E-16",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_2gE/residual/1",
+      "target": {
+        "type": "float",
+        "value": 0.029844146471525
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "R_t_over_2gE/residual/1",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.02984414647152474
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "2.602085213965210641617886722087860107421875E-16",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_2gE/residual/2",
+      "target": {
+        "type": "float",
+        "value": -0.016638310598225736
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "R_t_over_2gE/residual/2",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": -0.01663831059822597
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "2.324529457808921506511978805065155029296875E-16",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_2gE/rms",
+      "target": {
+        "type": "float",
+        "value": 0.02114947248585148
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "R_t_over_2gE/rms",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.021149472485851476
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "3.4694469519536141888238489627838134765625E-18",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_2gE/max_abs",
+      "target": {
+        "type": "float",
+        "value": 0.029844146471525
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "R_t_over_2gE/max_abs",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.02984414647152474
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "2.602085213965210641617886722087860107421875E-16",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_2gE/y",
+      "target": {
+        "type": "list",
+        "length": 3
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "R_t_over_2gE/y",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 3
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 3
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_2gE/y/0",
+      "target": {
+        "type": "float",
+        "value": 0.7251141818159968
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "R_t_over_2gE/y/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.7251141818159968
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "0E-53",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_2gE/y/1",
+      "target": {
+        "type": "float",
+        "value": 0.6613166698362494
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "R_t_over_2gE/y/1",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.6613166698362494
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "0E-51",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/R_t_over_2gE/y/2",
+      "target": {
+        "type": "float",
+        "value": 0.5300293003210035
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "R_t_over_2gE/y/2",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.5300293003210035
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "0E-50",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/x",
+      "target": {
+        "type": "list",
+        "length": 3
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "x",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 3
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 3
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/x/0",
+      "target": {
+        "type": "float",
+        "value": 0.3149802624737183
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "x/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.3149802624737183
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "0E-54",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/x/1",
+      "target": {
+        "type": "float",
+        "value": 0.25
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "x/1",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.25
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "0.00",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/x/2",
+      "target": {
+        "type": "float",
+        "value": 0.19842513149602495
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "x/2",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.19842513149602495
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "0E-55",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/uncertified",
+      "target": {
+        "type": "list",
+        "length": 1
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "uncertified",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 1
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 1
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/uncertified/0",
+      "target": {
+        "type": "string",
+        "value": "S4_128_s4"
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "uncertified/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "string",
+          "value": "S4_128_s4"
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/value_at_other_members",
+      "target": {
+        "type": "object",
+        "keys": [
+          "S4_16_s4"
+        ],
+        "length": 1
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "value_at_other_members",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "object",
+          "keys": [
+            "S4_16_s4"
+          ],
+          "length": 1
+        },
+        "target_shape": {
+          "type": "object",
+          "keys": [
+            "S4_16_s4"
+          ],
+          "length": 1
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/value_at_other_members/S4_16_s4",
+      "target": {
+        "type": "object",
+        "keys": [
+          "R_t_over_2gE",
+          "R_t_over_rs",
+          "T_f",
+          "basis",
+          "record"
+        ],
+        "length": 5
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "value_at_other_members/S4_16_s4",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "object",
+          "keys": [
+            "R_t_over_2gE",
+            "R_t_over_rs",
+            "T_f",
+            "basis",
+            "record"
+          ],
+          "length": 5
+        },
+        "target_shape": {
+          "type": "object",
+          "keys": [
+            "R_t_over_2gE",
+            "R_t_over_rs",
+            "T_f",
+            "basis",
+            "record"
+          ],
+          "length": 5
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/value_at_other_members/S4_16_s4/basis",
+      "target": {
+        "type": "list",
+        "length": 2
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "value_at_other_members/S4_16_s4/basis",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 2
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 2
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/value_at_other_members/S4_16_s4/basis/0",
+      "target": {
+        "type": "float",
+        "value": 1.0
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "value_at_other_members/S4_16_s4/basis/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 1.0
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "0",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/value_at_other_members/S4_16_s4/basis/1",
+      "target": {
+        "type": "float",
+        "value": 0.3968502629920499
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "value_at_other_members/S4_16_s4/basis/1",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.3968502629920499
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "0E-54",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/value_at_other_members/S4_16_s4/record",
+      "target": {
+        "type": "object",
+        "keys": [
+          "none_to"
+        ],
+        "length": 1
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "value_at_other_members/S4_16_s4/record",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "object",
+          "keys": [
+            "none_to"
+          ],
+          "length": 1
+        },
+        "target_shape": {
+          "type": "object",
+          "keys": [
+            "none_to"
+          ],
+          "length": 1
+        }
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/value_at_other_members/S4_16_s4/record/none_to",
+      "target": {
+        "type": "float",
+        "value": 40.0
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "value_at_other_members/S4_16_s4/record/none_to",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 40.0
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/value_at_other_members/S4_16_s4/T_f",
+      "target": {
+        "type": "float",
+        "value": 18.899443866563193
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "value_at_other_members/S4_16_s4/T_f",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 18.899443866563196
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-3.552713678800500929355621337890625E-15",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/value_at_other_members/S4_16_s4/R_t_over_rs",
+      "target": {
+        "type": "float",
+        "value": 0.8175179354518687
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "value_at_other_members/S4_16_s4/R_t_over_rs",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.8175179354518687
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "0E-52",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/size_diag_third_with_uncertified/value_at_other_members/S4_16_s4/R_t_over_2gE",
+      "target": {
+        "type": "float",
+        "value": 0.8729394249173454
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_diag_third_with_uncertified",
+          "version": "current",
+          "path": "value_at_other_members/S4_16_s4/R_t_over_2gE",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "float",
+          "value": 0.8729394249173458
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-3.3306690738754696212708950042724609375E-16",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "controls_sha256": "9d74c2e91128f2ee303711aff83125cd8957980299667ad02b080e9f2a92bfdd",
+  "source_snapshot": {
+    "spec_sha256": "0b48598da81554c60547ec239bb505cb825f094336b0fe4249be453a82c78efe",
+    "code_sha256": {
+      "packet_core_v1.py": "eff9370f7679f23c34cddc24fa34b19853b757be78e17e1bfe1eae68afe95a47",
+      "control_PACKET_v1.py": "94abfd125386d9511ea7e9cb70ae72f7dd834b9d438ca7f4687c00f630662ded",
+      "run_PACKET_secondroute_v1.py": "e16841bd2fb74d6476ca1cd0fe5eff2daac9b73dc22c6c6b26ae801008fb48d5",
+      "read_PACKET_secondroute_v1.py": "2f0a1f9819556c4a6b065fcfb3eafe097d3d1e0054bf8966f1c923fae3d6e936",
+      "read_PACKET_sources_v1.py": "330d9d0501cbb18f2cc713773d103bd1b6d338969a8b184450d31572ae7d24a0",
+      "summarize_PACKET_secondroute_v1.py": "c486db59f8f60d9354fbdd9170f45cc82248892aa3681cff4fe3ea3e355ef855",
+      "cpu_runtime.py": "207c7a16432e722fa0b77c1e9d05e0d2ef712b540a95f25762bcb13cd10feb85"
+    }
+  },
+  "records": 224,
+  "columns": 32,
+  "max_imaginary_expectation": 3.7828735719676494e-17,
+  "observables_sha256": "b4c03c61e7c160ec725cc95b0b74acc64422681353dcad565dae3d8a9588f988",
+  "pointwise_source_columns": [
+    "epsilon",
+    "J",
+    "epsilon_plus_WJ",
+    "row_bound",
+    "cauchy_bound"
+  ],
+  "saved_state_sha256": "5868cf42fd93603fcba8a2975bb9eb12d6caec6db7e681b8a225616e33630628",
+  "free_projector_sha256": "d826abc24a5090da29c233aac44a147b7f9c5f54932a64cea0cb4df10c6416c4",
+  "free_eigenvalues_sha256": "7e7d0990babbd4b51933f31eaa53c61fbd4f9e713deab8dec57924d69ddfcd56",
+  "free_eigenvectors_sha256": "c4712fbdfee63dab0a981c73eb8456a71d7a34a5534f2b2d855a764d66e7306c",
+  "preparation_sha256": "7dd10da90827e80f9a7d58f0590a4d19ef783e453fd555e2ee9d2c8cb1eb6048",
+  "root_quality_sha256": "ce249cf6f4efff6d8f9fc29fa9409f40f41e6c99d3dc9ff8f55b0a8ef73a7a6a",
+  "admission_sha256": "396ca97733fb050f88b5e91319d3816346252456b38a383cfbdf981a1ff47b53",
+  "root_missing_representation": "NaN in numerical arrays; unavailable in presentation",
+  "rank_one_source": "normalized P=0 radial probe; no background sea claim",
+  "runtime": {
+    "host": "compute-host",
+    "pid": 2197388,
+    "threads": 15,
+    "niceness": 10,
+    "device": "CPU"
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "schema": "WEB40I_X4_scalar_execution_v1",
+  "status": "complete",
+  "purpose": "Y3 point/sine scalars and Y1 bound-rest ray-map comparison",
+  "command": [
+    "<internal>/python",
+    "<internal>/check_WEB40I_formation_scalar_v1.py",
+    "--output-dir",
+    "<internal>/run",
+    "--marginal-json",
+    "<internal>/scalar_and_inherited.json"
+  ],
+  "external_watchdog_parent": [
+    "timeout",
+    "--signal=KILL",
+    "30s",
+    "nice",
+    "-n",
+    "10",
+    "<internal>/python",
+    "<internal>/run_WEB40I_formation_scalar_v1.py",
+    "--output-dir",
+    "<internal>/run",
+    "--producer-sha256",
+    "3fcfb4f10949f4e1577af675fb7ad2ee06f920312f442d805a6f2296f3017795",
+    "--bound-module-sha256",
+    "98cd30862409b846a6864c51a2ed0d16030f77219558f594a4109bec1e289c0b",
+    "--marginal-json",
+    "<internal>/scalar_and_inherited.json"
+  ],
+  "launcher": {
+    "path": "<internal>/run_WEB40I_formation_scalar_v1.py",
+    "sha256": "2432a33790362132d53c7c315f516fb90dc8ae6ae791a140d81dfe65b853ab2b"
+  },
+  "producer": {
+    "path": "<internal>/check_WEB40I_formation_scalar_v1.py",
+    "sha256_before": "3fcfb4f10949f4e1577af675fb7ad2ee06f920312f442d805a6f2296f3017795",
+    "sha256_after": "3fcfb4f10949f4e1577af675fb7ad2ee06f920312f442d805a6f2296f3017795",
+    "identity_unchanged": true
+  },
+  "bound_module": {
+    "path": "<internal>/WEB40I_bound_ball_scalar_v1.py",
+    "sha256_before": "98cd30862409b846a6864c51a2ed0d16030f77219558f594a4109bec1e289c0b",
+    "sha256_after": "98cd30862409b846a6864c51a2ed0d16030f77219558f594a4109bec1e289c0b",
+    "identity_unchanged": true
+  },
+  "hard_outer_wall_seconds": 30,
+  "graceful_stop_seconds": 28,
+  "whole_X4_budget_seconds": 1200,
+  "aggregate_budget_debit_seconds": 30,
+  "debit_kind": "conservative full scalar allowance, not a reset for later X4 stages",
+  "memory_limit_bytes_before_producer_exec": 4294967296,
+  "thread_environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "CUDA_VISIBLE_DEVICES": "",
+  "root_free_bytes": 132461277184,
+  "MemAvailable_bytes": 569073704960,
+  "automatic_retry": false,
+  "producer_pid": 4192549,
+  "returncode": 0,
+  "forced_stop": null,
+  "producer_wall_seconds_including_interpreter_startup_and_finalization": 7.372092537581921,
+  "launcher_wall_seconds_before_final_receipt_write": 7.450405478477478,
+  "user_cpu_seconds": 6.534756,
+  "system_cpu_seconds": 0.280746,
+  "child_peak_rss_kib": 45340,
+  "stdout_tail": "{\"status\": \"scalar_complete_profile_input_incomplete\", \"result\": \"<internal>/scalar.json\", \"full_X4_task_complete\": false}\n",
+  "stderr_tail": "",
+  "stdout_characters": 166,
+  "stderr_characters": 0,
+  "result": {
+    "path": "<internal>/scalar.json",
+    "bytes": 7373003,
+    "sha256": "a232071513e4d64129ca05f1cb5edecb4cae0a090e587355b5ccafca51b457b5"
+  }
+}

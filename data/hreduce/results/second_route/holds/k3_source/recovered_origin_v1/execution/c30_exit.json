@@ -1,0 +1,40 @@
+{
+  "case": "c30",
+  "status": "completed",
+  "command": [
+    "timeout",
+    "-s",
+    "TERM",
+    "-k",
+    "5s",
+    "30m",
+    "nice",
+    "-n",
+    "10",
+    "<internal>/python",
+    "<internal>/hold_recovered_origin.py",
+    "--descriptor",
+    "<internal>/c30_descriptor.json",
+    "--comparison",
+    "<internal>/origin_comparison_extract.json",
+    "--build",
+    "<internal>/build_v3",
+    "--out",
+    "<internal>/c30"
+  ],
+  "cpu_only": true,
+  "numerical_threads": 1,
+  "memory_limit_bytes": 17179869184,
+  "consumer_pins": {
+    "hold_recovered_input.py": "9aa9e4fd8d2b117d8526a869f5269f4163f5d95271cdacee1d09afb68840add3",
+    "hold_recovered_origin.py": "d67685853ad3e98af44097656521c8e14a162e5d80d80fb8beab804373926088"
+  },
+  "descriptor_sha256": "51885ae993d657bada74ed59eb5ba2de8c941c3cbaf44221e7a7d21049226c70",
+  "runner_sha256": "d98c9c98af2439e77a27442168d9b25bee5e20fa30c1ff72dcce284f7e76cc39",
+  "started_unix": 1792310126.6051753,
+  "returncode": 0,
+  "elapsed_seconds": 53.25291683897376,
+  "maximum_child_rss_kib": 2470432,
+  "stdout": "{\"event\": \"recovered_origin_control_complete\", \"endpoint\": 240, \"coarse_input_gate\": true, \"E_hC\": -5194.433731452795, \"current\": -9.439105084357857e-09, \"eigensolver_release\": \"pending actual author and independent judgment\"}\n",
+  "stderr": ""
+}

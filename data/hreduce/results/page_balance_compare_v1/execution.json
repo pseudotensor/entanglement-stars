@@ -1,0 +1,63 @@
+{
+  "status": "finished",
+  "purpose": "Inbox86 all-row saved balance comparison",
+  "producer_sha256": "c98df4a995d7ce13664db8bcc6ab97ad392371ab8b71818787158484db543035",
+  "wrapper_sha256": "b5badae0d3c0fe8c68b11221bcddb3ea583c25c31bcbe96b2be157bd66951a7e",
+  "command": [
+    "timeout",
+    "--foreground",
+    "-s",
+    "KILL",
+    "60s",
+    "nice",
+    "-n",
+    "10",
+    "taskset",
+    "-c",
+    "9",
+    "<internal>/python",
+    "<internal>/page_balance_compare_v1.py"
+  ],
+  "wrapper_pid": 2207191,
+  "environment_settings": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1",
+    "CUDA_VISIBLE_DEVICES": "",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "resources": {
+    "wall_seconds": 60,
+    "cpu_seconds": 30,
+    "threads": 1,
+    "address_space_bytes": 1073741824,
+    "internal_deadline_seconds": 55
+  },
+  "child_pid": 2207198,
+  "exit_code": 0,
+  "elapsed_seconds": 6.3041184432804585,
+  "maximum_child_rss_kib": 85232,
+  "comparison_result.json": {
+    "size": 1190622,
+    "sha256": "297d0652da30a0b8ea96c36e75442383222857570d38eceb3aec635addbbdb1f"
+  },
+  "row_comparisons.jsonl": {
+    "size": 35130381,
+    "sha256": "7279337a0ab3a6f4561ce4b0a8ab2bc85fa2d2f956312c65169de30f4189c803"
+  },
+  "aggregate_comparisons.jsonl": {
+    "size": 4722701,
+    "sha256": "f4d6cde0787eabf82f657a4209f19af0f6ed6ff5a5d53dacb0cb8d51fafb37be"
+  },
+  "stdout.log": {
+    "size": 67,
+    "sha256": "3099718430e0f753c8b6c2959bce3ee60057ea0318ebf39f10960c8414c1901b"
+  },
+  "stderr.log": {
+    "size": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

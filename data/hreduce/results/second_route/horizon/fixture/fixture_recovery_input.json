@@ -1,0 +1,53 @@
+{
+  "inputs": [
+    {
+      "path": "<internal>/horizon_fixture_arrays.npz",
+      "sha256": "0dde937fbd8a24bf76f9bf6175921912fc34f887b5e191f66b9112ada6de2458"
+    },
+    {
+      "path": "<internal>/fixture_arrays.npz",
+      "sha256": "e2643c5ff3efd152ba1aeebc639112752020430a45c11f0e6938adf2c90787a2"
+    },
+    {
+      "path": "<internal>/fixture_exit.json",
+      "sha256": "6e216794c42d204ba99d6930c7387b4966e83452d51f7e7721d5b7136d10bbd6"
+    },
+    {
+      "path": "<internal>/recover_saved_horizon_fixture.py",
+      "sha256": "2147e5bd543d47fbf3f35da2116e018c55cacd2d0293340262c339665835b960"
+    },
+    {
+      "path": "<internal>/hreduce_horizon_json.py",
+      "sha256": "b14df91339323133a59e455974761ad0c8c3a199d82cbaadf3efd93329d45b8b"
+    },
+    {
+      "path": "<internal>/horizon_exact.py",
+      "sha256": "5411e253cb6bad08a27eee2d5afa97a347bffdf71e42766e91554bc82db95f38"
+    },
+    {
+      "path": "<internal>/horizon_bins.py",
+      "sha256": "030ab15b9c3ff30a0193557c9f8932c06b4f7eecab0e7ba578d61231f364a711"
+    },
+    {
+      "path": "<internal>/hold_exact.py",
+      "sha256": "4b58467b3a76f14894885220b8cb247c964be0a086478958e856308a42c60598"
+    },
+    {
+      "path": "<internal>/hold_error_bounds.py",
+      "sha256": "12bacc16d463d8906da8010acffc59497d6dfab810b2804bd23ef37e45ba58c8"
+    },
+    {
+      "path": "<internal>/hold_precision_checks.py",
+      "sha256": "1f6f58a5a87958ba62f9de8a8797ab282864c71d24700eab5dcfc032c6d5b7da"
+    },
+    {
+      "path": "<internal>/hold_endpoint_control.py",
+      "sha256": "25d43bd4bb0342fb02d61b5579073683177079351efdf263f30f21def08bc421"
+    },
+    {
+      "path": "<internal>/hold_spectral_checks.py",
+      "sha256": "cac12901c4a0f6815f0b22d2dbadc578ed9f1ad747692a1f871afe85e0155fbe"
+    }
+  ],
+  "scope": "HZ5 report-only recovery; no new transform, eigensolve, binning or array writes"
+}

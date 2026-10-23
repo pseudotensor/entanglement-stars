@@ -1,0 +1,120 @@
+\subsection*{A sufficient clock-preserving time law}
+Choose commuting ruler profiles $\psi$, fixed-site quantum matter
+coordinates $z$ with their ordinary symplectic 1-form $\vartheta$,
+and the same-law off-constraint generator
+$H=B(\psi,z)+N^TC(\psi,z)$.
+Let $J=C_\psi$ be invertible on the clock surface, with fixed collar
+and controls.
+The additional principle that the rulers are auxiliary, with no
+independent kinetic or Berry term, defines the action
+\[
+ I=\int[\vartheta(z)\dot z-B(\psi,z)-N^TC(\psi,z)]\,dT .
+\]
+Its ruler equation derives $N_*=-J^{-T}B_\psi$.
+With $C=0$ solved as $\psi=\phi(z)$, implicit differentiation gives
+\[
+ \begin{aligned}
+ D_zB_{\rm red}&=B_z-C_z^TJ^{-T}B_\psi
+               =B_z+C_z^TN_*,\\
+ B_{\rm red}&=B(\phi(z),z).
+ \end{aligned}
+\]
+Thus ordinary Hamiltonian evolution by $B_{\rm red}$, together with
+$\dot\psi=-J^{-1}C_z\dot z$, preserves the clock row.
+Autonomous reduced evolution conserves $B_{\rm red}$ and preserves
+the quantum-state norm on its domain.
+This is a local commuting-profile/quantum-matter reduction, not a
+linear quantum theory of noncommuting rulers.
+[X: auxiliary-ruler variational reduction; implicit reduced-energy
+differentiation.]
+
+Preservation and conservation alone do not generally select this law.
+For the canonical matter bracket define
+$b=\{C,B\}$, $\Omega=\{C,C\}=-\Omega^T$ and
+$v_*=b+\Omega N_*$.
+The constraint chain rule and the boundary-energy derivative give
+\[
+ J\dot\psi=-b-\Omega N,\qquad
+ \dot B=-(N-N_*)^Tv_* .
+\]
+Where the dimension permits, every $N=N_*+Av_*$ with
+$A^T=-A$ also has zero drift.
+Positivity of lapse must still be checked.
+[X: matter-bracket chain rule; total-energy chain rule.]
+
+A concrete action counterfamily keeps the same static rows but
+changes the symplectic structure.
+Take canonical oscillator coordinates $(q,p)$ and 2 rulers with
+$C=(\psi_1-\psi_{01}-q,\psi_2-\psi_{02}-p)^T$.
+Choose positive constants $\psi_{0i},N_{0i}$ and
+$B=(q^2+p^2)/2-N_0^TC$.
+Add the ruler 1-form $\lambda(\psi_1-\psi_{01})\dot\psi_2$ to
+the action above, with $0\le\lambda<1$.
+All static equations are unchanged.
+On $C=0$ its kinetic term is
+$p\dot q+\lambda q\dot p$, equivalent up to a total derivative to
+$(1-\lambda)p\dot q$.
+The oscillator frequency is therefore $(1-\lambda)^{-1}$, while
+its positive reduced energy remains $(q^2+p^2)/2$.
+The lapse vector is $N=N_0-\lambda(q,p)^T/(1-\lambda)$, positive
+on a sufficiently small orbit; both rulers remain positive there.
+This is a logical countermodel to static selection, not an
+alternative microscopic $H_*$.
+
+For a strong quantum constraint represented by a moving physical
+projector $P(T)$, preservation instead requires
+$\dot P=[K,P]/(i\hbar)$.
+Its off-diagonal solution is
+$K=i\hbar[\dot P,P]+K_{\rm diag}$ with
+$[K_{\rm diag},P]=0$.
+An instantaneous eigenprojector commuting with $K$ therefore cannot
+follow a moving prescribed projector without a connection term.
+For a fixed physical projector with weak constraints $C_xP=0$,
+central lapse terms cannot
+repair leakage:
+$(1-P)(B+\sum_xN_xC_x)P=(1-P)BP$.
+H2 does not supply the missing projector transport or the
+block-diagonal generator.
+
+\paragraph*{SOURCES.}
+\begingroup\footnotesize
+\path{<internal>/P07_conservation_derivation.md},
+sections 1--4;
+\path{<internal>/response.md},
+sections 1--4: fixed physical representation, corrected lapse,
+drift and freedom in the temporal symplectic data.
+\path{<internal>/P38_derivation.md},
+sections 1, 5--6: the full dressed Jacobian and positivity domain,
+auxiliary action and reduced flow.
+\path{<internal>/P26_operator_theory.md},
+sections 5--6: weak-constraint leakage and a declared strong
+reduced evolution.
+\path{<internal>/response.md},
+sections 2 and 8: instantaneous vacuum protection does not transport
+a moving sea; the projector criterion above gives the direct check.
+\path{<internal>/final4_lapse_drift_short.tex}
+and
+\path{<internal>/redteam_final4_lapse_drift_short.tex}:
+the 2 drift calculations.
+\path{<internal>/STATE.tex},
+operator/source [S] entry and O5: these conditional constructions
+do not establish a global positive-lapse physical representation.
+All source derivatives include the reference, regulator, moving
+excitation filter and retained collar terms.
+\endgroup
+% Governing source: <internal>/GOAL_alt.md,
+% duty 4(5). In P07's convention B=Q-psi^(-1).C, so
+% N_* = psi^(-1)-J^(-T) Q_psi on C=0.
+% The explicit pure-ruler Berry counterfamily is reconstructed here:
+% variations of psi1,psi2 give N1-N01=lambda dot psi2 and
+% N2-N02=-lambda dot psi1. Reduction gives
+% dot q=p/(1-lambda), dot p=-q/(1-lambda). The fixed static point
+% q=p=0 has N=N0 and psi=psi0 for every lambda.
+% It keeps a positive regular local domain but changes the time law.
+% In oscillator units the original frequency is 1. The direct matter
+% equations are dot q=p-(N2-N02), dot p=-q+(N1-N01).
+% Here v_*=(-p,q), so delta N.v_*=0 also checks energy conservation
+% independently through the accepted boundary-drift identity.
+% Projector proof: differentiating P^2=P makes dot P off diagonal;
+% [[dot P,P],P]=dot P. Hence the displayed Hermitian K has exactly
+% the required off-diagonal block. No microscopic K is inferred.

@@ -1,0 +1,124 @@
+{
+  "status": "terminal",
+  "purpose": "Computation C prescribed dense fixture control",
+  "inputs": {
+    "producer": {
+      "path": "<internal>/check_C_fixture_second_route_v1.py",
+      "bytes": 45168,
+      "sha256": "da791d379a076469b6d8598013554e18d3acdc6b560bbf72d6c184a84e8b8f59"
+    },
+    "specification": {
+      "path": "<internal>/C_fixture_second_route_v1.tex",
+      "bytes": 45571,
+      "sha256": "de01d8ded9806e2856caae436cb10ce81fe289617d61537a1dc4179d6e9d8540"
+    },
+    "review": {
+      "path": "<internal>/redteam_C_fixture_second_route_v1.tex",
+      "bytes": 42289,
+      "sha256": "db74c278227848232d0f653932556c42dfcc09eb00bd7ee1c1a63606392d502e"
+    }
+  },
+  "launcher": {
+    "path": "<internal>/run_C_fixture_second_route_v1.py",
+    "bytes": 8696,
+    "sha256": "c5977f1249ad708fe85ed1a55d30f38109a7b455959967e76d828edcd676237d"
+  },
+  "installed_versions": {
+    "numpy": "2.2.6",
+    "scipy": "1.17.0",
+    "threadpoolctl": "3.6.0"
+  },
+  "command": [
+    "<internal>/python",
+    "<internal>/check_C_fixture_second_route_v1.py",
+    "--output-dir",
+    "<internal>/run",
+    "--outer-start",
+    "17972241.256147943"
+  ],
+  "parent_command": [
+    "timeout",
+    "--signal=KILL",
+    "1800s",
+    "nice",
+    "-n",
+    "10",
+    "<internal>/python",
+    "<internal>/run_C_fixture_second_route_v1.py",
+    "--producer-sha256",
+    "da791d379a076469b6d8598013554e18d3acdc6b560bbf72d6c184a84e8b8f59",
+    "--specification-sha256",
+    "de01d8ded9806e2856caae436cb10ce81fe289617d61537a1dc4179d6e9d8540",
+    "--review-sha256",
+    "db74c278227848232d0f653932556c42dfcc09eb00bd7ee1c1a63606392d502e"
+  ],
+  "cpu_affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "requested_threads": 8,
+  "address_space_bytes": 4294967296,
+  "requested_nice_at_least": 10,
+  "environment_settings": {
+    "OMP_NUM_THREADS": "8",
+    "OPENBLAS_NUM_THREADS": "8",
+    "MKL_NUM_THREADS": "8",
+    "NUMEXPR_NUM_THREADS": "8",
+    "VECLIB_MAXIMUM_THREADS": "8",
+    "BLIS_NUM_THREADS": "8",
+    "CUDA_VISIBLE_DEVICES": "",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONNOUSERSITE": "1",
+    "PYTHONUNBUFFERED": "1",
+    "MALLOC_ARENA_MAX": "2"
+  },
+  "MemAvailable_bytes": 584080863232,
+  "root_free_bytes": 131954057216,
+  "data_free_bytes": 620312297472,
+  "outer_hard_seconds": 1800,
+  "producer_save_deadline_seconds": 1740,
+  "no_new_dense_after_seconds": 1680,
+  "own_child_term_seconds": 1790,
+  "own_child_kill_seconds": 1795,
+  "no_automatic_retry": true,
+  "wrapper_pid": 2528838,
+  "started_unix": 1792374110.479907,
+  "child_pid": 2529316,
+  "child_returncode": 0,
+  "wall_seconds": 268.33120146766305,
+  "child_peak_RSS_KiB": 241376,
+  "child_user_CPU_seconds": 1570.095926,
+  "child_system_CPU_seconds": 12.819472,
+  "locator_finalization": {
+    "mode": "producer raw-file hashes plus terminal log hash",
+    "producer_raw_listing_was_bound": true,
+    "terminal_log": {
+      "path": "<internal>/process.log",
+      "bytes": 104,
+      "sha256": "69f819d0917357c3f6caead7c8a9cda48bcaf08dc144e8fdb150824d7c66f414"
+    }
+  },
+  "summary.json": {
+    "path": "<internal>/summary.json",
+    "bytes": 2788166,
+    "sha256": "fd8058df9cde4b18a7da5485853a50111a90211f0874040662715d7800f88073"
+  },
+  "LARGE_FILES.tsv": {
+    "path": "<internal>/LARGE_FILES.tsv",
+    "bytes": 108195,
+    "sha256": "84e5dbe62f7d5bd539ea6f7dc4a92b2f2f8704ef11b9c3124f88255330b3a8e7"
+  },
+  "process.log": {
+    "path": "<internal>/process.log",
+    "bytes": 104,
+    "sha256": "69f819d0917357c3f6caead7c8a9cda48bcaf08dc144e8fdb150824d7c66f414"
+  },
+  "producer_complete": true,
+  "execution_complete": true
+}

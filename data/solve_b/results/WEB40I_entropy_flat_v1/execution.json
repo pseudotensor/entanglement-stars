@@ -1,0 +1,41 @@
+{
+  "state": "finished",
+  "command": [
+    "<internal>/python",
+    "<internal>/check_WEB40I_entropy_flat_v1.py",
+    "--directory",
+    "<internal>/WEB40I_entropy_flat_v1"
+  ],
+  "source_sha256": "69f1d79697cbf5a1451674939c9655fc6e4671e3877c3f49df65e6c8650fe5a1",
+  "code_origin_commit": "a660aef86748c8b7737dfc564607b01c459eec14",
+  "start_utc": "2026-10-18T20:54:19.631914+00:00",
+  "pre_python_limits": {
+    "address_space_bytes": 4294967296,
+    "cpu_seconds": 4800,
+    "affinity": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "nice": 10,
+    "blas_threads": 4,
+    "cuda_visible_devices": ""
+  },
+  "hard_whole_process_group_limit_seconds": 1200,
+  "initial_floors": {
+    "root_free_bytes": 132943409152,
+    "data_free_bytes": 282378809344,
+    "mem_available_bytes": 563709784064
+  },
+  "worker_pid": 2766203,
+  "timed_out": false,
+  "end_utc": "2026-10-18T20:57:17.517592+00:00",
+  "whole_outer_wall_seconds": 177.8857395723462,
+  "returncode": 0,
+  "stdout": "{\"complete\": true, \"reason\": \"one fixed fixture/parent/four cuts completed\", \"completed_cuts\": [128, 1024, 1536, 3072], \"resources\": {\"phase_wall_seconds\": 177.6977438032627, \"process_user_cpu_seconds\": 266.019779, \"process_system_cpu_seconds\": 7.91904, \"peak_rss_kib\": 944248}}\n",
+  "stderr": "",
+  "child_user_cpu_seconds": 266.146742,
+  "child_system_cpu_seconds": 7.947245,
+  "child_peak_rss_kib": 944248
+}

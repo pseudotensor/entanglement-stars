@@ -1,0 +1,55 @@
+{
+  "status": "finished",
+  "purpose": "Task 3 phase A new missing-work-only allocation",
+  "producer_sha256": "dca6ef328a5d4a59c80f547122d4f001872dbb3ccd30c7737fd822be1f5bbcbb",
+  "wrapper_sha256": "a25bcb55a39376ee6ed63021171ef476469c0e3054fbfea2d38965bc94623cf6",
+  "command": [
+    "timeout",
+    "--foreground",
+    "-s",
+    "KILL",
+    "300s",
+    "nice",
+    "-n",
+    "10",
+    "taskset",
+    "-c",
+    "0,1,2,3",
+    "<internal>/python",
+    "<internal>/finish_core_profiles_v2.py"
+  ],
+  "wrapper_pid": 2287085,
+  "environment_settings": {
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4",
+    "NUMEXPR_NUM_THREADS": "4",
+    "VECLIB_MAXIMUM_THREADS": "4",
+    "BLIS_NUM_THREADS": "4",
+    "CUDA_VISIBLE_DEVICES": "",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "resources": {
+    "wall_seconds": 300,
+    "cpu_seconds": 1200,
+    "threads": 4,
+    "address_space_bytes": 4294967296,
+    "internal_deadline_seconds": 280
+  },
+  "child_pid": 2287139,
+  "exit_code": 1,
+  "elapsed_seconds": 0.7301732078194618,
+  "maximum_child_rss_kib": 58176,
+  "core_well_profiles_v1.json": {
+    "size": 42940,
+    "sha256": "fb0b777d35b43e4ecbba4fd7085307a0234e9849f55782dc89bc0114e4647b7c"
+  },
+  "stdout.log": {
+    "size": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stderr.log": {
+    "size": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

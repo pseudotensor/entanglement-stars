@@ -1,0 +1,170 @@
+{
+  "tests": [
+    {
+      "name": "control denominator and sign",
+      "passed": true
+    },
+    {
+      "name": "separate energy heads",
+      "passed": true
+    },
+    {
+      "name": "control primitive differences",
+      "passed": true
+    },
+    {
+      "name": "weighted fractional channel catalog",
+      "passed": true
+    }
+  ],
+  "pair": {
+    "formation": {
+      "clock": "0.0",
+      "radius": "1.0",
+      "relative": "0.25",
+      "normalized_radius": "0.125",
+      "root_fraction": "-0.3",
+      "certified": [
+        true,
+        true
+      ],
+      "clock_accept": true,
+      "formation_radius_accept": false
+    },
+    "common_count": 1,
+    "primary": {
+      "count": 1,
+      "first": "0.0",
+      "last": "0.0",
+      "both_zero_count": 1,
+      "maxima": {
+        "E": {
+          "value": "0.0",
+          "T_over_rs": "0.0",
+          "indices": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "F": {
+          "value": "0.5",
+          "T_over_rs": "0.0",
+          "indices": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "centroid": {
+          "value": "0.125",
+          "T_over_rs": "0.0",
+          "indices": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "R_t": {
+          "value": "1.0",
+          "T_over_rs": "0.0",
+          "indices": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "relative": {
+          "value": "0.25",
+          "T_over_rs": "0.0",
+          "indices": [
+            [
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "relative_at_16": null,
+      "radius_accept": false
+    },
+    "diagnostic": {
+      "count": 1,
+      "first": "0.0",
+      "last": "0.0",
+      "both_zero_count": 1,
+      "maxima": {
+        "E": {
+          "value": "0.0",
+          "T_over_rs": "0.0",
+          "indices": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "F": {
+          "value": "0.5",
+          "T_over_rs": "0.0",
+          "indices": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "centroid": {
+          "value": "0.125",
+          "T_over_rs": "0.0",
+          "indices": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "R_t": {
+          "value": "1.0",
+          "T_over_rs": "0.0",
+          "indices": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "relative": {
+          "value": "0.25",
+          "T_over_rs": "0.0",
+          "indices": [
+            [
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "relative_at_16": null
+    },
+    "samples": [
+      {
+        "T": 0,
+        "T_over_rs": "0.0",
+        "member_index": 0,
+        "control_index": 0,
+        "certified": true,
+        "counts": true,
+        "E": "0.0",
+        "F": "-0.5",
+        "centroid": "0.125",
+        "R_t": "1.0",
+        "relative": "0.25"
+      }
+    ]
+  }
+}

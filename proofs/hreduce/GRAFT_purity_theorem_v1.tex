@@ -1,0 +1,263 @@
+% Bookkeeping [R]. Addendum A: original AUTHOR independent second route.
+% Independent stage used only the current GOAL's statements for this task.
+% The named first route and sole RED were opened only after the complete
+% independent save/full actual self-read and root's comparison release.
+
+\noindent\textbf{Graft purity and the error of a measured row.}
+Work on finite spaces of complete complex CAR modes, with Gaussian short-chain state,
+$C_{ij}=\langle c_j^\dagger c_i\rangle$ and no anomalous covariance.
+Let $V:\mathcal H_S\to\mathcal H_L$ be an isometry,
+$C_S^2=C_S$, $P_S^2=P_S$, $P_L^2=P_L$ orthogonal projectors, and
+$Q$ any projector on $(V\mathcal H_S)^\perp$. Set
+\[
+ P_0=VP_SV^\dagger+Q,\quad
+ \Delta_0=V(C_S-P_S)V^\dagger,\quad D=P_0-P_L,\quad G=P_L+\Delta_0.
+ \qquad K:=G^2-G=-\{D,\Delta_0\}.
+\]
+The mismatch $D$ includes the short--extension cross blocks; replacing
+it by only its short-chain compression generally loses terms.
+The graft is a state covariance only if $0\leq G\leq I$, an additional
+condition not implied by a small purity defect. For Hermitian $G$ with
+$\epsilon=\|K\|_{\rm op}<1/4$, define
+$P_*=\mathbf1_{(1/2,\infty)}(G)$, $S=2P_*-I$, $E=G-P_*$ and
+$c_\epsilon=2/(1+\sqrt{1-4\epsilon})$. Then
+\[
+ d_1:=\|E\|_1\leq c_\epsilon\|K\|_1.
+\]
+If $0\leq G\leq I$, its gauge-invariant Gaussian state obeys
+\[
+ d_F:=\tfrac12\|\rho_G-\rho_{P_*}\|_1
+ =1-\prod_i(1-q_i)\leq d_1,\qquad q_i=\min(\lambda_i,1-\lambda_i).
+\]
+On this state domain $P_*$ is nearest among covariance projectors in trace norm, and its
+Slater state is nearest among all pure Fock states in trace distance.
+For a Hermitian one-particle row $O$, its rounding error is
+\[
+ \delta r=\operatorname{Tr}(OE),\quad
+ |\delta r|\leq\|O\|_{\rm op}d_1,\quad
+ E=S K - S E^2,\quad
+ |\delta r-\operatorname{Tr}(OSK)|
+ \leq\|O\|_{\rm op}\epsilon c_\epsilon^2\|K\|_1.
+\]
+Thus $-\operatorname{Tr}[OS\{D,\Delta_0\}]$ is a signed first-order
+estimate, not by itself an error bound; the raw purity moment also
+omits the spectral sign. These bounds compare to $P_*$, not an
+unspecified physical continuation. For a bounded Fock observable
+$\mathcal O$ the corresponding bound is $2\|\mathcal O\|_{\rm op}d_F$.
+For a window $0\leq W\leq I$, put $D_W=WDW$ and
+$K_W=-\{D_W,\Delta_0\}$; retain
+$\tau=\|K-K_W\|_1\leq2\|(D-D_W)\Delta_0\|_1$.
+Replace $\|K\|_1$ by $\|K_W\|_1+\tau$ only with a valid full-defect
+operator-norm bound below $1/4$; the windowed first-order estimate
+also carries $\|O\|_{\rm op}\tau$.
+Common exact unitary transport preserves $d_1$, the defect norms and,
+when defined, $d_F$.
+A uniform observable-norm bound below a stated digit therefore persists;
+one small signed row or one spatial-window reading does not.
+
+% G1. Embedding and sign, derived directly from the supplied definitions.
+% P0 and C0=P0+Delta0 are projections because their short and complement
+% blocks are orthogonal. Hence Delta0^2+{P0,Delta0}-Delta0=0.
+% Substitution into (PL+Delta0)^2-(PL+Delta0) gives
+% {PL-P0,Delta0}=-{D,Delta0}, with D=P0-PL (the sign convention matters).
+% In H_L=H_S directsum H_ext, PL=[A B;B^dag F], Delta0=[delta 0;0 0].
+% Then D=[PS-A -B;-B^dag Q-F] and
+% K=[{A-PS,delta} delta B;B^dag delta 0]. The external Q choice drops
+% out of this anticommutator, but the cross blocks B do not. Q=0 is
+% permissible as the empty-complement embedding; it does not make PL a
+% disconnected vacuum. A compression of a connected vacuum is generally
+% not a projector and must not be substituted for PS in this argument.
+% If the exact-projector premises are relaxed, direct expansion instead
+% retains V[(CS^2-CS)-(PS^2-PS)]V^dag+(PL^2-PL)-{D,Delta0}.
+% The complement's defect cancels because the same Q occurs in C0,P0.
+%
+% Small defect is not positivity: take one short mode with PS=1, CS=0,
+% and PL=|p><p| on two long modes, p=(cos theta,sin theta). The graft
+% G=PL-|1><1| has eigenvalues +/-sin theta. Its defect tends to0 with
+% theta, but G is not a covariance for any nonzero small theta. No Fock
+% density operator or Fock trace distance is assigned to such a graft.
+
+% G2. Distances and conventions; no covariance/Fock factor is suppressed.
+% For ANY Hermitian G under the defect gap, functional calculus gives
+% 2G-I=S sqrt(I+4K), hence E=2S K/(I+sqrt(I+4K)). This proves
+% d1<=c_epsilon||K||_1 and ||E||_op<=epsilon c_epsilon without
+% assigning a Fock state to a nonpositive or overoccupied matrix.
+% For valid G diagonalize its eigenvalues lambda_i in[0,1], set
+% b_i=lambda_i(1-lambda_i), q_i=min(lambda_i,1-lambda_i). Then
+% q_i=2b_i/(1+sqrt(1-4b_i)), so ||K||_1<=d1 and
+% b_i<=q_i<=c_epsilon b_i, with
+% q_max<=epsilon c_epsilon. The gap epsilon<1/4 excludes lambda=1/2.
+% To prove nearest projection, for any rank-r projection R use
+% ||G-R||_1 >= Tr[(I-2R)(G-R)]=Tr G+r-2Tr(RG).
+% Since 0<=R_ii<=1 and sum R_ii=r in G's eigenbasis, Tr(RG) is at
+% most the sum of its r largest eigenvalues. That lower bound is
+% attained by their spectral projector. Minimizing over r selects
+% exactly lambda>1/2 and gives d1=sum q_i. This is not normalized
+% density-matrix trace distance: if a half covariance norm is used,
+% it is d1/2 and the one-particle row bound gains a factor2.
+%
+% The Gaussian Fock density is the product of the eigenmode Bernoulli
+% states. Its largest eigenvalue is product_i(1-q_i), with eigenvector
+% the Slater state of P*. For any pure |psi>, measuring its projector
+% gives trace distance >=1-<psi|rho_G|psi> >=1-lambda_max(rho_G).
+% The top eigenvector attains this bound (the density matrices commute).
+% Thus d_F is exactly the displayed product expression and d_F<=sum q_i.
+% Equivalently the FULL Fock trace norm is2d_F, not d1. For a Hermitian
+% Fock observable its spectral diameter times d_F is also a valid bound.
+% Nearest pure here means unrestricted particle number; if a fixed rank
+% is imposed it is a separate constrained minimization. In particular,
+% Tr G an integer and d1<1 imply rank P*=Tr G, so no rank change then.
+% Infinite-parent claims require actual relative trace convergence and
+% a common implementable Fock representation; formal sea traces do not
+% establish this finite-parent statement in an infinite representation.
+
+% G3. Exact first-order remainder and a decisive failure of a bound.
+% E,S,K commute by functional calculus; P*^2=P* gives K=S E+E^2.
+% Hence E=S K-S E^2 exactly, with ||S E^2||_1=Tr E^2
+% <=||E||_op||E||_1<=epsilon c_epsilon^2 ||K||_1, even without
+% positivity of G. Trace duality proves
+% the two row inequalities. For 0<q<1/2, G=diag(q,1-q), P*=diag(0,1),
+% O=diag(1,0) gives actual error q but Tr(OSK)=q(1-q)<q.
+% This G is a graft of projectors: PS=|2><2|, CS=|u+><u+|,
+% PL=|u-><u-|, u+/-=(sqrt(q/2),+/-sqrt(1-q/2)); V=I.
+% An idle orthogonal extension makes the embedding proper if desired.
+% Thus even the absolute first-order contraction need not bound error.
+% Signed cancellations offer still less information. In the same graft
+% family, O=diag(1,-1) gives Tr[O{D,Delta0}]=0 but Tr(OE)=2q,
+% since K=-q(1-q)I. This is an algebraic graft, not a solved model row.
+% Only a norm bound or an estimate WITH its controlled remainder can
+% be certified from these premises. All weights/normalizations belong
+% in O; for separate weighted channels sum |w_j| ||O_j|| d1_j.
+% A nonlinear entropy, ratio or fitted emptying clock is not one such
+% linear row. For corresponding zeros in an interval, clock error is
+% <=uniform_row_error/s under a nonzero slope margin |r'|>=s there;
+% existence of the compared zeros must also be secured. Integrated
+% flux uses its integrated observable, whose norm may grow with time.
+% For a quotient of linear rows E/L, let b_E,b_L bound the graft-to-
+% rounding differences. If |L_g|>b_L, a common denominator gives
+% |E_*/L_*-E_g/L_g| <=
+% (b_E|L_g|+|E_g|b_L)/[|L_g|(|L_g|-b_L)]. Without that margin
+% no uniform quotient bound follows from the two linear row bounds.
+% Nor does nearest rounding identify an intended physical projector P_phys:
+% its row error needs the additional <=||O|| ||P*-P_phys||_1 term.
+% Two distinct pure projectors both have zero defect, disproving any
+% identification based on purity alone; fixed Gauss/source constraints
+% are not imposed by this unconstrained spectral minimization.
+
+% G4. Window truncation is a separate error, not a purity replacement.
+% T=D-WDW is Hermitian. K-K_W=-{T,Delta0}, so
+% tau1<=2||T Delta0||_1 and tau_op<=2||T Delta0||_op. Also
+% tau1<=2||T||_op||Delta0||_1 (or2||T||_1||Delta0||_op).
+% A usable window-only estimate needs an upper bound
+% epsilon_hat=||K_W||_op+tau_op<1/4 and B=||K_W||_1+tau1.
+% Then d1<=c_epsilon_hat B and the row is bounded by ||O|| times this.
+% For m_W=Re Tr(OS K_W), where S is the FULL graft's spectral sign,
+% |delta r-m_W|<=||O||[tau1+epsilon_hat c_epsilon_hat^2 B].
+% If S is approximated by S_W, additionally retain
+% ||O|| ||S-S_W||_op ||K_W||_1. No commutation of K_W and S is assumed.
+% If W Delta0=Delta0 W=Delta0, T Delta0=(I-W)D Delta0, so the omitted
+% cross-window columns give the remainder even when the whole deviation
+% lies inside the window. A small windowed defect alone is insufficient.
+% If Delta0 too is replaced by Delta_W=W Delta0 W, define
+% K_{W,Delta_W}=-{D_W,Delta_W}. The full-minus-truncated residual
+% is K_W-K_{W,Delta_W}=-{D_W,Delta0-Delta_W}, with trace norm <=
+% 2||D_W(Delta0-Delta_W)||_1. This term cannot be silently dropped.
+
+% G5. What exact common transport proves, and what a wavefront does not.
+% With G_t=U_t G U_t^dag and P*_t=U_t P* U_t^dag, spectral rounding,
+% E,K,S and the covariance/Fock distances (where defined) transform
+% covariantly or are invariant.
+% The row is Tr[(U_t^dag O_t U_t)E]. A UNIFORM ||O_t||d1<digit proves
+% a persistent absolute bound, whereas one small signed row does not.
+% For a concrete valid two-mode covariance set P*=(I+sigma_x)/2,
+% G=(1-q)P*+q(I-P*), E=-q sigma_x and O=(I+sigma_z)/2.
+% Its initial row error is0; held h=sigma_y at t=pi/4 rotates E to
+% q sigma_z and makes the row error q. All purity/distance norms stay
+% fixed. This disproves persistence from a single small row, not any
+% particular held-history measurement. Finite-chain returns likewise
+% cannot be excluded by the purity identity.
+%
+% On a held h_L with [h_L,PL]=0, both Delta_t=U Delta0 U^dag AND
+% D_t=U D U^dag are required in K_t=-{D_t,Delta_t}. This refers to
+% the state-evolved picture. Keeping the INITIAL D and Delta0 in
+% Tr[(U^dag O U){D,Delta0}] is exactly correct by trace cyclicity,
+% as in section53.2's O(t) pullback; no implementation error is inferred.
+% A transported window W_t=U W U^dag preserves
+% the window remainder norm; a geometric moving window need not do so.
+% More locally, if E=Pi_J E Pi_J+E_tail and O_t=Pi_R O_t Pi_R, then
+% |delta r(t)|<=||O_t||[||Pi_R U_t Pi_J||_op^2 ||Pi_J E Pi_J||_1
+%                      +||E_tail||_1]. Persistence from locality needs
+% these quantities small at EVERY claimed later time; being behind a
+% previously observed front alone gives no such estimate. Rounding is
+% nonlocal, so localization of K_W alone does not localize E.
+% Different self-consistent propagators, omitted channels or numerical
+% propagation errors need their own terms; none is bounded here.
+
+% Released comparison, within the one original author/RED process.
+% SPEC section53.2's displayed purity identity agrees with G1 when its
+% short state is pure quasifree, references are exact and D is the FULL
+% mismatch. The phrase "whose one defect is its purity" additionally
+% needs positivity; G1's independently saved example shows why.
+% The parting step is "Tr(O(t)(D Delta0 + Delta0 D)) ... is the row's
+% join error": it is -Tr[O(t)K], not Tr[O(t)(G-P*)]. G3's explicit
+% pure-graft witness independently disproves that equality. Even the
+% corrected spectral-sign first-order estimate needs its remainder.
+% Section53.2(2)'s window-block wording needs G4's full products/tails.
+% Section53.2(4)'s later-row condition is not a persistence theorem;
+% G5 supplies the actual conditional norm statement, without ruling
+% a launch, changing its operational rule or certifying an emptying fit.
+%
+% The released review_GRAFT_v2 agrees on exact-reference residuals,
+% signed-moment limitations and the distinction from physical history.
+% Its bound 2Tr(|O||K|) is independently reproduced: in each real
+% eigenvalue, |lambda-round(lambda)|<=2|lambda^2-lambda|, so
+% |E|<=2|K|. In O's eigenbasis |Tr OE|<=Tr(|O||E|), yielding that
+% bound. Our gap gives the sharper coefficient c_epsilon<2 instead.
+% Its [1/2,infinity) and our (1/2,infinity) rounding agree under the gap.
+% We do not adopt its unprovided -8/81 construction or verify its code,
+% fixture, filter, numerical records, gate dispositions or paper wording.
+% Original RED notation: F=K, delta=epsilon, k=c_epsilon,
+% RED epsilon=d1, r=epsilon*c_epsilon. Thus its r*d1 remainder is
+% <= our displayed epsilon*c_epsilon^2||K||_1 by the distance bound.
+% No scientific difference remains in the compared
+% theorem domains. The explicit physical-target limitation and window
+% Delta truncation clarification were prompted by RED/released route;
+% their identities and the distinct-projector witness were rederived.
+% RED's quotient bound was reproduced by the displayed common denominator.
+% RED prompted the Heisenberg wording, checked here by trace cyclicity.
+% No new premise or numerical acceptance has been adopted from a peer.
+
+% SOURCES / exact access and independence.
+% FULL current <internal>/GOAL_alt.md,
+% including the complete owner-approved addendum A--F, actually read.
+% Only its A statements supplied this task's new notation/premises.
+% The current binding requirements, COMMS and rulings retain their
+% full preceding-review coverage; related STATUS was not opened for A.
+% Previously paired baselines, openly reused for CAR/Gaussian conventions:
+% <internal>/PAGE_expectation_second_route_v1.tex
+% <internal>/FIRSTLAW_rows_v1.tex
+% <internal>/web40f_single_object_identity.tex
+% <internal>/LIGHTCHANNEL_identities_second_route_v1.tex
+% Prior paper-review intake included Page/hold numerical reports, but no
+% new graft route is known to have been read. No numerical row was read
+% for this task. LIGHT's first-route derivation remains unopened.
+% The prior ruling exposure includes the existing graft formula and
+% positivity warning in the fully read governing
+% <internal>/REVIEWA_RULING_O1_D13_protocol_v1.md;
+% no new blind credit is claimed for those previously available facts.
+% NOT READ before the independent draft/full self-read; read only AFTER
+% root's release, with the independent save safeguarded at279557ba5fd:
+% <internal>/SPEC_final4b_engine.md section53.2
+% <internal>/review_GRAFT_v2.tex
+% <internal>/redteam_GRAFT_purity_theorem_v1.tex
+% The latter two sources were read in FULL. The SPEC extraction's awk
+% interval-regex stop failed, exposing section53.3--53.5 and
+% section53a.0--53a.4 through EOF in addition to the authorized53.2.
+% This post-draft operational overread was immediately disclosed to root;
+% none supports the theorem, no independence credit is claimed for it,
+% and no cited numerical-row file or implementation was opened.
+% Numerical summaries in the released review/SPEC were not checked or
+% adopted. LIGHT's first route and other new analytical routes stay closed.
+% Only this assigned source was written. No scientific implementation,
+% execution, test, gate/null readout, new numerical acceptance, foreign
+% edit/copy, manuscript prose or Git mutation is part of this derivation.

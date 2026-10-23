@@ -1,0 +1,55 @@
+{
+  "status": "finished",
+  "purpose": "Task2 read-only exact saved T9 floor attribution",
+  "producer_sha256": "b7fcaebe7504ac0405d377a6f5418a9ecbf98c81eca8eda7931824af0a3b1b5f",
+  "wrapper_sha256": "7dbad8f83bfe597ef80746468ec9115f1ab75993513b76d722105ace9a77c809",
+  "command": [
+    "timeout",
+    "--foreground",
+    "-s",
+    "KILL",
+    "90s",
+    "nice",
+    "-n",
+    "10",
+    "taskset",
+    "-c",
+    "8",
+    "<internal>/python",
+    "<internal>/attribute_saved_t9_floor_v1.py"
+  ],
+  "wrapper_pid": 3801531,
+  "environment_settings": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1",
+    "CUDA_VISIBLE_DEVICES": "",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "resources": {
+    "wall_seconds": 90,
+    "cpu_seconds": 60,
+    "threads": 1,
+    "address_space_bytes": 2147483648,
+    "internal_deadline_seconds": 85
+  },
+  "child_pid": 3801537,
+  "exit_code": 0,
+  "elapsed_seconds": 1.277651060372591,
+  "maximum_child_rss_kib": 138076,
+  "saved_t9_floor_attribution.json": {
+    "size": 1265065,
+    "sha256": "5d7c7b31f5b708bc105d7bd9c8c3c7225e2f85aa16c42895f4dad151aae772fd"
+  },
+  "floor_attribution_stdout.log": {
+    "size": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "floor_attribution_stderr.log": {
+    "size": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "status": "finished",
+  "purpose": "Task3 saved Killing allocation table export",
+  "producer_sha256": "543620bcba29783556a09c21af1bc3781093e16ce8b338042c92312435b2a075",
+  "wrapper_sha256": "58187d9bac4969f13ca65a445435341d70b0c0970383dfae4366872d813a8e29",
+  "command": [
+    "timeout",
+    "--foreground",
+    "-s",
+    "KILL",
+    "60s",
+    "nice",
+    "-n",
+    "10",
+    "taskset",
+    "-c",
+    "9",
+    "<internal>/python",
+    "<internal>/export_core_profiles_b_v1.py"
+  ],
+  "wrapper_pid": 4082538,
+  "environment_settings": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1",
+    "CUDA_VISIBLE_DEVICES": "",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "resources": {
+    "wall_seconds": 60,
+    "cpu_seconds": 50,
+    "threads": 1,
+    "address_space_bytes": 2147483648,
+    "internal_deadline_seconds": 55
+  },
+  "child_pid": 4082614,
+  "exit_code": 0,
+  "elapsed_seconds": 0.6773655414581299,
+  "maximum_child_rss_kib": 35136,
+  "core_profiles_B_summary_v1.json": {
+    "size": 49214,
+    "sha256": "42c779f1f7abba33de4c1e3c165838118b7834d0e17e14f2762ea0fb530658ea"
+  },
+  "core_profiles_B_radial_v1.tsv": {
+    "size": 2265356,
+    "sha256": "09a9cd79fe2e75280bf67252eb23f5b677bb213da8c8d3548f737e3872c00c8d"
+  },
+  "core_profiles_B_shell_v1.tsv": {
+    "size": 20985,
+    "sha256": "a2e43ab6d8f5df3191fb0e32f1fc6d30926c7522f7fcf4ed1fd66874ac21b89a"
+  },
+  "stdout.log": {
+    "size": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stderr.log": {
+    "size": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

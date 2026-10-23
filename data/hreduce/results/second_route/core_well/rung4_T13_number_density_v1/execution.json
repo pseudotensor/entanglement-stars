@@ -1,0 +1,53 @@
+{
+  "status": "finished",
+  "wrapper_nice": 10,
+  "purpose": "Task 3 one missing rung-four T13 half-number radius and first-eight radial-cell densities",
+  "producer_sha256": "22b71cde68497a1b62abbe3b0a49ebe92224e383e16a3a7632e389c8f99b1d7c",
+  "wrapper_sha256": "422cf2ebe1f67c37a015f3e2dcc596a2cf666f64edbc84e7fd732f289db6c449",
+  "command": [
+    "timeout",
+    "--foreground",
+    "-s",
+    "KILL",
+    "180s",
+    "taskset",
+    "-c",
+    "12,13,14,15",
+    "<internal>/python",
+    "<internal>/rung4_T13_number_density_v1.py"
+  ],
+  "wrapper_pid": 3853569,
+  "environment_settings": {
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4",
+    "NUMEXPR_NUM_THREADS": "4",
+    "VECLIB_MAXIMUM_THREADS": "4",
+    "BLIS_NUM_THREADS": "4",
+    "CUDA_VISIBLE_DEVICES": "",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "resources": {
+    "wall_seconds": 180,
+    "cpu_seconds": 720,
+    "threads": 4,
+    "address_space_bytes": 4294967296,
+    "internal_deadline_seconds": 160
+  },
+  "child_pid": 3853633,
+  "exit_code": 1,
+  "elapsed_seconds": 165.23938343301415,
+  "maximum_child_rss_kib": 392948,
+  "rung4_T13_number_density_result.json": {
+    "size": 6201,
+    "sha256": "8a9f30a392b05c5faecdf2bb96865cb83ef33137df84974de9c7a1622db4703c"
+  },
+  "stdout.log": {
+    "size": 72,
+    "sha256": "2c9dc9c2d25c608aae0909193ff98416932c9f86b8459a8600e92077861624d3"
+  },
+  "stderr.log": {
+    "size": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

@@ -1,0 +1,1191 @@
+{
+  "scope": "Raw source structure and scalar fields only; no contractions, norms, bound or physical-history admission.",
+  "slices": [
+    {
+      "path": "<internal>/orbitals_c19_rs64_A_R2_tau8_ell4_avg_r11_T0015.00.npz",
+      "bytes": 1343100290,
+      "hashes": {
+        "sha256": "f8ccddfa853b0c800ef5530b432796317e8e46299824e3b23ea2b52c4727c0e1",
+        "md5": "5dec15a3d172ec233ae1f234c10f1b1a"
+      },
+      "arrays": {
+        "T.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": []
+        },
+        "rs.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": []
+        },
+        "N_applied.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            2048
+          ]
+        },
+        "v_applied.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            2048
+          ]
+        },
+        "R.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            2048
+          ]
+        },
+        "kappas.npy": {
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            10
+          ]
+        },
+        "weights.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            10
+          ]
+        },
+        "dtype.npy": {
+          "descr": "<U9",
+          "fortran_order": false,
+          "shape": []
+        },
+        "sea_1.npy": {
+          "descr": "<c8",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "dust_1.npy": {
+          "descr": "<c8",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            5
+          ]
+        },
+        "f_1.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            5
+          ]
+        },
+        "R2_1.npy": {
+          "descr": "<c8",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "e_1.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            4096
+          ]
+        },
+        "mask_1.npy": {
+          "descr": "|u1",
+          "fortran_order": false,
+          "shape": [
+            512
+          ]
+        },
+        "sea_2.npy": {
+          "descr": "<c8",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "dust_2.npy": {
+          "descr": "<c8",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            4
+          ]
+        },
+        "f_2.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            4
+          ]
+        },
+        "R2_2.npy": {
+          "descr": "<c8",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "e_2.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            4096
+          ]
+        },
+        "mask_2.npy": {
+          "descr": "|u1",
+          "fortran_order": false,
+          "shape": [
+            512
+          ]
+        },
+        "sea_3.npy": {
+          "descr": "<c8",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "dust_3.npy": {
+          "descr": "<c8",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            3
+          ]
+        },
+        "f_3.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            3
+          ]
+        },
+        "R2_3.npy": {
+          "descr": "<c8",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "e_3.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            4096
+          ]
+        },
+        "mask_3.npy": {
+          "descr": "|u1",
+          "fortran_order": false,
+          "shape": [
+            512
+          ]
+        },
+        "sea_4.npy": {
+          "descr": "<c8",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "dust_4.npy": {
+          "descr": "<c8",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2
+          ]
+        },
+        "f_4.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            2
+          ]
+        },
+        "R2_4.npy": {
+          "descr": "<c8",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "e_4.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            4096
+          ]
+        },
+        "mask_4.npy": {
+          "descr": "|u1",
+          "fortran_order": false,
+          "shape": [
+            512
+          ]
+        },
+        "sea_5.npy": {
+          "descr": "<c8",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "dust_5.npy": {
+          "descr": "<c8",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2
+          ]
+        },
+        "f_5.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            2
+          ]
+        },
+        "R2_5.npy": {
+          "descr": "<c8",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "e_5.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            4096
+          ]
+        },
+        "mask_5.npy": {
+          "descr": "|u1",
+          "fortran_order": false,
+          "shape": [
+            512
+          ]
+        },
+        "sea_6.npy": {
+          "descr": "<c8",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "dust_6.npy": {
+          "descr": "<c8",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            0
+          ]
+        },
+        "f_6.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            0
+          ]
+        },
+        "R2_6.npy": {
+          "descr": "<c8",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "e_6.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            4096
+          ]
+        },
+        "mask_6.npy": {
+          "descr": "|u1",
+          "fortran_order": false,
+          "shape": [
+            512
+          ]
+        },
+        "sea_7.npy": {
+          "descr": "<c8",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "dust_7.npy": {
+          "descr": "<c8",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            0
+          ]
+        },
+        "f_7.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            0
+          ]
+        },
+        "R2_7.npy": {
+          "descr": "<c8",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "e_7.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            4096
+          ]
+        },
+        "mask_7.npy": {
+          "descr": "|u1",
+          "fortran_order": false,
+          "shape": [
+            512
+          ]
+        },
+        "sea_8.npy": {
+          "descr": "<c8",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "dust_8.npy": {
+          "descr": "<c8",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            0
+          ]
+        },
+        "f_8.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            0
+          ]
+        },
+        "R2_8.npy": {
+          "descr": "<c8",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "e_8.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            4096
+          ]
+        },
+        "mask_8.npy": {
+          "descr": "|u1",
+          "fortran_order": false,
+          "shape": [
+            512
+          ]
+        },
+        "sea_9.npy": {
+          "descr": "<c8",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "dust_9.npy": {
+          "descr": "<c8",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            0
+          ]
+        },
+        "f_9.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            0
+          ]
+        },
+        "R2_9.npy": {
+          "descr": "<c8",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "e_9.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            4096
+          ]
+        },
+        "mask_9.npy": {
+          "descr": "|u1",
+          "fortran_order": false,
+          "shape": [
+            512
+          ]
+        },
+        "sea_10.npy": {
+          "descr": "<c8",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "dust_10.npy": {
+          "descr": "<c8",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            0
+          ]
+        },
+        "f_10.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            0
+          ]
+        },
+        "R2_10.npy": {
+          "descr": "<c8",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "e_10.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            4096
+          ]
+        },
+        "mask_10.npy": {
+          "descr": "|u1",
+          "fortran_order": false,
+          "shape": [
+            512
+          ]
+        }
+      },
+      "metadata": {
+        "T": 960.0,
+        "rs": 64.0,
+        "kappas": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "weights": [
+          16.0,
+          32.0,
+          48.0,
+          64.0,
+          80.0,
+          96.0,
+          112.0,
+          128.0,
+          144.0,
+          160.0
+        ],
+        "dtype": "complex64",
+        "R_first": [
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ],
+        "R_last": [
+          2045.0,
+          2046.0,
+          2047.0,
+          2048.0
+        ],
+        "f": {
+          "1": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "2": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "3": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "4": [
+            1.0,
+            1.0
+          ],
+          "5": [
+            1.0,
+            1.0
+          ],
+          "6": [],
+          "7": [],
+          "8": [],
+          "9": [],
+          "10": []
+        }
+      }
+    },
+    {
+      "path": "<internal>/orbitals_c19_rs64_A_R2_tau8_ell4_avg_ext100_T0056.00.npz",
+      "bytes": 2685802106,
+      "hashes": {
+        "sha256": "d495b84f65b5605c2ea1de2df8e8ffe0bf1897f5295778a80af49b8d38c53c1e",
+        "md5": "6eda5d653d90707021d205f43d13a618"
+      },
+      "arrays": {
+        "T.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": []
+        },
+        "rs.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": []
+        },
+        "N_applied.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            2048
+          ]
+        },
+        "v_applied.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            2048
+          ]
+        },
+        "R.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            2048
+          ]
+        },
+        "kappas.npy": {
+          "descr": "<i8",
+          "fortran_order": false,
+          "shape": [
+            10
+          ]
+        },
+        "weights.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            10
+          ]
+        },
+        "dtype.npy": {
+          "descr": "<U10",
+          "fortran_order": false,
+          "shape": []
+        },
+        "sea_1.npy": {
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "dust_1.npy": {
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            5
+          ]
+        },
+        "f_1.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            5
+          ]
+        },
+        "R2_1.npy": {
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "e_1.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            4096
+          ]
+        },
+        "mask_1.npy": {
+          "descr": "|u1",
+          "fortran_order": false,
+          "shape": [
+            512
+          ]
+        },
+        "sea_2.npy": {
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "dust_2.npy": {
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            4
+          ]
+        },
+        "f_2.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            4
+          ]
+        },
+        "R2_2.npy": {
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "e_2.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            4096
+          ]
+        },
+        "mask_2.npy": {
+          "descr": "|u1",
+          "fortran_order": false,
+          "shape": [
+            512
+          ]
+        },
+        "sea_3.npy": {
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "dust_3.npy": {
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            3
+          ]
+        },
+        "f_3.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            3
+          ]
+        },
+        "R2_3.npy": {
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "e_3.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            4096
+          ]
+        },
+        "mask_3.npy": {
+          "descr": "|u1",
+          "fortran_order": false,
+          "shape": [
+            512
+          ]
+        },
+        "sea_4.npy": {
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "dust_4.npy": {
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2
+          ]
+        },
+        "f_4.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            2
+          ]
+        },
+        "R2_4.npy": {
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "e_4.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            4096
+          ]
+        },
+        "mask_4.npy": {
+          "descr": "|u1",
+          "fortran_order": false,
+          "shape": [
+            512
+          ]
+        },
+        "sea_5.npy": {
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "dust_5.npy": {
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2
+          ]
+        },
+        "f_5.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            2
+          ]
+        },
+        "R2_5.npy": {
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "e_5.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            4096
+          ]
+        },
+        "mask_5.npy": {
+          "descr": "|u1",
+          "fortran_order": false,
+          "shape": [
+            512
+          ]
+        },
+        "sea_6.npy": {
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "dust_6.npy": {
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            0
+          ]
+        },
+        "f_6.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            0
+          ]
+        },
+        "R2_6.npy": {
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "e_6.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            4096
+          ]
+        },
+        "mask_6.npy": {
+          "descr": "|u1",
+          "fortran_order": false,
+          "shape": [
+            512
+          ]
+        },
+        "sea_7.npy": {
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "dust_7.npy": {
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            0
+          ]
+        },
+        "f_7.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            0
+          ]
+        },
+        "R2_7.npy": {
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "e_7.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            4096
+          ]
+        },
+        "mask_7.npy": {
+          "descr": "|u1",
+          "fortran_order": false,
+          "shape": [
+            512
+          ]
+        },
+        "sea_8.npy": {
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "dust_8.npy": {
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            0
+          ]
+        },
+        "f_8.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            0
+          ]
+        },
+        "R2_8.npy": {
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "e_8.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            4096
+          ]
+        },
+        "mask_8.npy": {
+          "descr": "|u1",
+          "fortran_order": false,
+          "shape": [
+            512
+          ]
+        },
+        "sea_9.npy": {
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "dust_9.npy": {
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            0
+          ]
+        },
+        "f_9.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            0
+          ]
+        },
+        "R2_9.npy": {
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "e_9.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            4096
+          ]
+        },
+        "mask_9.npy": {
+          "descr": "|u1",
+          "fortran_order": false,
+          "shape": [
+            512
+          ]
+        },
+        "sea_10.npy": {
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "dust_10.npy": {
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            0
+          ]
+        },
+        "f_10.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            0
+          ]
+        },
+        "R2_10.npy": {
+          "descr": "<c16",
+          "fortran_order": false,
+          "shape": [
+            4096,
+            2048
+          ]
+        },
+        "e_10.npy": {
+          "descr": "<f8",
+          "fortran_order": false,
+          "shape": [
+            4096
+          ]
+        },
+        "mask_10.npy": {
+          "descr": "|u1",
+          "fortran_order": false,
+          "shape": [
+            512
+          ]
+        }
+      },
+      "metadata": {
+        "T": 3584.0,
+        "rs": 64.0,
+        "kappas": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "weights": [
+          16.0,
+          32.0,
+          48.0,
+          64.0,
+          80.0,
+          96.0,
+          112.0,
+          128.0,
+          144.0,
+          160.0
+        ],
+        "dtype": "complex128",
+        "R_first": [
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ],
+        "R_last": [
+          2045.0,
+          2046.0,
+          2047.0,
+          2048.0
+        ],
+        "f": {
+          "1": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "2": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "3": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "4": [
+            1.0,
+            1.0
+          ],
+          "5": [
+            1.0,
+            1.0
+          ],
+          "6": [],
+          "7": [],
+          "8": [],
+          "9": [],
+          "10": []
+        }
+      }
+    }
+  ],
+  "dense_root_input": {
+    "path": "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_r11.json",
+    "hashes": {
+      "sha256": "79b79bd15e5ba5ab3cb467af985c165c39c6a69c6bfe9ca360d438811a7d6372",
+      "md5": "e27e457d37615cff8d5216f05a494f89"
+    },
+    "json_pointer": "/records/120",
+    "fields": {
+      "T": 960.0,
+      "T_over_rs": 15.0,
+      "R_t": 51.76040530856484,
+      "trapping_zeros": [
+        7.04798671590984,
+        51.76040530856484
+      ],
+      "r_in": 7.04798671590984
+    }
+  }
+}

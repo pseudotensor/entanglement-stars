@@ -1,0 +1,393 @@
+{
+  "scope": "T10 proposed full UV polar-transport source-vertex pilot; formulas and realization pending independent review. No Newton or entropy normalization established.",
+  "parameters": {
+    "Omega": 1.0,
+    "mass_squared": [
+      0.0,
+      0.5,
+      0.5,
+      1.0
+    ],
+    "orientations": [
+      1,
+      -1,
+      -1,
+      1
+    ]
+  },
+  "proposed_dictionary_from_reviewer B": "A_Omega=psi^-3[psi F_s(T_psi) psi+iD], T_psi=psi^-2 Delta_a psi^-2, F_s=sqrt(m_s^2+T_psi^4/Omega^6)",
+  "radial_definitions": {
+    "measure": "p^2 dp/(2pi^2)",
+    "base": "sum eta_s / sqrt(m_s^2+p^2+p^8)",
+    "real_vertex": "sum eta_s R_s_prime^2 / sqrt(m_s^2+p^2+p^8)",
+    "R_prime_squared": "16 p^14/(m_s^2+p^8), Omega=1",
+    "candidate_k": "24 (I0 + J0/3)",
+    "candidate_C2": "24 (I2/6-J2/30)",
+    "candidate_C4": "24 (13 I4-J4)/120"
+  },
+  "precision_passes": [
+    {
+      "mpmath_decimal_digits": 40,
+      "rows": [
+        {
+          "n": 0,
+          "term": "base",
+          "integral": 0.005236768646278504,
+          "quad_estimated_absolute_error": 2.0036501884190561e-13,
+          "segments": [
+            {
+              "lower": 0.0,
+              "upper": 1.0,
+              "value": 0.005133053652206208,
+              "quad_estimated_absolute_error": 5.698834351357195e-17
+            },
+            {
+              "lower": 1.0,
+              "upper": 10.0,
+              "value": 0.00010371499407229615,
+              "quad_estimated_absolute_error": 2.0030803042422642e-13
+            },
+            {
+              "lower": 10.0,
+              "upper": "infinity",
+              "value": 5.587554616333212e-21,
+              "quad_estimated_absolute_error": 7.416563420592959e-23
+            }
+          ]
+        },
+        {
+          "n": 0,
+          "term": "real_vertex_R_prime_squared",
+          "integral": 0.06209428803376431,
+          "quad_estimated_absolute_error": 7.517353256277987e-14,
+          "segments": [
+            {
+              "lower": 0.0,
+              "upper": 1.0,
+              "value": 0.039454858992215305,
+              "quad_estimated_absolute_error": 4.380369129041418e-16
+            },
+            {
+              "lower": 1.0,
+              "upper": 10.0,
+              "value": 0.022639429040858177,
+              "quad_estimated_absolute_error": 3.29249718615393e-14
+            },
+            {
+              "lower": 10.0,
+              "upper": "infinity",
+              "value": 6.908262884250805e-13,
+              "quad_estimated_absolute_error": 4.181052378833643e-14
+            }
+          ]
+        },
+        {
+          "n": 2,
+          "term": "base",
+          "integral": 0.0014472745635478687,
+          "quad_estimated_absolute_error": 3.798086003994193e-17,
+          "segments": [
+            {
+              "lower": 0.0,
+              "upper": 1.0,
+              "value": 0.0013215757442102472,
+              "quad_estimated_absolute_error": 1.4672438200225928e-17
+            },
+            {
+              "lower": 1.0,
+              "upper": 10.0,
+              "value": 0.00012569881933762085,
+              "quad_estimated_absolute_error": 2.3301319308366165e-17
+            },
+            {
+              "lower": 10.0,
+              "upper": "infinity",
+              "value": 6.33256085526916e-19,
+              "quad_estimated_absolute_error": 7.102531349832179e-21
+            }
+          ]
+        },
+        {
+          "n": 2,
+          "term": "real_vertex_R_prime_squared",
+          "integral": 0.0585975026001299,
+          "quad_estimated_absolute_error": 5.213008944892128e-14,
+          "segments": [
+            {
+              "lower": 0.0,
+              "upper": 1.0,
+              "value": 0.02798070974404738,
+              "quad_estimated_absolute_error": 3.106482823327981e-16
+            },
+            {
+              "lower": 1.0,
+              "upper": 10.0,
+              "value": 0.030616792771648263,
+              "quad_estimated_absolute_error": 2.0118609188736762e-14
+            },
+            {
+              "lower": 10.0,
+              "upper": "infinity",
+              "value": 8.443426004826712e-11,
+              "quad_estimated_absolute_error": 3.170083197785172e-14
+            }
+          ]
+        },
+        {
+          "n": 4,
+          "term": "base",
+          "integral": 0.0007620286767690202,
+          "quad_estimated_absolute_error": 3.942134149791273e-17,
+          "segments": [
+            {
+              "lower": 0.0,
+              "upper": 1.0,
+              "value": 0.0006045619347287091,
+              "quad_estimated_absolute_error": 3.738281309546664e-17
+            },
+            {
+              "lower": 1.0,
+              "upper": 10.0,
+              "value": 0.00015746674204023797,
+              "quad_estimated_absolute_error": 1.775519561730002e-18
+            },
+            {
+              "lower": 10.0,
+              "upper": "infinity",
+              "value": 7.306803628285291e-17,
+              "quad_estimated_absolute_error": 2.630088407160868e-19
+            }
+          ]
+        },
+        {
+          "n": 4,
+          "term": "real_vertex_R_prime_squared",
+          "integral": 0.06594916580960224,
+          "quad_estimated_absolute_error": 7.733872607279088e-13,
+          "segments": [
+            {
+              "lower": 0.0,
+              "upper": 1.0,
+              "value": 0.021168970934606547,
+              "quad_estimated_absolute_error": 8.396197201938866e-15
+            },
+            {
+              "lower": 1.0,
+              "upper": 10.0,
+              "value": 0.04478018401903591,
+              "quad_estimated_absolute_error": 8.348412819255721e-16
+            },
+            {
+              "lower": 10.0,
+              "upper": "infinity",
+              "value": 1.085595977503685e-08,
+              "quad_estimated_absolute_error": 7.641562222440443e-13
+            }
+          ]
+        }
+      ],
+      "candidate_coefficient_PENDING_review": {
+        "base": 0.12568244751068408,
+        "real_vertex": 0.49675430427011447,
+        "total": 0.6224367517807985
+      },
+      "candidate_C2_PENDING_review": {
+        "base": 0.005789098254191475,
+        "real_vertex": -0.04687800208010392,
+        "total": -0.041088903825912446
+      },
+      "candidate_C4_PENDING_review": {
+        "base": 0.0019812745595994526,
+        "real_vertex": -0.013189833161920446,
+        "total": -0.011208558602320992
+      },
+      "candidate_signed_relative_dilation_a_squared_psi_four_coefficient_PENDING_review": -0.13202595672044312
+    },
+    {
+      "mpmath_decimal_digits": 70,
+      "rows": [
+        {
+          "n": 0,
+          "term": "base",
+          "integral": 0.005236768646278504,
+          "quad_estimated_absolute_error": 2.0036501884190561e-13,
+          "segments": [
+            {
+              "lower": 0.0,
+              "upper": 1.0,
+              "value": 0.005133053652206208,
+              "quad_estimated_absolute_error": 5.698834351357195e-17
+            },
+            {
+              "lower": 1.0,
+              "upper": 10.0,
+              "value": 0.00010371499407229615,
+              "quad_estimated_absolute_error": 2.0030803042422642e-13
+            },
+            {
+              "lower": 10.0,
+              "upper": "infinity",
+              "value": 5.587554616333212e-21,
+              "quad_estimated_absolute_error": 7.416563420592959e-23
+            }
+          ]
+        },
+        {
+          "n": 0,
+          "term": "real_vertex_R_prime_squared",
+          "integral": 0.06209428803376431,
+          "quad_estimated_absolute_error": 7.517353256277987e-14,
+          "segments": [
+            {
+              "lower": 0.0,
+              "upper": 1.0,
+              "value": 0.039454858992215305,
+              "quad_estimated_absolute_error": 4.380369129041418e-16
+            },
+            {
+              "lower": 1.0,
+              "upper": 10.0,
+              "value": 0.022639429040858177,
+              "quad_estimated_absolute_error": 3.29249718615393e-14
+            },
+            {
+              "lower": 10.0,
+              "upper": "infinity",
+              "value": 6.908262884250805e-13,
+              "quad_estimated_absolute_error": 4.181052378833643e-14
+            }
+          ]
+        },
+        {
+          "n": 2,
+          "term": "base",
+          "integral": 0.0014472745635478687,
+          "quad_estimated_absolute_error": 3.798086003994193e-17,
+          "segments": [
+            {
+              "lower": 0.0,
+              "upper": 1.0,
+              "value": 0.0013215757442102472,
+              "quad_estimated_absolute_error": 1.4672438200225928e-17
+            },
+            {
+              "lower": 1.0,
+              "upper": 10.0,
+              "value": 0.00012569881933762085,
+              "quad_estimated_absolute_error": 2.3301319308366165e-17
+            },
+            {
+              "lower": 10.0,
+              "upper": "infinity",
+              "value": 6.33256085526916e-19,
+              "quad_estimated_absolute_error": 7.102531349832179e-21
+            }
+          ]
+        },
+        {
+          "n": 2,
+          "term": "real_vertex_R_prime_squared",
+          "integral": 0.0585975026001299,
+          "quad_estimated_absolute_error": 5.2130094898216713e-14,
+          "segments": [
+            {
+              "lower": 0.0,
+              "upper": 1.0,
+              "value": 0.02798070974404738,
+              "quad_estimated_absolute_error": 3.106482823327981e-16
+            },
+            {
+              "lower": 1.0,
+              "upper": 10.0,
+              "value": 0.030616792771648263,
+              "quad_estimated_absolute_error": 2.0118609188736762e-14
+            },
+            {
+              "lower": 10.0,
+              "upper": "infinity",
+              "value": 8.443426004810982e-11,
+              "quad_estimated_absolute_error": 3.170083742714715e-14
+            }
+          ]
+        },
+        {
+          "n": 4,
+          "term": "base",
+          "integral": 0.0007620286767690202,
+          "quad_estimated_absolute_error": 3.942134149791273e-17,
+          "segments": [
+            {
+              "lower": 0.0,
+              "upper": 1.0,
+              "value": 0.0006045619347287091,
+              "quad_estimated_absolute_error": 3.738281309546664e-17
+            },
+            {
+              "lower": 1.0,
+              "upper": 10.0,
+              "value": 0.00015746674204023797,
+              "quad_estimated_absolute_error": 1.775519561730002e-18
+            },
+            {
+              "lower": 10.0,
+              "upper": "infinity",
+              "value": 7.306803628285291e-17,
+              "quad_estimated_absolute_error": 2.630088407160868e-19
+            }
+          ]
+        },
+        {
+          "n": 4,
+          "term": "real_vertex_R_prime_squared",
+          "integral": 0.06594916580947666,
+          "quad_estimated_absolute_error": 3.458258650736121e-13,
+          "segments": [
+            {
+              "lower": 0.0,
+              "upper": 1.0,
+              "value": 0.021168970934606547,
+              "quad_estimated_absolute_error": 8.396197201938866e-15
+            },
+            {
+              "lower": 1.0,
+              "upper": 10.0,
+              "value": 0.04478018401903591,
+              "quad_estimated_absolute_error": 8.348412819255721e-16
+            },
+            {
+              "lower": 10.0,
+              "upper": "infinity",
+              "value": 1.0855834197726575e-08,
+              "quad_estimated_absolute_error": 3.365948265897477e-13
+            }
+          ]
+        }
+      ],
+      "candidate_coefficient_PENDING_review": {
+        "base": 0.12568244751068408,
+        "real_vertex": 0.49675430427011447,
+        "total": 0.6224367517807985
+      },
+      "candidate_C2_PENDING_review": {
+        "base": 0.005789098254191475,
+        "real_vertex": -0.04687800208010392,
+        "total": -0.041088903825912446
+      },
+      "candidate_C4_PENDING_review": {
+        "base": 0.0019812745595994526,
+        "real_vertex": -0.013189833161895332,
+        "total": -0.01120855860229588
+      },
+      "candidate_signed_relative_dilation_a_squared_psi_four_coefficient_PENDING_review": -0.13202595672044312
+    }
+  ],
+  "precision_differences_absolute": {
+    "0:base": 0.0,
+    "0:real_vertex_R_prime_squared": 0.0,
+    "2:base": 0.0,
+    "2:real_vertex_R_prime_squared": 0.0,
+    "4:base": 0.0,
+    "4:real_vertex_R_prime_squared": 1.2558010187291302e-13
+  },
+  "caveat": "Grouped integrands evaluated at 40/70-digit precision before binary64 adaptive quadrature. Error estimates are not interval certificates. Inhomogeneous matrix rebuilding and entropy calculation are not part of this radial test."
+}

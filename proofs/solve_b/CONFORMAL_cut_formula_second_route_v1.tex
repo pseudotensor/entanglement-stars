@@ -1,0 +1,128 @@
+\documentclass[10pt]{article}
+\usepackage[letterpaper,margin=0.60in]{geometry}
+\usepackage{amsmath,amssymb,url}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+\setlength{\abovedisplayskip}{4pt}
+\setlength{\belowdisplayskip}{4pt}
+\begin{document}
+\small
+\begin{center}
+\textbf{The finite-circle conformal cut and its lattice domain}
+\end{center}
+\vspace{-5pt}
+\textbf{Scope [R].}
+This derivation serves the Sec.~V comparator and control D1.  A massless
+sector with no centrifugal term, a reflecting centre and outer wall,
+unfolds to a chiral complex fermion, \(c_{\rm CFT}=1\), on an initial
+optical circle of circumference \(L\).  Assume its pure Neveu--Schwarz
+vacuum, \(\psi(p+L)=-\psi(p)\), with unchanged reflection phases.
+Neither regularity at the centre nor absence of a zero level alone
+certifies this monodromy.  There are two sectors per chain.
+
+For \(ds^2=-N^2dt^2+(dR-v\,dt)^2\), let \(p_o,p_i\) be outgoing
+and incoming initial-vacuum labels at a fixed exterior cut \(R_c\).
+Dots denote fixed-cut time derivatives;
+\(\dot p_o,\dot p_i>0\), \(D=N^2-v^2>0\),
+and \(0<\ell=p_i-p_o<L\).  Put
+\(d_L=(L/\pi)\sin(\pi\ell/L)\), with all reflections included.
+Replica uniformization gives \(h_n=(n-1/n)/24\); the circle
+two-point function yields
+\(S=\frac16\ln[d_L/\sqrt{\epsilon_o\epsilon_i}]+C\).
+The decisive endpoint step, for lattice spacing \(a\), follows from
+\((\partial_t+(v\pm N)\partial_R)p_{o,i}=0\):
+\[
+ \epsilon_o=\frac{a\dot p_o}{N+v},\qquad
+ \epsilon_i=\frac{a\dot p_i}{N-v},\qquad
+ S_{\rm conf}=\frac16\ln\frac{d_L}a
+       -\frac1{12}\ln(\dot p_o\dot p_i)+\frac1{12}\ln D+C .
+ \tag{1}
+\]
+Purity makes this the exterior entropy.  Subtract the same initial
+vacuum, denoted by \(0\), with the same cutoff convention, so \(C\)
+cancels.  Set \(F=\frac16\ln(d_L/a)\),
+\(n_j=-\ln(\dot p_j/\dot p_{j0})\), and
+\(A=[n_i+\ln(D/D_0)]/12\).  The e-folding identity and its rate
+on an exponential segment \(\dot n_o=\kappa\) are
+\[
+ B_{\rm conf}\equiv\Delta S_{\rm conf}-\Delta F=\frac{n_o}{12}+A,
+ \qquad
+ \dot B_{\rm conf}=\frac{\kappa}{12}
+       +\frac1{12}\frac{d}{dt}\ln\frac{D}{\dot p_i}.
+ \tag{2}
+\]
+Thus \(\dot B_{\rm conf}=\kappa/12\) precisely when \(D/\dot p_i\)
+is constant.  Raw \(S_{\rm conf}\) adds
+\(\dot F=\frac{\pi}{6L}\cot(\pi\ell/L)(\dot p_i-\dot p_o)\);
+its rate is \(\kappa/12\) when both extra terms sum to zero.
+For a supplied map \(p(u)\), use
+\(\dot p_o=p'(u_c)\dot u_c\), including this clock factor in \(n_o\).
+The reference here is the initial vacuum.
+
+Equation (1) is a conformal scaling formula.  A finite chain can agree
+when endpoint separations are resolved, fields and label maps are smooth
+on the lattice scale, and accumulated propagation errors are small.
+For the local constant-field symbol, \(k\) is displacement from a massless
+valley and \(s=\pm1\) includes its chirality:
+\[
+ \omega_s=(v+sN)k-\frac{a^2}{6}(4v+sN)k^3+O(a^4k^5),\qquad
+ a|k|\ll1,\quad
+ \frac{a^2|4v+sN|k^2}{6|v+sN|}\ll1 .
+ \tag{3}
+\]
+These conditions must hold along the relevant rays.  Precursors
+blueshift as \(e^{n_o}\); cancellation in \(v+N\) tightens (3).
+The finite-spacing parting step is replacing the finite-band propagator
+by conformal transport outside this domain.
+
+The source-reported checks, in nats per sector, remain numerical targets.
+The 1200-site prescribed-flow harness gives \(7.1\times10^{-5}\)
+through two e-foldings and \(2.1\times10^{-4}\) through four,
+with its first \(10^{-3}\) departure at 4.07.
+For B2 use the fixed unit \(r_0=64a\): at \(R_c=2r_0\), the reported
+error is \(4\times10^{-4}\) through about two e-foldings and
+\(6.3\times10^{-3}\) (A2), \(6.4\times10^{-3}\) (D1), at 2.90.
+Departures above 0.01 begin at 2.85--3.47 across five cuts.
+D1's separate \(7\times10^{-5}\) is tracer step refinement.
+There is no universal three-e-folding boundary; the incoming-label
+correction for \(p_i>0\), quoted as at most \(2\times10^{-3}\), is estimated.
+
+Define the lattice observable \(B_{\rm lat}=\Delta S_{\rm lat}-\Delta F\);
+the Jacobian equality (2) is restricted to the conformal description.
+At the fixed \(2r_0\) cut, the supplied \(0.92\pm0.04\) target on
+\(60\le t/r_0\le100\) uses A2's growth-minus-circle convention
+(reported mean 0.925).  D1's header additionally subtracts \(A\);
+its similarly rounded number describes a different observable.
+For \(B_{\rm lat}\), compare the supplied cutoff ansatz
+\(B_{\rm sat}(c)=\ln[c/(aT_H)]/12+\delta\), identified as withdrawn
+in A2, with \(c\) distinct from \(c_{\rm CFT}\):
+\[
+ r_E(t)=2GE(t),\qquad T_H(t)=\frac1{4\pi r_E(t)},\qquad
+ B_\pi(t)=\frac1{12}\ln\!\left[4\pi^2\frac{r_E(t)}a\right]+\delta .
+ \tag{4}
+\]
+The charge radius \(r_E\) is distinct from the applied trapping root.
+At \(t=100r_0\), supplied entries give \(r_E/a=53.03\) and
+\(B_{\rm lat}=1.3872-0.4453=0.9419\), against \(B_\pi\simeq0.637\)
+for \(\delta=0\), or 0.633 for the separate \(\delta=-0.004\) convention.
+The value 0.653 uses the nominal \(r_E=r_0\).
+These are same-clock arithmetic comparisons of source entries;
+a window comparison needs the same-clock, same-weight average of (4),
+which is not recomputed here.  An outgoing-only interpretation of the
+ansatz needs \(A\) added for comparison with \(B_{\rm lat}\).
+No numerical result is independently cleared and no saturation constant
+is derived.
+
+\vspace{2pt}
+{\footnotesize\textbf{SOURCES.} The independent draft used isolated
+formula/map statements and supplied definitions; full A2 and D1 text
+was read for the review corrections.\\
+\path{<internal>/REVIEWA_write_A2_v1.1.md}
+\\
+\path{<internal>/PAGE_VERIFY_D1_conformal_control_v1.1.md}
+\\
+\path{<internal>/redteam_CONFORMAL_cut_formula_second_route_v1.md}
+\\
+\path{<internal>/requirements_new.txt}.}
+\end{document}

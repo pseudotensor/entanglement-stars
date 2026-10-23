@@ -1,0 +1,489 @@
+{
+  "scope": "reviewer B-prescribed postprocessing of saved finite C matrices; no new source rebuilds",
+  "execution": {
+    "assigned_gpu_uuid": "GPU-1c907351-ed3d-0d52-5072-e791dde9df56",
+    "cuda_allocation_bytes": 1048576,
+    "cuda_context_in_this_single_job_process": true,
+    "single_process_pid": 1325218,
+    "niceness": 10,
+    "threads_at_launch": 5,
+    "maximum_threads": 8
+  },
+  "profiles": [
+    {
+      "label": "U",
+      "free_family": "original_sine_polar",
+      "source_names": [
+        "N0",
+        "N1",
+        "s0",
+        "s1"
+      ],
+      "E_total": 1.7320457197129309,
+      "W0": 0.0,
+      "E_excitation_ground": 1.7320457197129309,
+      "H_matter_ground": [
+        [
+          -2.1332755226069506e-24,
+          -3.6178514603136495e-15,
+          -2.309456480570377,
+          4.258870646487924e-15
+        ],
+        [
+          -3.6178514603136495e-15,
+          -23.052244584056535,
+          2.212452732854613e-15,
+          15.918782983631333
+        ],
+        [
+          -2.309456480570377,
+          2.2124527328546125e-15,
+          8.467577363092175,
+          -3.096363264182082e-15
+        ],
+        [
+          4.258870646487924e-15,
+          15.91878298363133,
+          -2.915301317201988e-15,
+          -72.41625629224335
+        ]
+      ],
+      "saved_matrix_checks": {
+        "H_hermiticity_frobenius": 0.0,
+        "first_hermiticity_frobenius": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "second_hermiticity_max_frobenius": 0.0,
+        "second_source_symmetry_max_frobenius": 1.8284472537943915e-13,
+        "eigenvector_orthonormality_frobenius": 2.982013840496354e-14,
+        "maximum_saved_eigenpair_residual": 7.961011348499545e-15,
+        "rebuilt_clamped_Hessian_error": {
+          "maximum_entry_error": 0.0,
+          "location_indices": [
+            0,
+            0
+          ],
+          "location_sources": [
+            "N0",
+            "N0"
+          ],
+          "frobenius_error": 0.0,
+          "relative_frobenius_error": 0.0
+        },
+        "rebuilt_spectral_susceptibility_error": {
+          "maximum_entry_error": 0.0,
+          "location_indices": [
+            0,
+            0
+          ],
+          "location_sources": [
+            "N0",
+            "N0"
+          ],
+          "frobenius_error": 0.0,
+          "relative_frobenius_error": 0.0
+        },
+        "rebuilt_ground_Hessian_error": {
+          "maximum_entry_error": 0.0,
+          "location_indices": [
+            0,
+            0
+          ],
+          "location_sources": [
+            "N0",
+            "N0"
+          ],
+          "frobenius_error": 0.0,
+          "relative_frobenius_error": 0.0
+        },
+        "direct_projected_linear_solve_susceptibility_error": {
+          "maximum_entry_error": 2.2737367544323206e-13,
+          "location_indices": [
+            3,
+            3
+          ],
+          "location_sources": [
+            "s1",
+            "s1"
+          ],
+          "frobenius_error": 2.319806383052578e-13,
+          "relative_frobenius_error": 2.632870813121312e-15
+        },
+        "direct_projected_linear_solve_residual_frobenius": 3.4866259234342097e-15,
+        "direct_response_ground_orthogonality_norm": 1.5430596151876946e-15
+      },
+      "ground_FD_errors": [
+        {
+          "step": 0.001,
+          "maximum_entry_error": 0.004245579460757654,
+          "location_indices": [
+            1,
+            3
+          ],
+          "location_sources": [
+            "N1",
+            "s1"
+          ],
+          "frobenius_error": 0.0060041646232027865,
+          "relative_frobenius_error": 7.289583701728411e-05
+        },
+        {
+          "step": 0.0005,
+          "maximum_entry_error": 0.0010616734885537937,
+          "location_indices": [
+            1,
+            3
+          ],
+          "location_sources": [
+            "N1",
+            "s1"
+          ],
+          "frobenius_error": 0.0015014345770440573,
+          "relative_frobenius_error": 1.8228735734087144e-05
+        },
+        {
+          "step": 0.00025,
+          "maximum_entry_error": 0.00026544818064522246,
+          "location_indices": [
+            1,
+            3
+          ],
+          "location_sources": [
+            "N1",
+            "s1"
+          ],
+          "frobenius_error": 0.00037540090152244585,
+          "relative_frobenius_error": 4.557696973825545e-06
+        }
+      ],
+      "scope": "saved-matrix numerical consistency and existing finite differences; no interval, neighborhood, native or thermodynamic certificate",
+      "existing_ladder_Richardson_estimate": {
+        "steps": [
+          0.0005,
+          0.00025
+        ],
+        "Hessian": [
+          [
+            4.4088189889003444e-08,
+            4.440892098500626e-09,
+            -2.309456477833649,
+            1.2804572217343472e-08
+          ],
+          [
+            4.440892098500626e-09,
+            -23.052244674396743,
+            4.6629367034256575e-09,
+            14.145891310176259
+          ],
+          [
+            -2.309456477833649,
+            4.6629367034256575e-09,
+            8.467577417483854,
+            -1.2212453270876722e-07
+          ],
+          [
+            1.2804572217343472e-08,
+            14.145891310176259,
+            -1.2212453270876722e-07,
+            -75.96203937147254
+          ]
+        ],
+        "error_against_analytic": {
+          "maximum_entry_error": 1.881916915635884e-07,
+          "location_indices": [
+            3,
+            3
+          ],
+          "location_sources": [
+            "s1",
+            "s1"
+          ],
+          "frobenius_error": 2.8617044818849714e-07,
+          "relative_frobenius_error": 3.47436082443459e-09
+        },
+        "scope": "heuristic cancellation of the leading h^2 error, using existing data only"
+      },
+      "uniform_spectral_weights": [
+        {
+          "source": "N1",
+          "total_positive_susceptibility_weight": 23.052244584056535,
+          "total_matrix_element_squared": 2.904730738488031,
+          "base_minimum_gap": 6.315531135836494e-07,
+          "cumulative_gap_cuts": [
+            {
+              "gap_less_than": 1e-05,
+              "states": 27,
+              "matrix_element_squared_sum": 6.058529311974758e-29,
+              "susceptibility_weight_sum": 3.373716322776729e-23,
+              "fraction_of_total_susceptibility": 1.4635088181868716e-24
+            },
+            {
+              "gap_less_than": 0.001,
+              "states": 27,
+              "matrix_element_squared_sum": 6.058529311974758e-29,
+              "susceptibility_weight_sum": 3.373716322776729e-23,
+              "fraction_of_total_susceptibility": 1.4635088181868716e-24
+            }
+          ],
+          "smallest_gap_at_relative_weight_thresholds": [
+            {
+              "relative_to_total_susceptibility": 1e-12,
+              "absolute_weight_threshold": 2.3052244584056534e-11,
+              "smallest_gap": 0.2520126927728761
+            },
+            {
+              "relative_to_total_susceptibility": 1e-10,
+              "absolute_weight_threshold": 2.3052244584056537e-09,
+              "smallest_gap": 0.2520126927728761
+            },
+            {
+              "relative_to_total_susceptibility": 1e-08,
+              "absolute_weight_threshold": 2.3052244584056535e-07,
+              "smallest_gap": 0.2520126927728761
+            }
+          ]
+        },
+        {
+          "source": "s1",
+          "total_positive_susceptibility_weight": 81.0177374295373,
+          "total_matrix_element_squared": 10.20877319475421,
+          "base_minimum_gap": 6.315531135836494e-07,
+          "cumulative_gap_cuts": [
+            {
+              "gap_less_than": 1e-05,
+              "states": 27,
+              "matrix_element_squared_sum": 1.8579592058339655e-28,
+              "susceptibility_weight_sum": 1.0475997410970234e-22,
+              "fraction_of_total_susceptibility": 1.2930498608507071e-24
+            },
+            {
+              "gap_less_than": 0.001,
+              "states": 27,
+              "matrix_element_squared_sum": 1.8579592058339655e-28,
+              "susceptibility_weight_sum": 1.0475997410970234e-22,
+              "fraction_of_total_susceptibility": 1.2930498608507071e-24
+            }
+          ],
+          "smallest_gap_at_relative_weight_thresholds": [
+            {
+              "relative_to_total_susceptibility": 1e-12,
+              "absolute_weight_threshold": 8.10177374295373e-11,
+              "smallest_gap": 0.2520126927728761
+            },
+            {
+              "relative_to_total_susceptibility": 1e-10,
+              "absolute_weight_threshold": 8.101773742953732e-09,
+              "smallest_gap": 0.2520126927728761
+            },
+            {
+              "relative_to_total_susceptibility": 1e-08,
+              "absolute_weight_threshold": 8.101773742953731e-07,
+              "smallest_gap": 0.2520126927728761
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "R",
+      "free_family": "original_sine_polar",
+      "source_names": [
+        "N0",
+        "N1",
+        "s0",
+        "s1"
+      ],
+      "E_total": 1.37220211983893,
+      "W0": -0.019325138274660807,
+      "E_excitation_ground": 1.391527258113591,
+      "H_matter_ground": [
+        [
+          -0.010173718310302894,
+          -0.022047921854848506,
+          -1.2464865862193149,
+          -1.8369096675423995
+        ],
+        [
+          -0.022047921854848506,
+          -9.189743093471648,
+          -0.8650884576503116,
+          0.8300504784075855
+        ],
+        [
+          -1.2464865862193149,
+          -0.8650884576503116,
+          4.2553570276297,
+          5.6156686082184795
+        ],
+        [
+          -1.8369096675423995,
+          0.8300504784075864,
+          5.6156686082184795,
+          -5.672157957628632
+        ]
+      ],
+      "saved_matrix_checks": {
+        "H_hermiticity_frobenius": 0.0,
+        "first_hermiticity_frobenius": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "second_hermiticity_max_frobenius": 0.0,
+        "second_source_symmetry_max_frobenius": 8.598837226845415e-14,
+        "eigenvector_orthonormality_frobenius": 3.553223207643415e-14,
+        "maximum_saved_eigenpair_residual": 7.088051730232628e-15,
+        "rebuilt_clamped_Hessian_error": {
+          "maximum_entry_error": 0.0,
+          "location_indices": [
+            0,
+            0
+          ],
+          "location_sources": [
+            "N0",
+            "N0"
+          ],
+          "frobenius_error": 0.0,
+          "relative_frobenius_error": 0.0
+        },
+        "rebuilt_spectral_susceptibility_error": {
+          "maximum_entry_error": 0.0,
+          "location_indices": [
+            0,
+            0
+          ],
+          "location_sources": [
+            "N0",
+            "N0"
+          ],
+          "frobenius_error": 0.0,
+          "relative_frobenius_error": 0.0
+        },
+        "rebuilt_ground_Hessian_error": {
+          "maximum_entry_error": 0.0,
+          "location_indices": [
+            0,
+            0
+          ],
+          "location_sources": [
+            "N0",
+            "N0"
+          ],
+          "frobenius_error": 0.0,
+          "relative_frobenius_error": 0.0
+        },
+        "direct_projected_linear_solve_susceptibility_error": {
+          "maximum_entry_error": 8.43769498715119e-15,
+          "location_indices": [
+            1,
+            3
+          ],
+          "location_sources": [
+            "N1",
+            "s1"
+          ],
+          "frobenius_error": 1.5534510231963407e-14,
+          "relative_frobenius_error": 1.0302309037540834e-15
+        },
+        "direct_projected_linear_solve_residual_frobenius": 3.3952953506139498e-15,
+        "direct_response_ground_orthogonality_norm": 3.0889000888372506e-16
+      },
+      "ground_FD_errors": [
+        {
+          "step": 0.001,
+          "maximum_entry_error": 0.000515865980665442,
+          "location_indices": [
+            1,
+            3
+          ],
+          "location_sources": [
+            "N1",
+            "s1"
+          ],
+          "frobenius_error": 0.0007516666110906319,
+          "relative_frobenius_error": 4.643609790298106e-05
+        },
+        {
+          "step": 0.0005,
+          "maximum_entry_error": 0.00012897512797716004,
+          "location_indices": [
+            1,
+            3
+          ],
+          "location_sources": [
+            "N1",
+            "s1"
+          ],
+          "frobenius_error": 0.00018793181179094855,
+          "relative_frobenius_error": 1.1609960962276751e-05
+        },
+        {
+          "step": 0.00025,
+          "maximum_entry_error": 3.224694695669328e-05,
+          "location_indices": [
+            1,
+            3
+          ],
+          "location_sources": [
+            "N1",
+            "s1"
+          ],
+          "frobenius_error": 4.702471146898577e-05,
+          "relative_frobenius_error": 2.905069978384297e-06
+        }
+      ],
+      "scope": "saved-matrix numerical consistency and existing finite differences; no interval, neighborhood, native or thermodynamic certificate",
+      "existing_ladder_Richardson_estimate": {
+        "steps": [
+          0.0005,
+          0.00025
+        ],
+        "Hessian": [
+          [
+            -0.010173826003878617,
+            -0.022047915789376777,
+            -1.2298468700470504,
+            -2.067569763619659
+          ],
+          [
+            -0.022047915789376777,
+            -9.189743070489895,
+            -0.8613292681314277,
+            -0.8027726395483844
+          ],
+          [
+            -1.2298468700470504,
+            -0.8613292681314277,
+            4.375371381229145,
+            5.8082449013359865
+          ],
+          [
+            -2.067569763619659,
+            -0.8027726395483844,
+            5.8082449013359865,
+            -8.752578902389748
+          ]
+        ],
+        "error_against_analytic": {
+          "maximum_entry_error": 6.597874300240392e-07,
+          "location_indices": [
+            3,
+            3
+          ],
+          "location_sources": [
+            "s1",
+            "s1"
+          ],
+          "frobenius_error": 7.098404085230061e-07,
+          "relative_frobenius_error": 4.3852178903942264e-08
+        },
+        "scope": "heuristic cancellation of the leading h^2 error, using existing data only"
+      }
+    }
+  ],
+  "complete": true
+}

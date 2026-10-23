@@ -1,0 +1,27 @@
+{
+  "status": "finished",
+  "command": [
+    "timeout",
+    "-s",
+    "TERM",
+    "-k",
+    "2s",
+    "30s",
+    "nice",
+    "-n",
+    "10",
+    "<internal>/python",
+    "<internal>/fixed_mass_image_diagnostic.py"
+  ],
+  "purpose": "V2.9 necessary saved-cell image diagnostic only",
+  "resources": {
+    "cpu_threads": 1,
+    "wall_seconds": 30,
+    "address_space_bytes": 268435456,
+    "cuda": "disabled"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.9654076285660267,
+  "stdout": "{\"status\": \"complete_diagnostic_only\", \"case_count\": 16, \"elapsed_seconds\": 0.855541005730629}\n",
+  "stderr": ""
+}

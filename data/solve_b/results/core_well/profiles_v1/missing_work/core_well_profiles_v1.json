@@ -1,0 +1,4701 @@
+{
+  "status": "completed",
+  "purpose": "owner66 L; core compression, momentum and exponent control",
+  "slices": {
+    "16": {
+      "input": {
+        "path": "<internal>/orbitals_c19_rs64_A_R2_tau8_ell4_avg_r11_T0016.00.npz",
+        "size": 2685802106,
+        "mtime_ns": 1792108287000000000,
+        "device": 2048,
+        "inode": 17631792
+      },
+      "clock": 16,
+      "channels": {
+        "1": {
+          "n_dust": 5,
+          "weight": 16.0,
+          "f": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "occupation_domain": true,
+          "stored_gram_max": 2.0650148258027912e-14,
+          "raw_count": 5.000000000000052
+        },
+        "2": {
+          "n_dust": 4,
+          "weight": 32.0,
+          "f": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "occupation_domain": true,
+          "stored_gram_max": 1.8762769116165146e-14,
+          "raw_count": 3.999999999999999
+        },
+        "3": {
+          "n_dust": 3,
+          "weight": 48.0,
+          "f": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "occupation_domain": true,
+          "stored_gram_max": 2.316999641094094e-14,
+          "raw_count": 3.000000000000045
+        },
+        "4": {
+          "n_dust": 2,
+          "weight": 64.0,
+          "f": [
+            1.0,
+            1.0
+          ],
+          "occupation_domain": true,
+          "stored_gram_max": 2.6201263382578847e-14,
+          "raw_count": 2.0000000000000204
+        },
+        "5": {
+          "n_dust": 2,
+          "weight": 80.0,
+          "f": [
+            1.0,
+            1.0
+          ],
+          "occupation_domain": true,
+          "stored_gram_max": 1.487698868973801e-14,
+          "raw_count": 1.999999999999981
+        },
+        "6": {
+          "n_dust": 0,
+          "weight": 96.0,
+          "f": [],
+          "occupation_domain": true,
+          "stored_gram_max": 0,
+          "raw_count": 0.0
+        },
+        "7": {
+          "n_dust": 0,
+          "weight": 112.0,
+          "f": [],
+          "occupation_domain": true,
+          "stored_gram_max": 0,
+          "raw_count": 0.0
+        },
+        "8": {
+          "n_dust": 0,
+          "weight": 128.0,
+          "f": [],
+          "occupation_domain": true,
+          "stored_gram_max": 0,
+          "raw_count": 0.0
+        },
+        "9": {
+          "n_dust": 0,
+          "weight": 144.0,
+          "f": [],
+          "occupation_domain": true,
+          "stored_gram_max": 0,
+          "raw_count": 0.0
+        },
+        "10": {
+          "n_dust": 0,
+          "weight": 160.0,
+          "f": [],
+          "occupation_domain": true,
+          "stored_gram_max": 0,
+          "raw_count": 0.0
+        }
+      },
+      "archive_dtype": "complex128",
+      "record": {
+        "T": 1024.0,
+        "T_over_rs": 16.0,
+        "E": 108.54800241353853,
+        "R_c": 32.24700700099046,
+        "R_t": 50.837098539574995,
+        "r_in": 23.4437146266384,
+        "converged": true,
+        "solver": {
+          "module": "engine_fields_v14.solve_constraints_ivp",
+          "nfev": 5717,
+          "N_centre": 0.18049428465921527,
+          "residual_W": 4.188403054063548e-07,
+          "residual_invN": 9.169258116491955e-08,
+          "residual_matching_region": {
+            "W": 4.188403054063548e-07,
+            "invN": 9.169258116491955e-08
+          },
+          "residual_ladder": {
+            "h_ell/64_and_/128": [
+              4.188403054063548e-07,
+              9.169258116491955e-08
+            ],
+            "h_ell/32_and_/64": [
+              4.1907546218496253e-07,
+              9.163746465474471e-08
+            ]
+          },
+          "source_spline_error": {
+            "rho": 2.252055394884851e-12,
+            "J": 1.1177849539526956e-11
+          },
+          "centre_series_ratio": 0.999794067618946,
+          "centre_series_check": {
+            "rho_spline_minus_series_rel": 8.125234423530989e-10,
+            "J_spline_minus_series_rel": 1.8533580059875091e-09,
+            "regular_start": true
+          },
+          "collar_margin": {
+            "needed_node": 520,
+            "last_node": 512,
+            "deficit_ell": 8,
+            "eps_share_last_8ell": 2.6082063468045515e-06,
+            "J_abs_last_8ell": 0.0015873265091257576
+          },
+          "W_tail": {
+            "r_end": 2080.0,
+            "E_tail_end": 108.54802585786213,
+            "E_collar": 108.54800241353853,
+            "flagged": true
+          },
+          "W_roundoff_negative_points": 0,
+          "W_negative": null,
+          "site_fields": "averaged",
+          "kernel_norms": [
+            0.9999999999999842,
+            0.9999999999999992
+          ]
+        },
+        "label": "quasi-static (tau = 8); ell = 4; reference: R2 (the continued sea, Landau-Zener matched maximum overlap (c_LZ = 1, window 4)); site fields: averaged; engine_fields_v14 (one outward initial-value problem, the momentum equation kept everywhere, the flat-slice gauge continued and labelled); economy: lagged first iterate, stop |dE/E| < 1e-07 and fields < 1e-06, plain iteration, at most 20 iterations (the smallest-residual iterate returned, flagged); tau = 8; collar policy flag; dictionary: H = N E + v.p, ds^2 = -N^2 dt^2 + (dx - v dt)^2, the ADM sign of the momentum law (J_i = -(1/8 pi G) d_j (K^j_i - delta^j_i K) for K_ij = (d_i v_j + d_j v_i)/(2N)); the goal's display's sign of v amended per engine 12.2; the owner's confirmation pending; J_ell = <P_r> = -J_r of the goal's display (engine 20.3)"
+      },
+      "field_index": 128,
+      "dense_nodes": 513,
+      "applied_fields_vs_historical_max": 0.0,
+      "matched_channels": {
+        "1": {
+          "gram_min": 0.9999999999989198,
+          "gram_max": 1.0000000000011036,
+          "gram_condition": 1.0000000000021838,
+          "hermitian_defect": 1.333863159195491e-16,
+          "dust_orthogonality_max": 3.7747582839178344e-15,
+          "status": "complete",
+          "count": 5.000000000000006,
+          "shell_parseval_max": 1.3877787807814457e-17,
+          "spectral": {
+            "count_bins": [
+              1.597865844685555e-07,
+              3.4209859371464294e-05,
+              0.0006772483019835501,
+              4.996134971837166,
+              0.0031534098460753693,
+              3.6882942347317775e-10
+            ],
+            "energy_bins": [
+              -1.674320582301185e-07,
+              -2.0653881549299633e-05,
+              -5.9919058888929764e-05,
+              0.35042304455874146,
+              0.0007163961879443118,
+              4.027463201517688e-10
+            ],
+            "max_eigen_residual": 1.4188390922974637e-14,
+            "reconstruction_max": 1.3961495968248967e-15,
+            "site_completeness_max": 4.440892098500626e-16,
+            "count_completeness": 3.552713678800501e-15,
+            "energy_completeness": 1.6653345369377348e-16,
+            "min_distance_to_edge": [
+              0.0001394556803435698,
+              4.9330307606010315e-06,
+              0.02885132402804967,
+              4.933030760462254e-06,
+              0.00013945568034379185
+            ],
+            "edge_membership_certified": false,
+            "direct_energy": 0.3510587007769355,
+            "eigensystem_path": "<internal>/eigensystem_T16_k01.npz",
+            "eigensystem_sha256": "16b31c807bfd634e972ba28721dfbe67905e767875e8a4d2e504a921069e71c4"
+          }
+        },
+        "2": {
+          "gram_min": 0.9999999999989025,
+          "gram_max": 1.0000000000010625,
+          "gram_condition": 1.00000000000216,
+          "hermitian_defect": 1.8462512823384912e-16,
+          "dust_orthogonality_max": 2.3441099480769837e-15,
+          "status": "complete",
+          "count": 4.000000000000006,
+          "shell_parseval_max": 8.881784197001252e-16,
+          "spectral": {
+            "count_bins": [
+              1.1811287305493944e-07,
+              3.5520518456460284e-05,
+              4.777600797716836e-05,
+              3.9988006672746095,
+              0.001115917813160947,
+              2.729280698785214e-10
+            ],
+            "energy_bins": [
+              -1.2377826071988282e-07,
+              -2.1344037868430066e-05,
+              -4.651368760211069e-06,
+              0.2723592322650355,
+              0.00024406986066910692,
+              2.980903672250297e-10
+            ],
+            "max_eigen_residual": 1.4381269717902775e-14,
+            "reconstruction_max": 1.4734002284896296e-15,
+            "site_completeness_max": 5.273559366969494e-16,
+            "count_completeness": -1.7763568394002505e-15,
+            "energy_completeness": -3.3306690738754696e-16,
+            "min_distance_to_edge": [
+              0.00014744282928425,
+              5.295754147421894e-05,
+              0.03173145315561569,
+              5.295754147427445e-05,
+              0.00014744282928447205
+            ],
+            "edge_membership_certified": false,
+            "direct_energy": 0.27257718323890623,
+            "eigensystem_path": "<internal>/eigensystem_T16_k02.npz",
+            "eigensystem_sha256": "27a98032df7b2974f692e4b2a2381582de8332ec566655a6afec91c5b20490af"
+          }
+        },
+        "3": {
+          "gram_min": 0.9999999999989235,
+          "gram_max": 1.0000000000010603,
+          "gram_condition": 1.0000000000021367,
+          "hermitian_defect": 1.791417581263551e-16,
+          "dust_orthogonality_max": 2.2204461196008675e-15,
+          "status": "complete",
+          "count": 3.000000000000003,
+          "shell_parseval_max": 6.938893903907228e-18,
+          "spectral": {
+            "count_bins": [
+              8.254668990646598e-08,
+              3.497160059297681e-05,
+              5.113446742817679e-06,
+              2.998994882566787,
+              0.0009649497014908316,
+              1.3770122838903686e-10
+            ],
+            "energy_bins": [
+              -8.649120724991146e-08,
+              -2.129019646619812e-05,
+              -4.876861464274991e-07,
+              0.21419990792804558,
+              0.00020210826144089307,
+              1.5050270782595656e-10
+            ],
+            "max_eigen_residual": 1.444084812152047e-14,
+            "reconstruction_max": 1.13969088034579e-15,
+            "site_completeness_max": 3.0531133177191805e-16,
+            "count_completeness": 2.6645352591003757e-15,
+            "energy_completeness": 3.3306690738754696e-16,
+            "min_distance_to_edge": [
+              0.00016089769283800237,
+              2.148068923668589e-05,
+              0.036014444597099536,
+              2.1480689236574868e-05,
+              0.00016089769283778033
+            ],
+            "edge_membership_certified": false,
+            "direct_energy": 0.21438015196616897,
+            "eigensystem_path": "<internal>/eigensystem_T16_k03.npz",
+            "eigensystem_sha256": "eb84508d99f1a873575c3d8e1f6b0028454082e8bedb41c93bdfa0314d6d5a30"
+          }
+        },
+        "4": {
+          "gram_min": 0.9999999999989484,
+          "gram_max": 1.0000000000010372,
+          "gram_condition": 1.0000000000020888,
+          "hermitian_defect": 1.7342235242358232e-16,
+          "dust_orthogonality_max": 4.4408923754338e-15,
+          "status": "complete",
+          "count": 2.0000000000000058,
+          "shell_parseval_max": 2.168404344971009e-19,
+          "spectral": {
+            "count_bins": [
+              2.8109361601930596e-08,
+              2.6530242353653986e-05,
+              1.1706940797452938e-06,
+              1.9988341343689788,
+              0.0011381365183028515,
+              6.692795037038378e-11
+            ],
+            "energy_bins": [
+              -2.9560044661766737e-08,
+              -1.577190066083123e-05,
+              -1.156715153576932e-07,
+              0.14651080637023134,
+              0.00023592434106457482,
+              7.321501556142327e-11
+            ],
+            "max_eigen_residual": 1.4307147838481878e-14,
+            "reconstruction_max": 1.3353179736535836e-15,
+            "site_completeness_max": 4.996003610813204e-16,
+            "count_completeness": -8.881784197001252e-16,
+            "energy_completeness": -3.3306690738754696e-16,
+            "min_distance_to_edge": [
+              0.00017981926692312022,
+              7.394106800862055e-05,
+              0.041351329952939,
+              7.394106800850953e-05,
+              0.00017981926692334227
+            ],
+            "edge_membership_certified": false,
+            "direct_energy": 0.14673081365229043,
+            "eigensystem_path": "<internal>/eigensystem_T16_k04.npz",
+            "eigensystem_sha256": "e0950510b08ff4824e97b3bd16772b37beb05d603fa726903dbac8b230e2d69a"
+          }
+        },
+        "5": {
+          "gram_min": 0.9999999999989404,
+          "gram_max": 1.000000000001037,
+          "gram_condition": 1.0000000000020965,
+          "hermitian_defect": 1.1739862079479962e-16,
+          "dust_orthogonality_max": 2.2204492509066526e-15,
+          "status": "complete",
+          "count": 1.9999999999999987,
+          "shell_parseval_max": 6.938893903907228e-18,
+          "spectral": {
+            "count_bins": [
+              2.654641259654543e-08,
+              3.096588442115914e-05,
+              4.89659501990471e-07,
+              1.998037636843004,
+              0.0019308810283133542,
+              3.834467269446842e-11
+            ],
+            "energy_bins": [
+              -2.7862029148346218e-08,
+              -1.8794415146870223e-05,
+              -6.41879200997395e-08,
+              0.17773995323675731,
+              0.00039857577509399796,
+              4.185422536675125e-11
+            ],
+            "max_eigen_residual": 1.4049622608766715e-14,
+            "reconstruction_max": 1.1370473920057825e-15,
+            "site_completeness_max": 1.6653345369377348e-16,
+            "count_completeness": -1.1102230246251565e-15,
+            "energy_completeness": -1.6653345369377348e-16,
+            "min_distance_to_edge": [
+              0.00018199580528310833,
+              9.433959797133795e-06,
+              0.04755926747502066,
+              9.433959797022773e-06,
+              0.00018199580528355241
+            ],
+            "edge_membership_certified": false,
+            "direct_energy": 0.1781196425886096,
+            "eigensystem_path": "<internal>/eigensystem_T16_k05.npz",
+            "eigensystem_sha256": "42374f0418986e1670ecda9c79a49aa22f2e87cee39cd6edd26aeabc6af7e4b5"
+          }
+        },
+        "6": {
+          "status": "empty",
+          "count": 0
+        },
+        "7": {
+          "status": "empty",
+          "count": 0
+        },
+        "8": {
+          "status": "empty",
+          "count": 0
+        },
+        "9": {
+          "status": "empty",
+          "count": 0
+        },
+        "10": {
+          "status": "empty",
+          "count": 0
+        }
+      },
+      "raw_weighted_count": 640.0000000000027,
+      "matched": {
+        "R50": 31.35017895357803,
+        "R90": 47.25793974044118,
+        "count": 640.0000000000008,
+        "primary_fit": {
+          "dense": {
+            "n": 29,
+            "slope": 0.21493078637442312,
+            "intercept": -2.1713485872473566,
+            "slope_se": 0.017842552885171493,
+            "r2": 0.8431192979773376
+          },
+          "applied": {
+            "n": 29,
+            "slope": 0.21733619653246775,
+            "intercept": -2.1268556918567447,
+            "slope_se": 0.018712951814750366,
+            "r2": 0.8332200146544642
+          }
+        },
+        "epsilon_c_record_total_over_joint_dust": 0.5482306786291621,
+        "epsilon_c_record_dust_over_joint_dust": 0.547161281049385,
+        "raw_to_joint_site_count_max": 3.801403636316536e-13,
+        "primary_window_count": 309.248047953505,
+        "primary_window_ratio_status": "defined",
+        "exponent_record_eps_minus_m_over_2m": 0.8705766965729052,
+        "exponent_record_eps_over_2m": 1.3705766965729052
+      }
+    },
+    "12": {
+      "input": {
+        "path": "<internal>/orbitals_c19_rs64_A_R2_tau8_ell4_avg_r11_T0012.00.npz",
+        "size": 2685802106,
+        "mtime_ns": 1792107171000000000,
+        "device": 2048,
+        "inode": 17631790
+      },
+      "clock": 12,
+      "channels": {
+        "1": {
+          "n_dust": 5,
+          "weight": 16.0,
+          "f": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "occupation_domain": true,
+          "stored_gram_max": 1.887379141862766e-14,
+          "raw_count": 5.000000000000044
+        },
+        "2": {
+          "n_dust": 4,
+          "weight": 32.0,
+          "f": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "occupation_domain": true,
+          "stored_gram_max": 1.7985612998927536e-14,
+          "raw_count": 4.000000000000032
+        },
+        "3": {
+          "n_dust": 3,
+          "weight": 48.0,
+          "f": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "occupation_domain": true,
+          "stored_gram_max": 2.591737991382417e-14,
+          "raw_count": 3.0000000000000044
+        },
+        "4": {
+          "n_dust": 2,
+          "weight": 64.0,
+          "f": [
+            1.0,
+            1.0
+          ],
+          "occupation_domain": true,
+          "stored_gram_max": 3.10862446959344e-14,
+          "raw_count": 2.000000000000029
+        },
+        "5": {
+          "n_dust": 2,
+          "weight": 80.0,
+          "f": [
+            1.0,
+            1.0
+          ],
+          "occupation_domain": true,
+          "stored_gram_max": 1.809663543497383e-14,
+          "raw_count": 1.9999999999999714
+        },
+        "6": {
+          "n_dust": 0,
+          "weight": 96.0,
+          "f": [],
+          "occupation_domain": true,
+          "stored_gram_max": 0,
+          "raw_count": 0.0
+        },
+        "7": {
+          "n_dust": 0,
+          "weight": 112.0,
+          "f": [],
+          "occupation_domain": true,
+          "stored_gram_max": 0,
+          "raw_count": 0.0
+        },
+        "8": {
+          "n_dust": 0,
+          "weight": 128.0,
+          "f": [],
+          "occupation_domain": true,
+          "stored_gram_max": 0,
+          "raw_count": 0.0
+        },
+        "9": {
+          "n_dust": 0,
+          "weight": 144.0,
+          "f": [],
+          "occupation_domain": true,
+          "stored_gram_max": 0,
+          "raw_count": 0.0
+        },
+        "10": {
+          "n_dust": 0,
+          "weight": 160.0,
+          "f": [],
+          "occupation_domain": true,
+          "stored_gram_max": 0,
+          "raw_count": 0.0
+        }
+      },
+      "archive_dtype": "complex128",
+      "record": {
+        "T": 768.0,
+        "T_over_rs": 12.0,
+        "E": 116.93366105040074,
+        "R_c": 43.36352882424721,
+        "R_t": null,
+        "r_in": null,
+        "converged": true,
+        "solver": {
+          "module": "engine_fields_v14.solve_constraints_ivp",
+          "nfev": 3566,
+          "N_centre": 0.48883246452063805,
+          "residual_W": 7.483250823668603e-06,
+          "residual_invN": 3.3115002506694405e-06,
+          "residual_matching_region": {
+            "W": 7.483250823668603e-06,
+            "invN": 3.3115002506694405e-06
+          },
+          "residual_ladder": {
+            "h_ell/64_and_/128": [
+              7.483250823668603e-06,
+              3.3115002506694405e-06
+            ],
+            "h_ell/32_and_/64": [
+              7.4835974912534646e-06,
+              3.3095670920287344e-06
+            ]
+          },
+          "source_spline_error": {
+            "rho": 3.3385912652705155e-13,
+            "J": 5.385104446767541e-14
+          },
+          "centre_series_ratio": 1.000052731832802,
+          "centre_series_check": {
+            "rho_spline_minus_series_rel": 1.0557538094169471e-11,
+            "J_spline_minus_series_rel": 5.902289238088896e-11,
+            "regular_start": true
+          },
+          "collar_margin": {
+            "needed_node": 520,
+            "last_node": 512,
+            "deficit_ell": 8,
+            "eps_share_last_8ell": 2.33103289421754e-05,
+            "J_abs_last_8ell": 0.010625372545194368
+          },
+          "W_tail": {
+            "r_end": 2080.0,
+            "E_tail_end": 116.93389956617564,
+            "E_collar": 116.93366105040074,
+            "flagged": true
+          },
+          "W_roundoff_negative_points": 0,
+          "W_negative": null,
+          "site_fields": "averaged",
+          "kernel_norms": [
+            0.9999999999999842,
+            0.9999999999999992
+          ]
+        },
+        "label": "quasi-static (tau = 8); ell = 4; reference: R2 (the continued sea, Landau-Zener matched maximum overlap (c_LZ = 1, window 4)); site fields: averaged; engine_fields_v14 (one outward initial-value problem, the momentum equation kept everywhere, the flat-slice gauge continued and labelled); economy: lagged first iterate, stop |dE/E| < 1e-07 and fields < 1e-06, plain iteration, at most 20 iterations (the smallest-residual iterate returned, flagged); tau = 8; collar policy flag; dictionary: H = N E + v.p, ds^2 = -N^2 dt^2 + (dx - v dt)^2, the ADM sign of the momentum law (J_i = -(1/8 pi G) d_j (K^j_i - delta^j_i K) for K_ij = (d_i v_j + d_j v_i)/(2N)); the goal's display's sign of v amended per engine 12.2; the owner's confirmation pending; J_ell = <P_r> = -J_r of the goal's display (engine 20.3)"
+      },
+      "field_index": 96,
+      "dense_nodes": 513,
+      "applied_fields_vs_historical_max": 0.0,
+      "matched_channels": {
+        "1": {
+          "gram_min": 0.9999999999989267,
+          "gram_max": 1.0000000000011033,
+          "gram_condition": 1.0000000000021767,
+          "hermitian_defect": 2.710805187313629e-16,
+          "dust_orthogonality_max": 3.1086246958985437e-15,
+          "status": "complete",
+          "count": 5.00000000000001,
+          "shell_parseval_max": 6.938893903907228e-18,
+          "spectral": {
+            "count_bins": [
+              4.608507497549089e-13,
+              1.7009674006118424e-06,
+              4.100497549992314e-06,
+              4.948097993373298,
+              0.05189620516125824,
+              4.3150061625970626e-14
+            ],
+            "energy_bins": [
+              -4.78970776847913e-13,
+              -5.090513328868168e-07,
+              -5.811836460188142e-07,
+              0.6754178448781453,
+              0.011188923724006603,
+              4.4524843802382885e-14
+            ],
+            "max_eigen_residual": 1.4487269531191143e-14,
+            "reconstruction_max": 2.4147350785597155e-15,
+            "site_completeness_max": 7.771561172376096e-16,
+            "count_completeness": 8.881784197001252e-16,
+            "energy_completeness": 3.3306690738754696e-16,
+            "min_distance_to_edge": [
+              2.7526828772828082e-05,
+              1.570958618457574e-05,
+              0.0854573397854659,
+              1.5709586184853297e-05,
+              2.7526828772828082e-05
+            ],
+            "edge_membership_certified": false,
+            "direct_energy": 0.6866056783667381,
+            "eigensystem_path": "<internal>/eigensystem_T12_k01.npz",
+            "eigensystem_sha256": "1d593525d81555f799372ff35032ecc4c761e312381e7b340adaf5698836591f"
+          }
+        },
+        "2": {
+          "gram_min": 0.999999999998918,
+          "gram_max": 1.0000000000010685,
+          "gram_condition": 1.0000000000021505,
+          "hermitian_defect": 1.6605417860281144e-16,
+          "dust_orthogonality_max": 1.9984014443252818e-15,
+          "status": "complete",
+          "count": 3.999999999999998,
+          "shell_parseval_max": 8.881784197001252e-16,
+          "spectral": {
+            "count_bins": [
+              2.384216908236379e-11,
+              1.4907453307892205e-06,
+              1.6354672299531072e-06,
+              3.9548786930630135,
+              0.045118180065593184,
+              6.349874676014869e-10
+            ],
+            "energy_bins": [
+              -2.588184543588871e-11,
+              -4.4845277565386897e-07,
+              -2.554193651671769e-07,
+              0.565023125251568,
+              0.00971752008532582,
+              6.897719033168603e-10
+            ],
+            "max_eigen_residual": 1.419124781768594e-14,
+            "reconstruction_max": 1.3494192617357808e-15,
+            "site_completeness_max": 4.996003610813204e-16,
+            "count_completeness": -4.440892098500626e-16,
+            "energy_completeness": -2.220446049250313e-16,
+            "min_distance_to_edge": [
+              1.2481319329626928e-05,
+              7.141894530826587e-06,
+              0.08898895411979706,
+              7.141894530909854e-06,
+              1.2481319329404883e-05
+            ],
+            "edge_membership_certified": false,
+            "direct_energy": 0.5747399421286432,
+            "eigensystem_path": "<internal>/eigensystem_T12_k02.npz",
+            "eigensystem_sha256": "fcf0660fb8984af6aefb785f49e989fdce346ff10a2a76348daaa098ed9af198"
+          }
+        },
+        "3": {
+          "gram_min": 0.9999999999989276,
+          "gram_max": 1.0000000000010567,
+          "gram_condition": 1.0000000000021292,
+          "hermitian_defect": 1.9245849467248568e-16,
+          "dust_orthogonality_max": 1.277713197680742e-15,
+          "status": "complete",
+          "count": 2.9999999999999982,
+          "shell_parseval_max": 1.734723475976807e-18,
+          "spectral": {
+            "count_bins": [
+              2.5520527010427663e-12,
+              1.0605291478109426e-06,
+              4.233673195537231e-07,
+              2.9657556351216487,
+              0.03424288094843263,
+              3.0895316943525913e-11
+            ],
+            "energy_bins": [
+              -3.83555924904664e-12,
+              -3.595453172175472e-07,
+              -7.07960048447753e-08,
+              0.4426861590331365,
+              0.007371874393369872,
+              4.901376355491386e-11
+            ],
+            "max_eigen_residual": 1.4710561483087114e-14,
+            "reconstruction_max": 2.2443004664161924e-15,
+            "site_completeness_max": 6.245004513516506e-16,
+            "count_completeness": -2.6645352591003757e-15,
+            "energy_completeness": -3.885780586188048e-16,
+            "min_distance_to_edge": [
+              9.772455001222369e-06,
+              4.0809466052699195e-05,
+              0.09444366934514206,
+              4.080946605281022e-05,
+              9.77245500077828e-06
+            ],
+            "edge_membership_certified": false,
+            "direct_energy": 0.4500576031303629,
+            "eigensystem_path": "<internal>/eigensystem_T12_k03.npz",
+            "eigensystem_sha256": "a1730d09dcd87ee11172a9a64b6820cfe920efc57e0356f51313df5d11a2fe83"
+          }
+        },
+        "4": {
+          "gram_min": 0.9999999999989561,
+          "gram_max": 1.0000000000010367,
+          "gram_condition": 1.0000000000020808,
+          "hermitian_defect": 1.4454269289598277e-16,
+          "dust_orthogonality_max": 3.108624481366873e-15,
+          "status": "complete",
+          "count": 2.000000000000002,
+          "shell_parseval_max": 2.7755575615628914e-17,
+          "spectral": {
+            "count_bins": [
+              3.748420661808626e-13,
+              6.258238454537722e-07,
+              6.327261212077784e-08,
+              1.9777116617544266,
+              0.022287649147363416,
+              1.3789598140562075e-12
+            ],
+            "energy_bins": [
+              -4.3585794616254294e-13,
+              -2.23365802197498e-07,
+              -1.106499520171627e-08,
+              0.3121783738246658,
+              0.0047930370918149905,
+              1.53019973701002e-12
+            ],
+            "max_eigen_residual": 1.4518420555084338e-14,
+            "reconstruction_max": 1.5867710504294825e-15,
+            "site_completeness_max": 2.636779683484747e-16,
+            "count_completeness": -4.440892098500626e-16,
+            "energy_completeness": -2.7755575615628914e-16,
+            "min_distance_to_edge": [
+              4.370738800352214e-05,
+              8.609932352196537e-05,
+              0.10116261071693088,
+              8.609932352185434e-05,
+              4.370738800352214e-05
+            ],
+            "edge_membership_certified": false,
+            "direct_energy": 0.3169711764867779,
+            "eigensystem_path": "<internal>/eigensystem_T12_k04.npz",
+            "eigensystem_sha256": "300f59ea54154d757eccc06070d7d33785dcc56048a7464cc359da9a88b85c1f"
+          }
+        },
+        "5": {
+          "gram_min": 0.9999999999989425,
+          "gram_max": 1.0000000000010307,
+          "gram_condition": 1.0000000000020883,
+          "hermitian_defect": 1.4902476193980417e-16,
+          "dust_orthogonality_max": 1.3322683780659226e-15,
+          "status": "complete",
+          "count": 2.000000000000001,
+          "shell_parseval_max": 1.734723475976807e-18,
+          "spectral": {
+            "count_bins": [
+              2.6056303021725934e-13,
+              5.56867548180497e-07,
+              5.492886785744159e-09,
+              1.9859201731118195,
+              0.014079264527441123,
+              4.392342895939556e-14
+            ],
+            "energy_bins": [
+              -2.7397914088746184e-13,
+              -2.4529663124489206e-07,
+              -9.876285448723274e-10,
+              0.3192408449376934,
+              0.003020055844518509,
+              4.9255961349468724e-14
+            ],
+            "max_eigen_residual": 1.4608911886284433e-14,
+            "reconstruction_max": 1.4970010298222869e-15,
+            "site_completeness_max": 2.0122792321330962e-16,
+            "count_completeness": -1.3322676295501878e-15,
+            "energy_completeness": -3.3306690738754696e-16,
+            "min_distance_to_edge": [
+              8.77637899745487e-05,
+              3.569791642196729e-05,
+              0.10867708351060182,
+              3.569791642182851e-05,
+              8.776378997410461e-05
+            ],
+            "edge_membership_certified": false,
+            "direct_energy": 0.3222606544977276,
+            "eigensystem_path": "<internal>/eigensystem_T12_k05.npz",
+            "eigensystem_sha256": "20b055e4aefec9f0df74e058635fdd6416b874662bd9a04641fc7c9c9cfbb0b4"
+          }
+        },
+        "6": {
+          "status": "empty",
+          "count": 0
+        },
+        "7": {
+          "status": "empty",
+          "count": 0
+        },
+        "8": {
+          "status": "empty",
+          "count": 0
+        },
+        "9": {
+          "status": "empty",
+          "count": 0
+        },
+        "10": {
+          "status": "empty",
+          "count": 0
+        }
+      },
+      "raw_weighted_count": 640.0000000000016,
+      "matched": {
+        "R50": 31.41944769830155,
+        "R90": 101.83773132313276,
+        "count": 640.0,
+        "primary_fit": {
+          "dense": {
+            "n": 28,
+            "slope": 0.12296270291020889,
+            "intercept": -0.9320178671986377,
+            "slope_se": 0.008824710622546505,
+            "r2": 0.8819007345901432
+          },
+          "applied": {
+            "n": 28,
+            "slope": 0.1108576425620111,
+            "intercept": -0.8548933165505965,
+            "slope_se": 0.0079230656142966,
+            "r2": 0.8827610934676495
+          }
+        },
+        "epsilon_c_record_total_over_joint_dust": 0.29141059618081216,
+        "epsilon_c_record_dust_over_joint_dust": 0.291773926640741,
+        "raw_to_joint_site_count_max": 1.3145040611561853e-13,
+        "primary_window_count": 314.9274674089437,
+        "primary_window_ratio_status": "defined",
+        "exponent_record_eps_minus_m_over_2m": 0.22852649045203038,
+        "exponent_record_eps_over_2m": 0.7285264904520303
+      }
+    },
+    "15": {
+      "input": {
+        "path": "<internal>/orbitals_c19_rs64_A_R2_tau8_ell4_avg_r11_T0015.00.npz",
+        "size": 1343100290,
+        "mtime_ns": 1792108099000000000,
+        "device": 2048,
+        "inode": 17631791
+      },
+      "clock": 15,
+      "channels": {
+        "1": {
+          "n_dust": 5,
+          "weight": 16.0,
+          "f": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "occupation_domain": true,
+          "stored_gram_max": 8.482973878898292e-09,
+          "raw_count": 4.99999999977323
+        },
+        "2": {
+          "n_dust": 4,
+          "weight": 32.0,
+          "f": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "occupation_domain": true,
+          "stored_gram_max": 7.684594516277343e-09,
+          "raw_count": 3.999999995275607
+        },
+        "3": {
+          "n_dust": 3,
+          "weight": 48.0,
+          "f": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "occupation_domain": true,
+          "stored_gram_max": 8.834174725080857e-09,
+          "raw_count": 2.9999999841741247
+        },
+        "4": {
+          "n_dust": 2,
+          "weight": 64.0,
+          "f": [
+            1.0,
+            1.0
+          ],
+          "occupation_domain": true,
+          "stored_gram_max": 6.1696362463337096e-09,
+          "raw_count": 1.9999999912637283
+        },
+        "5": {
+          "n_dust": 2,
+          "weight": 80.0,
+          "f": [
+            1.0,
+            1.0
+          ],
+          "occupation_domain": true,
+          "stored_gram_max": 1.166110574768453e-08,
+          "raw_count": 1.9999999784756135
+        },
+        "6": {
+          "n_dust": 0,
+          "weight": 96.0,
+          "f": [],
+          "occupation_domain": true,
+          "stored_gram_max": 0,
+          "raw_count": 0.0
+        },
+        "7": {
+          "n_dust": 0,
+          "weight": 112.0,
+          "f": [],
+          "occupation_domain": true,
+          "stored_gram_max": 0,
+          "raw_count": 0.0
+        },
+        "8": {
+          "n_dust": 0,
+          "weight": 128.0,
+          "f": [],
+          "occupation_domain": true,
+          "stored_gram_max": 0,
+          "raw_count": 0.0
+        },
+        "9": {
+          "n_dust": 0,
+          "weight": 144.0,
+          "f": [],
+          "occupation_domain": true,
+          "stored_gram_max": 0,
+          "raw_count": 0.0
+        },
+        "10": {
+          "n_dust": 0,
+          "weight": 160.0,
+          "f": [],
+          "occupation_domain": true,
+          "stored_gram_max": 0,
+          "raw_count": 0.0
+        }
+      },
+      "archive_dtype": "complex64",
+      "record": {
+        "T": 960.0,
+        "T_over_rs": 15.0,
+        "E": 108.8272062902157,
+        "R_c": 27.21311380621345,
+        "R_t": 51.76040530856484,
+        "r_in": 7.04798671590984,
+        "converged": true,
+        "solver": {
+          "module": "engine_fields_v14.solve_constraints_ivp",
+          "nfev": 5222,
+          "N_centre": 0.15087342725282069,
+          "residual_W": 5.506975975845763e-07,
+          "residual_invN": 1.4955775916496472e-07,
+          "residual_matching_region": {
+            "W": 5.506975975845763e-07,
+            "invN": 1.4955775916496472e-07
+          },
+          "residual_ladder": {
+            "h_ell/64_and_/128": [
+              5.506975975845763e-07,
+              1.4955775916496472e-07
+            ],
+            "h_ell/32_and_/64": [
+              5.509443027227947e-07,
+              1.4946824165889226e-07
+            ]
+          },
+          "source_spline_error": {
+            "rho": 2.2558577433476935e-12,
+            "J": 1.2868506846521865e-11
+          },
+          "centre_series_ratio": 0.9997994192223427,
+          "centre_series_check": {
+            "rho_spline_minus_series_rel": 1.2291433888716067e-09,
+            "J_spline_minus_series_rel": 2.182287313888538e-09,
+            "regular_start": true
+          },
+          "collar_margin": {
+            "needed_node": 520,
+            "last_node": 512,
+            "deficit_ell": 8,
+            "eps_share_last_8ell": 3.6058583175251295e-06,
+            "J_abs_last_8ell": 0.002661562718162671
+          },
+          "W_tail": {
+            "r_end": 2080.0,
+            "E_tail_end": 108.82724825075104,
+            "E_collar": 108.8272062902157,
+            "flagged": true
+          },
+          "W_roundoff_negative_points": 0,
+          "W_negative": null,
+          "site_fields": "averaged",
+          "kernel_norms": [
+            0.9999999999999842,
+            0.9999999999999992
+          ]
+        },
+        "label": "quasi-static (tau = 8); ell = 4; reference: R2 (the continued sea, Landau-Zener matched maximum overlap (c_LZ = 1, window 4)); site fields: averaged; engine_fields_v14 (one outward initial-value problem, the momentum equation kept everywhere, the flat-slice gauge continued and labelled); economy: lagged first iterate, stop |dE/E| < 1e-07 and fields < 1e-06, plain iteration, at most 20 iterations (the smallest-residual iterate returned, flagged); tau = 8; collar policy flag; dictionary: H = N E + v.p, ds^2 = -N^2 dt^2 + (dx - v dt)^2, the ADM sign of the momentum law (J_i = -(1/8 pi G) d_j (K^j_i - delta^j_i K) for K_ij = (d_i v_j + d_j v_i)/(2N)); the goal's display's sign of v amended per engine 12.2; the owner's confirmation pending; J_ell = <P_r> = -J_r of the goal's display (engine 20.3)"
+      },
+      "field_index": 120,
+      "dense_nodes": 513,
+      "applied_fields_vs_historical_max": 0.0,
+      "matched_channels": {
+        "1": {
+          "gram_min": 0.9999999465035151,
+          "gram_max": 1.0000000536461278,
+          "gram_condition": 1.0000001071426183,
+          "hermitian_defect": 1.8555181268011536e-16,
+          "dust_orthogonality_max": 2.220446049250313e-15,
+          "status": "complete",
+          "count": 5.000000000000003,
+          "shell_parseval_max": 8.881784197001252e-16,
+          "spectral": {
+            "count_bins": [
+              1.5759666435551167e-07,
+              3.249407131486767e-05,
+              0.0006713109533755077,
+              4.996129802449883,
+              0.003166234560376213,
+              3.6839126744944455e-10
+            ],
+            "energy_bins": [
+              -1.6513003879748338e-07,
+              -1.9685121272011695e-05,
+              -4.275504015537097e-05,
+              0.2759760749662326,
+              0.0006628182644124865,
+              4.023178136015568e-10
+            ],
+            "max_eigen_residual": 1.4260472107244697e-14,
+            "reconstruction_max": 1.501658444737462e-15,
+            "site_completeness_max": 5.828670879282072e-16,
+            "count_completeness": 0.0,
+            "energy_completeness": -2.7755575615628914e-16,
+            "min_distance_to_edge": [
+              0.0001872788713779272,
+              0.0001420054718758168,
+              0.00949309179915153,
+              0.00014200547187609436,
+              0.0001872788713783713
+            ],
+            "edge_membership_certified": false,
+            "direct_energy": 0.27657628834149683,
+            "eigensystem_path": "<internal>/eigensystem_T15_k01.npz",
+            "eigensystem_sha256": "19a6a93f49b14a3df588532192a089dd5626b9ca3c7de1af56a7ddebf4d0f78b"
+          }
+        },
+        "2": {
+          "gram_min": 0.9999999464679702,
+          "gram_max": 1.0000000532498556,
+          "gram_condition": 1.000000106781891,
+          "hermitian_defect": 1.626482762445573e-16,
+          "dust_orthogonality_max": 1.9984014443252818e-15,
+          "status": "complete",
+          "count": 4.0000000000000036,
+          "shell_parseval_max": 4.440892098500626e-16,
+          "spectral": {
+            "count_bins": [
+              1.1837835173139693e-07,
+              3.3911041228382376e-05,
+              4.416033180855396e-05,
+              3.9986045469354266,
+              0.0013172630405847512,
+              2.726022707771741e-10
+            ],
+            "energy_bins": [
+              -1.2400652229006778e-07,
+              -2.0397087479274677e-05,
+              -3.40854012831589e-06,
+              0.2177760174545407,
+              0.0002804822100110563,
+              2.9777484278032614e-10
+            ],
+            "max_eigen_residual": 1.4508999505557982e-14,
+            "reconstruction_max": 1.1571944911433191e-15,
+            "site_completeness_max": 3.3306690738754696e-16,
+            "count_completeness": -8.881784197001252e-16,
+            "energy_completeness": -2.7755575615628914e-17,
+            "min_distance_to_edge": [
+              0.00017805793968150851,
+              7.3386193445434955e-06,
+              0.012049081043000526,
+              7.338619344710029e-06,
+              0.00017805793968150851
+            ],
+            "edge_membership_certified": false,
+            "direct_energy": 0.21803257032819676,
+            "eigensystem_path": "<internal>/eigensystem_T15_k02.npz",
+            "eigensystem_sha256": "85229d2d7f9011c77a4068466bae44bc576bd24ef5dcabddf6e73bccdd87e5fb"
+          }
+        },
+        "3": {
+          "gram_min": 0.9999999468392599,
+          "gram_max": 1.0000000530920956,
+          "gram_condition": 1.0000001062528414,
+          "hermitian_defect": 2.2014792491294295e-16,
+          "dust_orthogonality_max": 1.2212455379468464e-15,
+          "status": "complete",
+          "count": 2.9999999999999996,
+          "shell_parseval_max": 6.938893903907228e-18,
+          "spectral": {
+            "count_bins": [
+              8.268140317284745e-08,
+              3.364281490005494e-05,
+              3.275626124930519e-06,
+              2.9992296282462187,
+              0.0007333704939655226,
+              1.3739038569883422e-10
+            ],
+            "energy_bins": [
+              -8.659125581600243e-08,
+              -2.05176283489993e-05,
+              -2.8846815882926757e-07,
+              0.17508433778420568,
+              0.0001560134338241768,
+              1.5019790864762016e-10
+            ],
+            "max_eigen_residual": 1.452204142081057e-14,
+            "reconstruction_max": 1.4765992313558848e-15,
+            "site_completeness_max": 2.914335439641036e-16,
+            "count_completeness": 1.3322676295501878e-15,
+            "energy_completeness": -1.3877787807814457e-16,
+            "min_distance_to_edge": [
+              0.00016285631889356722,
+              5.1915363450061314e-05,
+              0.016153603030518108,
+              5.191536345033887e-05,
+              0.00016285631889334518
+            ],
+            "edge_membership_certified": false,
+            "direct_energy": 0.17521945868046415,
+            "eigensystem_path": "<internal>/eigensystem_T15_k03.npz",
+            "eigensystem_sha256": "9bb390578866e0e30d1c00e3a5509ab67aed8c3cc9286d98b7728d5e648f9a76"
+          }
+        },
+        "4": {
+          "gram_min": 0.999999946715525,
+          "gram_max": 1.0000000531187418,
+          "gram_condition": 1.0000001064032227,
+          "hermitian_defect": 1.6395878105503394e-16,
+          "dust_orthogonality_max": 8.881806915949843e-16,
+          "status": "complete",
+          "count": 2.000000000000001,
+          "shell_parseval_max": 6.938893903907228e-18,
+          "spectral": {
+            "count_bins": [
+              2.9772272103200275e-08,
+              2.5550775397927738e-05,
+              5.571493212769048e-07,
+              1.999583602899175,
+              0.00039025933715477334,
+              6.668048036249618e-11
+            ],
+            "energy_bins": [
+              -3.1250313872804006e-08,
+              -1.5229011575784618e-05,
+              -6.035964036633934e-08,
+              0.12215216733601408,
+              8.424755886145289e-05,
+              7.297261419689446e-11
+            ],
+            "max_eigen_residual": 1.451325870319585e-14,
+            "reconstruction_max": 1.415262216750919e-15,
+            "site_completeness_max": 3.0531133177191805e-16,
+            "count_completeness": 0.0,
+            "energy_completeness": -4.163336342344337e-17,
+            "min_distance_to_edge": [
+              0.00014168557770410928,
+              2.3595912946539066e-05,
+              0.021488434834805874,
+              2.3595912946372533e-05,
+              0.0001416855777036652
+            ],
+            "edge_membership_certified": false,
+            "direct_energy": 0.12222109434631816,
+            "eigensystem_path": "<internal>/eigensystem_T15_k04.npz",
+            "eigensystem_sha256": "85789b4ff86014ec595390bb40ce57cf0c43119487cb0dbea4c36a7e4e0b2a58"
+          }
+        },
+        "5": {
+          "gram_min": 0.9999999466745121,
+          "gram_max": 1.0000000566856595,
+          "gram_condition": 1.0000001100111533,
+          "hermitian_defect": 3.165703619977957e-16,
+          "dust_orthogonality_max": 8.881789682163855e-16,
+          "status": "complete",
+          "count": 2.0,
+          "shell_parseval_max": 6.938893903907228e-18,
+          "spectral": {
+            "count_bins": [
+              2.673078098274513e-08,
+              3.0406409382915327e-05,
+              2.8679425193100335e-07,
+              1.9994299350565952,
+              0.0005393449709831455,
+              3.800629109195518e-11
+            ],
+            "energy_bins": [
+              -2.7993477239928248e-08,
+              -1.850217480125584e-05,
+              -4.272467602399238e-08,
+              0.15451533761288877,
+              0.00011648746915621305,
+              4.15150063383498e-11
+            ],
+            "max_eigen_residual": 1.43850622841138e-14,
+            "reconstruction_max": 1.0902737046514233e-15,
+            "site_completeness_max": 1.249000902703301e-16,
+            "count_completeness": 4.440892098500626e-16,
+            "energy_completeness": 8.326672684688674e-17,
+            "min_distance_to_edge": [
+              0.00011456023598910292,
+              6.581031922880953e-05,
+              0.027844877222663964,
+              6.581031922875402e-05,
+              0.00011456023598888088
+            ],
+            "edge_membership_certified": false,
+            "direct_energy": 0.15461325223060554,
+            "eigensystem_path": "<internal>/eigensystem_T15_k05.npz",
+            "eigensystem_sha256": "7cce5104e77fe3dcc04f2e236adac9c04f5a14285ed245acb2582ec6e03d03b0"
+          }
+        },
+        "6": {
+          "status": "empty",
+          "count": 0
+        },
+        "7": {
+          "status": "empty",
+          "count": 0
+        },
+        "8": {
+          "status": "empty",
+          "count": 0
+        },
+        "9": {
+          "status": "empty",
+          "count": 0
+        },
+        "10": {
+          "status": "empty",
+          "count": 0
+        }
+      },
+      "raw_weighted_count": 639.9999968044767,
+      "matched": {
+        "R50": 28.854496953407512,
+        "R90": 39.98357631788538,
+        "count": 640.0000000000003,
+        "primary_fit": {
+          "dense": {
+            "n": 27,
+            "slope": 0.22812002894419572,
+            "intercept": -2.4078481318318805,
+            "slope_se": 0.025427373252342015,
+            "r2": 0.7630031807390357
+          },
+          "applied": {
+            "n": 27,
+            "slope": 0.22468618910742083,
+            "intercept": -2.318557107652739,
+            "slope_se": 0.027153852003549195,
+            "r2": 0.7325297820033576
+          }
+        },
+        "epsilon_c_record_total_over_joint_dust": 0.6736925385761013,
+        "epsilon_c_record_dust_over_joint_dust": 0.6718500123431046,
+        "raw_to_joint_site_count_max": 3.39176356334292e-07,
+        "primary_window_count": 295.24798940539057,
+        "primary_window_ratio_status": "defined",
+        "exponent_record_eps_minus_m_over_2m": 1.1842313464402532,
+        "exponent_record_eps_over_2m": 1.6842313464402532
+      }
+    }
+  },
+  "unknown_errors": {
+    "evolution": null,
+    "fields": null,
+    "storage": null,
+    "reference_history": null,
+    "exact_historical_writer": null,
+    "spectral_membership": null
+  },
+  "resources": {
+    "threads": 4,
+    "wall_seconds": 6000,
+    "cpu_seconds": 24000,
+    "address_space_bytes": 1610612736,
+    "spectral_start_minimum_seconds": 420,
+    "finalization_window_seconds": 60
+  },
+  "conventions": {
+    "a": 1,
+    "m": 0.2,
+    "g": 0.25,
+    "source": "historical field arrays, not recomputed",
+    "dust": "raw and final dust columns of joint sea+dust polar factor",
+    "shell_sites": 128,
+    "fft_M": 4096,
+    "fit_min_count": 1,
+    "ratio_count_floor": 1e-09,
+    "bins": "(lo,hi] at -b,-m,0,m,b",
+    "shell_bins": "signed ReTr(Pi_shell P_bin D)"
+  },
+  "saved_arrays": [
+    {
+      "path": "<internal>/raw_T16.npz",
+      "size": 513124,
+      "sha256": "ee49209a0e9999f825ac5ff3c178a70727db5f7b3ff9b09721c97807e6f3ee52",
+      "members": {
+        "R": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "N_applied": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "v_applied": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "r_nodes": {
+          "shape": [
+            513
+          ],
+          "dtype": "float64"
+        },
+        "N_nodes": {
+          "shape": [
+            513
+          ],
+          "dtype": "float64"
+        },
+        "v_nodes": {
+          "shape": [
+            513
+          ],
+          "dtype": "float64"
+        },
+        "N_dense": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "v_dense": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "L_N_dense_nodes": {
+          "shape": [
+            513
+          ],
+          "dtype": "float64"
+        },
+        "L_N_dense_sites": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "L_N_applied": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "zero_gradient_dense_nodes": {
+          "shape": [
+            513
+          ],
+          "dtype": "bool"
+        },
+        "zero_gradient_applied": {
+          "shape": [
+            2048
+          ],
+          "dtype": "bool"
+        },
+        "raw_measures_by_channel": {
+          "shape": [
+            10,
+            3,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "weights": {
+          "shape": [
+            10
+          ],
+          "dtype": "float64"
+        },
+        "eps_tot": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "J_tot": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "eps_pairs": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "J_pairs": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "dense_w": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "dense_M": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "dense_I": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "dense_I_collar": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "dense_source": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "applied_w": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "applied_M": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "applied_I": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "applied_I_collar": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "applied_source": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/raw_T12.npz",
+      "size": 502371,
+      "sha256": "26419b88723e2df9b04db76c3cb192d26e0a102c363aa2a2f158dec92fb08060",
+      "members": {
+        "R": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "N_applied": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "v_applied": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "r_nodes": {
+          "shape": [
+            513
+          ],
+          "dtype": "float64"
+        },
+        "N_nodes": {
+          "shape": [
+            513
+          ],
+          "dtype": "float64"
+        },
+        "v_nodes": {
+          "shape": [
+            513
+          ],
+          "dtype": "float64"
+        },
+        "N_dense": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "v_dense": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "L_N_dense_nodes": {
+          "shape": [
+            513
+          ],
+          "dtype": "float64"
+        },
+        "L_N_dense_sites": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "L_N_applied": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "zero_gradient_dense_nodes": {
+          "shape": [
+            513
+          ],
+          "dtype": "bool"
+        },
+        "zero_gradient_applied": {
+          "shape": [
+            2048
+          ],
+          "dtype": "bool"
+        },
+        "raw_measures_by_channel": {
+          "shape": [
+            10,
+            3,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "weights": {
+          "shape": [
+            10
+          ],
+          "dtype": "float64"
+        },
+        "eps_tot": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "J_tot": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "eps_pairs": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "J_pairs": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "dense_w": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "dense_M": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "dense_I": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "dense_I_collar": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "dense_source": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "applied_w": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "applied_M": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "applied_I": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "applied_I_collar": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "applied_source": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/raw_T15.npz",
+      "size": 511717,
+      "sha256": "ebea3c7ea0d338c5ee71940babd61f849102f423ea6c37230e542d2f3213ffc5",
+      "members": {
+        "R": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "N_applied": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "v_applied": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "r_nodes": {
+          "shape": [
+            513
+          ],
+          "dtype": "float64"
+        },
+        "N_nodes": {
+          "shape": [
+            513
+          ],
+          "dtype": "float64"
+        },
+        "v_nodes": {
+          "shape": [
+            513
+          ],
+          "dtype": "float64"
+        },
+        "N_dense": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "v_dense": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "L_N_dense_nodes": {
+          "shape": [
+            513
+          ],
+          "dtype": "float64"
+        },
+        "L_N_dense_sites": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "L_N_applied": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "zero_gradient_dense_nodes": {
+          "shape": [
+            513
+          ],
+          "dtype": "bool"
+        },
+        "zero_gradient_applied": {
+          "shape": [
+            2048
+          ],
+          "dtype": "bool"
+        },
+        "raw_measures_by_channel": {
+          "shape": [
+            10,
+            3,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "weights": {
+          "shape": [
+            10
+          ],
+          "dtype": "float64"
+        },
+        "eps_tot": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "J_tot": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "eps_pairs": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "J_pairs": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "dense_w": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "dense_M": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "dense_I": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "dense_I_collar": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "dense_source": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "applied_w": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "applied_M": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "applied_I": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "applied_I_collar": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "applied_source": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/joint_T16_k01.npz",
+      "size": 924868,
+      "sha256": "dbc7bbff8208cafd363a8af841daa180cedb541547e93aec57e5457dd751a92a",
+      "members": {
+        "dust": {
+          "shape": [
+            4096,
+            5
+          ],
+          "dtype": "complex128"
+        },
+        "joint_inverse_root_columns": {
+          "shape": [
+            2053,
+            5
+          ],
+          "dtype": "complex128"
+        },
+        "joint_gram_eigenvalues": {
+          "shape": [
+            2053
+          ],
+          "dtype": "float64"
+        },
+        "measures": {
+          "shape": [
+            3,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "f": {
+          "shape": [
+            5
+          ],
+          "dtype": "float64"
+        },
+        "shell_fft_weights": {
+          "shape": [
+            16,
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "folded_index": {
+          "shape": [
+            4096
+          ],
+          "dtype": "int64"
+        },
+        "shell_number": {
+          "shape": [
+            16
+          ],
+          "dtype": "float64"
+        },
+        "shell_high_number": {
+          "shape": [
+            16
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/spectral_T16_k01.npz",
+      "size": 593297,
+      "sha256": "acadc6d210ebc9fd6ea034798fbd5e7130227f9b554fd65f9016391d6848ecbd",
+      "members": {
+        "omega": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "amplitudes": {
+          "shape": [
+            4096,
+            5
+          ],
+          "dtype": "complex128"
+        },
+        "level_weights": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "bins": {
+          "shape": [
+            4096
+          ],
+          "dtype": "int64"
+        },
+        "site_bins": {
+          "shape": [
+            6,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "energy_site_bins": {
+          "shape": [
+            6,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "eigen_residual_norms": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "edges": {
+          "shape": [
+            5
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/joint_T16_k02.npz",
+      "size": 850401,
+      "sha256": "5a422f42c215227d814d61421b9834aab820382e03de2052dbf0c77cf3f64a6b",
+      "members": {
+        "dust": {
+          "shape": [
+            4096,
+            4
+          ],
+          "dtype": "complex128"
+        },
+        "joint_inverse_root_columns": {
+          "shape": [
+            2052,
+            4
+          ],
+          "dtype": "complex128"
+        },
+        "joint_gram_eigenvalues": {
+          "shape": [
+            2052
+          ],
+          "dtype": "float64"
+        },
+        "measures": {
+          "shape": [
+            3,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "f": {
+          "shape": [
+            4
+          ],
+          "dtype": "float64"
+        },
+        "shell_fft_weights": {
+          "shape": [
+            16,
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "folded_index": {
+          "shape": [
+            4096
+          ],
+          "dtype": "int64"
+        },
+        "shell_number": {
+          "shape": [
+            16
+          ],
+          "dtype": "float64"
+        },
+        "shell_high_number": {
+          "shape": [
+            16
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/spectral_T16_k02.npz",
+      "size": 530354,
+      "sha256": "12f405928761895f9a5aed92046b74266377fe25f249231d032059bcaf4e0954",
+      "members": {
+        "omega": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "amplitudes": {
+          "shape": [
+            4096,
+            4
+          ],
+          "dtype": "complex128"
+        },
+        "level_weights": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "bins": {
+          "shape": [
+            4096
+          ],
+          "dtype": "int64"
+        },
+        "site_bins": {
+          "shape": [
+            6,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "energy_site_bins": {
+          "shape": [
+            6,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "eigen_residual_norms": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "edges": {
+          "shape": [
+            5
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/joint_T16_k03.npz",
+      "size": 776842,
+      "sha256": "0cb9ab1e7c95a1808ebe8b3b21a25f4e1a1f75291b9ec7533ec916ab0f212ba4",
+      "members": {
+        "dust": {
+          "shape": [
+            4096,
+            3
+          ],
+          "dtype": "complex128"
+        },
+        "joint_inverse_root_columns": {
+          "shape": [
+            2051,
+            3
+          ],
+          "dtype": "complex128"
+        },
+        "joint_gram_eigenvalues": {
+          "shape": [
+            2051
+          ],
+          "dtype": "float64"
+        },
+        "measures": {
+          "shape": [
+            3,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "f": {
+          "shape": [
+            3
+          ],
+          "dtype": "float64"
+        },
+        "shell_fft_weights": {
+          "shape": [
+            16,
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "folded_index": {
+          "shape": [
+            4096
+          ],
+          "dtype": "int64"
+        },
+        "shell_number": {
+          "shape": [
+            16
+          ],
+          "dtype": "float64"
+        },
+        "shell_high_number": {
+          "shape": [
+            16
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/joint_T16_k04.npz",
+      "size": 702926,
+      "sha256": "8ec8189016a2e8f914b90594dcfeac9c7f7b3d67a4877009a0f2d6a0654080d6",
+      "members": {
+        "dust": {
+          "shape": [
+            4096,
+            2
+          ],
+          "dtype": "complex128"
+        },
+        "joint_inverse_root_columns": {
+          "shape": [
+            2050,
+            2
+          ],
+          "dtype": "complex128"
+        },
+        "joint_gram_eigenvalues": {
+          "shape": [
+            2050
+          ],
+          "dtype": "float64"
+        },
+        "measures": {
+          "shape": [
+            3,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "f": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "shell_fft_weights": {
+          "shape": [
+            16,
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "folded_index": {
+          "shape": [
+            4096
+          ],
+          "dtype": "int64"
+        },
+        "shell_number": {
+          "shape": [
+            16
+          ],
+          "dtype": "float64"
+        },
+        "shell_high_number": {
+          "shape": [
+            16
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/joint_T16_k05.npz",
+      "size": 702651,
+      "sha256": "63b69ba47b802a7014970484690d1b1227b9c086c6f0990aaf836bbc0c41c8ba",
+      "members": {
+        "dust": {
+          "shape": [
+            4096,
+            2
+          ],
+          "dtype": "complex128"
+        },
+        "joint_inverse_root_columns": {
+          "shape": [
+            2050,
+            2
+          ],
+          "dtype": "complex128"
+        },
+        "joint_gram_eigenvalues": {
+          "shape": [
+            2050
+          ],
+          "dtype": "float64"
+        },
+        "measures": {
+          "shape": [
+            3,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "f": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "shell_fft_weights": {
+          "shape": [
+            16,
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "folded_index": {
+          "shape": [
+            4096
+          ],
+          "dtype": "int64"
+        },
+        "shell_number": {
+          "shape": [
+            16
+          ],
+          "dtype": "float64"
+        },
+        "shell_high_number": {
+          "shape": [
+            16
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/matched_T16.npz",
+      "size": 125898,
+      "sha256": "4000fe4fff9242ba4d24f968a50bba123ddb7e7fa9de05575fcc5fd758a676cd",
+      "members": {
+        "q": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "bare_energy": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "source_J": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "number_density": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "bare_energy_density": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "source_J_density": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "cumulative_count": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "bare_energy_per_dust": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "ratio_valid": {
+          "shape": [
+            2048
+          ],
+          "dtype": "bool"
+        },
+        "dense_fit_mask": {
+          "shape": [
+            2048
+          ],
+          "dtype": "bool"
+        },
+        "applied_fit_mask": {
+          "shape": [
+            2048
+          ],
+          "dtype": "bool"
+        },
+        "dense_edge_log_slope": {
+          "shape": [
+            2047
+          ],
+          "dtype": "float64"
+        },
+        "applied_edge_log_slope": {
+          "shape": [
+            2047
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/joint_T12_k01.npz",
+      "size": 924266,
+      "sha256": "37cd562982aa1ba7a627e2f6a195dbd98d436741ebfd2ba9055e272890a05241",
+      "members": {
+        "dust": {
+          "shape": [
+            4096,
+            5
+          ],
+          "dtype": "complex128"
+        },
+        "joint_inverse_root_columns": {
+          "shape": [
+            2053,
+            5
+          ],
+          "dtype": "complex128"
+        },
+        "joint_gram_eigenvalues": {
+          "shape": [
+            2053
+          ],
+          "dtype": "float64"
+        },
+        "measures": {
+          "shape": [
+            3,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "f": {
+          "shape": [
+            5
+          ],
+          "dtype": "float64"
+        },
+        "shell_fft_weights": {
+          "shape": [
+            16,
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "folded_index": {
+          "shape": [
+            4096
+          ],
+          "dtype": "int64"
+        },
+        "shell_number": {
+          "shape": [
+            16
+          ],
+          "dtype": "float64"
+        },
+        "shell_high_number": {
+          "shape": [
+            16
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/joint_T12_k02.npz",
+      "size": 849758,
+      "sha256": "269f2438a2bae4994a411088c0da5f7ed255c9faabe822203f2a3d198b90391c",
+      "members": {
+        "dust": {
+          "shape": [
+            4096,
+            4
+          ],
+          "dtype": "complex128"
+        },
+        "joint_inverse_root_columns": {
+          "shape": [
+            2052,
+            4
+          ],
+          "dtype": "complex128"
+        },
+        "joint_gram_eigenvalues": {
+          "shape": [
+            2052
+          ],
+          "dtype": "float64"
+        },
+        "measures": {
+          "shape": [
+            3,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "f": {
+          "shape": [
+            4
+          ],
+          "dtype": "float64"
+        },
+        "shell_fft_weights": {
+          "shape": [
+            16,
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "folded_index": {
+          "shape": [
+            4096
+          ],
+          "dtype": "int64"
+        },
+        "shell_number": {
+          "shape": [
+            16
+          ],
+          "dtype": "float64"
+        },
+        "shell_high_number": {
+          "shape": [
+            16
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/joint_T12_k03.npz",
+      "size": 776060,
+      "sha256": "3a7a5a30347cabd71529a1400098b7db1c5bf5d0045c38a12f9423c32d9a1d97",
+      "members": {
+        "dust": {
+          "shape": [
+            4096,
+            3
+          ],
+          "dtype": "complex128"
+        },
+        "joint_inverse_root_columns": {
+          "shape": [
+            2051,
+            3
+          ],
+          "dtype": "complex128"
+        },
+        "joint_gram_eigenvalues": {
+          "shape": [
+            2051
+          ],
+          "dtype": "float64"
+        },
+        "measures": {
+          "shape": [
+            3,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "f": {
+          "shape": [
+            3
+          ],
+          "dtype": "float64"
+        },
+        "shell_fft_weights": {
+          "shape": [
+            16,
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "folded_index": {
+          "shape": [
+            4096
+          ],
+          "dtype": "int64"
+        },
+        "shell_number": {
+          "shape": [
+            16
+          ],
+          "dtype": "float64"
+        },
+        "shell_high_number": {
+          "shape": [
+            16
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/joint_T12_k04.npz",
+      "size": 702119,
+      "sha256": "c31db3e3257d3d82ef94ec177e396457e64713a94bd81cef6517e575ee835236",
+      "members": {
+        "dust": {
+          "shape": [
+            4096,
+            2
+          ],
+          "dtype": "complex128"
+        },
+        "joint_inverse_root_columns": {
+          "shape": [
+            2050,
+            2
+          ],
+          "dtype": "complex128"
+        },
+        "joint_gram_eigenvalues": {
+          "shape": [
+            2050
+          ],
+          "dtype": "float64"
+        },
+        "measures": {
+          "shape": [
+            3,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "f": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "shell_fft_weights": {
+          "shape": [
+            16,
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "folded_index": {
+          "shape": [
+            4096
+          ],
+          "dtype": "int64"
+        },
+        "shell_number": {
+          "shape": [
+            16
+          ],
+          "dtype": "float64"
+        },
+        "shell_high_number": {
+          "shape": [
+            16
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/joint_T12_k05.npz",
+      "size": 702403,
+      "sha256": "91804455b600e3d20bdf87e36c64b1a7669376af34aead8eb9d97ff3c18a693b",
+      "members": {
+        "dust": {
+          "shape": [
+            4096,
+            2
+          ],
+          "dtype": "complex128"
+        },
+        "joint_inverse_root_columns": {
+          "shape": [
+            2050,
+            2
+          ],
+          "dtype": "complex128"
+        },
+        "joint_gram_eigenvalues": {
+          "shape": [
+            2050
+          ],
+          "dtype": "float64"
+        },
+        "measures": {
+          "shape": [
+            3,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "f": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "shell_fft_weights": {
+          "shape": [
+            16,
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "folded_index": {
+          "shape": [
+            4096
+          ],
+          "dtype": "int64"
+        },
+        "shell_number": {
+          "shape": [
+            16
+          ],
+          "dtype": "float64"
+        },
+        "shell_high_number": {
+          "shape": [
+            16
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/matched_T12.npz",
+      "size": 121105,
+      "sha256": "ddcc257e23d48417d30ce729771985c6651c4eb2b9481b288a4f8bc31d52ca93",
+      "members": {
+        "q": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "bare_energy": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "source_J": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "number_density": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "bare_energy_density": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "source_J_density": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "cumulative_count": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "bare_energy_per_dust": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "ratio_valid": {
+          "shape": [
+            2048
+          ],
+          "dtype": "bool"
+        },
+        "dense_fit_mask": {
+          "shape": [
+            2048
+          ],
+          "dtype": "bool"
+        },
+        "applied_fit_mask": {
+          "shape": [
+            2048
+          ],
+          "dtype": "bool"
+        },
+        "dense_edge_log_slope": {
+          "shape": [
+            2047
+          ],
+          "dtype": "float64"
+        },
+        "applied_edge_log_slope": {
+          "shape": [
+            2047
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/joint_T15_k01.npz",
+      "size": 978902,
+      "sha256": "a2c778aef743f5b1a65548797ff83772e89105c5d7a8babc994f7030e8343710",
+      "members": {
+        "dust": {
+          "shape": [
+            4096,
+            5
+          ],
+          "dtype": "complex128"
+        },
+        "joint_inverse_root_columns": {
+          "shape": [
+            2053,
+            5
+          ],
+          "dtype": "complex128"
+        },
+        "joint_gram_eigenvalues": {
+          "shape": [
+            2053
+          ],
+          "dtype": "float64"
+        },
+        "measures": {
+          "shape": [
+            3,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "f": {
+          "shape": [
+            5
+          ],
+          "dtype": "float64"
+        },
+        "shell_fft_weights": {
+          "shape": [
+            16,
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "folded_index": {
+          "shape": [
+            4096
+          ],
+          "dtype": "int64"
+        },
+        "shell_number": {
+          "shape": [
+            16
+          ],
+          "dtype": "float64"
+        },
+        "shell_high_number": {
+          "shape": [
+            16
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/joint_T15_k02.npz",
+      "size": 894351,
+      "sha256": "323df4d65b81b25e5cec9254928d21e21e17bcf9d5473efce0e8959d2b029481",
+      "members": {
+        "dust": {
+          "shape": [
+            4096,
+            4
+          ],
+          "dtype": "complex128"
+        },
+        "joint_inverse_root_columns": {
+          "shape": [
+            2052,
+            4
+          ],
+          "dtype": "complex128"
+        },
+        "joint_gram_eigenvalues": {
+          "shape": [
+            2052
+          ],
+          "dtype": "float64"
+        },
+        "measures": {
+          "shape": [
+            3,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "f": {
+          "shape": [
+            4
+          ],
+          "dtype": "float64"
+        },
+        "shell_fft_weights": {
+          "shape": [
+            16,
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "folded_index": {
+          "shape": [
+            4096
+          ],
+          "dtype": "int64"
+        },
+        "shell_number": {
+          "shape": [
+            16
+          ],
+          "dtype": "float64"
+        },
+        "shell_high_number": {
+          "shape": [
+            16
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/joint_T15_k03.npz",
+      "size": 811841,
+      "sha256": "b0259ab7e2fe971a2047b0171c44ef362505c192225769aee84a5d468b056219",
+      "members": {
+        "dust": {
+          "shape": [
+            4096,
+            3
+          ],
+          "dtype": "complex128"
+        },
+        "joint_inverse_root_columns": {
+          "shape": [
+            2051,
+            3
+          ],
+          "dtype": "complex128"
+        },
+        "joint_gram_eigenvalues": {
+          "shape": [
+            2051
+          ],
+          "dtype": "float64"
+        },
+        "measures": {
+          "shape": [
+            3,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "f": {
+          "shape": [
+            3
+          ],
+          "dtype": "float64"
+        },
+        "shell_fft_weights": {
+          "shape": [
+            16,
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "folded_index": {
+          "shape": [
+            4096
+          ],
+          "dtype": "int64"
+        },
+        "shell_number": {
+          "shape": [
+            16
+          ],
+          "dtype": "float64"
+        },
+        "shell_high_number": {
+          "shape": [
+            16
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/joint_T15_k04.npz",
+      "size": 727306,
+      "sha256": "6ffcc4eb4cf2777a85e4987ef80d316f720bbac5b3084e3e824095466343e75c",
+      "members": {
+        "dust": {
+          "shape": [
+            4096,
+            2
+          ],
+          "dtype": "complex128"
+        },
+        "joint_inverse_root_columns": {
+          "shape": [
+            2050,
+            2
+          ],
+          "dtype": "complex128"
+        },
+        "joint_gram_eigenvalues": {
+          "shape": [
+            2050
+          ],
+          "dtype": "float64"
+        },
+        "measures": {
+          "shape": [
+            3,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "f": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "shell_fft_weights": {
+          "shape": [
+            16,
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "folded_index": {
+          "shape": [
+            4096
+          ],
+          "dtype": "int64"
+        },
+        "shell_number": {
+          "shape": [
+            16
+          ],
+          "dtype": "float64"
+        },
+        "shell_high_number": {
+          "shape": [
+            16
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/joint_T15_k05.npz",
+      "size": 727670,
+      "sha256": "cb6fd15fa194d50b7340b9983bc146dbfd7bf2feee3ef5ee710a3312b623f25a",
+      "members": {
+        "dust": {
+          "shape": [
+            4096,
+            2
+          ],
+          "dtype": "complex128"
+        },
+        "joint_inverse_root_columns": {
+          "shape": [
+            2050,
+            2
+          ],
+          "dtype": "complex128"
+        },
+        "joint_gram_eigenvalues": {
+          "shape": [
+            2050
+          ],
+          "dtype": "float64"
+        },
+        "measures": {
+          "shape": [
+            3,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "f": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "shell_fft_weights": {
+          "shape": [
+            16,
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "folded_index": {
+          "shape": [
+            4096
+          ],
+          "dtype": "int64"
+        },
+        "shell_number": {
+          "shape": [
+            16
+          ],
+          "dtype": "float64"
+        },
+        "shell_high_number": {
+          "shape": [
+            16
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/matched_T15.npz",
+      "size": 124148,
+      "sha256": "f0fd004e96872d98ee84598739cd444946329c615cf10c3cf2234872d408943b",
+      "members": {
+        "q": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "bare_energy": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "source_J": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "number_density": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "bare_energy_density": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "source_J_density": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "cumulative_count": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "bare_energy_per_dust": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "ratio_valid": {
+          "shape": [
+            2048
+          ],
+          "dtype": "bool"
+        },
+        "dense_fit_mask": {
+          "shape": [
+            2048
+          ],
+          "dtype": "bool"
+        },
+        "applied_fit_mask": {
+          "shape": [
+            2048
+          ],
+          "dtype": "bool"
+        },
+        "dense_edge_log_slope": {
+          "shape": [
+            2047
+          ],
+          "dtype": "float64"
+        },
+        "applied_edge_log_slope": {
+          "shape": [
+            2047
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/spectral_T16_k03.npz",
+      "size": 467317,
+      "sha256": "2c16fe2d9615da2766935e3e456ee290a1660e234c7d2ef64a087086f7303661",
+      "members": {
+        "omega": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "amplitudes": {
+          "shape": [
+            4096,
+            3
+          ],
+          "dtype": "complex128"
+        },
+        "level_weights": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "bins": {
+          "shape": [
+            4096
+          ],
+          "dtype": "int64"
+        },
+        "site_bins": {
+          "shape": [
+            6,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "energy_site_bins": {
+          "shape": [
+            6,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "eigen_residual_norms": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "edges": {
+          "shape": [
+            5
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/spectral_T16_k04.npz",
+      "size": 404271,
+      "sha256": "d2c207705909197b6db404acd456824c16fffbc06ed91ebc681e6ede51b64a12",
+      "members": {
+        "omega": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "amplitudes": {
+          "shape": [
+            4096,
+            2
+          ],
+          "dtype": "complex128"
+        },
+        "level_weights": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "bins": {
+          "shape": [
+            4096
+          ],
+          "dtype": "int64"
+        },
+        "site_bins": {
+          "shape": [
+            6,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "energy_site_bins": {
+          "shape": [
+            6,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "eigen_residual_norms": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "edges": {
+          "shape": [
+            5
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/spectral_T16_k05.npz",
+      "size": 404480,
+      "sha256": "67361a9c5abe98c97db834f62c50054092a9ce98bd6eee6d9ded95c8386dd7a7",
+      "members": {
+        "omega": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "amplitudes": {
+          "shape": [
+            4096,
+            2
+          ],
+          "dtype": "complex128"
+        },
+        "level_weights": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "bins": {
+          "shape": [
+            4096
+          ],
+          "dtype": "int64"
+        },
+        "site_bins": {
+          "shape": [
+            6,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "energy_site_bins": {
+          "shape": [
+            6,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "eigen_residual_norms": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "edges": {
+          "shape": [
+            5
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/spectral_T12_k01.npz",
+      "size": 593395,
+      "sha256": "d03ea5b81c2c884a30bfae5a93a2be06225a1d9d50855853ba8b5ad59bc47836",
+      "members": {
+        "omega": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "amplitudes": {
+          "shape": [
+            4096,
+            5
+          ],
+          "dtype": "complex128"
+        },
+        "level_weights": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "bins": {
+          "shape": [
+            4096
+          ],
+          "dtype": "int64"
+        },
+        "site_bins": {
+          "shape": [
+            6,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "energy_site_bins": {
+          "shape": [
+            6,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "eigen_residual_norms": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "edges": {
+          "shape": [
+            5
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/spectral_T12_k02.npz",
+      "size": 530515,
+      "sha256": "dac05f5df6a72fab87393ae08b71283f86ee39187f9968e14c7796cfc29a4ddb",
+      "members": {
+        "omega": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "amplitudes": {
+          "shape": [
+            4096,
+            4
+          ],
+          "dtype": "complex128"
+        },
+        "level_weights": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "bins": {
+          "shape": [
+            4096
+          ],
+          "dtype": "int64"
+        },
+        "site_bins": {
+          "shape": [
+            6,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "energy_site_bins": {
+          "shape": [
+            6,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "eigen_residual_norms": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "edges": {
+          "shape": [
+            5
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/spectral_T12_k03.npz",
+      "size": 467655,
+      "sha256": "d2015c3e121e0cb320f5807225cb69f004001557b49e651a3021038a567ba05f",
+      "members": {
+        "omega": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "amplitudes": {
+          "shape": [
+            4096,
+            3
+          ],
+          "dtype": "complex128"
+        },
+        "level_weights": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "bins": {
+          "shape": [
+            4096
+          ],
+          "dtype": "int64"
+        },
+        "site_bins": {
+          "shape": [
+            6,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "energy_site_bins": {
+          "shape": [
+            6,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "eigen_residual_norms": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "edges": {
+          "shape": [
+            5
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/spectral_T12_k04.npz",
+      "size": 404551,
+      "sha256": "fc2f4c50b32ca2238777a7eb4597172989e7e91c0a8eb5636f4dd6d63045a970",
+      "members": {
+        "omega": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "amplitudes": {
+          "shape": [
+            4096,
+            2
+          ],
+          "dtype": "complex128"
+        },
+        "level_weights": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "bins": {
+          "shape": [
+            4096
+          ],
+          "dtype": "int64"
+        },
+        "site_bins": {
+          "shape": [
+            6,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "energy_site_bins": {
+          "shape": [
+            6,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "eigen_residual_norms": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "edges": {
+          "shape": [
+            5
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/spectral_T12_k05.npz",
+      "size": 404723,
+      "sha256": "dc2190c8acb6bb54a314064ad3a0f1bf2dd3d05e76b2557a6fc44dc0baac5c91",
+      "members": {
+        "omega": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "amplitudes": {
+          "shape": [
+            4096,
+            2
+          ],
+          "dtype": "complex128"
+        },
+        "level_weights": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "bins": {
+          "shape": [
+            4096
+          ],
+          "dtype": "int64"
+        },
+        "site_bins": {
+          "shape": [
+            6,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "energy_site_bins": {
+          "shape": [
+            6,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "eigen_residual_norms": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "edges": {
+          "shape": [
+            5
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/spectral_T15_k01.npz",
+      "size": 592825,
+      "sha256": "60b372256c997ffdba9e86ea9c00985d699474bf9c6fc5aef1269116b6d88633",
+      "members": {
+        "omega": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "amplitudes": {
+          "shape": [
+            4096,
+            5
+          ],
+          "dtype": "complex128"
+        },
+        "level_weights": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "bins": {
+          "shape": [
+            4096
+          ],
+          "dtype": "int64"
+        },
+        "site_bins": {
+          "shape": [
+            6,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "energy_site_bins": {
+          "shape": [
+            6,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "eigen_residual_norms": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "edges": {
+          "shape": [
+            5
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/spectral_T15_k02.npz",
+      "size": 529893,
+      "sha256": "b55e11d51784592aa22019c9c46c2a7fe94e57d1116f98904d4614b78f8ab993",
+      "members": {
+        "omega": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "amplitudes": {
+          "shape": [
+            4096,
+            4
+          ],
+          "dtype": "complex128"
+        },
+        "level_weights": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "bins": {
+          "shape": [
+            4096
+          ],
+          "dtype": "int64"
+        },
+        "site_bins": {
+          "shape": [
+            6,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "energy_site_bins": {
+          "shape": [
+            6,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "eigen_residual_norms": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "edges": {
+          "shape": [
+            5
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/spectral_T15_k03.npz",
+      "size": 466837,
+      "sha256": "856b7eedf5319b1ce7edc4396a171d4db9d78a40d23514e6734e25078dd0174e",
+      "members": {
+        "omega": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "amplitudes": {
+          "shape": [
+            4096,
+            3
+          ],
+          "dtype": "complex128"
+        },
+        "level_weights": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "bins": {
+          "shape": [
+            4096
+          ],
+          "dtype": "int64"
+        },
+        "site_bins": {
+          "shape": [
+            6,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "energy_site_bins": {
+          "shape": [
+            6,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "eigen_residual_norms": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "edges": {
+          "shape": [
+            5
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/spectral_T15_k04.npz",
+      "size": 403904,
+      "sha256": "8817f313f022ee23412bb01033eeb4d344c3f05d0371277be0911cc8fdb03e18",
+      "members": {
+        "omega": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "amplitudes": {
+          "shape": [
+            4096,
+            2
+          ],
+          "dtype": "complex128"
+        },
+        "level_weights": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "bins": {
+          "shape": [
+            4096
+          ],
+          "dtype": "int64"
+        },
+        "site_bins": {
+          "shape": [
+            6,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "energy_site_bins": {
+          "shape": [
+            6,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "eigen_residual_norms": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "edges": {
+          "shape": [
+            5
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/spectral_T15_k05.npz",
+      "size": 403928,
+      "sha256": "b021d4fdfce96b10f6e9e1b75ee09eee63040e54598c30cdd8ea488aa23ca7f0",
+      "members": {
+        "omega": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "amplitudes": {
+          "shape": [
+            4096,
+            2
+          ],
+          "dtype": "complex128"
+        },
+        "level_weights": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "bins": {
+          "shape": [
+            4096
+          ],
+          "dtype": "int64"
+        },
+        "site_bins": {
+          "shape": [
+            6,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "energy_site_bins": {
+          "shape": [
+            6,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "eigen_residual_norms": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "edges": {
+          "shape": [
+            5
+          ],
+          "dtype": "float64"
+        }
+      }
+    }
+  ],
+  "box_only_arrays": [
+    {
+      "path": "<internal>/eigensystem_T16_k01.npz",
+      "size": 268468744,
+      "sha256": "16b31c807bfd634e972ba28721dfbe67905e767875e8a4d2e504a921069e71c4",
+      "members": {
+        "omega": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "eigenvectors": {
+          "shape": [
+            4096,
+            4096
+          ],
+          "dtype": "complex128"
+        }
+      },
+      "reason": "own complete eigensystem, retained only on box for nonrepeated readouts"
+    },
+    {
+      "path": "<internal>/eigensystem_T16_k02.npz",
+      "size": 268468744,
+      "sha256": "27a98032df7b2974f692e4b2a2381582de8332ec566655a6afec91c5b20490af",
+      "members": {
+        "omega": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "eigenvectors": {
+          "shape": [
+            4096,
+            4096
+          ],
+          "dtype": "complex128"
+        }
+      },
+      "reason": "own complete eigensystem, retained only on box for nonrepeated readouts"
+    },
+    {
+      "path": "<internal>/eigensystem_T16_k03.npz",
+      "size": 268468744,
+      "sha256": "eb84508d99f1a873575c3d8e1f6b0028454082e8bedb41c93bdfa0314d6d5a30",
+      "members": {
+        "omega": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "eigenvectors": {
+          "shape": [
+            4096,
+            4096
+          ],
+          "dtype": "complex128"
+        }
+      },
+      "reason": "own complete eigensystem, retained only on box for nonrepeated readouts"
+    },
+    {
+      "path": "<internal>/eigensystem_T16_k04.npz",
+      "size": 268468744,
+      "sha256": "e0950510b08ff4824e97b3bd16772b37beb05d603fa726903dbac8b230e2d69a",
+      "members": {
+        "omega": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "eigenvectors": {
+          "shape": [
+            4096,
+            4096
+          ],
+          "dtype": "complex128"
+        }
+      },
+      "reason": "own complete eigensystem, retained only on box for nonrepeated readouts"
+    },
+    {
+      "path": "<internal>/eigensystem_T16_k05.npz",
+      "size": 268468744,
+      "sha256": "42374f0418986e1670ecda9c79a49aa22f2e87cee39cd6edd26aeabc6af7e4b5",
+      "members": {
+        "omega": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "eigenvectors": {
+          "shape": [
+            4096,
+            4096
+          ],
+          "dtype": "complex128"
+        }
+      },
+      "reason": "own complete eigensystem, retained only on box for nonrepeated readouts"
+    },
+    {
+      "path": "<internal>/eigensystem_T12_k01.npz",
+      "size": 268468744,
+      "sha256": "1d593525d81555f799372ff35032ecc4c761e312381e7b340adaf5698836591f",
+      "members": {
+        "omega": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "eigenvectors": {
+          "shape": [
+            4096,
+            4096
+          ],
+          "dtype": "complex128"
+        }
+      },
+      "reason": "own complete eigensystem, retained only on box for nonrepeated readouts"
+    },
+    {
+      "path": "<internal>/eigensystem_T12_k02.npz",
+      "size": 268468744,
+      "sha256": "fcf0660fb8984af6aefb785f49e989fdce346ff10a2a76348daaa098ed9af198",
+      "members": {
+        "omega": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "eigenvectors": {
+          "shape": [
+            4096,
+            4096
+          ],
+          "dtype": "complex128"
+        }
+      },
+      "reason": "own complete eigensystem, retained only on box for nonrepeated readouts"
+    },
+    {
+      "path": "<internal>/eigensystem_T12_k03.npz",
+      "size": 268468744,
+      "sha256": "a1730d09dcd87ee11172a9a64b6820cfe920efc57e0356f51313df5d11a2fe83",
+      "members": {
+        "omega": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "eigenvectors": {
+          "shape": [
+            4096,
+            4096
+          ],
+          "dtype": "complex128"
+        }
+      },
+      "reason": "own complete eigensystem, retained only on box for nonrepeated readouts"
+    },
+    {
+      "path": "<internal>/eigensystem_T12_k04.npz",
+      "size": 268468744,
+      "sha256": "300f59ea54154d757eccc06070d7d33785dcc56048a7464cc359da9a88b85c1f",
+      "members": {
+        "omega": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "eigenvectors": {
+          "shape": [
+            4096,
+            4096
+          ],
+          "dtype": "complex128"
+        }
+      },
+      "reason": "own complete eigensystem, retained only on box for nonrepeated readouts"
+    },
+    {
+      "path": "<internal>/eigensystem_T12_k05.npz",
+      "size": 268468744,
+      "sha256": "20b055e4aefec9f0df74e058635fdd6416b874662bd9a04641fc7c9c9cfbb0b4",
+      "members": {
+        "omega": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "eigenvectors": {
+          "shape": [
+            4096,
+            4096
+          ],
+          "dtype": "complex128"
+        }
+      },
+      "reason": "own complete eigensystem, retained only on box for nonrepeated readouts"
+    },
+    {
+      "path": "<internal>/eigensystem_T15_k01.npz",
+      "size": 268468744,
+      "sha256": "19a6a93f49b14a3df588532192a089dd5626b9ca3c7de1af56a7ddebf4d0f78b",
+      "members": {
+        "omega": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "eigenvectors": {
+          "shape": [
+            4096,
+            4096
+          ],
+          "dtype": "complex128"
+        }
+      },
+      "reason": "own complete eigensystem, retained only on box for nonrepeated readouts"
+    },
+    {
+      "path": "<internal>/eigensystem_T15_k02.npz",
+      "size": 268468744,
+      "sha256": "85229d2d7f9011c77a4068466bae44bc576bd24ef5dcabddf6e73bccdd87e5fb",
+      "members": {
+        "omega": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "eigenvectors": {
+          "shape": [
+            4096,
+            4096
+          ],
+          "dtype": "complex128"
+        }
+      },
+      "reason": "own complete eigensystem, retained only on box for nonrepeated readouts"
+    },
+    {
+      "path": "<internal>/eigensystem_T15_k03.npz",
+      "size": 268468744,
+      "sha256": "9bb390578866e0e30d1c00e3a5509ab67aed8c3cc9286d98b7728d5e648f9a76",
+      "members": {
+        "omega": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "eigenvectors": {
+          "shape": [
+            4096,
+            4096
+          ],
+          "dtype": "complex128"
+        }
+      },
+      "reason": "own complete eigensystem, retained only on box for nonrepeated readouts"
+    },
+    {
+      "path": "<internal>/eigensystem_T15_k04.npz",
+      "size": 268468744,
+      "sha256": "85789b4ff86014ec595390bb40ce57cf0c43119487cb0dbea4c36a7e4e0b2a58",
+      "members": {
+        "omega": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "eigenvectors": {
+          "shape": [
+            4096,
+            4096
+          ],
+          "dtype": "complex128"
+        }
+      },
+      "reason": "own complete eigensystem, retained only on box for nonrepeated readouts"
+    },
+    {
+      "path": "<internal>/eigensystem_T15_k05.npz",
+      "size": 268468744,
+      "sha256": "7cce5104e77fe3dcc04f2e236adac9c04f5a14285ed245acb2582ec6e03d03b0",
+      "members": {
+        "omega": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "eigenvectors": {
+          "shape": [
+            4096,
+            4096
+          ],
+          "dtype": "complex128"
+        }
+      },
+      "reason": "own complete eigensystem, retained only on box for nonrepeated readouts"
+    }
+  ],
+  "implementation": {
+    "python": "3.12.12",
+    "numpy": "2.2.6",
+    "scipy": "1.17.0",
+    "producer_sha256": "a6a13f3935d7cd937eaf59e42e242285341a5210fe5b0f60467f6a232f8ccacc",
+    "base_producer_sha256": "8a55cd10be12b2b0b4c36f8b364c31dd198ccc8bdf114ea4bb0c2d78ec86fd54",
+    "helper_sha256": "294ebd7e68dd8f260f4be2a70c8d250db0f00106679edbea8e2274d83c4f326b",
+    "cpu_affinity": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "nice": 19
+  },
+  "historical_inputs": {
+    "fields": {
+      "path": "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_r11_fields.npz",
+      "size": 34263267,
+      "mtime_ns": 1792113881000000000,
+      "device": 66307,
+      "inode": 202506491
+    },
+    "fields_sha256": "a7d74d1b5e8516caa68f8249e7794572ffa315ed92eccde824552e9b8d3f32bb",
+    "records": {
+      "path": "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_r11.json",
+      "size": 4083175,
+      "mtime_ns": 1792113879000000000,
+      "device": 66307,
+      "inode": 202506558
+    },
+    "records_sha256": "79b79bd15e5ba5ab3cb467af985c165c39c6a69c6bfe9ca360d438811a7d6372",
+    "source_reconstruction": false
+  },
+  "elapsed_seconds": 4358.955414686352,
+  "peak_rss_kib": 625400,
+  "prior_attempt_phases": [
+    {
+      "name": "T16 raw and recorded profiles starting",
+      "elapsed_seconds": 0.6879797987639904
+    },
+    {
+      "name": "T16 raw and recorded profiles saved",
+      "elapsed_seconds": 0.7271265462040901
+    },
+    {
+      "name": "T12 raw and recorded profiles starting",
+      "elapsed_seconds": 0.7278625443577766
+    },
+    {
+      "name": "T12 raw and recorded profiles saved",
+      "elapsed_seconds": 0.767978522926569
+    },
+    {
+      "name": "T15 raw and recorded profiles starting",
+      "elapsed_seconds": 0.7691803984344006
+    },
+    {
+      "name": "T15 raw and recorded profiles saved",
+      "elapsed_seconds": 0.8072087280452251
+    },
+    {
+      "name": "T16 k1 joint polar starting",
+      "elapsed_seconds": 0.8092280998826027
+    },
+    {
+      "name": "T16 k1 banded eigensystem starting",
+      "elapsed_seconds": 9.55290800333023
+    }
+  ],
+  "prior_failure": {
+    "error": "MemoryError: Unable to allocate 256. MiB for an array with shape (33574913,) and data type float64",
+    "result_path": "<internal>/core_well_profiles_v1.json",
+    "result_sha256": "96a9a3bfb67e4cc5759c8a50eb7cdf6bcf51e13c15ec10e5f6c3e42730a77aa8",
+    "execution_path": "<internal>/execution.json",
+    "execution_sha256": "3aa2a0082652c47d8d214da71ea9b66d6d7ba5d898a424a4f94d9473798b029d",
+    "elapsed_seconds": 9.88800534978509,
+    "maximum_child_rss_kib": 871756
+  },
+  "continuation": {
+    "prior_wall_seconds": 9.88800534978509,
+    "prior_cpu_seconds_upper_bound": 39.55202139914036,
+    "original_wall_seconds": 900,
+    "original_cpu_seconds": 3600,
+    "reuse": [
+      "raw_T16.npz",
+      "raw_T12.npz",
+      "raw_T15.npz",
+      "joint_T16_k01.npz"
+    ],
+    "driver": "eig_banded(select='i', select_range=(0,4095)); complete zhbevx path",
+    "remaining_nonempty_joint_actions": 14,
+    "remaining_complete_spectral_actions": 15
+  },
+  "closed_continuation_phases": [
+    {
+      "name": "saved raw/record profiles loaded without recomputation",
+      "elapsed_seconds": 0.4045492075383663
+    },
+    {
+      "name": "T16 k1 saved joint dust/FFT reused without recomputation",
+      "elapsed_seconds": 0.4239412918686867
+    },
+    {
+      "name": "T16 k1 banded eigensystem starting",
+      "elapsed_seconds": 0.4273456148803234
+    },
+    {
+      "name": "T16 k1 complete eigensystem saved",
+      "elapsed_seconds": 324.19100568816066
+    },
+    {
+      "name": "T16 k2 joint polar starting",
+      "elapsed_seconds": 326.6978539824486
+    },
+    {
+      "name": "T16 k2 banded eigensystem starting",
+      "elapsed_seconds": 334.43121310323477
+    },
+    {
+      "name": "T16 k2 complete eigensystem saved",
+      "elapsed_seconds": 663.3833592869341
+    },
+    {
+      "name": "T16 k3 joint polar starting",
+      "elapsed_seconds": 667.4907975718379
+    },
+    {
+      "name": "T16 k3 banded eigensystem starting",
+      "elapsed_seconds": 678.5278459303081
+    }
+  ],
+  "closed_continuation_phase_accounting": {
+    "aggregate_elapsed_seconds": 688.415858514607,
+    "aggregate_cpu_seconds_upper_bound": 1005.6992393991404
+  },
+  "phases": [
+    {
+      "name": "closed raw/record products loaded without recomputation",
+      "elapsed_seconds": 0.38966164737939835
+    },
+    {
+      "name": "T16 k1 saved joint/measures/FFT reused without repetition",
+      "elapsed_seconds": 0.4092174470424652
+    },
+    {
+      "name": "T16 k2 saved joint/measures/FFT reused without repetition",
+      "elapsed_seconds": 0.41707370057702065
+    },
+    {
+      "name": "T16 k3 saved joint/measures/FFT reused without repetition",
+      "elapsed_seconds": 0.4278191477060318
+    },
+    {
+      "name": "T16 k4 missing joint polar starting",
+      "elapsed_seconds": 0.4341017082333565
+    },
+    {
+      "name": "T16 k5 missing joint polar starting",
+      "elapsed_seconds": 10.221136942505836
+    },
+    {
+      "name": "T16 complete matched profiles saved before missing spectra",
+      "elapsed_seconds": 21.077911607921124
+    },
+    {
+      "name": "T12 k1 missing joint polar starting",
+      "elapsed_seconds": 21.089376755058765
+    },
+    {
+      "name": "T12 k2 missing joint polar starting",
+      "elapsed_seconds": 32.61880214884877
+    },
+    {
+      "name": "T12 k3 missing joint polar starting",
+      "elapsed_seconds": 43.59688314422965
+    },
+    {
+      "name": "T12 k4 missing joint polar starting",
+      "elapsed_seconds": 54.4133948199451
+    },
+    {
+      "name": "T12 k5 missing joint polar starting",
+      "elapsed_seconds": 65.33201511204243
+    },
+    {
+      "name": "T12 complete matched profiles saved before missing spectra",
+      "elapsed_seconds": 76.8519573174417
+    },
+    {
+      "name": "T15 k1 missing joint polar starting",
+      "elapsed_seconds": 76.86138750612736
+    },
+    {
+      "name": "T15 k2 missing joint polar starting",
+      "elapsed_seconds": 90.37003702670336
+    },
+    {
+      "name": "T15 k3 missing joint polar starting",
+      "elapsed_seconds": 104.05779272690415
+    },
+    {
+      "name": "T15 k4 missing joint polar starting",
+      "elapsed_seconds": 119.39254485815763
+    },
+    {
+      "name": "T15 k5 missing joint polar starting",
+      "elapsed_seconds": 133.90554206818342
+    },
+    {
+      "name": "T15 complete matched profiles saved before missing spectra",
+      "elapsed_seconds": 147.03540932759643
+    },
+    {
+      "name": "T16 k3 banded eigensystem starting",
+      "elapsed_seconds": 147.044089268893
+    },
+    {
+      "name": "T16 k3 complete eigensystem saved",
+      "elapsed_seconds": 489.365410592407
+    },
+    {
+      "name": "T16 k4 banded eigensystem starting",
+      "elapsed_seconds": 493.7801827304065
+    },
+    {
+      "name": "T16 k4 complete eigensystem saved",
+      "elapsed_seconds": 814.1170885674655
+    },
+    {
+      "name": "T16 k5 banded eigensystem starting",
+      "elapsed_seconds": 817.4884333722293
+    },
+    {
+      "name": "T16 k5 complete eigensystem saved",
+      "elapsed_seconds": 1157.8029011040926
+    },
+    {
+      "name": "T12 k1 banded eigensystem starting",
+      "elapsed_seconds": 1162.722197946161
+    },
+    {
+      "name": "T12 k1 complete eigensystem saved",
+      "elapsed_seconds": 1475.104756064713
+    },
+    {
+      "name": "T12 k2 banded eigensystem starting",
+      "elapsed_seconds": 1478.6804520376027
+    },
+    {
+      "name": "T12 k2 complete eigensystem saved",
+      "elapsed_seconds": 1844.6282453164458
+    },
+    {
+      "name": "T12 k3 banded eigensystem starting",
+      "elapsed_seconds": 1848.1447951495647
+    },
+    {
+      "name": "T12 k3 complete eigensystem saved",
+      "elapsed_seconds": 2181.74590908736
+    },
+    {
+      "name": "T12 k4 banded eigensystem starting",
+      "elapsed_seconds": 2186.3372296132147
+    },
+    {
+      "name": "T12 k4 complete eigensystem saved",
+      "elapsed_seconds": 2510.99655578658
+    },
+    {
+      "name": "T12 k5 banded eigensystem starting",
+      "elapsed_seconds": 2515.1164439208806
+    },
+    {
+      "name": "T12 k5 complete eigensystem saved",
+      "elapsed_seconds": 2836.6191013902426
+    },
+    {
+      "name": "T15 k1 banded eigensystem starting",
+      "elapsed_seconds": 2839.382264766842
+    },
+    {
+      "name": "T15 k1 complete eigensystem saved",
+      "elapsed_seconds": 3124.8200992420316
+    },
+    {
+      "name": "T15 k2 banded eigensystem starting",
+      "elapsed_seconds": 3127.1987615711987
+    },
+    {
+      "name": "T15 k2 complete eigensystem saved",
+      "elapsed_seconds": 3416.37929681316
+    },
+    {
+      "name": "T15 k3 banded eigensystem starting",
+      "elapsed_seconds": 3419.7139661833644
+    },
+    {
+      "name": "T15 k3 complete eigensystem saved",
+      "elapsed_seconds": 3693.2601351067424
+    },
+    {
+      "name": "T15 k4 banded eigensystem starting",
+      "elapsed_seconds": 3696.244179662317
+    },
+    {
+      "name": "T15 k4 complete eigensystem saved",
+      "elapsed_seconds": 3986.251839749515
+    },
+    {
+      "name": "T15 k5 banded eigensystem starting",
+      "elapsed_seconds": 3990.3934371247888
+    },
+    {
+      "name": "T15 k5 complete eigensystem saved",
+      "elapsed_seconds": 4355.282244764268
+    },
+    {
+      "name": "fixed three-clock profile and spectral target complete",
+      "elapsed_seconds": 4358.949362952262
+    }
+  ],
+  "missing_work_completion": {
+    "prior_result_path": "<internal>/core_well_profiles_v1.json",
+    "prior_result_sha256": "93024674443168e17c357cc7917ab3f789330ceaff19ecbc0d8f021a16927e9c",
+    "prior_execution_path": "<internal>/execution.json",
+    "prior_execution_sha256": "1f49c90f8b83093e44b92632ebafbeb61c65bc4fd2f3ad99ae730916e1af16bc",
+    "closed_prior_charged_wall_seconds": 899.9093604981899,
+    "closed_prior_cpu_upper_bound": 1220.1546343991404,
+    "closed_prior_local_reserve_flag": false,
+    "separately_bounded_allocation": true,
+    "reused_completed_products": [
+      "eigensystem_T16_k01.npz",
+      "eigensystem_T16_k02.npz",
+      "joint_T16_k01.npz",
+      "joint_T16_k02.npz",
+      "joint_T16_k03.npz",
+      "raw_T12.npz",
+      "raw_T15.npz",
+      "raw_T16.npz",
+      "spectral_T16_k01.npz",
+      "spectral_T16_k02.npz"
+    ],
+    "remaining_joint_actions": 12,
+    "remaining_spectral_actions": 13,
+    "completed_new_joint_actions": 12,
+    "completed_new_spectral_actions": 13,
+    "order": "all missing joint/FFT and three matched summaries, then only missing spectra"
+  },
+  "completion_phase_cpu_seconds": 6396.989243,
+  "all_attempts_charged_wall_phase_sample": 5258.864773903042
+}

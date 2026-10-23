@@ -1,0 +1,3 @@
+path	contents	retention
+compute-host:<internal>/Bprime_s16A_v1	Own Bprime F1 metadata, independent operator and sink-propagation controls and complete run arrays.	Original records and all subsequent own scientific JSON/NPZ/logs stay on the box; only rendered lean Markdown leaves. Two earlier metadata-only JSON extracts were already committed; custody history is explicit in Bprime_s16A/AUTHOR.md.
+compute-host:<internal>/Bprime_channel_lead_v1	Own channel-lead source snapshots, manufactured controls, complete saved arrays and runtime/evidence records; subsequent admitted input/setup/trajectory records use this root.	Keep every scientific JSON/NPZ/log/state on the box; only lean derived Markdown leaves.

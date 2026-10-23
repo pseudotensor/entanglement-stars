@@ -1,0 +1,38 @@
+{
+  "purpose": "required 2c mechanical input structure and exact-anchor checks",
+  "input_table": "<internal>/ETA_directional_table_v1.tsv",
+  "input_exact_json": "<internal>/ETA_exact_values_v1.json",
+  "rows": 205,
+  "classes": {
+    "exact": 2,
+    "family": 32,
+    "generic": 171
+  },
+  "unique_canonical_primitive_massless_orbits": true,
+  "all_32_family_half_widths_at_least_4e_minus_6": true,
+  "delivered_column": "eta_hw",
+  "sweep_eta_hw_not_used": true,
+  "anchor_checks": {
+    "100": {
+      "table_eta": "0.786583386553",
+      "table_eta_hw": "1.000e-12",
+      "delivered_exact": "0.78658338655313811731",
+      "contains_prior_own_value_or_entire_interval": true,
+      "own_reference": [
+        "983229233191423/1250000000000000"
+      ]
+    },
+    "111": {
+      "table_eta": "0.923381805958",
+      "table_eta_hw": "1.000e-12",
+      "delivered_exact": "0.92338180595796093742",
+      "contains_prior_own_value_or_entire_interval": true,
+      "own_reference": [
+        "9233818059579609366316112256852208651717808199343664519724081700727783/10000000000000000000000000000000000000000000000000000000000000000000000",
+        "577113628723725589150769910412929201980891171082692501260548984257299/625000000000000000000000000000000000000000000000000000000000000000000"
+      ]
+    }
+  },
+  "eta111_certificate_status": "certified",
+  "scope": "Mechanical schema/anchor containment only; supplied directional-error premises remain conditional, and no native entropy or massive coefficient is computed."
+}

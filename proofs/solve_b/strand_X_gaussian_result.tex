@@ -1,0 +1,381 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,mathtools,url}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlength{\emergencystretch}{2em}
+\DeclareMathOperator{\Tr}{Tr}
+\begin{document}
+\paragraph{Strand X: bounded native Gaussian preparation result
+[N/S; V:X,W,D].}
+The declared zero-coupling control gives two accepted intermediate
+$5^3$ preparation states, with small floating-point clock and ruler
+residuals and positive fields inside the stated point guards.
+It reaches none of the prescribed loads and performs no time step.
+The $7^3$ parent passes its flat controls and retains only its flat
+state when the whole-batch wall cap is detected.
+The numerical content [N] is this finite-parent preparation and
+stored-array readout, not an enclosed root or a trajectory.
+The exact residual identities and the interpretation below have
+supporting [S] scope.  No new [X] or [R] claim is assigned.
+The single independent result review
+\path{solve/review_X_gaussian_result.tex} passes the actual source,
+stored-output interpretation and two-sentence delivery at this
+preparation-only scope, with no additional scientific repair.
+
+\paragraph{1. Fixed law, state and acceptance meaning.}
+The implemented control is XN11--XN16 of
+\path{solve/strand_X_nonlinear_response.tex}, with
+\[
+ a=1,\qquad a^2m_s^2=(1/12,1/6,1/6,1/4),\qquad
+ \eta=(+,-,-,+),\qquad g_M=g_B=0 .
+\]
+The prescribed $\Lambda=m_1$ and $\ell=a$ do not enter the
+zero-coupling seed.  The single coefficient match is retained;
+no radius, mass, lapse or Newton coefficient is fitted to the output.
+Each Cartesian parent uses the open native sine stencil,
+all interior--collar links and all native modes.  The outermost
+layer has $N_B=\psi_B=1$.  There are respectively 27 and 125
+interior rulers, 250 and 686 native two-spin modes, and 500 and
+1372 carrier modes per fermion packet.
+All four actual fermionic seas are retained.  The invariant empty
+sector of the untruncated bosons retains the original vacuum scalar.
+There is no spherical averaging or interacting-light approximation
+inside this selected Gaussian control.
+
+The light covariance is the specified
+$C_1=P_{1,-}^{0}+\lambda P_g$, with $P_g$ the fixed normalized
+rank-two positive-band preparation, and the other covariances are
+their flat seas.  The complete native state is held fixed during
+each initial field solve; its mismatch with the sea at the solved
+ruler is included in the sources.  The prescribed loads are
+$1/256,1/16,1$.  A fractional intermediate $\lambda$ is a mixed
+Gaussian preparation label with added mean charge $2\lambda$;
+it is neither physical time nor a replacement target load.
+
+The complete rectangular Jacobian has rows on all $\Lambda$ and
+ruler columns only on $I$:
+\begin{equation}
+ C_x=w_x+\Tr(\rho e_x),\qquad
+ J_{xy}=\partial_{\psi_y}C_x\big|_\rho,\qquad
+ J_{II}^{T}N_I=-J_{BI}^{T}{\bf1}_B .
+ \tag{XR1}
+\end{equation}
+The code retains these collar rows and the actual polar derivatives.
+Its clock solve uses $10^{-12}$, stricter than the declared
+$10^{-10}$ clock acceptance tolerance; the ruler tolerance remains
+$10^{-10}$.  The prescribed trial guards are
+\[
+ 1/8<N_I<8,\qquad 1/2<\psi_I<4,\qquad
+ \sigma_{\min}(J_{II})/\sigma_{\min}(J_{0,II})>10^{-4}.
+\]
+Every Newton/backtracking evaluation consumes the same 12-trial
+field-solve allowance and the whole-batch field counter.
+A completed field evaluation need not be an accepted clock root.
+In particular the lapse guards are applied at trial fields before
+the clock has reached its tolerance.
+All numerical residuals, singular values and guard tests here are
+ordinary binary64 diagnostics, without directed root, inverse or
+trajectory error bounds.
+
+\paragraph{2. What is accepted at each parent.}
+Both flat controls pass their declared numerical tolerances:
+the individual sea clock and derivative rows vanish to roundoff,
+the full vacuum column sum vanishes to roundoff, and the
+constant-interior, central-site and alternating-interior quadratic
+forms agree with the independent spectral commutator formula.
+The column-sum infinity norms are
+$2.153565991234155\,10^{-14}$ for $5^3$ and
+$2.1485408717864798\,10^{-14}$ for $7^3$.
+The recorded quadratic-form differences are at most
+$7.147060721024445\,10^{-15}$ and
+$6.619704784327496\,10^{-15}$, respectively.
+The code's field named \texttt{relative\_difference} divides by
+$\max(1,|\hbox{left}|,|\hbox{right}|)$; these are differences with
+that reporting floor, not relative errors divided by a small
+quadratic form.  Three tested profiles do not constitute an
+all-field numerical coercivity theorem.
+
+The $5^3$ accepted preparations are
+\[
+\begin{array}{c|c|c|c}
+ \lambda&\|C_I\|_\infty&\|J^TN\|_\infty&
+                         \sigma_{\min}(J_{II})\\ \hline
+ 1/16384&4.163447049550543\,10^{-14}&
+          1.0551569912460471\,10^{-17}&0.005727854876008834\\
+ 5/65536&4.501707274756384\,10^{-14}&
+          1.3553400339841182\,10^{-17}&0.004365295249808526
+\end{array}
+ \tag{XR2}
+\]
+At $1/16384$ the interior lapse lies between
+$1.2854624365981677$ and $2.098965707565491$.
+Its field record survives, but its full state arrays were
+overwritten by the retained preparation checkpoint.
+No later array readout is assigned to that earlier state.
+
+The actual retained $5^3$ checkpoint has
+\begin{equation}
+\begin{aligned}
+ \lambda&=5/65536,&
+ \psi_I&\in[1.0003327879495905,\;1.0023484106759575],\\
+ N_I&\in[1.5170668299235484,\;3.1315020428088975],&
+ \frac{\sigma_{\min}(J_{II})}{\sigma_{\min}(J_{0,II})}
+   &=0.4946556144874843 .
+\end{aligned}
+\tag{XR3}
+\end{equation}
+Its marked trace is $0.000152587890625=2\lambda$.
+The stored covariance guard reports maximum spectral
+$[0,1]$ defect $5.10702591327572\,10^{-15}$ and maximum
+Hermiticity Frobenius defect $1.8842851490861374\,10^{-22}$.
+The retained-array reader did not recompute covariance spectra.
+The stored zero spectrum-conservation defect at preparation is
+not a test of dynamical conservation.
+
+The $7^3$ retained checkpoint is $\lambda=0$, with $\psi_I=1$,
+$N_I\in[0.999999999998313,1.0000000000005618]$,
+clock residual $1.2603146094162877\,10^{-14}$, ruler residual
+$1.3613513528271115\,10^{-17}$ and
+$\sigma_{\min}(J_{0,II})=0.005773665332074604$.
+There is no common positive accepted load between the two parents,
+so the data supply no finite-parent convergence comparison.
+
+\paragraph{3. Exact accounting identities and their numerical defects.}
+Let
+\[
+ E_{\rm col}=\sum_{b\in B}C_b,\qquad
+ E_{\rm pos}=\sum_{x\in\Lambda}\frac{\Tr(\rho e_x)}{\psi_x},
+ \qquad {\cal H}=\sum_xN_xC_x .
+\]
+The finite polar trace gives $\sum_xw_x/\psi_x=0$ exactly.
+At an arbitrary field, without assuming $C_I=0$, the two
+distinct identities are
+\begin{equation}
+ E_{\rm col}-E_{\rm pos}=-\sum_{i\in I}C_i/\psi_i,\qquad
+ {\cal H}-E_{\rm col}=\sum_{i\in I}N_iC_i .
+ \tag{XR4}
+\end{equation}
+At an exact root these reduce to the positive charge identity
+of XN5.  At the retained $5^3$ checkpoint the stored-array
+readout gives
+\[
+\begin{array}{c|r}
+ E_{\rm col}&0.00026815188606647806\\
+ E_{\rm pos}&0.0002681518861636053\\
+ E_{\rm col}-E_{\rm pos}&-9.712722163005005\,10^{-14}\\
+ -\sum_I C_i/\psi_i&+1.3435433109824023\,10^{-13}\\
+ {\cal H}-E_{\rm col}&-3.4801827218655657\,10^{-13}\\
+ \sum_I N_iC_i&-3.4801829438392725\,10^{-13}
+\end{array}
+\]
+Thus the first identity's signed numerical defect is
+$-2.314815527282903\,10^{-13}$, and the second's is
+$2.219737068474066\,10^{-20}$.  The first is not set to zero
+or hidden by the small root residual: in exact arithmetic its
+remaining term is the finite polar trace sum.  These are
+single-state accounting diagnostics, not charge conservation
+measurements over time.
+At the flat $7^3$ checkpoint the reported
+$E_{\rm col}=4.950707796706056\,10^{-13}$ and
+$E_{\rm pos}=7.971047946312673\,10^{-13}$ are numerical
+residuals of the nominal zero vacuum charge, not positive
+physical energies.
+
+The same retained rectangular matrix supplies the exact algebra
+\begin{equation}
+ r_1=J_{\Lambda I}^{T}{\bf1},\qquad
+ J_{II}^{T}(N_I-{\bf1})=-r_1,\qquad
+ \|N_I-{\bf1}\|_\infty
+       \leq\frac{\|r_1\|_2}{\sigma_{\min}(J_{II})}
+       =:\beta .
+ \tag{XR5}
+\end{equation}
+At $5^3$ the separately extracted transpose-identity residual
+is $3.604250708511724\,10^{-17}$ and
+$\beta=6.7169792935201$, whereas the actual
+$\|N_I-{\bf1}\|_\infty=2.1315020428088975$.
+A certified $\beta<7/8$ would suffice for both declared lapse
+guards.  Its failure here is inconclusive; it is not a lapse
+or branch failure, and the actual point passes both guards.
+Neither the singular value nor this quotient is a directed
+neighborhood certificate.
+
+\paragraph{4. Separate the trial limit, step floor and wall cap.}
+The $5^3$ terminal continuation attempt starts from $5/65536$
+and proposes $3/32768$ with increment $1/65536$.
+It exhausts the 12-trial field solve.  The next halved
+increment is $1/131072$, strictly below the declared
+$2^{-16}$ floor, and preparation stops.
+The attempted increment itself equals the floor.
+The terminal completed trial has clock residual
+$1.1597454869122868\,10^{-7}$, so it is not an accepted root,
+even though its interior lapse maximum
+$7.965514209890777$ is below eight.
+Other rejected trials at that same candidate have maximum
+lapse above eight; they likewise have unsolved clock rows.
+These records do not locate a physical lapse zero, a fold,
+or the boundary of the exact positive branch.
+
+The $7^3$ parent attempts only the first prescribed load
+$1/256$ from its flat state.
+Trial fields encounter the lower lapse guard; one encounters
+both lower and upper guards.  Their clock residuals remain
+nonzero.  Field request 125, at backtracking index four,
+ends at the wall cap before completing the source/Jacobian
+and lapse readout.  No missing lapse or singular value is
+inferred for this request.  There is no completed $7^3$
+halving sequence or step-floor outcome.
+The TXT's terminal corrector reason \texttt{pending} is an
+incomplete row; the final JSON top-level failure identifies
+the actual \texttt{Cap} phase.
+
+The final status is \texttt{unresolved}.
+The authoritative JSON/TXT elapsed value is
+$21628.5037657097$ seconds, exceeding the declared
+$21600$ seconds by $28.5037657096982$ seconds.
+The subsequent log samples $21628.560513593256$ seconds.
+The two finalization samples are retained literally.
+The cooperative cap detection does not establish strict
+six-hour wall compliance.
+The cumulative counters are 125 requested field/source
+evaluations, comprising 46 completed and 79 failed or
+incomplete evaluations, 1182 scalar integrand evaluations,
+and zero accepted time steps.
+The actual backend is CPU at nice 10 with seven own threads;
+reported peak host RSS is 2236080128 bytes and device-pool
+allocation is zero.  No GPU execution is credited.
+The measured flat-field durations are
+$13.024783998727798$ seconds for $5^3$ and
+$2916.5891262441874$ seconds for $7^3$; these are this
+implementation's recorded costs, not a complexity theorem.
+
+\paragraph{5. Source/readout boundary and missing information.}
+The original interrupted run retains its JSON/TXT/log and
+35 charged field requests but no NPZ checkpoint.
+The reporting repair reconstructs the exact declared flat
+input, retains the prior counters and repair downtime, and
+saves the actual last-valid states.  It changes no physical
+input, branch guard, method or budget.
+The current model source contains eight prospective
+\texttt{Parent.assemble} lines computing the $r_1$,
+transpose-identity and $\beta$ report.  Those lines were
+added after the continued process launched and did not
+execute in either model run.
+The values in (XR5) are the separate existing-data reader's
+stored-array readout, using the matching stored singular value;
+they do not retrospectively become model diagnostics.
+
+The single data-only reader uses no new field/source call,
+eigensolve or evolution.  It records one thread, nice 10,
+$0.05470031499862671$ seconds and 61337600 bytes peak RSS.
+Rejected trial matrices and overwritten earlier accepted
+arrays are unavailable.  The optional load-affine
+flat-start comparison was not performed because its
+required pairs of full matrices were not retained.
+No inference in this result requires reconstructing them.
+
+\paragraph{6. Narrowed conclusion and constructive handoff.}
+The exact finite-parent local branch theorem of XN1--XN10
+is consistent with the two numerical preparations.
+Its implicit-function neighborhood was not quantitatively
+identified with any prescribed load.  A pointwise positive
+Jacobian singular value and small residual do not alone
+give a root enclosure or continuation radius.
+The present data therefore distinguish a realized
+small-load preparation from an unresolved target
+preparation; they do not refute the exact field equations
+or establish failure of the physical collapse law.
+
+The next solver ingredient is the branch-local
+residual/inverse/Jacobian-variation control already
+specified in XN9, applied to the actual fixed-native
+sources with their collar derivatives.
+For example, if $M$ is a bounded approximate inverse at
+a declared candidate $\psi_*$, an enclosure of
+\[
+ \sup_{\psi\in{\cal B}_r}
+      \|I-MJ_{II}(\psi)\|\leq q<1,\qquad
+ \|M C_I(\psi_*)\|+qr\leq r
+\]
+together with lapse and ruler bounds on the same ball
+would distinguish a certified root neighborhood from a
+failed numerical corrector.  The available stored point
+does not supply that ball bound.  The large measured
+$7^3$ full-derivative cost also has to be addressed before
+an exact-source trajectory is a practical test: tangent
+and transpose operations through the same polar Sylvester
+derivatives are possible implementation directions, but
+no replacement solver or new run is adopted here.
+No branch guard, load target or continuation floor is
+relaxed to manufacture an accepted result.
+
+An actual collapse handoff still requires a prescribed
+load prepared on the declared branch, both state and
+constraint evolution with endpoint field solves, and the
+same-history charge, material-radius, native-light-speed,
+lock-defect and finite-frequency source monitors of X/XS/XN.
+The frozen-field susceptibility is only a component of
+the coupled response, not its clock/lapse-eliminated value.
+The native light-algebra entropy and cross-surface
+correlations of XP use that same trajectory and declared
+cut.  None is supplied by a preparation checkpoint.
+There is no time-step comparison, causal sea response
+measurement, charge-fixed shrinkage, spherical/open
+transfer, production spectrum, Page curve or thermal
+law in this output.  Nonzero dressed couplings still
+require the complete light sources and actual state.
+This handoff identifies the unresolved ingredient;
+it authorizes no additional computation.
+
+\paragraph{Paper delivery.}
+At the declared zero-coupling native control, the $5^3$ parent
+admits two numerically accepted intermediate preparations,
+the retained $\lambda=5/65536$ state having clock residual
+$4.50\,10^{-14}$ and positive interior lapse
+$1.517<N_I<3.132$, without a root enclosure.
+Neither parent reaches a prescribed load or evolves in time,
+so the step-floor and wall-cap outcomes leave collapse,
+causal response, Page correlations and thermal production
+uncomputed.
+
+\paragraph{SOURCES.}
+The governing analytical system and fixed control are
+XN1--XN16 in \path{solve/strand_X_nonlinear_response.tex}
+and its single review
+\path{solve/review_X_nonlinear_response.tex}.
+The causal and readout dependencies are
+\path{solve/strand_X_causal_sea.tex},
+\path{solve/strand_X_page_correlations.tex}, and
+\path{solve/strand_W.tex}, at their stated scopes.
+The actual model source is
+\path{solve/code/x_nonlinear_gaussian.py}, with the
+unexecuted eight-line prospective metric delta distinguished
+above; the actual retained-array reader is
+\path{solve/code/x_nonlinear_existing_data.py}.
+The unchanged original and continued JSON/TXT/log artifacts
+are in \path{solve/results/x_nonlinear_gaussian/}, under
+the stems \texttt{x\_nonlinear\_gaussian} and
+\texttt{x\_nonlinear\_gaussian\_continued}.
+The complete literal assessment is
+\path{solve/results/x_nonlinear_gaussian/x_nonlinear_gaussian_existing_data.txt}:
+final status and sampling at lines 1--60,
+$5^3$ controls/attempts at 61--456,
+retained $5^3$ arrays at 457--499,
+$7^3$ controls/attempt at 762--840,
+retained $7^3$ arrays at 841--883,
+trial records and missing-data/resource statements thereafter.
+The two actual checkpoint paths are
+\path{solve/results/x_nonlinear_gaussian/L5_last_valid_preparation.npz}
+and
+\path{solve/results/x_nonlinear_gaussian/L7_last_valid_preparation.npz},
+also retained under
+\path{<internal>/}
+on the scientific host; they are not Git payloads.
+The independent result assessment is
+\path{solve/review_X_gaussian_result.tex}.
+The [N] claims are bounded floating-point measurements;
+the residual and branch implications are supporting [S]
+uses of the retained analysis, not new independent-method
+or physical results.
+\end{document}

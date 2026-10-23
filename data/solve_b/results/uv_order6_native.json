@@ -1,0 +1,230 @@
+{
+  "scope": "Reviewed order-six native compact arithmetic, T31--35",
+  "execution": {
+    "assigned_gpu_uuid": "GPU-1c907351-ed3d-0d52-5072-e791dde9df56",
+    "cuda_allocation_bytes": 1048576,
+    "cuda_context_in_this_single_job_process": true,
+    "same_process_fresh_device_query_before_allocation": true,
+    "post_allocation_single_owned_compute_pid_verified": true,
+    "single_process_pid": 2343349,
+    "niceness": 10,
+    "threads_at_launch": 4,
+    "maximum_threads": 8
+  },
+  "newton_reference": {
+    "scope": "Order-six continuum full-source Newton coefficient K3=kOmega/Omega^2, Omega=m4=1",
+    "massless_rectangle": [
+      "0",
+      "0.5",
+      "0.5",
+      "1"
+    ],
+    "positive_family_mass_squared": [
+      "delta^2",
+      "(1+delta^2)/2",
+      "(1+delta^2)/2",
+      "1"
+    ],
+    "delta_interval": "0<delta<=0.001",
+    "full_source_integrand": "12/pi^2 p^2 sum_eta (1+12p^22/(x+p^12))/sqrt(x+p^2+p^12)",
+    "finite_interval": [
+      "0",
+      "4"
+    ],
+    "Gauss_order_per_panel": 32,
+    "panels": 25,
+    "Bernstein_ellipse_parameter": "2",
+    "panel_tiling": "Exact [0,1/10] and ratio<=7/6 positive rational panels through4",
+    "quadrature_arithmetic_enclosure": {
+      "lower": "0.871314828232913053718563",
+      "upper": "0.871314828232913053718565"
+    },
+    "analytic_Gauss_absolute_error_upper_T28": "0.000000000236782580821519",
+    "positive_radial_tail_upper_T29": "0.000000000046834431563328",
+    "K3_massless_enclosure": {
+      "lower": "0.871314827996130472897045",
+      "upper": "0.871314828516530066103410"
+    },
+    "positive_mass_loss_upper_T30": "0.000160484818597106982852",
+    "K3_positive_family_enclosure": {
+      "lower": "0.871154343177533365914193",
+      "upper": "0.871314828516530066103410"
+    },
+    "native_spacing_applicability_threshold": {
+      "lower": "0.586708782213962965778413",
+      "upper": "0.586708782213962965778414"
+    },
+    "native_spacing_applicability_pass": true,
+    "status": "Executed Newton enclosure; independent source/result review required before adoption"
+  },
+  "arithmetic": {
+    "helper": "Frozen uv_native_certificate.py arithmetic only",
+    "decimal_precision": 80,
+    "Gauss_nodes_weights": {
+      "order": 24,
+      "all_roots_certified_by_disjoint_exact_sign_brackets": true,
+      "maximum_root_bracket_width": "0.0000000000000000000000000000000000007524",
+      "weight_sum": {
+        "lower": "1.999999999999999999999999",
+        "upper": "2.000000000000000000000001"
+      }
+    },
+    "constants": "Exact rational recipes and verified sqrt endpoints",
+    "dense_reduction": "Outward binary64 pairwise additions",
+    "outer_aggregation": "Sequential outward mpmath.iv additions"
+  },
+  "native_entropy": {
+    "scope": "Order-six prescribed uniform planar native cut at P=1; preserved symmetric positive mass family",
+    "domains": {
+      "Q": [
+        "0.1",
+        "4"
+      ],
+      "Q_split": "1",
+      "p_q": [
+        "-96",
+        "96"
+      ],
+      "central_normal": [
+        "-0.00625",
+        "0.00625"
+      ],
+      "panel_ratio": "7/6"
+    },
+    "Gauss_order": 24,
+    "Bernstein_ellipse": "3",
+    "layout": {
+      "normal_full_panels": 127,
+      "normal_positive_nodes": 1524,
+      "normal_triangle_pairs": 1162050,
+      "transverse_panels": 24,
+      "transverse_nodes": 576,
+      "worker_count_checked": 4,
+      "worker_contract": {
+        "FE_TONEAREST_ties_to_even_gradual_underflow_FTZ_DAZ_off": true,
+        "NumPy_over_invalid_divide_raise_underflow_ignore": true,
+        "r3_kernel_reference_cases_enclosed": 6
+      },
+      "exact_rational_panel_tiling_checked": true,
+      "symmetry": "4 off-diagonal and2 diagonal; simultaneous sign reversal and argument exchange"
+    },
+    "packet_integrals": [
+      {
+        "packet": 1,
+        "mass_squared": "0.000001",
+        "J_total_cubature": {
+          "lower": "0.143410148855367265246137",
+          "upper": "0.143415947914929714329329"
+        },
+        "J_high_cubature": {
+          "lower": "0.011230557802033681449925",
+          "upper": "0.011230689547860769172456"
+        },
+        "J_total_compact_integral_enclosure": {
+          "lower": "0.143410108676198357065135",
+          "upper": "0.143415988094098622510331"
+        },
+        "J_high_compact_integral_enclosure": {
+          "lower": "0.011230526894980675156846",
+          "upper": "0.011230720454913775465535"
+        }
+      },
+      {
+        "packet": 2,
+        "mass_squared": "0.5000005",
+        "J_total_cubature": {
+          "lower": "0.067701023510620427755522",
+          "upper": "0.067702514993761637214511"
+        },
+        "J_high_cubature": {
+          "lower": "0.010249365930399083066701",
+          "upper": "0.010249478759616383063168"
+        },
+        "J_total_compact_integral_enclosure": {
+          "lower": "0.067700983331451519574520",
+          "upper": "0.067702555172930545395513"
+        },
+        "J_high_compact_integral_enclosure": {
+          "lower": "0.010249335023346076773622",
+          "upper": "0.010249509666669389356247"
+        }
+      },
+      {
+        "packet": 3,
+        "mass_squared": "0.5000005",
+        "J_total_cubature": {
+          "lower": "0.067701023510620427755522",
+          "upper": "0.067702514993761637214511"
+        },
+        "J_high_cubature": {
+          "lower": "0.010249365930399083066701",
+          "upper": "0.010249478759616383063168"
+        },
+        "J_total_compact_integral_enclosure": {
+          "lower": "0.067700983331451519574520",
+          "upper": "0.067702555172930545395513"
+        },
+        "J_high_compact_integral_enclosure": {
+          "lower": "0.010249335023346076773622",
+          "upper": "0.010249509666669389356247"
+        }
+      },
+      {
+        "packet": 4,
+        "mass_squared": "1",
+        "J_total_cubature": {
+          "lower": "0.050683202320582180556496",
+          "upper": "0.050684124614250086928596"
+        },
+        "J_high_cubature": {
+          "lower": "0.009509256336680363824915",
+          "upper": "0.009509355573742449026916"
+        },
+        "J_total_compact_integral_enclosure": {
+          "lower": "0.050683162141413272375494",
+          "upper": "0.050684164793418995109598"
+        },
+        "J_high_compact_integral_enclosure": {
+          "lower": "0.009509225429627357531837",
+          "upper": "0.009509386480795455319995"
+        }
+      }
+    ],
+    "packet_total_analytic_error_upper": "0.000000040179168908181003",
+    "packet_high_analytic_error_upper": "0.000000030907053006293079",
+    "entropy_weight": "4ln2 plus(4ln2-2)/2 onQ>=1, using reviewed accretive compression",
+    "cubature_arithmetic_enclosure": {
+      "lower": "0.929485442851830566713389",
+      "upper": "0.929512525336637124189648"
+    },
+    "new_tensor_envelope": {
+      "lower": "15648587755.534207367206540122305133",
+      "upper": "15648587755.534207367206540122305134"
+    },
+    "analytic_tensor_absolute_error_upper_T34": "0.000000507685187870015458",
+    "zero_clipped_compact_lower": "0.929484935166642696697932",
+    "new_mass_stability_D3_upper_T33": "0.000008293985153692406669",
+    "uniform_native_lower_bound": {
+      "lower": "0.923940163601002707477859",
+      "upper": "0.923940163601002707477860"
+    },
+    "target_upper_from_fresh_K3": "1.368658132115690669577683",
+    "uniform_margin": {
+      "lower": "-0.444717968514687962099823",
+      "upper": "-0.444717968514687962099822"
+    },
+    "uniform_ratio_lower_bound": {
+      "lower": "0.675070086474233871838633",
+      "upper": "0.675070086474233871838634"
+    },
+    "spacing_applicability_pass_T35": true,
+    "strict_entropy_excess_pass_T35": false,
+    "status": "Executed arithmetic; independent source/result inspection required"
+  },
+  "arithmetic_complete": true,
+  "complete": true,
+  "complete_means": "All declared arithmetic enclosures executed; entropy normalization is not marked solved",
+  "entropy_normalization_disposition": "inconclusive: this lower-bound calculation has not settled entropy normalization",
+  "elapsed_seconds": 1577.647285785526,
+  "caveat": "A failed lower-bound rejection test is inconclusive and does not prove entropy below target. Stellar, spherical, thermal and finite-spacing Newton-rematch claims remain unproved."
+}

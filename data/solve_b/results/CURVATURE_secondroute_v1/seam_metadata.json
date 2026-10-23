@@ -1,0 +1,992 @@
+{
+  "prod_r11": {
+    "top_level_resume_fields": {},
+    "args_resume_fields": {
+      "resume_from": "C3prod/c17_rs64_A_R2_tau8_ell4_avg",
+      "resume_T_over_rs": 11.0
+    },
+    "runner": null,
+    "transitions": [
+      {
+        "record_index": 0,
+        "T": 0.0,
+        "T_over_rs": 0.0,
+        "metadata": {
+          "engine": null,
+          "solver_module": "engine_fields_v12.solve_constraints_ivp",
+          "explicit_restart_fields": {}
+        }
+      },
+      {
+        "record_index": 89,
+        "T": 712.0,
+        "T_over_rs": 11.125,
+        "metadata": {
+          "engine": "engine_collapse_v19",
+          "solver_module": "engine_fields_v14.solve_constraints_ivp",
+          "explicit_restart_fields": {
+            "resumed_from": {
+              "run": "C3prod/c17_rs64_A_R2_tau8_ell4_avg",
+              "T_over_rs": 11.0
+            }
+          }
+        }
+      },
+      {
+        "record_index": 90,
+        "T": 720.0,
+        "T_over_rs": 11.25,
+        "metadata": {
+          "engine": "engine_collapse_v19",
+          "solver_module": "engine_fields_v14.solve_constraints_ivp",
+          "explicit_restart_fields": {}
+        }
+      }
+    ],
+    "head_resume_fields": {
+      "resume": {
+        "from": "C3prod/c17_rs64_A_R2_tau8_ell4_avg",
+        "script": "engine_collapse_v17.py",
+        "T_over_rs": 11.0,
+        "records_replayed": 89,
+        "max_eps_rel": 3.704476321991054e-14,
+        "max_J_rel": 5.4608243249393675e-14,
+        "cinit": {
+          "dN": 1.1546319456101628e-14,
+          "dv": 2.55351295663786e-15
+        },
+        "seconds": 560.1441316604614,
+        "rows": [
+          [
+            0.0,
+            2.8089474777747493e-14,
+            3.1035458993908665e-14
+          ],
+          [
+            0.125,
+            2.9973554231273035e-14,
+            3.231037016999614e-14
+          ],
+          [
+            0.25,
+            2.8183528263392826e-14,
+            2.969801183207468e-14
+          ],
+          [
+            0.375,
+            2.454201188120748e-14,
+            2.7549617331176038e-14
+          ],
+          [
+            0.5,
+            2.488022454298195e-14,
+            2.6568849025255293e-14
+          ],
+          [
+            0.625,
+            2.613787643822324e-14,
+            2.6787046020372674e-14
+          ],
+          [
+            0.75,
+            2.5241584557016787e-14,
+            2.787529967644776e-14
+          ],
+          [
+            0.875,
+            2.4215667016395544e-14,
+            2.594060052304295e-14
+          ],
+          [
+            1.0,
+            2.3976853060459913e-14,
+            2.7545256290973408e-14
+          ],
+          [
+            1.125,
+            2.5496600060858077e-14,
+            3.150436039085341e-14
+          ],
+          [
+            1.25,
+            2.4299907399309963e-14,
+            3.4616585917913385e-14
+          ],
+          [
+            1.375,
+            2.1258065442033646e-14,
+            2.8144304523591102e-14
+          ],
+          [
+            1.5,
+            2.038323045988454e-14,
+            2.6692517180645363e-14
+          ],
+          [
+            1.625,
+            2.2564345206537196e-14,
+            2.817238007144422e-14
+          ],
+          [
+            1.75,
+            2.4750771968638685e-14,
+            3.1160208604847124e-14
+          ],
+          [
+            1.875,
+            2.800277312310044e-14,
+            2.6918361064986827e-14
+          ],
+          [
+            2.0,
+            2.172248228860238e-14,
+            2.5628694841197228e-14
+          ],
+          [
+            2.125,
+            2.02817713205649e-14,
+            2.5085529934402045e-14
+          ],
+          [
+            2.25,
+            2.2388726757954782e-14,
+            2.895273532525069e-14
+          ],
+          [
+            2.375,
+            2.3460813564448255e-14,
+            2.612694715872886e-14
+          ],
+          [
+            2.5,
+            2.379692011374853e-14,
+            2.46196173447395e-14
+          ],
+          [
+            2.625,
+            2.218524966256409e-14,
+            2.4071637136236705e-14
+          ],
+          [
+            2.75,
+            1.8156025940921305e-14,
+            2.6706377187513445e-14
+          ],
+          [
+            2.875,
+            1.9651023619923795e-14,
+            2.4365264583417253e-14
+          ],
+          [
+            3.0,
+            2.2304325884849485e-14,
+            2.4114270492495808e-14
+          ],
+          [
+            3.125,
+            2.2920201105603753e-14,
+            2.7356275489695187e-14
+          ],
+          [
+            3.25,
+            2.101346186774317e-14,
+            2.3912151675443514e-14
+          ],
+          [
+            3.375,
+            1.932679222242104e-14,
+            2.7750060184615644e-14
+          ],
+          [
+            3.5,
+            2.2887896275762382e-14,
+            2.8271825827008983e-14
+          ],
+          [
+            3.625,
+            2.2367188782121993e-14,
+            3.1167904063107945e-14
+          ],
+          [
+            3.75,
+            2.3405109187786907e-14,
+            3.130102592389792e-14
+          ],
+          [
+            3.875,
+            2.1006371702613257e-14,
+            2.9456749799516605e-14
+          ],
+          [
+            4.0,
+            2.3154679769411948e-14,
+            3.112527516557596e-14
+          ],
+          [
+            4.125,
+            2.0731658569291527e-14,
+            2.968112890638755e-14
+          ],
+          [
+            4.25,
+            2.448741240382593e-14,
+            3.036002568245486e-14
+          ],
+          [
+            4.375,
+            2.300762841240582e-14,
+            3.1970051934652926e-14
+          ],
+          [
+            4.5,
+            2.9220793385818657e-14,
+            3.756694456741577e-14
+          ],
+          [
+            4.625,
+            2.7103974897189052e-14,
+            3.446448015397088e-14
+          ],
+          [
+            4.75,
+            3.1121514201637224e-14,
+            3.913781241665555e-14
+          ],
+          [
+            4.875,
+            3.24088266632947e-14,
+            3.994218562168238e-14
+          ],
+          [
+            5.0,
+            3.3708784546749074e-14,
+            3.260769021867096e-14
+          ],
+          [
+            5.125,
+            3.56704643595904e-14,
+            3.4822871728639e-14
+          ],
+          [
+            5.25,
+            3.104307972787053e-14,
+            3.6578918000938933e-14
+          ],
+          [
+            5.375,
+            2.7866992704586337e-14,
+            3.4468547594801344e-14
+          ],
+          [
+            5.5,
+            2.3654416375082575e-14,
+            3.4596842668172494e-14
+          ],
+          [
+            5.625,
+            2.1078975959825597e-14,
+            3.678114583540618e-14
+          ],
+          [
+            5.75,
+            2.956497795144404e-14,
+            3.2759362252182075e-14
+          ],
+          [
+            5.875,
+            2.428619657406444e-14,
+            3.6926470040731575e-14
+          ],
+          [
+            6.0,
+            2.4719269683550104e-14,
+            3.7591017781987946e-14
+          ],
+          [
+            6.125,
+            3.024922798952891e-14,
+            3.3694127729543205e-14
+          ],
+          [
+            6.25,
+            2.745810460499381e-14,
+            3.8531529497425934e-14
+          ],
+          [
+            6.375,
+            2.4986064566953198e-14,
+            3.2350866087315875e-14
+          ],
+          [
+            6.5,
+            2.901469321088814e-14,
+            3.781461510284442e-14
+          ],
+          [
+            6.625,
+            2.6608448665877413e-14,
+            3.498059987833439e-14
+          ],
+          [
+            6.75,
+            2.8325895621741462e-14,
+            3.844588663563267e-14
+          ],
+          [
+            6.875,
+            2.8054946827269202e-14,
+            3.283549895756407e-14
+          ],
+          [
+            7.0,
+            2.5955443614575515e-14,
+            3.618542457111198e-14
+          ],
+          [
+            7.125,
+            2.0447549773670278e-14,
+            3.4864922532959527e-14
+          ],
+          [
+            7.25,
+            2.8248781442395822e-14,
+            3.762757706013635e-14
+          ],
+          [
+            7.375,
+            2.4107562276739393e-14,
+            3.1749093990570414e-14
+          ],
+          [
+            7.5,
+            2.221911312882576e-14,
+            3.862946001437381e-14
+          ],
+          [
+            7.625,
+            2.172300939806372e-14,
+            3.0823644791905935e-14
+          ],
+          [
+            7.75,
+            2.1749807563438782e-14,
+            3.323444905108107e-14
+          ],
+          [
+            7.875,
+            2.1581288009399735e-14,
+            3.903469567874691e-14
+          ],
+          [
+            8.0,
+            2.4047594489094212e-14,
+            4.4225466617106506e-14
+          ],
+          [
+            8.125,
+            2.5821456562311274e-14,
+            4.049643257258482e-14
+          ],
+          [
+            8.25,
+            2.7742130681777053e-14,
+            4.500567684837833e-14
+          ],
+          [
+            8.375,
+            2.1037889752571287e-14,
+            3.93680443475826e-14
+          ],
+          [
+            8.5,
+            2.503667166205369e-14,
+            3.654642386620616e-14
+          ],
+          [
+            8.625,
+            2.501934841618597e-14,
+            5.4608243249393675e-14
+          ],
+          [
+            8.75,
+            2.4470729762448902e-14,
+            4.089503902557516e-14
+          ],
+          [
+            8.875,
+            2.858127349574125e-14,
+            4.1304561046349646e-14
+          ],
+          [
+            9.0,
+            2.5152395824295114e-14,
+            4.348010782073151e-14
+          ],
+          [
+            9.125,
+            2.4334687038719175e-14,
+            4.371990678910264e-14
+          ],
+          [
+            9.25,
+            2.5258701484983043e-14,
+            4.0595054926735464e-14
+          ],
+          [
+            9.375,
+            2.662476434843708e-14,
+            4.692947770110447e-14
+          ],
+          [
+            9.5,
+            3.2070086291554925e-14,
+            4.787069503595675e-14
+          ],
+          [
+            9.625,
+            2.676591787502171e-14,
+            4.7346840254788645e-14
+          ],
+          [
+            9.75,
+            3.0648904058916735e-14,
+            5.134724271251365e-14
+          ],
+          [
+            9.875,
+            2.906730077757783e-14,
+            4.861940513160316e-14
+          ],
+          [
+            10.0,
+            3.2550279293844576e-14,
+            5.1488845039612325e-14
+          ],
+          [
+            10.125,
+            3.024898886223618e-14,
+            4.712790911902882e-14
+          ],
+          [
+            10.25,
+            3.6909631600283675e-14,
+            4.9505009257957463e-14
+          ],
+          [
+            10.375,
+            3.09970829567683e-14,
+            4.647815574670413e-14
+          ],
+          [
+            10.5,
+            3.704476321991054e-14,
+            5.134729392311746e-14
+          ],
+          [
+            10.625,
+            3.3300039989433656e-14,
+            4.5292722417029586e-14
+          ],
+          [
+            10.75,
+            2.966575712124584e-14,
+            4.5117612560053114e-14
+          ],
+          [
+            10.875,
+            2.971060858159489e-14,
+            3.909551084441525e-14
+          ],
+          [
+            11.0,
+            3.0218902524287615e-14,
+            4.177212267634328e-14
+          ]
+        ],
+        "superseded_records_after": [
+          11.125,
+          11.25,
+          11.375,
+          11.5,
+          11.625,
+          11.75,
+          11.875,
+          12.0,
+          12.125,
+          12.25,
+          12.375,
+          12.5,
+          12.625,
+          12.75
+        ]
+      }
+    }
+  },
+  "B2": {
+    "top_level_resume_fields": {},
+    "args_resume_fields": {
+      "resume_from": "<internal>/c19_rs64_A_R2_tau8_ell4_avg_B2n4096",
+      "resume_T_over_rs": 50.0
+    },
+    "runner": {
+      "script": "run_collapse_v19_from_slice_v1.py",
+      "engine": "engine_collapse_v19.py (imported and run unchanged; resume_state replaced by the slice load)",
+      "slice": "states/c19_rs64_A_R2_tau8_ell4_avg_B2n4096/orbitals_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_T0050.00.npz",
+      "min_free_gb": 12.0,
+      "skipped_slices": [],
+      "resume": {
+        "from": "<internal>/c19_rs64_A_R2_tau8_ell4_avg_B2n4096",
+        "from_slice": "states/c19_rs64_A_R2_tau8_ell4_avg_B2n4096/orbitals_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_T0050.00.npz",
+        "slice_dtype": "complex128",
+        "T_over_rs": 50.0,
+        "script": "engine_collapse_v19.py",
+        "gate_eps_rel": 0.0,
+        "gate_J_rel": 0.0,
+        "applied_fields_max_diff": [
+          0.0,
+          0.0
+        ],
+        "eigenvalues_max_diff": 0.0,
+        "window_restarted_with": 1,
+        "stored_records_kept": 401,
+        "seconds": 39.59086751937866
+      }
+    },
+    "transitions": [
+      {
+        "record_index": 0,
+        "T": 0.0,
+        "T_over_rs": 0.0,
+        "metadata": {
+          "engine": "engine_collapse_v19",
+          "solver_module": "engine_fields_v14.solve_constraints_ivp",
+          "explicit_restart_fields": {}
+        }
+      }
+    ],
+    "head_resume_fields": {
+      "resume": {
+        "from": "<internal>/c19_rs64_A_R2_tau8_ell4_avg_B2n4096",
+        "from_slice": "states/c19_rs64_A_R2_tau8_ell4_avg_B2n4096/orbitals_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_T0050.00.npz",
+        "slice_dtype": "complex128",
+        "T_over_rs": 50.0,
+        "script": "engine_collapse_v19.py",
+        "gate_eps_rel": 0.0,
+        "gate_J_rel": 0.0,
+        "applied_fields_max_diff": [
+          0.0,
+          0.0
+        ],
+        "eigenvalues_max_diff": 0.0,
+        "window_restarted_with": 1,
+        "stored_records_kept": 401,
+        "seconds": 39.59086751937866,
+        "superseded_records_after": [
+          50.125,
+          50.25,
+          50.375,
+          50.5,
+          50.625,
+          50.75,
+          50.875,
+          51.0,
+          51.125,
+          51.25,
+          51.375,
+          51.5,
+          51.625,
+          51.75,
+          51.875
+        ]
+      }
+    }
+  },
+  "P64_s4": {
+    "top_level_resume_fields": {},
+    "args_resume_fields": {
+      "resume_from": null,
+      "resume_T_over_rs": null,
+      "resume_grandparent": null,
+      "resume_slice": "<internal>/orbitals_c32_rs64_A_R2_tau8_ell4_prep4_avg_plain_v36d_from0_T0018.00.npz",
+      "resume_run": "<internal>/c32_rs64_A_R2_tau8_ell4_prep4_avg_plain_v36d_from0"
+    },
+    "runner": null,
+    "transitions": [
+      {
+        "record_index": 0,
+        "T": 0.0,
+        "T_over_rs": 0.0,
+        "metadata": {
+          "engine": "engine_collapse_v25",
+          "solver_module": "engine_fields_v16.solve_constraints_ivp",
+          "explicit_restart_fields": {}
+        }
+      }
+    ],
+    "head_resume_fields": {
+      "resume_slice_v34": {
+        "slice": "<internal>/orbitals_c32_rs64_A_R2_tau8_ell4_prep4_avg_plain_v36d_from0_T0018.00.npz",
+        "run": "<internal>/c32_rs64_A_R2_tau8_ell4_prep4_avg_plain_v36d_from0",
+        "T_over_rs": 18.0,
+        "record_index": 144,
+        "slice_fields_vs_stored_max": 0.0,
+        "channels": {
+          "1": {
+            "eig_vs_stored_max": 0.0,
+            "mask_bits": 2048,
+            "gap": 0.09927465539731756,
+            "weyl_gap": 0.09927465539731756,
+            "n_sea": 2048,
+            "n_ball": 5
+          },
+          "2": {
+            "eig_vs_stored_max": 0.0,
+            "mask_bits": 2048,
+            "gap": 0.10700671643202178,
+            "weyl_gap": 0.10700671643202178,
+            "n_sea": 2048,
+            "n_ball": 4
+          },
+          "3": {
+            "eig_vs_stored_max": 0.0,
+            "mask_bits": 2048,
+            "gap": 0.11761368553363447,
+            "weyl_gap": 0.11761368553363447,
+            "n_sea": 2048,
+            "n_ball": 3
+          },
+          "4": {
+            "eig_vs_stored_max": 0.0,
+            "mask_bits": 2048,
+            "gap": 0.13044981404106323,
+            "weyl_gap": 0.13044981404106323,
+            "n_sea": 2048,
+            "n_ball": 2
+          },
+          "5": {
+            "eig_vs_stored_max": 0.0,
+            "mask_bits": 2048,
+            "gap": 0.14511339381944338,
+            "weyl_gap": 0.14511339381944338,
+            "n_sea": 2048,
+            "n_ball": 2
+          },
+          "6": {
+            "eig_vs_stored_max": 0.0,
+            "mask_bits": 2048,
+            "gap": 0.1613032410976945,
+            "weyl_gap": 0.1613032410976945,
+            "n_sea": 2048,
+            "n_ball": 0
+          },
+          "7": {
+            "eig_vs_stored_max": 0.0,
+            "mask_bits": 2048,
+            "gap": 0.1787723866199467,
+            "weyl_gap": 0.1787723866199467,
+            "n_sea": 2048,
+            "n_ball": 0
+          },
+          "8": {
+            "eig_vs_stored_max": 0.0,
+            "mask_bits": 2048,
+            "gap": 0.19730449241664594,
+            "weyl_gap": 0.19730449241664594,
+            "n_sea": 2048,
+            "n_ball": 0
+          },
+          "9": {
+            "eig_vs_stored_max": 0.0,
+            "mask_bits": 2048,
+            "gap": 0.2166957504660993,
+            "weyl_gap": 0.2166957504660993,
+            "n_sea": 2048,
+            "n_ball": 0
+          },
+          "10": {
+            "eig_vs_stored_max": 0.0,
+            "mask_bits": 2048,
+            "gap": 0.23673492568213417,
+            "weyl_gap": 0.23673492568213417,
+            "n_sea": 2048,
+            "n_ball": 0
+          }
+        }
+      },
+      "label_v34": "quasi-static (tau = 8); ell = 4; reference: R2 (the continued sea, the Landau-Zener-inspired maximum-overlap convention (c_LZ = 1; ops v3: one step, no window)); site fields: averaged; engine_fields_v16 (one outward initial-value problem, the momentum equation kept everywhere, the flat-slice gauge continued and labelled); economy: lagged first iterate, stop |dE/E| < 1e-07 and fields < 1e-06, plain iteration, at most 20 iterations (the smallest-residual iterate returned, flagged); tau = 8; collar policy flag; dictionary: H = N E + v.p, ds^2 = -N^2 dt^2 + (dx - v dt)^2, the ADM sign of the momentum law (J_i = -(1/8 pi G) d_j (K^j_i - delta^j_i K) for K_ij = (d_i v_j + d_j v_i)/(2N)); the goal's display's sign of v amended per engine 12.2; the lane's declaration (engine 12.2); J_ell = <P_r> = -J_r of the goal's display (engine 20.3); v34: restarted from the stored slice <internal>/orbitals_c32_rs64_A_R2_tau8_ell4_prep4_avg_plain_v36d_from0_T0018.00.npz of the run <internal>/c32_rs64_A_R2_tau8_ell4_prep4_avg_plain_v36d_from0; the reference on version 3's continuation (the LZ convention where the Weyl test fails)"
+    }
+  },
+  "P64_s2": {
+    "top_level_resume_fields": {},
+    "args_resume_fields": {
+      "resume_from": null,
+      "resume_T_over_rs": null,
+      "resume_grandparent": null,
+      "resume_slice": "<internal>/orbitals_c32_rs64_A_R2_tau8_ell2_prep4_avg_nk40r2b_v36cc_T0017.00.npz",
+      "resume_run": "<internal>/c32_rs64_A_R2_tau8_ell2_prep4_avg_nk40r2b_v36cc"
+    },
+    "runner": null,
+    "transitions": [
+      {
+        "record_index": 0,
+        "T": 0.0,
+        "T_over_rs": 0.0,
+        "metadata": {
+          "engine": "engine_collapse_v25",
+          "solver_module": "engine_fields_v16.solve_constraints_ivp",
+          "explicit_restart_fields": {}
+        }
+      }
+    ],
+    "head_resume_fields": {
+      "resume_slice_v34": {
+        "slice": "<internal>/orbitals_c32_rs64_A_R2_tau8_ell2_prep4_avg_nk40r2b_v36cc_T0017.00.npz",
+        "run": "<internal>/c32_rs64_A_R2_tau8_ell2_prep4_avg_nk40r2b_v36cc",
+        "T_over_rs": 17.0,
+        "record_index": 136,
+        "slice_fields_vs_stored_max": 0.0,
+        "channels": {
+          "1": {
+            "eig_vs_stored_max": 0.0,
+            "mask_bits": 2048,
+            "gap": 0.0009655897995483297,
+            "weyl_gap": 0.0009655897995483297,
+            "n_sea": 2048,
+            "n_ball": 5
+          },
+          "2": {
+            "eig_vs_stored_max": 0.0,
+            "mask_bits": 2048,
+            "gap": 0.0038202286645628346,
+            "weyl_gap": 0.0038202286645628346,
+            "n_sea": 2048,
+            "n_ball": 4
+          },
+          "3": {
+            "eig_vs_stored_max": 0.0,
+            "mask_bits": 2048,
+            "gap": 0.009731704389584525,
+            "weyl_gap": 0.009731704389584525,
+            "n_sea": 2048,
+            "n_ball": 3
+          },
+          "4": {
+            "eig_vs_stored_max": 0.0,
+            "mask_bits": 2048,
+            "gap": 0.03646536531692056,
+            "weyl_gap": 0.03646536531692056,
+            "n_sea": 2048,
+            "n_ball": 2
+          },
+          "5": {
+            "eig_vs_stored_max": 0.0,
+            "mask_bits": 2048,
+            "gap": 0.06776453369082211,
+            "weyl_gap": 0.06776453369082211,
+            "n_sea": 2048,
+            "n_ball": 2
+          },
+          "6": {
+            "eig_vs_stored_max": 0.0,
+            "mask_bits": 2048,
+            "gap": 0.1026017828143101,
+            "weyl_gap": 0.1026017828143101,
+            "n_sea": 2048,
+            "n_ball": 0
+          },
+          "7": {
+            "eig_vs_stored_max": 0.0,
+            "mask_bits": 2048,
+            "gap": 0.1401226061391895,
+            "weyl_gap": 0.1401226061391895,
+            "n_sea": 2048,
+            "n_ball": 0
+          },
+          "8": {
+            "eig_vs_stored_max": 0.0,
+            "mask_bits": 2048,
+            "gap": 0.17945710960305009,
+            "weyl_gap": 0.17945710960305009,
+            "n_sea": 2048,
+            "n_ball": 0
+          },
+          "9": {
+            "eig_vs_stored_max": 0.0,
+            "mask_bits": 2048,
+            "gap": 0.21926217299643963,
+            "weyl_gap": 0.21926217299643963,
+            "n_sea": 2048,
+            "n_ball": 0
+          },
+          "10": {
+            "eig_vs_stored_max": 0.0,
+            "mask_bits": 2048,
+            "gap": 0.25592476478750853,
+            "weyl_gap": 0.25592476478750853,
+            "n_sea": 2048,
+            "n_ball": 0
+          }
+        }
+      },
+      "label_v34": "quasi-static (tau = 8); ell = 2; reference: R2 (the continued sea, the Landau-Zener-inspired maximum-overlap convention (c_LZ = 1; ops v3: one step, no window)); site fields: averaged; engine_fields_v16 (one outward initial-value problem, the momentum equation kept everywhere, the flat-slice gauge continued and labelled); economy: lagged first iterate, stop |dE/E| < 1e-07 and fields < 1e-06, newton iteration, at most 20 iterations (the smallest-residual iterate returned, flagged); tau = 8; collar policy flag; dictionary: H = N E + v.p, ds^2 = -N^2 dt^2 + (dx - v dt)^2, the ADM sign of the momentum law (J_i = -(1/8 pi G) d_j (K^j_i - delta^j_i K) for K_ij = (d_i v_j + d_j v_i)/(2N)); the goal's display's sign of v amended per engine 12.2; the lane's declaration (engine 12.2); J_ell = <P_r> = -J_r of the goal's display (engine 20.3); v32: the Newton solve nk_loop_v32, line search: halving on the fixed-point residual, at most 6 halvings, at most 30 Newton steps, LGMRES 40 Krylov vectors per cycle with 2 restarts (10 augmentation vectors); source continuation: two-stage (the midpoint covariance from the previous record's accepted fields, then this record's); the member ends at a record whose kept residual exceeds 0.001; v34: restarted from the stored slice <internal>/orbitals_c32_rs64_A_R2_tau8_ell2_prep4_avg_nk40r2b_v36cc_T0017.00.npz of the run <internal>/c32_rs64_A_R2_tau8_ell2_prep4_avg_nk40r2b_v36cc; the reference on version 3's continuation (the LZ convention where the Weyl test fails)"
+    }
+  },
+  "P64_s8": {
+    "top_level_resume_fields": {},
+    "args_resume_fields": {
+      "resume_from": null,
+      "resume_T_over_rs": null,
+      "resume_grandparent": null,
+      "resume_slice": "<internal>/orbitals_c32_rs64_A_R2_tau8_ell8_prep4_avg_plain_v36d_from0_T0018.00.npz",
+      "resume_run": "<internal>/c32_rs64_A_R2_tau8_ell8_prep4_avg_plain_v36d_from0"
+    },
+    "runner": null,
+    "transitions": [
+      {
+        "record_index": 0,
+        "T": 0.0,
+        "T_over_rs": 0.0,
+        "metadata": {
+          "engine": "engine_collapse_v25",
+          "solver_module": "engine_fields_v16.solve_constraints_ivp",
+          "explicit_restart_fields": {}
+        }
+      }
+    ],
+    "head_resume_fields": {
+      "resume_slice_v34": {
+        "slice": "<internal>/orbitals_c32_rs64_A_R2_tau8_ell8_prep4_avg_plain_v36d_from0_T0018.00.npz",
+        "run": "<internal>/c32_rs64_A_R2_tau8_ell8_prep4_avg_plain_v36d_from0",
+        "T_over_rs": 18.0,
+        "record_index": 144,
+        "slice_fields_vs_stored_max": 0.0,
+        "channels": {
+          "1": {
+            "eig_vs_stored_max": 0.0,
+            "mask_bits": 2048,
+            "gap": 0.11905333971559648,
+            "weyl_gap": 0.11905333971559648,
+            "n_sea": 2048,
+            "n_ball": 5
+          },
+          "2": {
+            "eig_vs_stored_max": 0.0,
+            "mask_bits": 2048,
+            "gap": 0.12900040954903746,
+            "weyl_gap": 0.12900040954903746,
+            "n_sea": 2048,
+            "n_ball": 4
+          },
+          "3": {
+            "eig_vs_stored_max": 0.0,
+            "mask_bits": 2048,
+            "gap": 0.13989674460510843,
+            "weyl_gap": 0.13989674460510843,
+            "n_sea": 2048,
+            "n_ball": 3
+          },
+          "4": {
+            "eig_vs_stored_max": 0.0,
+            "mask_bits": 2048,
+            "gap": 0.1515255030952143,
+            "weyl_gap": 0.1515255030952143,
+            "n_sea": 2048,
+            "n_ball": 2
+          },
+          "5": {
+            "eig_vs_stored_max": 0.0,
+            "mask_bits": 2048,
+            "gap": 0.1637743685071614,
+            "weyl_gap": 0.1637743685071614,
+            "n_sea": 2048,
+            "n_ball": 2
+          },
+          "6": {
+            "eig_vs_stored_max": 0.0,
+            "mask_bits": 2048,
+            "gap": 0.17658068710806846,
+            "weyl_gap": 0.17658068710806846,
+            "n_sea": 2048,
+            "n_ball": 0
+          },
+          "7": {
+            "eig_vs_stored_max": 0.0,
+            "mask_bits": 2048,
+            "gap": 0.18990549145387403,
+            "weyl_gap": 0.18990549145387403,
+            "n_sea": 2048,
+            "n_ball": 0
+          },
+          "8": {
+            "eig_vs_stored_max": 0.0,
+            "mask_bits": 2048,
+            "gap": 0.20372051010959769,
+            "weyl_gap": 0.20372051010959769,
+            "n_sea": 2048,
+            "n_ball": 0
+          },
+          "9": {
+            "eig_vs_stored_max": 0.0,
+            "mask_bits": 2048,
+            "gap": 0.21800175182344544,
+            "weyl_gap": 0.21800175182344544,
+            "n_sea": 2048,
+            "n_ball": 0
+          },
+          "10": {
+            "eig_vs_stored_max": 0.0,
+            "mask_bits": 2048,
+            "gap": 0.2327265029071907,
+            "weyl_gap": 0.2327265029071907,
+            "n_sea": 2048,
+            "n_ball": 0
+          }
+        }
+      },
+      "label_v34": "quasi-static (tau = 8); ell = 8; reference: R2 (the continued sea, the Landau-Zener-inspired maximum-overlap convention (c_LZ = 1; ops v3: one step, no window)); site fields: averaged; engine_fields_v16 (one outward initial-value problem, the momentum equation kept everywhere, the flat-slice gauge continued and labelled); economy: lagged first iterate, stop |dE/E| < 1e-07 and fields < 1e-06, plain iteration, at most 20 iterations (the smallest-residual iterate returned, flagged); tau = 8; collar policy flag; dictionary: H = N E + v.p, ds^2 = -N^2 dt^2 + (dx - v dt)^2, the ADM sign of the momentum law (J_i = -(1/8 pi G) d_j (K^j_i - delta^j_i K) for K_ij = (d_i v_j + d_j v_i)/(2N)); the goal's display's sign of v amended per engine 12.2; the lane's declaration (engine 12.2); J_ell = <P_r> = -J_r of the goal's display (engine 20.3); v34: restarted from the stored slice <internal>/orbitals_c32_rs64_A_R2_tau8_ell8_prep4_avg_plain_v36d_from0_T0018.00.npz of the run <internal>/c32_rs64_A_R2_tau8_ell8_prep4_avg_plain_v36d_from0; the reference on version 3's continuation (the LZ convention where the Weyl test fails)"
+    }
+  },
+  "P64_s4_tau4": {
+    "top_level_resume_fields": {},
+    "args_resume_fields": {
+      "resume_from": null,
+      "resume_T_over_rs": null
+    },
+    "runner": null,
+    "transitions": [
+      {
+        "record_index": 0,
+        "T": 0.0,
+        "T_over_rs": 0.0,
+        "metadata": {
+          "engine": "engine_collapse_v19",
+          "solver_module": "engine_fields_v14.solve_constraints_ivp",
+          "explicit_restart_fields": {}
+        }
+      }
+    ],
+    "head_resume_fields": {}
+  },
+  "P64_s4_tau2": {
+    "top_level_resume_fields": {},
+    "args_resume_fields": {
+      "resume_from": null,
+      "resume_T_over_rs": null,
+      "resume_grandparent": null
+    },
+    "runner": null,
+    "transitions": [
+      {
+        "record_index": 0,
+        "T": 0.0,
+        "T_over_rs": 0.0,
+        "metadata": {
+          "engine": "engine_collapse_v25",
+          "solver_module": "engine_fields_v16.solve_constraints_ivp",
+          "explicit_restart_fields": {}
+        }
+      }
+    ],
+    "head_resume_fields": {}
+  }
+}

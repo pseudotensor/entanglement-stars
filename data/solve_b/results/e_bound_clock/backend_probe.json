@@ -1,0 +1,62 @@
+{
+  "scope": "engineering-only dependency/API probe; no model result",
+  "backend": "python-flint0.9.0; Arb/Acb directed ball operations",
+  "admission": {
+    "assigned_gpu_uuid": "GPU-1c907351-ed3d-0d52-5072-e791dde9df56",
+    "cuda_allocation_bytes": 1048576,
+    "cuda_context_in_this_single_job_process": true,
+    "same_process_fresh_device_query_before_allocation": true,
+    "post_allocation_single_owned_compute_pid_verified": true,
+    "single_process_pid": 1650630,
+    "niceness": 10,
+    "threads_at_launch": 4,
+    "maximum_threads": 4
+  },
+  "precision_decimal_digits": 128,
+  "model_evaluated": false,
+  "full_evaluator_certified": false,
+  "predeclared_engineering_radius_bound": {
+    "lower_dyadic": {
+      "mantissa": "556938551955834377275533643273961343370755433013740225900780336657626363184653001282460059975265063449541297555370411048668054775",
+      "exponent2": -627
+    },
+    "upper_dyadic": {
+      "mantissa": "69617318994479297159441705409245167921344429126717528237597542082203295398081625160307507496908132931192662194421301381083506847",
+      "exponent2": -624
+    },
+    "display_ball": "[1.00000000000000000000000000000e-60 +/- 3e-94]"
+  },
+  "checks": {
+    "directed_constants_and_exact_endpoint_api": false,
+    "Gauss_algebraic_ball_nodes_weights_decreasing": true,
+    "rigorous_integration_and_branch_flag": true,
+    "directed_real_complex_inverse": true,
+    "documented_rigorous_eigen_api": true
+  },
+  "all_checks_pass": false,
+  "sample_rigorous_integral": {
+    "real": {
+      "lower_dyadic": {
+        "mantissa": "924223231373604953192804728047694567812145691791938858390159860204873769268541719108093247224794527343918958559562193442256733245",
+        "exponent2": -429
+      },
+      "upper_dyadic": {
+        "mantissa": "924223231373604953192804728047694567812145691791938858390159860204873769268542022634961159447127355147673297404979346212000908349",
+        "exponent2": -429
+      },
+      "display_ball": "[0.666666666666666666666666666667 +/- 3.34e-31]"
+    },
+    "imag": {
+      "lower_dyadic": {
+        "mantissa": "-3",
+        "exponent2": -296
+      },
+      "upper_dyadic": {
+        "mantissa": "1073741833",
+        "exponent2": -296
+      },
+      "display_ball": "[+/- 8.44e-81]"
+    }
+  },
+  "documented_contract": "acb.integral callbacks honor analytic=True; all radii retained"
+}

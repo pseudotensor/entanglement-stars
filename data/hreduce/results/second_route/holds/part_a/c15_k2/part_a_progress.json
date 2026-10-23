@@ -1,0 +1,195 @@
+{
+  "method": "held-saved-spectrum-localization-split-1",
+  "case": "c15_k2",
+  "completed": true,
+  "stages": {
+    "raw": {
+      "status": "completed",
+      "completed_blocks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "outputs": {
+        "input_snapshot.json": {
+          "path": "<internal>/input_snapshot.json",
+          "sha256": "604bd9629ec97da1479d17586d8a535848de8e440daa2f43fc0e898c722afb5c",
+          "size": 13164,
+          "device": 2048,
+          "inode": 7602585,
+          "mtime_ns": 1792305538721370207
+        },
+        "norm_block_00.npz": {
+          "path": "<internal>/norm_block_00.npz",
+          "sha256": "bb84fc30d4ec841b13dc64d749f5e6b9955eb0539588cab85d5e1253330bde62",
+          "size": 133770,
+          "device": 2048,
+          "inode": 7602587,
+          "mtime_ns": 1792305550481758185
+        },
+        "norm_block_01.npz": {
+          "path": "<internal>/norm_block_01.npz",
+          "sha256": "c6c8e26650aeef0add8b70d2b01080bfd6a9d3599fc4c6b575b06d5f962b57d9",
+          "size": 133770,
+          "device": 2048,
+          "inode": 7602586,
+          "mtime_ns": 1792305550845770195
+        },
+        "norm_block_02.npz": {
+          "path": "<internal>/norm_block_02.npz",
+          "sha256": "506f029854f2670072bef797b719f5a3d7c6f7bde5158d177ceb16aaa237df27",
+          "size": 133770,
+          "device": 2048,
+          "inode": 7602588,
+          "mtime_ns": 1792305551253783655
+        },
+        "norm_block_03.npz": {
+          "path": "<internal>/norm_block_03.npz",
+          "sha256": "f2650848c294c65a990a2ad760e21fdd86341a2af46c62e69ff4e3a90240a7f9",
+          "size": 133770,
+          "device": 2048,
+          "inode": 7602589,
+          "mtime_ns": 1792305551669797380
+        },
+        "norm_block_04.npz": {
+          "path": "<internal>/norm_block_04.npz",
+          "sha256": "983db9efc32224334fded62d6b66754f9b402b1d0e0a7bbfebd417664561e962",
+          "size": 133770,
+          "device": 2048,
+          "inode": 7602590,
+          "mtime_ns": 1792305552053810049
+        },
+        "norm_block_05.npz": {
+          "path": "<internal>/norm_block_05.npz",
+          "sha256": "8ab276220250346225b047160fc24c182d69d8793651048dbea18208bd87a114",
+          "size": 133770,
+          "device": 2048,
+          "inode": 7602591,
+          "mtime_ns": 1792305552445822982
+        },
+        "norm_block_06.npz": {
+          "path": "<internal>/norm_block_06.npz",
+          "sha256": "9895c5888735fc04ebada5810f40e06fde515ce8cdbc22dee534c7ac19217283",
+          "size": 133770,
+          "device": 2048,
+          "inode": 7602592,
+          "mtime_ns": 1792305552833835782
+        },
+        "norm_block_07.npz": {
+          "path": "<internal>/norm_block_07.npz",
+          "sha256": "15efd8649453ddde1ba65a0b630d106e90f09cec0dcb8ec48459c6fc721f648d",
+          "size": 133770,
+          "device": 2048,
+          "inode": 7602593,
+          "mtime_ns": 1792305553217848452
+        },
+        "norm_block_08.npz": {
+          "path": "<internal>/norm_block_08.npz",
+          "sha256": "708f526c5d48c42589fe20d0595caaf50f25f27d422c83a9a1a414c6c15ce256",
+          "size": 133770,
+          "device": 2048,
+          "inode": 7602594,
+          "mtime_ns": 1792305553585860593
+        },
+        "norm_block_09.npz": {
+          "path": "<internal>/norm_block_09.npz",
+          "sha256": "9001cb39a50a17d86f754a5cf8591271cfb0e815e238b5b4d6b9e030cb1951a7",
+          "size": 133770,
+          "device": 2048,
+          "inode": 7602595,
+          "mtime_ns": 1792305553969873262
+        },
+        "norm_block_10.npz": {
+          "path": "<internal>/norm_block_10.npz",
+          "sha256": "5bac623f1da72d6ce7a50fc21805c779eb03a9ca7e93fd7c6c5e494c3df5c617",
+          "size": 133770,
+          "device": 2048,
+          "inode": 7602596,
+          "mtime_ns": 1792305554373886591
+        },
+        "norm_block_11.npz": {
+          "path": "<internal>/norm_block_11.npz",
+          "sha256": "e1e0e707924644365309d189034337c59f2a790c16889f1aa47753e1f88fc8e4",
+          "size": 133770,
+          "device": 2048,
+          "inode": 7602597,
+          "mtime_ns": 1792305554833901767
+        },
+        "norm_block_12.npz": {
+          "path": "<internal>/norm_block_12.npz",
+          "sha256": "cd7027aecc0375b0765fc67deeaa2d03b3ff86a17a4f14d95eb3c084fad19a8d",
+          "size": 133770,
+          "device": 2048,
+          "inode": 7602598,
+          "mtime_ns": 1792305555273916284
+        },
+        "norm_block_13.npz": {
+          "path": "<internal>/norm_block_13.npz",
+          "sha256": "ab7e9b9fa573fb65aef8c07dbd210f2453cb6eb2320d13c1ab619cd38565ad5a",
+          "size": 133770,
+          "device": 2048,
+          "inode": 7602599,
+          "mtime_ns": 1792305555681929745
+        },
+        "norm_block_14.npz": {
+          "path": "<internal>/norm_block_14.npz",
+          "sha256": "846b7935dbf981a031a4ca69f4b3aab281fe9fad16a917b4206723f0aca326ed",
+          "size": 133770,
+          "device": 2048,
+          "inode": 7602600,
+          "mtime_ns": 1792305556085943074
+        },
+        "norm_block_15.npz": {
+          "path": "<internal>/norm_block_15.npz",
+          "sha256": "c9da816420168d3104e1b0fafec7ce3bb8413c2f81678850ce6a23569a6c2259",
+          "size": 133770,
+          "device": 2048,
+          "inode": 7602601,
+          "mtime_ns": 1792305556461955480
+        },
+        "raw_arrays.npz": {
+          "path": "<internal>/raw_arrays.npz",
+          "sha256": "2e2099d3d9402614e3f924159a9ee6ac27eb898f10b097f32275024d8a26d7ee",
+          "size": 2637843,
+          "device": 2048,
+          "inode": 7602602,
+          "mtime_ns": 1792305556517957327
+        }
+      }
+    },
+    "assessment": {
+      "status": "completed",
+      "outputs": {
+        "split_arrays.npz": {
+          "path": "<internal>/split_arrays.npz",
+          "sha256": "5f1c5b91228591c8f411c82cdcc77baf9265b5115d5db92662bd0346a05a6448",
+          "size": 4802784,
+          "device": 2048,
+          "inode": 7602604,
+          "mtime_ns": 1792305560146077024
+        },
+        "split_checks.json": {
+          "path": "<internal>/split_checks.json",
+          "sha256": "7f98dbacf37746eb341fe35bd0962069be7e343a33449439da4e5c1fb84cb34d",
+          "size": 53378,
+          "device": 2048,
+          "inode": 7602605,
+          "mtime_ns": 1792305560234079928
+        }
+      }
+    }
+  }
+}

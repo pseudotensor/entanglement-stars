@@ -1,0 +1,22 @@
+{
+  "frobenius": 89.79794516233764,
+  "max_abs_entry": 0.9999999999999971,
+  "max_abs_row_sum": 16.178887899506073,
+  "unsymmetrized_hermiticity_frobenius": 0.0,
+  "evaluated_clipped_entropy": 1.1050596207529595,
+  "n_eigenvalues": 8192,
+  "minimum": -9.907558966795211e-15,
+  "maximum": 1.0000000000000444,
+  "outside_count": 3652,
+  "maximum_excursion": 4.440892098500626e-14,
+  "endpoint_tolerance": 1e-08,
+  "within_endpoint_tolerance": true,
+  "clipping_displacement": 3.477155915578304e-11,
+  "clipping_continuity_allowance": 1.1854714491998954e-09,
+  "continuity_scope": "Evaluation diagnostic only; raw covariance and unbounded eigensolver error are not certified.",
+  "representation": "occupied Gram",
+  "assembly_error_upper_bound": 5.7760143493802584e-08,
+  "eigensolver": "scipy.linalg.eigh/eigvalsh driver evr",
+  "eigensolver_full_spectrum_residual_bound": null,
+  "eigensolver_scope": "Diagnostic eigenvalues only; no full-spectrum residual enclosure."
+}

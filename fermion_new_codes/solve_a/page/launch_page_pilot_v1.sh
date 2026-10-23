@@ -1,0 +1,41 @@
+#!/bin/bash
+# launch_page_pilot_v1.sh (lead reviewer A, GAP03 integration): the exact commands of GAP03_integrated_v1.md section 12 for the second H100 pod
+# (uau1qz03fco10u). Paths relative to ${QI2_ROOT}/page on the pod. Run the steps in order; each writes its own folder under ${QI2_ROOT}/runs.
+# Usage: bash launch_page_pilot_v1.sh selftest | scattering | pilot | controls | rs64
+set -euo pipefail
+cd ${QI2_ROOT}/page
+mkdir -p runs logs
+PY=${PY:-python}
+case "${1:-}" in
+  selftest)
+    $PY page_recursion_v1.py --selftest --device cuda:0 --out runs/selftest 2>&1 | tee logs/selftest.log
+    ;;
+  scattering)
+    $PY page_recursion_v1.py --validate-scattering --rs 32 --g 0.25 --nsites 8192 --channels 1,2,3 --ell 4 --device cuda:0 --out runs/scat32 --tag scat32 2>&1 | tee logs/scat32.log
+    ;;
+  pilot)
+    nohup $PY page_recursion_v1.py --rs 32 --g 0.25 --m 0 --nsites 8192 --channels 1,2 --ell 4 --fields averaged --Rb 0.5 --Rb0 4 --formation dust \
+      --R-cut 32 --R-collar 16 --tau-s 4 --dE-frac 0.005 --interior selfsimilar --tau-tr 4 --max-stages 200 --E-stop-frac 0.5 \
+      --t-stage-max 3000 --t-stall-min 200 --stall-frac 0.01 --ckpt-every 10 --max-wall-hours 20 --device cuda:0 \
+      --out runs/pilot32 --tag pilot32 --resume > logs/pilot32.log 2>&1 &
+    echo "pilot launched: tail -f logs/pilot32.log"
+    ;;
+  controls)
+    # the pilot's controls (run after the pilot's first stage is read; sequentially on the same GPU, each resumable)
+    for spec in "ell8:--ell 8" "point:--fields point" "Rb08:--Rb 0.8" "Rb0_8:--Rb0 8" "ramp:--formation ramp" "box:--nsites 16384" "cut48:--R-cut 48" "taus2:--tau-s 2" "kappa3:--channels 1,2,3" "coll4:--eps-coll 1e-4" "coll6:--eps-coll 1e-6"; do
+      tag=${spec%%:*}; args=${spec#*:}
+      $PY page_recursion_v1.py --rs 32 --g 0.25 --m 0 --nsites 8192 --channels 1,2 --ell 4 --fields averaged --Rb 0.5 --Rb0 4 --formation dust \
+        --R-cut 32 --R-collar 16 --tau-s 4 --dE-frac 0.005 --interior selfsimilar --tau-tr 4 --max-stages 1 --t-stage-max 1000 \
+        --ckpt-every 10 --max-wall-hours 6 --device cuda:0 --out runs/ctrl32_$tag --tag ctrl32_$tag --resume $args 2>&1 | tee logs/ctrl32_$tag.log
+    done
+    ;;
+  rs64)
+    nohup $PY page_recursion_v1.py --rs 64 --g 0.25 --m 0 --nsites 16384 --channels 1,2 --ell 4 --fields averaged --Rb 0.5 --Rb0 4 --formation dust \
+      --R-cut 32 --R-collar 16 --tau-s 4 --dE-frac 0.005 --interior selfsimilar --tau-tr 4 --max-stages 200 --E-stop-frac 0.5 \
+      --t-stage-max 3000 --t-stall-min 200 --stall-frac 0.01 --ckpt-every 5 --max-wall-hours 60 --device cuda:0 \
+      --out runs/fig64 --tag fig64 --resume > logs/fig64.log 2>&1 &
+    echo "r_s/a 64 launched: tail -f logs/fig64.log"
+    ;;
+  *)
+    echo "usage: bash launch_page_pilot_v1.sh selftest | scattering | pilot | controls | rs64"; exit 2;;
+esac

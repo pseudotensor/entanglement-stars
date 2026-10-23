@@ -1,0 +1,957 @@
+{
+  "status": "completed_rung8_T13_radius_only",
+  "purpose": "Task3 named missing width-eight T13 half-number radius",
+  "label": "v36d width-eight rung, another engine from T=0, T/rs=13, finite stored state; half-number radius only",
+  "scope": {
+    "original_c27": false,
+    "r11": false,
+    "history": false,
+    "static_three_width_HF": false,
+    "native_HF": false,
+    "native_cartesian_saturation": false
+  },
+  "source": {
+    "path": "<internal>/orbitals_c32_rs64_A_R2_tau8_ell8_prep4_avg_plain_v36d_from0_T0013.00.npz",
+    "sha256": "8b131e8cf2e890072b0e3d2518b9c7c132b28391e1cf31fa38ed15720cd5c598",
+    "dtype_declaration": "complex128",
+    "identity": {
+      "path": "<internal>/orbitals_c32_rs64_A_R2_tau8_ell8_prep4_avg_plain_v36d_from0_T0013.00.npz",
+      "size": 2685802106,
+      "mtime_ns": 1792305255030808010,
+      "device": 2048,
+      "inode": 17891584
+    },
+    "keys": [
+      "T",
+      "rs",
+      "N_applied",
+      "v_applied",
+      "R",
+      "kappas",
+      "weights",
+      "dtype",
+      "sea_1",
+      "dust_1",
+      "f_1",
+      "R2_1",
+      "e_1",
+      "mask_1",
+      "sea_2",
+      "dust_2",
+      "f_2",
+      "R2_2",
+      "e_2",
+      "mask_2",
+      "sea_3",
+      "dust_3",
+      "f_3",
+      "R2_3",
+      "e_3",
+      "mask_3",
+      "sea_4",
+      "dust_4",
+      "f_4",
+      "R2_4",
+      "e_4",
+      "mask_4",
+      "sea_5",
+      "dust_5",
+      "f_5",
+      "R2_5",
+      "e_5",
+      "mask_5",
+      "sea_6",
+      "dust_6",
+      "f_6",
+      "R2_6",
+      "e_6",
+      "mask_6",
+      "sea_7",
+      "dust_7",
+      "f_7",
+      "R2_7",
+      "e_7",
+      "mask_7",
+      "sea_8",
+      "dust_8",
+      "f_8",
+      "R2_8",
+      "e_8",
+      "mask_8",
+      "sea_9",
+      "dust_9",
+      "f_9",
+      "R2_9",
+      "e_9",
+      "mask_9",
+      "sea_10",
+      "dust_10",
+      "f_10",
+      "R2_10",
+      "e_10",
+      "mask_10"
+    ],
+    "clock_T": 832,
+    "rs": 64,
+    "weights": [
+      16.0,
+      32.0,
+      48.0,
+      64.0,
+      80.0,
+      96.0,
+      112.0,
+      128.0,
+      144.0,
+      160.0
+    ],
+    "kappas": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dust_counts": [
+      5,
+      4,
+      3,
+      2,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "dependencies": {
+    "<internal>/core_well_profiles_v1.py": "8a55cd10be12b2b0b4c36f8b364c31dd198ccc8bdf114ea4bb0c2d78ec86fd54",
+    "<internal>/core_well_input_v1.py": "294ebd7e68dd8f260f4be2a70c8d250db0f00106679edbea8e2274d83c4f326b"
+  },
+  "declared_units": {
+    "a": 1,
+    "mu": 0.2,
+    "g": 0.25,
+    "sigma_over_a": 8,
+    "tau_over_a": 8,
+    "clock_over_rs": 13
+  },
+  "resources": {
+    "available_memory_bytes": 478531411968,
+    "minimum_available_memory_bytes": 8589934592,
+    "threads": 4,
+    "cpu_affinity": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "nice": 10,
+    "address_space_bytes": 4294967296,
+    "cpu_soft": 700,
+    "cpu_hard": 720,
+    "wall_internal": 160,
+    "wall_external": 180
+  },
+  "phase": "complete",
+  "current_channel": null,
+  "completion_list_meaning": "completed lists count constructed and saved products, not validated products",
+  "polar_validated": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "number_validated": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "number_definition": "interleaved adjacent spin rows; q=sum(abs(Z.reshape(2048,2,-1))**2*f,axis=(1,2)); weights once",
+  "combined_saved": true,
+  "combined_validated": true,
+  "polar_completed": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "number_completed": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "missing_polar": [],
+  "missing_number": [],
+  "empty_channels": [
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "channels": {
+    "1": {
+      "polar": {
+        "gram_min": 0.9999999999989333,
+        "gram_max": 1.0000000000011038,
+        "gram_condition": 1.0000000000021705,
+        "hermitian_defect": 2.5383930684963953e-16,
+        "dust_orthogonality_max": 2.4424906541753444e-15
+      },
+      "polar_archive": "<internal>/polar_k01.npz",
+      "number_controls": {
+        "total_number": 5.0000000000000036,
+        "count_residual": 3.552713678800501e-15,
+        "count_error": 3.552713678800501e-15,
+        "site_min": 5.1979162025081425e-31,
+        "all_finite": true
+      }
+    },
+    "2": {
+      "polar": {
+        "gram_min": 0.9999999999989299,
+        "gram_max": 1.0000000000010827,
+        "gram_condition": 1.000000000002153,
+        "hermitian_defect": 1.8763903324156505e-16,
+        "dust_orthogonality_max": 2.220446049250313e-15
+      },
+      "polar_archive": "<internal>/polar_k02.npz",
+      "number_controls": {
+        "total_number": 4.0,
+        "count_residual": 0.0,
+        "count_error": 0.0,
+        "site_min": 2.5540609972324843e-31,
+        "all_finite": true
+      }
+    },
+    "3": {
+      "polar": {
+        "gram_min": 0.9999999999989335,
+        "gram_max": 1.0000000000010614,
+        "gram_condition": 1.0000000000021279,
+        "hermitian_defect": 1.8556068711713314e-16,
+        "dust_orthogonality_max": 2.109424128231905e-15
+      },
+      "polar_archive": "<internal>/polar_k03.npz",
+      "number_controls": {
+        "total_number": 2.999999999999998,
+        "count_residual": -2.220446049250313e-15,
+        "count_error": 2.220446049250313e-15,
+        "site_min": 2.2494763328748296e-31,
+        "all_finite": true
+      }
+    },
+    "4": {
+      "polar": {
+        "gram_min": 0.9999999999989598,
+        "gram_max": 1.0000000000010418,
+        "gram_condition": 1.0000000000020821,
+        "hermitian_defect": 1.4934750137995173e-16,
+        "dust_orthogonality_max": 2.3314696634663862e-15
+      },
+      "polar_archive": "<internal>/polar_k04.npz",
+      "number_controls": {
+        "total_number": 1.9999999999999964,
+        "count_residual": -3.552713678800501e-15,
+        "count_error": 3.552713678800501e-15,
+        "site_min": 4.693028396025056e-32,
+        "all_finite": true
+      }
+    },
+    "5": {
+      "polar": {
+        "gram_min": 0.9999999999989464,
+        "gram_max": 1.0000000000010378,
+        "gram_condition": 1.0000000000020914,
+        "hermitian_defect": 1.2232260858828537e-16,
+        "dust_orthogonality_max": 1.5543133545208455e-15
+      },
+      "polar_archive": "<internal>/polar_k05.npz",
+      "number_controls": {
+        "total_number": 2.0000000000000036,
+        "count_residual": 3.552713678800501e-15,
+        "count_error": 3.552713678800501e-15,
+        "site_min": 9.744390124265475e-32,
+        "all_finite": true
+      }
+    }
+  },
+  "arrays": [
+    {
+      "path": "<internal>/context.npz",
+      "size": 50558,
+      "sha256": "6d3a4aa2682d8df543d72f8d1901d382480ff40725f97100d1b5c67920751dbf",
+      "members": {
+        "R": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "N_applied": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "v_applied": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "weights": {
+          "shape": [
+            10
+          ],
+          "dtype": "float64"
+        },
+        "kappas": {
+          "shape": [
+            10
+          ],
+          "dtype": "int64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/polar_k01.npz",
+      "size": 511496,
+      "sha256": "2212a2d66fbd23d33fb7880abc0e4a186f9f564d36731c0175de7b6b8fe0ef57",
+      "members": {
+        "dust": {
+          "shape": [
+            4096,
+            5
+          ],
+          "dtype": "complex128"
+        },
+        "joint_inverse_root_columns": {
+          "shape": [
+            2053,
+            5
+          ],
+          "dtype": "complex128"
+        },
+        "joint_gram_eigenvalues": {
+          "shape": [
+            2053
+          ],
+          "dtype": "float64"
+        },
+        "f": {
+          "shape": [
+            5
+          ],
+          "dtype": "float64"
+        },
+        "kappa": {
+          "shape": [],
+          "dtype": "int64"
+        },
+        "weight": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "T": {
+          "shape": [],
+          "dtype": "int64"
+        },
+        "rs": {
+          "shape": [],
+          "dtype": "int64"
+        },
+        "gram_min": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "gram_max": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "hermitian_defect": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "dust_orthogonality_max": {
+          "shape": [],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/number_k01.npz",
+      "size": 18186,
+      "sha256": "04392fb560037ba2db6a0faff702be688ce2ec23c33a29041e553d58c545f4ad",
+      "members": {
+        "q": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "f": {
+          "shape": [
+            5
+          ],
+          "dtype": "float64"
+        },
+        "kappa": {
+          "shape": [],
+          "dtype": "int64"
+        },
+        "weight": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "number": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "trace_error": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "site_min": {
+          "shape": [],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/polar_k02.npz",
+      "size": 413032,
+      "sha256": "758c84378fef7e98a15f0c8abab110d69f87f5719b665e69380ec14c3ff4edfa",
+      "members": {
+        "dust": {
+          "shape": [
+            4096,
+            4
+          ],
+          "dtype": "complex128"
+        },
+        "joint_inverse_root_columns": {
+          "shape": [
+            2052,
+            4
+          ],
+          "dtype": "complex128"
+        },
+        "joint_gram_eigenvalues": {
+          "shape": [
+            2052
+          ],
+          "dtype": "float64"
+        },
+        "f": {
+          "shape": [
+            4
+          ],
+          "dtype": "float64"
+        },
+        "kappa": {
+          "shape": [],
+          "dtype": "int64"
+        },
+        "weight": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "T": {
+          "shape": [],
+          "dtype": "int64"
+        },
+        "rs": {
+          "shape": [],
+          "dtype": "int64"
+        },
+        "gram_min": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "gram_max": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "hermitian_defect": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "dust_orthogonality_max": {
+          "shape": [],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/number_k02.npz",
+      "size": 18178,
+      "sha256": "33cfebf4aee27008cdfbbb2d0679caed7fe9af2004c6d0bc40a2b45544c869d4",
+      "members": {
+        "q": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "f": {
+          "shape": [
+            4
+          ],
+          "dtype": "float64"
+        },
+        "kappa": {
+          "shape": [],
+          "dtype": "int64"
+        },
+        "weight": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "number": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "trace_error": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "site_min": {
+          "shape": [],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/polar_k03.npz",
+      "size": 314600,
+      "sha256": "6438e229d79ea061c22219b61734ddc927a113d0ce7a85724f643bcbb0977f71",
+      "members": {
+        "dust": {
+          "shape": [
+            4096,
+            3
+          ],
+          "dtype": "complex128"
+        },
+        "joint_inverse_root_columns": {
+          "shape": [
+            2051,
+            3
+          ],
+          "dtype": "complex128"
+        },
+        "joint_gram_eigenvalues": {
+          "shape": [
+            2051
+          ],
+          "dtype": "float64"
+        },
+        "f": {
+          "shape": [
+            3
+          ],
+          "dtype": "float64"
+        },
+        "kappa": {
+          "shape": [],
+          "dtype": "int64"
+        },
+        "weight": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "T": {
+          "shape": [],
+          "dtype": "int64"
+        },
+        "rs": {
+          "shape": [],
+          "dtype": "int64"
+        },
+        "gram_min": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "gram_max": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "hermitian_defect": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "dust_orthogonality_max": {
+          "shape": [],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/number_k03.npz",
+      "size": 18170,
+      "sha256": "8a740cfc3bd1686096df592ce40fe79a085e4672ab82cc9aaf749759087cf8d5",
+      "members": {
+        "q": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "f": {
+          "shape": [
+            3
+          ],
+          "dtype": "float64"
+        },
+        "kappa": {
+          "shape": [],
+          "dtype": "int64"
+        },
+        "weight": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "number": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "trace_error": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "site_min": {
+          "shape": [],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/polar_k04.npz",
+      "size": 216200,
+      "sha256": "a2435c874277d81596c1847687d58ee09b2bc3ef071bd8c330886a7134ab2d59",
+      "members": {
+        "dust": {
+          "shape": [
+            4096,
+            2
+          ],
+          "dtype": "complex128"
+        },
+        "joint_inverse_root_columns": {
+          "shape": [
+            2050,
+            2
+          ],
+          "dtype": "complex128"
+        },
+        "joint_gram_eigenvalues": {
+          "shape": [
+            2050
+          ],
+          "dtype": "float64"
+        },
+        "f": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "kappa": {
+          "shape": [],
+          "dtype": "int64"
+        },
+        "weight": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "T": {
+          "shape": [],
+          "dtype": "int64"
+        },
+        "rs": {
+          "shape": [],
+          "dtype": "int64"
+        },
+        "gram_min": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "gram_max": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "hermitian_defect": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "dust_orthogonality_max": {
+          "shape": [],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/number_k04.npz",
+      "size": 18162,
+      "sha256": "07e85a84979d1621c7558481c9d8acf22f31292dcc6b40feaee5cb80572f4d77",
+      "members": {
+        "q": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "f": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "kappa": {
+          "shape": [],
+          "dtype": "int64"
+        },
+        "weight": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "number": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "trace_error": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "site_min": {
+          "shape": [],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/polar_k05.npz",
+      "size": 216200,
+      "sha256": "fa2f8f753573c1cd343c1e9b46bf9a11511b645d80f830c7fcaa142bcef556b1",
+      "members": {
+        "dust": {
+          "shape": [
+            4096,
+            2
+          ],
+          "dtype": "complex128"
+        },
+        "joint_inverse_root_columns": {
+          "shape": [
+            2050,
+            2
+          ],
+          "dtype": "complex128"
+        },
+        "joint_gram_eigenvalues": {
+          "shape": [
+            2050
+          ],
+          "dtype": "float64"
+        },
+        "f": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "kappa": {
+          "shape": [],
+          "dtype": "int64"
+        },
+        "weight": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "T": {
+          "shape": [],
+          "dtype": "int64"
+        },
+        "rs": {
+          "shape": [],
+          "dtype": "int64"
+        },
+        "gram_min": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "gram_max": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "hermitian_defect": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "dust_orthogonality_max": {
+          "shape": [],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/number_k05.npz",
+      "size": 18162,
+      "sha256": "353b118ddb10966a245eaddf3dd9730f7b8c014c9186c07999b3f218833ac414",
+      "members": {
+        "q": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "f": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "kappa": {
+          "shape": [],
+          "dtype": "int64"
+        },
+        "weight": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "number": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "trace_error": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "site_min": {
+          "shape": [],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/combined.npz",
+      "size": 68172,
+      "sha256": "b9dd10f0406b0e2e2c2d58bddd625c56e31f2a0c45876204a5cb3cc7743084e2",
+      "members": {
+        "R": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "target_fraction": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "q": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "cumulative_count": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "weighted_count": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "cumulative_fraction": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "R50": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "quantile50_indices": {
+          "shape": [
+            2
+          ],
+          "dtype": "int64"
+        },
+        "quantile50_R": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "quantile50_F": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        }
+      }
+    }
+  ],
+  "implementation": {
+    "python": "3.12.12",
+    "numpy": "2.2.6",
+    "scipy": "1.17.0"
+  },
+  "elapsed_seconds": 93.51574800908566,
+  "peak_rss_kib": 473800,
+  "producer_sha256": "5e72b48a98c1c1d92075f09c8de5d192ed4d98b19645d8fb2a076c95b22a5024",
+  "combined_channels": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "combined_stage": "half_number_radius",
+  "controls": {
+    "weighted_count": 639.9999999999999,
+    "weighted_trace_error": 1.1368683772161603e-13,
+    "site_min": 1.073565748075953e-28,
+    "all_finite": true,
+    "cumulative_all_finite": true,
+    "cumulative_min": 0.08906897436775016,
+    "cumulative_max": 639.9999999999998,
+    "cumulative_monotone": true,
+    "cumulative_endpoint_minus_total": -1.1368683772161603e-13
+  },
+  "quantile": {
+    "R50": 23.297756974969975,
+    "bracket": {
+      "indices": [
+        22,
+        23
+      ],
+      "R": [
+        23.0,
+        24.0
+      ],
+      "F": [
+        0.4873687646439017,
+        0.529790055891141
+      ],
+      "target": 0.5
+    }
+  }
+}

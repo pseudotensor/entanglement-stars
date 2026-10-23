@@ -1,0 +1,246 @@
+{
+  "scalar_fixtures": [
+    {
+      "name": "zero",
+      "inputs": {
+        "F": 0.0,
+        "W": 0.0,
+        "P": 0.0,
+        "C": 0.0,
+        "D": 0.0
+      },
+      "expected": {
+        "jumps_minus_vacuum": 0.0,
+        "balance_second_term_D": 0.0,
+        "epsilon_tel": 0.0,
+        "endpoint_minus_balance": 0.0,
+        "endpoint_inventory_closure": 0.0
+      },
+      "result": {
+        "endpoint_change_D": 0.0,
+        "delta_C": 0.0,
+        "current": 0.0,
+        "jumps": 0.0,
+        "vacuum_change": 0.0,
+        "jumps_minus_vacuum": 0.0,
+        "balance_second_term_D": 0.0,
+        "epsilon_tel": 0.0,
+        "endpoint_minus_balance": 0.0,
+        "endpoint_inventory_closure": 0.0,
+        "inventory_identity_residual": 0.0,
+        "closure_evaluation_difference": 0.0,
+        "balance_decomposition_difference": 0.0
+      },
+      "pass": true
+    },
+    {
+      "name": "positive_telescope",
+      "inputs": {
+        "F": 0.5,
+        "W": 0.25,
+        "P": 0.125,
+        "C": 1.0,
+        "D": 0.875
+      },
+      "expected": {
+        "jumps_minus_vacuum": 0.125,
+        "balance_second_term_D": 0.625,
+        "epsilon_tel": 0.25,
+        "endpoint_minus_balance": 0.25,
+        "endpoint_inventory_closure": 0.0
+      },
+      "result": {
+        "endpoint_change_D": 0.875,
+        "delta_C": 1.0,
+        "current": 0.5,
+        "jumps": 0.25,
+        "vacuum_change": 0.125,
+        "jumps_minus_vacuum": 0.125,
+        "balance_second_term_D": 0.625,
+        "epsilon_tel": 0.25,
+        "endpoint_minus_balance": 0.25,
+        "endpoint_inventory_closure": 0.0,
+        "inventory_identity_residual": 0.0,
+        "closure_evaluation_difference": 0.0,
+        "balance_decomposition_difference": 0.0
+      },
+      "pass": true
+    },
+    {
+      "name": "negative_telescope",
+      "inputs": {
+        "F": 0.5,
+        "W": 0.25,
+        "P": 0.125,
+        "C": 0.5,
+        "D": 0.375
+      },
+      "expected": {
+        "jumps_minus_vacuum": 0.125,
+        "balance_second_term_D": 0.625,
+        "epsilon_tel": -0.25,
+        "endpoint_minus_balance": -0.25,
+        "endpoint_inventory_closure": 0.0
+      },
+      "result": {
+        "endpoint_change_D": 0.375,
+        "delta_C": 0.5,
+        "current": 0.5,
+        "jumps": 0.25,
+        "vacuum_change": 0.125,
+        "jumps_minus_vacuum": 0.125,
+        "balance_second_term_D": 0.625,
+        "epsilon_tel": -0.25,
+        "endpoint_minus_balance": -0.25,
+        "endpoint_inventory_closure": 0.0,
+        "inventory_identity_residual": 0.0,
+        "closure_evaluation_difference": 0.0,
+        "balance_decomposition_difference": 0.0
+      },
+      "pass": true
+    },
+    {
+      "name": "cancelled_jump_signed_balance",
+      "inputs": {
+        "F": -0.5,
+        "W": 0.25,
+        "P": 0.25,
+        "C": -0.25,
+        "D": -0.5
+      },
+      "expected": {
+        "jumps_minus_vacuum": 0.0,
+        "balance_second_term_D": -0.5,
+        "epsilon_tel": 0.0,
+        "endpoint_minus_balance": 0.0,
+        "endpoint_inventory_closure": 0.0
+      },
+      "result": {
+        "endpoint_change_D": -0.5,
+        "delta_C": -0.25,
+        "current": -0.5,
+        "jumps": 0.25,
+        "vacuum_change": 0.25,
+        "jumps_minus_vacuum": 0.0,
+        "balance_second_term_D": -0.5,
+        "epsilon_tel": 0.0,
+        "endpoint_minus_balance": 0.0,
+        "endpoint_inventory_closure": 0.0,
+        "inventory_identity_residual": 0.0,
+        "closure_evaluation_difference": 0.0,
+        "balance_decomposition_difference": 0.0
+      },
+      "pass": true
+    },
+    {
+      "name": "inconsistent_inventory",
+      "inputs": {
+        "F": 0.5,
+        "W": 0.25,
+        "P": 0.125,
+        "C": 1.0,
+        "D": 1.0
+      },
+      "expected": {
+        "jumps_minus_vacuum": 0.125,
+        "balance_second_term_D": 0.625,
+        "epsilon_tel": 0.25,
+        "endpoint_minus_balance": 0.375,
+        "endpoint_inventory_closure": 0.125
+      },
+      "result": {
+        "endpoint_change_D": 1.0,
+        "delta_C": 1.0,
+        "current": 0.5,
+        "jumps": 0.25,
+        "vacuum_change": 0.125,
+        "jumps_minus_vacuum": 0.125,
+        "balance_second_term_D": 0.625,
+        "epsilon_tel": 0.25,
+        "endpoint_minus_balance": 0.375,
+        "endpoint_inventory_closure": 0.125,
+        "inventory_identity_residual": 0.125,
+        "closure_evaluation_difference": 0.0,
+        "balance_decomposition_difference": 0.0
+      },
+      "pass": true
+    }
+  ],
+  "aggregate_fixture": {
+    "inputs": [
+      {
+        "endpoint_change_D": 0.875,
+        "delta_C": 1.0,
+        "current": 0.5,
+        "jumps": 0.25,
+        "vacuum_change": 0.125,
+        "jumps_minus_vacuum": 0.125,
+        "balance_second_term_D": 0.625,
+        "epsilon_tel": 0.25,
+        "endpoint_minus_balance": 0.25,
+        "endpoint_inventory_closure": 0.0,
+        "inventory_identity_residual": 0.0,
+        "closure_evaluation_difference": 0.0,
+        "balance_decomposition_difference": 0.0,
+        "kappa": 1,
+        "weight": 16
+      },
+      {
+        "endpoint_change_D": 0.1875,
+        "delta_C": 0.25,
+        "current": 0.25,
+        "jumps": 0.125,
+        "vacuum_change": 0.0625,
+        "jumps_minus_vacuum": 0.0625,
+        "balance_second_term_D": 0.3125,
+        "epsilon_tel": -0.125,
+        "endpoint_minus_balance": -0.125,
+        "endpoint_inventory_closure": 0.0,
+        "inventory_identity_residual": 0.0,
+        "closure_evaluation_difference": 0.0,
+        "balance_decomposition_difference": 0.0,
+        "kappa": 2,
+        "weight": 32
+      }
+    ],
+    "expected": {
+      "current": 16.0,
+      "jumps": 8.0,
+      "vacuum_change": 4.0,
+      "delta_C": 24.0,
+      "endpoint_change_D": 20.0,
+      "balance_second_term_D": 20.0,
+      "jumps_minus_vacuum": 4.0,
+      "epsilon_tel": 0.0,
+      "endpoint_minus_balance": 0.0,
+      "endpoint_inventory_closure": 0.0
+    },
+    "expected_weighted_absolute_telescope": 8.0,
+    "result": {
+      "endpoint_change_D": 20.0,
+      "delta_C": 24.0,
+      "current": 16.0,
+      "jumps": 8.0,
+      "vacuum_change": 4.0,
+      "jumps_minus_vacuum": 4.0,
+      "balance_second_term_D": 20.0,
+      "epsilon_tel": 0.0,
+      "endpoint_minus_balance": 0.0,
+      "endpoint_inventory_closure": 0.0,
+      "inventory_identity_residual": 0.0,
+      "closure_evaluation_difference": 0.0,
+      "balance_decomposition_difference": 0.0,
+      "arithmetic_scale": 72.0,
+      "arithmetic_comparison_threshold": 5.115907697472721e-13,
+      "aggregate_balance_evaluation_difference": 0.0,
+      "aggregate_closure_evaluation_difference": 0.0,
+      "weighted_absolute_diagnostics": {
+        "epsilon_tel": 8.0,
+        "endpoint_minus_balance": 8.0,
+        "endpoint_inventory_closure": 0.0
+      },
+      "arithmetic_comparisons_pass": true
+    },
+    "pass": true
+  }
+}

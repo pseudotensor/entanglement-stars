@@ -1,0 +1,288 @@
+{
+  "status": "incomplete",
+  "purpose": "Task3 named missing width-four T13 half-number radius and first-eight radial-cell densities",
+  "label": "v36d width-four rung, another engine from T=0, T/rs=13, finite stored state; half-number radius and first-eight radial-cell densities",
+  "scope": {
+    "original_c27": false,
+    "r11": false,
+    "history": false,
+    "static_three_width_HF": false,
+    "native_HF": false,
+    "native_cartesian_saturation": false
+  },
+  "source": {
+    "path": "<internal>/orbitals_c32_rs64_A_R2_tau8_ell4_prep4_avg_plain_v36d_from0_T0013.00.npz",
+    "sha256": "072549f046e22084e19a4cf8f48abe750f84ae0a5a5f414c6716902e00870c78",
+    "actual_sha256": "072549f046e22084e19a4cf8f48abe750f84ae0a5a5f414c6716902e00870c78",
+    "descriptor_before": {
+      "size": 2685802106,
+      "device": 2048,
+      "inode": 17891544,
+      "mtime_ns": 1792305468347378926,
+      "ctime_ns": 1792454095501898249
+    },
+    "descriptor_after": {
+      "size": 2685802106,
+      "device": 2048,
+      "inode": 17891544,
+      "mtime_ns": 1792305468347378926,
+      "ctime_ns": 1792454095501898249
+    },
+    "dtype_declaration": "complex128",
+    "identity": {
+      "path": "<internal>/orbitals_c32_rs64_A_R2_tau8_ell4_prep4_avg_plain_v36d_from0_T0013.00.npz",
+      "size": 2685802106,
+      "mtime_ns": 1792305468347378926,
+      "device": 2048,
+      "inode": 17891544
+    },
+    "keys": [
+      "T",
+      "rs",
+      "N_applied",
+      "v_applied",
+      "R",
+      "kappas",
+      "weights",
+      "dtype",
+      "sea_1",
+      "dust_1",
+      "f_1",
+      "R2_1",
+      "e_1",
+      "mask_1",
+      "sea_2",
+      "dust_2",
+      "f_2",
+      "R2_2",
+      "e_2",
+      "mask_2",
+      "sea_3",
+      "dust_3",
+      "f_3",
+      "R2_3",
+      "e_3",
+      "mask_3",
+      "sea_4",
+      "dust_4",
+      "f_4",
+      "R2_4",
+      "e_4",
+      "mask_4",
+      "sea_5",
+      "dust_5",
+      "f_5",
+      "R2_5",
+      "e_5",
+      "mask_5",
+      "sea_6",
+      "dust_6",
+      "f_6",
+      "R2_6",
+      "e_6",
+      "mask_6",
+      "sea_7",
+      "dust_7",
+      "f_7",
+      "R2_7",
+      "e_7",
+      "mask_7",
+      "sea_8",
+      "dust_8",
+      "f_8",
+      "R2_8",
+      "e_8",
+      "mask_8",
+      "sea_9",
+      "dust_9",
+      "f_9",
+      "R2_9",
+      "e_9",
+      "mask_9",
+      "sea_10",
+      "dust_10",
+      "f_10",
+      "R2_10",
+      "e_10",
+      "mask_10"
+    ],
+    "clock_T": 832,
+    "rs": 64,
+    "input_clock_dtype": "float64",
+    "saved_clock_dtype": "int64",
+    "weights": [
+      16.0,
+      32.0,
+      48.0,
+      64.0,
+      80.0,
+      96.0,
+      112.0,
+      128.0,
+      144.0,
+      160.0
+    ],
+    "kappas": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dust_counts": [
+      5,
+      4,
+      3,
+      2,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "dependencies": {
+    "<internal>/core_well_profiles_v1.py": "8a55cd10be12b2b0b4c36f8b364c31dd198ccc8bdf114ea4bb0c2d78ec86fd54",
+    "<internal>/core_well_input_v1.py": "294ebd7e68dd8f260f4be2a70c8d250db0f00106679edbea8e2274d83c4f326b"
+  },
+  "declared_units": {
+    "a": 1,
+    "mu": 0.2,
+    "g": 0.25,
+    "sigma_over_a": 4,
+    "tau_over_a": 8,
+    "clock_over_rs": 13
+  },
+  "resources": {
+    "available_memory_bytes": 281928814592,
+    "minimum_available_memory_bytes": 8589934592,
+    "threads": 4,
+    "cpu_affinity": [
+      12,
+      13,
+      14,
+      15
+    ],
+    "nice": 10,
+    "address_space_bytes": 4294967296,
+    "cpu_soft": 700,
+    "cpu_hard": 720,
+    "wall_internal": 160,
+    "wall_external": 180
+  },
+  "phase": "joint_polar",
+  "current_channel": 1,
+  "completion_list_meaning": "completed lists count constructed and saved products, not validated products",
+  "polar_validated": [],
+  "number_validated": [],
+  "density_definition": "first eight q_j/(4*pi*(R_j/a)^2), in one-based site order; units a^3 n; no Cartesian/central interpretation",
+  "number_definition": "interleaved adjacent spin rows; q=sum(abs(Z.reshape(2048,2,-1))**2*f,axis=(1,2)); weights once",
+  "combined_saved": false,
+  "combined_validated": false,
+  "polar_completed": [],
+  "number_completed": [],
+  "missing_polar": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "missing_number": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "empty_channels": [
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "channels": {},
+  "arrays": [
+    {
+      "path": "<internal>/context.npz",
+      "size": 50558,
+      "sha256": "9cf47d19ed14128edd0964ac851c29b1f1fe71fa74354122fa3971f9ee33aa53",
+      "members": {
+        "R": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "N_applied": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "v_applied": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "weights": {
+          "shape": [
+            10
+          ],
+          "dtype": "float64"
+        },
+        "kappas": {
+          "shape": [
+            10
+          ],
+          "dtype": "int64"
+        }
+      }
+    }
+  ],
+  "implementation": {
+    "actual_nice": 10,
+    "python": "3.12.12",
+    "numpy": "2.2.6",
+    "scipy": "1.17.0"
+  },
+  "missing_products": [
+    "polar_k01.npz",
+    "polar_k02.npz",
+    "polar_k03.npz",
+    "polar_k04.npz",
+    "polar_k05.npz",
+    "number_k01.npz",
+    "number_k02.npz",
+    "number_k03.npz",
+    "number_k04.npz",
+    "number_k05.npz",
+    "combined.npz"
+  ],
+  "missing_validations": [
+    "polar_k01",
+    "polar_k02",
+    "polar_k03",
+    "polar_k04",
+    "polar_k05",
+    "number_k01",
+    "number_k02",
+    "number_k03",
+    "number_k04",
+    "number_k05",
+    "combined"
+  ],
+  "elapsed_seconds": 165.10194031521678,
+  "peak_rss_kib": 392948,
+  "producer_sha256": "22b71cde68497a1b62abbe3b0a49ebe92224e383e16a3a7632e389c8f99b1d7c",
+  "deadline_seen": true,
+  "error": "TimeoutError: Fixed one-slice allocation deadline"
+}

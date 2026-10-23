@@ -1,0 +1,173 @@
+{
+  "status": "completed_numerical_control",
+  "purpose": "required H1 b_sphere native positive-mass control",
+  "mode": "level",
+  "units": "a=1; y=(ma)^2; nats; full4; one face per area a^2",
+  "scope": "flat positive-mass native sea only; numerical indicators, no angular/mass-tail certificate",
+  "pid": 2980287,
+  "nice": 10,
+  "cpu_affinity": [
+    12
+  ],
+  "threads": 1,
+  "wall_cap_seconds": 600,
+  "memory_cap_bytes": 4294967296,
+  "numpy_version": "2.2.6",
+  "mpmath_version": "1.3.0",
+  "elapsed_seconds": 28.814480368047953,
+  "cpu_seconds": 29.57064,
+  "peak_rss_KiB": 443760,
+  "case": {
+    "p": [
+      4,
+      1,
+      0
+    ],
+    "y": "1/200",
+    "level": 0,
+    "h0": 0.1,
+    "N1": 8,
+    "N2": 32,
+    "cL": 10,
+    "Lmin": 24,
+    "components": 4,
+    "precision": "complex128",
+    "ntheta_minimum": 8192,
+    "r": [
+      -1,
+      0,
+      0
+    ],
+    "s": [
+      0,
+      0,
+      1
+    ],
+    "G": [
+      [
+        0.058823529411764705,
+        0.0
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "pnorm": 4.123105625617661,
+    "checkpoint_box_only": "<internal>/native_massive_p410_y1-200_level0.checkpoint.json",
+    "n_points": 128,
+    "L_max": 444,
+    "numerical_gap_min": 0.09835621097429267,
+    "gap_scope": "4096-or-more theta scan and local minimization; not a certified global gap",
+    "numerical_error_bound": null,
+    "eta": 0.85520737994165,
+    "eta_raw_unsubtracted": 0.8551959438576074,
+    "reference_integrals": [
+      {
+        "value": -1.0391879283773877,
+        "reported_error": 1.1537303650254244e-14,
+        "tolerance": 1e-12
+      },
+      {
+        "value": -1.0391879283773877,
+        "reported_error": 1.1537303650254244e-14,
+        "tolerance": 1e-13
+      }
+    ],
+    "reference_warnings": [],
+    "reference_change_per_area": 0.0,
+    "sampled_controls": {
+      "near_longer": {
+        "index": 31,
+        "transverse": [
+          0.19634954084936207,
+          3.0925052683774528
+        ],
+        "base_one_face_entropy": 5.553694659064416,
+        "variation": {
+          "one_face_entropy": 5.553694659173419,
+          "L": 653,
+          "matrix_dimension": 2612,
+          "ntheta": 8192,
+          "n_components": 4,
+          "slab_faces": 2,
+          "minimum_eigenvalue": -7.993605777301127e-15,
+          "maximum_eigenvalue": 1.000000000000007,
+          "eigenvalues_outside_unit_interval": 1136,
+          "maximum_spectrum_excursion": 7.993605777301127e-15,
+          "endpoint_rule": "clip only outside [0,1]; no interior eigenvalue cutoff",
+          "eigenvalues_within_1e_minus12_of_endpoints": 2412,
+          "hermitian_residual": 5.594315114139762e-17,
+          "estimated_peak_working_bytes": 671741440,
+          "elapsed_seconds": 8.17925413325429
+        },
+        "difference": 1.0900347291453727e-10
+      },
+      "ordinary_longer": {
+        "index": 103,
+        "transverse": [
+          1.3744467859455345,
+          0.7363107781851077
+        ],
+        "base_one_face_entropy": 3.3654984274466417,
+        "variation": {
+          "one_face_entropy": 3.365498427448025,
+          "L": 107,
+          "matrix_dimension": 428,
+          "ntheta": 8192,
+          "n_components": 4,
+          "slab_faces": 2,
+          "minimum_eigenvalue": -1.7492933174474552e-15,
+          "maximum_eigenvalue": 1.000000000000003,
+          "eigenvalues_outside_unit_interval": 113,
+          "maximum_spectrum_excursion": 3.1086244689504383e-15,
+          "endpoint_rule": "clip only outside [0,1]; no interior eigenvalue cutoff",
+          "eigenvalues_within_1e_minus12_of_endpoints": 284,
+          "hermitian_residual": 2.776670392706065e-17,
+          "estimated_peak_working_bytes": 34362880,
+          "elapsed_seconds": 0.04656856507062912
+        },
+        "difference": 1.383337888682945e-12
+      },
+      "near_doubled_fft": {
+        "index": 31,
+        "transverse": [
+          0.19634954084936207,
+          3.0925052683774528
+        ],
+        "base_one_face_entropy": 5.553694659064416,
+        "variation": {
+          "one_face_entropy": 5.553694659064265,
+          "L": 444,
+          "matrix_dimension": 1776,
+          "ntheta": 16384,
+          "n_components": 4,
+          "slab_faces": 2,
+          "minimum_eigenvalue": -3.997122681140103e-15,
+          "maximum_eigenvalue": 1.0000000000000064,
+          "eigenvalues_outside_unit_interval": 726,
+          "maximum_spectrum_excursion": 6.439293542825908e-15,
+          "endpoint_rule": "clip only outside [0,1]; no interior eigenvalue cutoff",
+          "eigenvalues_within_1e_minus12_of_endpoints": 1576,
+          "hermitian_residual": 5.56803001126317e-17,
+          "estimated_peak_working_bytes": 336355328,
+          "elapsed_seconds": 2.561333801597357
+        },
+        "difference": -1.509903313490213e-13
+      }
+    },
+    "sampled_length_change_per_area": 2.6437225434458288e-11,
+    "sampled_fft_change_per_area": 3.66205343881779e-14,
+    "maximum_spectrum_excursion": 5.773159728050814e-15,
+    "maximum_hermitian_residual": 8.352045016894756e-17,
+    "maximum_point_seconds": 3.922246068716049,
+    "total_point_seconds": 17.832402374595404,
+    "numerical_indicator_scope": "sampled changes and quadrature indicators, not uniform error bounds",
+    "point_arrays_copied_to_result": false
+  },
+  "progress": {
+    "completed_points": 128,
+    "expected_points": 128,
+    "completed_sampled_checks": 3
+  }
+}

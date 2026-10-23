@@ -1,0 +1,27 @@
+{
+  "interior_rows": 256,
+  "cut": "R<=128a",
+  "terms": {
+    "A_minus_A2": {
+      "frobenius": 0.21559279848320131,
+      "max_abs_entry": 0.11407362270448124,
+      "max_abs_row_sum": 0.3046186517462109,
+      "unsymmetrized_hermiticity_frobenius": 0.0
+    },
+    "KKdagger": {
+      "frobenius": 0.2155927984831956,
+      "max_abs_entry": 0.11407362270447997,
+      "max_abs_row_sum": 0.3046186517462003,
+      "unsymmetrized_hermiticity_frobenius": 0.0
+    },
+    "impurity": {
+      "frobenius": 2.0210021160930444e-13,
+      "max_abs_entry": 3.0423755463877574e-14,
+      "max_abs_row_sum": 1.6149749749006196e-13,
+      "unsymmetrized_hermiticity_frobenius": 1.7856787732125952e-28
+    }
+  },
+  "residual_frobenius": 3.4419315479075993e-15,
+  "residual_spectral_norm_diagnostic": 8.176436716938988e-16,
+  "relative_residual_frobenius": 3.4419315479075993e-15
+}

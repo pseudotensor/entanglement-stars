@@ -1,0 +1,268 @@
+% SOURCES AND SCOPE. Binding: final4/GOAL_alt.md; THINK_simpler_than_induced
+% sections 8,9,12; REQUIREMENTS at 061ccbe55ee items 11,19,22,26,27.
+% [X] This author's independent Clifford/Fourier method agrees with the other
+% lane's position-path multiplication, exact Fourier/Taylor estimate and direct
+% continuum differential-operator proof in strand_E_density_algebra.tex
+% DA1--DA15, actual source at <internal>/solve, with
+% review_E_density_algebra.tex. Both complete actual sources and SOURCES were
+% read after this independent derivation was saved. The exact kernel, current
+% placement, reference term, dressed spin coefficient and remainder orders
+% agree. The O(a^2 q^4) difference between their midpoint spin placement and
+% (3)'s anticommutator placement is proved below. Their separate continuum
+% differential calculation fixes the same +Sigma^nu.curl(v)/4 coefficient.
+% Predecessor lane_z/B11-002 (g26): original script read at
+% <internal>/lane_z_reviewa
+% g26_lattice_dirac_schwinger_constraint_algebra.py, including all three tests.
+% Survives: exact axis quadrature coefficient, dressed spin at small external q.
+% Correction: its stated relative coefficient -q^2/2 is -5q^2/12.
+% Its tested longitudinal shapes do not establish arbitrary radial exact closure.
+% Predecessor lane_z/B11-007: original g30b_lattice_dirac_algebra_second_half_
+% valley_projected.py read; cos(2ap) obstructs full-zone Lie-derivative closure.
+% No ghost, regulator, ruler or gravitational deduction transfers from those files.
+% Convention: CAR {c_x,c_y^dag}=delta_xy; a site energy is an energy, not an
+% energy per volume. Divide by a^3 only when defining continuum source densities.
+% Normal ordering subtracts constants from H[f], hence does not change its
+% commutator; expressing the RHS in normal-ordered bilinears retains its central
+% term Tr(P_ref [h[f],h[g]]). For the zero-flow flat Dirac sea P_ref=P_- this
+% is zero: nonzero total transfer has zero trace, and at total transfer zero
+% the remaining scalar Q is odd in p. A uniform supercritical-flow ground
+% reference need not have zero Q expectation; its central term must be kept.
+% The special f=1 test has zero central term for any reference commuting with
+% h0 by cyclicity, which does not prove this for arbitrary f,g. No blanket
+% statement is made about nonuniform subtraction or the full H2 algebra.
+
+\paragraph{Energy algebra [X; radial counterexample R].}
+Let $h=\beta m+\alpha_i\sin(ap_i)/a$, $E_x=\tfrac12\{P_x,h\}$,
+$H[f]=c^\dagger h[f]c$, and $h[f]=\tfrac12\{f,h\}$.
+For every pair of sites, CAR gives the exact identity
+\[
+ [\mathcal H_x,\mathcal H_y]
+ =\tfrac14 c^\dagger\bigl(P_xhP_yh+P_xh^2P_y+hP_xhP_y
+                         -(x\leftrightarrow y)\bigr)c .
+\]
+Its full Fourier form is particularly short.  For smearings $e^{iqx},e^{ikx}$,
+write $p$ for the midpoint of the input and output momenta, put
+$Q_i(p)=\sin(2ap_i)/(2a)$, $c_i=\cos(ap_i)$, and define
+\[
+ b_i={c_i\over a}\cos(aq_i/2)\sin(ak_i/2),\qquad
+ d_i={c_i\over a}\cos(ak_i/2)\sin(aq_i/2).
+\]
+With $[\alpha_i,\alpha_j]=2i\epsilon_{ijk}\Sigma_k$, the commutator vertex is
+\[
+ [h[e^{iqx}],h[e^{ikx}]](p)
+ ={2\over a}\sum_i\cos(aq_i/2)\cos(ak_i/2)
+       \sin\!\bigl(a(k_i-q_i)/2\bigr)Q_i(p)
+   +2i\boldsymbol\Sigma\cdot(\boldsymbol d\mathbin\times\boldsymbol b).
+ \tag{1}
+\]
+All mass terms cancel.  In particular, the axis-longitudinal quadrature pair
+$f=\cos(qx_i)$, $g=\sin(qx_i)$ obeys, at every lattice momentum and mass,
+\[
+ i[H[f],H[g]]={\sin(2aq)+2\sin(aq)\over4a}\,c^\dagger Q_i c
+ =q\left[1-{5\over12}(aq)^2+O((aq)^4)\right]c^\dagger Q_i c . \tag{2}
+\]
+Thus the current is the two-step identity-channel current, with unit valley
+slope.  It is not the one-step number-current vertex.
+
+For smooth general smearings, set $v=f\nabla g-g\nabla f$ and
+$C_i=\cos(ap_i)$.  Equation (1) gives
+\[
+ i[H[f],H[g]]=c^\dagger\left[
+ {1\over2}\{v_i,Q_i\}
+ +{1\over8}\sum_{ijk}\epsilon_{kij}
+     \{\partial_i v_j,\Sigma_k C_iC_j\}\right]c+\mathcal R . \tag{3}
+\]
+For shape momenta of size $q$, the orbital remainder is
+$O(a^2q^3|Q|)$ and the spin remainder $O(a^2q^4)$.
+The spin term is $\tfrac14(\nabla\times v)\cdot\boldsymbol\Sigma$ with
+the displayed valley dressing; omitting it leaves a relative $O(qa)$
+full-zone error, whereas retaining it leaves $O((qa)^2)$ for generic shapes.
+An irrotational continuum flow has no spin term at this order.
+Exact closure on $Q_i$ alone fails even for radial smearings. Take
+$f=\chi(r/L)r^2/L^2$, $g=\chi(r/L)r^6/L^6$, with a smooth radial cutoff
+$\chi=1$ for $r\leq3L$ and $\chi=0$ for $r\geq4L$.
+For $L/a$ an integer at least 4, $x=(L,2L,0)$ and
+$y=x+a(e_1+e_2)$, the full spinor kernel gives exactly
+\[
+ \bigl(i[h[f],h[g]]\bigr)_{xy}
+ =-{a^2(2L+a)(3L+a)(4L+a)\over4L^7}\,\Sigma_3\ne0. \tag{4}
+\]
+Every scalar two-step $Q_i$ current has zero block at this corner link.
+The spherical continuum dictionary survives; its finite-spacing radial
+algebra has the explicit spin and allocation remainders given below.
+
+% DERIVATION CHECKS. Write the two ordered products in (1) as
+% (m beta+alpha.(u+b))(m beta+alpha.(u-d)) and
+% (m beta+alpha.(u+d))(m beta+alpha.(u-b)), where
+% u_i=sin(ap_i)cos(aq_i/2)cos(ak_i/2)/a. Their difference is
+% 2u.(b-d)+2i Sigma.(d x b). This proves (1), including sign and mass cancellation.
+% The two products contain identical -m beta alpha.(b+d), so the cancellation
+% does not require m=0. For the real quadrature shapes, transfer +/-2q cancels
+% and i times the remaining commutator is sin(aq)cos^2(aq/2)Q_i/a.
+% sin z cos^2(z/2)=z-5z^3/12+17z^5/240+O(z^7).
+% For q,k collinear but with unequal nonzero Cartesian components, d_i/b_i
+% =tan(aq_i/2)/tan(ak_i/2), which is not independent of i. Hence a literal
+% all-irrotational exact-closure statement is false; the counterterm starts
+% at a^2 q^4 in its spin vertex when the continuum curl vanishes.
+% Explicitly q=(u,2u,0), k=2q and p=0 yield spin vertex
+% 3a^2u^4[alpha_1,alpha_2]/4+O(a^4u^6), although the continuum cross product
+% q x k vanishes. This is a finite-spacing counterexample, not a spherical
+% continuum obstruction.
+% Current placement check: [h,h[g]]=[h^2,g]/2. At transfer q its scalar
+% vertex is sum_i sin(aq_i)Q_i(p)/a. A site anticommutator {v_i,Q_i}/2
+% instead has vertex v_i(q)cos(aq_i)Q_i(p). Thus the exact constant-lapse
+% identity uses v_i(q)=i tan(aq_i)g(q)/a in i[h,h[g]], when cos(aq_i)!=0;
+% a midpoint link-current convention uses i sin(aq_i)g(q)/a. No placement
+% convention should silently replace one coefficient by the other.
+% Full constraint-algebra caveat: for constant Q_i and transfer q,
+% [Q_i,h[g]] = sin(aq_i)cos(2ap_i)h[g]/a at the midpoint.
+% Its cos(2ap_i) factor is 1-2a^2 k_i^2 near each valley but order-one
+% different elsewhere. The energy-current identity is not an exact H2
+% first-class or diffeomorphism-algebra theorem for all lattice states.
+% CROSS-ROUTE EQUALITY CHECK. On a straight path with midpoint z, substituting
+% f=e^{iqx},g=e^{ikx} into counterpart DA2 gives
+% W=8i exp(i(q+k)z) cos(aq_i/2)cos(ak_i/2)sin(a(k_i-q_i)/2).
+% Its DA3 therefore gives precisely i times the scalar vertex in (1).
+% The antisymmetric difference of its two corner paths, DA4, is the Clifford
+% cross product 2i Sigma.(d x b) in (1). DA1 is the smearing of our first
+% site formula. DA6 fixes the same affine current orientation. DA7--DA8 give
+% exactly our constant-lapse sin-versus-cos placement factor and tangent
+% coefficient. The reference identity DA9 is the central term retained above.
+%
+% SPIN COMPARISON TO THE ACTUAL OTHER-LANE SOURCE AND REVIEW. In DA10--DA11,
+% r=q, s=k, X=d, Y=b and D=u in the ordered products above. Its displayed
+% J=2i D.(Y-X)-2 Sigma.(X x Y) is exactly i times (1), including the mass
+% cancellation. Its independent differential-operator calculation gives
+% +Sigma^nu.curl(v)/4 with Sigma^nu_l=tau_i tau_j Sigma_l, agreeing with
+% the valley limit of C_i C_j in (3). The direct differential proof is DA15
+% and is also written out in the independently read review source.
+%
+% For each Fourier pair with |q|,|k|<=kappa, write t=q+k and
+% C_+=diag cos(ap+a t/2), C_-=diag cos(ap-a t/2), C=diag cos(ap).
+% Our spin vertex is -Sigma.[(C_+ q)x(C_+ k)+(C_- q)x(C_- k)]/4;
+% their DA12 midpoint comparison vertex is -Sigma.[(C q)x(C k)]/2.
+% Put A=C diag cos(a t/2), B=diag sin(ap) diag sin(a t/2). The mean of
+% the two cross products is (Aq)x(Ak)+(Bq)x(Bk). Since
+% ||A-C||<=a^2|t|^2/8 and ||B||<=a|t|/2, the norm difference between the
+% two spin vertices is <=a^2|t|^2 kappa^2/4<=a^2 kappa^4.
+% Their DA13 midpoint remainder <=a^2 kappa^4/6 therefore implies the
+% explicit <=7a^2 kappa^4/6 spin remainder for our ordering. Its scalar
+% bound also follows directly from (1): the cosine/sinc comparison to the
+% endpoint factor cos(a(q_i+k_i)) is <=3a^2 kappa^2, giving
+% <=6a^2 Qmax kappa^3. Multiplication by the absolute Fourier-coefficient
+% norms of f,g gives an absolute one-particle bound, with 2kappa<pi/a and
+% consistent unwrapped transfers. This fixes the scope of the generic
+% relative orders in the core; there is no relative estimate at a canceled
+% leading matrix element, nor a volume-uniform full-Fock bound. Near a valley
+% C_i=tau_i+O(a^2 p_i^2), so replacing dressed spin by continuum spin also
+% needs a small particle-momentum cone; small shape transfer alone is not enough.
+
+% EXACT RADIAL COUNTEREXAMPLE [R, independent new link derivation]. This
+% block was saved before reading or exchanging the RED's new radial route.
+% It resolves the stronger arbitrary-radial statement left open in the
+% earlier quadrature/Fourier discussion. No scientific job is required.
+% Work on the infinite native cubic lattice, or a finite parent with the
+% following links strictly inside it. Use the orientation
+% h_{x,x+s a e_i}=s alpha_i/(2ia), s=+/-1, and h_xx=beta m.
+% For arbitrary real smearings define the real path weight
+% W(x,z,y)=(f_x+f_z)(g_z+g_y)-(g_x+g_z)(f_z+f_y).
+% Direct multiplication, with all spinor matrices retained, gives
+% [h[f],h[g]]_xy=(1/4)sum_z h_xz h_zy W(x,z,y).
+% Onsite terms vanish. At nearest-neighbor separation the two mass paths
+% cancel by {beta,alpha_i}=0, so the result is independent of m.
+%
+% For a straight two-step link y=x+2s a e_i, z=x+s a e_i,
+% i[h[f],h[g]]_xy=-i W(x,z,y)I/(16a^2).
+% For a corner link y=x+a(s e_i+t e_j), i<j, s,t=+/-1, let
+% z_i=x+s a e_i and z_j=x+t a e_j. Then exactly
+% i[h[f],h[g]]_xy=(st/(16a^2))epsilon_ijk Sigma_k
+%                  [W(x,z_i,y)-W(x,z_j,y)].
+% These straight and corner links exhaust the support. Thus the exact
+% commutator is a scalar midpoint two-step current plus this corner-spin
+% remainder. The straight midpoint coefficient is W/(4s a). In the binding
+% SITE coupling P[w]=sum_i{w_i,Q_i}/2, its actual block is instead
+% P[w]_{x,x+2s a e_i}=-is(w_i(x)+w_i(y))I/(8a).
+% For ANY proposed site flow w, the COMPLETE exact remainder is consequently
+% R_{x,x+2s a e_i}=-i[W(x,z,y)-2s a(w_i(x)+w_i(y))]I/(16a^2),
+% R_{x,x+a(s e_i+t e_j)}=(st/(16a^2))epsilon_ijk Sigma_k
+%                         [W(x,z_i,y)-W(x,z_j,y)],
+% and zero at other separations. This states both allocation and spin
+% remainders, rather than hiding the scalar placement change in a name.
+%
+% For radial smearings f_x=F(S_x), g_x=G(S_x), S_x=|x|^2, put
+% A=|x|^2, d_i=2s a x_i+a^2, d_j=2t a x_j+a^2, D=d_i+d_j.
+% The CORNER-SPIN remainder has the exact radial numerator
+% Delta W=[F(A)-F(A+D)][G(A+d_i)-G(A+d_j)]
+%        +[G(A+D)-G(A)][F(A+d_i)-F(A+d_j)].
+% Radiality alone does not set this divided-difference determinant to zero.
+% For F(S)=S/L^2 and G(S)=S^3/L^6 in a common plateau,
+% Delta W=d_i d_j(d_i^2-d_j^2)/L^8 exactly.
+% In contrast the tempting lower-degree test G(S)=S^2/L^4 gives zero;
+% that special polynomial cancellation cannot establish generic radiality.
+%
+% Make the test globally bounded and smooth by choosing a radial C-infinity
+% cutoff chi(r/L) equal to 1 for r<=3L and 0 for r>=4L, and setting
+% f=chi(r/L)r^2/L^2, g=chi(r/L)r^6/L^6. Its continuum vector field is
+% w=f grad g-g grad f=4 chi(r/L)^2 r^6 x/L^8, exactly radial and curl free.
+% Take L=n a with integer n>=4, x=(L,2L,0), i=1,j=2,s=t=1,
+% y=x+a(e_1+e_2). All four vertices lie in the common plateau. Since
+% d_1=a(2L+a), d_2=a(4L+a), the exact native block is
+% <x|i[h[f],h[g]]|y>
+% =-a^2(2L+a)(3L+a)(4L+a)Sigma_3/(4L^7),
+% a nonzero corner hop of size -6a^2 Sigma_3/L^4+O(a^3/L^5).
+% Every P[w], with any scalar site coefficients and either site or midpoint
+% placement, has zero block at this separation and is spin scalar. Therefore
+% no adjustment of its Q-only coefficient can close this radial commutator.
+% This is an exact counterexample for arbitrarily large L/a and every mass,
+% not a high-shape-frequency or nonspherical-smearing counterexample.
+%
+% An additional exact check shows that the effect is visible in the smooth
+% spinor sector. On a spinor constant on all corner neighbors of a plateau
+% site, summing the four signs of the spin remainder for each i<j gives
+% (S psi)_x=(4a^2/L^8)sum_{i<j}epsilon_ijk Sigma_k
+%                   x_i x_j(x_i^2-x_j^2) psi_x.
+% The a^4 terms cancel in that sign sum exactly. At x=(L,2L,0) this is
+% -24a^2 Sigma_3 psi_x/L^4. A smooth compact test packet can be constant on
+% that neighborhood; no zone-edge particle is needed to detect the spin
+% remainder. Normal ordering can add only the reference scalar central
+% term and cannot remove this noncentral matrix/link discrepancy.
+%
+% CONSEQUENCE. The continuum radial bracket is spin free, and the already
+% proved long-wave two-step dictionary remains valid with its remainder.
+% Exact native closure on only that current for arbitrary radial smearings
+% is false. This theorem requires neither a metric phase space nor a changed
+% geometric law, and it does not establish the other deformation brackets.
+% SOURCES: direct native two-path multiplication and radial divided-
+% difference determinant above; previous (1) is a consistency comparator.
+% No new other-lane radial source was read before this independent save.
+%
+% ACTUAL RADIAL SAME-PAIR COMPARISON. After both new independent saves,
+% the complete redteam_declared_ds_closure.tex and all SOURCES were read.
+% Its R1 uses the midpoint b=(x+y)/2, S=|b|^2+a^2/2,
+% h=a(b_i+b_j), d=a(b_i-b_j), and centered radial differences
+% Delta_t F=F(S+t)-F(S-t). Its exact determinant
+% Delta W=Delta_h G Delta_d F-Delta_h F Delta_d G is the same endpoint
+% formula above. For the polynomial pair it gives
+% Delta W=16a^4 b_i b_j(b_i^2-b_j^2)/L^8, reproducing every stated block.
+% Expanding those centered differences independently gives for C^5 F,G
+% Delta W=(8a^4/3)b_i b_j(b_i^2-b_j^2)(F'G'''-G'F''')+O(a^6),
+% uniformly on a fixed compact macroscopic region with bounded derivatives.
+% Thus the corner entry starts at
+% epsilon_ijk Sigma_k(a^2/6)b_i b_j(b_i^2-b_j^2)(F'G'''-G'F'''),
+% with O(a^4) remainder at fixed midpoint. This explains why the cubic
+% radial test succeeds and the quadratic one cancels. The difference between
+% this fixed-midpoint even expansion and the fixed-x O(a^3) displayed above
+% is simply b=x+a(e_i+e_j)/2; no order disagreement is present.
+%
+% The RED also gives an explicit admissible covariance test, checked here by
+% compression. For a unit Sigma_3 eigenvector u choose
+% psi=(|x,u>+|y,u>)/sqrt2 at either nonzero corner. Every P[w] has zero
+% expectation in this two-site state, while the commutator expectation is
+% its real nonzero corner coefficient. Given any common reference R, put
+% B=|psi><psi|, C_-=(I-B)R(I-B), C_+=C_-+B. Both are positive contractions;
+% their expectation difference is the stated nonzero witness and the
+% normal-ordering constants cancel. This is an operator-algebra witness,
+% separate from the smooth-plateau action or a solved object state.
+% These are agreeing original-pair path/determinant methods. The new
+% arbitrary-radial theorem remains [R], without claiming a new other-lane
+% comparison or changing the earlier exact-kernel [X] scope.

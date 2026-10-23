@@ -1,0 +1,77 @@
+{
+  "status": "finished",
+  "purpose": "owner66 L fixed three-slice second route",
+  "command": [
+    "timeout",
+    "-s",
+    "KILL",
+    "900s",
+    "nice",
+    "-n",
+    "10",
+    "taskset",
+    "-c",
+    "0,1,2,3",
+    "<internal>/python",
+    "<internal>/core_well_profiles_v1.py"
+  ],
+  "producer_sha256": "8a55cd10be12b2b0b4c36f8b364c31dd198ccc8bdf114ea4bb0c2d78ec86fd54",
+  "helper_sha256": "294ebd7e68dd8f260f4be2a70c8d250db0f00106679edbea8e2274d83c4f326b",
+  "wrapper_sha256": "7b39afaaf04bab47c7f1f2220997441769e46c54af4fec7fb24beec36a99af50",
+  "wrapper_pid": 2668893,
+  "started_unix": 1792336605.5990748,
+  "selected_cpus": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "resources": {
+    "cpu_threads": 4,
+    "wall_seconds": 900,
+    "cpu_seconds": 3600,
+    "internal_deadline_seconds": 880,
+    "address_space_bytes": 1610612736,
+    "nice": 10,
+    "cuda": "disabled"
+  },
+  "environment_settings": {
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4",
+    "NUMEXPR_NUM_THREADS": "4",
+    "VECLIB_MAXIMUM_THREADS": "4",
+    "BLIS_NUM_THREADS": "4",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "CUDA_VISIBLE_DEVICES": ""
+  },
+  "preflight": {
+    "mem_available_bytes": 576017571840,
+    "root_free_bytes": 134943002624,
+    "data_free_bytes": 1049438687232,
+    "load_average": [
+      18.18115234375,
+      18.86474609375,
+      20.93994140625
+    ]
+  },
+  "stdout_path": "<internal>/profiles.stdout.log",
+  "stderr_path": "<internal>/profiles.stderr.log",
+  "child_pid": 2668910,
+  "exit_code": 1,
+  "elapsed_seconds": 9.88800534978509,
+  "maximum_child_rss_kib": 871756,
+  "rss_scope": "fresh wrapper; maximum over this sole command and descendants",
+  "stdout_bytes": 0,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_tail": "",
+  "stderr_bytes": 0,
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_tail": "",
+  "result_identity": {
+    "path": "<internal>/core_well_profiles_v1.json",
+    "size": 32839,
+    "sha256": "96a9a3bfb67e4cc5759c8a50eb7cdf6bcf51e13c15ec10e5f6c3e42730a77aa8"
+  },
+  "producer_status": "incomplete"
+}

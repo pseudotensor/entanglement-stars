@@ -1,0 +1,82 @@
+{
+  "status": "finished",
+  "command": [
+    "timeout",
+    "--foreground",
+    "-s",
+    "KILL",
+    "3600s",
+    "taskset",
+    "-c",
+    "8,9,10,11",
+    "<internal>/python",
+    "<internal>/w7_certificate_v1.py"
+  ],
+  "source_sha256": {
+    "w7_certificate_v1.py": "352283f80ee653d98dabadd5975128202613857f7306c45ecc4f49f0f30714e3",
+    "w7_numeric_input_v1.py": "294ebd7e68dd8f260f4be2a70c8d250db0f00106679edbea8e2274d83c4f326b"
+  },
+  "wrapper_sha256": "8cc333250e4b44fdbd33b6cee015447e753930ff2360bccc8a91568aad5a2053",
+  "wrapper_pid": 3853567,
+  "nice": 10,
+  "environment_settings": {
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4",
+    "NUMEXPR_NUM_THREADS": "4",
+    "VECLIB_MAXIMUM_THREADS": "4",
+    "BLIS_NUM_THREADS": "4",
+    "CUDA_VISIBLE_DEVICES": "",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONPATH": "<internal>/W7_certificate_v1"
+  },
+  "resources": {
+    "wall_seconds": 3600,
+    "handled_wall_seconds": 3540,
+    "cpu_soft_seconds": 14160,
+    "cpu_hard_seconds": 14400,
+    "address_space_bytes": 4294967296,
+    "threads": 4
+  },
+  "child_pid": 3853638,
+  "exit_code": 1,
+  "elapsed_seconds": 17.66380438581109,
+  "maximum_child_rss_kib": 80064,
+  "outputs": {
+    "column_operands.json": {
+      "size": 147675,
+      "sha256": "72b523625edf70a6e49b842c3128251ea8add7a2635dcd435a891a882ed64341",
+      "unfinished_temporary": false
+    },
+    "inputs_early.npz": {
+      "size": 580284,
+      "sha256": "c46a7c6125dcf3d108f9139906a90287667c2aebf4fd45defefa3a0204b7ea1b",
+      "unfinished_temporary": false
+    },
+    "inputs_late.npz": {
+      "size": 1104572,
+      "sha256": "23db12fe3928ee4cc10b4823ccf87761a208f30ca83f791329aa82855d4f58f3",
+      "unfinished_temporary": false
+    },
+    "stderr.log": {
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unfinished_temporary": false
+    },
+    "stdout.log": {
+      "size": 409,
+      "sha256": "e43d067813c2c776e3f08d50579b010ca572ad620d170667ab1c46f26ef718a5",
+      "unfinished_temporary": false
+    },
+    "w7_certificate_result.json": {
+      "size": 219997,
+      "sha256": "3f2e6334e0959ec9cfaab3645896b9e67235b9d88aea16fcc9bfcc43efbe0a97",
+      "unfinished_temporary": false
+    },
+    "w7_progress.jsonl": {
+      "size": 2415,
+      "sha256": "1e34eb7575b08b5dd4df29d85fbc7eef26f368374bb4d5a255f5525d598e847f",
+      "unfinished_temporary": false
+    }
+  }
+}

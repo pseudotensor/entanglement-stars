@@ -1,0 +1,91 @@
+[
+  {
+    "name": "distinct ratio denominators",
+    "actual": {
+      "E_over_E0": 0.8333333333333334,
+      "R_t_over_rs": 0.375,
+      "R_t_over_2gE": 0.6,
+      "gate": 0.3333333333333333,
+      "R_c_over_rs": 0.25
+    },
+    "expected": {
+      "E_over_E0": 0.8333333333333334,
+      "R_t_over_rs": 0.375,
+      "R_t_over_2gE": 0.6,
+      "gate": 0.3333333333333333,
+      "R_c_over_rs": 0.25
+    },
+    "passed": true
+  },
+  {
+    "name": "episode closure and certified minimum",
+    "actual": [
+      {
+        "start": 1,
+        "last": 2,
+        "count": 2,
+        "source_indices": [
+          1,
+          2
+        ],
+        "first_R_t": 3,
+        "last_R_t": 4,
+        "minimum": {
+          "value": -2,
+          "T_over_rs": 2,
+          "source_index": 2,
+          "ties": [
+            2
+          ]
+        },
+        "certified_minimum": {
+          "value": -1,
+          "T_over_rs": 1,
+          "source_index": 1,
+          "ties": [
+            1
+          ]
+        },
+        "noncounting": 1,
+        "uncertified": 1,
+        "closes_at": 3,
+        "closing_source_index": 3
+      },
+      {
+        "start": 4,
+        "last": 5,
+        "count": 2,
+        "source_indices": [
+          4,
+          5
+        ],
+        "first_R_t": 5,
+        "last_R_t": 6,
+        "minimum": {
+          "value": -5,
+          "T_over_rs": 5,
+          "source_index": 5,
+          "ties": [
+            5
+          ]
+        },
+        "certified_minimum": null,
+        "noncounting": 0,
+        "uncertified": 2,
+        "closes_at": null,
+        "closing_source_index": null
+      }
+    ],
+    "passed": true
+  },
+  {
+    "name": "exact match and unavailable clock",
+    "passed": true
+  },
+  {
+    "name": "linear zero",
+    "actual": 0.5,
+    "expected": 0.5,
+    "passed": true
+  }
+]

@@ -1,0 +1,1319 @@
+{
+  "scope": "engineering-only N callback/error-latch regression; no model or physical result",
+  "specification": "solve/strand_N_callback_probe.tex",
+  "independent_specification_review": "solve/review_N_callback_probe_spec.tex",
+  "backend": "isolated python-flint0.9.0 directed Arb/Acb",
+  "admission": {
+    "assigned_gpu_uuid": "GPU-1c907351-ed3d-0d52-5072-e791dde9df56",
+    "cuda_allocation_bytes": 1048576,
+    "cuda_context_in_this_single_job_process": true,
+    "same_process_fresh_device_query_before_allocation": true,
+    "post_allocation_single_owned_compute_pid_verified": true,
+    "single_process_pid": 2786530,
+    "niceness": 10,
+    "threads_at_launch": 4,
+    "maximum_threads": 4
+  },
+  "precision_decimal_digits": 128,
+  "fixed_caps": {
+    "whole_probe_seconds_cooperative": 30,
+    "whole_probe_counted_work_checks": 4096,
+    "per_call_Acb_evaluation_limit": 512,
+    "host_limit_bytes_per_Work": 4294967296,
+    "own_threads_at_most": 4,
+    "arithmetic_workers": 1,
+    "one_rejecting_counted_increment_reserved_for_each_Work": true
+  },
+  "production_default_per_call_Acb_limit_unchanged": 1000000,
+  "production_checker_callback_backend_and_latch_monkeypatched": false,
+  "model_evaluation_attempted": false,
+  "model_evaluated": false,
+  "ground_artifact_read": false,
+  "model_constructor_invoked": false,
+  "ground_preparation_certified": false,
+  "COM_enclosure_certified": false,
+  "arithmetic_complete_for_N_model": false,
+  "enclosure_target_pass": false,
+  "COM_response_or_triplet_gap_certified": false,
+  "interacting_native_Ward_error_certified": false,
+  "differentiable_physical_window_certified": false,
+  "ramsey_certified": false,
+  "full_clock_certified": false,
+  "physical_clock_load_continuation_certified": false,
+  "full_fixed_charge_Fock_ground_certified": false,
+  "open_exterior_flow_certified": false,
+  "local_momentum_row_certified": false,
+  "trapping_radius_certified": false,
+  "temperature_certified": false,
+  "all_checks_pass": true,
+  "status": "engineering_callback_controls_pass",
+  "unresolved_reason": null,
+  "checks": [
+    {
+      "name": "ordinary polynomial",
+      "passed": true,
+      "initial_depth": 0,
+      "initial_latch_clear": true,
+      "work_identity": 139959995525184,
+      "integrals_identity": 139959995524800,
+      "budget_before": {
+        "checkpoint": "before polynomial/recovery: ordinary polynomial",
+        "independent_elapsed_seconds": 0.0010670647025108337,
+        "actual_work_counts": [
+          0
+        ],
+        "sum_actual_work_counts": 0,
+        "remaining_seconds": 29.99893293529749,
+        "remaining_counted_checks": 4096,
+        "independent_whole_probe_budgets_valid": true
+      },
+      "checks": {
+        "finite": true,
+        "contains_directed_exact_rational_target_ball": true,
+        "imaginary_part_contains_zero": true,
+        "actual_radius_upper_below_exact_threshold": true,
+        "initial_shared_depth_zero": true,
+        "initial_shared_latch_clear": true,
+        "final_shared_depth_zero": true,
+        "final_shared_latch_clear": true
+      },
+      "enclosure": {
+        "real": {
+          "lower_dyadic": {
+            "mantissa": "231055807843401238298201182011923641953036422947984714597539965051218442317135327487962984850048951589753842785174530251185018197",
+            "exponent2": -428
+          },
+          "upper_dyadic": {
+            "mantissa": "231055807843401238298201182011923641953036422947984714597539965051218442317135609685366082833974311426478025708392731720310674773",
+            "exponent2": -428
+          },
+          "display_ball": "[0.333333333333333333333333333333 +/- 3.34e-31]"
+        },
+        "imag": {
+          "lower_dyadic": {
+            "mantissa": "0",
+            "exponent2": 0
+          },
+          "upper_dyadic": {
+            "mantissa": "0",
+            "exponent2": 0
+          },
+          "display_ball": "0"
+        }
+      },
+      "target_enclosure": {
+        "real": {
+          "lower_dyadic": {
+            "mantissa": "231055807843401238298201182011923641953036422947984714597539965051218442317135468586664533842011631508115934246783630985747846485",
+            "exponent2": -428
+          },
+          "upper_dyadic": {
+            "mantissa": "462111615686802476596402364023847283906072845895969429195079930102436884634270937173329067684023263016231868493567261971495692971",
+            "exponent2": -429
+          },
+          "display_ball": "[0.333333333333333333333333333333 +/- 3.34e-31]"
+        },
+        "imag": {
+          "lower_dyadic": {
+            "mantissa": "0",
+            "exponent2": 0
+          },
+          "upper_dyadic": {
+            "mantissa": "0",
+            "exponent2": 0
+          },
+          "display_ball": "0"
+        }
+      },
+      "radius_upper": {
+        "lower_dyadic": {
+          "mantissa": "809866829",
+          "exponent2": -291
+        },
+        "upper_dyadic": {
+          "mantissa": "809866829",
+          "exponent2": -291
+        },
+        "display_ball": "[2.03556452249870916836596375884e-79 +/- 3.84e-109]"
+      },
+      "radius_threshold_exact": "1/1000000000000000000000000000000000000000000000000000000000000",
+      "final_depth": 0,
+      "final_latch_clear": true,
+      "requested_tolerance_goal_only": {
+        "lower_dyadic": {
+          "mantissa": "912488123524439043728234321140058264978645701449711986115838503579855033441735477301182562263474279955728461914718881462137740943",
+          "exponent2": -641
+        },
+        "upper_dyadic": {
+          "mantissa": "912488123524439043728234321140058264978645701449711986115838503579855033441735477301182562263474279955728461914718881462137740945",
+          "exponent2": -641
+        },
+        "display_ball": "[1.00000000000000000000000000000e-64 +/- 3e-98]"
+      },
+      "budget_after": {
+        "checkpoint": "after polynomial/recovery: ordinary polynomial",
+        "independent_elapsed_seconds": 0.003659456968307495,
+        "actual_work_counts": [
+          13
+        ],
+        "sum_actual_work_counts": 13,
+        "remaining_seconds": 29.996340543031693,
+        "remaining_counted_checks": 4083,
+        "independent_whole_probe_budgets_valid": true
+      },
+      "work_evaluations": 13,
+      "allocation": {
+        "assigned_seconds": 29.9998990111053,
+        "assigned_counted_check_limit": 4095,
+        "one_rejecting_increment_reserved": true,
+        "per_call_Acb_evaluation_limit": 512
+      }
+    },
+    {
+      "name": "ordinary_time_cap",
+      "passed": true,
+      "allocation": {
+        "assigned_seconds": 29.99630657956004,
+        "assigned_counted_check_limit": 4082,
+        "one_rejecting_increment_reserved": true,
+        "per_call_Acb_evaluation_limit": 512
+      },
+      "budget_before": {
+        "checkpoint": "before failure case: ordinary_time_cap",
+        "independent_elapsed_seconds": 0.0036884285509586334,
+        "actual_work_counts": [
+          13
+        ],
+        "sum_actual_work_counts": 13,
+        "remaining_seconds": 29.99631157144904,
+        "remaining_counted_checks": 4083,
+        "independent_whole_probe_budgets_valid": true
+      },
+      "initial_depth": 0,
+      "initial_latch_clear": true,
+      "failing_function_entries": 1,
+      "scientific_polynomial_body_entries": 0,
+      "failing_function_depths": [
+        1
+      ],
+      "outer_function_entries": 0,
+      "outer_function_depths": [],
+      "outer_integral_returned_any_result": false,
+      "outer_integral_returned_finite_result": false,
+      "outer_integral_returned_nonfinite_partial_result": false,
+      "inner_python_exceptions": [],
+      "observer_errors": [],
+      "post_inner_observations": [],
+      "post_inner_flags": {
+        "exactly_one_observation": true,
+        "inner_returned_invalid": true,
+        "depth_still_positive": true,
+        "depth_is_outer_callback_one": true,
+        "original_shared_latch_retained": true,
+        "no_inner_python_exception": true,
+        "observers_completed_without_error": true
+      },
+      "same_work_for_outer_and_child": true,
+      "different_actual_nested_Integrals_instances": true,
+      "work_identity": 139959995595616,
+      "outer_integrals_identity": 139959995595856,
+      "child_integrals_identity": null,
+      "actual_work_clock_expired_inside_failing_callback": true,
+      "actual_time_cap_type_at_throw": "EngineeringCap",
+      "actual_time_cap_message_at_throw": "The reviewed own-job/cumulative wall-time cap was reached",
+      "actual_time_cap_identity_at_throw": 139959977861072,
+      "original_exception_type": "EngineeringCap",
+      "original_exception_message": "The reviewed own-job/cumulative wall-time cap was reached",
+      "original_exception_identity": 139959977861072,
+      "caught_exception_type": "EngineeringCap",
+      "caught_exception_message": "The reviewed own-job/cumulative wall-time cap was reached",
+      "caught_exception_identity": 139959977861072,
+      "original_exception_identity_preserved": true,
+      "depth_after_outer_catch": 0,
+      "shared_latch_clear_after_outer_catch": true,
+      "work_evaluations_after_failure": 1,
+      "checks": {
+        "initial_shared_depth_zero": true,
+        "initial_shared_latch_clear": true,
+        "expected_exception_exact_type": true,
+        "original_exception_identity_preserved": true,
+        "failing_function_entered_exactly_once": true,
+        "failure_in_actual_required_C_depth": true,
+        "later_polynomial_body_unvisited": true,
+        "outer_never_returned_finite_or_partial_result": true,
+        "final_shared_depth_zero": true,
+        "final_shared_latch_clear": true,
+        "nested_outer_entered_once_at_C_depth_one": true,
+        "same_Work_two_Integrals_if_nested": true,
+        "actual_different_child_instance_if_nested": true
+      },
+      "budget_after_failure": {
+        "checkpoint": "after failure case: ordinary_time_cap",
+        "independent_elapsed_seconds": 0.005394849926233292,
+        "actual_work_counts": [
+          13,
+          1
+        ],
+        "sum_actual_work_counts": 14,
+        "remaining_seconds": 29.994605150073767,
+        "remaining_counted_checks": 4082,
+        "independent_whole_probe_budgets_valid": true
+      },
+      "expired_work_not_reset_or_used_for_recovery": true,
+      "work_evaluations_after_case_and_recovery": 1,
+      "budget_after_case_and_recovery": {
+        "checkpoint": "after complete case/recovery: ordinary_time_cap",
+        "independent_elapsed_seconds": 0.005408216267824173,
+        "actual_work_counts": [
+          13,
+          1
+        ],
+        "sum_actual_work_counts": 14,
+        "remaining_seconds": 29.994591783732176,
+        "remaining_counted_checks": 4082,
+        "independent_whole_probe_budgets_valid": true
+      }
+    },
+    {
+      "name": "nested_time_cap",
+      "passed": true,
+      "allocation": {
+        "assigned_seconds": 29.994576163589954,
+        "assigned_counted_check_limit": 4081,
+        "one_rejecting_increment_reserved": true,
+        "per_call_Acb_evaluation_limit": 512
+      },
+      "budget_before": {
+        "checkpoint": "before failure case: nested_time_cap",
+        "independent_elapsed_seconds": 0.005418453365564346,
+        "actual_work_counts": [
+          13,
+          1
+        ],
+        "sum_actual_work_counts": 14,
+        "remaining_seconds": 29.994581546634436,
+        "remaining_counted_checks": 4082,
+        "independent_whole_probe_budgets_valid": true
+      },
+      "initial_depth": 0,
+      "initial_latch_clear": true,
+      "failing_function_entries": 1,
+      "scientific_polynomial_body_entries": 0,
+      "failing_function_depths": [
+        2
+      ],
+      "outer_function_entries": 1,
+      "outer_function_depths": [
+        1
+      ],
+      "outer_integral_returned_any_result": false,
+      "outer_integral_returned_finite_result": false,
+      "outer_integral_returned_nonfinite_partial_result": false,
+      "inner_python_exceptions": [],
+      "observer_errors": [],
+      "post_inner_observations": [
+        {
+          "inner_returned_invalid": true,
+          "integration_depth_after_inner": 1,
+          "original_shared_exception_is_still_latched": true
+        }
+      ],
+      "post_inner_flags": {
+        "exactly_one_observation": true,
+        "inner_returned_invalid": true,
+        "depth_still_positive": true,
+        "depth_is_outer_callback_one": true,
+        "original_shared_latch_retained": true,
+        "no_inner_python_exception": true,
+        "observers_completed_without_error": true
+      },
+      "same_work_for_outer_and_child": true,
+      "different_actual_nested_Integrals_instances": true,
+      "work_identity": 139959995596576,
+      "outer_integrals_identity": 139959995596624,
+      "child_integrals_identity": 139959995596672,
+      "actual_work_clock_expired_inside_failing_callback": true,
+      "actual_time_cap_type_at_throw": "EngineeringCap",
+      "actual_time_cap_message_at_throw": "The reviewed own-job/cumulative wall-time cap was reached",
+      "actual_time_cap_identity_at_throw": 139959977861296,
+      "original_exception_type": "EngineeringCap",
+      "original_exception_message": "The reviewed own-job/cumulative wall-time cap was reached",
+      "original_exception_identity": 139959977861296,
+      "caught_exception_type": "EngineeringCap",
+      "caught_exception_message": "The reviewed own-job/cumulative wall-time cap was reached",
+      "caught_exception_identity": 139959977861296,
+      "original_exception_identity_preserved": true,
+      "depth_after_outer_catch": 0,
+      "shared_latch_clear_after_outer_catch": true,
+      "work_evaluations_after_failure": 2,
+      "checks": {
+        "initial_shared_depth_zero": true,
+        "initial_shared_latch_clear": true,
+        "expected_exception_exact_type": true,
+        "original_exception_identity_preserved": true,
+        "failing_function_entered_exactly_once": true,
+        "failure_in_actual_required_C_depth": true,
+        "later_polynomial_body_unvisited": true,
+        "outer_never_returned_finite_or_partial_result": true,
+        "final_shared_depth_zero": true,
+        "final_shared_latch_clear": true,
+        "nested_outer_entered_once_at_C_depth_one": true,
+        "same_Work_two_Integrals_if_nested": true,
+        "actual_different_child_instance_if_nested": true
+      },
+      "budget_after_failure": {
+        "checkpoint": "after failure case: nested_time_cap",
+        "independent_elapsed_seconds": 0.008245740085840225,
+        "actual_work_counts": [
+          13,
+          1,
+          2
+        ],
+        "sum_actual_work_counts": 16,
+        "remaining_seconds": 29.99175425991416,
+        "remaining_counted_checks": 4080,
+        "independent_whole_probe_budgets_valid": true
+      },
+      "expired_work_not_reset_or_used_for_recovery": true,
+      "work_evaluations_after_case_and_recovery": 2,
+      "budget_after_case_and_recovery": {
+        "checkpoint": "after complete case/recovery: nested_time_cap",
+        "independent_elapsed_seconds": 0.008259523659944534,
+        "actual_work_counts": [
+          13,
+          1,
+          2
+        ],
+        "sum_actual_work_counts": 16,
+        "remaining_seconds": 29.991740476340055,
+        "remaining_counted_checks": 4080,
+        "independent_whole_probe_budgets_valid": true
+      }
+    },
+    {
+      "name": "ordinary_recoverable",
+      "passed": true,
+      "allocation": {
+        "assigned_seconds": 29.991727970540524,
+        "assigned_counted_check_limit": 4079,
+        "one_rejecting_increment_reserved": true,
+        "per_call_Acb_evaluation_limit": 512
+      },
+      "budget_before": {
+        "checkpoint": "before failure case: ordinary_recoverable",
+        "independent_elapsed_seconds": 0.008267804980278015,
+        "actual_work_counts": [
+          13,
+          1,
+          2
+        ],
+        "sum_actual_work_counts": 16,
+        "remaining_seconds": 29.991732195019722,
+        "remaining_counted_checks": 4080,
+        "independent_whole_probe_budgets_valid": true
+      },
+      "initial_depth": 0,
+      "initial_latch_clear": true,
+      "failing_function_entries": 1,
+      "scientific_polynomial_body_entries": 0,
+      "failing_function_depths": [
+        1
+      ],
+      "outer_function_entries": 0,
+      "outer_function_depths": [],
+      "outer_integral_returned_any_result": false,
+      "outer_integral_returned_finite_result": false,
+      "outer_integral_returned_nonfinite_partial_result": false,
+      "inner_python_exceptions": [],
+      "observer_errors": [],
+      "post_inner_observations": [],
+      "post_inner_flags": {
+        "exactly_one_observation": true,
+        "inner_returned_invalid": true,
+        "depth_still_positive": true,
+        "depth_is_outer_callback_one": true,
+        "original_shared_latch_retained": true,
+        "no_inner_python_exception": true,
+        "observers_completed_without_error": true
+      },
+      "same_work_for_outer_and_child": true,
+      "different_actual_nested_Integrals_instances": true,
+      "work_identity": 139959995613792,
+      "outer_integrals_identity": 139959995613840,
+      "child_integrals_identity": null,
+      "original_exception_type": "Unresolved",
+      "original_exception_message": "N callback probe precreated recoverable sentinel: ordinary_recoverable",
+      "original_exception_identity": 139959977860960,
+      "caught_exception_type": "Unresolved",
+      "caught_exception_message": "N callback probe precreated recoverable sentinel: ordinary_recoverable",
+      "caught_exception_identity": 139959977860960,
+      "original_exception_identity_preserved": true,
+      "depth_after_outer_catch": 0,
+      "shared_latch_clear_after_outer_catch": true,
+      "work_evaluations_after_failure": 1,
+      "checks": {
+        "initial_shared_depth_zero": true,
+        "initial_shared_latch_clear": true,
+        "expected_exception_exact_type": true,
+        "original_exception_identity_preserved": true,
+        "failing_function_entered_exactly_once": true,
+        "failure_in_actual_required_C_depth": true,
+        "later_polynomial_body_unvisited": true,
+        "outer_never_returned_finite_or_partial_result": true,
+        "final_shared_depth_zero": true,
+        "final_shared_latch_clear": true,
+        "nested_outer_entered_once_at_C_depth_one": true,
+        "same_Work_two_Integrals_if_nested": true,
+        "actual_different_child_instance_if_nested": true
+      },
+      "budget_after_failure": {
+        "checkpoint": "after failure case: ordinary_recoverable",
+        "independent_elapsed_seconds": 0.00963495671749115,
+        "actual_work_counts": [
+          13,
+          1,
+          2,
+          1
+        ],
+        "sum_actual_work_counts": 17,
+        "remaining_seconds": 29.99036504328251,
+        "remaining_counted_checks": 4079,
+        "independent_whole_probe_budgets_valid": true
+      },
+      "recovery": {
+        "name": "ordinary_recoverable same-object recovery",
+        "passed": true,
+        "initial_depth": 0,
+        "initial_latch_clear": true,
+        "work_identity": 139959995613792,
+        "integrals_identity": 139959995613840,
+        "budget_before": {
+          "checkpoint": "before polynomial/recovery: ordinary_recoverable same-object recovery",
+          "independent_elapsed_seconds": 0.009652901440858841,
+          "actual_work_counts": [
+            13,
+            1,
+            2,
+            1
+          ],
+          "sum_actual_work_counts": 17,
+          "remaining_seconds": 29.99034709855914,
+          "remaining_counted_checks": 4079,
+          "independent_whole_probe_budgets_valid": true
+        },
+        "checks": {
+          "finite": true,
+          "contains_directed_exact_rational_target_ball": true,
+          "imaginary_part_contains_zero": true,
+          "actual_radius_upper_below_exact_threshold": true,
+          "initial_shared_depth_zero": true,
+          "initial_shared_latch_clear": true,
+          "final_shared_depth_zero": true,
+          "final_shared_latch_clear": true
+        },
+        "enclosure": {
+          "real": {
+            "lower_dyadic": {
+              "mantissa": "231055807843401238298201182011923641953036422947984714597539965051218442317135327487962984850048951589753842785174530251185018197",
+              "exponent2": -428
+            },
+            "upper_dyadic": {
+              "mantissa": "231055807843401238298201182011923641953036422947984714597539965051218442317135609685366082833974311426478025708392731720310674773",
+              "exponent2": -428
+            },
+            "display_ball": "[0.333333333333333333333333333333 +/- 3.34e-31]"
+          },
+          "imag": {
+            "lower_dyadic": {
+              "mantissa": "0",
+              "exponent2": 0
+            },
+            "upper_dyadic": {
+              "mantissa": "0",
+              "exponent2": 0
+            },
+            "display_ball": "0"
+          }
+        },
+        "target_enclosure": {
+          "real": {
+            "lower_dyadic": {
+              "mantissa": "231055807843401238298201182011923641953036422947984714597539965051218442317135468586664533842011631508115934246783630985747846485",
+              "exponent2": -428
+            },
+            "upper_dyadic": {
+              "mantissa": "462111615686802476596402364023847283906072845895969429195079930102436884634270937173329067684023263016231868493567261971495692971",
+              "exponent2": -429
+            },
+            "display_ball": "[0.333333333333333333333333333333 +/- 3.34e-31]"
+          },
+          "imag": {
+            "lower_dyadic": {
+              "mantissa": "0",
+              "exponent2": 0
+            },
+            "upper_dyadic": {
+              "mantissa": "0",
+              "exponent2": 0
+            },
+            "display_ball": "0"
+          }
+        },
+        "radius_upper": {
+          "lower_dyadic": {
+            "mantissa": "809866829",
+            "exponent2": -291
+          },
+          "upper_dyadic": {
+            "mantissa": "809866829",
+            "exponent2": -291
+          },
+          "display_ball": "[2.03556452249870916836596375884e-79 +/- 3.84e-109]"
+        },
+        "radius_threshold_exact": "1/1000000000000000000000000000000000000000000000000000000000000",
+        "final_depth": 0,
+        "final_latch_clear": true,
+        "requested_tolerance_goal_only": {
+          "lower_dyadic": {
+            "mantissa": "912488123524439043728234321140058264978645701449711986115838503579855033441735477301182562263474279955728461914718881462137740943",
+            "exponent2": -641
+          },
+          "upper_dyadic": {
+            "mantissa": "912488123524439043728234321140058264978645701449711986115838503579855033441735477301182562263474279955728461914718881462137740945",
+            "exponent2": -641
+          },
+          "display_ball": "[1.00000000000000000000000000000e-64 +/- 3e-98]"
+        },
+        "budget_after": {
+          "checkpoint": "after polynomial/recovery: ordinary_recoverable same-object recovery",
+          "independent_elapsed_seconds": 0.011176485568284988,
+          "actual_work_counts": [
+            13,
+            1,
+            2,
+            14
+          ],
+          "sum_actual_work_counts": 30,
+          "remaining_seconds": 29.988823514431715,
+          "remaining_counted_checks": 4066,
+          "independent_whole_probe_budgets_valid": true
+        },
+        "work_evaluations": 14
+      },
+      "same_actual_Work_and_outer_Integrals_reused_for_recovery": true,
+      "work_evaluations_after_case_and_recovery": 14,
+      "budget_after_case_and_recovery": {
+        "checkpoint": "after complete case/recovery: ordinary_recoverable",
+        "independent_elapsed_seconds": 0.011192921549081802,
+        "actual_work_counts": [
+          13,
+          1,
+          2,
+          14
+        ],
+        "sum_actual_work_counts": 30,
+        "remaining_seconds": 29.988807078450918,
+        "remaining_counted_checks": 4066,
+        "independent_whole_probe_budgets_valid": true
+      }
+    },
+    {
+      "name": "nested_recoverable",
+      "passed": true,
+      "allocation": {
+        "assigned_seconds": 29.9887964874506,
+        "assigned_counted_check_limit": 4065,
+        "one_rejecting_increment_reserved": true,
+        "per_call_Acb_evaluation_limit": 512
+      },
+      "budget_before": {
+        "checkpoint": "before failure case: nested_recoverable",
+        "independent_elapsed_seconds": 0.011199962347745895,
+        "actual_work_counts": [
+          13,
+          1,
+          2,
+          14
+        ],
+        "sum_actual_work_counts": 30,
+        "remaining_seconds": 29.988800037652254,
+        "remaining_counted_checks": 4066,
+        "independent_whole_probe_budgets_valid": true
+      },
+      "initial_depth": 0,
+      "initial_latch_clear": true,
+      "failing_function_entries": 1,
+      "scientific_polynomial_body_entries": 0,
+      "failing_function_depths": [
+        2
+      ],
+      "outer_function_entries": 1,
+      "outer_function_depths": [
+        1
+      ],
+      "outer_integral_returned_any_result": false,
+      "outer_integral_returned_finite_result": false,
+      "outer_integral_returned_nonfinite_partial_result": false,
+      "inner_python_exceptions": [],
+      "observer_errors": [],
+      "post_inner_observations": [
+        {
+          "inner_returned_invalid": true,
+          "integration_depth_after_inner": 1,
+          "original_shared_exception_is_still_latched": true
+        }
+      ],
+      "post_inner_flags": {
+        "exactly_one_observation": true,
+        "inner_returned_invalid": true,
+        "depth_still_positive": true,
+        "depth_is_outer_callback_one": true,
+        "original_shared_latch_retained": true,
+        "no_inner_python_exception": true,
+        "observers_completed_without_error": true
+      },
+      "same_work_for_outer_and_child": true,
+      "different_actual_nested_Integrals_instances": true,
+      "work_identity": 139959995613984,
+      "outer_integrals_identity": 139959995614320,
+      "child_integrals_identity": 139959995614368,
+      "original_exception_type": "Unresolved",
+      "original_exception_message": "N callback probe precreated recoverable sentinel: nested_recoverable",
+      "original_exception_identity": 139959977861968,
+      "caught_exception_type": "Unresolved",
+      "caught_exception_message": "N callback probe precreated recoverable sentinel: nested_recoverable",
+      "caught_exception_identity": 139959977861968,
+      "original_exception_identity_preserved": true,
+      "depth_after_outer_catch": 0,
+      "shared_latch_clear_after_outer_catch": true,
+      "work_evaluations_after_failure": 2,
+      "checks": {
+        "initial_shared_depth_zero": true,
+        "initial_shared_latch_clear": true,
+        "expected_exception_exact_type": true,
+        "original_exception_identity_preserved": true,
+        "failing_function_entered_exactly_once": true,
+        "failure_in_actual_required_C_depth": true,
+        "later_polynomial_body_unvisited": true,
+        "outer_never_returned_finite_or_partial_result": true,
+        "final_shared_depth_zero": true,
+        "final_shared_latch_clear": true,
+        "nested_outer_entered_once_at_C_depth_one": true,
+        "same_Work_two_Integrals_if_nested": true,
+        "actual_different_child_instance_if_nested": true
+      },
+      "budget_after_failure": {
+        "checkpoint": "after failure case: nested_recoverable",
+        "independent_elapsed_seconds": 0.013341221958398819,
+        "actual_work_counts": [
+          13,
+          1,
+          2,
+          14,
+          2
+        ],
+        "sum_actual_work_counts": 32,
+        "remaining_seconds": 29.9866587780416,
+        "remaining_counted_checks": 4064,
+        "independent_whole_probe_budgets_valid": true
+      },
+      "recovery": {
+        "name": "nested_recoverable same-object recovery",
+        "passed": true,
+        "initial_depth": 0,
+        "initial_latch_clear": true,
+        "work_identity": 139959995613984,
+        "integrals_identity": 139959995614320,
+        "budget_before": {
+          "checkpoint": "before polynomial/recovery: nested_recoverable same-object recovery",
+          "independent_elapsed_seconds": 0.01335383951663971,
+          "actual_work_counts": [
+            13,
+            1,
+            2,
+            14,
+            2
+          ],
+          "sum_actual_work_counts": 32,
+          "remaining_seconds": 29.98664616048336,
+          "remaining_counted_checks": 4064,
+          "independent_whole_probe_budgets_valid": true
+        },
+        "checks": {
+          "finite": true,
+          "contains_directed_exact_rational_target_ball": true,
+          "imaginary_part_contains_zero": true,
+          "actual_radius_upper_below_exact_threshold": true,
+          "initial_shared_depth_zero": true,
+          "initial_shared_latch_clear": true,
+          "final_shared_depth_zero": true,
+          "final_shared_latch_clear": true
+        },
+        "enclosure": {
+          "real": {
+            "lower_dyadic": {
+              "mantissa": "231055807843401238298201182011923641953036422947984714597539965051218442317135327487962984850048951589753842785174530251185018197",
+              "exponent2": -428
+            },
+            "upper_dyadic": {
+              "mantissa": "231055807843401238298201182011923641953036422947984714597539965051218442317135609685366082833974311426478025708392731720310674773",
+              "exponent2": -428
+            },
+            "display_ball": "[0.333333333333333333333333333333 +/- 3.34e-31]"
+          },
+          "imag": {
+            "lower_dyadic": {
+              "mantissa": "0",
+              "exponent2": 0
+            },
+            "upper_dyadic": {
+              "mantissa": "0",
+              "exponent2": 0
+            },
+            "display_ball": "0"
+          }
+        },
+        "target_enclosure": {
+          "real": {
+            "lower_dyadic": {
+              "mantissa": "231055807843401238298201182011923641953036422947984714597539965051218442317135468586664533842011631508115934246783630985747846485",
+              "exponent2": -428
+            },
+            "upper_dyadic": {
+              "mantissa": "462111615686802476596402364023847283906072845895969429195079930102436884634270937173329067684023263016231868493567261971495692971",
+              "exponent2": -429
+            },
+            "display_ball": "[0.333333333333333333333333333333 +/- 3.34e-31]"
+          },
+          "imag": {
+            "lower_dyadic": {
+              "mantissa": "0",
+              "exponent2": 0
+            },
+            "upper_dyadic": {
+              "mantissa": "0",
+              "exponent2": 0
+            },
+            "display_ball": "0"
+          }
+        },
+        "radius_upper": {
+          "lower_dyadic": {
+            "mantissa": "809866829",
+            "exponent2": -291
+          },
+          "upper_dyadic": {
+            "mantissa": "809866829",
+            "exponent2": -291
+          },
+          "display_ball": "[2.03556452249870916836596375884e-79 +/- 3.84e-109]"
+        },
+        "radius_threshold_exact": "1/1000000000000000000000000000000000000000000000000000000000000",
+        "final_depth": 0,
+        "final_latch_clear": true,
+        "requested_tolerance_goal_only": {
+          "lower_dyadic": {
+            "mantissa": "912488123524439043728234321140058264978645701449711986115838503579855033441735477301182562263474279955728461914718881462137740943",
+            "exponent2": -641
+          },
+          "upper_dyadic": {
+            "mantissa": "912488123524439043728234321140058264978645701449711986115838503579855033441735477301182562263474279955728461914718881462137740945",
+            "exponent2": -641
+          },
+          "display_ball": "[1.00000000000000000000000000000e-64 +/- 3e-98]"
+        },
+        "budget_after": {
+          "checkpoint": "after polynomial/recovery: nested_recoverable same-object recovery",
+          "independent_elapsed_seconds": 0.014762401580810547,
+          "actual_work_counts": [
+            13,
+            1,
+            2,
+            14,
+            15
+          ],
+          "sum_actual_work_counts": 45,
+          "remaining_seconds": 29.98523759841919,
+          "remaining_counted_checks": 4051,
+          "independent_whole_probe_budgets_valid": true
+        },
+        "work_evaluations": 15
+      },
+      "same_actual_Work_and_outer_Integrals_reused_for_recovery": true,
+      "work_evaluations_after_case_and_recovery": 15,
+      "budget_after_case_and_recovery": {
+        "checkpoint": "after complete case/recovery: nested_recoverable",
+        "independent_elapsed_seconds": 0.014777205884456635,
+        "actual_work_counts": [
+          13,
+          1,
+          2,
+          14,
+          15
+        ],
+        "sum_actual_work_counts": 45,
+        "remaining_seconds": 29.985222794115543,
+        "remaining_counted_checks": 4051,
+        "independent_whole_probe_budgets_valid": true
+      }
+    }
+  ],
+  "final_budget": {
+    "checkpoint": "before final acceptance",
+    "independent_elapsed_seconds": 0.014782700687646866,
+    "actual_work_counts": [
+      13,
+      1,
+      2,
+      14,
+      15
+    ],
+    "sum_actual_work_counts": 45,
+    "remaining_seconds": 29.985217299312353,
+    "remaining_counted_checks": 4051,
+    "independent_whole_probe_budgets_valid": true
+  },
+  "final_acceptance_checks": {
+    "ordinary_and_all_four_failure_cases_pass": true,
+    "all_independent_budget_observers_pass": true,
+    "all_Work_latches_depths_clean": true
+  },
+  "budget_after_all_cases_and_final_acceptance": {
+    "checkpoint": "after all cases/recoveries/final acceptance",
+    "independent_elapsed_seconds": 0.01481199637055397,
+    "actual_work_counts": [
+      13,
+      1,
+      2,
+      14,
+      15
+    ],
+    "sum_actual_work_counts": 45,
+    "remaining_seconds": 29.985188003629446,
+    "remaining_counted_checks": 4051,
+    "independent_whole_probe_budgets_valid": true
+  },
+  "independent_budget_observations": [
+    {
+      "checkpoint": "before ordinary polynomial case",
+      "independent_elapsed_seconds": 8.672475814819336e-05,
+      "actual_work_counts": [],
+      "sum_actual_work_counts": 0,
+      "remaining_seconds": 29.999913275241852,
+      "remaining_counted_checks": 4096,
+      "independent_whole_probe_budgets_valid": true
+    },
+    {
+      "checkpoint": "before constructing work: ordinary polynomial",
+      "independent_elapsed_seconds": 0.00010098889470100403,
+      "actual_work_counts": [],
+      "sum_actual_work_counts": 0,
+      "remaining_seconds": 29.9998990111053,
+      "remaining_counted_checks": 4096,
+      "independent_whole_probe_budgets_valid": true
+    },
+    {
+      "checkpoint": "after constructing work: ordinary polynomial",
+      "independent_elapsed_seconds": 0.0010515078902244568,
+      "actual_work_counts": [
+        0
+      ],
+      "sum_actual_work_counts": 0,
+      "remaining_seconds": 29.998948492109776,
+      "remaining_counted_checks": 4096,
+      "independent_whole_probe_budgets_valid": true
+    },
+    {
+      "checkpoint": "before polynomial/recovery: ordinary polynomial",
+      "independent_elapsed_seconds": 0.0010670647025108337,
+      "actual_work_counts": [
+        0
+      ],
+      "sum_actual_work_counts": 0,
+      "remaining_seconds": 29.99893293529749,
+      "remaining_counted_checks": 4096,
+      "independent_whole_probe_budgets_valid": true
+    },
+    {
+      "checkpoint": "after polynomial/recovery: ordinary polynomial",
+      "independent_elapsed_seconds": 0.003659456968307495,
+      "actual_work_counts": [
+        13
+      ],
+      "sum_actual_work_counts": 13,
+      "remaining_seconds": 29.996340543031693,
+      "remaining_counted_checks": 4083,
+      "independent_whole_probe_budgets_valid": true
+    },
+    {
+      "checkpoint": "after ordinary polynomial case",
+      "independent_elapsed_seconds": 0.0036797262728214264,
+      "actual_work_counts": [
+        13
+      ],
+      "sum_actual_work_counts": 13,
+      "remaining_seconds": 29.99632027372718,
+      "remaining_counted_checks": 4083,
+      "independent_whole_probe_budgets_valid": true
+    },
+    {
+      "checkpoint": "before failure case: ordinary_time_cap",
+      "independent_elapsed_seconds": 0.0036884285509586334,
+      "actual_work_counts": [
+        13
+      ],
+      "sum_actual_work_counts": 13,
+      "remaining_seconds": 29.99631157144904,
+      "remaining_counted_checks": 4083,
+      "independent_whole_probe_budgets_valid": true
+    },
+    {
+      "checkpoint": "before constructing work: ordinary_time_cap",
+      "independent_elapsed_seconds": 0.0036934204399585724,
+      "actual_work_counts": [
+        13
+      ],
+      "sum_actual_work_counts": 13,
+      "remaining_seconds": 29.99630657956004,
+      "remaining_counted_checks": 4083,
+      "independent_whole_probe_budgets_valid": true
+    },
+    {
+      "checkpoint": "after constructing work: ordinary_time_cap",
+      "independent_elapsed_seconds": 0.0037664510309696198,
+      "actual_work_counts": [
+        13,
+        0
+      ],
+      "sum_actual_work_counts": 13,
+      "remaining_seconds": 29.99623354896903,
+      "remaining_counted_checks": 4083,
+      "independent_whole_probe_budgets_valid": true
+    },
+    {
+      "checkpoint": "after failure case: ordinary_time_cap",
+      "independent_elapsed_seconds": 0.005394849926233292,
+      "actual_work_counts": [
+        13,
+        1
+      ],
+      "sum_actual_work_counts": 14,
+      "remaining_seconds": 29.994605150073767,
+      "remaining_counted_checks": 4082,
+      "independent_whole_probe_budgets_valid": true
+    },
+    {
+      "checkpoint": "after complete case/recovery: ordinary_time_cap",
+      "independent_elapsed_seconds": 0.005408216267824173,
+      "actual_work_counts": [
+        13,
+        1
+      ],
+      "sum_actual_work_counts": 14,
+      "remaining_seconds": 29.994591783732176,
+      "remaining_counted_checks": 4082,
+      "independent_whole_probe_budgets_valid": true
+    },
+    {
+      "checkpoint": "before failure case: nested_time_cap",
+      "independent_elapsed_seconds": 0.005418453365564346,
+      "actual_work_counts": [
+        13,
+        1
+      ],
+      "sum_actual_work_counts": 14,
+      "remaining_seconds": 29.994581546634436,
+      "remaining_counted_checks": 4082,
+      "independent_whole_probe_budgets_valid": true
+    },
+    {
+      "checkpoint": "before constructing work: nested_time_cap",
+      "independent_elapsed_seconds": 0.005423836410045624,
+      "actual_work_counts": [
+        13,
+        1
+      ],
+      "sum_actual_work_counts": 14,
+      "remaining_seconds": 29.994576163589954,
+      "remaining_counted_checks": 4082,
+      "independent_whole_probe_budgets_valid": true
+    },
+    {
+      "checkpoint": "after constructing work: nested_time_cap",
+      "independent_elapsed_seconds": 0.005489997565746307,
+      "actual_work_counts": [
+        13,
+        1,
+        0
+      ],
+      "sum_actual_work_counts": 14,
+      "remaining_seconds": 29.994510002434254,
+      "remaining_counted_checks": 4082,
+      "independent_whole_probe_budgets_valid": true
+    },
+    {
+      "checkpoint": "after failure case: nested_time_cap",
+      "independent_elapsed_seconds": 0.008245740085840225,
+      "actual_work_counts": [
+        13,
+        1,
+        2
+      ],
+      "sum_actual_work_counts": 16,
+      "remaining_seconds": 29.99175425991416,
+      "remaining_counted_checks": 4080,
+      "independent_whole_probe_budgets_valid": true
+    },
+    {
+      "checkpoint": "after complete case/recovery: nested_time_cap",
+      "independent_elapsed_seconds": 0.008259523659944534,
+      "actual_work_counts": [
+        13,
+        1,
+        2
+      ],
+      "sum_actual_work_counts": 16,
+      "remaining_seconds": 29.991740476340055,
+      "remaining_counted_checks": 4080,
+      "independent_whole_probe_budgets_valid": true
+    },
+    {
+      "checkpoint": "before failure case: ordinary_recoverable",
+      "independent_elapsed_seconds": 0.008267804980278015,
+      "actual_work_counts": [
+        13,
+        1,
+        2
+      ],
+      "sum_actual_work_counts": 16,
+      "remaining_seconds": 29.991732195019722,
+      "remaining_counted_checks": 4080,
+      "independent_whole_probe_budgets_valid": true
+    },
+    {
+      "checkpoint": "before constructing work: ordinary_recoverable",
+      "independent_elapsed_seconds": 0.008272029459476471,
+      "actual_work_counts": [
+        13,
+        1,
+        2
+      ],
+      "sum_actual_work_counts": 16,
+      "remaining_seconds": 29.991727970540524,
+      "remaining_counted_checks": 4080,
+      "independent_whole_probe_budgets_valid": true
+    },
+    {
+      "checkpoint": "after constructing work: ordinary_recoverable",
+      "independent_elapsed_seconds": 0.008331984281539917,
+      "actual_work_counts": [
+        13,
+        1,
+        2,
+        0
+      ],
+      "sum_actual_work_counts": 16,
+      "remaining_seconds": 29.99166801571846,
+      "remaining_counted_checks": 4080,
+      "independent_whole_probe_budgets_valid": true
+    },
+    {
+      "checkpoint": "after failure case: ordinary_recoverable",
+      "independent_elapsed_seconds": 0.00963495671749115,
+      "actual_work_counts": [
+        13,
+        1,
+        2,
+        1
+      ],
+      "sum_actual_work_counts": 17,
+      "remaining_seconds": 29.99036504328251,
+      "remaining_counted_checks": 4079,
+      "independent_whole_probe_budgets_valid": true
+    },
+    {
+      "checkpoint": "before polynomial/recovery: ordinary_recoverable same-object recovery",
+      "independent_elapsed_seconds": 0.009652901440858841,
+      "actual_work_counts": [
+        13,
+        1,
+        2,
+        1
+      ],
+      "sum_actual_work_counts": 17,
+      "remaining_seconds": 29.99034709855914,
+      "remaining_counted_checks": 4079,
+      "independent_whole_probe_budgets_valid": true
+    },
+    {
+      "checkpoint": "after polynomial/recovery: ordinary_recoverable same-object recovery",
+      "independent_elapsed_seconds": 0.011176485568284988,
+      "actual_work_counts": [
+        13,
+        1,
+        2,
+        14
+      ],
+      "sum_actual_work_counts": 30,
+      "remaining_seconds": 29.988823514431715,
+      "remaining_counted_checks": 4066,
+      "independent_whole_probe_budgets_valid": true
+    },
+    {
+      "checkpoint": "after complete case/recovery: ordinary_recoverable",
+      "independent_elapsed_seconds": 0.011192921549081802,
+      "actual_work_counts": [
+        13,
+        1,
+        2,
+        14
+      ],
+      "sum_actual_work_counts": 30,
+      "remaining_seconds": 29.988807078450918,
+      "remaining_counted_checks": 4066,
+      "independent_whole_probe_budgets_valid": true
+    },
+    {
+      "checkpoint": "before failure case: nested_recoverable",
+      "independent_elapsed_seconds": 0.011199962347745895,
+      "actual_work_counts": [
+        13,
+        1,
+        2,
+        14
+      ],
+      "sum_actual_work_counts": 30,
+      "remaining_seconds": 29.988800037652254,
+      "remaining_counted_checks": 4066,
+      "independent_whole_probe_budgets_valid": true
+    },
+    {
+      "checkpoint": "before constructing work: nested_recoverable",
+      "independent_elapsed_seconds": 0.01120351254940033,
+      "actual_work_counts": [
+        13,
+        1,
+        2,
+        14
+      ],
+      "sum_actual_work_counts": 30,
+      "remaining_seconds": 29.9887964874506,
+      "remaining_counted_checks": 4066,
+      "independent_whole_probe_budgets_valid": true
+    },
+    {
+      "checkpoint": "after constructing work: nested_recoverable",
+      "independent_elapsed_seconds": 0.01124688982963562,
+      "actual_work_counts": [
+        13,
+        1,
+        2,
+        14,
+        0
+      ],
+      "sum_actual_work_counts": 30,
+      "remaining_seconds": 29.988753110170364,
+      "remaining_counted_checks": 4066,
+      "independent_whole_probe_budgets_valid": true
+    },
+    {
+      "checkpoint": "after failure case: nested_recoverable",
+      "independent_elapsed_seconds": 0.013341221958398819,
+      "actual_work_counts": [
+        13,
+        1,
+        2,
+        14,
+        2
+      ],
+      "sum_actual_work_counts": 32,
+      "remaining_seconds": 29.9866587780416,
+      "remaining_counted_checks": 4064,
+      "independent_whole_probe_budgets_valid": true
+    },
+    {
+      "checkpoint": "before polynomial/recovery: nested_recoverable same-object recovery",
+      "independent_elapsed_seconds": 0.01335383951663971,
+      "actual_work_counts": [
+        13,
+        1,
+        2,
+        14,
+        2
+      ],
+      "sum_actual_work_counts": 32,
+      "remaining_seconds": 29.98664616048336,
+      "remaining_counted_checks": 4064,
+      "independent_whole_probe_budgets_valid": true
+    },
+    {
+      "checkpoint": "after polynomial/recovery: nested_recoverable same-object recovery",
+      "independent_elapsed_seconds": 0.014762401580810547,
+      "actual_work_counts": [
+        13,
+        1,
+        2,
+        14,
+        15
+      ],
+      "sum_actual_work_counts": 45,
+      "remaining_seconds": 29.98523759841919,
+      "remaining_counted_checks": 4051,
+      "independent_whole_probe_budgets_valid": true
+    },
+    {
+      "checkpoint": "after complete case/recovery: nested_recoverable",
+      "independent_elapsed_seconds": 0.014777205884456635,
+      "actual_work_counts": [
+        13,
+        1,
+        2,
+        14,
+        15
+      ],
+      "sum_actual_work_counts": 45,
+      "remaining_seconds": 29.985222794115543,
+      "remaining_counted_checks": 4051,
+      "independent_whole_probe_budgets_valid": true
+    },
+    {
+      "checkpoint": "before final acceptance",
+      "independent_elapsed_seconds": 0.014782700687646866,
+      "actual_work_counts": [
+        13,
+        1,
+        2,
+        14,
+        15
+      ],
+      "sum_actual_work_counts": 45,
+      "remaining_seconds": 29.985217299312353,
+      "remaining_counted_checks": 4051,
+      "independent_whole_probe_budgets_valid": true
+    },
+    {
+      "checkpoint": "after all cases/recoveries/final acceptance",
+      "independent_elapsed_seconds": 0.01481199637055397,
+      "actual_work_counts": [
+        13,
+        1,
+        2,
+        14,
+        15
+      ],
+      "sum_actual_work_counts": 45,
+      "remaining_seconds": 29.985188003629446,
+      "remaining_counted_checks": 4051,
+      "independent_whole_probe_budgets_valid": true
+    }
+  ],
+  "actual_work_evaluation_counts": [
+    13,
+    1,
+    2,
+    14,
+    15
+  ],
+  "whole_probe_counted_work_checks": 45,
+  "elapsed_engineering_seconds": 0.01481199637055397
+}

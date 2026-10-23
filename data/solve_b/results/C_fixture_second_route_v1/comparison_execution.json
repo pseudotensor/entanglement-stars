@@ -1,0 +1,21 @@
+{
+  "status": "terminal",
+  "purpose": "Saved-data-only C fixture comparison; scientific attempt not rerun",
+  "started_utc": "2026-10-19T02:06:26.710518+00:00",
+  "command": [
+    "ssh",
+    "-o",
+    "BatchMode=yes",
+    "-o",
+    "ConnectTimeout=10",
+    "compute-host",
+    "env PYTHONDONTWRITEBYTECODE=1 CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 timeout --signal=KILL 90s nice -n 10 <internal>/python <internal>/compare_C_fixture_second_route_v1.py --run <internal>/run --output-dir <internal>/comparison"
+  ],
+  "returncode": 0,
+  "wall_seconds": 7.307518790010363,
+  "code_sha256": "7e1baef1ba87bde61bcfe367c4f3cab127e7ca8a2ab3e515c4655a41156a3e13",
+  "remote_python": "3.12.12",
+  "foreign_transport": "stdin process memory only; no foreign copy",
+  "stdout": "{\"primary_pass\": true, \"pairs\": 7341, \"failures\": 0, \"output_bytes\": 3058408, \"sha256\": \"c92ef8bca9245c758e75a9dc45e5d8e9bfef0768104e88e4376f5349af62f5c4\", \"execution\": {\"host\": \"gpu\", \"pid\": 400613, \"nice\": 10, \"wall_seconds\": 6.776971109211445, \"peak_RSS_KiB\": 32812}}\n",
+  "stderr": ""
+}

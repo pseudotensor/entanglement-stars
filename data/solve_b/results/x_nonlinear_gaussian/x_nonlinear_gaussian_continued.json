@@ -1,0 +1,5047 @@
+{
+  "status": "unresolved",
+  "result_stem": "x_nonlinear_gaussian_continued",
+  "specification": "solve/strand_X_nonlinear_response.tex XN1--XN16",
+  "single_review": "solve/review_X_nonlinear_response.tex",
+  "runtime": {
+    "PID": 2992391,
+    "nice": 10,
+    "interpreter": "<internal>/python",
+    "backend": "CPU",
+    "cuda_admission": null
+  },
+  "inputs": {
+    "mass_squared_exact": [
+      "1/12",
+      "1/6",
+      "1/6",
+      "1/4"
+    ],
+    "orientation": [
+      1,
+      -1,
+      -1,
+      1
+    ],
+    "g_M": "0",
+    "g_B": "0",
+    "a": "1",
+    "Lambda": "sqrt(1/12)",
+    "ell": "1",
+    "boxes": [
+      5,
+      7
+    ],
+    "loads_exact": [
+      "1/256",
+      "1/16",
+      "1"
+    ],
+    "dt_exact": [
+      "1/8",
+      "1/16",
+      "1/32"
+    ],
+    "Tmax": "2"
+  },
+  "caps": {
+    "seconds": 21600,
+    "device_bytes": 25769803776,
+    "host_bytes": 34359738368,
+    "complete_field_source_evaluations": 16384,
+    "accepted_steps": 768,
+    "own_threads": 16,
+    "outer_midpoint_attempts_per_step": 24,
+    "load_corrector_attempts_per_box": 96,
+    "inner_field_trials_per_solve": 12,
+    "endpoint_field_trials_per_solve": 12
+  },
+  "boxes": [
+    {
+      "L": 5,
+      "status": "partial_or_unresolved",
+      "loads": [],
+      "flat_controls": {
+        "quadratic_form": [
+          {
+            "profile": "constant interior",
+            "minus_phi_J0_phi": 0.008886573448188075,
+            "spectral_commutator_form": 0.008886573448190344,
+            "relative_difference": 2.2690183065776637e-15
+          },
+          {
+            "profile": "central site",
+            "minus_phi_J0_phi": 0.02551716363337686,
+            "spectral_commutator_form": 0.025517163633380205,
+            "relative_difference": 3.344546861683284e-15
+          },
+          {
+            "profile": "alternating interior",
+            "minus_phi_J0_phi": 0.02387159488572929,
+            "spectral_commutator_form": 0.02387159488573644,
+            "relative_difference": 7.147060721024445e-15
+          }
+        ],
+        "column_sum_inf": 2.153565991234155e-14,
+        "sea_clock_inf": [
+          4.200839155485439e-15,
+          1.9048392600432325e-15,
+          1.9048392600432325e-15,
+          2.87321011614984e-15
+        ],
+        "sea_clock_J_inf": [
+          3.964273514248253e-15,
+          3.4787755552078302e-15,
+          3.4787755552078302e-15,
+          2.3784527603728367e-15
+        ],
+        "sigma_min_J0": 0.008824918027730132
+      },
+      "feasibility": {
+        "native_one_particle_dimension": 250,
+        "carrier_covariance_dimension": 500,
+        "interior_fields": 27,
+        "derivative_batch_columns": 8,
+        "flat_field_seconds": 13.024783998727798,
+        "resources": {
+          "elapsed_seconds": 827.2558607123792,
+          "requested_field_source_evaluations": 36,
+          "completed_field_source_evaluations": 8,
+          "failed_or_incomplete_field_source_evaluations": 28,
+          "scalar_integrand_evaluations": 1182,
+          "accepted_time_steps": 0,
+          "peak_host_RSS_bytes": 555962368,
+          "peak_own_device_pool_bytes": 0,
+          "own_threads": 7
+        }
+      },
+      "preparation": {
+        "last_valid_load_exact": "5/65536",
+        "last_valid_native_state_file": "<internal>/L5_last_valid_preparation.npz",
+        "deterministic_flat_input_reconstructed_and_checkpointed": true,
+        "status": "partial_or_unresolved",
+        "corrector_attempts": [
+          {
+            "attempt": 1,
+            "from_load": "0",
+            "candidate_load": "1/256",
+            "load_step": "1/256",
+            "status": "failed_or_incomplete",
+            "field_counter_before": 1,
+            "failure": {
+              "class": "Unresolved",
+              "message": "L=5 load 1/256 inner field solve exhausted its declared nonlinear corrector limit"
+            },
+            "field_counter_after": 13
+          },
+          {
+            "attempt": 2,
+            "from_load": "0",
+            "candidate_load": "1/512",
+            "load_step": "1/512",
+            "status": "failed_or_incomplete",
+            "field_counter_before": 13,
+            "failure": {
+              "class": "Unresolved",
+              "message": "L=5 load 1/512 inner field solve exhausted its declared nonlinear corrector limit"
+            },
+            "field_counter_after": 25
+          },
+          {
+            "attempt": 3,
+            "from_load": "0",
+            "candidate_load": "1/1024",
+            "load_step": "1/1024",
+            "status": "failed_or_incomplete",
+            "field_counter_before": 25,
+            "field_counter_after": 35
+          },
+          {
+            "attempt": 4,
+            "from_load": "0",
+            "candidate_load": "1/2048",
+            "load_step": "1/2048",
+            "status": "failed_or_incomplete",
+            "field_counter_before": 36,
+            "failure": {
+              "class": "Unresolved",
+              "message": "L=5 load 1/2048 inner field solve exhausted its declared nonlinear corrector limit"
+            },
+            "field_counter_after": 48
+          },
+          {
+            "attempt": 5,
+            "from_load": "0",
+            "candidate_load": "1/4096",
+            "load_step": "1/4096",
+            "status": "failed_or_incomplete",
+            "field_counter_before": 48,
+            "failure": {
+              "class": "Unresolved",
+              "message": "L=5 load 1/4096 inner field solve exhausted its declared nonlinear corrector limit"
+            },
+            "field_counter_after": 60
+          },
+          {
+            "attempt": 6,
+            "from_load": "0",
+            "candidate_load": "1/8192",
+            "load_step": "1/8192",
+            "status": "failed_or_incomplete",
+            "field_counter_before": 60,
+            "failure": {
+              "class": "Unresolved",
+              "message": "L=5 load 1/8192 inner field solve exhausted its declared nonlinear corrector limit"
+            },
+            "field_counter_after": 72
+          },
+          {
+            "attempt": 7,
+            "from_load": "0",
+            "candidate_load": "1/16384",
+            "load_step": "1/16384",
+            "status": "accepted",
+            "field_counter_before": 72,
+            "inner_field_trials": 5,
+            "covariance_guards": [
+              {
+                "hermiticity_absolute_F": 1.5663696162314726e-22,
+                "hermiticity_relative_F": 9.906591289803074e-24,
+                "spectral_0_to_1_defect": 3.9968028886505635e-15,
+                "spectrum_conservation_defect": 0
+              },
+              {
+                "hermiticity_absolute_F": 0.0,
+                "hermiticity_relative_F": 0.0,
+                "spectral_0_to_1_defect": 5.10702591327572e-15,
+                "spectrum_conservation_defect": 0
+              },
+              {
+                "hermiticity_absolute_F": 0.0,
+                "hermiticity_relative_F": 0.0,
+                "spectral_0_to_1_defect": 5.10702591327572e-15,
+                "spectrum_conservation_defect": 0
+              },
+              {
+                "hermiticity_absolute_F": 0.0,
+                "hermiticity_relative_F": 0.0,
+                "spectral_0_to_1_defect": 3.552713678800501e-15,
+                "spectrum_conservation_defect": 0
+              }
+            ],
+            "clock_residual": 4.163447049550543e-14,
+            "ruler_residual": 1.0551569912460471e-17,
+            "field_counter_after": 77
+          },
+          {
+            "attempt": 8,
+            "from_load": "1/16384",
+            "candidate_load": "1/8192",
+            "load_step": "1/16384",
+            "status": "failed_or_incomplete",
+            "field_counter_before": 77,
+            "failure": {
+              "class": "Unresolved",
+              "message": "L=5 load 1/8192 inner field solve exhausted its declared nonlinear corrector limit"
+            },
+            "field_counter_after": 89
+          },
+          {
+            "attempt": 9,
+            "from_load": "1/16384",
+            "candidate_load": "3/32768",
+            "load_step": "1/32768",
+            "status": "failed_or_incomplete",
+            "field_counter_before": 89,
+            "failure": {
+              "class": "Unresolved",
+              "message": "L=5 load 3/32768 inner field solve exhausted its declared nonlinear corrector limit"
+            },
+            "field_counter_after": 101
+          },
+          {
+            "attempt": 10,
+            "from_load": "1/16384",
+            "candidate_load": "5/65536",
+            "load_step": "1/65536",
+            "status": "accepted",
+            "field_counter_before": 101,
+            "inner_field_trials": 5,
+            "covariance_guards": [
+              {
+                "hermiticity_absolute_F": 1.8842851490861374e-22,
+                "hermiticity_relative_F": 1.1917265664406904e-23,
+                "spectral_0_to_1_defect": 3.552713678800501e-15,
+                "spectrum_conservation_defect": 0
+              },
+              {
+                "hermiticity_absolute_F": 0.0,
+                "hermiticity_relative_F": 0.0,
+                "spectral_0_to_1_defect": 5.10702591327572e-15,
+                "spectrum_conservation_defect": 0
+              },
+              {
+                "hermiticity_absolute_F": 0.0,
+                "hermiticity_relative_F": 0.0,
+                "spectral_0_to_1_defect": 5.10702591327572e-15,
+                "spectrum_conservation_defect": 0
+              },
+              {
+                "hermiticity_absolute_F": 0.0,
+                "hermiticity_relative_F": 0.0,
+                "spectral_0_to_1_defect": 3.552713678800501e-15,
+                "spectrum_conservation_defect": 0
+              }
+            ],
+            "clock_residual": 4.501707274756384e-14,
+            "ruler_residual": 1.3553400339841182e-17,
+            "field_counter_after": 106
+          },
+          {
+            "attempt": 11,
+            "from_load": "5/65536",
+            "candidate_load": "3/32768",
+            "load_step": "1/65536",
+            "status": "failed_or_incomplete",
+            "field_counter_before": 106,
+            "failure": {
+              "class": "Unresolved",
+              "message": "L=5 load 3/32768 inner field solve exhausted its declared nonlinear corrector limit"
+            },
+            "field_counter_after": 118
+          }
+        ],
+        "reached_loads": [],
+        "stop": "The load step fell below 2^-16"
+      }
+    },
+    {
+      "L": 7,
+      "status": "unresolved",
+      "loads": [],
+      "flat_controls": {
+        "quadratic_form": [
+          {
+            "profile": "constant interior",
+            "minus_phi_J0_phi": 0.006418919339553157,
+            "spectral_commutator_form": 0.006418919339553823,
+            "relative_difference": 6.661338147750939e-16
+          },
+          {
+            "profile": "central site",
+            "minus_phi_J0_phi": 0.017587852880424304,
+            "spectral_commutator_form": 0.017587852880426632,
+            "relative_difference": 2.327998904760875e-15
+          },
+          {
+            "profile": "alternating interior",
+            "minus_phi_J0_phi": 0.027569403767063246,
+            "spectral_commutator_form": 0.027569403767069865,
+            "relative_difference": 6.619704784327496e-15
+          }
+        ],
+        "column_sum_inf": 2.1485408717864798e-14,
+        "sea_clock_inf": [
+          2.669216620861613e-15,
+          3.210886893738084e-15,
+          3.210886893738084e-15,
+          4.813219574190508e-15
+        ],
+        "sea_clock_J_inf": [
+          2.5871597012879417e-15,
+          5.76236249091069e-15,
+          5.76236249091069e-15,
+          4.381551748744723e-15
+        ],
+        "sigma_min_J0": 0.005773665332074604
+      },
+      "feasibility": {
+        "native_one_particle_dimension": 686,
+        "carrier_covariance_dimension": 1372,
+        "interior_fields": 125,
+        "derivative_batch_columns": 8,
+        "flat_field_seconds": 2916.5891262441874,
+        "resources": {
+          "elapsed_seconds": 4796.885068509728,
+          "requested_field_source_evaluations": 119,
+          "completed_field_source_evaluations": 45,
+          "failed_or_incomplete_field_source_evaluations": 74,
+          "scalar_integrand_evaluations": 1182,
+          "accepted_time_steps": 0,
+          "peak_host_RSS_bytes": 1435385856,
+          "peak_own_device_pool_bytes": 0,
+          "own_threads": 7
+        }
+      },
+      "preparation": {
+        "last_valid_load_exact": "0",
+        "last_valid_native_state_file": "<internal>/L7_last_valid_preparation.npz",
+        "deterministic_flat_input_reconstructed_and_checkpointed": true,
+        "status": "partial_or_unresolved",
+        "corrector_attempts": [
+          {
+            "attempt": 1,
+            "from_load": "0",
+            "candidate_load": "1/256",
+            "load_step": "1/256",
+            "status": "failed_or_incomplete",
+            "field_counter_before": 119,
+            "field_counter_after": 125
+          }
+        ],
+        "reached_loads": []
+      }
+    }
+  ],
+  "root_enclosure": false,
+  "trajectory_enclosure": false,
+  "physical_collapse_claim": false,
+  "spherical_transfer": false,
+  "open_parent_limit": false,
+  "production_parameters_adopted": false,
+  "full_Fock_matrix_built": false,
+  "moving_pair_state_truncation": false,
+  "sea_reset_in_evolution": false,
+  "prior_engineering_work": {
+    "original_result_file": "../results/x_nonlinear_gaussian.json",
+    "original_runtime": {
+      "PID": 2878166,
+      "nice": 10,
+      "interpreter": "<internal>/python",
+      "backend": "CPU",
+      "cuda_admission": null
+    },
+    "resources": {
+      "elapsed_seconds": 446.38216284289956,
+      "requested_field_source_evaluations": 35,
+      "completed_field_source_evaluations": 7,
+      "failed_or_incomplete_field_source_evaluations": 28,
+      "scalar_integrand_evaluations": 591,
+      "accepted_time_steps": 0,
+      "peak_host_RSS_bytes": 555962368,
+      "peak_own_device_pool_bytes": 0,
+      "own_threads": 7
+    },
+    "failure": {
+      "class": "KeyboardInterrupt",
+      "message": "",
+      "phase": "L=5 load 1/1024 backtrack 4"
+    },
+    "preparation": {
+      "status": "partial_or_unresolved",
+      "corrector_attempts": [
+        {
+          "attempt": 1,
+          "from_load": "0",
+          "candidate_load": "1/256",
+          "load_step": "1/256",
+          "status": "failed_or_incomplete",
+          "field_counter_before": 1,
+          "failure": {
+            "class": "Unresolved",
+            "message": "L=5 load 1/256 inner field solve exhausted its declared nonlinear corrector limit"
+          },
+          "field_counter_after": 13
+        },
+        {
+          "attempt": 2,
+          "from_load": "0",
+          "candidate_load": "1/512",
+          "load_step": "1/512",
+          "status": "failed_or_incomplete",
+          "field_counter_before": 13,
+          "failure": {
+            "class": "Unresolved",
+            "message": "L=5 load 1/512 inner field solve exhausted its declared nonlinear corrector limit"
+          },
+          "field_counter_after": 25
+        },
+        {
+          "attempt": 3,
+          "from_load": "0",
+          "candidate_load": "1/1024",
+          "load_step": "1/1024",
+          "status": "failed_or_incomplete",
+          "field_counter_before": 25,
+          "field_counter_after": 35
+        }
+      ],
+      "reached_loads": []
+    },
+    "flat_controls": {
+      "quadratic_form": [
+        {
+          "profile": "constant interior",
+          "minus_phi_J0_phi": 0.008886573448188075,
+          "spectral_commutator_form": 0.008886573448190344,
+          "relative_difference": 2.2690183065776637e-15
+        },
+        {
+          "profile": "central site",
+          "minus_phi_J0_phi": 0.02551716363337686,
+          "spectral_commutator_form": 0.025517163633380205,
+          "relative_difference": 3.344546861683284e-15
+        },
+        {
+          "profile": "alternating interior",
+          "minus_phi_J0_phi": 0.02387159488572929,
+          "spectral_commutator_form": 0.02387159488573644,
+          "relative_difference": 7.147060721024445e-15
+        }
+      ],
+      "column_sum_inf": 2.153565991234155e-14,
+      "sea_clock_inf": [
+        4.200839155485439e-15,
+        1.9048392600432325e-15,
+        1.9048392600432325e-15,
+        2.87321011614984e-15
+      ],
+      "sea_clock_J_inf": [
+        3.964273514248253e-15,
+        3.4787755552078302e-15,
+        3.4787755552078302e-15,
+        2.3784527603728367e-15
+      ],
+      "sigma_min_J0": 0.008824918027730132
+    },
+    "pause_seconds_charged_to_original_six_hour_wall": 367.00469732284546,
+    "original_run_lacked_native_state_NPZ": true,
+    "restored_state": "fresh numerical reconstruction of the same exact declared protected flat input; no nonflat accepted state or physical step existed",
+    "counters_and_caps_reset": false
+  },
+  "Newton_coefficient": {
+    "status": "enclosed",
+    "input_mu_exact": "1/2",
+    "shape": "R_D",
+    "scalar_evaluation_cap": 100000,
+    "I": {
+      "lower_dyadic": {
+        "mantissa": "264750053118808496407455649036230804853309823315234557112541242067996812146034215",
+        "exponent2": -275
+      },
+      "upper_dyadic": {
+        "mantissa": "264750053120424501122368771519482400630794279502416198687622165158381904075605543",
+        "exponent2": -275
+      },
+      "display_ball": "[0.0043610116648 +/- 1.99e-14]",
+      "full_width_exact": "1005642203/37778931862957161709568"
+    },
+    "relative_enclosure_width_exact": "1616004714913122483251595777484456187181641575080923090385091929571328/264750053118808496407455649036230804853309823315234557112541242067996812146034215",
+    "heat_records": {
+      "heat_calls": [
+        {
+          "label": "X original single Newton coefficient",
+          "shape": "R_D",
+          "mu": {
+            "lower_dyadic": {
+              "mantissa": "1",
+              "exponent2": -1
+            },
+            "upper_dyadic": {
+              "mantissa": "1",
+              "exponent2": -1
+            },
+            "display_ball": "0.500000000000000000000000",
+            "full_width_exact": "0"
+          },
+          "decimal_digits": 80,
+          "panels_bisected": false,
+          "parameters": [
+            {
+              "lower_dyadic": {
+                "mantissa": "158094799172015712151648918198528556855664619063487916768539421365470726335059285",
+                "exponent2": -268
+              },
+              "upper_dyadic": {
+                "mantissa": "316189598344031424303297836397057113711329238126975833537078842730941452670118571",
+                "exponent2": -269
+              },
+              "display_ball": "[0.333333333333333333333333 +/- 3.34e-25]"
+            },
+            {
+              "lower_dyadic": {
+                "mantissa": "158094799172015712151648918198528556855664619063487916768539421365470726335059285",
+                "exponent2": -268
+              },
+              "upper_dyadic": {
+                "mantissa": "316189598344031424303297836397057113711329238126975833537078842730941452670118571",
+                "exponent2": -269
+              },
+              "display_ball": "[0.333333333333333333333333 +/- 3.34e-25]"
+            },
+            {
+              "lower_dyadic": {
+                "mantissa": "158094799172015712151648918198528556855664619063487916768539421365470726335059285",
+                "exponent2": -268
+              },
+              "upper_dyadic": {
+                "mantissa": "316189598344031424303297836397057113711329238126975833537078842730941452670118571",
+                "exponent2": -269
+              },
+              "display_ball": "[0.333333333333333333333333 +/- 3.34e-25]"
+            }
+          ],
+          "components": {
+            "0": {
+              "panels": [
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "737514769",
+                      "exponent2": -306
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "737514769",
+                      "exponent2": -306
+                    },
+                    "display_ball": "[5.65707645790384736723687e-84 +/- 3.62e-108]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "0",
+                  "right": "1",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "580431259761116870216038507111291335489865359336046948355174349951696184596161711",
+                      "exponent2": -316
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "580431259761116870216038507111291335489865359336046948355174349951696184596161711",
+                      "exponent2": -316
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 592,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "19528580889574944565373216351916382534149407523677031211036334384630338925436589",
+                      "exponent2": -275
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "19528580889574944720136814349935246710015608178064612246380920201458287585337005",
+                      "exponent2": -275
+                    },
+                    "display_ball": "[0.00032167838326294982 +/- 4.11e-21]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "403951839",
+                      "exponent2": -98
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "403951839",
+                      "exponent2": -98
+                    },
+                    "display_ball": "[1.27464725351692968094711e-21 +/- 1.63e-45]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 619
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "940909361",
+                      "exponent2": -303
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "940909361",
+                      "exponent2": -303
+                    },
+                    "display_ball": "[5.77376499440319945728259e-83 +/- 4.21e-107]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "1",
+                  "right": "2",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "580431259761116870216038507111291335489865359336046948355174349951751806311056559",
+                      "exponent2": -316
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "580431259761116870216038507111291335489865359336046948355174349951751806311056559",
+                      "exponent2": -316
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 620,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "382421737770614611925518803149095496713860579492361353377526739497338676265084867",
+                      "exponent2": -277
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "382421737770619045892448544662913204487498755869792613509474514481319448766834627",
+                      "exponent2": -277
+                    },
+                    "display_ball": "[0.0015748303349110 +/- 5.64e-17]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "706371685",
+                      "exponent2": -86
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "706371685",
+                      "exponent2": -86
+                    },
+                    "display_ball": "[9.12964004825647360235233e-18 +/- 6.3e-44]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 647
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "708171275",
+                      "exponent2": -303
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "708171275",
+                      "exponent2": -303
+                    },
+                    "display_ball": "[4.34559872301757408463399e-83 +/- 4.98e-107]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "2",
+                  "right": "4",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "580431259761116870216038507111291335489865359336046948355174349951782964300530863",
+                      "exponent2": -316
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "580431259761116870216038507111291335489865359336046948355174349951782964300530863",
+                      "exponent2": -316
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 648,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "500199406488382886818304643453827862504762889623711181950850995696632069058651097",
+                      "exponent2": -277
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "500199406488405922659101746622618698770608824470692046405251340437124321230382041",
+                      "exponent2": -277
+                    },
+                    "display_ball": "[0.0020598442008934 +/- 5.69e-17]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "917455291",
+                      "exponent2": -84
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "917455291",
+                      "exponent2": -84
+                    },
+                    "display_ball": "[4.74313268499622661487626e-17 +/- 3.08e-42]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 699
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "742024495",
+                      "exponent2": -307
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "742024495",
+                      "exponent2": -307
+                    },
+                    "display_ball": "[2.84583406210573872672577e-84 +/- 3.70e-108]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "4",
+                  "right": "8",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "580431259761116870216038507111291335489865359336046948355174349951702300204500143",
+                      "exponent2": -316
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "580431259761116870216038507111291335489865359336046948355174349951702300204500143",
+                      "exponent2": -316
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 700,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "392016053161240693111787723636950443860049339955081783142040956717415063309937087",
+                      "exponent2": -279
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "392016053161240693111787723636950443860049339955081783142219683026205132213348799",
+                      "exponent2": -279
+                    },
+                    "display_ball": "[0.000403585041928689363947472 +/- 7.32e-29]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "317481701",
+                      "exponent2": -231
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "317481701",
+                      "exponent2": -231
+                    },
+                    "display_ball": "[9.20003967249925672535850e-62 +/- 3.45e-86]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 885
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "331615331",
+                      "exponent2": -320
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "331615331",
+                      "exponent2": -320
+                    },
+                    "display_ball": "[1.55251565399612675137743e-88 +/- 3.30e-112]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "8",
+                  "right": "16",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "580431259761116870216038507111291335489865359336046948355174349951690144201635387",
+                      "exponent2": -316
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "580431259761116870216038507111291335489865359336046948355174349951690144201635387",
+                      "exponent2": -316
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 886,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "266988918666523270373010127280639293731608063271452295261993828321360213642093647",
+                      "exponent2": -287
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "266988918669706126698377799951126713421914415362389173935827290758178971576476751",
+                      "exponent2": -287
+                    },
+                    "display_ball": "[1.0737037770e-6 +/- 3.29e-17]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "990348177",
+                      "exponent2": -87
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "990348177",
+                      "exponent2": -87
+                    },
+                    "display_ball": "[6.39997509134089276280819e-18 +/- 9.70e-44]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 1132
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "141807329",
+                      "exponent2": -374
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "141807329",
+                      "exponent2": -374
+                    },
+                    "display_ball": "[3.68536323181654780163496e-105 +/- 5.31e-131]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "16",
+                  "right": "32",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 1133,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "239316783266456445237751700734902095246004263117769310615701100491966562997132415",
+                      "exponent2": -314
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "378517861509980386849485809226112319073735495784696068211357830780118785639603327",
+                      "exponent2": -314
+                    },
+                    "display_ball": "[+/- 1.14e-14]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "315140073",
+                      "exponent2": -77
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "315140073",
+                      "exponent2": -77
+                    },
+                    "display_ball": "[2.08542206899316686263997e-15 +/- 2.00e-39]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 1148
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "582824101",
+                      "exponent2": -585
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "582824101",
+                      "exponent2": -585
+                    },
+                    "display_ball": "[4.60246017265051142858156e-168 +/- 1.19e-192]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "32",
+                  "right": "64",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 1149,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "-511477202873157460279492702967487253201440202066260958720169218742330492234629905",
+                      "exponent2": -341
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "740966643388836717545160036810696551411175897543650644755416289567748701032676591",
+                      "exponent2": -341
+                    },
+                    "display_ball": "[+/- 1.66e-22]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "44303631",
+                      "exponent2": -98
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "44303631",
+                      "exponent2": -98
+                    },
+                    "display_ball": "[1.39797609820950721894420e-22 +/- 1.02e-46]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 1150
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "280157331",
+                      "exponent2": -1416
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "280157331",
+                      "exponent2": -1416
+                    },
+                    "display_ball": "[1.54499874551649455595785e-418 +/- 4.18e-442]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "64",
+                  "right": "128",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 1151,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "-644452376455350495044338582235495604536224702769712618755818370787031856756176421",
+                      "exponent2": -528
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "233468652091655988191157941281853639406271268506618943102664287255511604873556599",
+                      "exponent2": -526
+                    },
+                    "display_ball": "[+/- 1.07e-78]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "111662677",
+                      "exponent2": -286
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "111662677",
+                      "exponent2": -286
+                    },
+                    "display_ball": "[8.98109469455729867051264e-79 +/- 4.66e-103]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 1152
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "141464827",
+                      "exponent2": -4740
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "141464827",
+                      "exponent2": -4740
+                    },
+                    "display_ball": "[1.85553446549354207372968e-1419 +/- 2.96e-1443]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "128",
+                  "right": "256",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 1153,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "-407795902268026697573226797256422904157403807261269139729064294319015232630453421",
+                      "exponent2": -1268
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "590978760269136662151321516233273848463938997376102067645342148589126380721507155",
+                      "exponent2": -1268
+                    },
+                    "display_ball": "[+/- 1.17e-301]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "282643213",
+                      "exponent2": -1028
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "282643213",
+                      "exponent2": -1028
+                    },
+                    "display_ball": "[9.82659413329348097741668e-302 +/- 4.32e-326]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 1154
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "153570615",
+                      "exponent2": -18037
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "153570615",
+                      "exponent2": -18037
+                    },
+                    "display_ball": "[3.22311894034162479977846e-5422 +/- 1.80e-5446]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "256",
+                  "right": "512",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 1155,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "-65450553229081629430188149454987840783167890507495138678808075372661105811504771",
+                      "exponent2": -4222
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "758822398142723036757474321067678230232095641993730085118370445865662599315721193",
+                      "exponent2": -4225
+                    },
+                    "display_ball": "[+/- 1.07e-1191]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "181456965",
+                      "exponent2": -3984
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "181456965",
+                      "exponent2": -3984
+                    },
+                    "display_ball": "[9.02133722501824834583336e-1192 +/- 7.72e-1217]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 1156
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "862090627",
+                      "exponent2": -71224
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "862090627",
+                      "exponent2": -71224
+                    },
+                    "display_ball": "[2.37214783841428269847165e-21432 +/- 2.41e-21456]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "512",
+                  "right": "1024",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 1157,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "-355877616691026321484899993794713189119470923430549947977764861235566679677162831",
+                      "exponent2": -16045
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "257875132237652371063624522482720634502459064054180208802742334003540573425522009",
+                      "exponent2": -16044
+                    },
+                    "display_ball": "[+/- 4.86e-4750]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "246661949",
+                      "exponent2": -15805
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "246661949",
+                      "exponent2": -15805
+                    },
+                    "display_ball": "[4.10223645334296682390608e-4750 +/- 5.57e-4775]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 1158
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "838402177",
+                      "exponent2": -283959
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "838402177",
+                      "exponent2": -283959
+                    },
+                    "display_ball": "[5.58359164719971299590422e-85472 +/- 4.97e-85496]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "1024",
+                  "right": "2048",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 1159,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "-151896930249742827790652777936930029593904336099174074073192455839577304386402497",
+                      "exponent2": -63320
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "220134581321502028141612609776116906415827989759985488030490047536915483681195839",
+                      "exponent2": -63320
+                    },
+                    "display_ball": "[+/- 1.33e-18981]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "421124747",
+                      "exponent2": -63082
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "421124747",
+                      "exponent2": -63082
+                    },
+                    "display_ball": "[1.12259806116395842493540e-18981 +/- 1.38e-19005]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 1160
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "750464201",
+                      "exponent2": -1134896
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "750464201",
+                      "exponent2": -1134896
+                    },
+                    "display_ball": "[1.37205307209610268074204e-341629 +/- 2.47e-341653]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "2048",
+                  "right": "4096",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 1161,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "-645296766260169060321380324813281374323269343795887532998728062339418228381899683",
+                      "exponent2": -252421
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "467593956699738763885744550228553024422295573132486063273416530210976505325195823",
+                      "exponent2": -252420
+                    },
+                    "display_ball": "[+/- 4.77e-75906]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "223630657",
+                      "exponent2": -252180
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "223630657",
+                      "exponent2": -252180
+                    },
+                    "display_ball": "[4.02925540278438334046166e-75906 +/- 1.34e-75930]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 1162
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "963695831",
+                      "exponent2": -4538642
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "963695831",
+                      "exponent2": -4538642
+                    },
+                    "display_ball": "[4.00276060906371080759233e-1366259 +/- 1.22e-1366283]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "4096",
+                  "right": "8192",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 1163,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "-334429769",
+                      "exponent2": -1008570
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "334429769",
+                      "exponent2": -1008570
+                    },
+                    "display_ball": "[+/- 5.04e-303602]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "334429769",
+                      "exponent2": -1008570
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "334429769",
+                      "exponent2": -1008570
+                    },
+                    "display_ball": "[5.03011723782549248613092e-303602 +/- 4.98e-303626]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 1164
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "81893307",
+                      "exponent2": -18153618
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "81893307",
+                      "exponent2": -18153618
+                    },
+                    "display_ball": "[2.31965201204818621449640e-5464776 +/- 1.48e-5464800]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "8192",
+                  "right": "16384",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 1165,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "-429322913",
+                      "exponent2": -4034123
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "429322913",
+                      "exponent2": -4034123
+                    },
+                    "display_ball": "[+/- 4.02e-1214384]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "429322913",
+                      "exponent2": -4034123
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "429322913",
+                      "exponent2": -4034123
+                    },
+                    "display_ball": "[4.01408071131903100048785e-1214384 +/- 1.95e-1214408]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 1166
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "279876393",
+                      "exponent2": -72613535
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "279876393",
+                      "exponent2": -72613535
+                    },
+                    "display_ball": "[2.09300334009847807983917e-21858844 +/- 1.57e-21858868]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "16384",
+                  "right": "32768",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 1167,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "-291501459",
+                      "exponent2": -16136327
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "291501459",
+                      "exponent2": -16136327
+                    },
+                    "display_ball": "[+/- 1.05e-4857510]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "291501459",
+                      "exponent2": -16136327
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "291501459",
+                      "exponent2": -16136327
+                    },
+                    "display_ball": "[1.04183309725619207712509e-4857510 +/- 3.94e-4857534]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 1168
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "596566431",
+                      "exponent2": -290453194
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "596566431",
+                      "exponent2": -290453194
+                    },
+                    "display_ball": "[1.10981176114931221651162e-87435115 +/- 3.44e-87435139]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "32768",
+                  "right": "65536",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 1169,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "-247814899",
+                      "exponent2": -64545139
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "247814899",
+                      "exponent2": -64545139
+                    },
+                    "display_ball": "[+/- 3.03e-19430015]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "247814899",
+                      "exponent2": -64545139
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "247814899",
+                      "exponent2": -64545139
+                    },
+                    "display_ball": "[3.02570337518142575430595e-19430015 +/- 4.58e-19430039]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 1170
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "192419601",
+                      "exponent2": -1161811821
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "192419601",
+                      "exponent2": -1161811821
+                    },
+                    "display_ball": "[7.01870862139542813395073e-349740200 +/- 4.26e-349740224]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "65536",
+                  "right": "131072",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 1171,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "-129441681",
+                      "exponent2": -258180381
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "129441681",
+                      "exponent2": -258180381
+                    },
+                    "display_ball": "[+/- 1.38e-77720031]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "129441681",
+                      "exponent2": -258180381
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "129441681",
+                      "exponent2": -258180381
+                    },
+                    "display_ball": "[1.37758730308242063283163e-77720031 +/- 2.09e-77720056]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 1172
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "1066304761",
+                      "exponent2": -4647246335
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "1066304761",
+                      "exponent2": -4647246335
+                    },
+                    "display_ball": "[8.98211988551080425229854e-1398960536 +/- 4.72e-1398960560]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "131072",
+                  "right": "262144",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 1173,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "-308326637",
+                      "exponent2": -1032721348
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "308326637",
+                      "exponent2": -1032721348
+                    },
+                    "display_ball": "[+/- 3.79e-310880095]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "308326637",
+                      "exponent2": -1032721348
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "308326637",
+                      "exponent2": -1032721348
+                    },
+                    "display_ball": "[3.78852564171493830722493e-310880095 +/- 4.88e-310880119]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 1174
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "981995599",
+                      "exponent2": -18588984378
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "981995599",
+                      "exponent2": -18588984378
+                    },
+                    "display_ball": "[1.92732682607783654954053e-5595841878 +/- 3.12e-5595841902]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "262144",
+                  "right": "524288",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 1175,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "-77544083",
+                      "exponent2": -4130885203
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "77544083",
+                      "exponent2": -4130885203
+                    },
+                    "display_ball": "[+/- 1.39e-1243520347]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "77544083",
+                      "exponent2": -4130885203
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "77544083",
+                      "exponent2": -4130885203
+                    },
+                    "display_ball": "[1.38693013710539201003052e-1243520347 +/- 1.87e-1243520371]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 1176
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "353176941",
+                      "exponent2": -74355936546
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "353176941",
+                      "exponent2": -74355936546
+                    },
+                    "display_ball": "[3.26852229432255939802959e-22383367248 +/- 2.76e-22383367272]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "524288",
+                  "right": "1048576",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 1177,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "-158843373",
+                      "exponent2": -16523540626
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "158843373",
+                      "exponent2": -16523540626
+                    },
+                    "display_ball": "[+/- 1.60e-4974081355]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "158843373",
+                      "exponent2": -16523540626
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "158843373",
+                      "exponent2": -16523540626
+                    },
+                    "display_ball": "[1.59430708695706431772600e-4974081355 +/- 1.67e-4974081380]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 1178
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "756368603",
+                      "exponent2": -297423745222
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "756368603",
+                      "exponent2": -297423745222
+                    },
+                    "display_ball": "[2.16284683545565091711914e-89533468726 +/- 3.08e-89533468750]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "1048576",
+                  "right": "2097152",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 1179,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "-174795747",
+                      "exponent2": -66094162308
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "174795747",
+                      "exponent2": -66094162308
+                    },
+                    "display_ball": "[+/- 1.79e-19896325385]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "174795747",
+                      "exponent2": -66094162308
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "174795747",
+                      "exponent2": -66094162308
+                    },
+                    "display_ball": "[1.78164640383028974426682e-19896325385 +/- 6.51e-19896325410]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 1180
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "994438941",
+                      "exponent2": -1189694979919
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "994438941",
+                      "exponent2": -1189694979919
+                    },
+                    "display_ball": "[3.31751588469106534761663e-358133874638 +/- 3.85e-358133874662]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "2097152",
+                  "right": "4194304",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 1181,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "-256317293",
+                      "exponent2": -264376649030
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "256317293",
+                      "exponent2": -264376649030
+                    },
+                    "display_ball": "[+/- 1.78e-79585301503]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "256317293",
+                      "exponent2": -264376649030
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "256317293",
+                      "exponent2": -264376649030
+                    },
+                    "display_ball": "[1.77827796973258796225333e-79585301503 +/- 1.81e-79585301527]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 1182
+                }
+              ],
+              "tail_upper": {
+                "lower_dyadic": {
+                  "mantissa": "372502094737168716062960581404395379357074818384273848277782682744769427933373717",
+                  "exponent2": -313
+                },
+                "upper_dyadic": {
+                  "mantissa": "372502094737168716062960581404395379357074818384273848277782682744769427933373717",
+                  "exponent2": -313
+                },
+                "display_ball": "[2.23223583872552441566671e-14 +/- 4.18e-38]"
+              },
+              "tail_kind": "positive",
+              "status": "enclosed",
+              "finite_panels_sum": {
+                "lower_dyadic": {
+                  "mantissa": "8273439159962765512794940858208347853843222518934855058850454507951993794336651",
+                  "exponent2": -270
+                },
+                "upper_dyadic": {
+                  "mantissa": "8273439159970917074816725743819302693436923258532966212382004797760015725762443",
+                  "exponent2": -270
+                },
+                "display_ball": "[0.00436101166478 +/- 4.42e-15]",
+                "full_width_exact": "10145459/2361183241434822606848"
+              },
+              "with_tail": {
+                "lower_dyadic": {
+                  "mantissa": "264750053118808496407455649036230804853309823315234557112541242067996812146034215",
+                  "exponent2": -275
+                },
+                "upper_dyadic": {
+                  "mantissa": "264750053120424501122368771519482400630794279502416198687622165158381904075605543",
+                  "exponent2": -275
+                },
+                "display_ball": "[0.0043610116648 +/- 1.99e-14]",
+                "full_width_exact": "1005642203/37778931862957161709568"
+              },
+              "numerical_and_parameter_widths": "joint_full_enclosure"
+            }
+          },
+          "status": "enclosed",
+          "full_parameter_balls_retained": true
+        }
+      ],
+      "last_active_call": "X original single Newton coefficient"
+    },
+    "k_star": {
+      "lower_dyadic": {
+        "mantissa": "794250159356425489216742663953785948595532602622509602228796015725750661514547829",
+        "exponent2": -275
+      },
+      "upper_dyadic": {
+        "mantissa": "794250159361273503372730597713353667856779705830442665171694205953385487150371445",
+        "exponent2": -275
+      },
+      "display_ball": "[0.0130830349944 +/- 5.97e-14]"
+    },
+    "G": {
+      "lower_dyadic": {
+        "mantissa": "224404391223758938095",
+        "exponent2": -64
+      },
+      "upper_dyadic": {
+        "mantissa": "224404391225128698325",
+        "exponent2": -64
+      },
+      "display_ball": "[12.1649864240 +/- 7.86e-11]"
+    }
+  },
+  "resources": {
+    "elapsed_seconds": 21628.5037657097,
+    "requested_field_source_evaluations": 125,
+    "completed_field_source_evaluations": 46,
+    "failed_or_incomplete_field_source_evaluations": 79,
+    "scalar_integrand_evaluations": 1182,
+    "accepted_time_steps": 0,
+    "peak_host_RSS_bytes": 2236080128,
+    "peak_own_device_pool_bytes": 0,
+    "own_threads": 7
+  },
+  "field_work_records": [
+    {
+      "requested_field_evaluation": 1,
+      "phase": "L=5 flat algebraic control",
+      "elapsed_start": 1.7084692120552063,
+      "status": "completed",
+      "clock_residual": 1.0121136896129179e-14,
+      "ruler_residual": 9.467172864124212e-18,
+      "sigma_min": 0.008824918027730132,
+      "minimum_ruler": 1.0,
+      "minimum_lapse": 0.9999999999996084,
+      "elapsed_end": 14.80018200352788
+    },
+    {
+      "requested_field_evaluation": 2,
+      "phase": "L=5 load 1/256 initial field trial",
+      "elapsed_start": 14.861292574554682,
+      "status": "completed",
+      "clock_residual": 0.0013550105792765762,
+      "ruler_residual": 9.768165863385815e-18,
+      "sigma_min": 0.009218858924677801,
+      "minimum_ruler": 1.0,
+      "minimum_lapse": 0.904687580219777,
+      "elapsed_end": 27.102795869112015
+    },
+    {
+      "requested_field_evaluation": 3,
+      "phase": "L=5 load 1/256 backtrack 0",
+      "elapsed_start": 27.10309809818864,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 4,
+      "phase": "L=5 load 1/256 backtrack 1",
+      "elapsed_start": 39.38117070868611,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 5,
+      "phase": "L=5 load 1/256 backtrack 2",
+      "elapsed_start": 51.669398970901966,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 6,
+      "phase": "L=5 load 1/256 backtrack 3",
+      "elapsed_start": 63.74095172807574,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 7,
+      "phase": "L=5 load 1/256 backtrack 4",
+      "elapsed_start": 75.66575848683715,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 8,
+      "phase": "L=5 load 1/256 backtrack 5",
+      "elapsed_start": 87.62081518769264,
+      "status": "completed",
+      "clock_residual": 0.0013214875212948223,
+      "ruler_residual": 2.4015078120553923e-17,
+      "sigma_min": 0.0037396186170973104,
+      "minimum_ruler": 1.0,
+      "minimum_lapse": 1.0,
+      "elapsed_end": 99.8541404902935
+    },
+    {
+      "requested_field_evaluation": 9,
+      "phase": "L=5 load 1/256 backtrack 0",
+      "elapsed_start": 99.85456319898367,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 10,
+      "phase": "L=5 load 1/256 backtrack 1",
+      "elapsed_start": 112.64477072656155,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 11,
+      "phase": "L=5 load 1/256 backtrack 2",
+      "elapsed_start": 125.37972646206617,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 12,
+      "phase": "L=5 load 1/256 backtrack 3",
+      "elapsed_start": 138.8522151336074,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 13,
+      "phase": "L=5 load 1/256 backtrack 4",
+      "elapsed_start": 154.21108826994896,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 14,
+      "phase": "L=5 load 1/512 initial field trial",
+      "elapsed_start": 167.96337746083736,
+      "status": "completed",
+      "clock_residual": 0.0006775052896389612,
+      "ruler_residual": 1.2278589603398338e-17,
+      "sigma_min": 0.009018002417946239,
+      "minimum_ruler": 1.0,
+      "minimum_lapse": 0.9530944492612031,
+      "elapsed_end": 180.83431787788868
+    },
+    {
+      "requested_field_evaluation": 15,
+      "phase": "L=5 load 1/512 backtrack 0",
+      "elapsed_start": 180.83457339182496,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 16,
+      "phase": "L=5 load 1/512 backtrack 1",
+      "elapsed_start": 196.48901026323438,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 17,
+      "phase": "L=5 load 1/512 backtrack 2",
+      "elapsed_start": 209.49315286055207,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 18,
+      "phase": "L=5 load 1/512 backtrack 3",
+      "elapsed_start": 223.15912317484617,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 19,
+      "phase": "L=5 load 1/512 backtrack 4",
+      "elapsed_start": 235.727396491915,
+      "status": "completed",
+      "clock_residual": 0.0006437354308708264,
+      "ruler_residual": 1.0821689345794678e-17,
+      "sigma_min": 0.003681935500320844,
+      "minimum_ruler": 1.0,
+      "minimum_lapse": 1.0,
+      "elapsed_end": 248.05776453763247
+    },
+    {
+      "requested_field_evaluation": 20,
+      "phase": "L=5 load 1/512 backtrack 0",
+      "elapsed_start": 248.05814381316304,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 21,
+      "phase": "L=5 load 1/512 backtrack 1",
+      "elapsed_start": 259.9312578290701,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 22,
+      "phase": "L=5 load 1/512 backtrack 2",
+      "elapsed_start": 272.7693460807204,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 23,
+      "phase": "L=5 load 1/512 backtrack 3",
+      "elapsed_start": 285.2485292740166,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 24,
+      "phase": "L=5 load 1/512 backtrack 4",
+      "elapsed_start": 298.4680576622486,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 25,
+      "phase": "L=5 load 1/512 backtrack 5",
+      "elapsed_start": 311.39069414138794,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 26,
+      "phase": "L=5 load 1/1024 initial field trial",
+      "elapsed_start": 324.90552074834704,
+      "status": "completed",
+      "clock_residual": 0.00033875264482028533,
+      "ruler_residual": 8.844822339740596e-18,
+      "sigma_min": 0.00892047967898143,
+      "minimum_ruler": 1.0,
+      "minimum_lapse": 0.9767303092363467,
+      "elapsed_end": 337.986466486007
+    },
+    {
+      "requested_field_evaluation": 27,
+      "phase": "L=5 load 1/1024 backtrack 0",
+      "elapsed_start": 337.9867037795484,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 28,
+      "phase": "L=5 load 1/1024 backtrack 1",
+      "elapsed_start": 351.6765318252146,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 29,
+      "phase": "L=5 load 1/1024 backtrack 2",
+      "elapsed_start": 364.83557184413075,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 30,
+      "phase": "L=5 load 1/1024 backtrack 3",
+      "elapsed_start": 378.0091960839927,
+      "status": "completed",
+      "clock_residual": 0.00030486365955391723,
+      "ruler_residual": 1.3213713977167085e-17,
+      "sigma_min": 0.0036522386205098496,
+      "minimum_ruler": 1.0,
+      "minimum_lapse": 1.0,
+      "elapsed_end": 391.5187906585634
+    },
+    {
+      "requested_field_evaluation": 31,
+      "phase": "L=5 load 1/1024 backtrack 0",
+      "elapsed_start": 391.5190832875669,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 32,
+      "phase": "L=5 load 1/1024 backtrack 1",
+      "elapsed_start": 404.6700552366674,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 33,
+      "phase": "L=5 load 1/1024 backtrack 2",
+      "elapsed_start": 417.3634699136019,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 34,
+      "phase": "L=5 load 1/1024 backtrack 3",
+      "elapsed_start": 430.06714154034853,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 35,
+      "phase": "L=5 load 1/1024 backtrack 4",
+      "elapsed_start": 443.51350765675306,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "KeyboardInterrupt",
+        "message": ""
+      }
+    },
+    {
+      "requested_field_evaluation": 36,
+      "phase": "L=5 flat algebraic control",
+      "elapsed_start": 814.2311089634895,
+      "status": "completed",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0,
+      "sigma_min": 0.008824918027730132,
+      "clock_residual": 1.0121136896129179e-14,
+      "minimum_interior_lapse": 0.9999999999996084,
+      "maximum_interior_lapse": 1.0000000000016445,
+      "minimum_interior_lapse_site": 87,
+      "maximum_interior_lapse_site": 93,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "ruler_residual": 9.467172864124212e-18,
+      "minimum_lapse": 0.9999999999996084,
+      "elapsed_end": 827.2067175880075
+    },
+    {
+      "requested_field_evaluation": 37,
+      "phase": "L=5 load 1/2048 initial field trial",
+      "elapsed_start": 827.3147432133555,
+      "status": "completed",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0,
+      "sigma_min": 0.008872453121133217,
+      "clock_residual": 0.00016937632241091017,
+      "minimum_interior_lapse": 0.9884103695831129,
+      "maximum_interior_lapse": 1.0039187138770451,
+      "minimum_interior_lapse_site": 42,
+      "maximum_interior_lapse_site": 67,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "ruler_residual": 9.195389675392684e-18,
+      "minimum_lapse": 0.9884103695831129,
+      "elapsed_end": 840.2656088881195
+    },
+    {
+      "requested_field_evaluation": 38,
+      "phase": "L=5 load 1/2048 backtrack 0",
+      "elapsed_start": 840.2661068998277,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0116128303282532,
+      "sigma_min": 0.003734173518578533,
+      "clock_residual": 0.00016622157635400595,
+      "minimum_interior_lapse": -6.839632864163713,
+      "maximum_interior_lapse": 1.2424930534369196,
+      "minimum_interior_lapse_site": 62,
+      "maximum_interior_lapse_site": 93,
+      "lower_lapse_guard_sites": [
+        37,
+        57,
+        61,
+        62,
+        63,
+        67,
+        87
+      ],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared lower diagnostic lapse guard min N_I <=1/8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 39,
+      "phase": "L=5 load 1/2048 backtrack 1",
+      "elapsed_start": 852.1509568616748,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0058064151641266,
+      "sigma_min": 0.0026159398247617765,
+      "clock_residual": 0.00011808833168839288,
+      "minimum_interior_lapse": -9.310622382283599,
+      "maximum_interior_lapse": -0.48108594472148924,
+      "minimum_interior_lapse_site": 62,
+      "maximum_interior_lapse_site": 41,
+      "lower_lapse_guard_sites": [
+        31,
+        32,
+        33,
+        36,
+        37,
+        38,
+        41,
+        42,
+        43,
+        56,
+        57,
+        58,
+        61,
+        62,
+        63,
+        66,
+        67,
+        68,
+        81,
+        82,
+        83,
+        86,
+        87,
+        88,
+        91,
+        92,
+        93
+      ],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared lower diagnostic lapse guard min N_I <=1/8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 40,
+      "phase": "L=5 load 1/2048 backtrack 2",
+      "elapsed_start": 864.9885406754911,
+      "status": "completed",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0029032075820632,
+      "sigma_min": 0.003637273556103573,
+      "clock_residual": 0.00013542880306366731,
+      "minimum_interior_lapse": 1.647190716548583,
+      "maximum_interior_lapse": 3.9587670147817975,
+      "minimum_interior_lapse_site": 41,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "ruler_residual": 1.3999760552219076e-17,
+      "minimum_lapse": 1.0,
+      "elapsed_end": 877.8242228217423
+    },
+    {
+      "requested_field_evaluation": 41,
+      "phase": "L=5 load 1/2048 backtrack 0",
+      "elapsed_start": 877.8246247731149,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0254044603787462,
+      "sigma_min": 0.0011827263522778539,
+      "clock_residual": 0.00099188771431409,
+      "minimum_interior_lapse": -1.7586916339922656,
+      "maximum_interior_lapse": 2.835679119362741,
+      "minimum_interior_lapse_site": 67,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [
+        32,
+        36,
+        37,
+        38,
+        42,
+        56,
+        57,
+        58,
+        61,
+        63,
+        66,
+        67,
+        68,
+        82,
+        86,
+        87,
+        88,
+        92
+      ],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared lower diagnostic lapse guard min N_I <=1/8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 42,
+      "phase": "L=5 load 1/2048 backtrack 1",
+      "elapsed_start": 890.083826187998,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.014153833980392,
+      "sigma_min": 0.0019543266795559247,
+      "clock_residual": 0.0002609659868903405,
+      "minimum_interior_lapse": -2.22107246443862,
+      "maximum_interior_lapse": 7.329582627941351,
+      "minimum_interior_lapse_site": 42,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [
+        31,
+        32,
+        33,
+        36,
+        37,
+        38,
+        41,
+        42,
+        43,
+        56,
+        57,
+        58,
+        61,
+        63,
+        66,
+        67,
+        68,
+        81,
+        82,
+        83,
+        86,
+        87,
+        88,
+        91,
+        92,
+        93
+      ],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared lower diagnostic lapse guard min N_I <=1/8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 43,
+      "phase": "L=5 load 1/2048 backtrack 2",
+      "elapsed_start": 902.683775935322,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.008528520781215,
+      "sigma_min": 7.640680635041691e-05,
+      "clock_residual": 0.00014144527532196095,
+      "minimum_interior_lapse": -6.503077737283685,
+      "maximum_interior_lapse": 1.074977399482992,
+      "minimum_interior_lapse_site": 62,
+      "maximum_interior_lapse_site": 43,
+      "lower_lapse_guard_sites": [
+        37,
+        57,
+        61,
+        62,
+        63,
+        67,
+        87
+      ],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared lower diagnostic lapse guard min N_I <=1/8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 44,
+      "phase": "L=5 load 1/2048 backtrack 3",
+      "elapsed_start": 915.0862576588988,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0057158641816262,
+      "sigma_min": 0.0024911079028697002,
+      "clock_residual": 0.0001285159220148803,
+      "minimum_interior_lapse": -7.871917281396408,
+      "maximum_interior_lapse": -0.07813490971559449,
+      "minimum_interior_lapse_site": 62,
+      "maximum_interior_lapse_site": 91,
+      "lower_lapse_guard_sites": [
+        31,
+        32,
+        33,
+        36,
+        37,
+        38,
+        41,
+        42,
+        43,
+        56,
+        57,
+        58,
+        61,
+        62,
+        63,
+        66,
+        67,
+        68,
+        81,
+        82,
+        83,
+        86,
+        87,
+        88,
+        91,
+        92,
+        93
+      ],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared lower diagnostic lapse guard min N_I <=1/8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 45,
+      "phase": "L=5 load 1/2048 backtrack 4",
+      "elapsed_start": 927.5222284719348,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.004309535881832,
+      "sigma_min": 5.264507081138024e-05,
+      "clock_residual": 0.00012947437490834601,
+      "minimum_interior_lapse": 68.323040295528,
+      "maximum_interior_lapse": 382.5490139852435,
+      "minimum_interior_lapse_site": 91,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [
+        31,
+        32,
+        33,
+        36,
+        37,
+        38,
+        41,
+        42,
+        43,
+        56,
+        57,
+        58,
+        61,
+        62,
+        63,
+        66,
+        67,
+        68,
+        81,
+        82,
+        83,
+        86,
+        87,
+        88,
+        91,
+        92,
+        93
+      ],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared upper diagnostic lapse guard max N_I >=8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 46,
+      "phase": "L=5 load 1/2048 backtrack 5",
+      "elapsed_start": 940.2198733650148,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0036063717319348,
+      "sigma_min": 0.0018725864088141684,
+      "clock_residual": 0.00013182486559896545,
+      "minimum_interior_lapse": 2.6120838039848495,
+      "maximum_interior_lapse": 9.067172123955926,
+      "minimum_interior_lapse_site": 41,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [
+        62
+      ],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared upper diagnostic lapse guard max N_I >=8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 47,
+      "phase": "L=5 load 1/2048 backtrack 6",
+      "elapsed_start": 952.5036064535379,
+      "status": "completed",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.003254789656996,
+      "sigma_min": 0.002762907870020986,
+      "clock_residual": 0.00013346987436788023,
+      "minimum_interior_lapse": 1.9776776151289357,
+      "maximum_interior_lapse": 5.655462022237483,
+      "minimum_interior_lapse_site": 41,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "ruler_residual": 1.3074617405010488e-17,
+      "minimum_lapse": 1.0,
+      "elapsed_end": 964.9401730671525
+    },
+    {
+      "requested_field_evaluation": 48,
+      "phase": "L=5 load 1/2048 backtrack 0",
+      "elapsed_start": 964.9404837377369,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0319695176594925,
+      "sigma_min": 0.00048283890005833605,
+      "clock_residual": 0.0017289063475016365,
+      "minimum_interior_lapse": -14.62040052934041,
+      "maximum_interior_lapse": 7.844196692005262,
+      "minimum_interior_lapse_site": 62,
+      "maximum_interior_lapse_site": 37,
+      "lower_lapse_guard_sites": [
+        31,
+        32,
+        33,
+        36,
+        38,
+        41,
+        42,
+        43,
+        56,
+        58,
+        62,
+        66,
+        68,
+        81,
+        82,
+        83,
+        86,
+        88,
+        91,
+        92,
+        93
+      ],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared lower diagnostic lapse guard min N_I <=1/8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 49,
+      "phase": "L=5 load 1/4096 initial field trial",
+      "elapsed_start": 977.7352117523551,
+      "status": "completed",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0,
+      "sigma_min": 0.008848624096064567,
+      "clock_residual": 8.468816120619191e-05,
+      "minimum_interior_lapse": 0.9942164199993602,
+      "maximum_interior_lapse": 1.0019553888552768,
+      "minimum_interior_lapse_site": 42,
+      "maximum_interior_lapse_site": 67,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "ruler_residual": 1.328147661294743e-17,
+      "minimum_lapse": 0.9942164199993602,
+      "elapsed_end": 990.6820041202009
+    },
+    {
+      "requested_field_evaluation": 50,
+      "phase": "L=5 load 1/4096 backtrack 0",
+      "elapsed_start": 990.6822520047426,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.005795773133511,
+      "sigma_min": 0.0026078503475325063,
+      "clock_residual": 4.183772535895174e-05,
+      "minimum_interior_lapse": -9.280741242121474,
+      "maximum_interior_lapse": -0.503844051280897,
+      "minimum_interior_lapse_site": 62,
+      "maximum_interior_lapse_site": 41,
+      "lower_lapse_guard_sites": [
+        31,
+        32,
+        33,
+        36,
+        37,
+        38,
+        41,
+        42,
+        43,
+        56,
+        57,
+        58,
+        61,
+        62,
+        63,
+        66,
+        67,
+        68,
+        81,
+        82,
+        83,
+        86,
+        87,
+        88,
+        91,
+        92,
+        93
+      ],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared lower diagnostic lapse guard min N_I <=1/8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 51,
+      "phase": "L=5 load 1/4096 backtrack 1",
+      "elapsed_start": 1003.7512031160295,
+      "status": "completed",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0028978865667555,
+      "sigma_min": 0.0036297725233387784,
+      "clock_residual": 5.0711627355552154e-05,
+      "minimum_interior_lapse": 1.6560896411740467,
+      "maximum_interior_lapse": 3.945304715357903,
+      "minimum_interior_lapse_site": 41,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "ruler_residual": 1.437376447592064e-17,
+      "minimum_lapse": 1.0,
+      "elapsed_end": 1016.7496687360108
+    },
+    {
+      "requested_field_evaluation": 52,
+      "phase": "L=5 load 1/4096 backtrack 0",
+      "elapsed_start": 1016.7499886192381,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0116957777110283,
+      "sigma_min": 0.00016433700458633356,
+      "clock_residual": 0.00016148952394496414,
+      "minimum_interior_lapse": -37.721048831178656,
+      "maximum_interior_lapse": 152.1111811913673,
+      "minimum_interior_lapse_site": 88,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [
+        31,
+        32,
+        33,
+        36,
+        37,
+        38,
+        41,
+        42,
+        43,
+        56,
+        57,
+        58,
+        61,
+        63,
+        66,
+        67,
+        68,
+        81,
+        82,
+        83,
+        86,
+        87,
+        88,
+        91,
+        92,
+        93
+      ],
+      "upper_lapse_guard_sites": [
+        62
+      ],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared lower diagnostic lapse guard min N_I <=1/8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 53,
+      "phase": "L=5 load 1/4096 backtrack 1",
+      "elapsed_start": 1029.1959429495037,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0072968321388787,
+      "sigma_min": 0.0005513643052818623,
+      "clock_residual": 5.036482415770066e-05,
+      "minimum_interior_lapse": -5.888108660792756,
+      "maximum_interior_lapse": 0.6774061809117544,
+      "minimum_interior_lapse_site": 62,
+      "maximum_interior_lapse_site": 81,
+      "lower_lapse_guard_sites": [
+        32,
+        36,
+        37,
+        38,
+        42,
+        56,
+        57,
+        58,
+        61,
+        62,
+        63,
+        66,
+        67,
+        68,
+        82,
+        86,
+        87,
+        88,
+        92
+      ],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared lower diagnostic lapse guard min N_I <=1/8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 54,
+      "phase": "L=5 load 1/4096 backtrack 2",
+      "elapsed_start": 1041.5323983430862,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0050973593528092,
+      "sigma_min": 0.00213826556326127,
+      "clock_residual": 4.430909337790465e-05,
+      "minimum_interior_lapse": -11.602317142854693,
+      "maximum_interior_lapse": -0.8582022553488265,
+      "minimum_interior_lapse_site": 62,
+      "maximum_interior_lapse_site": 41,
+      "lower_lapse_guard_sites": [
+        31,
+        32,
+        33,
+        36,
+        37,
+        38,
+        41,
+        42,
+        43,
+        56,
+        57,
+        58,
+        61,
+        62,
+        63,
+        66,
+        67,
+        68,
+        81,
+        82,
+        83,
+        86,
+        87,
+        88,
+        91,
+        92,
+        93
+      ],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared lower diagnostic lapse guard min N_I <=1/8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 55,
+      "phase": "L=5 load 1/4096 backtrack 3",
+      "elapsed_start": 1053.893866520375,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0039976229597745,
+      "sigma_min": 0.0008036528405785668,
+      "clock_residual": 4.5944418463274455e-05,
+      "minimum_interior_lapse": 5.2219378732425525,
+      "maximum_interior_lapse": 23.259903433707905,
+      "minimum_interior_lapse_site": 41,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [
+        32,
+        36,
+        37,
+        38,
+        42,
+        56,
+        57,
+        58,
+        61,
+        62,
+        63,
+        66,
+        67,
+        68,
+        82,
+        86,
+        87,
+        88,
+        92
+      ],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared upper diagnostic lapse guard max N_I >=8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 56,
+      "phase": "L=5 load 1/4096 backtrack 4",
+      "elapsed_start": 1066.3580199293792,
+      "status": "completed",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.003447754763257,
+      "sigma_min": 0.0022354696340291832,
+      "clock_residual": 4.793545014124843e-05,
+      "minimum_interior_lapse": 2.310136734835882,
+      "maximum_interior_lapse": 7.3056015935189045,
+      "minimum_interior_lapse_site": 41,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "ruler_residual": 2.99781900692242e-17,
+      "minimum_lapse": 1.0,
+      "elapsed_end": 1078.8707131259143
+    },
+    {
+      "requested_field_evaluation": 57,
+      "phase": "L=5 load 1/4096 backtrack 0",
+      "elapsed_start": 1078.871002819389,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0166937250284354,
+      "sigma_min": 0.0013626110475278524,
+      "clock_residual": 0.0004070738647695562,
+      "minimum_interior_lapse": -1.4520228050801054,
+      "maximum_interior_lapse": 3.202024716652313,
+      "minimum_interior_lapse_site": 87,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [
+        31,
+        32,
+        33,
+        36,
+        37,
+        38,
+        41,
+        42,
+        43,
+        56,
+        57,
+        58,
+        61,
+        63,
+        66,
+        67,
+        68,
+        81,
+        82,
+        83,
+        86,
+        87,
+        88,
+        91,
+        92,
+        93
+      ],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared lower diagnostic lapse guard min N_I <=1/8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 58,
+      "phase": "L=5 load 1/4096 backtrack 1",
+      "elapsed_start": 1091.7209351025522,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.010070739895809,
+      "sigma_min": 0.0015708478213748488,
+      "clock_residual": 0.00010917742267217573,
+      "minimum_interior_lapse": -16.609882846817605,
+      "maximum_interior_lapse": 3.3331485288232283,
+      "minimum_interior_lapse_site": 62,
+      "maximum_interior_lapse_site": 33,
+      "lower_lapse_guard_sites": [
+        37,
+        57,
+        61,
+        62,
+        63,
+        67,
+        87
+      ],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared lower diagnostic lapse guard min N_I <=1/8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 59,
+      "phase": "L=5 load 1/4096 backtrack 2",
+      "elapsed_start": 1104.9212075471878,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.006759247329496,
+      "sigma_min": 0.0002625657759306494,
+      "clock_residual": 5.099815480762141e-05,
+      "minimum_interior_lapse": -6.099614153862998,
+      "maximum_interior_lapse": 0.5604887807736209,
+      "minimum_interior_lapse_site": 62,
+      "maximum_interior_lapse_site": 91,
+      "lower_lapse_guard_sites": [
+        32,
+        36,
+        37,
+        38,
+        42,
+        56,
+        57,
+        58,
+        61,
+        62,
+        63,
+        66,
+        67,
+        68,
+        82,
+        86,
+        87,
+        88,
+        92
+      ],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared lower diagnostic lapse guard min N_I <=1/8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 60,
+      "phase": "L=5 load 1/4096 backtrack 3",
+      "elapsed_start": 1117.921998143196,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0051035010463394,
+      "sigma_min": 0.0023414121938422107,
+      "clock_residual": 4.5715643085529996e-05,
+      "minimum_interior_lapse": -10.931188227346324,
+      "maximum_interior_lapse": -0.7063414254733134,
+      "minimum_interior_lapse_site": 62,
+      "maximum_interior_lapse_site": 41,
+      "lower_lapse_guard_sites": [
+        31,
+        32,
+        33,
+        36,
+        37,
+        38,
+        41,
+        42,
+        43,
+        56,
+        57,
+        58,
+        61,
+        62,
+        63,
+        66,
+        67,
+        68,
+        81,
+        82,
+        83,
+        86,
+        87,
+        88,
+        91,
+        92,
+        93
+      ],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared lower diagnostic lapse guard min N_I <=1/8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 61,
+      "phase": "L=5 load 1/8192 initial field trial",
+      "elapsed_start": 1130.6576622352004,
+      "status": "completed",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0,
+      "sigma_min": 0.008836755688356769,
+      "clock_residual": 4.234408060384229e-05,
+      "minimum_interior_lapse": 0.9971110102959431,
+      "maximum_interior_lapse": 1.000976705431335,
+      "minimum_interior_lapse_site": 42,
+      "maximum_interior_lapse_site": 67,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "ruler_residual": 1.3022514760161467e-17,
+      "minimum_lapse": 0.9971110102959431,
+      "elapsed_end": 1142.4650132469833
+    },
+    {
+      "requested_field_evaluation": 62,
+      "phase": "L=5 load 1/8192 backtrack 0",
+      "elapsed_start": 1142.4652401059866,
+      "status": "completed",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.002895234085779,
+      "sigma_min": 0.0036260186255136027,
+      "clock_residual": 1.049501606977648e-05,
+      "minimum_interior_lapse": 1.6605187121748117,
+      "maximum_interior_lapse": 3.9385944111780717,
+      "minimum_interior_lapse_site": 41,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "ruler_residual": 2.0166160408230382e-17,
+      "minimum_lapse": 1.0,
+      "elapsed_end": 1154.9541463442147
+    },
+    {
+      "requested_field_evaluation": 63,
+      "phase": "L=5 load 1/8192 backtrack 0",
+      "elapsed_start": 1154.9545010440052,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.004863248572675,
+      "sigma_min": 0.001989214584858192,
+      "clock_residual": 1.0231366237032763e-05,
+      "minimum_interior_lapse": -12.534917530398333,
+      "maximum_interior_lapse": -1.0236446928191376,
+      "minimum_interior_lapse_site": 62,
+      "maximum_interior_lapse_site": 41,
+      "lower_lapse_guard_sites": [
+        31,
+        32,
+        33,
+        36,
+        37,
+        38,
+        41,
+        42,
+        43,
+        56,
+        57,
+        58,
+        61,
+        62,
+        63,
+        66,
+        67,
+        68,
+        81,
+        82,
+        83,
+        86,
+        87,
+        88,
+        91,
+        92,
+        93
+      ],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared lower diagnostic lapse guard min N_I <=1/8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 64,
+      "phase": "L=5 load 1/8192 backtrack 1",
+      "elapsed_start": 1167.9412290900946,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0038792413291497,
+      "sigma_min": 0.0008767562761414334,
+      "clock_residual": 7.80978535738131e-06,
+      "minimum_interior_lapse": 4.920295261254259,
+      "maximum_interior_lapse": 21.340809480948852,
+      "minimum_interior_lapse_site": 41,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [
+        32,
+        36,
+        37,
+        38,
+        42,
+        56,
+        57,
+        58,
+        61,
+        62,
+        63,
+        66,
+        67,
+        68,
+        82,
+        86,
+        87,
+        88,
+        92
+      ],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared upper diagnostic lapse guard max N_I >=8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 65,
+      "phase": "L=5 load 1/8192 backtrack 2",
+      "elapsed_start": 1180.8506387732923,
+      "status": "completed",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0033872377074193,
+      "sigma_min": 0.0022695050856871646,
+      "clock_residual": 8.512386751870203e-06,
+      "minimum_interior_lapse": 2.303916300116088,
+      "maximum_interior_lapse": 7.18961230138928,
+      "minimum_interior_lapse_site": 41,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "ruler_residual": 2.2714035513571318e-17,
+      "minimum_lapse": 1.0,
+      "elapsed_end": 1194.0538736060262
+    },
+    {
+      "requested_field_evaluation": 66,
+      "phase": "L=5 load 1/8192 backtrack 0",
+      "elapsed_start": 1194.0541868917644,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0059062772915066,
+      "sigma_min": 0.0016058084733676307,
+      "clock_residual": 1.7357134759881507e-05,
+      "minimum_interior_lapse": -6.845293890576729,
+      "maximum_interior_lapse": 0.2710774457337117,
+      "minimum_interior_lapse_site": 62,
+      "maximum_interior_lapse_site": 41,
+      "lower_lapse_guard_sites": [
+        32,
+        36,
+        37,
+        38,
+        42,
+        56,
+        57,
+        58,
+        61,
+        62,
+        63,
+        66,
+        67,
+        68,
+        82,
+        86,
+        87,
+        88,
+        92
+      ],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared lower diagnostic lapse guard min N_I <=1/8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 67,
+      "phase": "L=5 load 1/8192 backtrack 1",
+      "elapsed_start": 1207.217731013894,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0046467574994469,
+      "sigma_min": 0.001389951999615261,
+      "clock_residual": 8.605326317285953e-06,
+      "minimum_interior_lapse": -16.945656053401837,
+      "maximum_interior_lapse": -1.8414795501384282,
+      "minimum_interior_lapse_site": 62,
+      "maximum_interior_lapse_site": 41,
+      "lower_lapse_guard_sites": [
+        31,
+        32,
+        33,
+        36,
+        37,
+        38,
+        41,
+        42,
+        43,
+        56,
+        57,
+        58,
+        61,
+        62,
+        63,
+        66,
+        67,
+        68,
+        81,
+        82,
+        83,
+        86,
+        87,
+        88,
+        91,
+        92,
+        93
+      ],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared lower diagnostic lapse guard min N_I <=1/8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 68,
+      "phase": "L=5 load 1/8192 backtrack 2",
+      "elapsed_start": 1220.2302400656044,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.004016997603433,
+      "sigma_min": 0.000463379251772188,
+      "clock_residual": 7.47280716995134e-06,
+      "minimum_interior_lapse": 8.677189067341093,
+      "maximum_interior_lapse": 42.151434666540034,
+      "minimum_interior_lapse_site": 41,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [
+        31,
+        32,
+        33,
+        36,
+        37,
+        38,
+        41,
+        42,
+        43,
+        56,
+        57,
+        58,
+        61,
+        62,
+        63,
+        66,
+        67,
+        68,
+        81,
+        82,
+        83,
+        86,
+        87,
+        88,
+        91,
+        92,
+        93
+      ],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared upper diagnostic lapse guard max N_I >=8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 69,
+      "phase": "L=5 load 1/8192 backtrack 3",
+      "elapsed_start": 1233.1093260012567,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0037021176554262,
+      "sigma_min": 0.001373334583670955,
+      "clock_residual": 7.720622090998513e-06,
+      "minimum_interior_lapse": 3.3883417928218935,
+      "maximum_interior_lapse": 12.988302151851506,
+      "minimum_interior_lapse_site": 41,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [
+        37,
+        57,
+        61,
+        62,
+        63,
+        67,
+        87
+      ],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared upper diagnostic lapse guard max N_I >=8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 70,
+      "phase": "L=5 load 1/8192 backtrack 4",
+      "elapsed_start": 1245.641662646085,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0035446776814227,
+      "sigma_min": 0.0018232529628386634,
+      "clock_residual": 8.048452830641352e-06,
+      "minimum_interior_lapse": 2.713743472809662,
+      "maximum_interior_lapse": 9.35512469092268,
+      "minimum_interior_lapse_site": 41,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [
+        62
+      ],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared upper diagnostic lapse guard max N_I >=8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 71,
+      "phase": "L=5 load 1/8192 backtrack 5",
+      "elapsed_start": 1258.2907150313258,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0034659576944212,
+      "sigma_min": 0.002046850632248607,
+      "clock_residual": 8.263399631759212e-06,
+      "minimum_interior_lapse": 2.4867264720807563,
+      "maximum_interior_lapse": 8.150035154427204,
+      "minimum_interior_lapse_site": 41,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [
+        62
+      ],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared upper diagnostic lapse guard max N_I >=8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 72,
+      "phase": "L=5 load 1/8192 backtrack 6",
+      "elapsed_start": 1270.7707181051373,
+      "status": "completed",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0034265977009202,
+      "sigma_min": 0.002158297408298403,
+      "clock_residual": 8.38363725308385e-06,
+      "minimum_interior_lapse": 2.390664363791597,
+      "maximum_interior_lapse": 7.644070523439531,
+      "minimum_interior_lapse_site": 41,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "ruler_residual": 3.558893631183668e-17,
+      "minimum_lapse": 1.0,
+      "elapsed_end": 1283.7892734073102
+    },
+    {
+      "requested_field_evaluation": 73,
+      "phase": "L=5 load 1/16384 initial field trial",
+      "elapsed_start": 1283.808551106602,
+      "status": "completed",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0,
+      "sigma_min": 0.008830833014268763,
+      "clock_residual": 2.117204030267307e-05,
+      "minimum_interior_lapse": 0.9985562041626557,
+      "maximum_interior_lapse": 1.0004881058434476,
+      "minimum_interior_lapse_site": 42,
+      "maximum_interior_lapse_site": 67,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "ruler_residual": 9.774688742173939e-18,
+      "minimum_lapse": 0.9985562041626557,
+      "elapsed_end": 1296.1488298028708
+    },
+    {
+      "requested_field_evaluation": 74,
+      "phase": "L=5 load 1/16384 backtrack 0",
+      "elapsed_start": 1296.1490566059947,
+      "status": "completed",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.001446954922409,
+      "sigma_min": 0.006432934812513256,
+      "clock_residual": 2.6282205587837146e-06,
+      "minimum_interior_lapse": 1.1932612637396638,
+      "maximum_interior_lapse": 1.7389944168005775,
+      "minimum_interior_lapse_site": 41,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "ruler_residual": 8.357155241518958e-18,
+      "minimum_lapse": 1.0,
+      "elapsed_end": 1308.5463375970721
+    },
+    {
+      "requested_field_evaluation": 75,
+      "phase": "L=5 load 1/16384 backtrack 0",
+      "elapsed_start": 1308.5466546453536,
+      "status": "completed",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.001714913625719,
+      "sigma_min": 0.005770536144613667,
+      "clock_residual": 1.846754846612148e-07,
+      "minimum_interior_lapse": 1.2792518700604292,
+      "maximum_interior_lapse": 2.0740410985885918,
+      "minimum_interior_lapse_site": 91,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "ruler_residual": 9.89748054234127e-18,
+      "minimum_lapse": 1.0,
+      "elapsed_end": 1321.2398201972246
+    },
+    {
+      "requested_field_evaluation": 76,
+      "phase": "L=5 load 1/16384 backtrack 0",
+      "elapsed_start": 1321.2400983348489,
+      "status": "completed",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.001731258849655,
+      "sigma_min": 0.0057280268647001515,
+      "clock_residual": 7.914889252679745e-10,
+      "minimum_interior_lapse": 1.2854372857973142,
+      "maximum_interior_lapse": 2.09886364443784,
+      "minimum_interior_lapse_site": 31,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "ruler_residual": 1.2491866033291026e-17,
+      "minimum_lapse": 1.0,
+      "elapsed_end": 1333.8321491517127
+    },
+    {
+      "requested_field_evaluation": 77,
+      "phase": "L=5 load 1/16384 backtrack 0",
+      "elapsed_start": 1333.8324015177786,
+      "status": "completed",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.001731324617796,
+      "sigma_min": 0.005727854876008834,
+      "clock_residual": 4.163447049550543e-14,
+      "minimum_interior_lapse": 1.2854624365981677,
+      "maximum_interior_lapse": 2.098965707565491,
+      "minimum_interior_lapse_site": 81,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "ruler_residual": 1.0551569912460471e-17,
+      "minimum_lapse": 1.0,
+      "elapsed_end": 1346.3605782799423
+    },
+    {
+      "requested_field_evaluation": 78,
+      "phase": "L=5 load 1/8192 initial field trial",
+      "elapsed_start": 1346.5935751721263,
+      "status": "completed",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.001731324617796,
+      "sigma_min": 0.005733108955085066,
+      "clock_residual": 2.1180399470268818e-05,
+      "minimum_interior_lapse": 1.2840427372117964,
+      "maximum_interior_lapse": 2.0994559632066236,
+      "minimum_interior_lapse_site": 81,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "ruler_residual": 1.270811199910559e-17,
+      "minimum_lapse": 1.0,
+      "elapsed_end": 1358.862173896283
+    },
+    {
+      "requested_field_evaluation": 79,
+      "phase": "L=5 load 1/8192 backtrack 0",
+      "elapsed_start": 1358.8624021075666,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0039315861891531,
+      "sigma_min": 0.0007328272711856358,
+      "clock_residual": 7.981460570592874e-06,
+      "minimum_interior_lapse": 5.751576771336292,
+      "maximum_interior_lapse": 25.866263104406812,
+      "minimum_interior_lapse_site": 81,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [
+        32,
+        36,
+        37,
+        38,
+        42,
+        56,
+        57,
+        58,
+        61,
+        62,
+        63,
+        66,
+        67,
+        68,
+        82,
+        86,
+        87,
+        88,
+        92
+      ],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared upper diagnostic lapse guard max N_I >=8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 80,
+      "phase": "L=5 load 1/8192 backtrack 1",
+      "elapsed_start": 1371.0771750621498,
+      "status": "completed",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0028314554034217,
+      "sigma_min": 0.0033140624652800437,
+      "clock_residual": 1.1971229037496818e-05,
+      "minimum_interior_lapse": 1.8028208682694666,
+      "maximum_interior_lapse": 4.534712027480934,
+      "minimum_interior_lapse_site": 81,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "ruler_residual": 1.6309164939154006e-17,
+      "minimum_lapse": 1.0,
+      "elapsed_end": 1383.6214785538614
+    },
+    {
+      "requested_field_evaluation": 81,
+      "phase": "L=5 load 1/8192 backtrack 0",
+      "elapsed_start": 1383.6217521615326,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0050262802784102,
+      "sigma_min": 0.0025152614744866964,
+      "clock_residual": 1.0463409948861734e-05,
+      "minimum_interior_lapse": -10.506459463194524,
+      "maximum_interior_lapse": -0.6126815216868307,
+      "minimum_interior_lapse_site": 62,
+      "maximum_interior_lapse_site": 31,
+      "lower_lapse_guard_sites": [
+        31,
+        32,
+        33,
+        36,
+        37,
+        38,
+        41,
+        42,
+        43,
+        56,
+        57,
+        58,
+        61,
+        62,
+        63,
+        66,
+        67,
+        68,
+        81,
+        82,
+        83,
+        86,
+        87,
+        88,
+        91,
+        92,
+        93
+      ],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared lower diagnostic lapse guard min N_I <=1/8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 82,
+      "phase": "L=5 load 1/8192 backtrack 1",
+      "elapsed_start": 1395.7052435055375,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0039288678407092,
+      "sigma_min": 0.000457819318493781,
+      "clock_residual": 7.567814092024997e-06,
+      "minimum_interior_lapse": 8.880886778868906,
+      "maximum_interior_lapse": 43.14213775465949,
+      "minimum_interior_lapse_site": 31,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [
+        31,
+        32,
+        33,
+        36,
+        37,
+        38,
+        41,
+        42,
+        43,
+        56,
+        57,
+        58,
+        61,
+        62,
+        63,
+        66,
+        67,
+        68,
+        81,
+        82,
+        83,
+        86,
+        87,
+        88,
+        91,
+        92,
+        93
+      ],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared upper diagnostic lapse guard max N_I >=8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 83,
+      "phase": "L=5 load 1/8192 backtrack 2",
+      "elapsed_start": 1407.3852551206946,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.003380161621997,
+      "sigma_min": 0.0019053532991700182,
+      "clock_residual": 9.374337330281305e-06,
+      "minimum_interior_lapse": 2.6700508016279625,
+      "maximum_interior_lapse": 9.024396065340364,
+      "minimum_interior_lapse_site": 81,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [
+        62
+      ],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared upper diagnostic lapse guard max N_I >=8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 84,
+      "phase": "L=5 load 1/8192 backtrack 3",
+      "elapsed_start": 1419.7340787276626,
+      "status": "completed",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.003105808512681,
+      "sigma_min": 0.002615112162927077,
+      "clock_residual": 1.0573850068142561e-05,
+      "minimum_interior_lapse": 2.121091252426248,
+      "maximum_interior_lapse": 6.14417676068498,
+      "minimum_interior_lapse_site": 81,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "ruler_residual": 2.2133100276821446e-17,
+      "minimum_lapse": 1.0,
+      "elapsed_end": 1432.086453858763
+    },
+    {
+      "requested_field_evaluation": 85,
+      "phase": "L=5 load 1/8192 backtrack 0",
+      "elapsed_start": 1432.0867922827601,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0055435555950352,
+      "sigma_min": 0.0023270641857134275,
+      "clock_residual": 1.3741253708546741e-05,
+      "minimum_interior_lapse": -7.667826125355141,
+      "maximum_interior_lapse": 0.026748588303147258,
+      "minimum_interior_lapse_site": 62,
+      "maximum_interior_lapse_site": 41,
+      "lower_lapse_guard_sites": [
+        31,
+        32,
+        33,
+        36,
+        37,
+        38,
+        41,
+        42,
+        43,
+        56,
+        57,
+        58,
+        61,
+        62,
+        63,
+        66,
+        67,
+        68,
+        81,
+        82,
+        83,
+        86,
+        87,
+        88,
+        91,
+        92,
+        93
+      ],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared lower diagnostic lapse guard min N_I <=1/8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 86,
+      "phase": "L=5 load 1/8192 backtrack 1",
+      "elapsed_start": 1444.5993940867484,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0043246820537906,
+      "sigma_min": 0.0006806569324734854,
+      "clock_residual": 7.302565885365048e-06,
+      "minimum_interior_lapse": -32.53683066934498,
+      "maximum_interior_lapse": -4.675484457622154,
+      "minimum_interior_lapse_site": 62,
+      "maximum_interior_lapse_site": 81,
+      "lower_lapse_guard_sites": [
+        31,
+        32,
+        33,
+        36,
+        37,
+        38,
+        41,
+        42,
+        43,
+        56,
+        57,
+        58,
+        61,
+        62,
+        63,
+        66,
+        67,
+        68,
+        81,
+        82,
+        83,
+        86,
+        87,
+        88,
+        91,
+        92,
+        93
+      ],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared lower diagnostic lapse guard min N_I <=1/8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 87,
+      "phase": "L=5 load 1/8192 backtrack 2",
+      "elapsed_start": 1457.0792844556272,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0037152452832045,
+      "sigma_min": 0.0009889612135717647,
+      "clock_residual": 8.434815335478671e-06,
+      "minimum_interior_lapse": 4.510973126869804,
+      "maximum_interior_lapse": 19.02039629001087,
+      "minimum_interior_lapse_site": 81,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [
+        32,
+        36,
+        37,
+        38,
+        42,
+        56,
+        57,
+        58,
+        61,
+        62,
+        63,
+        66,
+        67,
+        68,
+        82,
+        86,
+        87,
+        88,
+        92
+      ],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared upper diagnostic lapse guard max N_I >=8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 88,
+      "phase": "L=5 load 1/8192 backtrack 3",
+      "elapsed_start": 1469.5596080496907,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0034105268979427,
+      "sigma_min": 0.0018082699977194207,
+      "clock_residual": 9.37829050989887e-06,
+      "minimum_interior_lapse": 2.7796503108030945,
+      "maximum_interior_lapse": 9.607941867577429,
+      "minimum_interior_lapse_site": 81,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [
+        62
+      ],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared upper diagnostic lapse guard max N_I >=8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 89,
+      "phase": "L=5 load 1/8192 backtrack 4",
+      "elapsed_start": 1482.0581146255136,
+      "status": "completed",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0032581677053118,
+      "sigma_min": 0.0022133459609389007,
+      "clock_residual": 9.944535454217002e-06,
+      "minimum_interior_lapse": 2.3909561730591475,
+      "maximum_interior_lapse": 7.547568688405008,
+      "minimum_interior_lapse_site": 81,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "ruler_residual": 1.214306433183765e-17,
+      "minimum_lapse": 1.0,
+      "elapsed_end": 1494.1134220845997
+    },
+    {
+      "requested_field_evaluation": 90,
+      "phase": "L=5 load 3/32768 initial field trial",
+      "elapsed_start": 1494.1322655640543,
+      "status": "completed",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.001731324617796,
+      "sigma_min": 0.005730481272244719,
+      "clock_residual": 1.0590199741932804e-05,
+      "minimum_interior_lapse": 1.284752620219588,
+      "maximum_interior_lapse": 2.0992108109340246,
+      "minimum_interior_lapse_site": 81,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "ruler_residual": 9.662951862277058e-18,
+      "minimum_lapse": 1.0,
+      "elapsed_end": 1506.599855620414
+    },
+    {
+      "requested_field_evaluation": 91,
+      "phase": "L=5 load 3/32768 backtrack 0",
+      "elapsed_start": 1506.600080575794,
+      "status": "completed",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0028313289463386,
+      "sigma_min": 0.003312145546176654,
+      "clock_residual": 1.998465828561607e-06,
+      "minimum_interior_lapse": 1.8044507397751268,
+      "maximum_interior_lapse": 4.534493655884836,
+      "minimum_interior_lapse_site": 31,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "ruler_residual": 1.782157321023048e-17,
+      "minimum_lapse": 1.0,
+      "elapsed_end": 1518.402975242585
+    },
+    {
+      "requested_field_evaluation": 92,
+      "phase": "L=5 load 3/32768 backtrack 0",
+      "elapsed_start": 1518.4032382369041,
+      "status": "completed",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0031965565820309,
+      "sigma_min": 0.0022881651227575914,
+      "clock_residual": 3.740637433834999e-07,
+      "minimum_interior_lapse": 2.344496749344806,
+      "maximum_interior_lapse": 7.273740941305238,
+      "minimum_interior_lapse_site": 91,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "ruler_residual": 2.2971533529536625e-17,
+      "minimum_lapse": 1.0,
+      "elapsed_end": 1530.0530484169722
+    },
+    {
+      "requested_field_evaluation": 93,
+      "phase": "L=5 load 3/32768 backtrack 0",
+      "elapsed_start": 1530.0533631406724,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0032799489283672,
+      "sigma_min": 0.0020476121443239975,
+      "clock_residual": 2.0710128359794998e-08,
+      "minimum_interior_lapse": 2.545689221039575,
+      "maximum_interior_lapse": 8.330589050966125,
+      "minimum_interior_lapse_site": 31,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [
+        62
+      ],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared upper diagnostic lapse guard max N_I >=8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 94,
+      "phase": "L=5 load 3/32768 backtrack 1",
+      "elapsed_start": 1542.6781628578901,
+      "status": "completed",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.003238252754698,
+      "sigma_min": 0.0021680432216967904,
+      "clock_residual": 1.9220980883204855e-07,
+      "minimum_interior_lapse": 2.439580663774687,
+      "maximum_interior_lapse": 7.771596951109203,
+      "minimum_interior_lapse_site": 31,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "ruler_residual": 2.927345865710862e-17,
+      "minimum_lapse": 1.0,
+      "elapsed_end": 1555.4690084978938
+    },
+    {
+      "requested_field_evaluation": 95,
+      "phase": "L=5 load 3/32768 backtrack 0",
+      "elapsed_start": 1555.4693777821958,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0032834932584782,
+      "sigma_min": 0.002037350217699057,
+      "clock_residual": 6.098157117775504e-09,
+      "minimum_interior_lapse": 2.5552863479532144,
+      "maximum_interior_lapse": 8.381368327608685,
+      "minimum_interior_lapse_site": 93,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [
+        62
+      ],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared upper diagnostic lapse guard max N_I >=8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 96,
+      "phase": "L=5 load 3/32768 backtrack 1",
+      "elapsed_start": 1568.2321542575955,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.003260873006555,
+      "sigma_min": 0.0021027419198332213,
+      "clock_residual": 9.762951850249749e-08,
+      "minimum_interior_lapse": 2.4956561653580556,
+      "maximum_interior_lapse": 8.066620568278093,
+      "minimum_interior_lapse_site": 93,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [
+        62
+      ],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared upper diagnostic lapse guard max N_I >=8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 97,
+      "phase": "L=5 load 3/32768 backtrack 2",
+      "elapsed_start": 1581.0189371444285,
+      "status": "completed",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0032495628805933,
+      "sigma_min": 0.002135403914168803,
+      "clock_residual": 1.4453854299374276e-07,
+      "minimum_interior_lapse": 2.4671948144983435,
+      "maximum_interior_lapse": 7.916758903031586,
+      "minimum_interior_lapse_site": 91,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "ruler_residual": 1.7184604433895245e-17,
+      "minimum_lapse": 1.0,
+      "elapsed_end": 1594.1819035336375
+    },
+    {
+      "requested_field_evaluation": 98,
+      "phase": "L=5 load 3/32768 backtrack 0",
+      "elapsed_start": 1594.18222932145,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0032841112829949,
+      "sigma_min": 0.00203556060366563,
+      "clock_residual": 3.5566604536125808e-09,
+      "minimum_interior_lapse": 2.556969595443036,
+      "maximum_interior_lapse": 8.390277375182546,
+      "minimum_interior_lapse_site": 31,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [
+        62
+      ],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared upper diagnostic lapse guard max N_I >=8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 99,
+      "phase": "L=5 load 3/32768 backtrack 1",
+      "elapsed_start": 1606.75006365031,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0032668370815905,
+      "sigma_min": 0.0020855085714508036,
+      "clock_residual": 7.315844802291185e-08,
+      "minimum_interior_lapse": 2.5110197516646178,
+      "maximum_interior_lapse": 8.147621924921573,
+      "minimum_interior_lapse_site": 31,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [
+        62
+      ],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared upper diagnostic lapse guard max N_I >=8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 100,
+      "phase": "L=5 load 3/32768 backtrack 2",
+      "elapsed_start": 1619.5669211894274,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0032581999808885,
+      "sigma_min": 0.0021104628402897987,
+      "clock_residual": 1.0862619656906792e-07,
+      "minimum_interior_lapse": 2.488851250170097,
+      "maximum_interior_lapse": 8.030769803001373,
+      "minimum_interior_lapse_site": 31,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [
+        62
+      ],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared upper diagnostic lapse guard max N_I >=8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 101,
+      "phase": "L=5 load 3/32768 backtrack 3",
+      "elapsed_start": 1632.4339380934834,
+      "status": "completed",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.003253881430738,
+      "sigma_min": 0.002122935029010204,
+      "clock_residual": 1.2652679892870343e-07,
+      "minimum_interior_lapse": 2.4779601714353174,
+      "maximum_interior_lapse": 7.9734156002859375,
+      "minimum_interior_lapse_site": 31,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "ruler_residual": 2.4245471082207093e-17,
+      "minimum_lapse": 1.0,
+      "elapsed_end": 1645.0993727073073
+    },
+    {
+      "requested_field_evaluation": 102,
+      "phase": "L=5 load 5/65536 initial field trial",
+      "elapsed_start": 1645.116481307894,
+      "status": "completed",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.001731324617796,
+      "sigma_min": 0.00572916791303056,
+      "clock_residual": 5.295099877716702e-06,
+      "minimum_interior_lapse": 1.2851075367374019,
+      "maximum_interior_lapse": 2.0990882531372943,
+      "minimum_interior_lapse_site": 81,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "ruler_residual": 1.0836928775317405e-17,
+      "minimum_lapse": 1.0,
+      "elapsed_end": 1657.428283866495
+    },
+    {
+      "requested_field_evaluation": 103,
+      "phase": "L=5 load 5/65536 backtrack 0",
+      "elapsed_start": 1657.4285171926022,
+      "status": "completed",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0022812951727194,
+      "sigma_min": 0.0045449830516374095,
+      "clock_residual": 5.000046996462138e-07,
+      "minimum_interior_lapse": 1.4774886051755598,
+      "maximum_interior_lapse": 2.953350698144211,
+      "minimum_interior_lapse_site": 31,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "ruler_residual": 1.2576745200831851e-17,
+      "minimum_lapse": 1.0,
+      "elapsed_end": 1670.2460349164903
+    },
+    {
+      "requested_field_evaluation": 104,
+      "phase": "L=5 load 5/65536 backtrack 0",
+      "elapsed_start": 1670.2463091351092,
+      "status": "completed",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0023470347065797,
+      "sigma_min": 0.004369055835517442,
+      "clock_residual": 1.2014921225702381e-08,
+      "minimum_interior_lapse": 1.5162050120800612,
+      "maximum_interior_lapse": 3.127581890070811,
+      "minimum_interior_lapse_site": 81,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "ruler_residual": 1.3257396383651988e-17,
+      "minimum_lapse": 1.0,
+      "elapsed_end": 1682.536175981164
+    },
+    {
+      "requested_field_evaluation": 105,
+      "phase": "L=5 load 5/65536 backtrack 0",
+      "elapsed_start": 1682.53724199906,
+      "status": "completed",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0023484100476077,
+      "sigma_min": 0.004365296970163541,
+      "clock_residual": 5.6649336321190494e-12,
+      "minimum_interior_lapse": 1.5170664355239727,
+      "maximum_interior_lapse": 3.1315002436340102,
+      "minimum_interior_lapse_site": 43,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "ruler_residual": 1.3786626844421964e-17,
+      "minimum_lapse": 1.0,
+      "elapsed_end": 1695.9197110272944
+    },
+    {
+      "requested_field_evaluation": 106,
+      "phase": "L=5 load 5/65536 backtrack 0",
+      "elapsed_start": 1695.9200074896216,
+      "status": "completed",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0023484106759575,
+      "sigma_min": 0.004365295249808526,
+      "clock_residual": 4.501707274756384e-14,
+      "minimum_interior_lapse": 1.5170668299235484,
+      "maximum_interior_lapse": 3.1315020428088975,
+      "minimum_interior_lapse_site": 93,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "ruler_residual": 1.3553400339841182e-17,
+      "minimum_lapse": 1.0,
+      "elapsed_end": 1708.9024597518146
+    },
+    {
+      "requested_field_evaluation": 107,
+      "phase": "L=5 load 3/32768 initial field trial",
+      "elapsed_start": 1709.1019451357424,
+      "status": "completed",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0023484106759575,
+      "sigma_min": 0.0043664814558052045,
+      "clock_residual": 5.295332093865234e-06,
+      "minimum_interior_lapse": 1.5165071246701847,
+      "maximum_interior_lapse": 3.1315894921381067,
+      "minimum_interior_lapse_site": 93,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "ruler_residual": 1.4460546475525415e-17,
+      "minimum_lapse": 1.0,
+      "elapsed_end": 1720.8221477642655
+    },
+    {
+      "requested_field_evaluation": 108,
+      "phase": "L=5 load 3/32768 backtrack 0",
+      "elapsed_start": 1720.8223710097373,
+      "status": "completed",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.003055094256822,
+      "sigma_min": 0.0026883080197156618,
+      "clock_residual": 9.350302491422959e-07,
+      "minimum_interior_lapse": 2.0870217484644837,
+      "maximum_interior_lapse": 5.947054592993117,
+      "minimum_interior_lapse_site": 83,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "ruler_residual": 1.3647725692556914e-17,
+      "minimum_lapse": 1.0,
+      "elapsed_end": 1733.6846681274474
+    },
+    {
+      "requested_field_evaluation": 109,
+      "phase": "L=5 load 3/32768 backtrack 0",
+      "elapsed_start": 1733.6850203946233,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.003256612350672,
+      "sigma_min": 0.0021150757971613483,
+      "clock_residual": 1.1653940861367906e-07,
+      "minimum_interior_lapse": 2.484820633950264,
+      "maximum_interior_lapse": 8.009388681242163,
+      "minimum_interior_lapse_site": 83,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [
+        62
+      ],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared upper diagnostic lapse guard max N_I >=8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 110,
+      "phase": "L=5 load 3/32768 backtrack 1",
+      "elapsed_start": 1746.7458654642105,
+      "status": "completed",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0031558533035825,
+      "sigma_min": 0.0024025804053638194,
+      "clock_residual": 4.966553954192372e-07,
+      "minimum_interior_lapse": 2.2625515620947434,
+      "maximum_interior_lapse": 6.849213343704926,
+      "minimum_interior_lapse_site": 83,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "ruler_residual": 1.599198204416119e-17,
+      "minimum_lapse": 1.0,
+      "elapsed_end": 1759.746700976044
+    },
+    {
+      "requested_field_evaluation": 111,
+      "phase": "L=5 load 3/32768 backtrack 0",
+      "elapsed_start": 1759.7469846345484,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0032749184083782,
+      "sigma_min": 0.002062159348842876,
+      "clock_residual": 4.092505110603098e-08,
+      "minimum_interior_lapse": 2.532237054234926,
+      "maximum_interior_lapse": 8.259529747789765,
+      "minimum_interior_lapse_site": 81,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [
+        62
+      ],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared upper diagnostic lapse guard max N_I >=8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 112,
+      "phase": "L=5 load 3/32768 backtrack 1",
+      "elapsed_start": 1772.6205690540373,
+      "status": "completed",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0032153858555344,
+      "sigma_min": 0.002232676175621927,
+      "clock_residual": 2.5856008679730767e-07,
+      "minimum_interior_lapse": 2.3872483281360495,
+      "maximum_interior_lapse": 7.4982518695994385,
+      "minimum_interior_lapse_site": 81,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "ruler_residual": 2.4969055707812426e-17,
+      "minimum_lapse": 1.0,
+      "elapsed_end": 1785.8429839462042
+    },
+    {
+      "requested_field_evaluation": 113,
+      "phase": "L=5 load 3/32768 backtrack 0",
+      "elapsed_start": 1785.8433686606586,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0032818245786386,
+      "sigma_min": 0.0020421779724277378,
+      "clock_residual": 1.2787414903139973e-08,
+      "minimum_interior_lapse": 2.550758110321512,
+      "maximum_interior_lapse": 8.357426522837276,
+      "minimum_interior_lapse_site": 41,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [
+        62
+      ],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared upper diagnostic lapse guard max N_I >=8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 114,
+      "phase": "L=5 load 3/32768 backtrack 1",
+      "elapsed_start": 1799.413869123906,
+      "status": "completed",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.003248605217012,
+      "sigma_min": 0.0021375217934306544,
+      "clock_residual": 1.324770817490704e-07,
+      "minimum_interior_lapse": 2.465403321814519,
+      "maximum_interior_lapse": 7.907906443598161,
+      "minimum_interior_lapse_site": 81,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "ruler_residual": 3.518236049715462e-17,
+      "minimum_lapse": 1.0,
+      "elapsed_end": 1811.850186277181
+    },
+    {
+      "requested_field_evaluation": 115,
+      "phase": "L=5 load 3/32768 backtrack 0",
+      "elapsed_start": 1811.8505277223885,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0032840761464918,
+      "sigma_min": 0.002035661308164703,
+      "clock_residual": 3.652057634252878e-09,
+      "minimum_interior_lapse": 2.556874355704737,
+      "maximum_interior_lapse": 8.389778947517376,
+      "minimum_interior_lapse_site": 91,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [
+        62
+      ],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared upper diagnostic lapse guard max N_I >=8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 116,
+      "phase": "L=5 load 3/32768 backtrack 1",
+      "elapsed_start": 1824.4890574365854,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0032663406816766,
+      "sigma_min": 0.00208661845276004,
+      "clock_residual": 6.715158122728052e-08,
+      "minimum_interior_lapse": 2.510035020522596,
+      "maximum_interior_lapse": 8.142727457405687,
+      "minimum_interior_lapse_site": 43,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [
+        62
+      ],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared upper diagnostic lapse guard max N_I >=8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 117,
+      "phase": "L=5 load 3/32768 backtrack 2",
+      "elapsed_start": 1837.6850113235414,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0032574729493444,
+      "sigma_min": 0.002112076869397425,
+      "clock_residual": 9.95860957291225e-08,
+      "minimum_interior_lapse": 2.4874533600536175,
+      "maximum_interior_lapse": 8.023844623102324,
+      "minimum_interior_lapse_site": 43,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [
+        62
+      ],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared upper diagnostic lapse guard max N_I >=8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 118,
+      "phase": "L=5 load 3/32768 backtrack 3",
+      "elapsed_start": 1850.4684371389449,
+      "status": "completed",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0032530390831782,
+      "sigma_min": 0.002124801020593982,
+      "clock_residual": 1.1597454869122868e-07,
+      "minimum_interior_lapse": 2.476363101900264,
+      "maximum_interior_lapse": 7.965514209890777,
+      "minimum_interior_lapse_site": 43,
+      "maximum_interior_lapse_site": 62,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "ruler_residual": 1.7354983916993438e-17,
+      "minimum_lapse": 1.0,
+      "elapsed_end": 1863.9517025984824
+    },
+    {
+      "requested_field_evaluation": 119,
+      "phase": "L=7 flat algebraic control",
+      "elapsed_start": 1880.2959741726518,
+      "status": "completed",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0,
+      "sigma_min": 0.005773665332074604,
+      "clock_residual": 1.2603146094162877e-14,
+      "minimum_interior_lapse": 0.999999999998313,
+      "maximum_interior_lapse": 1.0000000000005618,
+      "minimum_interior_lapse_site": 187,
+      "maximum_interior_lapse_site": 264,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "ruler_residual": 1.3613513528271115e-17,
+      "minimum_lapse": 0.999999999998313,
+      "elapsed_end": 4796.442500337958
+    },
+    {
+      "requested_field_evaluation": 120,
+      "phase": "L=7 load 1/256 initial field trial",
+      "elapsed_start": 4797.233176790178,
+      "status": "completed",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0,
+      "sigma_min": 0.006054796281884858,
+      "clock_residual": 0.0013490517923676,
+      "minimum_interior_lapse": 0.9045627976545323,
+      "maximum_interior_lapse": 1.0106292528042455,
+      "minimum_interior_lapse_site": 115,
+      "maximum_interior_lapse_site": 164,
+      "lower_lapse_guard_sites": [],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "ruler_residual": 1.47181637823579e-17,
+      "minimum_lapse": 0.9045627976545323,
+      "elapsed_end": 8550.459484439343
+    },
+    {
+      "requested_field_evaluation": 121,
+      "phase": "L=7 load 1/256 backtrack 0",
+      "elapsed_start": 8550.461538411677,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.1069977131516189,
+      "sigma_min": 0.0003052953445326146,
+      "clock_residual": 0.01672559864541825,
+      "minimum_interior_lapse": -4.617122876050506,
+      "maximum_interior_lapse": 6.442205928918502,
+      "minimum_interior_lapse_site": 235,
+      "maximum_interior_lapse_site": 185,
+      "lower_lapse_guard_sites": [
+        57,
+        58,
+        59,
+        60,
+        61,
+        64,
+        65,
+        66,
+        67,
+        68,
+        71,
+        72,
+        74,
+        75,
+        78,
+        79,
+        80,
+        81,
+        82,
+        85,
+        86,
+        87,
+        88,
+        89,
+        106,
+        107,
+        108,
+        109,
+        110,
+        113,
+        117,
+        120,
+        122,
+        124,
+        127,
+        131,
+        134,
+        135,
+        136,
+        137,
+        138,
+        155,
+        156,
+        158,
+        159,
+        162,
+        164,
+        166,
+        170,
+        171,
+        172,
+        176,
+        178,
+        180,
+        183,
+        184,
+        186,
+        187,
+        204,
+        205,
+        206,
+        207,
+        208,
+        211,
+        215,
+        218,
+        220,
+        222,
+        225,
+        229,
+        232,
+        233,
+        234,
+        235,
+        236,
+        253,
+        254,
+        255,
+        256,
+        257,
+        260,
+        261,
+        262,
+        263,
+        264,
+        267,
+        268,
+        270,
+        271,
+        274,
+        275,
+        276,
+        277,
+        278,
+        281,
+        282,
+        283,
+        284,
+        285
+      ],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared lower diagnostic lapse guard min N_I <=1/8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 122,
+      "phase": "L=7 load 1/256 backtrack 1",
+      "elapsed_start": 11755.214127894491,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0534988565758094,
+      "sigma_min": 0.0011385260206666788,
+      "clock_residual": 0.004543968243108012,
+      "minimum_interior_lapse": -3.4824771892033457,
+      "maximum_interior_lapse": 2.2152146284446927,
+      "minimum_interior_lapse_site": 185,
+      "maximum_interior_lapse_site": 178,
+      "lower_lapse_guard_sites": [
+        65,
+        66,
+        67,
+        72,
+        73,
+        74,
+        79,
+        80,
+        81,
+        107,
+        108,
+        109,
+        113,
+        114,
+        115,
+        116,
+        117,
+        120,
+        121,
+        123,
+        124,
+        127,
+        128,
+        129,
+        130,
+        131,
+        135,
+        136,
+        137,
+        156,
+        157,
+        158,
+        162,
+        163,
+        165,
+        166,
+        169,
+        171,
+        173,
+        176,
+        177,
+        179,
+        180,
+        184,
+        185,
+        186,
+        205,
+        206,
+        207,
+        211,
+        212,
+        213,
+        214,
+        215,
+        218,
+        219,
+        221,
+        222,
+        225,
+        226,
+        227,
+        228,
+        229,
+        233,
+        234,
+        235,
+        261,
+        262,
+        263,
+        268,
+        269,
+        270,
+        275,
+        276,
+        277
+      ],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared lower diagnostic lapse guard min N_I <=1/8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 123,
+      "phase": "L=7 load 1/256 backtrack 2",
+      "elapsed_start": 14385.957879707217,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0267494282879048,
+      "sigma_min": 0.0006792566569164015,
+      "clock_residual": 0.0017970476446220731,
+      "minimum_interior_lapse": -4.161881098092209,
+      "maximum_interior_lapse": 6.259066400726584,
+      "minimum_interior_lapse_site": 172,
+      "maximum_interior_lapse_site": 171,
+      "lower_lapse_guard_sites": [
+        115,
+        121,
+        122,
+        123,
+        129,
+        163,
+        164,
+        165,
+        170,
+        172,
+        177,
+        178,
+        179,
+        213,
+        219,
+        220,
+        221,
+        227
+      ],
+      "upper_lapse_guard_sites": [],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared lower diagnostic lapse guard min N_I <=1/8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 124,
+      "phase": "L=7 load 1/256 backtrack 3",
+      "elapsed_start": 17282.489847335964,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.0133747141439524,
+      "sigma_min": 0.0031808000881458865,
+      "clock_residual": 0.0013813146703989115,
+      "minimum_interior_lapse": -2.705376103588324,
+      "maximum_interior_lapse": 11.83449951229371,
+      "minimum_interior_lapse_site": 220,
+      "maximum_interior_lapse_site": 171,
+      "lower_lapse_guard_sites": [
+        73,
+        114,
+        115,
+        116,
+        121,
+        122,
+        123,
+        128,
+        129,
+        130,
+        157,
+        163,
+        164,
+        165,
+        169,
+        170,
+        172,
+        173,
+        177,
+        178,
+        179,
+        185,
+        212,
+        213,
+        214,
+        219,
+        220,
+        221,
+        226,
+        227,
+        228,
+        269
+      ],
+      "upper_lapse_guard_sites": [
+        171
+      ],
+      "guard_scope": "prescribed numerical/regularity chart; no physical exclusion",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The predeclared lower diagnostic lapse guard min N_I <=1/8 was triggered"
+      }
+    },
+    {
+      "requested_field_evaluation": 125,
+      "phase": "L=7 load 1/256 backtrack 4",
+      "elapsed_start": 20663.65452420339,
+      "status": "failed_or_incomplete",
+      "minimum_ruler": 1.0,
+      "maximum_ruler": 1.006687357071976,
+      "failure": {
+        "class": "Cap",
+        "message": "The whole-batch six-hour wall cap was reached"
+      }
+    }
+  ],
+  "failure": {
+    "class": "Cap",
+    "message": "The whole-batch six-hour wall cap was reached",
+    "phase": "L=7 load 1/256 backtrack 4"
+  }
+}

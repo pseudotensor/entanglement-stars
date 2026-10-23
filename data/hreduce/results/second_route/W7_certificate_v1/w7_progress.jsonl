@@ -1,0 +1,19 @@
+{"sequence": 1, "event": "started", "elapsed_seconds": 0.31863100454211235, "operation": "record_input"}
+{"sequence": 2, "event": "completed", "elapsed_seconds": 0.7108756564557552, "operation": "record_input"}
+{"sequence": 3, "event": "started", "elapsed_seconds": 0.7637372203171253, "operation": "slice_input", "slice": "early"}
+{"sequence": 4, "event": "completed", "elapsed_seconds": 6.58092600107193, "operation": "slice_input", "slice": "early"}
+{"sequence": 5, "event": "started", "elapsed_seconds": 6.627241622656584, "operation": "slice_input", "slice": "late"}
+{"sequence": 6, "event": "completed", "elapsed_seconds": 17.013231217861176, "operation": "slice_input", "slice": "late"}
+{"sequence": 7, "event": "started", "elapsed_seconds": 17.06313268840313, "operation": "known_answers"}
+{"sequence": 8, "event": "fixture_returned", "elapsed_seconds": 17.08834370598197, "fixture": "wholly_inside", "status": "pass"}
+{"sequence": 9, "event": "fixture_returned", "elapsed_seconds": 17.113585274666548, "fixture": "wholly_outside", "status": "pass"}
+{"sequence": 10, "event": "fixture_returned", "elapsed_seconds": 17.139152489602566, "fixture": "scalar", "status": "pass"}
+{"sequence": 11, "event": "fixture_returned", "elapsed_seconds": 17.1653409935534, "fixture": "scalar_inside_fraction", "status": "pass"}
+{"sequence": 12, "event": "fixture_returned", "elapsed_seconds": 17.193753693252802, "fixture": "amplitude_allowance", "status": "pass"}
+{"sequence": 13, "event": "fixture_returned", "elapsed_seconds": 17.219482466578484, "fixture": "equal_operands", "status": "pass"}
+{"sequence": 14, "event": "fixture_returned", "elapsed_seconds": 17.24516674503684, "fixture": "negative_margin", "status": "pass"}
+{"sequence": 15, "event": "fixture_returned", "elapsed_seconds": 17.271636489778757, "fixture": "unitary_rotation", "status": "pass"}
+{"sequence": 16, "event": "fixture_returned", "elapsed_seconds": 17.297812804579735, "fixture": "destructive_interference", "status": "pass"}
+{"sequence": 17, "event": "fixture_returned", "elapsed_seconds": 17.32438738644123, "fixture": "multiplicity_before_composition", "status": "pass"}
+{"sequence": 18, "event": "fixture_returned", "elapsed_seconds": 17.351468201726675, "fixture": "raw_normalization", "status": "pass"}
+{"sequence": 19, "event": "fixture_returned", "elapsed_seconds": 17.379171904176474, "fixture": "projector_order", "status": "failed"}

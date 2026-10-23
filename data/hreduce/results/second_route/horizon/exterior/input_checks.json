@@ -1,0 +1,104 @@
+{
+  "input": {
+    "source": "<internal>/B3_hist_prod.npz",
+    "source_json": "<internal>/B3_hist_prod.json",
+    "array": "X_end_T15p000_k1",
+    "column": 14,
+    "launch_key": "T15p000_k1",
+    "kappa": 1,
+    "mass": 0.2,
+    "record": "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_ext100.json",
+    "fields": "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_ext100_fields.npz",
+    "record_index": 380,
+    "time": 3040.0,
+    "rs_nominal": 64.0,
+    "charge": 106.03228932252536,
+    "coupling": 0.25,
+    "rs_end": 53.01614466126268,
+    "rs_launch": 54.41360314510785,
+    "cut": 1536.0,
+    "first_original_site": 1537,
+    "last_original_site": 8192,
+    "exterior_sites": 6656,
+    "component_order": "2*n+spin",
+    "launch_metadata": {
+      "depth": "2 sigma outside the outer root (comparator)",
+      "comparator": true,
+      "R_c": 67.76040530856474,
+      "k0": 0.7853981633974483,
+      "ak0_name": "pi/4 (cos 2ak changes sign)",
+      "sigma": 8.0,
+      "spinor": [
+        -0.7975307699722334,
+        0.0,
+        -0.6031469217980246,
+        -0.012588156062911518
+      ],
+      "N_at": 0.9957270609319977,
+      "v_at": -0.8693408827904447
+    },
+    "source_end": {
+      "beyond_outer_root": 0.9960973335578576,
+      "beyond_2GE": 0.9957132049822291,
+      "beyond_16rs": 0.8392031291565588,
+      "collar_16_24": 0.8391576011599708,
+      "far_32_48": 7.198374649965627e-213,
+      "beyond_Rcut": 4.552799658800006e-05
+    },
+    "full_chain_reference_moments": {
+      "norm": 0.999999999999908,
+      "mean": 0.2997344179481581,
+      "spread": 0.06447582201082139
+    },
+    "wrapper_threshold_convention": {
+      "r_s": 54.41360314510785,
+      "R_max": 8192.0,
+      "half_width_b": 0.003386914358420394,
+      "half_width_m": 0.0006642285540174298
+    }
+  },
+  "direct_full_norm": 0.9999999999999079,
+  "direct_full_norm_error_upper": 1.0921041848870273e-11,
+  "construction_checks": {
+    "hermitian": true,
+    "absolute_radius_principal_block_equal": true,
+    "antiunitary_anticommutation": true,
+    "source_tuple_and_field_clock_match": true,
+    "component_order_and_fixed_column_match": true,
+    "finite_fields": true,
+    "positive_lapse_and_nonpositive_exterior_flow": true
+  },
+  "direct_exterior_norm": 4.552799658800005e-05,
+  "direct_exterior_norm_error_upper": 4.040463447511042e-16,
+  "exterior_norm_minus_reference": -6.776263578034403e-21,
+  "full_norm_minus_reference": -1.1102230246251565e-16,
+  "raw_full_first_moment": 0.29973441794815814,
+  "full_raw_first_moment_minus_reference": 5.551115123125783e-17,
+  "full_raw_second_moment": 0.09399785292669223,
+  "reference_variance_clipping_ambiguous": false,
+  "full_second_moment_minus_reference": 0.0,
+  "spatial_first_moment": {
+    "interior": 0.2997083090655973,
+    "exterior": 2.1965259421864555e-05,
+    "crossing": 4.1436231389071125e-06,
+    "residual": 5.5217230798560585e-17
+  },
+  "stored_field_sites": 2048,
+  "join_radii": [
+    2048.0,
+    2049.0
+  ],
+  "join_clock": [
+    1.000000001322658,
+    1.0
+  ],
+  "join_flow": [
+    -0.16089303019964515,
+    -0.16085445446235544
+  ],
+  "same_exterior_extrema_reference": null,
+  "same_exterior_five_bins_reference": null,
+  "physical_E_inv_reference": null,
+  "first_physical_collar_current_reference": null,
+  "release": "withheld: same-block reference and goal-level physical gates unavailable"
+}

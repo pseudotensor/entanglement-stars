@@ -1,0 +1,16 @@
+{
+  "scope": "Input-format inventory only; no scientific evaluation",
+  "attempts": [
+    {
+      "script": "residual_input_inventory_v1.py",
+      "status": "failed_at_output_serialization",
+      "reason": "Original JSON contains inf; allow_nan=False preserved partial output"
+    },
+    {
+      "script": "residual_input_inventory_v1_1.py",
+      "status": "completed",
+      "result": "residual_input_inventory_v1_1.json",
+      "nonfinite_values": "Preserved as tagged literals"
+    }
+  ]
+}

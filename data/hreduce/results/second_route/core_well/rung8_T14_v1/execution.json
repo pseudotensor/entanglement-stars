@@ -1,0 +1,55 @@
+{
+  "status": "finished",
+  "purpose": "Task 3 one missing rung-eight T14 dust readout",
+  "producer_sha256": "f8904cf8d84ace5b2821ad78ccd45e40b82feb253be26abe7f8b55b532070a6b",
+  "wrapper_sha256": "145138372cb25a1d94f2545c6c428b6af00157ee772caf0ca8e5865da2be82cc",
+  "command": [
+    "timeout",
+    "--foreground",
+    "-s",
+    "KILL",
+    "180s",
+    "nice",
+    "-n",
+    "10",
+    "taskset",
+    "-c",
+    "0,1,2,3",
+    "<internal>/python",
+    "<internal>/rung8_T14_v1.py"
+  ],
+  "wrapper_pid": 3528789,
+  "environment_settings": {
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4",
+    "NUMEXPR_NUM_THREADS": "4",
+    "VECLIB_MAXIMUM_THREADS": "4",
+    "BLIS_NUM_THREADS": "4",
+    "CUDA_VISIBLE_DEVICES": "",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "resources": {
+    "wall_seconds": 180,
+    "cpu_seconds": 720,
+    "threads": 4,
+    "address_space_bytes": 4294967296,
+    "internal_deadline_seconds": 160
+  },
+  "child_pid": 3528796,
+  "exit_code": 0,
+  "elapsed_seconds": 67.55626484751701,
+  "maximum_child_rss_kib": 474560,
+  "rung8_T14_result.json": {
+    "size": 40050,
+    "sha256": "a5b5b38819256ba78895ea7bea7ac94426085ce3fb311b04f86c689223358007"
+  },
+  "stdout.log": {
+    "size": 118,
+    "sha256": "dee5ea4830f82e7868763ff5b06156bcb7e40a7fef7f67e185a3346b18594c3b"
+  },
+  "stderr.log": {
+    "size": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

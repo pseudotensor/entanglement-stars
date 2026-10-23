@@ -1,0 +1,68 @@
+{
+  "controls_sha256": "9d74c2e91128f2ee303711aff83125cd8957980299667ad02b080e9f2a92bfdd",
+  "sources": {
+    "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_r11.json": "79b79bd15e5ba5ab3cb467af985c165c39c6a69c6bfe9ca360d438811a7d6372",
+    "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_r11_fields.npz": "a7d74d1b5e8516caa68f8249e7794572ffa315ed92eccde824552e9b8d3f32bb"
+  },
+  "spec_sha256": "0b48598da81554c60547ec239bb505cb825f094336b0fe4249be453a82c78efe",
+  "code": {
+    "run_PACKET_secondroute_v1.py": "e16841bd2fb74d6476ca1cd0fe5eff2daac9b73dc22c6c6b26ae801008fb48d5",
+    "packet_core_v1.py": "eff9370f7679f23c34cddc24fa34b19853b757be78e17e1bfe1eae68afe95a47"
+  },
+  "source_snapshot": {
+    "spec_sha256": "0b48598da81554c60547ec239bb505cb825f094336b0fe4249be453a82c78efe",
+    "code_sha256": {
+      "packet_core_v1.py": "eff9370f7679f23c34cddc24fa34b19853b757be78e17e1bfe1eae68afe95a47",
+      "control_PACKET_v1.py": "94abfd125386d9511ea7e9cb70ae72f7dd834b9d438ca7f4687c00f630662ded",
+      "run_PACKET_secondroute_v1.py": "e16841bd2fb74d6476ca1cd0fe5eff2daac9b73dc22c6c6b26ae801008fb48d5",
+      "read_PACKET_secondroute_v1.py": "2f0a1f9819556c4a6b065fcfb3eafe097d3d1e0054bf8966f1c923fae3d6e936",
+      "read_PACKET_sources_v1.py": "330d9d0501cbb18f2cc713773d103bd1b6d338969a8b184450d31572ae7d24a0",
+      "summarize_PACKET_secondroute_v1.py": "c486db59f8f60d9354fbdd9170f45cc82248892aa3681cff4fe3ea3e355ef855",
+      "cpu_runtime.py": "207c7a16432e722fa0b77c1e9d05e0d2ef712b540a95f25762bcb13cd10feb85"
+    }
+  },
+  "free_projector_sha256": "d826abc24a5090da29c233aac44a147b7f9c5f54932a64cea0cb4df10c6416c4",
+  "free_eigenvalues_sha256": "7e7d0990babbd4b51933f31eaa53c61fbd4f9e713deab8dec57924d69ddfcd56",
+  "free_eigenvectors_sha256": "c4712fbdfee63dab0a981c73eb8456a71d7a34a5534f2b2d855a764d66e7306c",
+  "preparation_sha256": "7dd10da90827e80f9a7d58f0590a4d19ef783e453fd555e2ee9d2c8cb1eb6048",
+  "runtime": {
+    "host": "compute-host",
+    "pid": 2126561,
+    "threads": 15,
+    "niceness": 10,
+    "device": "CPU"
+  },
+  "numpy": "2.2.6",
+  "scipy": "1.17.0",
+  "python": "3.12.12 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 20:16:04) [GCC 11.2.0]",
+  "platform": "Linux-6.2.0-26-generic-x86_64-with-glibc2.35",
+  "channel": 1,
+  "formation_context": [
+    {
+      "record": 95,
+      "T": 760.0,
+      "T_over_rs": 11.875,
+      "trapping_zeros": [],
+      "dense_pair_present": false
+    },
+    {
+      "record": 96,
+      "T": 768.0,
+      "T_over_rs": 12.0,
+      "trapping_zeros": [],
+      "dense_pair_present": false
+    },
+    {
+      "record": 97,
+      "T": 776.0,
+      "T_over_rs": 12.125,
+      "trapping_zeros": [
+        23.239359818215107,
+        38.556220978886664
+      ],
+      "dense_pair_present": true
+    }
+  ],
+  "start_record": 97,
+  "last_record": 320
+}

@@ -1,0 +1,51 @@
+{
+  "purpose": "Required H1 exact-integral/support-bound and H4 Bianchi author/RED typesetting",
+  "results": [
+    {
+      "source": "research/paper_package_20261013/web40e_h1_sphere_bounds.tex",
+      "remote_folder": "<internal>/web40e_h1_sphere_bounds",
+      "passed": true,
+      "returncode": 0,
+      "pages": 1,
+      "problems": [],
+      "remote_file_count": 7,
+      "remote_bytes": 164482,
+      "source_bytes": 21577
+    },
+    {
+      "source": "research/paper_package_20261013/redteam_web40e_h1_sphere_bounds.tex",
+      "remote_folder": "<internal>/redteam_web40e_h1_sphere_bounds",
+      "passed": false,
+      "returncode": 0,
+      "pages": 1,
+      "problems": [
+        "Overfull \\hbox (4.38118pt too wide) in paragraph at lines 15--33"
+      ],
+      "remote_file_count": 7,
+      "remote_bytes": 149760,
+      "source_bytes": 19391
+    },
+    {
+      "source": "research/paper_package_20261013/web40e_h4_bianchi.tex",
+      "remote_folder": "<internal>/web40e_h4_bianchi",
+      "passed": true,
+      "returncode": 0,
+      "pages": 1,
+      "problems": [],
+      "remote_file_count": 7,
+      "remote_bytes": 156274,
+      "source_bytes": 13426
+    },
+    {
+      "source": "research/paper_package_20261013/redteam_web40e_h4_bianchi.tex",
+      "remote_folder": "<internal>/redteam_web40e_h4_bianchi",
+      "passed": true,
+      "returncode": 0,
+      "pages": 1,
+      "problems": [],
+      "remote_file_count": 7,
+      "remote_bytes": 140120,
+      "source_bytes": 13777
+    }
+  ]
+}

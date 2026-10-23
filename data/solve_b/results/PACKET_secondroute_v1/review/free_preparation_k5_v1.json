@@ -1,0 +1,521 @@
+{
+  "free_projector": {
+    "residual_frobenius": 2.5328806832123452e-12,
+    "orthogonality_frobenius": 3.083312237049296e-12,
+    "isometry_tolerance": 5.820766091346741e-11,
+    "edge": 5.0374911885376195,
+    "edge_allowance": 1.8065038908898212e-11,
+    "norm_estimate": 5.037491188555685,
+    "nearest_zero": 0.20002529544498557,
+    "negative_count": 2048,
+    "positive_count": 2048,
+    "gap_consistent_with_mass": true,
+    "pairing_max_defect": 4.440892098500626e-15,
+    "interval_certificate": false,
+    "coarse_bound": 6.2,
+    "seconds": 79.36960604041815
+  },
+  "preparation": {
+    "kappa": 5,
+    "labels": [
+      [
+        "amplitude",
+        "centre",
+        -0.45
+      ],
+      [
+        "amplitude",
+        "centre",
+        -0.3
+      ],
+      [
+        "amplitude",
+        "centre",
+        0.3
+      ],
+      [
+        "amplitude",
+        "centre",
+        0.45
+      ],
+      [
+        "amplitude",
+        "inner",
+        -0.45
+      ],
+      [
+        "amplitude",
+        "inner",
+        -0.3
+      ],
+      [
+        "amplitude",
+        "inner",
+        0.3
+      ],
+      [
+        "amplitude",
+        "inner",
+        0.45
+      ],
+      [
+        "amplitude",
+        "mid",
+        -0.45
+      ],
+      [
+        "amplitude",
+        "mid",
+        -0.3
+      ],
+      [
+        "amplitude",
+        "mid",
+        0.3
+      ],
+      [
+        "amplitude",
+        "mid",
+        0.45
+      ],
+      [
+        "amplitude",
+        "outer",
+        -0.45
+      ],
+      [
+        "amplitude",
+        "outer",
+        -0.3
+      ],
+      [
+        "amplitude",
+        "outer",
+        0.3
+      ],
+      [
+        "amplitude",
+        "outer",
+        0.45
+      ]
+    ],
+    "packets": [
+      {
+        "convention": "amplitude",
+        "site_label": "centre",
+        "centre": 4.0,
+        "momentum": -0.45,
+        "unprojected_norm": 6.332904372426835,
+        "retained_fraction": 0.6852533003030391,
+        "projected_norm": 1.0000000000000002,
+        "negative_band_weight": 3.0100881724226425e-29,
+        "rounded_centre": 4.0,
+        "rounded_overlap_real": 1.0000000000000002,
+        "rounded_overlap_imag": 0.0,
+        "placement_pure_distance": 2.242493070066198e-16,
+        "placement_distance_diagnostics": {
+          "left_norm": 1.0000000000000002,
+          "right_norm": 1.0000000000000002,
+          "overlap_real": 1.0000000000000002,
+          "overlap_imag": 0.0,
+          "raw_radicand": -4.440892098500626e-16,
+          "raw_roundoff_clipped": true,
+          "raw_derived_distance": 0.0,
+          "stable_squared_raw": 5.028775169294922e-32,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 2.242493070066198e-16
+        }
+      },
+      {
+        "convention": "amplitude",
+        "site_label": "centre",
+        "centre": 4.0,
+        "momentum": -0.3,
+        "unprojected_norm": 6.332904372426835,
+        "retained_fraction": 0.647409580935847,
+        "projected_norm": 1.0,
+        "negative_band_weight": 3.0956828687808827e-29,
+        "rounded_centre": 4.0,
+        "rounded_overlap_real": 1.0,
+        "rounded_overlap_imag": 0.0,
+        "placement_pure_distance": 0.0,
+        "placement_distance_diagnostics": {
+          "left_norm": 1.0,
+          "right_norm": 1.0,
+          "overlap_real": 1.0,
+          "overlap_imag": 0.0,
+          "raw_radicand": 0.0,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 0.0,
+          "stable_squared_raw": 0.0,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 0.0
+        }
+      },
+      {
+        "convention": "amplitude",
+        "site_label": "centre",
+        "centre": 4.0,
+        "momentum": 0.3,
+        "unprojected_norm": 6.332904372426835,
+        "retained_fraction": 0.647409580935847,
+        "projected_norm": 1.0,
+        "negative_band_weight": 3.0956828687808827e-29,
+        "rounded_centre": 4.0,
+        "rounded_overlap_real": 1.0,
+        "rounded_overlap_imag": 0.0,
+        "placement_pure_distance": 0.0,
+        "placement_distance_diagnostics": {
+          "left_norm": 1.0,
+          "right_norm": 1.0,
+          "overlap_real": 1.0,
+          "overlap_imag": 0.0,
+          "raw_radicand": 0.0,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 0.0,
+          "stable_squared_raw": 0.0,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 0.0
+        }
+      },
+      {
+        "convention": "amplitude",
+        "site_label": "centre",
+        "centre": 4.0,
+        "momentum": 0.45,
+        "unprojected_norm": 6.332904372426835,
+        "retained_fraction": 0.6852533003030391,
+        "projected_norm": 1.0000000000000002,
+        "negative_band_weight": 3.0100881724226425e-29,
+        "rounded_centre": 4.0,
+        "rounded_overlap_real": 1.0000000000000002,
+        "rounded_overlap_imag": 0.0,
+        "placement_pure_distance": 2.242493070066198e-16,
+        "placement_distance_diagnostics": {
+          "left_norm": 1.0000000000000002,
+          "right_norm": 1.0000000000000002,
+          "overlap_real": 1.0000000000000002,
+          "overlap_imag": 0.0,
+          "raw_radicand": -4.440892098500626e-16,
+          "raw_roundoff_clipped": true,
+          "raw_derived_distance": 0.0,
+          "stable_squared_raw": 5.028775169294922e-32,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 2.242493070066198e-16
+        }
+      },
+      {
+        "convention": "amplitude",
+        "site_label": "inner",
+        "centre": 23.239359818215107,
+        "momentum": -0.45,
+        "unprojected_norm": 7.08981540362206,
+        "retained_fraction": 0.9406976825750526,
+        "projected_norm": 0.9999999999999997,
+        "negative_band_weight": 5.17160950499365e-29,
+        "rounded_centre": 23.24,
+        "rounded_overlap_real": 0.9999999510385695,
+        "rounded_overlap_imag": 0.0002927924060478074,
+        "placement_pure_distance": 0.00011043308075156658,
+        "placement_distance_diagnostics": {
+          "left_norm": 0.9999999999999997,
+          "right_norm": 1.0,
+          "overlap_real": 0.9999999510385696,
+          "overlap_imag": 0.000292792406047797,
+          "raw_radicand": 1.2195465304287723e-08,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 0.0001104330806610398,
+          "stable_squared_raw": 1.2195465324282025e-08,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 0.00011043308075156658
+        }
+      },
+      {
+        "convention": "amplitude",
+        "site_label": "inner",
+        "centre": 23.239359818215107,
+        "momentum": -0.3,
+        "unprojected_norm": 7.089815403622062,
+        "retained_fraction": 0.8992050536794932,
+        "projected_norm": 1.0,
+        "negative_band_weight": 6.234978610417557e-29,
+        "rounded_centre": 23.24,
+        "rounded_overlap_real": 0.9999999739778243,
+        "rounded_overlap_imag": 0.00020068827711530735,
+        "placement_pure_distance": 0.00010848302422871833,
+        "placement_distance_diagnostics": {
+          "left_norm": 1.0,
+          "right_norm": 1.0000000000000002,
+          "overlap_real": 0.9999999739778243,
+          "overlap_imag": 0.00020068827711530735,
+          "raw_radicand": 1.1768566343661746e-08,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 0.00010848302329701983,
+          "stable_squared_raw": 1.1768566545808687e-08,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 0.00010848302422871833
+        }
+      },
+      {
+        "convention": "amplitude",
+        "site_label": "inner",
+        "centre": 23.239359818215107,
+        "momentum": 0.3,
+        "unprojected_norm": 7.089815403622062,
+        "retained_fraction": 0.8992050536794932,
+        "projected_norm": 1.0,
+        "negative_band_weight": 6.234978610417557e-29,
+        "rounded_centre": 23.24,
+        "rounded_overlap_real": 0.9999999739778243,
+        "rounded_overlap_imag": -0.00020068827711530735,
+        "placement_pure_distance": 0.00010848302422871833,
+        "placement_distance_diagnostics": {
+          "left_norm": 1.0,
+          "right_norm": 1.0000000000000002,
+          "overlap_real": 0.9999999739778243,
+          "overlap_imag": -0.00020068827711530735,
+          "raw_radicand": 1.1768566343661746e-08,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 0.00010848302329701983,
+          "stable_squared_raw": 1.1768566545808687e-08,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 0.00010848302422871833
+        }
+      },
+      {
+        "convention": "amplitude",
+        "site_label": "inner",
+        "centre": 23.239359818215107,
+        "momentum": 0.45,
+        "unprojected_norm": 7.08981540362206,
+        "retained_fraction": 0.9406976825750526,
+        "projected_norm": 0.9999999999999997,
+        "negative_band_weight": 5.17160950499365e-29,
+        "rounded_centre": 23.24,
+        "rounded_overlap_real": 0.9999999510385695,
+        "rounded_overlap_imag": -0.0002927924060478074,
+        "placement_pure_distance": 0.00011043308075156658,
+        "placement_distance_diagnostics": {
+          "left_norm": 0.9999999999999997,
+          "right_norm": 1.0,
+          "overlap_real": 0.9999999510385696,
+          "overlap_imag": -0.000292792406047797,
+          "raw_radicand": 1.2195465304287723e-08,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 0.0001104330806610398,
+          "stable_squared_raw": 1.2195465324282025e-08,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 0.00011043308075156658
+        }
+      },
+      {
+        "convention": "amplitude",
+        "site_label": "mid",
+        "centre": 30.897790398550885,
+        "momentum": -0.45,
+        "unprojected_norm": 7.089815403622062,
+        "retained_fraction": 0.9594470243045495,
+        "projected_norm": 0.9999999999999998,
+        "negative_band_weight": 3.8683291170295554e-29,
+        "rounded_centre": 30.9,
+        "rounded_overlap_real": 0.9999994194781765,
+        "rounded_overlap_imag": 0.0010075970574671966,
+        "placement_pure_distance": 0.0003818265048107909,
+        "placement_distance_diagnostics": {
+          "left_norm": 0.9999999999999998,
+          "right_norm": 1.0,
+          "overlap_real": 0.9999994194781767,
+          "overlap_imag": 0.0010075970574672,
+          "raw_radicand": 1.4579147933346803e-07,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 0.00038182650423126475,
+          "stable_squared_raw": 1.4579147977602493e-07,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 0.0003818265048107909
+        }
+      },
+      {
+        "convention": "amplitude",
+        "site_label": "mid",
+        "centre": 30.897790398550885,
+        "momentum": -0.3,
+        "unprojected_norm": 7.0898154036220635,
+        "retained_fraction": 0.9239876796231157,
+        "projected_norm": 0.9999999999999998,
+        "negative_band_weight": 5.927422016741281e-29,
+        "rounded_centre": 30.9,
+        "rounded_overlap_real": 0.9999996922497388,
+        "rounded_overlap_imag": 0.0006896438275197578,
+        "placement_pure_distance": 0.000374021147387037,
+        "placement_distance_diagnostics": {
+          "left_norm": 0.9999999999999998,
+          "right_norm": 1.0,
+          "overlap_real": 0.999999692249739,
+          "overlap_imag": 0.000689643827519737,
+          "raw_radicand": 1.3989181857354538e-07,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 0.00037402114722772745,
+          "stable_squared_raw": 1.3989181869271566e-07,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 0.000374021147387037
+        }
+      },
+      {
+        "convention": "amplitude",
+        "site_label": "mid",
+        "centre": 30.897790398550885,
+        "momentum": 0.3,
+        "unprojected_norm": 7.0898154036220635,
+        "retained_fraction": 0.9239876796231157,
+        "projected_norm": 0.9999999999999998,
+        "negative_band_weight": 5.927422016741281e-29,
+        "rounded_centre": 30.9,
+        "rounded_overlap_real": 0.9999996922497388,
+        "rounded_overlap_imag": -0.0006896438275197578,
+        "placement_pure_distance": 0.000374021147387037,
+        "placement_distance_diagnostics": {
+          "left_norm": 0.9999999999999998,
+          "right_norm": 1.0,
+          "overlap_real": 0.999999692249739,
+          "overlap_imag": -0.000689643827519737,
+          "raw_radicand": 1.3989181857354538e-07,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 0.00037402114722772745,
+          "stable_squared_raw": 1.3989181869271566e-07,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 0.000374021147387037
+        }
+      },
+      {
+        "convention": "amplitude",
+        "site_label": "mid",
+        "centre": 30.897790398550885,
+        "momentum": 0.45,
+        "unprojected_norm": 7.089815403622062,
+        "retained_fraction": 0.9594470243045495,
+        "projected_norm": 0.9999999999999998,
+        "negative_band_weight": 3.8683291170295554e-29,
+        "rounded_centre": 30.9,
+        "rounded_overlap_real": 0.9999994194781765,
+        "rounded_overlap_imag": -0.0010075970574671966,
+        "placement_pure_distance": 0.0003818265048107909,
+        "placement_distance_diagnostics": {
+          "left_norm": 0.9999999999999998,
+          "right_norm": 1.0,
+          "overlap_real": 0.9999994194781767,
+          "overlap_imag": -0.0010075970574672,
+          "raw_radicand": 1.4579147933346803e-07,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 0.00038182650423126475,
+          "stable_squared_raw": 1.4579147977602493e-07,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 0.0003818265048107909
+        }
+      },
+      {
+        "convention": "amplitude",
+        "site_label": "outer",
+        "centre": 38.556220978886664,
+        "momentum": -0.45,
+        "unprojected_norm": 7.089815403622063,
+        "retained_fraction": 0.969058651694622,
+        "projected_norm": 1.0,
+        "negative_band_weight": 2.834067777177263e-29,
+        "rounded_centre": 38.56,
+        "rounded_overlap_real": 0.9999983065072532,
+        "rounded_overlap_imag": 0.0017203978877837617,
+        "placement_pure_distance": 0.0006536158912351245,
+        "placement_distance_diagnostics": {
+          "left_norm": 1.0,
+          "right_norm": 1.0000000000000002,
+          "overlap_real": 0.9999983065072532,
+          "overlap_imag": 0.0017203978877837617,
+          "raw_radicand": 4.272137333893866e-07,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 0.0006536158913225616,
+          "stable_squared_raw": 4.272137332750861e-07,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 0.0006536158912351245
+        }
+      },
+      {
+        "convention": "amplitude",
+        "site_label": "outer",
+        "centre": 38.556220978886664,
+        "momentum": -0.3,
+        "unprojected_norm": 7.0898154036220635,
+        "retained_fraction": 0.937330719654159,
+        "projected_norm": 1.0000000000000002,
+        "negative_band_weight": 3.50047603073117e-29,
+        "rounded_centre": 38.56,
+        "rounded_overlap_real": 0.9999991038024606,
+        "rounded_overlap_imag": 0.0011763253974443853,
+        "placement_pure_distance": 0.0006392595992203276,
+        "placement_distance_diagnostics": {
+          "left_norm": 1.0000000000000002,
+          "right_norm": 1.0,
+          "overlap_real": 0.9999991038024606,
+          "overlap_imag": 0.0011763253974443853,
+          "raw_radicand": 4.0865283490454374e-07,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 0.0006392595989928847,
+          "stable_squared_raw": 4.0865283519533385e-07,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 0.0006392595992203276
+        }
+      },
+      {
+        "convention": "amplitude",
+        "site_label": "outer",
+        "centre": 38.556220978886664,
+        "momentum": 0.3,
+        "unprojected_norm": 7.0898154036220635,
+        "retained_fraction": 0.937330719654159,
+        "projected_norm": 1.0000000000000002,
+        "negative_band_weight": 3.50047603073117e-29,
+        "rounded_centre": 38.56,
+        "rounded_overlap_real": 0.9999991038024606,
+        "rounded_overlap_imag": -0.0011763253974443853,
+        "placement_pure_distance": 0.0006392595992203276,
+        "placement_distance_diagnostics": {
+          "left_norm": 1.0000000000000002,
+          "right_norm": 1.0,
+          "overlap_real": 0.9999991038024606,
+          "overlap_imag": -0.0011763253974443853,
+          "raw_radicand": 4.0865283490454374e-07,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 0.0006392595989928847,
+          "stable_squared_raw": 4.0865283519533385e-07,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 0.0006392595992203276
+        }
+      },
+      {
+        "convention": "amplitude",
+        "site_label": "outer",
+        "centre": 38.556220978886664,
+        "momentum": 0.45,
+        "unprojected_norm": 7.089815403622063,
+        "retained_fraction": 0.969058651694622,
+        "projected_norm": 1.0,
+        "negative_band_weight": 2.834067777177263e-29,
+        "rounded_centre": 38.56,
+        "rounded_overlap_real": 0.9999983065072532,
+        "rounded_overlap_imag": -0.0017203978877837617,
+        "placement_pure_distance": 0.0006536158912351245,
+        "placement_distance_diagnostics": {
+          "left_norm": 1.0,
+          "right_norm": 1.0000000000000002,
+          "overlap_real": 0.9999983065072532,
+          "overlap_imag": -0.0017203978877837617,
+          "raw_radicand": 4.272137333893866e-07,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 0.0006536158913225616,
+          "stable_squared_raw": 4.272137332750861e-07,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 0.0006536158912351245
+        }
+      }
+    ]
+  }
+}

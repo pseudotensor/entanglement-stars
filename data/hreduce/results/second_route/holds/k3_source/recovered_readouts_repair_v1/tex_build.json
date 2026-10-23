@@ -1,0 +1,50 @@
+{
+  "purpose": "Completed c30 same-result fragment compilation after both scientists and root read both full actual final sources",
+  "results": [
+    {
+      "source": "research/paper_package_20261013/SECONDROUTE_HOLD_guard_continuation_v1.tex",
+      "source_sha256": "ee4e5c49cc6ddb3f71c70431b4754c4ff5dad9905701f5ddebd8e900ee136030",
+      "source_lines": 1190,
+      "source_bytes": 82700,
+      "returncode": 0,
+      "pages": 5,
+      "typesetting_warnings": [
+        "Overfull \\hbox (23.62802pt too wide) in paragraph at lines 223--237",
+        "Overfull \\hbox (38.20912pt too wide) in paragraph at lines 238--258",
+        "Overfull \\hbox (32.24141pt too wide) in paragraph at lines 238--258"
+      ],
+      "temporary_build_folder": "<internal>/hreduce_hold_c30_tex_lnikf1l9",
+      "compiled_source_matches": true,
+      "shared_copy": "<internal>/SECONDROUTE_HOLD_guard_continuation_v1.tex",
+      "shared_matches": true
+    },
+    {
+      "source": "research/paper_package_20261013/redteam_SECONDROUTE_HOLD_guard_continuation_v1.tex",
+      "source_sha256": "f55a2ba3b75e1f19a729f04036c9927c9a1663f5aa741bedd222af37a5d2ee23",
+      "source_lines": 1289,
+      "source_bytes": 90316,
+      "returncode": 0,
+      "pages": 4,
+      "typesetting_warnings": [
+        "Overfull \\hbox (11.6344pt too wide) in paragraph at lines 56--70",
+        "Overfull \\hbox (72.5145pt too wide) in paragraph at lines 72--87"
+      ],
+      "temporary_build_folder": "<internal>/hreduce_hold_c30_tex_fbo32krn",
+      "compiled_source_matches": true,
+      "shared_copy": "<internal>/redteam_SECONDROUTE_HOLD_guard_continuation_v1.tex",
+      "shared_matches": true
+    }
+  ],
+  "root_actual_complete_final_sources_read": true,
+  "root_complete_read_ranges": [
+    "1-180",
+    "181-360",
+    "361-540",
+    "541-720",
+    "721-900",
+    "901-1080",
+    "1081-EOF"
+  ],
+  "original_pair_both_complete_final_source_reads_after_last_save": true,
+  "scientific_discrepancies_reported": 0
+}

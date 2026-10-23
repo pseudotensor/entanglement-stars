@@ -1,0 +1,56 @@
+{
+  "scope": "Absolute omitted-rate upper certificates; ratios use numerical denominators, not admitted exact-rate lower enclosures.",
+  "runtime": {
+    "host": "compute-host",
+    "pid": 3615285,
+    "threads": 1,
+    "niceness": 10,
+    "device": "CPU"
+  },
+  "python_flint_version": "0.9.0",
+  "action_tolerance": "1/64",
+  "base": {
+    "bits": 128,
+    "controls_passed": true,
+    "accepted_t_panels": 64,
+    "rate_1e7_targets_pass": {
+      "number": true,
+      "energy": true,
+      "entropy": true
+    },
+    "energy_1e10_target_pass": true,
+    "targets_pass": true,
+    "upper_bounds": {
+      "number": "4.884825966425589e-10",
+      "energy": "5.07961760394947e-13",
+      "entropy": "8.551536263705497e-09"
+    },
+    "numerical_ratio_upper_bounds": {
+      "number": "3.143020550857788e-08",
+      "energy": "9.698895611160419e-11",
+      "entropy": "7.927151780492405e-08"
+    }
+  },
+  "refined_precision": {
+    "bits": 192,
+    "controls_passed": true,
+    "accepted_t_panels": 64,
+    "rate_1e7_targets_pass": {
+      "number": true,
+      "energy": true,
+      "entropy": true
+    },
+    "energy_1e10_target_pass": true,
+    "targets_pass": true,
+    "upper_bounds": {
+      "number": "4.884825966425601e-10",
+      "energy": "5.079617603981476e-13",
+      "entropy": "8.551536263705539e-09"
+    },
+    "numerical_ratio_upper_bounds": {
+      "number": "3.143020550857796e-08",
+      "energy": "9.698895611221531e-11",
+      "entropy": "7.927151780492442e-08"
+    }
+  }
+}

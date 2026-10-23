@@ -1,0 +1,2154 @@
+{
+  "conventions": {
+    "edge_categories": "counts can overlap; actual rounded logs of stored cumulative count; no quotient recomputed",
+    "scope": "saved-product tables only; source allocation remains incomplete unless its own terminal records prove otherwise",
+    "shells": "16 sharp 128-site shells; existing strict abs(folded_index)>512; ties excluded",
+    "tiny_positive_denominator": "no new floor; relative error unbounded without an input error allowance",
+    "weights": "16k applied once; stored shell counts already include f and 1/4096",
+    "zero_or_negative_denominator": "share null, flags retained; no clipping"
+  },
+  "execution": {
+    "address_space_bytes": 536870912,
+    "affinity": [
+      4
+    ],
+    "completion_evidence_required": "supervisor execution record and actual outer command exit; worker-only JSON is insufficient",
+    "external_one_cpu_whole_process_cpu_ceiling_seconds": 30,
+    "external_whole_process_wall_seconds": 30,
+    "internal_worker_alarm_seconds": 25,
+    "nice": 10,
+    "nominal_final_save_reserve_seconds": 1,
+    "peak_child_rss_kib": 34560,
+    "producer_path": "<internal>/read_core_well_profiles_v1.py",
+    "producer_sha256": "c0ef0c70fb2c968de559480b593c1064082e96ad0e1d23f3979ce213f3f6c978",
+    "sampled_elapsed_plus_nominal_reserve_seconds": 1.3775603473186493,
+    "sampled_interval_plus_reserve_within_30_seconds": true,
+    "separate_readout_allocation": true,
+    "stderr_bytes": 0,
+    "stderr_excerpt": "",
+    "stdout_bytes": 0,
+    "supervisor_sampled_elapsed_before_final_save_seconds": 0.3775603473186493,
+    "timing_scope": "sample starts after supervisor imports/configure and ends before final hash/save; the 1s reserve is nominal, not a proved whole-process completion interval",
+    "worker_exit_code": 0,
+    "worker_timeout": false
+  },
+  "inputs": [
+    {
+      "members_read": [
+        "R",
+        "weights",
+        "N_dense",
+        "N_applied"
+      ],
+      "path": "<internal>/raw_T16.npz",
+      "sha256": "ee49209a0e9999f825ac5ff3c178a70727db5f7b3ff9b09721c97807e6f3ee52",
+      "size": 513124
+    },
+    {
+      "members_read": [
+        "cumulative_count",
+        "dense_edge_log_slope",
+        "applied_edge_log_slope",
+        "dense_fit_mask",
+        "applied_fit_mask"
+      ],
+      "path": "<internal>/matched_T16.npz",
+      "sha256": "4000fe4fff9242ba4d24f968a50bba123ddb7e7fa9de05575fcc5fd758a676cd",
+      "size": 125898
+    },
+    {
+      "members_read": [
+        "shell_number",
+        "shell_high_number"
+      ],
+      "path": "<internal>/joint_T16_k01.npz",
+      "sha256": "dbc7bbff8208cafd363a8af841daa180cedb541547e93aec57e5457dd751a92a",
+      "size": 924868
+    },
+    {
+      "members_read": [
+        "shell_number",
+        "shell_high_number"
+      ],
+      "path": "<internal>/joint_T16_k02.npz",
+      "sha256": "5a422f42c215227d814d61421b9834aab820382e03de2052dbf0c77cf3f64a6b",
+      "size": 850401
+    },
+    {
+      "members_read": [
+        "shell_number",
+        "shell_high_number"
+      ],
+      "path": "<internal>/joint_T16_k03.npz",
+      "sha256": "0cb9ab1e7c95a1808ebe8b3b21a25f4e1a1f75291b9ec7533ec916ab0f212ba4",
+      "size": 776842
+    },
+    {
+      "members_read": [
+        "shell_number",
+        "shell_high_number"
+      ],
+      "path": "<internal>/joint_T16_k04.npz",
+      "sha256": "8ec8189016a2e8f914b90594dcfeac9c7f7b3d67a4877009a0f2d6a0654080d6",
+      "size": 702926
+    },
+    {
+      "members_read": [
+        "shell_number",
+        "shell_high_number"
+      ],
+      "path": "<internal>/joint_T16_k05.npz",
+      "sha256": "63b69ba47b802a7014970484690d1b1227b9c086c6f0990aaf836bbc0c41c8ba",
+      "size": 702651
+    },
+    {
+      "members_read": [
+        "R",
+        "weights",
+        "N_dense",
+        "N_applied"
+      ],
+      "path": "<internal>/raw_T12.npz",
+      "sha256": "26419b88723e2df9b04db76c3cb192d26e0a102c363aa2a2f158dec92fb08060",
+      "size": 502371
+    },
+    {
+      "members_read": [
+        "cumulative_count",
+        "dense_edge_log_slope",
+        "applied_edge_log_slope",
+        "dense_fit_mask",
+        "applied_fit_mask"
+      ],
+      "path": "<internal>/matched_T12.npz",
+      "sha256": "ddcc257e23d48417d30ce729771985c6651c4eb2b9481b288a4f8bc31d52ca93",
+      "size": 121105
+    },
+    {
+      "members_read": [
+        "shell_number",
+        "shell_high_number"
+      ],
+      "path": "<internal>/joint_T12_k01.npz",
+      "sha256": "37cd562982aa1ba7a627e2f6a195dbd98d436741ebfd2ba9055e272890a05241",
+      "size": 924266
+    },
+    {
+      "members_read": [
+        "shell_number",
+        "shell_high_number"
+      ],
+      "path": "<internal>/joint_T12_k02.npz",
+      "sha256": "269f2438a2bae4994a411088c0da5f7ed255c9faabe822203f2a3d198b90391c",
+      "size": 849758
+    },
+    {
+      "members_read": [
+        "shell_number",
+        "shell_high_number"
+      ],
+      "path": "<internal>/joint_T12_k03.npz",
+      "sha256": "3a7a5a30347cabd71529a1400098b7db1c5bf5d0045c38a12f9423c32d9a1d97",
+      "size": 776060
+    },
+    {
+      "members_read": [
+        "shell_number",
+        "shell_high_number"
+      ],
+      "path": "<internal>/joint_T12_k04.npz",
+      "sha256": "c31db3e3257d3d82ef94ec177e396457e64713a94bd81cef6517e575ee835236",
+      "size": 702119
+    },
+    {
+      "members_read": [
+        "shell_number",
+        "shell_high_number"
+      ],
+      "path": "<internal>/joint_T12_k05.npz",
+      "sha256": "91804455b600e3d20bdf87e36c64b1a7669376af34aead8eb9d97ff3c18a693b",
+      "size": 702403
+    },
+    {
+      "members_read": [
+        "R",
+        "weights",
+        "N_dense",
+        "N_applied"
+      ],
+      "path": "<internal>/raw_T15.npz",
+      "sha256": "ebea3c7ea0d338c5ee71940babd61f849102f423ea6c37230e542d2f3213ffc5",
+      "size": 511717
+    },
+    {
+      "members_read": [
+        "cumulative_count",
+        "dense_edge_log_slope",
+        "applied_edge_log_slope",
+        "dense_fit_mask",
+        "applied_fit_mask"
+      ],
+      "path": "<internal>/matched_T15.npz",
+      "sha256": "f0fd004e96872d98ee84598739cd444946329c615cf10c3cf2234872d408943b",
+      "size": 124148
+    },
+    {
+      "members_read": [
+        "shell_number",
+        "shell_high_number"
+      ],
+      "path": "<internal>/joint_T15_k01.npz",
+      "sha256": "a2c778aef743f5b1a65548797ff83772e89105c5d7a8babc994f7030e8343710",
+      "size": 978902
+    },
+    {
+      "members_read": [
+        "shell_number",
+        "shell_high_number"
+      ],
+      "path": "<internal>/joint_T15_k02.npz",
+      "sha256": "323df4d65b81b25e5cec9254928d21e21e17bcf9d5473efce0e8959d2b029481",
+      "size": 894351
+    },
+    {
+      "members_read": [
+        "shell_number",
+        "shell_high_number"
+      ],
+      "path": "<internal>/joint_T15_k03.npz",
+      "sha256": "b0259ab7e2fe971a2047b0171c44ef362505c192225769aee84a5d468b056219",
+      "size": 811841
+    },
+    {
+      "members_read": [
+        "shell_number",
+        "shell_high_number"
+      ],
+      "path": "<internal>/joint_T15_k04.npz",
+      "sha256": "6ffcc4eb4cf2777a85e4987ef80d316f720bbac5b3084e3e824095466343e75c",
+      "size": 727306
+    },
+    {
+      "members_read": [
+        "shell_number",
+        "shell_high_number"
+      ],
+      "path": "<internal>/joint_T15_k05.npz",
+      "sha256": "cb6fd15fa194d50b7340b9983bc146dbfd7bf2feee3ef5ee710a3312b623f25a",
+      "size": 727670
+    }
+  ],
+  "purpose": "original L saved-product table readout",
+  "slices": {
+    "12": {
+      "channels": [
+        {
+          "high_exceeds_denominator_indices_0based": [],
+          "k": 1,
+          "negative_denominator_indices_0based": [],
+          "negative_high_indices_0based": [],
+          "nonfinite_shell_indices_0based": [],
+          "shell_high_number": [
+            0.0027116441394193073,
+            0.0015393832243807653,
+            0.00013063076353844475,
+            1.0089638751445316e-05,
+            5.809228423911468e-07,
+            1.1205250703646534e-08,
+            1.815128546829545e-12,
+            1.1239811431731397e-28,
+            1.0163006592518964e-28,
+            9.226061089926299e-29,
+            8.427472654871433e-29,
+            8.191534816690603e-29,
+            8.731554293694001e-29,
+            8.613316531510929e-29,
+            7.85620777388207e-29,
+            7.930016892972405e-29
+          ],
+          "shell_number": [
+            4.771847985942947,
+            0.2091513140395822,
+            0.01766737077385419,
+            0.0012724075438305844,
+            6.030832426671155e-05,
+            6.133667833938824e-07,
+            8.74557166073667e-12,
+            3.643039806510326e-28,
+            2.6545206621701234e-28,
+            2.204977638371993e-28,
+            2.080145579213501e-28,
+            2.1350866560753843e-28,
+            2.1847440288250243e-28,
+            2.062977062400699e-28,
+            1.8884968271289362e-28,
+            1.8444552038770969e-28
+          ],
+          "weight_applied_once": 16.0
+        },
+        {
+          "high_exceeds_denominator_indices_0based": [],
+          "k": 2,
+          "negative_denominator_indices_0based": [],
+          "negative_high_indices_0based": [],
+          "nonfinite_shell_indices_0based": [],
+          "shell_high_number": [
+            0.0012711810138726705,
+            0.0013522986256506169,
+            0.0001131865571058061,
+            8.817612311168437e-06,
+            5.11017652547433e-07,
+            9.873633679986762e-09,
+            1.6002927721649661e-12,
+            1.085155982656935e-28,
+            8.949475100566741e-29,
+            9.232311430816545e-29,
+            8.327633416552037e-29,
+            7.875283573224536e-29,
+            6.822582447697978e-29,
+            7.158029336844706e-29,
+            7.085794267583726e-29,
+            7.050859551824781e-29
+          ],
+          "shell_number": [
+            3.8014256605112573,
+            0.18207612001995566,
+            0.015330355215420224,
+            0.001114244022414816,
+            5.3079791204220004e-05,
+            5.404320413535325e-07,
+            7.705007869700531e-12,
+            3.418606366237761e-28,
+            2.4314857253943966e-28,
+            2.0726481438141377e-28,
+            2.0372027088651306e-28,
+            1.9474095568146897e-28,
+            1.605501462762438e-28,
+            1.6750441557437216e-28,
+            1.6073038220743966e-28,
+            1.5999477854562482e-28
+          ],
+          "weight_applied_once": 32.0
+        },
+        {
+          "high_exceeds_denominator_indices_0based": [],
+          "k": 3,
+          "negative_denominator_indices_0based": [],
+          "negative_high_indices_0based": [],
+          "nonfinite_shell_indices_0based": [],
+          "shell_high_number": [
+            0.0010666786766666439,
+            0.0011523326394294806,
+            9.50381657890901e-05,
+            7.407585689286466e-06,
+            4.281040723615166e-07,
+            8.249087813456725e-09,
+            1.3347391538451181e-12,
+            8.09952194421717e-29,
+            6.955247225893104e-29,
+            5.837634978831036e-29,
+            5.117390340722004e-29,
+            4.8576002047642513e-29,
+            5.630206890588301e-29,
+            5.235956375648419e-29,
+            5.0282713059566957e-29,
+            5.117120258709974e-29
+          ],
+          "shell_number": [
+            2.832495375332659,
+            0.1536249608620182,
+            0.012899411389874556,
+            0.0009353675139841622,
+            4.443360421042596e-05,
+            4.512908316986483e-07,
+            6.420204244803225e-12,
+            3.303005781992219e-28,
+            1.9296071247918635e-28,
+            1.5421480470682902e-28,
+            1.2400266657699868e-28,
+            1.2717636544585826e-28,
+            1.2275098895375601e-28,
+            1.1972918631007292e-28,
+            1.1428352825123167e-28,
+            1.075534034145235e-28
+          ],
+          "weight_applied_once": 48.0
+        },
+        {
+          "high_exceeds_denominator_indices_0based": [],
+          "k": 4,
+          "negative_denominator_indices_0based": [],
+          "negative_high_indices_0based": [],
+          "nonfinite_shell_indices_0based": [],
+          "shell_high_number": [
+            0.0006838810527333417,
+            0.0007385806400937869,
+            6.022814762521553e-05,
+            4.79849987878642e-06,
+            2.8203772350859125e-07,
+            5.4599421269474015e-09,
+            8.848861841235293e-13,
+            7.219245547770145e-29,
+            6.531379238368237e-29,
+            6.381028116494673e-29,
+            4.9617970814952806e-29,
+            4.227154358257056e-29,
+            3.694411578637774e-29,
+            3.9625209097959885e-29,
+            3.8361353653689605e-29,
+            3.456558224774959e-29
+          ],
+          "shell_number": [
+            1.8936519296492214,
+            0.09750887722810603,
+            0.00820049655627577,
+            0.0006090819897404281,
+            2.9315910658805027e-05,
+            2.9866175060754343e-07,
+            4.249254576796053e-12,
+            4.283579258096624e-28,
+            2.3825149507208114e-28,
+            1.4848789102502748e-28,
+            1.220457535122084e-28,
+            1.0589750801762092e-28,
+            9.57873709818838e-29,
+            1.0113898769620814e-28,
+            8.82989045939567e-29,
+            8.698094269709016e-29
+          ],
+          "weight_applied_once": 64.0
+        },
+        {
+          "high_exceeds_denominator_indices_0based": [],
+          "k": 5,
+          "negative_denominator_indices_0based": [],
+          "negative_high_indices_0based": [],
+          "nonfinite_shell_indices_0based": [],
+          "shell_high_number": [
+            0.001060585744108379,
+            0.0011470622591854165,
+            9.469625303499239e-05,
+            7.229711178160246e-06,
+            4.122259900890634e-07,
+            7.846191759199835e-09,
+            1.2618126170239285e-12,
+            9.032501944956046e-29,
+            6.96006928394569e-29,
+            8.265189481683327e-29,
+            4.4523614608372385e-29,
+            3.945807500011493e-29,
+            3.852183881037033e-29,
+            3.7520094447598136e-29,
+            3.6909681070437816e-29,
+            3.941920163693191e-29
+          ],
+          "shell_number": [
+            1.8335720595837235,
+            0.15279036802592252,
+            0.012684853393740744,
+            0.0009096611072159909,
+            4.2629501574379715e-05,
+            4.2838177692317725e-07,
+            6.0464843685166044e-12,
+            7.817661911875794e-28,
+            3.458321952572622e-28,
+            1.7419900045208368e-28,
+            9.844710349498473e-29,
+            1.0196640694332464e-28,
+            1.032976171553088e-28,
+            8.970396288509693e-29,
+            9.235733408500339e-29,
+            8.767604267919796e-29
+          ],
+          "weight_applied_once": 80.0
+        }
+      ],
+      "edge_diagnostics": {
+        "applied": {
+          "affected_candidate_edges": [
+            {
+              "both_endpoints_in_saved_fit_mask": false,
+              "delta_log_count": 0.0,
+              "delta_log_count_nonfinite": false,
+              "delta_log_count_positive": false,
+              "delta_log_count_zero": true,
+              "delta_log_lapse": -1.2966537114838796e-11,
+              "delta_log_lapse_nonfinite": false,
+              "edge_0based": 791,
+              "radius_pair_a": [
+                792.0,
+                793.0
+              ],
+              "stored_slope": null,
+              "stored_slope_nonfinite": true
+            },
+            {
+              "both_endpoints_in_saved_fit_mask": false,
+              "delta_log_count": 0.0,
+              "delta_log_count_nonfinite": false,
+              "delta_log_count_positive": false,
+              "delta_log_count_zero": true,
+              "delta_log_lapse": -1.2869836537775047e-11,
+              "delta_log_lapse_nonfinite": false,
+              "edge_0based": 793,
+              "radius_pair_a": [
+                794.0,
+                795.0
+              ],
+              "stored_slope": null,
+              "stored_slope_nonfinite": true
+            },
+            {
+              "both_endpoints_in_saved_fit_mask": false,
+              "delta_log_count": 0.0,
+              "delta_log_count_nonfinite": false,
+              "delta_log_count_positive": false,
+              "delta_log_count_zero": true,
+              "delta_log_lapse": -1.2820320513585008e-11,
+              "delta_log_lapse_nonfinite": false,
+              "edge_0based": 794,
+              "radius_pair_a": [
+                795.0,
+                796.0
+              ],
+              "stored_slope": null,
+              "stored_slope_nonfinite": true
+            },
+            {
+              "both_endpoints_in_saved_fit_mask": false,
+              "delta_log_count": 0.0,
+              "delta_log_count_nonfinite": false,
+              "delta_log_count_positive": false,
+              "delta_log_count_zero": true,
+              "delta_log_lapse": -1.2772802893380394e-11,
+              "delta_log_lapse_nonfinite": false,
+              "edge_0based": 795,
+              "radius_pair_a": [
+                796.0,
+                797.0
+              ],
+              "stored_slope": null,
+              "stored_slope_nonfinite": true
+            }
+          ],
+          "candidate_nonfinite_log_numerator_count": 0,
+          "candidate_nonfinite_stored_slope_count": 4,
+          "candidate_zero_or_nonfinite_log_denominator_count": 4,
+          "edge_count": 2047,
+          "original_candidate_count": 796,
+          "outside_candidate_finite_stored_slope_count": 0,
+          "outside_original_candidate_count": 1251,
+          "usable_stored_edge_count": 792
+        },
+        "dense": {
+          "affected_candidate_edges": [
+            {
+              "both_endpoints_in_saved_fit_mask": false,
+              "delta_log_count": 0.0,
+              "delta_log_count_nonfinite": false,
+              "delta_log_count_positive": false,
+              "delta_log_count_zero": true,
+              "delta_log_lapse": -1.28940394376166e-11,
+              "delta_log_lapse_nonfinite": false,
+              "edge_0based": 791,
+              "radius_pair_a": [
+                792.0,
+                793.0
+              ],
+              "stored_slope": null,
+              "stored_slope_nonfinite": true
+            },
+            {
+              "both_endpoints_in_saved_fit_mask": false,
+              "delta_log_count": 0.0,
+              "delta_log_count_nonfinite": false,
+              "delta_log_count_positive": false,
+              "delta_log_count_zero": true,
+              "delta_log_lapse": -1.28940394376166e-11,
+              "delta_log_lapse_nonfinite": false,
+              "edge_0based": 793,
+              "radius_pair_a": [
+                794.0,
+                795.0
+              ],
+              "stored_slope": null,
+              "stored_slope_nonfinite": true
+            },
+            {
+              "both_endpoints_in_saved_fit_mask": false,
+              "delta_log_count": 0.0,
+              "delta_log_count_nonfinite": false,
+              "delta_log_count_positive": false,
+              "delta_log_count_zero": true,
+              "delta_log_lapse": -1.2894039438040116e-11,
+              "delta_log_lapse_nonfinite": false,
+              "edge_0based": 794,
+              "radius_pair_a": [
+                795.0,
+                796.0
+              ],
+              "stored_slope": null,
+              "stored_slope_nonfinite": true
+            },
+            {
+              "both_endpoints_in_saved_fit_mask": false,
+              "delta_log_count": 0.0,
+              "delta_log_count_nonfinite": false,
+              "delta_log_count_positive": false,
+              "delta_log_count_zero": true,
+              "delta_log_lapse": -1.2701082373334227e-11,
+              "delta_log_lapse_nonfinite": false,
+              "edge_0based": 795,
+              "radius_pair_a": [
+                796.0,
+                797.0
+              ],
+              "stored_slope": null,
+              "stored_slope_nonfinite": true
+            }
+          ],
+          "candidate_nonfinite_log_numerator_count": 0,
+          "candidate_nonfinite_stored_slope_count": 4,
+          "candidate_zero_or_nonfinite_log_denominator_count": 4,
+          "edge_count": 2047,
+          "original_candidate_count": 796,
+          "outside_candidate_finite_stored_slope_count": 0,
+          "outside_original_candidate_count": 1251,
+          "usable_stored_edge_count": 792
+        }
+      },
+      "shells": [
+        {
+          "denominator": 601.834455191663,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 0.26387992205823746,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            1,
+            128
+          ],
+          "ratio_finite": true,
+          "share": 0.0004384593134904532,
+          "shell_0based": 0
+        },
+        {
+          "denominator": 35.01065257132136,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 0.2622497960043627,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            129,
+            256
+          ],
+          "ratio_finite": true,
+          "share": 0.007490571490209301,
+          "shell_0based": 1
+        },
+        {
+          "denominator": 2.9320410970900017,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 0.02170419569269042,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            257,
+            384
+          ],
+          "ratio_finite": true,
+          "share": 0.007402418647621088,
+          "shell_0based": 2
+        },
+        {
+          "denominator": 0.21266610601046992,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 0.0016846428135614158,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            385,
+            512
+          ],
+          "ratio_finite": true,
+          "share": 0.007921538815773859,
+          "shell_0based": 3
+        },
+        {
+          "denominator": 0.01008287791701677,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 9.722481934480392e-05,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            513,
+            640
+          ],
+          "ratio_finite": true,
+          "share": 0.009642566353076495,
+          "shell_0based": 4
+        },
+        {
+          "denominator": 0.00010215454797188724,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 1.868328140924464e-06,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            641,
+            768
+          ],
+          "ratio_finite": true,
+          "share": 0.018289231150419506,
+          "shell_0based": 5
+        },
+        {
+          "denominator": 1.4503302445490344e-09,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 3.0189662998893743e-10,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            769,
+            896
+          ],
+          "ratio_finite": true,
+          "share": 0.20815716360021794,
+          "shell_0based": 6
+        },
+        {
+          "denominator": 1.2257903436276475e-25,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 2.1004958213341186e-26,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            897,
+            1024
+          ],
+          "ratio_finite": true,
+          "share": 0.1713584898309638,
+          "shell_0based": 7
+        },
+        {
+          "denominator": 6.420477288492938e-26,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 1.7576569895125305e-26,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            1025,
+            1152
+          ],
+          "ratio_finite": true,
+          "share": 0.2737579950111623,
+          "shell_0based": 8
+        },
+        {
+          "denominator": 4.1001893969296675e-26,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 1.7928583801991652e-26,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            1153,
+            1280
+          ],
+          "ratio_finite": true,
+          "share": 0.43726233269655934,
+          "shell_0based": 9
+        },
+        {
+          "denominator": 3.148610609518607e-26,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 1.3207024982449415e-26,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            1281,
+            1408
+          ],
+          "ratio_finite": true,
+          "share": 0.4194556463261313,
+          "shell_0based": 10
+        },
+        {
+          "denominator": 3.0687067841522526e-26,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 1.20244092016829e-26,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            1409,
+            1536
+          ],
+          "ratio_finite": true,
+          "share": 0.3918396265091424,
+          "shell_0based": 11
+        },
+        {
+          "denominator": 2.8919443712005396e-26,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 1.172894489289458e-26,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            1537,
+            1664
+          ],
+          "ratio_finite": true,
+          "share": 0.40557297746448406,
+          "shell_0based": 12
+        },
+        {
+          "denominator": 2.805711778446961e-26,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 1.1719580031220579e-26,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            1665,
+            1792
+          ],
+          "ratio_finite": true,
+          "share": 0.41770434587217975,
+          "shell_0based": 13
+        },
+        {
+          "denominator": 2.6690293130916987e-26,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 1.1345918755778297e-26,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            1793,
+            1920
+          ],
+          "ratio_finite": true,
+          "share": 0.4250953221130281,
+          "shell_0based": 14
+        },
+        {
+          "denominator": 2.5814388350510088e-26,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 1.134702887845083e-26,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            1921,
+            2048
+          ],
+          "ratio_finite": true,
+          "share": 0.4395621823139813,
+          "shell_0based": 15
+        }
+      ]
+    },
+    "15": {
+      "channels": [
+        {
+          "high_exceeds_denominator_indices_0based": [],
+          "k": 1,
+          "negative_denominator_indices_0based": [],
+          "negative_high_indices_0based": [],
+          "nonfinite_shell_indices_0based": [],
+          "shell_high_number": [
+            0.978987505407804,
+            0.00032282751231731106,
+            7.08317497767248e-05,
+            1.1395354546263855e-05,
+            1.4616635805297953e-06,
+            1.2699080226270766e-07,
+            3.6506015739413985e-09,
+            2.051696943025278e-12,
+            3.319525285110743e-18,
+            3.3991713480316894e-18,
+            4.164095589295721e-18,
+            2.9905474726155476e-18,
+            3.830900652089508e-18,
+            3.136187235323113e-18,
+            2.9371006834102634e-18,
+            3.436188680126772e-18
+          ],
+          "shell_number": [
+            4.927662863755257,
+            0.05874529085529001,
+            0.011636708814314806,
+            0.0017368455192970729,
+            0.00020404380957441564,
+            1.402864965358001e-05,
+            2.18581405347116e-07,
+            1.5211238382714584e-11,
+            1.5432931849050613e-17,
+            1.497587464407901e-17,
+            1.5626466745689735e-17,
+            1.7039192277027192e-17,
+            1.5457055653000676e-17,
+            1.487923926963454e-17,
+            1.589806027120568e-17,
+            1.5040421753530684e-17
+          ],
+          "weight_applied_once": 16.0
+        },
+        {
+          "high_exceeds_denominator_indices_0based": [],
+          "k": 2,
+          "negative_denominator_indices_0based": [],
+          "negative_high_indices_0based": [],
+          "nonfinite_shell_indices_0based": [],
+          "shell_high_number": [
+            0.5070843739672708,
+            0.0002833037630777729,
+            6.211186851325912e-05,
+            1.0002065980755898e-05,
+            1.2849393490636993e-06,
+            1.119115217166036e-07,
+            3.2185730265938655e-09,
+            1.8095685003500972e-12,
+            3.6526737704845945e-18,
+            3.573029691371388e-18,
+            2.9222792491022243e-18,
+            3.2725692148813964e-18,
+            3.246432166941197e-18,
+            2.9507972184144415e-18,
+            3.735533942077933e-18,
+            3.691301232583222e-18
+          ],
+          "shell_number": [
+            3.9370393135784867,
+            0.05111913382527225,
+            0.010128835661535624,
+            0.0015206448875436868,
+            0.0001795147051886775,
+            1.2364640845103907e-05,
+            1.9268772842592695e-07,
+            1.340338432306159e-11,
+            1.3263766739414213e-17,
+            1.2137422439807379e-17,
+            1.2757686988497292e-17,
+            1.3099752408535983e-17,
+            1.3636177219136651e-17,
+            1.2787443000226951e-17,
+            1.3216167756788494e-17,
+            1.3199684493115298e-17
+          ],
+          "weight_applied_once": 32.0
+        },
+        {
+          "high_exceeds_denominator_indices_0based": [],
+          "k": 3,
+          "negative_denominator_indices_0based": [],
+          "negative_high_indices_0based": [],
+          "nonfinite_shell_indices_0based": [],
+          "shell_high_number": [
+            0.4220307571991448,
+            0.00023990934980462107,
+            5.142483997625135e-05,
+            8.34219406280904e-06,
+            1.078989730235478e-06,
+            9.37285194230879e-08,
+            2.689574155625216e-09,
+            1.5099446913335043e-12,
+            2.6206859759845424e-18,
+            2.6404228794483562e-18,
+            2.7042669186936517e-18,
+            2.692568171248999e-18,
+            2.2534203566862017e-18,
+            2.413241225796677e-18,
+            2.755019604999476e-18,
+            2.2158769869674246e-18
+          ],
+          "shell_number": [
+            2.9467284467932395,
+            0.04327953529935301,
+            0.008551007998889559,
+            0.0012798753467278042,
+            0.00015062443482907777,
+            1.0349173303381442e-05,
+            1.6094248593482346e-07,
+            1.1171189257192389e-11,
+            9.310222747617377e-18,
+            9.518938460550017e-18,
+            1.0817045643018604e-17,
+            1.0133848183169641e-17,
+            8.588447428517573e-18,
+            9.848704410714511e-18,
+            1.0582084460731585e-17,
+            8.155232917803985e-18
+          ],
+          "weight_applied_once": 48.0
+        },
+        {
+          "high_exceeds_denominator_indices_0based": [],
+          "k": 4,
+          "negative_denominator_indices_0based": [],
+          "negative_high_indices_0based": [],
+          "nonfinite_shell_indices_0based": [],
+          "shell_high_number": [
+            0.26325821602451327,
+            0.00015821303137120754,
+            3.378934779331144e-05,
+            5.474314005821266e-06,
+            7.094698595652573e-07,
+            6.203434797876693e-08,
+            1.7826785188660987e-09,
+            1.0018579870073311e-12,
+            1.9905169919376864e-18,
+            2.459662588037044e-18,
+            2.0779039455497075e-18,
+            2.097126108100977e-18,
+            1.7112857662749274e-18,
+            2.3307917431989745e-18,
+            2.0369776080382933e-18,
+            1.707591872779271e-18
+          ],
+          "shell_number": [
+            1.966046286713107,
+            0.027540108896352798,
+            0.005474632695744245,
+            0.000832764503563464,
+            9.924783211314307e-05,
+            6.852706271742273e-06,
+            1.066454519741415e-07,
+            7.396487243551742e-12,
+            6.8367140393307236e-18,
+            7.420649332746597e-18,
+            6.118363534702677e-18,
+            7.596097046789885e-18,
+            5.839661718561952e-18,
+            6.784320800866249e-18,
+            6.504126626289446e-18,
+            6.5926418352737244e-18
+          ],
+          "weight_applied_once": 64.0
+        },
+        {
+          "high_exceeds_denominator_indices_0based": [],
+          "k": 5,
+          "negative_denominator_indices_0based": [],
+          "negative_high_indices_0based": [],
+          "nonfinite_shell_indices_0based": [],
+          "shell_high_number": [
+            0.3221692450184568,
+            0.0002673730137030263,
+            5.3306238054653695e-05,
+            8.351916797696262e-06,
+            1.0515110564596878e-06,
+            9.015117315687617e-08,
+            2.5611370107761244e-09,
+            1.4304587393796149e-12,
+            1.762383888843145e-18,
+            1.7907805216032363e-18,
+            2.173617509330992e-18,
+            2.072036953624206e-18,
+            1.6472132217409856e-18,
+            2.1621946451692055e-18,
+            1.7526666770408464e-18,
+            1.9369855313580625e-18
+          ],
+          "shell_number": [
+            1.9457107423584554,
+            0.044321197841729214,
+            0.008551552766980672,
+            0.0012602307360161597,
+            0.00014619836560618814,
+            9.924961912518563e-06,
+            1.5295876871677473e-07,
+            1.053114573934049e-11,
+            7.160388226670042e-18,
+            6.864135747485436e-18,
+            7.336207737528805e-18,
+            6.8784339067306455e-18,
+            6.4656935649767775e-18,
+            7.411586023524737e-18,
+            7.258550820531442e-18,
+            7.050476525236463e-18
+          ],
+          "weight_applied_once": 80.0
+        }
+      ],
+      "edge_diagnostics": {
+        "applied": {
+          "affected_candidate_edges": [
+            {
+              "both_endpoints_in_saved_fit_mask": false,
+              "delta_log_count": 0.0,
+              "delta_log_count_nonfinite": false,
+              "delta_log_count_positive": false,
+              "delta_log_count_zero": true,
+              "delta_log_lapse": -1.548428508571948e-12,
+              "delta_log_lapse_nonfinite": false,
+              "edge_0based": 925,
+              "radius_pair_a": [
+                926.0,
+                927.0
+              ],
+              "stored_slope": null,
+              "stored_slope_nonfinite": true
+            },
+            {
+              "both_endpoints_in_saved_fit_mask": false,
+              "delta_log_count": 0.0,
+              "delta_log_count_nonfinite": false,
+              "delta_log_count_positive": false,
+              "delta_log_count_zero": true,
+              "delta_log_lapse": -1.5405459228207083e-12,
+              "delta_log_lapse_nonfinite": false,
+              "edge_0based": 926,
+              "radius_pair_a": [
+                927.0,
+                928.0
+              ],
+              "stored_slope": null,
+              "stored_slope_nonfinite": true
+            },
+            {
+              "both_endpoints_in_saved_fit_mask": false,
+              "delta_log_count": 0.0,
+              "delta_log_count_nonfinite": false,
+              "delta_log_count_positive": false,
+              "delta_log_count_zero": true,
+              "delta_log_lapse": -1.5277783542258707e-12,
+              "delta_log_lapse_nonfinite": false,
+              "edge_0based": 928,
+              "radius_pair_a": [
+                929.0,
+                930.0
+              ],
+              "stored_slope": null,
+              "stored_slope_nonfinite": true
+            }
+          ],
+          "candidate_nonfinite_log_numerator_count": 0,
+          "candidate_nonfinite_stored_slope_count": 3,
+          "candidate_zero_or_nonfinite_log_denominator_count": 3,
+          "edge_count": 2047,
+          "original_candidate_count": 929,
+          "outside_candidate_finite_stored_slope_count": 0,
+          "outside_original_candidate_count": 1118,
+          "usable_stored_edge_count": 926
+        },
+        "dense": {
+          "affected_candidate_edges": [
+            {
+              "both_endpoints_in_saved_fit_mask": false,
+              "delta_log_count": 0.0,
+              "delta_log_count_nonfinite": false,
+              "delta_log_count_positive": false,
+              "delta_log_count_zero": true,
+              "delta_log_lapse": -1.5509820222697396e-12,
+              "delta_log_lapse_nonfinite": false,
+              "edge_0based": 925,
+              "radius_pair_a": [
+                926.0,
+                927.0
+              ],
+              "stored_slope": null,
+              "stored_slope_nonfinite": true
+            },
+            {
+              "both_endpoints_in_saved_fit_mask": false,
+              "delta_log_count": 0.0,
+              "delta_log_count_nonfinite": false,
+              "delta_log_count_positive": false,
+              "delta_log_count_zero": true,
+              "delta_log_lapse": -1.5510930446251417e-12,
+              "delta_log_lapse_nonfinite": false,
+              "edge_0based": 926,
+              "radius_pair_a": [
+                927.0,
+                928.0
+              ],
+              "stored_slope": null,
+              "stored_slope_nonfinite": true
+            },
+            {
+              "both_endpoints_in_saved_fit_mask": false,
+              "delta_log_count": 0.0,
+              "delta_log_count_nonfinite": false,
+              "delta_log_count_positive": false,
+              "delta_log_count_zero": true,
+              "delta_log_lapse": -1.532552314661127e-12,
+              "delta_log_lapse_nonfinite": false,
+              "edge_0based": 928,
+              "radius_pair_a": [
+                929.0,
+                930.0
+              ],
+              "stored_slope": null,
+              "stored_slope_nonfinite": true
+            }
+          ],
+          "candidate_nonfinite_log_numerator_count": 0,
+          "candidate_nonfinite_stored_slope_count": 3,
+          "candidate_zero_or_nonfinite_log_denominator_count": 3,
+          "edge_count": 2047,
+          "original_candidate_count": 929,
+          "outside_candidate_finite_stored_slope_count": 0,
+          "outside_original_candidate_count": 1118,
+          "usable_stored_edge_count": 926
+        }
+      },
+      "shells": [
+        {
+          "denominator": 627.7546510389865,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 94.77004182608188,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            1,
+            128
+          ],
+          "ratio_finite": true,
+          "share": 0.15096669004240673,
+          "shell_0based": 0
+        },
+        {
+          "denominator": 9.961417427167213,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 0.05726208451018691,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            129,
+            256
+          ],
+          "ratio_finite": true,
+          "share": 0.005748387207830409,
+          "shell_0based": 1
+        },
+        {
+          "denominator": 1.955259180030961,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 0.012016297410856181,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            257,
+            384
+          ],
+          "ratio_finite": true,
+          "share": 0.006145628944529955,
+          "shell_0based": 2
+        },
+        {
+          "denominator": 0.29199956846244024,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 0.0019213265393275064,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            385,
+            512
+          ],
+          "ratio_finite": true,
+          "share": 0.006579895132874642,
+          "shell_0based": 3
+        },
+        {
+          "denominator": 0.034286874894760275,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 0.00024582313903876953,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            513,
+            640
+          ],
+          "ratio_finite": true,
+          "share": 0.007169598856509849,
+          "shell_0based": 4
+        },
+        {
+          "denominator": 0.0023494573744559048,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 2.1294282586634034e-05,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            641,
+            768
+          ],
+          "ratio_finite": true,
+          "share": 0.00906348964580191,
+          "shell_0based": 5
+        },
+        {
+          "denominator": 3.645055954374208e-05,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 6.094859075735968e-07,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            769,
+            896
+          ],
+          "ratio_finite": true,
+          "share": 0.016720893045336936,
+          "shell_0based": 6
+        },
+        {
+          "denominator": 2.5243720395411894e-09,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 3.4176629860245417e-10,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            897,
+            1024
+          ],
+          "ratio_finite": true,
+          "share": 0.13538665983028833,
+          "shell_0based": 7
+        },
+        {
+          "denominator": 2.128638893782468e-15,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 5.641746906560005e-16,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            1025,
+            1152
+          ],
+          "ratio_finite": true,
+          "share": 0.2650401119249938,
+          "shell_0based": 8
+        },
+        {
+          "denominator": 2.1089729755801183e-15,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 5.961448372685423e-16,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            1153,
+            1280
+          ],
+          "ratio_finite": true,
+          "share": 0.28267068576569115,
+          "shell_0based": 9
+        },
+        {
+          "denominator": 2.155959527651118e-15,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 5.968185307589587e-16,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            1281,
+            1408
+          ],
+          "ratio_finite": true,
+          "share": 0.27682269685701505,
+          "shell_0based": 10
+        },
+        {
+          "denominator": 2.2146687898307333e-15,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 5.817932738664044e-16,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            1409,
+            1536
+          ],
+          "ratio_finite": true,
+          "share": 0.2626999019166522,
+          "shell_0based": 11
+        },
+        {
+          "denominator": 1.9869098732153345e-15,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 5.146437636773624e-16,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            1537,
+            1664
+          ],
+          "ratio_finite": true,
+          "share": 0.2590171656072832,
+          "shell_0based": 12
+        },
+        {
+          "denominator": 2.1471272291731305e-15,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 5.825863287709432e-16,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            1665,
+            1792
+          ],
+          "ratio_finite": true,
+          "share": 0.2713329330722987,
+          "shell_0based": 13
+        },
+        {
+          "denominator": 2.1821745563966787e-15,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 5.693515391987514e-16,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            1793,
+            1920
+          ],
+          "ratio_finite": true,
+          "share": 0.2609101721628056,
+          "shell_0based": 14
+        },
+        {
+          "denominator": 2.0404550313672073e-15,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 5.437074760656461e-16,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            1921,
+            2048
+          ],
+          "ratio_finite": true,
+          "share": 0.2664638365989055,
+          "shell_0based": 15
+        }
+      ]
+    },
+    "16": {
+      "channels": [
+        {
+          "high_exceeds_denominator_indices_0based": [],
+          "k": 1,
+          "negative_denominator_indices_0based": [],
+          "negative_high_indices_0based": [],
+          "nonfinite_shell_indices_0based": [],
+          "shell_high_number": [
+            0.48427177686436246,
+            0.0002456061952856922,
+            6.008650559901054e-05,
+            1.131062442409338e-05,
+            1.770177778641031e-06,
+            2.0022347293136108e-07,
+            1.0604909723830847e-08,
+            5.279883822075204e-11,
+            1.580275833628631e-28,
+            1.233256033660564e-28,
+            1.0835763483703146e-28,
+            1.06222730499765e-28,
+            9.86193837194639e-29,
+            9.766810895647301e-29,
+            9.766861657132561e-29,
+            1.0221049666900572e-28
+          ],
+          "shell_number": [
+            4.9455603367071,
+            0.042232194448128785,
+            0.010104634164824364,
+            0.0018153717698772501,
+            0.00026153114047978613,
+            2.5084161861790605e-05,
+            8.462033256585386e-07,
+            1.4044087296320734e-09,
+            4.077317121464221e-28,
+            3.0415132621597134e-28,
+            2.7846334689167345e-28,
+            2.8321704548375938e-28,
+            2.582785733617172e-28,
+            2.4636618647239406e-28,
+            2.4283407890556777e-28,
+            2.3363571657324213e-28
+          ],
+          "weight_applied_once": 16.0
+        },
+        {
+          "high_exceeds_denominator_indices_0based": [],
+          "k": 2,
+          "negative_denominator_indices_0based": [],
+          "negative_high_indices_0based": [],
+          "nonfinite_shell_indices_0based": [],
+          "shell_high_number": [
+            0.40464356981157945,
+            0.0002188081525529667,
+            5.17396882891508e-05,
+            9.923678594769357e-06,
+            1.5559042443118307e-06,
+            1.764543784148614e-07,
+            9.35139073443242e-09,
+            4.655308513424404e-11,
+            1.3685238768206646e-28,
+            1.01106416783201e-28,
+            1.0056951733379817e-28,
+            9.738405728386514e-29,
+            8.66655208124087e-29,
+            9.084999368260773e-29,
+            8.47585996755108e-29,
+            8.950328860673921e-29
+          ],
+          "shell_number": [
+            3.9526616037075293,
+            0.036690750858757074,
+            0.008804460657442281,
+            0.0015902635926557979,
+            0.0002300638967729534,
+            2.2109953152123917e-05,
+            7.460957270337394e-07,
+            1.237970947515577e-09,
+            3.776524021635142e-28,
+            2.8009568608612604e-28,
+            2.5647985986013026e-28,
+            2.472203202768185e-28,
+            2.2531607323471272e-28,
+            2.1311937698825377e-28,
+            2.092289090000578e-28,
+            2.0174638132077243e-28
+          ],
+          "weight_applied_once": 32.0
+        },
+        {
+          "high_exceeds_denominator_indices_0based": [],
+          "k": 3,
+          "negative_denominator_indices_0based": [],
+          "negative_high_indices_0based": [],
+          "nonfinite_shell_indices_0based": [],
+          "shell_high_number": [
+            0.30550228626659276,
+            0.00018790164542945026,
+            4.413268046233149e-05,
+            8.28029099576821e-06,
+            1.3073033551887204e-06,
+            1.4789825484810663e-07,
+            7.82042738680715e-09,
+            3.885651875268482e-11,
+            1.0671383591836926e-28,
+            8.413855834948753e-29,
+            6.741710306185636e-29,
+            7.045385049347274e-29,
+            5.883251567908499e-29,
+            6.586197186078598e-29,
+            5.741841034421695e-29,
+            6.952092228171893e-29
+          ],
+          "shell_number": [
+            2.959709225307872,
+            0.031311084233874895,
+            0.0074290188798037,
+            0.001338348444654516,
+            0.00019317946291176404,
+            1.8519019557440123e-05,
+            6.236184976723631e-07,
+            1.0328310426022777e-09,
+            3.4678423440835684e-28,
+            2.310413465472296e-28,
+            1.7379290794251204e-28,
+            1.7044289523003814e-28,
+            1.611891602105981e-28,
+            1.5070510843855135e-28,
+            1.4270339023457934e-28,
+            1.462440099974489e-28
+          ],
+          "weight_applied_once": 48.0
+        },
+        {
+          "high_exceeds_denominator_indices_0based": [],
+          "k": 4,
+          "negative_denominator_indices_0based": [],
+          "negative_high_indices_0based": [],
+          "nonfinite_shell_indices_0based": [],
+          "shell_high_number": [
+            0.18485299077180728,
+            0.00012455892107182128,
+            2.7754744939290154e-05,
+            5.431088904864808e-06,
+            8.592254266918941e-07,
+            9.788556669767677e-08,
+            5.185069424085527e-09,
+            2.5762757684735683e-11,
+            7.973057885315433e-29,
+            7.733861523854003e-29,
+            6.906144049585123e-29,
+            5.489904843921651e-29,
+            4.966185926911306e-29,
+            5.113672252312099e-29,
+            4.2092111048175513e-29,
+            4.5469586587140935e-29
+          ],
+          "shell_number": [
+            1.9743899153506954,
+            0.01982170558371268,
+            0.00477645859568935,
+            0.0008720047092737283,
+            0.00012723881238877968,
+            1.2262884266388904e-05,
+            4.133795784060161e-07,
+            6.844011432247408e-10,
+            3.819104938987363e-28,
+            2.4392053370378543e-28,
+            1.9832194616505397e-28,
+            1.4930458209386975e-28,
+            1.2634996455439658e-28,
+            1.1801833999225207e-28,
+            1.0831274519012682e-28,
+            9.908361029352623e-29
+          ],
+          "weight_applied_once": 64.0
+        },
+        {
+          "high_exceeds_denominator_indices_0based": [],
+          "k": 5,
+          "negative_denominator_indices_0based": [],
+          "negative_high_indices_0based": [],
+          "nonfinite_shell_indices_0based": [],
+          "shell_high_number": [
+            0.2771647351253175,
+            0.00019183535767198546,
+            4.640536522625848e-05,
+            8.503643515134337e-06,
+            1.2783996401902668e-06,
+            1.427919727876682e-07,
+            7.471685153162813e-09,
+            3.6834707528327754e-11,
+            1.067821030978399e-28,
+            9.160866676057308e-29,
+            8.474064317988927e-29,
+            5.234624173019259e-29,
+            4.822171170367595e-29,
+            4.389929328373087e-29,
+            4.578672518828591e-29,
+            4.623463641283376e-29
+          ],
+          "shell_number": [
+            1.9588527257643924,
+            0.03209332424070158,
+            0.007522455786334408,
+            0.0013248709123119583,
+            0.0001882082951055265,
+            1.7819571161094142e-05,
+            5.944526603659344e-07,
+            9.773313306620413e-10,
+            6.209215546991005e-28,
+            2.9443907368297827e-28,
+            2.215444098576531e-28,
+            1.5058945736583418e-28,
+            1.2397636671349485e-28,
+            1.2258733821933785e-28,
+            1.0794751035888467e-28,
+            1.0821845265697021e-28
+          ],
+          "weight_applied_once": 80.0
+        }
+      ],
+      "edge_diagnostics": {
+        "applied": {
+          "affected_candidate_edges": [
+            {
+              "both_endpoints_in_saved_fit_mask": false,
+              "delta_log_count": 0.0,
+              "delta_log_count_nonfinite": false,
+              "delta_log_count_positive": false,
+              "delta_log_count_zero": true,
+              "delta_log_lapse": -8.013591138791464e-13,
+              "delta_log_lapse_nonfinite": false,
+              "edge_0based": 968,
+              "radius_pair_a": [
+                969.0,
+                970.0
+              ],
+              "stored_slope": null,
+              "stored_slope_nonfinite": true
+            },
+            {
+              "both_endpoints_in_saved_fit_mask": false,
+              "delta_log_count": 0.0,
+              "delta_log_count_nonfinite": false,
+              "delta_log_count_positive": false,
+              "delta_log_count_zero": true,
+              "delta_log_lapse": -7.965851540791648e-13,
+              "delta_log_lapse_nonfinite": false,
+              "edge_0based": 970,
+              "radius_pair_a": [
+                971.0,
+                972.0
+              ],
+              "stored_slope": null,
+              "stored_slope_nonfinite": true
+            },
+            {
+              "both_endpoints_in_saved_fit_mask": false,
+              "delta_log_count": 0.0,
+              "delta_log_count_nonfinite": false,
+              "delta_log_count_positive": false,
+              "delta_log_count_zero": true,
+              "delta_log_lapse": -7.946977746196647e-13,
+              "delta_log_lapse_nonfinite": false,
+              "edge_0based": 971,
+              "radius_pair_a": [
+                972.0,
+                973.0
+              ],
+              "stored_slope": null,
+              "stored_slope_nonfinite": true
+            },
+            {
+              "both_endpoints_in_saved_fit_mask": false,
+              "delta_log_count": 0.0,
+              "delta_log_count_nonfinite": false,
+              "delta_log_count_positive": false,
+              "delta_log_count_zero": true,
+              "delta_log_lapse": -7.92366305897375e-13,
+              "delta_log_lapse_nonfinite": false,
+              "edge_0based": 972,
+              "radius_pair_a": [
+                973.0,
+                974.0
+              ],
+              "stored_slope": null,
+              "stored_slope_nonfinite": true
+            }
+          ],
+          "candidate_nonfinite_log_numerator_count": 0,
+          "candidate_nonfinite_stored_slope_count": 4,
+          "candidate_zero_or_nonfinite_log_denominator_count": 4,
+          "edge_count": 2047,
+          "original_candidate_count": 973,
+          "outside_candidate_finite_stored_slope_count": 0,
+          "outside_original_candidate_count": 1074,
+          "usable_stored_edge_count": 969
+        },
+        "dense": {
+          "affected_candidate_edges": [
+            {
+              "both_endpoints_in_saved_fit_mask": false,
+              "delta_log_count": 0.0,
+              "delta_log_count_nonfinite": false,
+              "delta_log_count_positive": false,
+              "delta_log_count_zero": true,
+              "delta_log_lapse": -7.513990625244213e-13,
+              "delta_log_lapse_nonfinite": false,
+              "edge_0based": 968,
+              "radius_pair_a": [
+                969.0,
+                970.0
+              ],
+              "stored_slope": null,
+              "stored_slope_nonfinite": true
+            },
+            {
+              "both_endpoints_in_saved_fit_mask": false,
+              "delta_log_count": 0.0,
+              "delta_log_count_nonfinite": false,
+              "delta_log_count_positive": false,
+              "delta_log_count_zero": true,
+              "delta_log_lapse": -7.513990625508911e-13,
+              "delta_log_lapse_nonfinite": false,
+              "edge_0based": 970,
+              "radius_pair_a": [
+                971.0,
+                972.0
+              ],
+              "stored_slope": null,
+              "stored_slope_nonfinite": true
+            },
+            {
+              "both_endpoints_in_saved_fit_mask": false,
+              "delta_log_count": 0.0,
+              "delta_log_count_nonfinite": false,
+              "delta_log_count_positive": false,
+              "delta_log_count_zero": true,
+              "delta_log_lapse": -7.429613661873113e-13,
+              "delta_log_lapse_nonfinite": false,
+              "edge_0based": 971,
+              "radius_pair_a": [
+                972.0,
+                973.0
+              ],
+              "stored_slope": null,
+              "stored_slope_nonfinite": true
+            },
+            {
+              "both_endpoints_in_saved_fit_mask": false,
+              "delta_log_count": 0.0,
+              "delta_log_count_nonfinite": false,
+              "delta_log_count_positive": false,
+              "delta_log_count_zero": true,
+              "delta_log_lapse": -7.428503438848488e-13,
+              "delta_log_lapse_nonfinite": false,
+              "edge_0based": 972,
+              "radius_pair_a": [
+                973.0,
+                974.0
+              ],
+              "stored_slope": null,
+              "stored_slope_nonfinite": true
+            }
+          ],
+          "candidate_nonfinite_log_numerator_count": 0,
+          "candidate_nonfinite_stored_slope_count": 4,
+          "candidate_zero_or_nonfinite_log_denominator_count": 4,
+          "edge_count": 2047,
+          "original_candidate_count": 973,
+          "outside_candidate_finite_stored_slope_count": 0,
+          "outside_original_candidate_count": 1074,
+          "usable_stored_edge_count": 969
+        }
+      },
+      "shells": [
+        {
+          "denominator": 630.7493521643282,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 69.36482262401785,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            1,
+            128
+          ],
+          "ratio_finite": true,
+          "share": 0.10997208698828173,
+          "shell_0based": 0
+        },
+        {
+          "denominator": 7.18880627849002,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 0.04326943854923502,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            129,
+            256
+          ],
+          "ratio_finite": true,
+          "share": 0.0060190018861272735,
+          "shell_0based": 1
+        },
+        {
+          "denominator": 1.7074996069367916,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 0.010224155671244154,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            257,
+            384
+          ],
+          "ratio_finite": true,
+          "share": 0.005987793865198022,
+          "shell_0based": 2
+        },
+        {
+          "denominator": 0.30597308300491355,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 0.0019238628447370823,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            385,
+            512
+          ],
+          "ratio_finite": true,
+          "share": 0.0062876865698221806,
+          "shell_0based": 3
+        },
+        {
+          "denominator": 0.04401910476549978,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 0.00029812473984879625,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            513,
+            640
+          ],
+          "ratio_finite": true,
+          "share": 0.0067726216023014894,
+          "shell_0based": 4
+        },
+        {
+          "denominator": 0.004208168315350163,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 3.363726600055123e-05,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            641,
+            768
+          ],
+          "ratio_finite": true,
+          "share": 0.007993327138995929,
+          "shell_0based": 5
+        },
+        {
+          "denominator": 0.0001413605102111495,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 1.773882829044373e-06,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            769,
+            896
+          ],
+          "ratio_finite": true,
+          "share": 0.012548644783431618,
+          "shell_0based": 6
+        },
+        {
+          "denominator": 2.3364967965886768e-07,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 8.795186130046017e-09,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            897,
+            1024
+          ],
+          "ratio_finite": true,
+          "share": 0.03764262010924702,
+          "shell_0based": 7
+        },
+        {
+          "denominator": 1.093702235006235e-25,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 2.567530715814273e-26,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            1025,
+            1152
+          ],
+          "ratio_finite": true,
+          "share": 0.23475591743667196,
+          "shell_0based": 8
+        },
+        {
+          "denominator": 6.408550786015912e-26,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 2.1525630507807145e-26,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            1153,
+            1280
+          ],
+          "ratio_finite": true,
+          "share": 0.33588920844285397,
+          "shell_0based": 9
+        },
+        {
+          "denominator": 5.1420985990207224e-26,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 1.9387151305168773e-26,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            1281,
+            1408
+          ],
+          "ratio_finite": true,
+          "share": 0.3770279960960088,
+          "shell_0based": 10
+        },
+        {
+          "denominator": 4.222643179091457e-26,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 1.5898876783291882e-26,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            1409,
+            1536
+          ],
+          "ratio_finite": true,
+          "share": 0.376514806224112,
+          "shell_0based": 11
+        },
+        {
+          "denominator": 3.708415827596796e-26,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 1.4211263487621894e-26,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            1537,
+            1664
+          ],
+          "ratio_finite": true,
+          "share": 0.383216557913123,
+          "shell_0based": 12
+        },
+        {
+          "denominator": 3.535568506928405e-26,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 1.4415957894642954e-26,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            1665,
+            1792
+          ],
+          "ratio_finite": true,
+          "share": 0.4077408729711506,
+          "shell_0based": 13
+        },
+        {
+          "denominator": 3.299824960262963e-26,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 1.3387889873426075e-26,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            1793,
+            1920
+          ],
+          "ratio_finite": true,
+          "share": 0.4057151526109795,
+          "shell_0based": 14
+        },
+        {
+          "denominator": 3.221259541865744e-26,
+          "denominator_positive": true,
+          "high_exceeds_denominator": false,
+          "high_number": 1.4445301906245975e-26,
+          "inputs_finite": true,
+          "negative_denominator": false,
+          "negative_high": false,
+          "radius_pair_a": [
+            1921,
+            2048
+          ],
+          "ratio_finite": true,
+          "share": 0.44843644911267533,
+          "shell_0based": 15
+        }
+      ]
+    }
+  },
+  "source": {
+    "missing_work_completion": {
+      "closed_prior_charged_wall_seconds": 899.9093604981899,
+      "closed_prior_cpu_upper_bound": 1220.1546343991404,
+      "closed_prior_local_reserve_flag": false,
+      "completed_new_joint_actions": 12,
+      "completed_new_spectral_actions": 2,
+      "order": "all missing joint/FFT and three matched summaries, then only missing spectra",
+      "prior_execution_path": "<internal>/execution.json",
+      "prior_execution_sha256": "1f49c90f8b83093e44b92632ebafbeb61c65bc4fd2f3ad99ae730916e1af16bc",
+      "prior_result_path": "<internal>/core_well_profiles_v1.json",
+      "prior_result_sha256": "93024674443168e17c357cc7917ab3f789330ceaff19ecbc0d8f021a16927e9c",
+      "remaining_joint_actions": 12,
+      "remaining_spectral_actions": 13,
+      "reused_completed_products": [
+        "eigensystem_T16_k01.npz",
+        "eigensystem_T16_k02.npz",
+        "joint_T16_k01.npz",
+        "joint_T16_k02.npz",
+        "joint_T16_k03.npz",
+        "raw_T12.npz",
+        "raw_T15.npz",
+        "raw_T16.npz",
+        "spectral_T16_k01.npz",
+        "spectral_T16_k02.npz"
+      ],
+      "separately_bounded_allocation": true
+    },
+    "path": "<internal>/core_well_profiles_v1.json",
+    "sha256": "88dd048032358815b8f319d6e61faa088dabb76ace7080a67d128515054f7947",
+    "status": "incomplete"
+  },
+  "status": "completed",
+  "worker_elapsed_before_save_seconds": 0.24396377429366112
+}

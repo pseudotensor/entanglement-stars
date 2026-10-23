@@ -1,0 +1,35 @@
+{
+  "input_metadata_sha256": "47ec33f7ca01135f7fba6d5f01aadde18aa9aafc27e1443602d8145c8eff20f2",
+  "known_input_bindings_passed": true,
+  "runtime": {
+    "host": "compute-host",
+    "pid": 1619750,
+    "threads": 1,
+    "niceness": 10,
+    "device": "CPU"
+  },
+  "source_spec_hashes": {
+    "run_EVOLVEDCUT_purity_bound_v1.py": "b710b3d7b8cd580d76c32efe9f7687902cb1cc76dcd22dee12f99410519c3ef8",
+    "decimal_interval_v1.py": "3cebe5fb9746b361912a4788b7deaf94cfb9c6372e2fae4ae7d23ff671858202",
+    "cpu_runtime.py": "207c7a16432e722fa0b77c1e9d05e0d2ef712b540a95f25762bcb13cd10feb85",
+    "EVOLVEDCUT_purity_bound_spec_v1.md": "34b93e9025f4d4e6603c31259b7b23008085cf2334e37a0be99970b9cf4ee2dc"
+  },
+  "precision_decimal_digits": 80,
+  "tests": {
+    "rational_one_third_enclosed": true,
+    "signed_interval_product": true,
+    "sqrt_exact_rational_enclosure": true,
+    "perfect_square_exact": true,
+    "log_two_independent_rational_series": true,
+    "binary64_exact_rational_input": true,
+    "division_zero_rejected": true,
+    "negative_sqrt_rejected": true,
+    "failed_Gram_defect_unavailable": true,
+    "formal_exact_arithmetic_zero_bound": true,
+    "failed_held_gap_unavailable": true,
+    "modulus_saturation": true,
+    "display_interval_not_exact_first_number": true,
+    "original_hypotheses_not_certified": true
+  },
+  "all_passed": true
+}

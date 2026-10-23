@@ -1,0 +1,1227 @@
+{
+  "control": "R3A11 fixed surface-lapse arithmetic, three prescribed inputs only",
+  "source_sha256": "d34b6d4cc790e376c61c27cbca3c6d88fd987374f32a2302d03e5741bca3cefc",
+  "specification": "solve/strand_R_surface_lapse_asymptotics.tex paragraph R3A11",
+  "complete": true,
+  "scope": [
+    "Formula evaluation only; no evolution, scattering, quadrature or physical root solve.",
+    "Dispersion endpoint is a validity endpoint, not a physical minimum lapse.",
+    "Escape fractions are the specified continuum emitter readouts.",
+    "Surface wavelength and speed corrections are asymptotic evaluations.",
+    "H_nu is a matched characteristic comparison without an evaluated remainder bound.",
+    "Compact-kernel HA audit is not transfer of any Gaussian-engine history.",
+    "Flux hats are existing uncertified finite-domain control inputs.",
+    "Lifetimes, adiabaticity and Page crossing require the stated population/charge/capacity premises.",
+    "initial_rate_freezing_indicator uses the initial rate and is not a uniform whole-flight bound.",
+    "Binary64 versus 50-digit agreement is observed arithmetic, not a rigorous enclosure.",
+    "Solar SI values use the explicitly prescribed rounded inputs."
+  ],
+  "binary64": {
+    "g": 0.25,
+    "x": 0.07957747154594767,
+    "mass": 0.0,
+    "d": 0.1,
+    "epsilon0": 0.1,
+    "L_hat": 0.005237315421862865,
+    "N_hat": 0.015541819792029855,
+    "b_hat": 1.6391110175949173,
+    "rows": [
+      {
+        "label": "run_rs32",
+        "values": {
+          "chi": 0.03125,
+          "nu": 0.0024867959858108648,
+          "u_d": 0.031387021620390226,
+          "epsilon_d": 0.06178889811458161,
+          "alpha_d": 0.24857372772395236,
+          "continuum_momentum_at_endpoint": 0.07923007209436354,
+          "held_frequency_ratio": 0.24857372772395236,
+          "infall_radial_frequency_ratio": 0.031387021620390226,
+          "held_redshift_factor": 4.022951295603235,
+          "infall_radial_redshift_factor": 31.860302391685398,
+          "held_escape_number_fraction": 0.10223316588743872,
+          "infall_escape_number_fraction": 0.001812300578078123,
+          "fixed_sphere_outward_number_fraction": 0.015693510810195113,
+          "held_leading_power_ratio": 0.006442652132236373,
+          "infall_leading_power_ratio": 1.53732468507444e-06,
+          "coordinate_gap_over_rs": 0.06585820396967308,
+          "coordinate_gap_over_a": 2.1074625270295386,
+          "surface_clock_efolds": 0.2407232399104526,
+          "clock_log_epsilon_ratio": 0.4814464798209052,
+          "delta_T_over_rs": 0.5923857477004288,
+          "delta_T_minus_log_epsilon_ratio": 0.11093926787952363,
+          "R3A4_clock_upper_bound": 0.1381277021749845,
+          "R3A16_displayed_leading_clock": 0.4656285221473208,
+          "delta_T_minus_R3A16_displayed_leading_clock": 0.12675722555310803,
+          "delta_retarded_over_rs": 1.1606653503384827,
+          "delta_retarded_minus_twice_log_epsilon_ratio": 0.1977723906966723,
+          "surface_reduced_wavelength_leading_over_rs": 0.18307398594519042,
+          "surface_reduced_wavelength_first_corrected_over_rs": 0.18262946507067526,
+          "surface_group_speed_leading": 0.043705694722069845,
+          "surface_group_speed_first_corrected": 0.043387330096880054,
+          "C_in_over_rs": -0.9622392505461004,
+          "C_out_over_rs": 0.0656799507071053,
+          "symbol_flight_H_nu": 11.096960999699041,
+          "compact_HA_leading_shift_ell4": 0.00252685546875,
+          "compact_HA_shift_over_u_d": 0.08050637933445895,
+          "formal_axial_temperature_shift": 0.00015877204490004503,
+          "compact_HA_shift_over_formal_axial_temperature_shift": 15.914989759946609,
+          "conditional_energy_time_over_rs": 391040.0338789496,
+          "conditional_zero_radius_lifetime_over_rs": 130346.67795964987,
+          "conditional_kappa_adiabaticity": 5.114565841662954e-06,
+          "conditional_rs_over_energy_time": 2.557282920831477e-06,
+          "conditional_40rs_over_energy_time": 0.00010229131683325909,
+          "initial_rate_freezing_indicator": 0.0009041338544600185,
+          "conditional_Page_crossing_radius_fraction_c1": 0.7880891617212319,
+          "conditional_Page_crossing_lifetime_fraction_c1": 0.5105300158984485,
+          "conditional_Page_crossing_time_over_rs_c1": 66545.89157104999,
+          "separate_am_point2_massive_suppression_exponent": 80.4247719318987
+        },
+        "domain_checks": {
+          "u_d_lt_one_quarter": true,
+          "nu_over_u_d_lt_one_half": true,
+          "epsilon_d_lt_epsilon0": true,
+          "escape_radius_inside_photon_sphere": true,
+          "clock_excess_nonnegative": true,
+          "clock_excess_le_displayed_bound": true
+        }
+      },
+      {
+        "label": "run_rs64",
+        "values": {
+          "chi": 0.015625,
+          "nu": 0.0012433979929054324,
+          "u_d": 0.019772584616517572,
+          "epsilon_d": 0.039154214130617794,
+          "alpha_d": 0.1978742381681299,
+          "continuum_momentum_at_endpoint": 0.06288494989505447,
+          "held_frequency_ratio": 0.1978742381681299,
+          "infall_radial_frequency_ratio": 0.019772584616517572,
+          "held_redshift_factor": 5.053714971982959,
+          "infall_radial_redshift_factor": 50.575077532586334,
+          "held_escape_number_fraction": 0.06525867137328682,
+          "infall_escape_number_fraction": 0.0006966145083650924,
+          "fixed_sphere_outward_number_fraction": 0.009886292308258786,
+          "held_leading_power_ratio": 0.0025870260670643307,
+          "infall_leading_power_ratio": 2.478779211729755e-07,
+          "coordinate_gap_over_rs": 0.04074973810203132,
+          "coordinate_gap_over_a": 2.6079832385300046,
+          "surface_clock_efolds": 0.46883106435765454,
+          "clock_log_epsilon_ratio": 0.9376621287153091,
+          "delta_T_over_rs": 1.1106004830380884,
+          "delta_T_minus_log_epsilon_ratio": 0.17293835432277938,
+          "R3A4_clock_upper_bound": 0.21994886759274832,
+          "R3A16_displayed_leading_clock": 0.9277266425206172,
+          "delta_T_minus_R3A16_displayed_leading_clock": 0.18287384051747124,
+          "delta_retarded_over_rs": 2.1840431449708837,
+          "delta_retarded_minus_twice_log_epsilon_ratio": 0.30871888754026555,
+          "surface_reduced_wavelength_leading_over_rs": 0.1153293842902518,
+          "surface_reduced_wavelength_first_corrected_over_rs": 0.115152976064295,
+          "surface_group_speed_leading": 0.027532862390307528,
+          "surface_group_speed_first_corrected": 0.027406519305073592,
+          "C_in_over_rs": -0.9622392505461004,
+          "C_out_over_rs": 0.0656799507071053,
+          "symbol_flight_H_nu": 12.48325536081893,
+          "compact_HA_leading_shift_ell4": 0.0006317138671875,
+          "compact_HA_shift_over_u_d": 0.031948977811417756,
+          "formal_axial_temperature_shift": 3.969301122501126e-05,
+          "compact_HA_shift_over_formal_axial_temperature_shift": 15.914989759946609,
+          "conditional_energy_time_over_rs": 1564160.1355157983,
+          "conditional_zero_radius_lifetime_over_rs": 521386.71183859947,
+          "conditional_kappa_adiabaticity": 1.2786414604157386e-06,
+          "conditional_rs_over_energy_time": 6.393207302078693e-07,
+          "conditional_40rs_over_energy_time": 2.5572829208314773e-05,
+          "initial_rate_freezing_indicator": 0.0004036297776661465,
+          "conditional_Page_crossing_radius_fraction_c1": 0.7880891617212319,
+          "conditional_Page_crossing_lifetime_fraction_c1": 0.5105300158984485,
+          "conditional_Page_crossing_time_over_rs_c1": 266183.56628419994,
+          "separate_am_point2_massive_suppression_exponent": 160.8495438637974
+        },
+        "domain_checks": {
+          "u_d_lt_one_quarter": true,
+          "nu_over_u_d_lt_one_half": true,
+          "epsilon_d_lt_epsilon0": true,
+          "escape_radius_inside_photon_sphere": true,
+          "clock_excess_nonnegative": true,
+          "clock_excess_le_displayed_bound": true
+        }
+      },
+      {
+        "label": "solar_rounded",
+        "values": {
+          "chi": 1.094e-38,
+          "nu": 8.705775387126675e-40,
+          "u_d": 1.559055731221965e-26,
+          "epsilon_d": 3.11811146244393e-26,
+          "alpha_d": 1.7658175054189293e-13,
+          "continuum_momentum_at_endpoint": 5.584005249320507e-14,
+          "held_frequency_ratio": 1.7658175054189293e-13,
+          "infall_radial_frequency_ratio": 1.559055731221965e-26,
+          "held_redshift_factor": 5663099368599.566,
+          "infall_radial_redshift_factor": 6.414138891726562e+25,
+          "held_escape_number_fraction": 5.261813092874132e-26,
+          "infall_escape_number_fraction": 4.1017299295320945e-52,
+          "fixed_sphere_outward_number_fraction": 7.795278656109826e-27,
+          "held_leading_power_ratio": 1.640691971812838e-51,
+          "infall_leading_power_ratio": 9.969889431004069e-104,
+          "coordinate_gap_over_rs": 3.11811146244393e-26,
+          "coordinate_gap_over_a": 2850193292910.357,
+          "surface_clock_efolds": 28.2136999033984,
+          "clock_log_epsilon_ratio": 56.4273998067968,
+          "delta_T_over_rs": 56.70171408136586,
+          "delta_T_minus_log_epsilon_ratio": 0.27431427456905766,
+          "R3A4_clock_upper_bound": 0.3614857864847256,
+          "R3A16_displayed_leading_clock": 56.4273998067968,
+          "delta_T_minus_R3A16_displayed_leading_clock": 0.27431427456905766,
+          "delta_retarded_over_rs": 113.3455855149316,
+          "delta_retarded_minus_twice_log_epsilon_ratio": 0.4907859013380005,
+          "surface_reduced_wavelength_leading_over_rs": 9.093648657637428e-26,
+          "surface_reduced_wavelength_first_corrected_over_rs": 9.093648657637428e-26,
+          "surface_group_speed_leading": 2.1709487019059637e-26,
+          "surface_group_speed_first_corrected": 2.1709487019059637e-26,
+          "C_in_over_rs": -0.9622392505461004,
+          "C_out_over_rs": 0.0656799507071053,
+          "symbol_flight_H_nu": 178.98227485364748,
+          "compact_HA_leading_shift_ell4": 3.09681315e-76,
+          "compact_HA_shift_over_u_d": 1.9863389665825241e-50,
+          "formal_axial_temperature_shift": 1.9458467750911004e-77,
+          "compact_HA_shift_over_formal_axial_temperature_shift": 15.91498975994661,
+          "conditional_energy_time_over_rs": 3.1907047672773186e+78,
+          "conditional_zero_radius_lifetime_over_rs": 1.0635682557591063e+78,
+          "conditional_kappa_adiabaticity": 6.268207640240664e-79,
+          "conditional_rs_over_energy_time": 3.134103820120332e-79,
+          "conditional_40rs_over_energy_time": 1.253641528048133e-77,
+          "initial_rate_freezing_indicator": 3.598004998275335e-51,
+          "conditional_Page_crossing_radius_fraction_c1": 0.7880891617212319,
+          "conditional_Page_crossing_lifetime_fraction_c1": 0.5105300158984485,
+          "conditional_Page_crossing_time_over_rs_c1": 5.429835185217816e+77,
+          "separate_am_point2_massive_suppression_exponent": 2.2973255236488434e+38,
+          "rounded_solar_rs_m": 2950.0,
+          "rounded_solar_rs_seconds": 9.840140808345485e-06,
+          "rounded_solar_coordinate_gap_m": 9.198428814209594e-23,
+          "rounded_solar_approach_seconds": 0.000557952850635186,
+          "rounded_solar_retarded_seconds": 0.0011153365214712913,
+          "rounded_solar_symbol_flight_comparison_seconds": 0.0017612107867578846,
+          "conditional_rounded_solar_energy_time_seconds": 3.139698418786803e+73,
+          "conditional_rounded_solar_energy_time_Julian_years": 9.949103920408404e+65,
+          "conditional_rounded_solar_lifetime_seconds": 1.046566139595601e+73,
+          "conditional_rounded_solar_lifetime_Julian_years": 3.3163679734694685e+65,
+          "conditional_rounded_solar_Page_crossing_seconds_c1": 5.3430342788652e+72,
+          "conditional_rounded_solar_Page_crossing_Julian_years_c1": 1.693105394220473e+65
+        },
+        "domain_checks": {
+          "u_d_lt_one_quarter": true,
+          "nu_over_u_d_lt_one_half": true,
+          "epsilon_d_lt_epsilon0": true,
+          "escape_radius_inside_photon_sphere": true,
+          "clock_excess_nonnegative": true,
+          "clock_excess_le_displayed_bound": true
+        }
+      }
+    ]
+  },
+  "mpmath_50digit": {
+    "g": "0.25",
+    "x": "0.07957747154594766788444188168625718101722982287022814",
+    "mass": "0.0",
+    "d": "0.1000000000000000000000000000000000000000000000000001",
+    "epsilon0": "0.1000000000000000000000000000000000000000000000000001",
+    "L_hat": "0.005237315421862864999999999999999999999999999999999996",
+    "N_hat": "0.015541819792029855",
+    "b_hat": "1.639111017594917300000000000000000000000000000000001",
+    "rows": [
+      {
+        "label": "run_rs32",
+        "values": {
+          "chi": "0.03125",
+          "nu": "0.002486795985810864621388808802695536906788431964694629",
+          "u_d": "0.0313870216203902232091089554038359928380724671936454",
+          "epsilon_d": "0.06178889811458160310521590140512742610832378559807345",
+          "alpha_d": "0.2485737277239523619909936800617481896883914369819407",
+          "continuum_momentum_at_endpoint": "0.07923007209436354313118201387281807806874921300693308",
+          "held_frequency_ratio": "0.2485737277239523619909936800617481896883914369819407",
+          "infall_radial_frequency_ratio": "0.0313870216203902232091089554038359928380724671936454",
+          "held_redshift_factor": "4.02295129560323528227627044839925758770942073812183",
+          "infall_radial_redshift_factor": "31.86030239168540039886507702429403234398387030976084",
+          "held_escape_number_fraction": "0.1022331658874387219743947586749537615678703721605634",
+          "infall_escape_number_fraction": "0.00181230057807812269831474635579046243426637332981073",
+          "fixed_sphere_outward_number_fraction": "0.0156935108101951116045544777019179964190362335968227",
+          "held_leading_power_ratio": "0.00644265213223637135309334913680779145971610403749822",
+          "infall_leading_power_ratio": "0.000001537324685074439341776187134781975384327729377101332",
+          "coordinate_gap_over_rs": "0.0658582039696730658530315866717213933376720485518987",
+          "coordinate_gap_over_a": "2.107462527029538107297010773495084586805505553660758",
+          "surface_clock_efolds": "0.240723239910452664210387035087414523836781692410833",
+          "clock_log_epsilon_ratio": "0.481446479820905328420774070174829047673563384821666",
+          "delta_T_over_rs": "0.5923857477004288554241132892410103665734871785081788",
+          "delta_T_minus_log_epsilon_ratio": "0.1109392678795235270033392190661813188999237936865128",
+          "R3A4_clock_upper_bound": "0.1381277021749844948145833754378651934749495858201232",
+          "R3A16_displayed_leading_clock": "0.4656285221473204417405581138222598032653950945461984",
+          "delta_T_minus_R3A16_displayed_leading_clock": "0.1267572255531084136835551754187505633080920839619805",
+          "delta_retarded_over_rs": "1.160665350338482780774357379327010625414900960090028",
+          "delta_retarded_minus_twice_log_epsilon_ratio": "0.1977723906966721239328092389773525300677741904466959",
+          "surface_reduced_wavelength_leading_over_rs": "0.1830739859451904078775178159079737989673246069534925",
+          "surface_reduced_wavelength_first_corrected_over_rs": "0.1826294650706752414182293908863864522237644718521694",
+          "surface_group_speed_leading": "0.04370569472206983884831141764823100528197784894502125",
+          "surface_group_speed_first_corrected": "0.04338733009688004495363607187368000720438080187586128",
+          "C_in_over_rs": "-0.9622392505461003828290656828335334033356485124258147",
+          "C_out_over_rs": "0.06567995070710404713815879845981153908302309423060875",
+          "symbol_flight_H_nu": "11.09696099969903834443719751874686751209896608867901",
+          "compact_HA_leading_shift_ell4": "0.002526855468749999999999999999999999999999999999999999",
+          "compact_HA_shift_over_u_d": "0.08050637933445895852740565117222735223638502385400996",
+          "formal_axial_temperature_shift": "0.0001587720449000450299953539711431718529604711166181791",
+          "compact_HA_shift_over_formal_axial_temperature_shift": "15.91498975994660977050281164353052098315987426354875",
+          "conditional_energy_time_over_rs": "391040.0338789496102734424451101636417173924971607172",
+          "conditional_zero_radius_lifetime_over_rs": "130346.677959649870091147481703387880572464165720239",
+          "conditional_kappa_adiabaticity": "0.000005114565841662954101562499999999999999999999999999996",
+          "conditional_rs_over_energy_time": "0.000002557282920831477050781249999999999999999999999999998",
+          "conditional_40rs_over_energy_time": "0.0001022913168332590820312499999999999999999999999999999",
+          "initial_rate_freezing_indicator": "0.0009041338544600183790604338550658480006877028039252471",
+          "conditional_Page_crossing_radius_fraction_c1": "0.7880891617212319514490300335093276095147561228574591",
+          "conditional_Page_crossing_lifetime_fraction_c1": "0.5105300158984483943328425353374832754827154623040343",
+          "conditional_Page_crossing_time_over_rs_c1": "66545.89157104998109184911655185124307270308656330448",
+          "separate_am_point2_massive_suppression_exponent": "80.42477193189870690464367061195527383544753662400273"
+        },
+        "domain_checks": {
+          "u_d_lt_one_quarter": true,
+          "nu_over_u_d_lt_one_half": true,
+          "epsilon_d_lt_epsilon0": true,
+          "escape_radius_inside_photon_sphere": true,
+          "clock_excess_nonnegative": true,
+          "clock_excess_le_displayed_bound": true
+        }
+      },
+      {
+        "label": "run_rs64",
+        "values": {
+          "chi": "0.015625",
+          "nu": "0.001243397992905432310694404401347768453394215982347315",
+          "u_d": "0.01977258461651756659251008166176564662167316273424177",
+          "epsilon_d": "0.0391542141306177860590742546853729484668494475010143",
+          "alpha_d": "0.1978742381681298755798786692557407770695296289176353",
+          "continuum_momentum_at_endpoint": "0.06288494989505448686441235625583967743924684523075521",
+          "held_frequency_ratio": "0.1978742381681298755798786692557407770695296289176353",
+          "infall_radial_frequency_ratio": "0.01977258461651756659251008166176564662167316273424177",
+          "held_redshift_factor": "5.053714971982959856271613005447145136638477445093946",
+          "infall_radial_redshift_factor": "50.57507753258634629557455809197178296138546985411221",
+          "held_escape_number_fraction": "0.06525867137328682666904006957208722630712549922541282",
+          "infall_escape_number_fraction": "0.0006966145083650922004061528147748118539639333779177704",
+          "fixed_sphere_outward_number_fraction": "0.009886292308258783296255040830882823310836581367120883",
+          "held_leading_power_ratio": "0.00258702606706432980181628146723416490195266773484803",
+          "infall_leading_power_ratio": "0.000000247877921172975342124869130551455705148768162641517",
+          "coordinate_gap_over_rs": "0.04074973810203131455732760793158361693215931662101614",
+          "coordinate_gap_over_a": "2.607983238530004131668966907621351483658196263745033",
+          "surface_clock_efolds": "0.4688310643576546282529524408529975550676382031712873",
+          "clock_log_epsilon_ratio": "0.9376621287153092565059048817059951101352764063425746",
+          "delta_T_over_rs": "1.110600483038088368728094897076179543949097654837236",
+          "delta_T_minus_log_epsilon_ratio": "0.1729383543227791122221900153701844338138212484946617",
+          "R3A4_clock_upper_bound": "0.2199488675927483149592642174266439950047263975485006",
+          "R3A16_displayed_leading_clock": "0.927726642520617314685379528127710848649061850786367",
+          "delta_T_minus_R3A16_displayed_leading_clock": "0.1828738405174710540427153689484686953000358040508692",
+          "delta_retarded_over_rs": "2.184043144970883833181684431232466208043331755187963",
+          "delta_retarded_minus_twice_log_epsilon_ratio": "0.3087188875402653201698746678204759877727789425028138",
+          "surface_reduced_wavelength_leading_over_rs": "0.1153293842902517761935502424743117516737522666384975",
+          "surface_reduced_wavelength_first_corrected_over_rs": "0.1151529760642949763860162055716979376353183173888743",
+          "surface_group_speed_leading": "0.02753286239030752408365684155521546812482280543733876",
+          "surface_group_speed_first_corrected": "0.02740651930507358899221451423786453627124885967188649",
+          "C_in_over_rs": "-0.9622392505461003828290656828335334033356485124258147",
+          "C_out_over_rs": "0.06567995070710404713815879845981153908302309423060875",
+          "symbol_flight_H_nu": "12.48325536081892896327166176166322064824996635739951",
+          "compact_HA_leading_shift_ell4": "0.0006317138671874999999999999999999999999999999999999997",
+          "compact_HA_shift_over_u_d": "0.03194897781141776636713846900951586631166623614441289",
+          "formal_axial_temperature_shift": "0.00003969301122501125749883849278579296324011777915454477",
+          "compact_HA_shift_over_formal_axial_temperature_shift": "15.91498975994660977050281164353052098315987426354875",
+          "conditional_energy_time_over_rs": "1564160.135515798441093769780440654566869569988642869",
+          "conditional_zero_radius_lifetime_over_rs": "521386.711838599480364589926813551522289856662880956",
+          "conditional_kappa_adiabaticity": "0.000001278641460415738525390624999999999999999999999999999",
+          "conditional_rs_over_energy_time": "0.0000006393207302078692626953124999999999999999999999999995",
+          "conditional_40rs_over_energy_time": "0.00002557282920831477050781249999999999999999999999999998",
+          "initial_rate_freezing_indicator": "0.000403629777666146610857697623479509904114411275844888",
+          "conditional_Page_crossing_radius_fraction_c1": "0.7880891617212319514490300335093276095147561228574591",
+          "conditional_Page_crossing_lifetime_fraction_c1": "0.5105300158984483943328425353374832754827154623040343",
+          "conditional_Page_crossing_time_over_rs_c1": "266183.5662841999243673964662074049722908123462532179",
+          "separate_am_point2_massive_suppression_exponent": "160.8495438637974138092873412239105476708950732480055"
+        },
+        "domain_checks": {
+          "u_d_lt_one_quarter": true,
+          "nu_over_u_d_lt_one_half": true,
+          "epsilon_d_lt_epsilon0": true,
+          "escape_radius_inside_photon_sphere": true,
+          "clock_excess_nonnegative": true,
+          "clock_excess_le_displayed_bound": true
+        }
+      },
+      {
+        "label": "solar_rounded",
+        "values": {
+          "chi": "1.094e-38",
+          "nu": "8.705775387126674866557941856476535603284942622002953e-40",
+          "u_d": "1.559055731221959726844474391251508810613001444555722e-26",
+          "epsilon_d": "3.118111462443919453688948758196469890665607594857338e-26",
+          "alpha_d": "0.0000000000001765817505418926198297442293895631629261978729265375",
+          "continuum_momentum_at_endpoint": "0.00000000000005584005249320526430059123197706697769731475882085241",
+          "held_frequency_ratio": "0.0000000000001765817505418926198297442293895631629261978729265375",
+          "infall_radial_frequency_ratio": "1.559055731221959726844474391251508810613001444555722e-26",
+          "held_redshift_factor": "5663099368599.576382006663602035246385481019221548816",
+          "infall_radial_redshift_factor": "64141388917265841368757636.04161803047896498958252119",
+          "held_escape_number_fraction": "5.261813092874114078100100978184918821347378992504498e-26",
+          "infall_escape_number_fraction": "4.101729929532066705905380919534405718415751567563762e-52",
+          "fixed_sphere_outward_number_fraction": "7.795278656109798634222371956257544053065007222778609e-27",
+          "held_leading_power_ratio": "1.640691971812826682362152271891378968942096614053231e-51",
+          "infall_leading_power_ratio": "9.969889431003930610344401144826118889387887735787067e-104",
+          "coordinate_gap_over_rs": "3.118111462443919453688948855422660812907188771873775e-26",
+          "coordinate_gap_over_a": "2850193292910.346849807083048832413905765254818897414",
+          "surface_clock_efolds": "28.21369990339840021507078715804617334648835220207398",
+          "clock_log_epsilon_ratio": "56.42739980679680043014157431609234669297670440414795",
+          "delta_T_over_rs": "56.70171408136586321649475697513763938306136230793553",
+          "delta_T_minus_log_epsilon_ratio": "0.2743142745690627863531826590452926900846579037875731",
+          "R3A4_clock_upper_bound": "0.3614857864847255752170659074530517345202850366813524",
+          "R3A16_displayed_leading_clock": "56.42739980679680043014157430829706803686690576992557",
+          "delta_T_minus_R3A16_displayed_leading_clock": "0.2743142745690627863531826668405713461944565380099507",
+          "delta_retarded_over_rs": "113.3455855149316010589749433208181807365769091223988",
+          "delta_retarded_minus_twice_log_epsilon_ratio": "0.4907859013380001986917946886334873506235003141028498",
+          "surface_reduced_wavelength_leading_over_rs": "9.093648657637400143948500358756862593213014960070164e-26",
+          "surface_reduced_wavelength_first_corrected_over_rs": "9.093648657637400143948500347789171066053706415086506e-26",
+          "surface_group_speed_leading": "2.170948701905956247004245050443421980867619112430396e-26",
+          "surface_group_speed_first_corrected": "2.1709487019059562470042450425883915370223583174068e-26",
+          "C_in_over_rs": "-0.9622392505461003828290656828335334033356485124258147",
+          "C_out_over_rs": "0.06567995070710404713815879845981153908302309423060875",
+          "symbol_flight_H_nu": "178.9822748536474783096402461021712922129034981148171",
+          "compact_HA_leading_shift_ell4": "3.096813149999999999999999999999999999999999999999999e-76",
+          "compact_HA_shift_over_u_d": "1.986338966582531195965826464565966640643595781287645e-50",
+          "formal_axial_temperature_shift": "1.945846775091100605639879325768798492772335711527271e-77",
+          "compact_HA_shift_over_formal_axial_temperature_shift": "15.91498975994660977050281164353052098315987426354875",
+          "conditional_energy_time_over_rs": "3.19070476727731893745390878786144619116270826168759e+78",
+          "conditional_zero_radius_lifetime_over_rs": "1.063568255759106312484636262620482063720902753895863e+78",
+          "conditional_kappa_adiabaticity": "6.268207640240663895139999999999999999999999999999993e-79",
+          "conditional_rs_over_energy_time": "3.134103820120331947569999999999999999999999999999997e-79",
+          "conditional_40rs_over_energy_time": "1.253641528048132779028e-77",
+          "initial_rate_freezing_indicator": "3.598004998275347526733373118238297096741776651319217e-51",
+          "conditional_Page_crossing_radius_fraction_c1": "0.7880891617212319514490300335093276095147561228574591",
+          "conditional_Page_crossing_lifetime_fraction_c1": "0.5105300158984483943328425353374832754827154623040343",
+          "conditional_Page_crossing_time_over_rs_c1": "5.429835185217815737495271105035880401591079143005144e+77",
+          "separate_am_point2_massive_suppression_exponent": "229732552364884331880266426565228730105.82591585924",
+          "rounded_solar_rs_m": "2950.0",
+          "rounded_solar_rs_seconds": "0.000009840140808345485462479513077010096097881154835456199",
+          "rounded_solar_coordinate_gap_m": "9.198428814209562388382399123496849398076206877027633e-23",
+          "rounded_solar_approach_seconds": "0.0005579528506351860809275580010643764633332804483307247",
+          "rounded_solar_retarded_seconds": "0.001115336521471291392940832696986705493348007713760019",
+          "rounded_solar_symbol_flight_comparison_seconds": "0.001761210786757884552964433568243418958952147219923425",
+          "conditional_rounded_solar_energy_time_seconds": "3.139698418786803124142979915856077428048569978360959e+73",
+          "conditional_rounded_solar_energy_time_Julian_years": "9.949103920408405975558914226227841876595716969481063e+65",
+          "conditional_rounded_solar_lifetime_seconds": "1.046566139595601041380993305285359142682856659453654e+73",
+          "conditional_rounded_solar_lifetime_Julian_years": "3.316367973469468658519638075409280625531905656493695e+65",
+          "conditional_rounded_solar_Page_crossing_seconds_c1": "5.343034278865199612730434252570772539145625695448677e+72",
+          "conditional_rounded_solar_Page_crossing_Julian_years_c1": "1.693105394220472917056567753115183835001909427665183e+65"
+        },
+        "domain_checks": {
+          "u_d_lt_one_quarter": true,
+          "nu_over_u_d_lt_one_half": true,
+          "epsilon_d_lt_epsilon0": true,
+          "escape_radius_inside_photon_sphere": true,
+          "clock_excess_nonnegative": true,
+          "clock_excess_le_displayed_bound": true
+        }
+      }
+    ]
+  },
+  "differences": [
+    {
+      "label": "run_rs32",
+      "values": {
+        "chi": {
+          "binary64_minus_50digit": "0.0",
+          "absolute_difference": "0.0",
+          "relative_difference": "0.0"
+        },
+        "nu": {
+          "binary64_minus_50digit": "1.537396615248631793284282750265010494547080350557104e-19",
+          "absolute_difference": "1.537396615248631793284282750265010494547080350557104e-19",
+          "relative_difference": "6.182238607512211889399186586315721904008583516687182e-17"
+        },
+        "u_d": {
+          "binary64_minus_50digit": "3.152754073210771181111407589569049911539713651429329e-18",
+          "absolute_difference": "3.152754073210771181111407589569049911539713651429329e-18",
+          "relative_difference": "0.0000000000000001004476981391130210078198320807271001287096039978046"
+        },
+        "epsilon_d": {
+          "binary64_minus_50digit": "6.805317997805222346948481348221506630247819991273656e-18",
+          "absolute_difference": "6.805317997805222346948481348221506630247819991273656e-18",
+          "relative_difference": "0.0000000000000001101381996679308128439936113161377808869354063403589"
+        },
+        "alpha_d": {
+          "binary64_minus_50digit": "2.607864686600422548293404827666496811915300098895403e-18",
+          "absolute_difference": "2.607864686600422548293404827666496811915300098895403e-18",
+          "relative_difference": "1.049131261971709502856387645499080395581657838733945e-17"
+        },
+        "continuum_momentum_at_endpoint": {
+          "binary64_minus_50digit": "2.356641448602785941532690288753911399909185066213683e-19",
+          "absolute_difference": "2.356641448602785941532690288753911399909185066213683e-19",
+          "relative_difference": "2.974427999757478818239099059647612314563321800180708e-18"
+        },
+        "held_frequency_ratio": {
+          "binary64_minus_50digit": "2.607864686600422548293404827666496811915300098895403e-18",
+          "absolute_difference": "2.607864686600422548293404827666496811915300098895403e-18",
+          "relative_difference": "1.049131261971709502856387645499080395581657838733945e-17"
+        },
+        "infall_radial_frequency_ratio": {
+          "binary64_minus_50digit": "3.152754073210771181111407589569049911539713651429329e-18",
+          "absolute_difference": "3.152754073210771181111407589569049911539713651429329e-18",
+          "relative_difference": "0.0000000000000001004476981391130210078198320807271001287096039978046"
+        },
+        "held_redshift_factor": {
+          "binary64_minus_50digit": "-0.0000000000000001155672152556306838267230926131218300821596895407163",
+          "absolute_difference": "0.0000000000000001155672152556306838267230926131218300821596895407163",
+          "relative_difference": "2.872697349876853526740261336887621861479900675353412e-17"
+        },
+        "infall_radial_redshift_factor": {
+          "binary64_minus_50digit": "-0.00000000000000260515704258248765636360667304413584472640960254719",
+          "absolute_difference": "0.00000000000000260515704258248765636360667304413584472640960254719",
+          "relative_difference": "8.176812042004839344505698714611241457240850907250516e-17"
+        },
+        "held_escape_number_fraction": {
+          "binary64_minus_50digit": "-1.398408818843655451258221858366618118348278507415399e-18",
+          "absolute_difference": "1.398408818843655451258221858366618118348278507415399e-18",
+          "relative_difference": "1.367862187094292483009430575885241692204242337969179e-17"
+        },
+        "infall_escape_number_fraction": {
+          "binary64_minus_50digit": "1.940744992792681519910947831338123173349204495951375e-19",
+          "absolute_difference": "1.940744992792681519910947831338123173349204495951375e-19",
+          "relative_difference": "0.000000000000000107087368192023055147151865609504478210234596405078"
+        },
+        "fixed_sphere_outward_number_fraction": {
+          "binary64_minus_50digit": "1.576377036605385590555703794784524955769856825714665e-18",
+          "absolute_difference": "1.576377036605385590555703794784524955769856825714665e-18",
+          "relative_difference": "0.0000000000000001004476981391130210078198320807271001287096039978046"
+        },
+        "held_leading_power_ratio": {
+          "binary64_minus_50digit": "1.641240534786637891280122853749061839028895463053008e-18",
+          "absolute_difference": "1.641240534786637891280122853749061839028895463053008e-18",
+          "relative_difference": "0.0000000000000002547461047251872964869508975560479057028846533227365"
+        },
+        "infall_leading_power_ratio": {
+          "binary64_minus_50digit": "6.190079286369927184417184026398256714498667971304861e-22",
+          "absolute_difference": "6.190079286369927184417184026398256714498667971304861e-22",
+          "relative_difference": "0.0000000000000004026526957166628185692358524157660982651905274026409"
+        },
+        "coordinate_gap_over_rs": {
+          "binary64_minus_50digit": "1.613695677465714796623008937265171457986065265853121e-17",
+          "absolute_difference": "1.613695677465714796623008937265171457986065265853121e-17",
+          "relative_difference": "0.0000000000000002450257644755697891456512663173867094884221104075028"
+        },
+        "coordinate_gap_over_a": {
+          "binary64_minus_50digit": "0.0000000000000005163826167890287349193628599248548665555408850729987",
+          "absolute_difference": "0.0000000000000005163826167890287349193628599248548665555408850729987",
+          "relative_difference": "0.0000000000000002450257644755697891456512663173867094884221104075028"
+        },
+        "surface_clock_efolds": {
+          "binary64_minus_50digit": "-5.64954568396168993509082099913610283333480337330713e-17",
+          "absolute_difference": "5.64954568396168993509082099913610283333480337330713e-17",
+          "relative_difference": "0.0000000000000002346904971062736115628673116253098351528522565197929"
+        },
+        "clock_log_epsilon_ratio": {
+          "binary64_minus_50digit": "-0.0000000000000001129909136792337987018164199827220566666960674661426",
+          "absolute_difference": "0.0000000000000001129909136792337987018164199827220566666960674661426",
+          "relative_difference": "0.0000000000000002346904971062736115628673116253098351528522565197929"
+        },
+        "delta_T_over_rs": {
+          "binary64_minus_50digit": "-1.132607155295301419366851891678942883505429065778376e-17",
+          "absolute_difference": "1.132607155295301419366851891678942883505429065778376e-17",
+          "relative_difference": "1.911941939339269948974798004469210500422168117406233e-17"
+        },
+        "delta_T_minus_log_epsilon_ratio": {
+          "binary64_minus_50digit": "0.0000000000000001016648421262807845081479010659326278316417768083588",
+          "absolute_difference": "0.0000000000000001016648421262807845081479010659326278316417768083588",
+          "relative_difference": "0.0000000000000009164008747262108286690386228727837278375589790294054"
+        },
+        "R3A4_clock_upper_bound": {
+          "binary64_minus_50digit": "-4.601377985119102682460011231327935681043821387740756e-18",
+          "absolute_difference": "4.601377985119102682460011231327935681043821387740756e-18",
+          "relative_difference": "3.331249208279692573425266158349811126593329757054266e-17"
+        },
+        "R3A16_displayed_leading_clock": {
+          "binary64_minus_50digit": "0.0000000000000003696123970472331737606226778729830984925622482743234",
+          "absolute_difference": "0.0000000000000003696123970472331737606226778729830984925622482743234",
+          "relative_difference": "0.0000000000000007937924320930909855525485497450117710480084621327599"
+        },
+        "delta_T_minus_R3A16_displayed_leading_clock": {
+          "binary64_minus_50digit": "-0.0000000000000003809384686001861879542911967897725273276165389321071",
+          "absolute_difference": "0.0000000000000003809384686001861879542911967897725273276165389321071",
+          "relative_difference": "0.000000000000003005260386048616819442932082002430325504972390517315"
+        },
+        "delta_retarded_over_rs": {
+          "binary64_minus_50digit": "-5.437435505873890992384439009583221544064552092054539e-17",
+          "absolute_difference": "5.437435505873890992384439009583221544064552092054539e-17",
+          "relative_difference": "4.684757328448015876926372534888744612768740057101753e-17"
+        },
+        "delta_retarded_minus_twice_log_epsilon_ratio": {
+          "binary64_minus_50digit": "0.0000000000000001716074722997286874797884498696118978927466140117398",
+          "absolute_difference": "0.0000000000000001716074722997286874797884498696118978927466140117398",
+          "relative_difference": "0.0000000000000008677018652362192017056142445048546173577639644502429"
+        },
+        "surface_reduced_wavelength_leading_over_rs": {
+          "binary64_minus_50digit": "1.268809138582272082283405173581994496973309594537101e-17",
+          "absolute_difference": "1.268809138582272082283405173581994496973309594537101e-17",
+          "relative_difference": "6.93058127309324228639102822949400207565076396945307e-17"
+        },
+        "surface_reduced_wavelength_first_corrected_over_rs": {
+          "binary64_minus_50digit": "2.061015852871309494042803186909021337256947813243343e-17",
+          "absolute_difference": "2.061015852871309494042803186909021337256947813243343e-17",
+          "relative_difference": "0.0000000000000001128523183306550785646889462667507136719840376610105"
+        },
+        "surface_group_speed_leading": {
+          "binary64_minus_50digit": "5.83378825311467822176886300569975414314968651933917e-18",
+          "absolute_difference": "5.83378825311467822176886300569975414314968651933917e-18",
+          "relative_difference": "0.0000000000000001334789045274875886871114452396221855249048320832453"
+        },
+        "surface_group_speed_first_corrected": {
+          "binary64_minus_50digit": "9.366171768228250189192625709812371142877512754024122e-18",
+          "absolute_difference": "9.366171768228250189192625709812371142877512754024122e-18",
+          "relative_difference": "0.000000000000000215873430038548640415587266751627596224844321473433"
+        },
+        "C_in_over_rs": {
+          "binary64_minus_50digit": "5.281079001085817483125763868871127218408415224540093e-18",
+          "absolute_difference": "5.281079001085817483125763868871127218408415224540093e-18",
+          "relative_difference": "5.488322159056224999111099530569184951923837921328826e-18"
+        },
+        "C_out_over_rs": {
+          "binary64_minus_50digit": "0.000000000000001258557973037697480588526229835456891246998818537451",
+          "absolute_difference": "0.000000000000001258557973037697480588526229835456891246998818537451",
+          "relative_difference": "0.00000000000001916198108384953254400588225564123165884310159305143"
+        },
+        "symbol_flight_H_nu": {
+          "binary64_minus_50digit": "0.000000000000002694997435175136164094575228247258488537360637142993",
+          "absolute_difference": "0.000000000000002694997435175136164094575228247258488537360637142993",
+          "relative_difference": "0.0000000000000002428590526044227267839200326846524942606907138192246"
+        },
+        "compact_HA_leading_shift_ell4": {
+          "binary64_minus_50digit": "-8.673617379884035472059622406959533587001378512023608e-20",
+          "absolute_difference": "8.673617379884035472059622406959533587001378512023608e-20",
+          "relative_difference": "3.432573602705797999377411920667270490082864385048188e-17"
+        },
+        "compact_HA_shift_over_u_d": {
+          "binary64_minus_50digit": "-8.968100099470245312278146422169439648074180995185811e-18",
+          "absolute_difference": "8.968100099470245312278146422169439648074180995185811e-18",
+          "relative_difference": "0.0000000000000001113961424375179950480115700127186481186044565906166"
+        },
+        "formal_axial_temperature_shift": {
+          "binary64_minus_50digit": "2.420831225243799821362029233417284412586499522090372e-22",
+          "absolute_difference": "2.420831225243799821362029233417284412586499522090372e-22",
+          "relative_difference": "1.524721324064217075168905952140049300344673487942809e-18"
+        },
+        "compact_HA_shift_over_formal_axial_temperature_shift": {
+          "binary64_minus_50digit": "-0.00000000000000074350574524957025367778572875573625429645447052316",
+          "absolute_difference": "0.00000000000000074350574524957025367778572875573625429645447052316",
+          "relative_difference": "4.671732476515677647338254587674903714814732714684447e-17"
+        },
+        "conditional_energy_time_over_rs": {
+          "binary64_minus_50digit": "-0.00000000002304007786304839606359239249716071718854586794175662",
+          "absolute_difference": "0.00000000002304007786304839606359239249716071718854586794175662",
+          "relative_difference": "5.891999761380105837815790437161922490188165086625299e-17"
+        },
+        "conditional_zero_radius_lifetime_over_rs": {
+          "binary64_minus_50digit": "-0.000000000002829387544893848085650589165720239004461186633718162",
+          "absolute_difference": "0.000000000002829387544893848085650589165720239004461186633718162",
+          "relative_difference": "2.170663333491102520156346145085990419484783385934906e-17"
+        },
+        "conditional_kappa_adiabaticity": {
+          "binary64_minus_50digit": "1.493618902537185988421697402372956315463639899280831e-22",
+          "absolute_difference": "1.493618902537185988421697402372956315463639899280831e-22",
+          "relative_difference": "2.920323931251903724608323049665889504976926769850132e-17"
+        },
+        "conditional_rs_over_energy_time": {
+          "binary64_minus_50digit": "7.468094512685929942108487011864781577318199496404156e-23",
+          "absolute_difference": "7.468094512685929942108487011864781577318199496404156e-23",
+          "relative_difference": "2.920323931251903724608323049665889504976926769850132e-17"
+        },
+        "conditional_40rs_over_energy_time": {
+          "binary64_minus_50digit": "9.763501383108774689389974810183048327338412611061662e-21",
+          "absolute_difference": "9.763501383108774689389974810183048327338412611061662e-21",
+          "relative_difference": "9.544799779070066581790735728735163428950483632999122e-17"
+        },
+        "initial_rate_freezing_indicator": {
+          "binary64_minus_50digit": "9.28664404288290557825330949732506562264337753093795e-20",
+          "absolute_difference": "9.28664404288290557825330949732506562264337753093795e-20",
+          "relative_difference": "0.000000000000000102713154662582866702907555076652937035751064950808"
+        },
+        "conditional_Page_crossing_radius_fraction_c1": {
+          "binary64_minus_50digit": "-6.141474069776463932213739863994730281910803412998828e-17",
+          "absolute_difference": "6.141474069776463932213739863994730281910803412998828e-17",
+          "relative_difference": "7.792867061340029284047725294595959384501411663391419e-17"
+        },
+        "conditional_Page_crossing_lifetime_fraction_c1": {
+          "binary64_minus_50digit": "9.162305356806791038458579650058659068867217950999596e-17",
+          "absolute_difference": "9.162305356806791038458579650058659068867217950999596e-17",
+          "relative_difference": "0.0000000000000001794665361777534061718315489988090879793567367516581"
+        },
+        "conditional_Page_crossing_time_over_rs_c1": {
+          "binary64_minus_50digit": "0.000000000004849650355112577467864796913436695518803496846850197",
+          "absolute_difference": "0.000000000004849650355112577467864796913436695518803496846850197",
+          "relative_difference": "7.287678082928205369236769213078384425600050298176014e-17"
+        },
+        "separate_am_point2_massive_suppression_exponent": {
+          "binary64_minus_50digit": "-0.000000000000003135095805817224133698728786624002734890769462476573",
+          "absolute_difference": "0.000000000000003135095805817224133698728786624002734890769462476573",
+          "relative_difference": "3.898171832519375446564363917609879568577717974787714e-17"
+        }
+      }
+    },
+    {
+      "label": "run_rs64",
+      "values": {
+        "chi": {
+          "binary64_minus_50digit": "0.0",
+          "absolute_difference": "0.0",
+          "relative_difference": "0.0"
+        },
+        "nu": {
+          "binary64_minus_50digit": "7.68698307624315896642141375132505247273540175278552e-20",
+          "absolute_difference": "7.68698307624315896642141375132505247273540175278552e-20",
+          "relative_difference": "6.182238607512211889399186586315721904008583516687182e-17"
+        },
+        "u_d": {
+          "binary64_minus_50digit": "5.810894575049479832906187717163829522637793915315554e-18",
+          "absolute_difference": "5.810894575049479832906187717163829522637793915315554e-18",
+          "relative_difference": "0.0000000000000002938864436668128317935554071194981412057484188836306"
+        },
+        "epsilon_d": {
+          "binary64_minus_50digit": "7.983891330136640676476943372475792341790383542182506e-18",
+          "absolute_difference": "7.983891330136640676476943372475792341790383542182506e-18",
+          "relative_difference": "0.0000000000000002039088641519535108820788493574185966523683886274901"
+        },
+        "alpha_d": {
+          "binary64_minus_50digit": "3.115431525425632547173480119688802874033875091860151e-17",
+          "absolute_difference": "3.115431525425632547173480119688802874033875091860151e-17",
+          "relative_difference": "0.0000000000000001574450294423123047525191204220637218632884802627762"
+        },
+        "continuum_momentum_at_endpoint": {
+          "binary64_minus_50digit": "-1.633883295201717001004627771376102864412010888258582e-17",
+          "absolute_difference": "1.633883295201717001004627771376102864412010888258582e-17",
+          "relative_difference": "0.00000000000000025982103793171851387671387911534001495498064913127"
+        },
+        "held_frequency_ratio": {
+          "binary64_minus_50digit": "3.115431525425632547173480119688802874033875091860151e-17",
+          "absolute_difference": "3.115431525425632547173480119688802874033875091860151e-17",
+          "relative_difference": "0.0000000000000001574450294423123047525191204220637218632884802627762"
+        },
+        "infall_radial_frequency_ratio": {
+          "binary64_minus_50digit": "5.810894575049479832906187717163829522637793915315554e-18",
+          "absolute_difference": "5.810894575049479832906187717163829522637793915315554e-18",
+          "relative_difference": "0.0000000000000002938864436668128317935554071194981412057484188836306"
+        },
+        "held_redshift_factor": {
+          "binary64_minus_50digit": "-0.0000000000000005864909910251302081668813973669689455300114016722237",
+          "absolute_difference": "0.0000000000000005864909910251302081668813973669689455300114016722237",
+          "relative_difference": "0.0000000000000001160514580415691361415779125043190473980977716963473"
+        },
+        "infall_radial_redshift_factor": {
+          "binary64_minus_50digit": "-0.00000000000001186774135020903101376582882922911220726506909059003",
+          "absolute_difference": "0.00000000000001186774135020903101376582882922911220726506909059003",
+          "relative_difference": "0.0000000000000002346559200539525014584717952340414215902872014172866"
+        },
+        "held_escape_number_fraction": {
+          "binary64_minus_50digit": "-4.343152456766414537897439410663401100901779736977545e-18",
+          "absolute_difference": "4.343152456766414537897439410663401100901779736977545e-18",
+          "relative_difference": "6.65528789564700382351948893732366240354008877785594e-17"
+        },
+        "infall_escape_number_fraction": {
+          "binary64_minus_50digit": "2.483863687474648871971694236105122528023309866095134e-19",
+          "absolute_difference": "2.483863687474648871971694236105122528023309866095134e-19",
+          "relative_difference": "0.0000000000000003565621527613760611829862154115255269015215416391244"
+        },
+        "fixed_sphere_outward_number_fraction": {
+          "binary64_minus_50digit": "2.905447287524739916453093858581914761318896957657777e-18",
+          "absolute_difference": "2.905447287524739916453093858581914761318896957657777e-18",
+          "relative_difference": "0.0000000000000002938864436668128317935554071194981412057484188836306"
+        },
+        "held_leading_power_ratio": {
+          "binary64_minus_50digit": "9.319860760753381161885900063297882006194999811890186e-19",
+          "absolute_difference": "9.319860760753381161885900063297882006194999811890186e-19",
+          "relative_difference": "0.0000000000000003602538404775041866739404151286686121350483618710328"
+        },
+        "infall_leading_power_ratio": {
+          "binary64_minus_50digit": "1.635637652809815443851953350651936316175526603550882e-22",
+          "absolute_difference": "1.635637652809815443851953350651936316175526603550882e-22",
+          "relative_difference": "0.0000000000000006598561279963402020458165488487227704186779627525111"
+        },
+        "coordinate_gap_over_rs": {
+          "binary64_minus_50digit": "6.960976133481963342006081688322831514602232890035371e-18",
+          "absolute_difference": "6.960976133481963342006081688322831514602232890035371e-18",
+          "relative_difference": "0.0000000000000001708225980754209782716359601151215369243781060843739"
+        },
+        "coordinate_gap_over_a": {
+          "binary64_minus_50digit": "0.0000000000000004455024725428456538883892280526612169345429049622637",
+          "absolute_difference": "0.0000000000000004455024725428456538883892280526612169345429049622637",
+          "relative_difference": "0.0000000000000001708225980754209782716359601151215369243781060843739"
+        },
+        "surface_clock_efolds": {
+          "binary64_minus_50digit": "-9.157454214557236964874515895512441229824733168498787e-17",
+          "absolute_difference": "9.157454214557236964874515895512441229824733168498787e-17",
+          "relative_difference": "0.0000000000000001953252442242466084485073547589858820481485402653148"
+        },
+        "clock_log_epsilon_ratio": {
+          "binary64_minus_50digit": "-0.0000000000000001831490842911447392974903179102488245964946633699757",
+          "absolute_difference": "0.0000000000000001831490842911447392974903179102488245964946633699757",
+          "relative_difference": "0.0000000000000001953252442242466084485073547589858820481485402653148"
+        },
+        "delta_T_over_rs": {
+          "binary64_minus_50digit": "7.976717814469554527618792627094401374603578624738153e-17",
+          "absolute_difference": "7.976717814469554527618792627094401374603578624738153e-17",
+          "relative_difference": "7.182346790133703421721932850120298291382139321191893e-17"
+        },
+        "delta_T_minus_log_epsilon_ratio": {
+          "binary64_minus_50digit": "0.0000000000000002629162624358402845736782441811928383425304496173573",
+          "absolute_difference": "0.0000000000000002629162624358402845736782441811928383425304496173573",
+          "relative_difference": "0.000000000000001520288911418243170192645851776785907248726004346355"
+        },
+        "R3A4_clock_upper_bound": {
+          "binary64_minus_50digit": "4.372863637941907216327096268099158608176947275730386e-20",
+          "absolute_difference": "4.372863637941907216327096268099158608176947275730386e-20",
+          "relative_difference": "1.988127370602602707581231875923727944907853421177254e-19"
+        },
+        "R3A16_displayed_leading_clock": {
+          "binary64_minus_50digit": "-0.0000000000000001084408419722240488525228869240285545434681965348906",
+          "absolute_difference": "0.0000000000000001084408419722240488525228869240285545434681965348906",
+          "relative_difference": "0.0000000000000001168887870651123571094479431101556999398409768969741"
+        },
+        "delta_T_minus_R3A16_displayed_leading_clock": {
+          "binary64_minus_50digit": "0.0000000000000001882080201169195941287108131949725682895039827822722",
+          "absolute_difference": "0.0000000000000001882080201169195941287108131949725682895039827822722",
+          "relative_difference": "0.000000000000001029168631141308225300674525784396416969406659421995"
+        },
+        "delta_retarded_over_rs": {
+          "binary64_minus_50digit": "-0.0000000000000001345626936109819922915127226243285879787575945836995",
+          "absolute_difference": "0.0000000000000001345626936109819922915127226243285879787575945836995",
+          "relative_difference": "6.16117378087674590913446064209359271234396655581748e-17"
+        },
+        "delta_retarded_minus_twice_log_epsilon_ratio": {
+          "binary64_minus_50digit": "0.0000000000000002317354749713074863034679131961690612142317321562519",
+          "absolute_difference": "0.0000000000000002317354749713074863034679131961690612142317321562519",
+          "relative_difference": "0.0000000000000007506358837247458405482049056877220632690660791811362"
+        },
+        "surface_reduced_wavelength_leading_over_rs": {
+          "binary64_minus_50digit": "2.56320827954047035673756061012814243670118889372963e-17",
+          "absolute_difference": "2.56320827954047035673756061012814243670118889372963e-17",
+          "relative_difference": "0.0000000000000002222511023807768394946126255414727981010485652995533"
+        },
+        "surface_reduced_wavelength_first_corrected_over_rs": {
+          "binary64_minus_50digit": "2.760237518040225710129962774279178974336468851579747e-17",
+          "absolute_difference": "2.760237518040225710129962774279178974336468851579747e-17",
+          "relative_difference": "0.0000000000000002397017960264495099639750809705092567608627645550011"
+        },
+        "surface_group_speed_leading": {
+          "binary64_minus_50digit": "3.49440257954759192331008510777066905164060237020778e-18",
+          "absolute_difference": "3.49440257954759192331008510777066905164060237020778e-18",
+          "relative_difference": "0.0000000000000001269175187821276772685969653956049389761957331238128"
+        },
+        "surface_group_speed_first_corrected": {
+          "binary64_minus_50digit": "3.109880989026671555320913987847034409888170987911696e-18",
+          "absolute_difference": "3.109880989026671555320913987847034409888170987911696e-18",
+          "relative_difference": "0.000000000000000113472307607152423201879786589272327165857437941927"
+        },
+        "C_in_over_rs": {
+          "binary64_minus_50digit": "5.281079001085817483125763868871127218408415224540093e-18",
+          "absolute_difference": "5.281079001085817483125763868871127218408415224540093e-18",
+          "relative_difference": "5.488322159056224999111099530569184951923837921328826e-18"
+        },
+        "C_out_over_rs": {
+          "binary64_minus_50digit": "0.000000000000001258557973037697480588526229835456891246998818537451",
+          "absolute_difference": "0.000000000000001258557973037697480588526229835456891246998818537451",
+          "relative_difference": "0.00000000000001916198108384953254400588225564123165884310159305143"
+        },
+        "symbol_flight_H_nu": {
+          "binary64_minus_50digit": "0.000000000000001094304264422991015191593783642600491908945788038035",
+          "absolute_difference": "0.000000000000001094304264422991015191593783642600491908945788038035",
+          "relative_difference": "8.766177033097256551642727132549457764203832471836555e-17"
+        },
+        "compact_HA_leading_shift_ell4": {
+          "binary64_minus_50digit": "-2.168404344971008868014905601739883396750344628005902e-20",
+          "absolute_difference": "2.168404344971008868014905601739883396750344628005902e-20",
+          "relative_difference": "3.432573602705797999377411920667270490082864385048188e-17"
+        },
+        "compact_HA_shift_over_u_d": {
+          "binary64_minus_50digit": "-1.053278286608096215841400311968933476366432420090897e-17",
+          "absolute_difference": "1.053278286608096215841400311968933476366432420090897e-17",
+          "relative_difference": "0.0000000000000003296751128706474215458920373379253321387846164512943"
+        },
+        "formal_axial_temperature_shift": {
+          "binary64_minus_50digit": "6.05207806310949955340507308354321103146624880522593e-23",
+          "absolute_difference": "6.05207806310949955340507308354321103146624880522593e-23",
+          "relative_difference": "1.524721324064217075168905952140049300344673487942809e-18"
+        },
+        "compact_HA_shift_over_formal_axial_temperature_shift": {
+          "binary64_minus_50digit": "-0.00000000000000074350574524957025367778572875573625429645447052316",
+          "absolute_difference": "0.00000000000000074350574524957025367778572875573625429645447052316",
+          "relative_difference": "4.671732476515677647338254587674903714814732714684447e-17"
+        },
+        "conditional_energy_time_over_rs": {
+          "binary64_minus_50digit": "-0.00000000009216031145219358425436956998864286875418347176702648",
+          "absolute_difference": "0.00000000009216031145219358425436956998864286875418347176702648",
+          "relative_difference": "5.891999761380105837815790437161922490188165086625299e-17"
+        },
+        "conditional_zero_radius_lifetime_over_rs": {
+          "binary64_minus_50digit": "-0.00000000001131755017957539234260235666288095601784474653487265",
+          "absolute_difference": "0.00000000001131755017957539234260235666288095601784474653487265",
+          "relative_difference": "2.170663333491102520156346145085990419484783385934906e-17"
+        },
+        "conditional_kappa_adiabaticity": {
+          "binary64_minus_50digit": "3.734047256342964971054243505932390788659099748202078e-23",
+          "absolute_difference": "3.734047256342964971054243505932390788659099748202078e-23",
+          "relative_difference": "2.920323931251903724608323049665889504976926769850132e-17"
+        },
+        "conditional_rs_over_energy_time": {
+          "binary64_minus_50digit": "1.867023628171482485527121752966195394329549874101039e-23",
+          "absolute_difference": "1.867023628171482485527121752966195394329549874101039e-23",
+          "relative_difference": "2.920323931251903724608323049665889504976926769850132e-17"
+        },
+        "conditional_40rs_over_energy_time": {
+          "binary64_minus_50digit": "2.440875345777193672347493702545762081834603152765416e-21",
+          "absolute_difference": "2.440875345777193672347493702545762081834603152765416e-21",
+          "relative_difference": "9.544799779070066581790735728735163428950483632999122e-17"
+        },
+        "initial_rate_freezing_indicator": {
+          "binary64_minus_50digit": "-1.044952430855155968780814419202616971016142483389848e-19",
+          "absolute_difference": "1.044952430855155968780814419202616971016142483389848e-19",
+          "relative_difference": "0.0000000000000002588888354316279211640182745001453693748952368560177"
+        },
+        "conditional_Page_crossing_radius_fraction_c1": {
+          "binary64_minus_50digit": "-6.141474069776463932213739863994730281910803412998828e-17",
+          "absolute_difference": "6.141474069776463932213739863994730281910803412998828e-17",
+          "relative_difference": "7.792867061340029284047725294595959384501411663391419e-17"
+        },
+        "conditional_Page_crossing_lifetime_fraction_c1": {
+          "binary64_minus_50digit": "9.162305356806791038458579650058659068867217950999596e-17",
+          "absolute_difference": "9.162305356806791038458579650058659068867217950999596e-17",
+          "relative_difference": "0.0000000000000001794665361777534061718315489988090879793567367516581"
+        },
+        "conditional_Page_crossing_time_over_rs_c1": {
+          "binary64_minus_50digit": "0.00000000001939860142045030987145918765374678207521398738740079",
+          "absolute_difference": "0.00000000001939860142045030987145918765374678207521398738740079",
+          "relative_difference": "7.287678082928205369236769213078384425600050298176014e-17"
+        },
+        "separate_am_point2_massive_suppression_exponent": {
+          "binary64_minus_50digit": "-0.000000000000006270191611634448267397457573248005469781538924953146",
+          "absolute_difference": "0.000000000000006270191611634448267397457573248005469781538924953146",
+          "relative_difference": "3.898171832519375446564363917609879568577717974787714e-17"
+        }
+      }
+    },
+    {
+      "label": "solar_rounded",
+      "values": {
+        "chi": {
+          "binary64_minus_50digit": "-7.206566905546982705314612565238314646489846357360157e-56",
+          "absolute_difference": "7.206566905546982705314612565238314646489846357360157e-56",
+          "relative_difference": "6.587355489531062801932918249760799494049219705082413e-18"
+        },
+        "nu": {
+          "binary64_minus_50digit": "6.139571181337307032583919216725393115181609717445957e-56",
+          "absolute_difference": "6.139571181337307032583919216725393115181609717445957e-56",
+          "relative_difference": "7.052296789572538229683261310923976962828569171384913e-17"
+        },
+        "u_d": {
+          "binary64_minus_50digit": "5.376479232687023016286938973592032743402694417566328e-41",
+          "absolute_difference": "5.376479232687023016286938973592032743402694417566328e-41",
+          "relative_difference": "0.000000000000003448548454693813728249055009308031127699213059145316"
+        },
+        "epsilon_d": {
+          "binary64_minus_50digit": "1.075295846539835258030443834247831959259907182124948e-40",
+          "absolute_difference": "1.075295846539835258030443834247831959259907182124948e-40",
+          "relative_difference": "0.000000000000003448548454701609006905164834824649662408276060647843"
+        },
+        "alpha_d": {
+          "binary64_minus_50digit": "3.124645201595132488882367324256269176166650398501826e-28",
+          "absolute_difference": "3.124645201595132488882367324256269176166650398501826e-28",
+          "relative_difference": "0.000000000000001769517626825109085469289297895904624276985382488009"
+        },
+        "continuum_momentum_at_endpoint": {
+          "binary64_minus_50digit": "-1.916725884395339360654251594517796531352014921270889e-28",
+          "absolute_difference": "1.916725884395339360654251594517796531352014921270889e-28",
+          "relative_difference": "0.000000000000003432528801129924833965932236005923477855942539557161"
+        },
+        "held_frequency_ratio": {
+          "binary64_minus_50digit": "3.124645201595132488882367324256269176166650398501826e-28",
+          "absolute_difference": "3.124645201595132488882367324256269176166650398501826e-28",
+          "relative_difference": "0.000000000000001769517626825109085469289297895904624276985382488009"
+        },
+        "infall_radial_frequency_ratio": {
+          "binary64_minus_50digit": "5.376479232687023016286938973592032743402694417566328e-41",
+          "absolute_difference": "5.376479232687023016286938973592032743402694417566328e-41",
+          "relative_difference": "0.000000000000003448548454693813728249055009308031127699213059145316"
+        },
+        "held_redshift_factor": {
+          "binary64_minus_50digit": "-0.009975756663602035246385481019221548816269510498184944",
+          "absolute_difference": "0.009975756663602035246385481019221548816269510498184944",
+          "relative_difference": "0.000000000000001761536574638797600591764791778333737565902812663938"
+        },
+        "infall_radial_redshift_factor": {
+          "binary64_minus_50digit": "-222550979972.0416180304789649895825211875853425024365",
+          "absolute_difference": "222550979972.0416180304789649895825211875853425024365",
+          "relative_difference": "0.000000000000003469693808144750590844956115749153303592546197665681"
+        },
+        "held_escape_number_fraction": {
+          "binary64_minus_50digit": "1.767926528148369248217947333143709748328725738518279e-40",
+          "absolute_difference": "1.767926528148369248217947333143709748328725738518279e-40",
+          "relative_difference": "0.000000000000003359918904270106306292627226906199232136880232561852"
+        },
+        "infall_escape_number_fraction": {
+          "binary64_minus_50digit": "2.780376940467045580409721230858944595834448153573345e-66",
+          "absolute_difference": "2.780376940467045580409721230858944595834448153573345e-66",
+          "relative_difference": "0.000000000000006778547072172146561768916968931307626580315407828041"
+        },
+        "fixed_sphere_outward_number_fraction": {
+          "binary64_minus_50digit": "2.688239616343511508143469486796016371701347208783164e-41",
+          "absolute_difference": "2.688239616343511508143469486796016371701347208783164e-41",
+          "relative_difference": "0.000000000000003448548454693813728249055009308031127699213059145316"
+        },
+        "held_leading_power_ratio": {
+          "binary64_minus_50digit": "1.141824425401909841581584794837256181812266914242953e-65",
+          "absolute_difference": "1.141824425401909841581584794837256181812266914242953e-65",
+          "relative_difference": "0.000000000000006959407646398670763890647363927039239257003816603151"
+        },
+        "infall_leading_power_ratio": {
+          "binary64_minus_50digit": "1.379163367266257765162293459692901403381885081848914e-117",
+          "absolute_difference": "1.379163367266257765162293459692901403381885081848914e-117",
+          "relative_difference": "0.0000000000000138332864853786163576233599078293156618371666134131"
+        },
+        "coordinate_gap_over_rs": {
+          "binary64_minus_50digit": "1.075295846530112638938219676130130315560647018863108e-40",
+          "absolute_difference": "1.075295846530112638938219676130130315560647018863108e-40",
+          "relative_difference": "0.000000000000003448548454670427892280725532758175519869733718175537"
+        },
+        "coordinate_gap_over_a": {
+          "binary64_minus_50digit": "0.01008378666695116758609423474518110258561208800637119",
+          "absolute_difference": "0.01008378666695116758609423474518110258561208800637119",
+          "relative_difference": "0.000000000000003537930810529191091048840215923813895104551123297395"
+        },
+        "surface_clock_efolds": {
+          "binary64_minus_50digit": "-0.0000000000000004885867289660463802938150123583239762026050524964358",
+          "absolute_difference": "0.0000000000000004885867289660463802938150123583239762026050524964358",
+          "relative_difference": "1.731735754753650968974151520562169401471918152536072e-17"
+        },
+        "clock_log_epsilon_ratio": {
+          "binary64_minus_50digit": "-0.0000000000000009771734579320927605876300247166479524052101049928716",
+          "absolute_difference": "0.0000000000000009771734579320927605876300247166479524052101049928716",
+          "relative_difference": "1.731735754753650968974151520562169401471918152536072e-17"
+        },
+        "delta_T_over_rs": {
+          "binary64_minus_50digit": "-0.000000000000006104589841320105839112980795901685525511681518407654",
+          "absolute_difference": "0.000000000000006104589841320105839112980795901685525511681518407654",
+          "relative_difference": "0.0000000000000001076614691499473449175009960532484864236267400836828"
+        },
+        "delta_T_minus_log_epsilon_ratio": {
+          "binary64_minus_50digit": "-0.000000000000005127416383388013078525350771185037573106471413414783",
+          "absolute_difference": "0.000000000000005127416383388013078525350771185037573106471413414783",
+          "relative_difference": "0.00000000000001869175926569256279003338167782301222960296692435128"
+        },
+        "R3A4_clock_upper_bound": {
+          "binary64_minus_50digit": "4.891767361146923623626104125726396008406271310248488e-17",
+          "absolute_difference": "4.891767361146923623626104125726396008406271310248488e-17",
+          "relative_difference": "0.0000000000000001353239198895479429090796080974104294454427272473374"
+        },
+        "R3A16_displayed_leading_clock": {
+          "binary64_minus_50digit": "-0.0000000000000009771734579242974819315202260824255748120080901597617",
+          "absolute_difference": "0.0000000000000009771734579242974819315202260824255748120080901597617",
+          "relative_difference": "1.731735754739836264268990109615132372063030099193854e-17"
+        },
+        "delta_T_minus_R3A16_displayed_leading_clock": {
+          "binary64_minus_50digit": "-0.000000000000005127416383395808357181460569819259950699673428247893",
+          "absolute_difference": "0.000000000000005127416383395808357181460569819259950699673428247893",
+          "relative_difference": "0.0000000000000186917592657209801178168363922415039063960606714419"
+        },
+        "delta_retarded_over_rs": {
+          "binary64_minus_50digit": "-0.000000000000001667699857811994785961186284122398754621166413225333",
+          "absolute_difference": "0.000000000000001667699857811994785961186284122398754621166413225333",
+          "relative_difference": "1.471340811585732243411738839109051417935059031760607e-17"
+        },
+        "delta_retarded_minus_twice_log_epsilon_ratio": {
+          "binary64_minus_50digit": "0.0000000000000002866470580521907352140737653108971501892537967604105",
+          "absolute_difference": "0.0000000000000002866470580521907352140737653108971501892537967604105",
+          "relative_difference": "0.0000000000000005840572381372855954887962188054339795576807757521368"
+        },
+        "surface_reduced_wavelength_leading_over_rs": {
+          "binary64_minus_50digit": "2.81916991002002473654175736701739959924109459493054e-40",
+          "absolute_difference": "2.81916991002002473654175736701739959924109459493054e-40",
+          "relative_difference": "0.000000000000003100152662762393065689177048029681038622408390019797"
+        },
+        "surface_reduced_wavelength_first_corrected_over_rs": {
+          "binary64_minus_50digit": "2.819169910021121505694473297871897965043825024186471e-40",
+          "absolute_difference": "2.819169910021121505694473297871897965043825024186471e-40",
+          "relative_difference": "0.000000000000003100152662763599148301347027461501396678222915525277"
+        },
+        "surface_group_speed_leading": {
+          "binary64_minus_50digit": "7.441755971596925172464032752513167606800473346225907e-41",
+          "absolute_difference": "7.441755971596925172464032752513167606800473346225907e-41",
+          "relative_difference": "0.000000000000003427881996964521578218829528836622378818150035031715"
+        },
+        "surface_group_speed_first_corrected": {
+          "binary64_minus_50digit": "7.441755971604780202907878013308191202557257363107847e-41",
+          "absolute_difference": "7.441755971604780202907878013308191202557257363107847e-41",
+          "relative_difference": "0.000000000000003427881996968139826055339468317889405705572431110897"
+        },
+        "C_in_over_rs": {
+          "binary64_minus_50digit": "5.281079001085817483125763868871127218408415224540093e-18",
+          "absolute_difference": "5.281079001085817483125763868871127218408415224540093e-18",
+          "relative_difference": "5.488322159056224999111099530569184951923837921328826e-18"
+        },
+        "C_out_over_rs": {
+          "binary64_minus_50digit": "0.000000000000001258557973037697480588526229835456891246998818537451",
+          "absolute_difference": "0.000000000000001258557973037697480588526229835456891246998818537451",
+          "relative_difference": "0.00000000000001916198108384953254400588225564123165884310159305143"
+        },
+        "symbol_flight_H_nu": {
+          "binary64_minus_50digit": "0.000000000000003595132329842490801903307439385182876621620237440009",
+          "absolute_difference": "0.000000000000003595132329842490801903307439385182876621620237440009",
+          "relative_difference": "2.008652718702008178030849619635647532597011411192474e-17"
+        },
+        "compact_HA_leading_shift_ell4": {
+          "binary64_minus_50digit": "-1.524019019028609680112549245840350095667133305145384e-92",
+          "absolute_difference": "1.524019019028609680112549245840350095667133305145384e-92",
+          "relative_difference": "4.92124950783230069955156721625374813351956124684302e-17"
+        },
+        "compact_HA_shift_over_u_d": {
+          "binary64_minus_50digit": "-7.047164070319772219504788710627950425705586433741246e-65",
+          "absolute_difference": "7.047164070319772219504788710627950425705586433741246e-65",
+          "relative_difference": "0.000000000000003547815447855972354518677300180379352795271541064229"
+        },
+        "formal_axial_temperature_shift": {
+          "binary64_minus_50digit": "-1.698065843792357932596818906840530140440840473168807e-93",
+          "absolute_difference": "1.698065843792357932596818906840530140440840473168807e-93",
+          "relative_difference": "8.726616430077635112868121322210879556370647197232334e-17"
+        },
+        "compact_HA_shift_over_formal_axial_temperature_shift": {
+          "binary64_minus_50digit": "0.00000000000000103285109415068021100002494018957624570354552947684",
+          "absolute_difference": "0.00000000000000103285109415068021100002494018957624570354552947684",
+          "relative_difference": "6.489800557396935016385011943377300046443115790439984e-17"
+        },
+        "conditional_energy_time_over_rs": {
+          "binary64_minus_50digit": "-3.589358014035458339680966976291274136993074789463363e+62",
+          "absolute_difference": "3.589358014035458339680966976291274136993074789463363e+62",
+          "relative_difference": "0.0000000000000001124942066356805803819985027873974107413518204370396"
+        },
+        "conditional_zero_radius_lifetime_over_rs": {
+          "binary64_minus_50digit": "-5.108257724613169289957518326981953352548849858071293e+61",
+          "absolute_difference": "5.108257724613169289957518326981953352548849858071293e+61",
+          "relative_difference": "4.802943014660798548396423563553455388840459081182835e-17"
+        },
+        "conditional_kappa_adiabaticity": {
+          "binary64_minus_50digit": "4.240406008529522883389555571608240251954030624933262e-95",
+          "absolute_difference": "4.240406008529522883389555571608240251954030624933262e-95",
+          "relative_difference": "6.764941833303268106462608925426308763565573427184792e-17"
+        },
+        "conditional_rs_over_energy_time": {
+          "binary64_minus_50digit": "2.120203004264761441694777785804120125977015312466631e-95",
+          "absolute_difference": "2.120203004264761441694777785804120125977015312466631e-95",
+          "relative_difference": "6.764941833303268106462608925426308763565573427184792e-17"
+        },
+        "conditional_40rs_over_energy_time": {
+          "binary64_minus_50digit": "1.806888519146866794079429074279905000368179632539531e-93",
+          "absolute_difference": "1.806888519146866794079429074279905000368179632539531e-93",
+          "relative_difference": "0.0000000000000001441311952995140764302679386921178238863487973983991"
+        },
+        "initial_rate_freezing_indicator": {
+          "binary64_minus_50digit": "-1.242716750610434051550324312193415617149099622225004e-65",
+          "absolute_difference": "1.242716750610434051550324312193415617149099622225004e-65",
+          "relative_difference": "0.00000000000000345390501460146007061236887277000143306512516499762"
+        },
+        "conditional_Page_crossing_radius_fraction_c1": {
+          "binary64_minus_50digit": "-6.141474069776463932213739863994730281910803412998828e-17",
+          "absolute_difference": "6.141474069776463932213739863994730281910803412998828e-17",
+          "relative_difference": "7.792867061340029284047725294595959384501411663391419e-17"
+        },
+        "conditional_Page_crossing_lifetime_fraction_c1": {
+          "binary64_minus_50digit": "9.162305356806791038458579650058659068867217950999596e-17",
+          "absolute_difference": "9.162305356806791038458579650058659068867217950999596e-17",
+          "relative_difference": "0.0000000000000001794665361777534061718315489988090879793567367516581"
+        },
+        "conditional_Page_crossing_time_over_rs_c1": {
+          "binary64_minus_50digit": "2.815494503688830488394852013740140743879359998333011e+61",
+          "absolute_difference": "2.815494503688830488394852013740140743879359998333011e+61",
+          "relative_difference": "5.185230136181174006988485175564710758250682856767396e-17"
+        },
+        "separate_am_point2_massive_suppression_exponent": {
+          "binary64_minus_50digit": "3650283790997566548230.17408414075998734915629029274",
+          "absolute_difference": "3650283790997566548230.17408414075998734915629029274",
+          "relative_difference": "1.588927539184703312230001640813821187025562466427312e-17"
+        },
+        "rounded_solar_rs_m": {
+          "binary64_minus_50digit": "0.0",
+          "absolute_difference": "0.0",
+          "relative_difference": "0.0"
+        },
+        "rounded_solar_rs_seconds": {
+          "binary64_minus_50digit": "-3.769516549613596502729410480039652058749095110688643e-22",
+          "absolute_difference": "3.769516549613596502729410480039652058749095110688643e-22",
+          "relative_difference": "3.830754684340132358554080260006939756464920774607222e-17"
+        },
+        "rounded_solar_coordinate_gap_m": {
+          "binary64_minus_50digit": "3.171548775412844839795497684946568881548093360774763e-37",
+          "absolute_difference": "3.171548775412844839795497684946568881548093360774763e-37",
+          "relative_difference": "0.000000000000003447924465658194863970117391447341076870252496041816"
+        },
+        "rounded_solar_approach_seconds": {
+          "binary64_minus_50digit": "-7.971176517293037732612541473330386927654359106569076e-20",
+          "absolute_difference": "7.971176517293037732612541473330386927654359106569076e-20",
+          "relative_difference": "0.0000000000000001428646974062140019139088223453303596996233824519926"
+        },
+        "rounded_solar_retarded_seconds": {
+          "binary64_minus_50digit": "-1.39514105189228518363254433189834237591607065069736e-19",
+          "absolute_difference": "1.39514105189228518363254433189834237591607065069736e-19",
+          "relative_difference": "0.0000000000000001250870051356240754480674532520417881828456022878767"
+        },
+        "rounded_solar_symbol_flight_comparison_seconds": {
+          "binary64_minus_50digit": "1.500125935526453980805216386482388910637700579287811e-20",
+          "absolute_difference": "1.500125935526453980805216386482388910637700579287811e-20",
+          "relative_difference": "8.517583169519150954872563992451315194373147165490784e-18"
+        },
+        "conditional_rounded_solar_energy_time_seconds": {
+          "binary64_minus_50digit": "-4.364933326462166135573346604954464784210591665312441e+57",
+          "absolute_difference": "4.364933326462166135573346604954464784210591665312441e+57",
+          "relative_difference": "0.0000000000000001390239680455933908644304610011822451007880836058699"
+        },
+        "conditional_rounded_solar_energy_time_Julian_years": {
+          "binary64_minus_50digit": "-199916152955136436722347231647186665751780142350336.0",
+          "absolute_difference": "199916152955136436722347231647186665751780142350336.0",
+          "relative_difference": "0.0000000000000002009388529403660846433970010543293991746840118472394"
+        },
+        "conditional_rounded_solar_lifetime_seconds": {
+          "binary64_minus_50digit": "-9.318859642051653148714664163841827330248229118916711e+56",
+          "absolute_difference": "9.318859642051653148714664163841827330248229118916711e+56",
+          "relative_difference": "8.904224290738578814712473818539869619037351062145113e-17"
+        },
+        "conditional_rounded_solar_lifetime_Julian_years": {
+          "binary64_minus_50digit": "-19870665257123252191597829235474499372203477303296.0",
+          "absolute_difference": "19870665257123252191597829235474499372203477303296.0",
+          "relative_difference": "5.991694955471197103673719423673484861576532534814376e-17"
+        },
+        "conditional_rounded_solar_Page_crossing_seconds_c1": {
+          "binary64_minus_50digit": "1.13665604403179405019266754649130217915281823584542e+56",
+          "absolute_difference": "1.13665604403179405019266754649130217915281823584542e+56",
+          "relative_difference": "2.127360568372035617704714592534261242497930320429826e-17"
+        },
+        "conditional_rounded_solar_Page_crossing_Julian_years_c1": {
+          "binary64_minus_50digit": "3067096183535348234411553808630960534026528489472.0",
+          "absolute_difference": "3067096183535348234411553808630960534026528489472.0",
+          "relative_difference": "1.811521122078450414716079431061083841391639985067155e-17"
+        }
+      }
+    }
+  ],
+  "mpmath_version": "1.3.0",
+  "execution": {
+    "host": "gpu",
+    "python": "3.12.12",
+    "pid": 3209337,
+    "nice": 10,
+    "threads": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1"
+    },
+    "cuda_visible_devices": "",
+    "wall_seconds": 0.03061996027827263,
+    "max_rss_kib": 20736,
+    "wall_limit_seconds": 60,
+    "address_space_limit_bytes": 268435456,
+    "cpu_limit_seconds": 60
+  }
+}

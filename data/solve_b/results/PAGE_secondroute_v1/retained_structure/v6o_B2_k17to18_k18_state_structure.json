@@ -1,0 +1,94 @@
+{
+  "source": "<internal>/v6o_B2_k17to18_k18_state.pt",
+  "runtime": {
+    "host": "compute-host",
+    "pid": 4068133,
+    "threads": 1,
+    "niceness": 10,
+    "device": "CPU"
+  },
+  "top_keys": [
+    "k",
+    "rows",
+    "records",
+    "n_ck",
+    "last_ck",
+    "min_N_minus_absv_T0",
+    "channels",
+    "v6c",
+    "v6g",
+    "w1"
+  ],
+  "k": 800,
+  "n_ck": 52,
+  "last_row_clock": {
+    "t": 6400.0,
+    "t_over_rs": 100.0
+  },
+  "channels": {
+    "18": {
+      "keys": [
+        "Phi",
+        "F",
+        "F_t",
+        "F_g",
+        "cheb_K_max",
+        "cheb_tail_acc",
+        "collar_flow_acc",
+        "gram_F2",
+        "gram_max",
+        "unit_defect",
+        "work_jump_since",
+        "E_hC_last",
+        "E_ref_last",
+        "d13",
+        "sector_prop",
+        "n_substeps",
+        "T_init"
+      ],
+      "Phi": {
+        "shape": [
+          8192,
+          4096
+        ],
+        "dtype": "torch.complex128"
+      },
+      "F": {
+        "shape": [
+          16384,
+          0
+        ],
+        "dtype": "torch.complex128"
+      },
+      "F_t": {
+        "type": "list"
+      },
+      "F_g": {
+        "type": "list"
+      },
+      "sector_prop": true
+    }
+  },
+  "v6c": {
+    "keys": [
+      "tr_peak_S",
+      "transfer_starts",
+      "transfer_epoch"
+    ]
+  },
+  "v6g": {
+    "keys": [
+      "anchor_started",
+      "follow_end"
+    ]
+  },
+  "w1": {
+    "keys": [
+      "sector_on",
+      "sector_report",
+      "w1_fast",
+      "audit"
+    ],
+    "sector_on": true
+  }
+}

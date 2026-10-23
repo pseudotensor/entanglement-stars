@@ -1,0 +1,199 @@
+{
+  "status": "passed",
+  "purpose": "owner66 L readonly input correctness",
+  "scientific_evaluations": 0,
+  "actual_archives": [
+    {
+      "input": {
+        "path": "<internal>/orbitals_c19_rs64_A_R2_tau8_ell4_avg_r11_T0012.00.npz",
+        "size": 2685802106,
+        "mtime_ns": 1792107171000000000,
+        "device": 2048,
+        "inode": 17631790
+      },
+      "exact_small_members": [
+        "R",
+        "T",
+        "rs",
+        "N_applied",
+        "v_applied",
+        "kappas",
+        "weights",
+        "dtype",
+        "dust_1",
+        "f_1",
+        "dust_2",
+        "f_2",
+        "dust_3",
+        "f_3",
+        "dust_4",
+        "f_4",
+        "dust_5",
+        "f_5",
+        "dust_6",
+        "f_6",
+        "dust_7",
+        "f_7",
+        "dust_8",
+        "f_8",
+        "dust_9",
+        "f_9",
+        "dust_10",
+        "f_10"
+      ],
+      "large_members_header_and_readonly_only": {
+        "sea_1": {
+          "shape": [
+            4096,
+            2048
+          ],
+          "dtype": "complex128",
+          "mapped_bytes": 134219627
+        },
+        "R2_1": {
+          "shape": [
+            4096,
+            2048
+          ],
+          "dtype": "complex128",
+          "mapped_bytes": 134220226
+        }
+      }
+    },
+    {
+      "input": {
+        "path": "<internal>/orbitals_c19_rs64_A_R2_tau8_ell4_avg_r11_T0015.00.npz",
+        "size": 1343100290,
+        "mtime_ns": 1792108099000000000,
+        "device": 2048,
+        "inode": 17631791
+      },
+      "exact_small_members": [
+        "R",
+        "T",
+        "rs",
+        "N_applied",
+        "v_applied",
+        "kappas",
+        "weights",
+        "dtype",
+        "dust_1",
+        "f_1",
+        "dust_2",
+        "f_2",
+        "dust_3",
+        "f_3",
+        "dust_4",
+        "f_4",
+        "dust_5",
+        "f_5",
+        "dust_6",
+        "f_6",
+        "dust_7",
+        "f_7",
+        "dust_8",
+        "f_8",
+        "dust_9",
+        "f_9",
+        "dust_10",
+        "f_10"
+      ],
+      "large_members_header_and_readonly_only": {
+        "sea_1": {
+          "shape": [
+            4096,
+            2048
+          ],
+          "dtype": "complex64",
+          "mapped_bytes": 67110759
+        },
+        "R2_1": {
+          "shape": [
+            4096,
+            2048
+          ],
+          "dtype": "complex64",
+          "mapped_bytes": 67111358
+        }
+      }
+    },
+    {
+      "input": {
+        "path": "<internal>/orbitals_c19_rs64_A_R2_tau8_ell4_avg_r11_T0016.00.npz",
+        "size": 2685802106,
+        "mtime_ns": 1792108287000000000,
+        "device": 2048,
+        "inode": 17631792
+      },
+      "exact_small_members": [
+        "R",
+        "T",
+        "rs",
+        "N_applied",
+        "v_applied",
+        "kappas",
+        "weights",
+        "dtype",
+        "dust_1",
+        "f_1",
+        "dust_2",
+        "f_2",
+        "dust_3",
+        "f_3",
+        "dust_4",
+        "f_4",
+        "dust_5",
+        "f_5",
+        "dust_6",
+        "f_6",
+        "dust_7",
+        "f_7",
+        "dust_8",
+        "f_8",
+        "dust_9",
+        "f_9",
+        "dust_10",
+        "f_10"
+      ],
+      "large_members_header_and_readonly_only": {
+        "sea_1": {
+          "shape": [
+            4096,
+            2048
+          ],
+          "dtype": "complex128",
+          "mapped_bytes": 134219627
+        },
+        "R2_1": {
+          "shape": [
+            4096,
+            2048
+          ],
+          "dtype": "complex128",
+          "mapped_bytes": 134220226
+        }
+      }
+    }
+  ],
+  "synthetic_checks": [
+    "c:exact_bytes_dtype_shape_readonly",
+    "f:exact_bytes_dtype_shape_readonly",
+    "endian:exact_bytes_dtype_shape_readonly",
+    "empty:exact_bytes_dtype_shape_readonly",
+    "scalar:exact_bytes_dtype_shape_readonly",
+    "readonly_write_refused",
+    "compressed_refused",
+    "object_refused",
+    "duplicate_refused",
+    "changed_path_binding_refused"
+  ],
+  "elapsed_seconds": 0.08985599875450134,
+  "peak_rss_kib": 33408,
+  "cpu_affinity": [
+    0
+  ],
+  "nice": 10,
+  "helper_sha256": "294ebd7e68dd8f260f4be2a70c8d250db0f00106679edbea8e2274d83c4f326b",
+  "check_sha256": "03626c55d43e383c182ac3a4a54beeca14b86bbc655deffd4a3408c052934457",
+  "scope": "exact byte/dtype/shape checks of small members; no whole-array check of sea/R2 payloads"
+}

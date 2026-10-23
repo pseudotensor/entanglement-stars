@@ -1,0 +1,318 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,xurl}
+\newcommand{\Tr}{\operatorname{Tr}}
+\title{Formation scales, the coordinate-rest clock and a light-radiation capacity bound}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+
+\paragraph{Scope [R].}
+This note serves the formation-clock and matched-radius expansions, the
+coordinate-rest free-fall comparator, and the light-field formation budget
+named in task six(a). The first two calculations concern a smooth
+continuum family and its exterior, respectively. The third bounds a
+specified outgoing band and arrival interval; it does not bound every
+pair created inside the object. No numerical evolution, coefficient fit
+or scientific code is part of this route.
+
+\paragraph{A smooth birth has a quadratic width correction.}
+The averaging width should be varied without confusing a displaced birth
+with a change of the radius at a fixed clock. Fix a reference radius
+$r_s$ and a common boundary clock, and put
+\[
+ x=r/r_s,\qquad \tau=t/r_s,\qquad
+ \varepsilon=\sigma^2/r_s^2,\qquad F=N+v
+\]
+on the inward-flow branch. The chosen root is that of the specified
+dense or applied field throughout; switching the two is not a width
+comparison. Let the normalized averaging kernel be even and
+cubic-symmetric, with per-axis variance $\sigma^2$ and a uniform
+absolute fourth-moment bound
+\[
+ \int |y|^4|K_\sigma(y)|\,d^3y=O(\sigma^4).
+\]
+A fixed-shape family $K_\sigma(y)=\sigma^{-3}K(y/\sigma)$ with a
+finite absolute fourth moment suffices. On a smooth bare field with
+bounded fourth derivatives, Taylor's formula then gives
+\[
+ K_\sigma f=f+\tfrac12\sigma^2\Delta f
+             +O(\sigma^4\|\nabla^4f\|_\infty).
+\]
+For the coupled problem the state, constraints and back-averaging also
+respond. Assume a regular solution family, with those responses included,
+\[
+ F(\tau,x;\varepsilon)=F_0(\tau,x)+\varepsilon F_1(\tau,x)
+                  +O(\varepsilon^2)
+\]
+in the derivatives used below, with sufficient uniform differentiability
+for the Taylor remainders. The kernel expansion motivates this
+parameter; it does not by itself prove differentiability of a nonlinear
+solution branch or determine $F_1$. The hydrodynamic limit keeps
+$a\ll\sigma$ and $\sigma$ smaller than every geometric gradient length;
+using $r_s$ as the unit does not replace this local condition.
+The zero-width coefficient is a formal smooth continuum reference,
+not a permissible $\sigma=0$ lattice calculation. Uniform use along
+$\chi=a/r_s\to0$ additionally requires the corresponding regularity
+bounds to be uniform in $\chi$.
+
+Suppose the first selected interior birth is isolated, at $x_0>0$, with
+\[
+ F_0(\tau_0,x_0)=0,\qquad F_{0,x}(\tau_0,x_0)=0,\qquad
+ F_{0,\tau}<0,\quad F_{0,xx}>0.
+\]
+The two equations $F=F_x=0$ determine the birth. Their Jacobian with
+respect to $(\tau,x)$ has determinant $F_{0,\tau}F_{0,xx}\ne0$, so the
+birth clock and location have regular expansions
+\[
+ \tau_b=\tau_0+b_t\varepsilon+O(\varepsilon^2),\qquad
+ x_b=x_0+b_r\varepsilon+O(\varepsilon^2),
+\]
+where, with every derivative evaluated at the unperturbed birth,
+\[
+ b_t=-\frac{F_1}{F_{0,\tau}},\qquad
+ b_r=-\frac{F_{1,x}+F_{0,x\tau}b_t}{F_{0,xx}}.
+\]
+No universal sign follows. Degenerate contact, boundary birth, a change
+of the first competing minimum, a non-smooth source or loss of the
+solution branch lies outside this argument.
+
+At a common clock $\tau_m$ where the chosen outer root is simple and
+uniformly separated from birth, the corresponding expansion is
+\[
+ x_t(\tau_m;\varepsilon)
+ =x_t(\tau_m;0)
+ -\varepsilon\frac{F_1}{F_{0,x}}(\tau_m,x_t(\tau_m;0))
+ +O(\varepsilon^2).
+\]
+If a different matched observable selects
+$\tau_m(\varepsilon)=\tau_m(0)+c_t\varepsilon+\cdots$, the numerator is
+$F_1+F_{0,\tau}c_t$. Ratios to a varying charge radius retain that
+radius's derivative as well: for $Q=2GE/r_s$,
+$(x_t/Q)_1=x_{t,1}/Q_0-x_{t,0}Q_1/Q_0^2$.
+Thus the clock and radius normalization must be the same comparison
+before a width coefficient is read.
+
+These regular expansions do not make every nearby root radius
+quadratic in $\sigma$. Close to the birth,
+\[
+ x_\pm-x_b
+ =\pm\left[-\frac{2F_\tau}{F_{xx}}(\tau-\tau_b)\right]^{1/2}
+   +O(\tau-\tau_b).
+\]
+At the unshifted birth clock, an $O(\varepsilon)$ displacement of birth
+can therefore create an $O(\sqrt{\varepsilon})=O(\sigma/r_s)$ radius
+split, or leave no root. A first saved root at cadence $\Delta\tau$
+instead has a clock uncertainty up to $\Delta\tau$ and, at a
+nondegenerate birth, a radius displacement of order
+$\sqrt{\Delta\tau}$. Its record index changes discontinuously as the
+width moves the birth across a checkpoint. First-record differences
+are consequently not the coefficients above without event location,
+matched clocks and independent control of the other errors.
+
+\paragraph{The flat-slice clock for release from coordinate rest.}
+This comparator distinguishes release from coordinate rest from the
+marginally bound cloud already moving with the slice normals. On the
+fixed exterior of charge $E$, set $r_s=2GE$ and write
+\[
+ ds^2=-dt^2+(dR+\sqrt{r_s/R}\,dt)^2+R^2d\Omega^2.
+\]
+The coordinate $t$ is the inward flat-slice clock, normalized at infinity.
+It is neither the particle's proper time nor Schwarzschild time.
+A radial timelike geodesic released with $dR/dt=0$ at
+$R_0=b r_s$, $b>1$, has conserved specific energy
+$e=\sqrt{1-1/b}$. With proper time $\lambda$, define
+\[
+ w=\sqrt{r_s/R},\qquad s=\sqrt{r_s/R-1/b},\qquad f=1-r_s/R .
+\]
+The normalization and energy integrals give
+\[
+ \frac{dR}{d\lambda}=-s,\qquad
+ \frac{dt}{d\lambda}
+ =\frac{e-ws}{f}
+ =\frac{1+s^2}{e+ws}.
+\]
+The second expression is regular at the horizon. It gives the positive
+fall-clock integral
+\[
+ \frac{\Delta t_{\rm ff}}{r_s}
+ =\int_1^b
+   \frac{1+(1/x-1/b)}
+   {\sqrt{1/x-1/b}\,[\,e+x^{-1/2}\sqrt{1/x-1/b}\,]}\,dx .
+\]
+One can integrate it without assigning a finite value to a divergent
+Schwarzschild-clock term. Set $x=b\cos^2\eta$ and combine that clock's
+logarithm with the flat-slice transformation
+$t=t_s+r_s[2\sqrt{x}+\ln((\sqrt{x}-1)/(\sqrt{x}+1))]$.
+At $x=1$ the combined logarithm is finite, giving
+\[
+ \boxed{\frac{\Delta t_{\rm ff}}{r_s}
+ =(b+2)\sqrt{b-1}\arccos(b^{-1/2})
+   +(\sqrt b-1)^2+2\ln(1+b^{-1/2}) .}
+\]
+In particular, release from $R_0=4r_s$ gives
+\[
+ \Delta t_{\rm ff}
+ =\bigl[2\pi\sqrt3+1+2\ln(3/2)\bigr]r_s
+ \simeq12.69\,r_s .
+\]
+The task's $12.6r_s$ target is not the one-decimal rounding of this
+expression. The marginally bound $e=1$ control is a different release:
+it crosses $4r_s$ with inward coordinate speed $1/2$ and reaches $r_s$
+after $(2/3)(4^{3/2}-1)r_s=14r_s/3$.
+
+A nominal run radius is not necessarily $2GE$. If
+$r_s^{\rm nom}$ labels the preparation, $R_0=4r_s^{\rm nom}$ and
+$\rho=2GE/r_s^{\rm nom}$, the value on that nominal clock is
+$\rho\,{\cal F}(4/\rho)$, with ${\cal F}$ the boxed function. A quoted
+clock with $\rho\ne1$ is not a disagreement with the $b=4$ result.
+For a pressureless boundary matched to this exterior the same geodesic
+control requires no shell crossing or exchange changing the enclosed
+charge. Its arrival at the charge radius is not the first trapping
+birth of a centrally concentrated cloud, which can occur inside it.
+
+\paragraph{What exclusion bounds during formation.}
+Take $D$ distinct outgoing fermionic excitation channels with unit-flux
+normalization on one asymptotic arrival clock. Their occupation
+covariance is a contraction. In an energy band
+$B=[\epsilon_1,\epsilon_2]$, $\epsilon_1\ge0$, an arrival interval
+of length $\Delta t$ has density
+$\Delta t\,d\epsilon/(2\pi\hbar)$ per channel. Applying
+$0\leq C\leq I$ to the positive band-and-arrival number and energy
+effects gives
+\[
+ N_{{\rm out},B}\leq\frac{D\Delta t(\epsilon_2-\epsilon_1)}{2\pi\hbar},
+ \qquad
+ \boxed{E_B\leq
+ \frac{D\Delta t(\epsilon_2^2-\epsilon_1^2)}{4\pi\hbar}.}
+\]
+For example, in energy representation the positive energy effect is
+$h_B^{1/2}P_{\Delta t}h_B^{1/2}$, with $h_B$ multiplication by
+$\epsilon\mathbf1_B(\epsilon)$ and $P_{\Delta t}$ the Fourier arrival-time
+projector. Its trace is the right-hand side; contraction bounds its
+expectation by that trace. This retains frequency coherence and does
+not require a thermal state, Gaussianity or independent occupancies.
+It is a positive outgoing allocation, not an arbitrary signed collar
+current or a local work term.
+
+In units $c=\hbar=1$, let $\Delta t=\beta r_s$,
+$q_i=\epsilon_i r_s$, $\chi=a/r_s$ and $g=G/a^2$. Since
+$E=r_s/(2G)$,
+\[
+ \frac{E_B}{E}
+ \leq\frac{D\beta g}{2\pi}(q_2^2-q_1^2)\chi^2,\qquad
+ N_{{\rm out},B}\leq\frac{D\beta}{2\pi}(q_2-q_1).
+\]
+For fixed $D,\beta,q_1,q_2,g$, the band's outgoing energy is therefore
+$O(\chi^2)$ of the charge, while its excitation count is bounded
+independently of $\chi$. With $X_i=\epsilon_i/T_H=4\pi q_i$, the
+energy fraction is equivalently
+$D\beta g(X_2^2-X_1^2)\chi^2/(32\pi^3)$.
+A logarithmically growing interval changes the bound to
+$O(\chi^2\ln(1/\chi))$ under the same fixed-band and channel conditions.
+
+To turn this into a bound on all escaping formation radiation requires
+an independently controlled remainder on the same positive allocation:
+\[
+ \frac{E_{\rm form,out}}{E}
+ \leq \frac{D\beta g}{2\pi}(q_2^2-q_1^2)\chi^2
+       +\frac{E_{\rm rest}}{E}.
+\]
+No bound on $E_{\rm rest}$ is supplied by exclusion alone. Hard
+frequencies $q\sim\chi^{-1}$, a channel count growing with
+$\chi^{-1}$, or later arrivals can remove the stated suppression.
+Trapped partners need not enter the outgoing allocation at all.
+Consequently the capacity inequality is not a bound on the total
+number of pairs formed relative to an interior reference, their
+entropy, or the full light-field back-reaction. Those stronger
+statements require a source-specific production and tail estimate.
+
+\paragraph{Comparison with the supplied records [S].}
+The named v1 ladder inputs define formation by the first saved
+zero-holding record. Their current corrected texts,
+\texttt{MASS\_ladder\_v1.1.md} and
+\texttt{SCALING\_ladder\_v1.2.md}, distinguish that record's outer root
+from the birth and label zeros of interpolated stored minima as
+diagnostics, not event locations. This is the distinction required by
+the fold calculation. They do not supply the derivatives of the
+coupled $F$ needed to evaluate $b_t,b_r$, or a uniform simple-root
+margin for a matched-clock expansion. The updated size source's
+continuation of its width-eight member changes neither its formation
+record nor its fits.
+
+The cold reading's event-location caution agrees with the derivation;
+its descriptive width fits do not establish a logarithmic width law
+in place of the regular $\sigma^2$ expansion. Two certified widths at
+a given size cannot test an intercept-plus-width coefficient, and
+the first-record quantization remains even when each saved field is
+certified. The global certification and geometric validity of the
+records are separate from this conditional analytic result.
+
+Three comparator clocks must also remain distinct. The paper's
+$13.22r_s^{\rm nom}$ uses release at $4r_s^{\rm nom}$ and a charge
+radius $59.05a$ with $r_s^{\rm nom}=64a$, rather than $R_0=4(2GE)$;
+the conversion above specifies the comparison. The mass source
+separately reports a fold at $10.8157r_s^{\rm nom}$ and first saved
+root at $10.8750r_s^{\rm nom}$ for pressureless evolution of the
+production's own initial profile. These are supplied readouts, not
+numbers independently reproduced here. Neither is the geodesic
+arrival clock $12.69(2GE)$ just derived. In particular, the cold
+reading's use of the exterior boundary-arrival clock as a universal
+first-formation intercept is not justified by that geodesic argument.
+The exact result provides no universal pressure-correction coefficient
+for the first interior birth.
+
+The heavy-field mass and size ladders also supply no estimate of
+$E_{\rm rest}$ for all light-field production. They therefore neither
+extend the finite-band capacity bound to all formed pairs nor
+calibrate a total light-radiation coefficient. The
+finite-band statement and its explicit channel, band and arrival
+conditions are the supported use.
+
+\paragraph{Input state and comparison boundary.}
+The named theorem delivery is absent in both Lane delivery folders.
+The own-lane status names the served task-six(a) controls. The author
+has already read parts of the v1 ladder and cold-reading inputs for
+the separate item-six fallback check; no blindness to that material
+is claimed. The derivations above were completed from the root
+equations, the exterior metric and the covariance capacity before
+any new ladder intake for this task. The source comparison above was
+then made against the named v1 inputs, the corrected ladder texts and
+the cold-reading event and clock clauses. It does not fit the records.
+The sole independent review reproduces the three derivations; its
+required fourth-moment hypothesis is included above. This note is
+frozen for delivery. No manuscript statement or ladder number is
+newly cleared.
+
+\paragraph{SOURCES.}
+\path{<internal>/GOAL_lane.md},
+task six(a);
+\path{<internal>/STATUS.md},
+the named formation, clock and capacity controls;
+\path{<internal>/requirements_new.txt},
+the five declarations, averaging hierarchy and comparison domains;
+\path{<internal>/05_star.tex}
+at \texttt{a4381f19cf}, the marginally bound dust control and
+coordinate-rest comparator statements;
+\path{<internal>/CONDENSE_analytic_checks_v1.md},
+the independently derived, frozen finite-band capacity and its scope.
+The comparison uses
+\path{<internal>/MASS_ladder_v1.md},
+the formation definitions and section five;
+\path{<internal>/SCALING_ladder_v1.md},
+the formation definitions and sections 5.1 to 5.3;
+\path{<internal>/MASS_ladder_v1.1.md},
+the changes, definitions, formation table and section 5.1;
+\path{<internal>/SCALING_ladder_v1.2.md},
+the changes, definitions and sections 5.1 to 5.3;
+\path{<internal>/ReviewA_reading_LADDERS_v1.md},
+the event-location and comparator-clock clauses, read as a supplied
+baseline, not a clearance.
+The sole independent review is
+\path{<internal>/redteam_SCALING_theorems_v1.md};
+its kernel condition is incorporated.
+No numerical ladder result or foreign proof supplies the new root
+or geodesic calculation, and no manuscript text is edited.
+
+\end{document}

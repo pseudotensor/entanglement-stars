@@ -1,0 +1,29 @@
+{
+  "status": "finished",
+  "command": [
+    "timeout",
+    "-s",
+    "TERM",
+    "-k",
+    "2s",
+    "300s",
+    "nice",
+    "-n",
+    "10",
+    "<internal>/python",
+    "<internal>/fixed_mass_interval_check.py"
+  ],
+  "purpose": "insert I6a and item7 fixed-mass light-cut ratio",
+  "resources": {
+    "cpu_threads": 1,
+    "wall_seconds": 300,
+    "address_space_bytes": 805306368,
+    "cuda": "disabled"
+  },
+  "exit_code": 1,
+  "elapsed_seconds": 1.1905142478644848,
+  "stdout_bytes": 435,
+  "stdout": "{\"status\": \"incomplete\", \"elapsed_seconds\": 1.0916776694357395, \"accepted111\": 0, \"counts\": {\"evaluations\": 2664, \"created_cells\": 0, \"refused_images\": 894, \"refusals_by_reason\": {\"nonpositive_real_sqrt_argument\": 39, \"nonpositive_real_delta\": 2, \"nonpositive_real_density_complement\": 6, \"nonpositive_real_p\": 80, \"nonfinite_elliptic_value\": 36, \"nonpositive_real_m\": 2, \"denominator_contains_zero\": 308, \"epsilon_real_guard\": 421}}}\n",
+  "stderr_bytes": 0,
+  "stderr": ""
+}

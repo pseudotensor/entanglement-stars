@@ -1,0 +1,38 @@
+{
+  "implementation": "horizon_exterior_v1",
+  "numpy_version": "2.2.6",
+  "artifacts": {
+    "inputs": {
+      "path": "<internal>/inputs.npz",
+      "sha256": "2bf5de9152830cee1bf0973662be0b01841b16d3ab6fedbfdab626b80a8d9a85"
+    },
+    "spectrum": {
+      "path": "<internal>/spectrum.npz",
+      "sha256": "a21ea0e47149fcc4e5adf67e280eea9673669cecb1cc6b6889725619a319b840"
+    },
+    "input_checks": {
+      "path": "<internal>/input_checks.json",
+      "sha256": "e0d056d8b3aa283d565186b4ee38ae253ab76717c37da993dcb6bc705ed93a02"
+    },
+    "implementation": {
+      "path": "<internal>/horizon_exact.py",
+      "sha256": "5411e253cb6bad08a27eee2d5afa97a347bffdf71e42766e91554bc82db95f38"
+    },
+    "bin_helpers": {
+      "path": "<internal>/horizon_bins.py",
+      "sha256": "030ab15b9c3ff30a0193557c9f8932c06b4f7eecab0e7ba578d61231f364a711"
+    },
+    "error_bounds": {
+      "path": "<internal>/hold_error_bounds.py",
+      "sha256": "12bacc16d463d8906da8010acffc59497d6dfab810b2804bd23ef37e45ba58c8"
+    },
+    "precision_helpers": {
+      "path": "<internal>/hold_precision_checks.py",
+      "sha256": "1f6f58a5a87958ba62f9de8a8797ab282864c71d24700eab5dcfc032c6d5b7da"
+    },
+    "reduction_helpers": {
+      "path": "<internal>/hold_endpoint_control.py",
+      "sha256": "25d43bd4bb0342fb02d61b5579073683177079351efdf263f30f21def08bc421"
+    }
+  }
+}

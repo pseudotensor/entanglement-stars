@@ -1,0 +1,2171 @@
+{
+  "scope": "Literal counts, label existence and adjacent explicit label/number groups only; no claim or physics review",
+  "source_commit": "d0b57eadabeb943bfaefa59580d1fbb4767fcf0e",
+  "letter_sha256": "053614cc73358f3a3f2e9160fe4a8af7b3cf30fda1c8a6c562e5233bcce102a5",
+  "aux_sha256": "cb7b4e21abf496a1aacd32f961bbc2376479b87df943b32b1235a374b05adc8f",
+  "aux_provenance": "Copied unversioned live build at intake; not independently bound to named commit or PDF",
+  "characters": {
+    "raw": 44565,
+    "without_delivery_heading": 44439,
+    "cap": 44475,
+    "governing_measure": "Inbox96 tail -n +2 FILE includes line-two blank and all SOURCES/labels",
+    "governing_characters": 44440,
+    "governing_excess": 0
+  },
+  "unique_used_labels": [
+    "app:charge",
+    "app:example",
+    "app:local",
+    "app:rows",
+    "eq:B-axial",
+    "eq:B-gapcert",
+    "eq:B-massive",
+    "eq:B-transfer",
+    "eq:C-average",
+    "eq:C-firstlaw",
+    "eq:C-generator",
+    "eq:C-rate",
+    "eq:dm-average",
+    "eq:dm-contact",
+    "eq:dm-covariance",
+    "eq:dm-current",
+    "eq:dm-density",
+    "eq:dm-evolution",
+    "eq:dm-gauss",
+    "eq:dm-h2",
+    "eq:dm-hamiltonian",
+    "eq:dm-reference",
+    "eq:dr-algebra-remainder",
+    "eq:dr-area",
+    "eq:dr-average-generator",
+    "eq:dr-boundary-variation",
+    "eq:dr-crossing-ray",
+    "eq:dr-cut",
+    "eq:dr-exterior",
+    "eq:dr-exterior-coordinates",
+    "eq:dr-filling-bound",
+    "eq:dr-flow-threshold",
+    "eq:dr-longitudinal-algebra",
+    "eq:dr-mixed-bracket",
+    "eq:dr-pressure",
+    "eq:dr-speeds",
+    "eq:dr-unruh",
+    "eq:example-chart",
+    "eq:example-exterior",
+    "eq:example-force",
+    "eq:example-ray",
+    "eq:example-ray-correction",
+    "eq:page-conditional",
+    "eq:page-first-law",
+    "eq:page-first-law-rows",
+    "eq:page-share",
+    "eq:page-temperature",
+    "eq:sc-approach",
+    "eq:sc-clock-exact",
+    "eq:sc-luminosity",
+    "eq:sc-mass-radius",
+    "eq:sc-ray-temperature",
+    "eq:star-crossing-delay",
+    "eq:star-dust-control",
+    "eq:star-peeling-control",
+    "sec:discussion",
+    "sec:introduction",
+    "sec:model",
+    "sec:model-dictionary",
+    "sec:model-gravity",
+    "sec:model-operators",
+    "sec:model-sources",
+    "sec:page",
+    "sec:results",
+    "sec:results-cone",
+    "sec:results-conversion",
+    "sec:results-current",
+    "sec:results-exterior",
+    "sec:results-filling",
+    "sec:results-firstlaw",
+    "sec:results-lattice",
+    "sec:results-vacuum",
+    "sec:scaling",
+    "sec:star"
+  ],
+  "missing_from_committed_tex": [],
+  "missing_from_observed_aux": [],
+  "adjacent_number_checks": [
+    {
+      "line": 3,
+      "kind": "section_or_appendix",
+      "printed": "I",
+      "labels": [
+        "sec:introduction"
+      ],
+      "aux_values": [
+        "I"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 3,
+      "kind": "section_or_appendix",
+      "printed": "II",
+      "labels": [
+        "sec:model"
+      ],
+      "aux_values": [
+        "II"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 7,
+      "kind": "equation",
+      "printed": [
+        "2",
+        "3",
+        "5",
+        "8",
+        "10"
+      ],
+      "labels": [
+        "eq:dm-average",
+        "eq:dm-current",
+        "eq:dm-reference",
+        "eq:dm-density",
+        "eq:dm-h2"
+      ],
+      "aux_values": [
+        "2",
+        "3",
+        "5",
+        "8",
+        "10"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 7,
+      "kind": "equation",
+      "printed": [
+        "40"
+      ],
+      "labels": [
+        "eq:page-share"
+      ],
+      "aux_values": [
+        "40"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 7,
+      "kind": "section_or_appendix",
+      "printed": "II",
+      "labels": [
+        "sec:model"
+      ],
+      "aux_values": [
+        "II"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 7,
+      "kind": "section_or_appendix",
+      "printed": "III G",
+      "labels": [
+        "sec:results-firstlaw"
+      ],
+      "aux_values": [
+        "III\\,G"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 7,
+      "kind": "section_or_appendix",
+      "printed": "D",
+      "labels": [
+        "app:rows"
+      ],
+      "aux_values": [
+        "D"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 9,
+      "kind": "equation",
+      "printed": [
+        "16",
+        "24",
+        "26"
+      ],
+      "labels": [
+        "eq:dr-speeds",
+        "eq:dr-unruh",
+        "eq:dr-area"
+      ],
+      "aux_values": [
+        "16",
+        "24",
+        "26"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 9,
+      "kind": "section_or_appendix",
+      "printed": "III",
+      "labels": [
+        "sec:results"
+      ],
+      "aux_values": [
+        "III"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 9,
+      "kind": "section_or_appendix",
+      "printed": "IV",
+      "labels": [
+        "sec:star"
+      ],
+      "aux_values": [
+        "IV"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 9,
+      "kind": "section_or_appendix",
+      "printed": "V",
+      "labels": [
+        "sec:page"
+      ],
+      "aux_values": [
+        "V"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 9,
+      "kind": "section_or_appendix",
+      "printed": "VI",
+      "labels": [
+        "sec:scaling"
+      ],
+      "aux_values": [
+        "VI"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 37,
+      "kind": "equation",
+      "printed": [
+        "23"
+      ],
+      "labels": [
+        "eq:dr-cut"
+      ],
+      "aux_values": [
+        "23"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 37,
+      "kind": "equation",
+      "printed": [
+        "34"
+      ],
+      "labels": [
+        "eq:dr-crossing-ray"
+      ],
+      "aux_values": [
+        "34"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 37,
+      "kind": "equation",
+      "printed": [
+        "38",
+        "39"
+      ],
+      "labels": [
+        "eq:page-first-law-rows",
+        "eq:page-first-law"
+      ],
+      "aux_values": [
+        "38",
+        "39"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 37,
+      "kind": "equation",
+      "printed": [
+        "46",
+        "47"
+      ],
+      "labels": [
+        "eq:sc-luminosity",
+        "eq:page-conditional"
+      ],
+      "aux_values": [
+        "46",
+        "47"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 37,
+      "kind": "equation",
+      "printed": [
+        "C2"
+      ],
+      "labels": [
+        "eq:C-firstlaw"
+      ],
+      "aux_values": [
+        "C2"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 37,
+      "kind": "section_or_appendix",
+      "printed": "III C",
+      "labels": [
+        "sec:results-vacuum"
+      ],
+      "aux_values": [
+        "III\\,C"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 37,
+      "kind": "section_or_appendix",
+      "printed": "III E",
+      "labels": [
+        "sec:results-exterior"
+      ],
+      "aux_values": [
+        "III\\,E"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 37,
+      "kind": "section_or_appendix",
+      "printed": "III G",
+      "labels": [
+        "sec:results-firstlaw"
+      ],
+      "aux_values": [
+        "III\\,G"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 37,
+      "kind": "section_or_appendix",
+      "printed": "IV",
+      "labels": [
+        "sec:star"
+      ],
+      "aux_values": [
+        "IV"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 37,
+      "kind": "section_or_appendix",
+      "printed": "IV A",
+      "labels": [
+        "sec:results-lattice"
+      ],
+      "aux_values": [
+        "IV\\,A"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 37,
+      "kind": "section_or_appendix",
+      "printed": "V",
+      "labels": [
+        "sec:page"
+      ],
+      "aux_values": [
+        "V"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 37,
+      "kind": "section_or_appendix",
+      "printed": "VI",
+      "labels": [
+        "sec:scaling"
+      ],
+      "aux_values": [
+        "VI"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 37,
+      "kind": "section_or_appendix",
+      "printed": "VII",
+      "labels": [
+        "sec:discussion"
+      ],
+      "aux_values": [
+        "VII"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 37,
+      "kind": "section_or_appendix",
+      "printed": "C",
+      "labels": [
+        "app:charge"
+      ],
+      "aux_values": [
+        "C"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 43,
+      "kind": "equation",
+      "printed": [
+        "41"
+      ],
+      "labels": [
+        "eq:sc-mass-radius"
+      ],
+      "aux_values": [
+        "41"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 43,
+      "kind": "section_or_appendix",
+      "printed": "II B",
+      "labels": [
+        "sec:model-dictionary"
+      ],
+      "aux_values": [
+        "II\\,B"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 43,
+      "kind": "section_or_appendix",
+      "printed": "II D",
+      "labels": [
+        "sec:model-gravity"
+      ],
+      "aux_values": [
+        "II\\,D"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 43,
+      "kind": "section_or_appendix",
+      "printed": "II E",
+      "labels": [
+        "sec:model-operators"
+      ],
+      "aux_values": [
+        "II\\,E"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 43,
+      "kind": "section_or_appendix",
+      "printed": "IV",
+      "labels": [
+        "sec:star"
+      ],
+      "aux_values": [
+        "IV"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 43,
+      "kind": "section_or_appendix",
+      "printed": "V",
+      "labels": [
+        "sec:page"
+      ],
+      "aux_values": [
+        "V"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 43,
+      "kind": "section_or_appendix",
+      "printed": "D",
+      "labels": [
+        "app:rows"
+      ],
+      "aux_values": [
+        "D"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 47,
+      "kind": "equation",
+      "printed": [
+        "3",
+        "4"
+      ],
+      "labels": [
+        "eq:dm-current",
+        "eq:dm-hamiltonian"
+      ],
+      "aux_values": [
+        "3",
+        "4"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 47,
+      "kind": "equation",
+      "printed": [
+        "18"
+      ],
+      "labels": [
+        "eq:dr-longitudinal-algebra"
+      ],
+      "aux_values": [
+        "18"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 47,
+      "kind": "section_or_appendix",
+      "printed": "II B",
+      "labels": [
+        "sec:model-dictionary"
+      ],
+      "aux_values": [
+        "II\\,B"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 47,
+      "kind": "section_or_appendix",
+      "printed": "III B",
+      "labels": [
+        "sec:results-current"
+      ],
+      "aux_values": [
+        "III\\,B"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 47,
+      "kind": "section_or_appendix",
+      "printed": "VII",
+      "labels": [
+        "sec:discussion"
+      ],
+      "aux_values": [
+        "VII"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 51,
+      "kind": "equation",
+      "printed": [
+        "4"
+      ],
+      "labels": [
+        "eq:dm-hamiltonian"
+      ],
+      "aux_values": [
+        "4"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 51,
+      "kind": "equation",
+      "printed": [
+        "10"
+      ],
+      "labels": [
+        "eq:dm-h2"
+      ],
+      "aux_values": [
+        "10"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 51,
+      "kind": "equation",
+      "printed": [
+        "16"
+      ],
+      "labels": [
+        "eq:dr-speeds"
+      ],
+      "aux_values": [
+        "16"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 51,
+      "kind": "section_or_appendix",
+      "printed": "II B",
+      "labels": [
+        "sec:model-dictionary"
+      ],
+      "aux_values": [
+        "II\\,B"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 51,
+      "kind": "section_or_appendix",
+      "printed": "II D",
+      "labels": [
+        "sec:model-gravity"
+      ],
+      "aux_values": [
+        "II\\,D"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 51,
+      "kind": "section_or_appendix",
+      "printed": "III A",
+      "labels": [
+        "sec:results-cone"
+      ],
+      "aux_values": [
+        "III\\,A"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 55,
+      "kind": "equation",
+      "printed": [
+        "5",
+        "7"
+      ],
+      "labels": [
+        "eq:dm-reference",
+        "eq:dm-covariance",
+        "eq:dm-contact"
+      ],
+      "aux_values": [
+        "5",
+        "6",
+        "7"
+      ],
+      "decision": "manual_range_or_count"
+    },
+    {
+      "line": 55,
+      "kind": "equation",
+      "printed": [
+        "10"
+      ],
+      "labels": [
+        "eq:dm-h2"
+      ],
+      "aux_values": [
+        "10"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 55,
+      "kind": "section_or_appendix",
+      "printed": "II C",
+      "labels": [
+        "sec:model-sources"
+      ],
+      "aux_values": [
+        "II\\,C"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 55,
+      "kind": "section_or_appendix",
+      "printed": "II D",
+      "labels": [
+        "sec:model-gravity"
+      ],
+      "aux_values": [
+        "II\\,D"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 59,
+      "kind": "equation",
+      "printed": [
+        "5"
+      ],
+      "labels": [
+        "eq:dm-reference"
+      ],
+      "aux_values": [
+        "5"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 59,
+      "kind": "equation",
+      "printed": [
+        "30"
+      ],
+      "labels": [
+        "eq:dr-exterior"
+      ],
+      "aux_values": [
+        "30"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 59,
+      "kind": "equation",
+      "printed": [
+        "A3"
+      ],
+      "labels": [
+        "eq:example-force"
+      ],
+      "aux_values": [
+        "A3"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 59,
+      "kind": "section_or_appendix",
+      "printed": "II C",
+      "labels": [
+        "sec:model-sources"
+      ],
+      "aux_values": [
+        "II\\,C"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 59,
+      "kind": "section_or_appendix",
+      "printed": "II D",
+      "labels": [
+        "sec:model-gravity"
+      ],
+      "aux_values": [
+        "II\\,D"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 59,
+      "kind": "section_or_appendix",
+      "printed": "III E",
+      "labels": [
+        "sec:results-exterior"
+      ],
+      "aux_values": [
+        "III\\,E"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 59,
+      "kind": "section_or_appendix",
+      "printed": "A",
+      "labels": [
+        "app:example"
+      ],
+      "aux_values": [
+        "A"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 63,
+      "kind": "equation",
+      "printed": [
+        "10"
+      ],
+      "labels": [
+        "eq:dm-h2"
+      ],
+      "aux_values": [
+        "10"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 63,
+      "kind": "equation",
+      "printed": [
+        "21"
+      ],
+      "labels": [
+        "eq:dr-mixed-bracket"
+      ],
+      "aux_values": [
+        "21"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 63,
+      "kind": "section_or_appendix",
+      "printed": "II B",
+      "labels": [
+        "sec:model-dictionary"
+      ],
+      "aux_values": [
+        "II\\,B"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 63,
+      "kind": "section_or_appendix",
+      "printed": "II D",
+      "labels": [
+        "sec:model-gravity"
+      ],
+      "aux_values": [
+        "II\\,D"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 63,
+      "kind": "section_or_appendix",
+      "printed": "III B",
+      "labels": [
+        "sec:results-current"
+      ],
+      "aux_values": [
+        "III\\,B"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 63,
+      "kind": "section_or_appendix",
+      "printed": "IV",
+      "labels": [
+        "sec:star"
+      ],
+      "aux_values": [
+        "IV"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 63,
+      "kind": "section_or_appendix",
+      "printed": "VII",
+      "labels": [
+        "sec:discussion"
+      ],
+      "aux_values": [
+        "VII"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 63,
+      "kind": "section_or_appendix",
+      "printed": "D",
+      "labels": [
+        "app:rows"
+      ],
+      "aux_values": [
+        "D"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 69,
+      "kind": "equation",
+      "printed": [
+        "8",
+        "10",
+        "13"
+      ],
+      "labels": [
+        "eq:dm-density",
+        "eq:dm-h2",
+        "eq:dm-evolution"
+      ],
+      "aux_values": [
+        "8",
+        "10",
+        "13"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 69,
+      "kind": "equation",
+      "printed": [
+        "20"
+      ],
+      "labels": [
+        "eq:dr-algebra-remainder"
+      ],
+      "aux_values": [
+        "20"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 69,
+      "kind": "section_or_appendix",
+      "printed": "II",
+      "labels": [
+        "sec:model"
+      ],
+      "aux_values": [
+        "II"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 69,
+      "kind": "section_or_appendix",
+      "printed": "III B",
+      "labels": [
+        "sec:results-current"
+      ],
+      "aux_values": [
+        "III\\,B"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 69,
+      "kind": "section_or_appendix",
+      "printed": "VII",
+      "labels": [
+        "sec:discussion"
+      ],
+      "aux_values": [
+        "VII"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 69,
+      "kind": "section_or_appendix",
+      "printed": "D",
+      "labels": [
+        "app:rows"
+      ],
+      "aux_values": [
+        "D"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 75,
+      "kind": "equation",
+      "printed": [
+        "10",
+        "13"
+      ],
+      "labels": [
+        "eq:dm-h2",
+        "eq:dm-evolution"
+      ],
+      "aux_values": [
+        "10",
+        "13"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 75,
+      "kind": "equation",
+      "printed": [
+        "18",
+        "20"
+      ],
+      "labels": [
+        "eq:dr-longitudinal-algebra",
+        "eq:dr-algebra-remainder"
+      ],
+      "aux_values": [
+        "18",
+        "20"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 75,
+      "kind": "section_or_appendix",
+      "printed": "II D",
+      "labels": [
+        "sec:model-gravity"
+      ],
+      "aux_values": [
+        "II\\,D"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 75,
+      "kind": "section_or_appendix",
+      "printed": "III B",
+      "labels": [
+        "sec:results-current"
+      ],
+      "aux_values": [
+        "III\\,B"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 75,
+      "kind": "section_or_appendix",
+      "printed": "IV",
+      "labels": [
+        "sec:star"
+      ],
+      "aux_values": [
+        "IV"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 75,
+      "kind": "section_or_appendix",
+      "printed": "D",
+      "labels": [
+        "app:rows"
+      ],
+      "aux_values": [
+        "D"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 83,
+      "kind": "equation",
+      "printed": [
+        "4"
+      ],
+      "labels": [
+        "eq:dm-hamiltonian"
+      ],
+      "aux_values": [
+        "4"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 83,
+      "kind": "equation",
+      "printed": [
+        "10"
+      ],
+      "labels": [
+        "eq:dm-h2"
+      ],
+      "aux_values": [
+        "10"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 83,
+      "kind": "section_or_appendix",
+      "printed": "II B",
+      "labels": [
+        "sec:model-dictionary"
+      ],
+      "aux_values": [
+        "II\\,B"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 83,
+      "kind": "section_or_appendix",
+      "printed": "II D",
+      "labels": [
+        "sec:model-gravity"
+      ],
+      "aux_values": [
+        "II\\,D"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 83,
+      "kind": "section_or_appendix",
+      "printed": "VII",
+      "labels": [
+        "sec:discussion"
+      ],
+      "aux_values": [
+        "VII"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 89,
+      "kind": "equation",
+      "printed": [
+        "31"
+      ],
+      "labels": [
+        "eq:dr-exterior-coordinates"
+      ],
+      "aux_values": [
+        "31"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 89,
+      "kind": "equation",
+      "printed": [
+        "41",
+        "43",
+        "45"
+      ],
+      "labels": [
+        "eq:sc-mass-radius",
+        "eq:star-dust-control",
+        "eq:star-peeling-control",
+        "eq:sc-clock-exact"
+      ],
+      "aux_values": [
+        "41",
+        "42",
+        "43",
+        "45"
+      ],
+      "decision": "manual_range_or_count"
+    },
+    {
+      "line": 89,
+      "kind": "equation",
+      "printed": [
+        "49"
+      ],
+      "labels": [
+        "eq:sc-approach"
+      ],
+      "aux_values": [
+        "49"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 89,
+      "kind": "equation",
+      "printed": [
+        "C3"
+      ],
+      "labels": [
+        "eq:C-rate"
+      ],
+      "aux_values": [
+        "C3"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 89,
+      "kind": "section_or_appendix",
+      "printed": "III E",
+      "labels": [
+        "sec:results-exterior"
+      ],
+      "aux_values": [
+        "III\\,E"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 89,
+      "kind": "section_or_appendix",
+      "printed": "IV",
+      "labels": [
+        "sec:star"
+      ],
+      "aux_values": [
+        "IV"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 89,
+      "kind": "section_or_appendix",
+      "printed": "IV A",
+      "labels": [
+        "sec:results-lattice"
+      ],
+      "aux_values": [
+        "IV\\,A"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 89,
+      "kind": "section_or_appendix",
+      "printed": "VI",
+      "labels": [
+        "sec:scaling"
+      ],
+      "aux_values": [
+        "VI"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 89,
+      "kind": "section_or_appendix",
+      "printed": "C",
+      "labels": [
+        "app:charge"
+      ],
+      "aux_values": [
+        "C"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 95,
+      "kind": "equation",
+      "printed": [
+        "2",
+        "4"
+      ],
+      "labels": [
+        "eq:dm-average",
+        "eq:dm-hamiltonian"
+      ],
+      "aux_values": [
+        "2",
+        "4"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 95,
+      "kind": "equation",
+      "printed": [
+        "14"
+      ],
+      "labels": [
+        "eq:dr-boundary-variation"
+      ],
+      "aux_values": [
+        "14"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 95,
+      "kind": "equation",
+      "printed": [
+        "30",
+        "33"
+      ],
+      "labels": [
+        "eq:dr-exterior",
+        "eq:dr-average-generator"
+      ],
+      "aux_values": [
+        "30",
+        "33"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 95,
+      "kind": "equation",
+      "printed": [
+        "40"
+      ],
+      "labels": [
+        "eq:page-share"
+      ],
+      "aux_values": [
+        "40"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 95,
+      "kind": "equation",
+      "printed": [
+        "B1",
+        "B4"
+      ],
+      "labels": [
+        "eq:B-axial",
+        "eq:B-massive",
+        "eq:B-gapcert",
+        "eq:B-transfer"
+      ],
+      "aux_values": [
+        "B1",
+        "B2",
+        "B3",
+        "B4"
+      ],
+      "decision": "manual_range_or_count"
+    },
+    {
+      "line": 95,
+      "kind": "equation",
+      "printed": [
+        "C1",
+        "C4"
+      ],
+      "labels": [
+        "eq:C-generator",
+        "eq:C-average"
+      ],
+      "aux_values": [
+        "C1",
+        "C4"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 95,
+      "kind": "section_or_appendix",
+      "printed": "II B",
+      "labels": [
+        "sec:model-dictionary"
+      ],
+      "aux_values": [
+        "II\\,B"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 95,
+      "kind": "section_or_appendix",
+      "printed": "II E",
+      "labels": [
+        "sec:model-operators"
+      ],
+      "aux_values": [
+        "II\\,E"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 95,
+      "kind": "section_or_appendix",
+      "printed": "III C",
+      "labels": [
+        "sec:results-vacuum"
+      ],
+      "aux_values": [
+        "III\\,C"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 95,
+      "kind": "section_or_appendix",
+      "printed": "III E",
+      "labels": [
+        "sec:results-exterior"
+      ],
+      "aux_values": [
+        "III\\,E"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 95,
+      "kind": "section_or_appendix",
+      "printed": "III G",
+      "labels": [
+        "sec:results-firstlaw"
+      ],
+      "aux_values": [
+        "III\\,G"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 95,
+      "kind": "section_or_appendix",
+      "printed": "IV A",
+      "labels": [
+        "sec:results-lattice"
+      ],
+      "aux_values": [
+        "IV\\,A"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 95,
+      "kind": "section_or_appendix",
+      "printed": "V",
+      "labels": [
+        "sec:page"
+      ],
+      "aux_values": [
+        "V"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 95,
+      "kind": "section_or_appendix",
+      "printed": "B",
+      "labels": [
+        "app:local"
+      ],
+      "aux_values": [
+        "B"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 95,
+      "kind": "section_or_appendix",
+      "printed": "C",
+      "labels": [
+        "app:charge"
+      ],
+      "aux_values": [
+        "C"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 101,
+      "kind": "equation",
+      "printed": [
+        "18"
+      ],
+      "labels": [
+        "eq:dr-longitudinal-algebra"
+      ],
+      "aux_values": [
+        "18"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 101,
+      "kind": "equation",
+      "printed": [
+        "22"
+      ],
+      "labels": [
+        "eq:dr-flow-threshold"
+      ],
+      "aux_values": [
+        "22"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 101,
+      "kind": "section_or_appendix",
+      "printed": "II",
+      "labels": [
+        "sec:model"
+      ],
+      "aux_values": [
+        "II"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 101,
+      "kind": "section_or_appendix",
+      "printed": "III B",
+      "labels": [
+        "sec:results-current"
+      ],
+      "aux_values": [
+        "III\\,B"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 101,
+      "kind": "section_or_appendix",
+      "printed": "III C",
+      "labels": [
+        "sec:results-vacuum"
+      ],
+      "aux_values": [
+        "III\\,C"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 101,
+      "kind": "section_or_appendix",
+      "printed": "III D",
+      "labels": [
+        "sec:results-filling"
+      ],
+      "aux_values": [
+        "III\\,D"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 101,
+      "kind": "section_or_appendix",
+      "printed": "IV",
+      "labels": [
+        "sec:star"
+      ],
+      "aux_values": [
+        "IV"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 101,
+      "kind": "section_or_appendix",
+      "printed": "C",
+      "labels": [
+        "app:charge"
+      ],
+      "aux_values": [
+        "C"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 101,
+      "kind": "section_or_appendix",
+      "printed": "D",
+      "labels": [
+        "app:rows"
+      ],
+      "aux_values": [
+        "D"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 107,
+      "kind": "equation",
+      "printed": [
+        "A1",
+        "A5"
+      ],
+      "labels": [
+        "eq:example-exterior",
+        "eq:example-chart",
+        "eq:example-force",
+        "eq:example-ray",
+        "eq:example-ray-correction"
+      ],
+      "aux_values": [
+        "A1",
+        "A2",
+        "A3",
+        "A4",
+        "A5"
+      ],
+      "decision": "manual_range_or_count"
+    },
+    {
+      "line": 107,
+      "kind": "equation",
+      "printed": [
+        "34",
+        "35"
+      ],
+      "labels": [
+        "eq:dr-crossing-ray",
+        "eq:star-crossing-delay"
+      ],
+      "aux_values": [
+        "34",
+        "35"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 107,
+      "kind": "section_or_appendix",
+      "printed": "A",
+      "labels": [
+        "app:example"
+      ],
+      "aux_values": [
+        "A"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 107,
+      "kind": "section_or_appendix",
+      "printed": "III E",
+      "labels": [
+        "sec:results-exterior"
+      ],
+      "aux_values": [
+        "III\\,E"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 115,
+      "kind": "equation",
+      "printed": [
+        "28"
+      ],
+      "labels": [
+        "eq:dr-filling-bound"
+      ],
+      "aux_values": [
+        "28"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 115,
+      "kind": "equation",
+      "printed": [
+        "30"
+      ],
+      "labels": [
+        "eq:dr-exterior"
+      ],
+      "aux_values": [
+        "30"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 115,
+      "kind": "section_or_appendix",
+      "printed": "III D",
+      "labels": [
+        "sec:results-filling"
+      ],
+      "aux_values": [
+        "III\\,D"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 115,
+      "kind": "section_or_appendix",
+      "printed": "III E",
+      "labels": [
+        "sec:results-exterior"
+      ],
+      "aux_values": [
+        "III\\,E"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 115,
+      "kind": "section_or_appendix",
+      "printed": "IV",
+      "labels": [
+        "sec:star"
+      ],
+      "aux_values": [
+        "IV"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 115,
+      "kind": "section_or_appendix",
+      "printed": "V",
+      "labels": [
+        "sec:page"
+      ],
+      "aux_values": [
+        "V"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 115,
+      "kind": "section_or_appendix",
+      "printed": "VII",
+      "labels": [
+        "sec:discussion"
+      ],
+      "aux_values": [
+        "VII"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 121,
+      "kind": "equation",
+      "printed": [
+        "5"
+      ],
+      "labels": [
+        "eq:dm-reference"
+      ],
+      "aux_values": [
+        "5"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 121,
+      "kind": "equation",
+      "printed": [
+        "8",
+        "10"
+      ],
+      "labels": [
+        "eq:dm-density",
+        "eq:dm-gauss",
+        "eq:dm-h2"
+      ],
+      "aux_values": [
+        "8",
+        "9",
+        "10"
+      ],
+      "decision": "manual_range_or_count"
+    },
+    {
+      "line": 121,
+      "kind": "section_or_appendix",
+      "printed": "II C",
+      "labels": [
+        "sec:model-sources"
+      ],
+      "aux_values": [
+        "II\\,C"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 121,
+      "kind": "section_or_appendix",
+      "printed": "II D",
+      "labels": [
+        "sec:model-gravity"
+      ],
+      "aux_values": [
+        "II\\,D"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 121,
+      "kind": "section_or_appendix",
+      "printed": "VII",
+      "labels": [
+        "sec:discussion"
+      ],
+      "aux_values": [
+        "VII"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 121,
+      "kind": "section_or_appendix",
+      "printed": "D",
+      "labels": [
+        "app:rows"
+      ],
+      "aux_values": [
+        "D"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 127,
+      "kind": "equation",
+      "printed": [
+        "13"
+      ],
+      "labels": [
+        "eq:dm-evolution"
+      ],
+      "aux_values": [
+        "13"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 127,
+      "kind": "equation",
+      "printed": [
+        "36",
+        "37"
+      ],
+      "labels": [
+        "eq:sc-ray-temperature",
+        "eq:page-temperature"
+      ],
+      "aux_values": [
+        "36",
+        "37"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 127,
+      "kind": "equation",
+      "printed": [
+        "46",
+        "47"
+      ],
+      "labels": [
+        "eq:sc-luminosity",
+        "eq:page-conditional"
+      ],
+      "aux_values": [
+        "46",
+        "47"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 127,
+      "kind": "section_or_appendix",
+      "printed": "II D",
+      "labels": [
+        "sec:model-gravity"
+      ],
+      "aux_values": [
+        "II\\,D"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 127,
+      "kind": "section_or_appendix",
+      "printed": "III F",
+      "labels": [
+        "sec:results-conversion"
+      ],
+      "aux_values": [
+        "III\\,F"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 127,
+      "kind": "section_or_appendix",
+      "printed": "IV",
+      "labels": [
+        "sec:star"
+      ],
+      "aux_values": [
+        "IV"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 127,
+      "kind": "section_or_appendix",
+      "printed": "V",
+      "labels": [
+        "sec:page"
+      ],
+      "aux_values": [
+        "V"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 127,
+      "kind": "section_or_appendix",
+      "printed": "VI",
+      "labels": [
+        "sec:scaling"
+      ],
+      "aux_values": [
+        "VI"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 133,
+      "kind": "equation",
+      "printed": [
+        "8"
+      ],
+      "labels": [
+        "eq:dm-density"
+      ],
+      "aux_values": [
+        "8"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 133,
+      "kind": "equation",
+      "printed": [
+        "16"
+      ],
+      "labels": [
+        "eq:dr-speeds"
+      ],
+      "aux_values": [
+        "16"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 133,
+      "kind": "equation",
+      "printed": [
+        "29"
+      ],
+      "labels": [
+        "eq:dr-pressure"
+      ],
+      "aux_values": [
+        "29"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 133,
+      "kind": "section_or_appendix",
+      "printed": "II C",
+      "labels": [
+        "sec:model-sources"
+      ],
+      "aux_values": [
+        "II\\,C"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 133,
+      "kind": "section_or_appendix",
+      "printed": "II D",
+      "labels": [
+        "sec:model-gravity"
+      ],
+      "aux_values": [
+        "II\\,D"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 133,
+      "kind": "section_or_appendix",
+      "printed": "II E",
+      "labels": [
+        "sec:model-operators"
+      ],
+      "aux_values": [
+        "II\\,E"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 133,
+      "kind": "section_or_appendix",
+      "printed": "III A",
+      "labels": [
+        "sec:results-cone"
+      ],
+      "aux_values": [
+        "III\\,A"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 133,
+      "kind": "section_or_appendix",
+      "printed": "III D",
+      "labels": [
+        "sec:results-filling"
+      ],
+      "aux_values": [
+        "III\\,D"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 133,
+      "kind": "section_or_appendix",
+      "printed": "IV A",
+      "labels": [
+        "sec:results-lattice"
+      ],
+      "aux_values": [
+        "IV\\,A"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 133,
+      "kind": "section_or_appendix",
+      "printed": "V",
+      "labels": [
+        "sec:page"
+      ],
+      "aux_values": [
+        "V"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 139,
+      "kind": "equation",
+      "printed": [
+        "30"
+      ],
+      "labels": [
+        "eq:dr-exterior"
+      ],
+      "aux_values": [
+        "30"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 139,
+      "kind": "section_or_appendix",
+      "printed": "I",
+      "labels": [
+        "sec:introduction"
+      ],
+      "aux_values": [
+        "I"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 139,
+      "kind": "section_or_appendix",
+      "printed": "III E",
+      "labels": [
+        "sec:results-exterior"
+      ],
+      "aux_values": [
+        "III\\,E"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 145,
+      "kind": "equation",
+      "printed": [
+        "40"
+      ],
+      "labels": [
+        "eq:page-share"
+      ],
+      "aux_values": [
+        "40"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 145,
+      "kind": "section_or_appendix",
+      "printed": "II E",
+      "labels": [
+        "sec:model-operators"
+      ],
+      "aux_values": [
+        "II\\,E"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 145,
+      "kind": "section_or_appendix",
+      "printed": "III G",
+      "labels": [
+        "sec:results-firstlaw"
+      ],
+      "aux_values": [
+        "III\\,G"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 145,
+      "kind": "section_or_appendix",
+      "printed": "IV",
+      "labels": [
+        "sec:star"
+      ],
+      "aux_values": [
+        "IV"
+      ],
+      "decision": "match"
+    },
+    {
+      "line": 145,
+      "kind": "section_or_appendix",
+      "printed": "VII",
+      "labels": [
+        "sec:discussion"
+      ],
+      "aux_values": [
+        "VII"
+      ],
+      "decision": "match"
+    }
+  ],
+  "lexical_hits": [
+    {
+      "line": 43,
+      "token": "declared"
+    }
+  ],
+  "coverage_limit": "Unlabelled references, range/count ambiguities, title/claim/source meaning and PDF binding require the assigned pair; a lexical hit is not itself a scope violation"
+}

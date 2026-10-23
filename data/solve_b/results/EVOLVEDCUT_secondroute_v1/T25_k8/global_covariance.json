@@ -1,0 +1,26 @@
+{
+  "raw": {
+    "entropy": null,
+    "dimension": 2048,
+    "minimum": 0.9999999463972667,
+    "maximum": 1.00000005366537,
+    "rounding_tolerance": 2.910383201860153e-11,
+    "outside_count": 1025,
+    "clipping_displacement": 2.3324239025290794e-05,
+    "valid": false,
+    "covariance_gate": "rejected",
+    "borderline_policy": "leave unresolved; no beta adjudication performed"
+  },
+  "polar_control": {
+    "entropy": 3.6292135996954284e-09,
+    "dimension": 2048,
+    "minimum": 0.999999999998474,
+    "maximum": 1.000000000001462,
+    "rounding_tolerance": 2.910383045677625e-11,
+    "outside_count": 1030,
+    "clipping_displacement": 1.2195378040757987e-10,
+    "valid": true,
+    "covariance_gate": "accepted",
+    "borderline_policy": "leave unresolved; no beta adjudication performed"
+  }
+}

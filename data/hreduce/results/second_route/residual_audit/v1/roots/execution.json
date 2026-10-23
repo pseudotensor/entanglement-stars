@@ -1,0 +1,55 @@
+{
+  "status": "finished",
+  "purpose": "Task5 finite saved-root and raw-gate allocation",
+  "producer_sha256": "dd437a92695c8f3069421d342a1eca07d1d04914be13dac37622d349aa9d5ebc",
+  "wrapper_sha256": "ba0e7ebb6034ea2dafc29dbe8c3e04e36fc7dd3fa255889dea79dd4e0bff9842",
+  "command": [
+    "timeout",
+    "--foreground",
+    "-s",
+    "KILL",
+    "600s",
+    "nice",
+    "-n",
+    "10",
+    "taskset",
+    "-c",
+    "4,5,6,7",
+    "<internal>/python",
+    "<internal>/audit_saved_roots_v1.py"
+  ],
+  "wrapper_pid": 2866573,
+  "environment_settings": {
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4",
+    "NUMEXPR_NUM_THREADS": "4",
+    "VECLIB_MAXIMUM_THREADS": "4",
+    "BLIS_NUM_THREADS": "4",
+    "CUDA_VISIBLE_DEVICES": "",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "resources": {
+    "wall_seconds": 600,
+    "cpu_seconds": 2400,
+    "threads": 4,
+    "address_space_bytes": 2147483648,
+    "internal_deadline_seconds": 580
+  },
+  "child_pid": 2866580,
+  "exit_code": 0,
+  "elapsed_seconds": 36.28761104866862,
+  "maximum_child_rss_kib": 209396,
+  "summary.json": {
+    "size": 81970,
+    "sha256": "5795ce5eb5f70e8b9f2b7ff42ec009c49ba393e80a0015c865751e3e2266556b"
+  },
+  "stdout.log": {
+    "size": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stderr.log": {
+    "size": 622,
+    "sha256": "ae39db930a2bbedfe9627f09898e00201fe929e7b399f31ea1bd0fa2519bcdb4"
+  }
+}

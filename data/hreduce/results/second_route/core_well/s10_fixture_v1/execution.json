@@ -1,0 +1,59 @@
+{
+  "specification_snapshots": {
+    "<internal>/CORE_missing_work_spec_v1.tex": "7953ae8f1d02a0f25fdba6840bfc24f5add6842b99230c9817073ca1d2b17a58",
+    "<internal>/redteam_CORE_missing_work_spec_v1.tex": "c635f4690e4a6022350542be41e2fcd30737e1036096e274834d5e240840c420"
+  },
+  "status": "finished",
+  "purpose": "Task3 missing13site S10 fixture",
+  "producer_sha256": "3c939f6e7fd97748ec2fbbbb8d2fa0453ebc0f672ed93b05aa5d91addfe9aeb9",
+  "wrapper_sha256": "2e7842254b77c40203d22154770e0805375e0049587db35f915323ff352c0801",
+  "command": [
+    "timeout",
+    "--foreground",
+    "-s",
+    "KILL",
+    "600s",
+    "nice",
+    "-n",
+    "10",
+    "taskset",
+    "-c",
+    "4,5,6,7",
+    "<internal>/python",
+    "<internal>/s10_fixture_v1.py"
+  ],
+  "wrapper_pid": 1293471,
+  "environment_settings": {
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4",
+    "NUMEXPR_NUM_THREADS": "4",
+    "VECLIB_MAXIMUM_THREADS": "4",
+    "BLIS_NUM_THREADS": "4",
+    "CUDA_VISIBLE_DEVICES": "",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "resources": {
+    "wall_seconds": 600,
+    "cpu_seconds": 2400,
+    "threads": 4,
+    "address_space_bytes": 4294967296,
+    "internal_deadline_seconds": 580
+  },
+  "child_pid": 1293506,
+  "exit_code": 0,
+  "elapsed_seconds": 5.335526999086142,
+  "maximum_child_rss_kib": 72444,
+  "s10_result.json": {
+    "size": 40451,
+    "sha256": "af1cce4ba37410b89b5a5318dfb7f1847e7289f9cf5516b43f5bcc1af11b8ca7"
+  },
+  "stdout.log": {
+    "size": 212,
+    "sha256": "c657294e8930f54fff2a4385b07c50e6160dc0dc62e5c763dde2252d965bb019"
+  },
+  "stderr.log": {
+    "size": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

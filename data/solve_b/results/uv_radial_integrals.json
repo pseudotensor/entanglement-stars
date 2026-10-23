@@ -1,0 +1,195 @@
+{
+  "scope": "Separate UV-suppressing uniform-dispersion pilot; not the current strand-A sine law and not a derivation of its inhomogeneous polar response or matched gravitational coefficient.",
+  "parameters": {
+    "Omega": 1.0,
+    "mass_squared": [
+      0.0,
+      0.5,
+      0.5,
+      1.0
+    ],
+    "orientations": [
+      1,
+      -1,
+      -1,
+      1
+    ],
+    "uniform_energy": "sqrt(m_s^2+p^2+p^8), Omega=1"
+  },
+  "definition": "I_n=(1/(2pi^2)) integral_0^infinity p^(2+n) sum_s eta_s/sqrt(m_s^2+p^2+p^8) dp",
+  "cancellation_method": "Exact rectangle mass squares and 40/70-digit mpmath evaluation of the grouped sum before binary64 adaptive quadrature.",
+  "precision_passes": [
+    {
+      "mpmath_decimal_digits": 40,
+      "rows": [
+        {
+          "n": 0,
+          "I_n": 0.005236768646278504,
+          "quad_estimated_absolute_error": 2.0036501884190561e-13,
+          "segments": [
+            {
+              "lower": 0.0,
+              "upper": 1.0,
+              "value": 0.005133053652206208,
+              "quad_estimated_absolute_error": 5.698834351357195e-17
+            },
+            {
+              "lower": 1.0,
+              "upper": 10.0,
+              "value": 0.00010371499407229615,
+              "quad_estimated_absolute_error": 2.0030803042422642e-13
+            },
+            {
+              "lower": 10.0,
+              "upper": "infinity",
+              "value": 5.587554616333212e-21,
+              "quad_estimated_absolute_error": 7.416563420592959e-23
+            }
+          ]
+        },
+        {
+          "n": 2,
+          "I_n": 0.0014472745635478687,
+          "quad_estimated_absolute_error": 3.798086003994193e-17,
+          "segments": [
+            {
+              "lower": 0.0,
+              "upper": 1.0,
+              "value": 0.0013215757442102472,
+              "quad_estimated_absolute_error": 1.4672438200225928e-17
+            },
+            {
+              "lower": 1.0,
+              "upper": 10.0,
+              "value": 0.00012569881933762085,
+              "quad_estimated_absolute_error": 2.3301319308366165e-17
+            },
+            {
+              "lower": 10.0,
+              "upper": "infinity",
+              "value": 6.33256085526916e-19,
+              "quad_estimated_absolute_error": 7.102531349832179e-21
+            }
+          ]
+        },
+        {
+          "n": 4,
+          "I_n": 0.0007620286767690202,
+          "quad_estimated_absolute_error": 3.942134149791273e-17,
+          "segments": [
+            {
+              "lower": 0.0,
+              "upper": 1.0,
+              "value": 0.0006045619347287091,
+              "quad_estimated_absolute_error": 3.738281309546664e-17
+            },
+            {
+              "lower": 1.0,
+              "upper": 10.0,
+              "value": 0.00015746674204023797,
+              "quad_estimated_absolute_error": 1.775519561730002e-18
+            },
+            {
+              "lower": 10.0,
+              "upper": "infinity",
+              "value": 7.306803628285291e-17,
+              "quad_estimated_absolute_error": 2.630088407160868e-19
+            }
+          ]
+        }
+      ],
+      "uniform_proxy_24_I0_NOT_matched_trace_coefficient": 0.12568244751068408,
+      "I2_over_I0": 0.2763678637161813,
+      "I4_over_I0": 0.1455150548440886
+    },
+    {
+      "mpmath_decimal_digits": 70,
+      "rows": [
+        {
+          "n": 0,
+          "I_n": 0.005236768646278504,
+          "quad_estimated_absolute_error": 2.0036501884190561e-13,
+          "segments": [
+            {
+              "lower": 0.0,
+              "upper": 1.0,
+              "value": 0.005133053652206208,
+              "quad_estimated_absolute_error": 5.698834351357195e-17
+            },
+            {
+              "lower": 1.0,
+              "upper": 10.0,
+              "value": 0.00010371499407229615,
+              "quad_estimated_absolute_error": 2.0030803042422642e-13
+            },
+            {
+              "lower": 10.0,
+              "upper": "infinity",
+              "value": 5.587554616333212e-21,
+              "quad_estimated_absolute_error": 7.416563420592959e-23
+            }
+          ]
+        },
+        {
+          "n": 2,
+          "I_n": 0.0014472745635478687,
+          "quad_estimated_absolute_error": 3.798086003994193e-17,
+          "segments": [
+            {
+              "lower": 0.0,
+              "upper": 1.0,
+              "value": 0.0013215757442102472,
+              "quad_estimated_absolute_error": 1.4672438200225928e-17
+            },
+            {
+              "lower": 1.0,
+              "upper": 10.0,
+              "value": 0.00012569881933762085,
+              "quad_estimated_absolute_error": 2.3301319308366165e-17
+            },
+            {
+              "lower": 10.0,
+              "upper": "infinity",
+              "value": 6.33256085526916e-19,
+              "quad_estimated_absolute_error": 7.102531349832179e-21
+            }
+          ]
+        },
+        {
+          "n": 4,
+          "I_n": 0.0007620286767690202,
+          "quad_estimated_absolute_error": 3.942134149791273e-17,
+          "segments": [
+            {
+              "lower": 0.0,
+              "upper": 1.0,
+              "value": 0.0006045619347287091,
+              "quad_estimated_absolute_error": 3.738281309546664e-17
+            },
+            {
+              "lower": 1.0,
+              "upper": 10.0,
+              "value": 0.00015746674204023797,
+              "quad_estimated_absolute_error": 1.775519561730002e-18
+            },
+            {
+              "lower": 10.0,
+              "upper": "infinity",
+              "value": 7.306803628285291e-17,
+              "quad_estimated_absolute_error": 2.630088407160868e-19
+            }
+          ]
+        }
+      ],
+      "uniform_proxy_24_I0_NOT_matched_trace_coefficient": 0.12568244751068408,
+      "I2_over_I0": 0.2763678637161813,
+      "I4_over_I0": 0.1455150548440886
+    }
+  ],
+  "precision_differences_absolute": {
+    "0": 0.0,
+    "2": 0.0,
+    "4": 0.0
+  },
+  "caveat": "Adaptive quadrature error estimates are not interval certificates. The full A_Omega dictionary and ruler derivatives are not implemented; additional source terms may alter the trace coefficient. No Newton scale or entropy comparison is inferred."
+}

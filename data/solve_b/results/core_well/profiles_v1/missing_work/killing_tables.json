@@ -1,0 +1,1196 @@
+{
+  "conventions": {
+    "a": 1,
+    "b_hat": 1.019803902718557,
+    "bin_labels": [
+      "(-inf,-b_hat]",
+      "(-b_hat,-mu]",
+      "(-mu,0]",
+      "(0,mu]",
+      "(mu,b_hat]",
+      "(b_hat,inf)"
+    ],
+    "declared_rs_over_a": 64,
+    "limits": "no shell Killing allocation, asymptotic bound-sector proof, escape, sea spectrum, time evolution or independent numerical-reading clearance",
+    "mu": 0.2,
+    "scope": "GLOBAL positive count weights and SIGNED global energies for matched joint-polar dust on the APPLIED complete finite-parent h",
+    "sum_order": "ordinary Python binary64 sum in ascending k=1,...,5",
+    "ties": "existing searchsorted(side='left'); finite-edge ties end the lower bin; zero is index2",
+    "units": "dimensionless count and a-times-Killing-energy; energy signs retained",
+    "weights": "16k once; stored bins already include f; no normalization"
+  },
+  "formatter_execution": {
+    "address_space_bytes": 134217728,
+    "affinity": [
+      4
+    ],
+    "completion_requires_actual_outer_exit_zero": true,
+    "external_one_cpu_cpu_ceiling_seconds": 10,
+    "internal_alarm_seconds": 8,
+    "nice": 10,
+    "peak_rss_before_final_save_kib": 16704,
+    "producer_path": "<internal>/format_core_well_spectra_v1.py",
+    "producer_sha256": "6ca6524a49ca90c7aa0e21547492225bed2359c202581007a96a32c2d1d7458c",
+    "required_external_default_group_wall_seconds": 10,
+    "sampled_elapsed_before_final_save_seconds": 0.003834020346403122,
+    "separate_formatting_allocation": true,
+    "timing_scope": "sample excludes final JSON encoding/save; no whole-process measured-time claim"
+  },
+  "missing_work_completion": {
+    "closed_prior_charged_wall_seconds": 899.9093604981899,
+    "closed_prior_cpu_upper_bound": 1220.1546343991404,
+    "closed_prior_local_reserve_flag": false,
+    "completed_new_joint_actions": 12,
+    "completed_new_spectral_actions": 13,
+    "order": "all missing joint/FFT and three matched summaries, then only missing spectra",
+    "prior_execution_path": "<internal>/execution.json",
+    "prior_execution_sha256": "1f49c90f8b83093e44b92632ebafbeb61c65bc4fd2f3ad99ae730916e1af16bc",
+    "prior_result_path": "<internal>/core_well_profiles_v1.json",
+    "prior_result_sha256": "93024674443168e17c357cc7917ab3f789330ceaff19ecbc0d8f021a16927e9c",
+    "remaining_joint_actions": 12,
+    "remaining_spectral_actions": 13,
+    "reused_completed_products": [
+      "eigensystem_T16_k01.npz",
+      "eigensystem_T16_k02.npz",
+      "joint_T16_k01.npz",
+      "joint_T16_k02.npz",
+      "joint_T16_k03.npz",
+      "raw_T12.npz",
+      "raw_T15.npz",
+      "raw_T16.npz",
+      "spectral_T16_k01.npz",
+      "spectral_T16_k02.npz"
+    ],
+    "separately_bounded_allocation": true
+  },
+  "purpose": "original L terminal global Killing-bin table",
+  "rows": [
+    {
+      "T_over_a": 1024,
+      "T_over_rs": 16,
+      "a_times_killing_energy": -1.4912200412934665e-05,
+      "bin_index_0based": 0,
+      "bin_label": "(-inf,-b_hat]",
+      "count": 1.422115055501251e-05
+    },
+    {
+      "T_over_a": 1024,
+      "T_over_rs": 16,
+      "a_times_killing_energy": -0.004548355600998882,
+      "bin_index_0based": 1,
+      "bin_label": "(-b_hat,-mu]",
+      "count": 0.00753785743333963
+    },
+    {
+      "T_over_a": 1024,
+      "T_over_rs": 16,
+      "a_times_killing_energy": -0.001143495688169022,
+      "bin_index_0based": 2,
+      "bin_label": "(-mu,0]",
+      "count": 0.012724347711924374
+    },
+    {
+      "T_over_a": 1024,
+      "T_over_rs": 16,
+      "a_times_killing_energy": 48.19974759260258,
+      "bin_index_0based": 3,
+      "bin_label": "(0,mu]",
+      "count": 639.6199308124429
+    },
+    {
+      "T_over_a": 1024,
+      "T_over_rs": 16,
+      "a_times_killing_energy": 0.0759589909333359,
+      "bin_index_0based": 4,
+      "bin_label": "(mu,b_hat]",
+      "count": 0.35979273266636697
+    },
+    {
+      "T_over_a": 1024,
+      "T_over_rs": 16,
+      "a_times_killing_energy": 3.1241061874546355e-08,
+      "bin_index_0based": 5,
+      "bin_label": "(b_hat,inf)",
+      "count": 2.8595590613619332e-08
+    },
+    {
+      "T_over_a": 768,
+      "T_over_rs": 12,
+      "a_times_killing_energy": -1.0698026701576437e-09,
+      "bin_index_0based": 0,
+      "bin_label": "(-inf,-b_hat]",
+      "count": 9.376564869347285e-10
+    },
+    {
+      "T_over_a": 768,
+      "T_over_rs": 12,
+      "a_times_killing_energy": -7.367262721378638e-05,
+      "bin_index_0based": 1,
+      "bin_label": "(-b_hat,-mu]",
+      "count": 0.00021042685805345096
+    },
+    {
+      "T_over_a": 768,
+      "T_over_rs": 12,
+      "a_times_killing_energy": -2.165773623069953e-05,
+      "bin_index_0based": 2,
+      "bin_label": "(-mu,0]",
+      "count": 0.00014275342161554447
+    },
+    {
+      "T_over_a": 768,
+      "T_over_rs": 12,
+      "a_times_killing_energy": 95.65504467948513,
+      "bin_index_0based": 3,
+      "bin_label": "(0,mu]",
+      "count": 633.5291167590572
+    },
+    {
+      "T_over_a": 768,
+      "T_over_rs": 12,
+      "a_times_killing_energy": 1.392192234633926,
+      "bin_index_0based": 4,
+      "bin_label": "(mu,b_hat]",
+      "count": 6.470530037830429
+    },
+    {
+      "T_over_a": 768,
+      "T_over_rs": 12,
+      "a_times_killing_energy": 2.4527947214352834e-08,
+      "bin_index_0based": 5,
+      "bin_label": "(b_hat,inf)",
+      "count": 2.189503187993919e-08
+    },
+    {
+      "T_over_a": 960,
+      "T_over_rs": 15,
+      "a_times_killing_energy": -1.5006167880263736e-05,
+      "bin_index_0based": 0,
+      "bin_label": "(-inf,-b_hat]",
+      "count": 1.4322249130613994e-05
+    },
+    {
+      "T_over_a": 960,
+      "T_over_rs": 15,
+      "a_times_killing_energy": -0.004407345625391626,
+      "bin_index_0based": 1,
+      "bin_label": "(-b_hat,-mu]",
+      "count": 0.007287675951649357
+    },
+    {
+      "T_over_a": 960,
+      "T_over_rs": 15,
+      "a_times_killing_energy": -0.000814281389281214,
+      "bin_index_0based": 2,
+      "bin_label": "(-mu,0]",
+      "count": 0.012369937022594717
+    },
+    {
+      "T_over_a": 960,
+      "T_over_rs": 15,
+      "a_times_killing_energy": 39.967463690182896,
+      "bin_index_0based": 3,
+      "bin_label": "(0,mu]",
+      "count": 639.7841898870251
+    },
+    {
+      "T_over_a": 960,
+      "T_over_rs": 15,
+      "a_times_killing_energy": 0.0417800090741441,
+      "bin_index_0based": 4,
+      "bin_label": "(mu,b_hat]",
+      "count": 0.19613814923163367
+    },
+    {
+      "T_over_a": 960,
+      "T_over_rs": 15,
+      "a_times_killing_energy": 3.116682741735034e-08,
+      "bin_index_0based": 5,
+      "bin_label": "(b_hat,inf)",
+      "count": 2.8520325488160894e-08
+    }
+  ],
+  "slices": {
+    "12": {
+      "arithmetic_checks": {
+        "saved_matched_count": 640.0,
+        "sum_six_counts": 640.0,
+        "sum_six_energy_bins": 97.04714160721376,
+        "weighted_channel_count": 640.0000000000002,
+        "weighted_signed_count_completeness": -2.6290081223123707e-13,
+        "weighted_signed_direct_energy": 97.0471416072138,
+        "weighted_signed_energy_completeness": -6.483702463810914e-14
+      },
+      "channels": [
+        {
+          "count_bins": [
+            4.608507497549089e-13,
+            1.7009674006118424e-06,
+            4.100497549992314e-06,
+            4.948097993373298,
+            0.05189620516125824,
+            4.3150061625970626e-14
+          ],
+          "energy_bins": [
+            -4.78970776847913e-13,
+            -5.090513328868168e-07,
+            -5.811836460188142e-07,
+            0.6754178448781453,
+            0.011188923724006603,
+            4.4524843802382885e-14
+          ],
+          "k": 1,
+          "matched_count": 5.00000000000001,
+          "occupation_metadata": {
+            "f": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "n_dust": 5,
+            "occupation_domain": true,
+            "raw_count": 5.000000000000044,
+            "stored_gram_max": 1.887379141862766e-14,
+            "weight": 16.0
+          },
+          "spectral_diagnostics": {
+            "count_completeness": 8.881784197001252e-16,
+            "direct_energy": 0.6866056783667381,
+            "edge_membership_certified": false,
+            "eigensystem_path": "<internal>/eigensystem_T12_k01.npz",
+            "eigensystem_sha256": "1d593525d81555f799372ff35032ecc4c761e312381e7b340adaf5698836591f",
+            "energy_completeness": 3.3306690738754696e-16,
+            "max_eigen_residual": 1.4487269531191143e-14,
+            "min_distance_to_edge": [
+              2.7526828772828082e-05,
+              1.570958618457574e-05,
+              0.0854573397854659,
+              1.5709586184853297e-05,
+              2.7526828772828082e-05
+            ],
+            "reconstruction_max": 2.4147350785597155e-15,
+            "site_completeness_max": 7.771561172376096e-16
+          },
+          "weight_applied_once": 16.0
+        },
+        {
+          "count_bins": [
+            2.384216908236379e-11,
+            1.4907453307892205e-06,
+            1.6354672299531072e-06,
+            3.9548786930630135,
+            0.045118180065593184,
+            6.349874676014869e-10
+          ],
+          "energy_bins": [
+            -2.588184543588871e-11,
+            -4.4845277565386897e-07,
+            -2.554193651671769e-07,
+            0.565023125251568,
+            0.00971752008532582,
+            6.897719033168603e-10
+          ],
+          "k": 2,
+          "matched_count": 3.999999999999998,
+          "occupation_metadata": {
+            "f": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "n_dust": 4,
+            "occupation_domain": true,
+            "raw_count": 4.000000000000032,
+            "stored_gram_max": 1.7985612998927536e-14,
+            "weight": 32.0
+          },
+          "spectral_diagnostics": {
+            "count_completeness": -4.440892098500626e-16,
+            "direct_energy": 0.5747399421286432,
+            "edge_membership_certified": false,
+            "eigensystem_path": "<internal>/eigensystem_T12_k02.npz",
+            "eigensystem_sha256": "fcf0660fb8984af6aefb785f49e989fdce346ff10a2a76348daaa098ed9af198",
+            "energy_completeness": -2.220446049250313e-16,
+            "max_eigen_residual": 1.419124781768594e-14,
+            "min_distance_to_edge": [
+              1.2481319329626928e-05,
+              7.141894530826587e-06,
+              0.08898895411979706,
+              7.141894530909854e-06,
+              1.2481319329404883e-05
+            ],
+            "reconstruction_max": 1.3494192617357808e-15,
+            "site_completeness_max": 4.996003610813204e-16
+          },
+          "weight_applied_once": 32.0
+        },
+        {
+          "count_bins": [
+            2.5520527010427663e-12,
+            1.0605291478109426e-06,
+            4.233673195537231e-07,
+            2.9657556351216487,
+            0.03424288094843263,
+            3.0895316943525913e-11
+          ],
+          "energy_bins": [
+            -3.83555924904664e-12,
+            -3.595453172175472e-07,
+            -7.07960048447753e-08,
+            0.4426861590331365,
+            0.007371874393369872,
+            4.901376355491386e-11
+          ],
+          "k": 3,
+          "matched_count": 2.9999999999999982,
+          "occupation_metadata": {
+            "f": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "n_dust": 3,
+            "occupation_domain": true,
+            "raw_count": 3.0000000000000044,
+            "stored_gram_max": 2.591737991382417e-14,
+            "weight": 48.0
+          },
+          "spectral_diagnostics": {
+            "count_completeness": -2.6645352591003757e-15,
+            "direct_energy": 0.4500576031303629,
+            "edge_membership_certified": false,
+            "eigensystem_path": "<internal>/eigensystem_T12_k03.npz",
+            "eigensystem_sha256": "a1730d09dcd87ee11172a9a64b6820cfe920efc57e0356f51313df5d11a2fe83",
+            "energy_completeness": -3.885780586188048e-16,
+            "max_eigen_residual": 1.4710561483087114e-14,
+            "min_distance_to_edge": [
+              9.772455001222369e-06,
+              4.0809466052699195e-05,
+              0.09444366934514206,
+              4.080946605281022e-05,
+              9.77245500077828e-06
+            ],
+            "reconstruction_max": 2.2443004664161924e-15,
+            "site_completeness_max": 6.245004513516506e-16
+          },
+          "weight_applied_once": 48.0
+        },
+        {
+          "count_bins": [
+            3.748420661808626e-13,
+            6.258238454537722e-07,
+            6.327261212077784e-08,
+            1.9777116617544266,
+            0.022287649147363416,
+            1.3789598140562075e-12
+          ],
+          "energy_bins": [
+            -4.3585794616254294e-13,
+            -2.23365802197498e-07,
+            -1.106499520171627e-08,
+            0.3121783738246658,
+            0.0047930370918149905,
+            1.53019973701002e-12
+          ],
+          "k": 4,
+          "matched_count": 2.000000000000002,
+          "occupation_metadata": {
+            "f": [
+              1.0,
+              1.0
+            ],
+            "n_dust": 2,
+            "occupation_domain": true,
+            "raw_count": 2.000000000000029,
+            "stored_gram_max": 3.10862446959344e-14,
+            "weight": 64.0
+          },
+          "spectral_diagnostics": {
+            "count_completeness": -4.440892098500626e-16,
+            "direct_energy": 0.3169711764867779,
+            "edge_membership_certified": false,
+            "eigensystem_path": "<internal>/eigensystem_T12_k04.npz",
+            "eigensystem_sha256": "300f59ea54154d757eccc06070d7d33785dcc56048a7464cc359da9a88b85c1f",
+            "energy_completeness": -2.7755575615628914e-16,
+            "max_eigen_residual": 1.4518420555084338e-14,
+            "min_distance_to_edge": [
+              4.370738800352214e-05,
+              8.609932352196537e-05,
+              0.10116261071693088,
+              8.609932352185434e-05,
+              4.370738800352214e-05
+            ],
+            "reconstruction_max": 1.5867710504294825e-15,
+            "site_completeness_max": 2.636779683484747e-16
+          },
+          "weight_applied_once": 64.0
+        },
+        {
+          "count_bins": [
+            2.6056303021725934e-13,
+            5.56867548180497e-07,
+            5.492886785744159e-09,
+            1.9859201731118195,
+            0.014079264527441123,
+            4.392342895939556e-14
+          ],
+          "energy_bins": [
+            -2.7397914088746184e-13,
+            -2.4529663124489206e-07,
+            -9.876285448723274e-10,
+            0.3192408449376934,
+            0.003020055844518509,
+            4.9255961349468724e-14
+          ],
+          "k": 5,
+          "matched_count": 2.000000000000001,
+          "occupation_metadata": {
+            "f": [
+              1.0,
+              1.0
+            ],
+            "n_dust": 2,
+            "occupation_domain": true,
+            "raw_count": 1.9999999999999714,
+            "stored_gram_max": 1.809663543497383e-14,
+            "weight": 80.0
+          },
+          "spectral_diagnostics": {
+            "count_completeness": -1.3322676295501878e-15,
+            "direct_energy": 0.3222606544977276,
+            "edge_membership_certified": false,
+            "eigensystem_path": "<internal>/eigensystem_T12_k05.npz",
+            "eigensystem_sha256": "20b055e4aefec9f0df74e058635fdd6416b874662bd9a04641fc7c9c9cfbb0b4",
+            "energy_completeness": -3.3306690738754696e-16,
+            "max_eigen_residual": 1.4608911886284433e-14,
+            "min_distance_to_edge": [
+              8.77637899745487e-05,
+              3.569791642196729e-05,
+              0.10867708351060182,
+              3.569791642182851e-05,
+              8.776378997410461e-05
+            ],
+            "reconstruction_max": 1.4970010298222869e-15,
+            "site_completeness_max": 2.0122792321330962e-16
+          },
+          "weight_applied_once": 80.0
+        }
+      ],
+      "count_bins": [
+        9.376564869347285e-10,
+        0.00021042685805345096,
+        0.00014275342161554447,
+        633.5291167590572,
+        6.470530037830429,
+        2.189503187993919e-08
+      ],
+      "energy_bins": [
+        -1.0698026701576437e-09,
+        -7.367262721378638e-05,
+        -2.165773623069953e-05,
+        95.65504467948513,
+        1.392192234633926,
+        2.4527947214352834e-08
+      ]
+    },
+    "15": {
+      "arithmetic_checks": {
+        "saved_matched_count": 640.0000000000003,
+        "sum_six_counts": 640.0000000000005,
+        "sum_six_energy_bins": 40.00400709724131,
+        "weighted_channel_count": 640.0000000000002,
+        "weighted_signed_count_completeness": 7.105427357601002e-14,
+        "weighted_signed_direct_energy": 40.00400709724133,
+        "weighted_signed_energy_completeness": -7.993605777301127e-15
+      },
+      "channels": [
+        {
+          "count_bins": [
+            1.5759666435551167e-07,
+            3.249407131486767e-05,
+            0.0006713109533755077,
+            4.996129802449883,
+            0.003166234560376213,
+            3.6839126744944455e-10
+          ],
+          "energy_bins": [
+            -1.6513003879748338e-07,
+            -1.9685121272011695e-05,
+            -4.275504015537097e-05,
+            0.2759760749662326,
+            0.0006628182644124865,
+            4.023178136015568e-10
+          ],
+          "k": 1,
+          "matched_count": 5.000000000000003,
+          "occupation_metadata": {
+            "f": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "n_dust": 5,
+            "occupation_domain": true,
+            "raw_count": 4.99999999977323,
+            "stored_gram_max": 8.482973878898292e-09,
+            "weight": 16.0
+          },
+          "spectral_diagnostics": {
+            "count_completeness": 0.0,
+            "direct_energy": 0.27657628834149683,
+            "edge_membership_certified": false,
+            "eigensystem_path": "<internal>/eigensystem_T15_k01.npz",
+            "eigensystem_sha256": "19a6a93f49b14a3df588532192a089dd5626b9ca3c7de1af56a7ddebf4d0f78b",
+            "energy_completeness": -2.7755575615628914e-16,
+            "max_eigen_residual": 1.4260472107244697e-14,
+            "min_distance_to_edge": [
+              0.0001872788713779272,
+              0.0001420054718758168,
+              0.00949309179915153,
+              0.00014200547187609436,
+              0.0001872788713783713
+            ],
+            "reconstruction_max": 1.501658444737462e-15,
+            "site_completeness_max": 5.828670879282072e-16
+          },
+          "weight_applied_once": 16.0
+        },
+        {
+          "count_bins": [
+            1.1837835173139693e-07,
+            3.3911041228382376e-05,
+            4.416033180855396e-05,
+            3.9986045469354266,
+            0.0013172630405847512,
+            2.726022707771741e-10
+          ],
+          "energy_bins": [
+            -1.2400652229006778e-07,
+            -2.0397087479274677e-05,
+            -3.40854012831589e-06,
+            0.2177760174545407,
+            0.0002804822100110563,
+            2.9777484278032614e-10
+          ],
+          "k": 2,
+          "matched_count": 4.0000000000000036,
+          "occupation_metadata": {
+            "f": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "n_dust": 4,
+            "occupation_domain": true,
+            "raw_count": 3.999999995275607,
+            "stored_gram_max": 7.684594516277343e-09,
+            "weight": 32.0
+          },
+          "spectral_diagnostics": {
+            "count_completeness": -8.881784197001252e-16,
+            "direct_energy": 0.21803257032819676,
+            "edge_membership_certified": false,
+            "eigensystem_path": "<internal>/eigensystem_T15_k02.npz",
+            "eigensystem_sha256": "85229d2d7f9011c77a4068466bae44bc576bd24ef5dcabddf6e73bccdd87e5fb",
+            "energy_completeness": -2.7755575615628914e-17,
+            "max_eigen_residual": 1.4508999505557982e-14,
+            "min_distance_to_edge": [
+              0.00017805793968150851,
+              7.3386193445434955e-06,
+              0.012049081043000526,
+              7.338619344710029e-06,
+              0.00017805793968150851
+            ],
+            "reconstruction_max": 1.1571944911433191e-15,
+            "site_completeness_max": 3.3306690738754696e-16
+          },
+          "weight_applied_once": 32.0
+        },
+        {
+          "count_bins": [
+            8.268140317284745e-08,
+            3.364281490005494e-05,
+            3.275626124930519e-06,
+            2.9992296282462187,
+            0.0007333704939655226,
+            1.3739038569883422e-10
+          ],
+          "energy_bins": [
+            -8.659125581600243e-08,
+            -2.05176283489993e-05,
+            -2.8846815882926757e-07,
+            0.17508433778420568,
+            0.0001560134338241768,
+            1.5019790864762016e-10
+          ],
+          "k": 3,
+          "matched_count": 2.9999999999999996,
+          "occupation_metadata": {
+            "f": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "n_dust": 3,
+            "occupation_domain": true,
+            "raw_count": 2.9999999841741247,
+            "stored_gram_max": 8.834174725080857e-09,
+            "weight": 48.0
+          },
+          "spectral_diagnostics": {
+            "count_completeness": 1.3322676295501878e-15,
+            "direct_energy": 0.17521945868046415,
+            "edge_membership_certified": false,
+            "eigensystem_path": "<internal>/eigensystem_T15_k03.npz",
+            "eigensystem_sha256": "9bb390578866e0e30d1c00e3a5509ab67aed8c3cc9286d98b7728d5e648f9a76",
+            "energy_completeness": -1.3877787807814457e-16,
+            "max_eigen_residual": 1.452204142081057e-14,
+            "min_distance_to_edge": [
+              0.00016285631889356722,
+              5.1915363450061314e-05,
+              0.016153603030518108,
+              5.191536345033887e-05,
+              0.00016285631889334518
+            ],
+            "reconstruction_max": 1.4765992313558848e-15,
+            "site_completeness_max": 2.914335439641036e-16
+          },
+          "weight_applied_once": 48.0
+        },
+        {
+          "count_bins": [
+            2.9772272103200275e-08,
+            2.5550775397927738e-05,
+            5.571493212769048e-07,
+            1.999583602899175,
+            0.00039025933715477334,
+            6.668048036249618e-11
+          ],
+          "energy_bins": [
+            -3.1250313872804006e-08,
+            -1.5229011575784618e-05,
+            -6.035964036633934e-08,
+            0.12215216733601408,
+            8.424755886145289e-05,
+            7.297261419689446e-11
+          ],
+          "k": 4,
+          "matched_count": 2.000000000000001,
+          "occupation_metadata": {
+            "f": [
+              1.0,
+              1.0
+            ],
+            "n_dust": 2,
+            "occupation_domain": true,
+            "raw_count": 1.9999999912637283,
+            "stored_gram_max": 6.1696362463337096e-09,
+            "weight": 64.0
+          },
+          "spectral_diagnostics": {
+            "count_completeness": 0.0,
+            "direct_energy": 0.12222109434631816,
+            "edge_membership_certified": false,
+            "eigensystem_path": "<internal>/eigensystem_T15_k04.npz",
+            "eigensystem_sha256": "85789b4ff86014ec595390bb40ce57cf0c43119487cb0dbea4c36a7e4e0b2a58",
+            "energy_completeness": -4.163336342344337e-17,
+            "max_eigen_residual": 1.451325870319585e-14,
+            "min_distance_to_edge": [
+              0.00014168557770410928,
+              2.3595912946539066e-05,
+              0.021488434834805874,
+              2.3595912946372533e-05,
+              0.0001416855777036652
+            ],
+            "reconstruction_max": 1.415262216750919e-15,
+            "site_completeness_max": 3.0531133177191805e-16
+          },
+          "weight_applied_once": 64.0
+        },
+        {
+          "count_bins": [
+            2.673078098274513e-08,
+            3.0406409382915327e-05,
+            2.8679425193100335e-07,
+            1.9994299350565952,
+            0.0005393449709831455,
+            3.800629109195518e-11
+          ],
+          "energy_bins": [
+            -2.7993477239928248e-08,
+            -1.850217480125584e-05,
+            -4.272467602399238e-08,
+            0.15451533761288877,
+            0.00011648746915621305,
+            4.15150063383498e-11
+          ],
+          "k": 5,
+          "matched_count": 2.0,
+          "occupation_metadata": {
+            "f": [
+              1.0,
+              1.0
+            ],
+            "n_dust": 2,
+            "occupation_domain": true,
+            "raw_count": 1.9999999784756135,
+            "stored_gram_max": 1.166110574768453e-08,
+            "weight": 80.0
+          },
+          "spectral_diagnostics": {
+            "count_completeness": 4.440892098500626e-16,
+            "direct_energy": 0.15461325223060554,
+            "edge_membership_certified": false,
+            "eigensystem_path": "<internal>/eigensystem_T15_k05.npz",
+            "eigensystem_sha256": "7cce5104e77fe3dcc04f2e236adac9c04f5a14285ed245acb2582ec6e03d03b0",
+            "energy_completeness": 8.326672684688674e-17,
+            "max_eigen_residual": 1.43850622841138e-14,
+            "min_distance_to_edge": [
+              0.00011456023598910292,
+              6.581031922880953e-05,
+              0.027844877222663964,
+              6.581031922875402e-05,
+              0.00011456023598888088
+            ],
+            "reconstruction_max": 1.0902737046514233e-15,
+            "site_completeness_max": 1.249000902703301e-16
+          },
+          "weight_applied_once": 80.0
+        }
+      ],
+      "count_bins": [
+        1.4322249130613994e-05,
+        0.007287675951649357,
+        0.012369937022594717,
+        639.7841898870251,
+        0.19613814923163367,
+        2.8520325488160894e-08
+      ],
+      "energy_bins": [
+        -1.5006167880263736e-05,
+        -0.004407345625391626,
+        -0.000814281389281214,
+        39.967463690182896,
+        0.0417800090741441,
+        3.116682741735034e-08
+      ]
+    },
+    "16": {
+      "arithmetic_checks": {
+        "saved_matched_count": 640.0000000000008,
+        "sum_six_counts": 640.0000000000007,
+        "sum_six_energy_bins": 48.269999851287395,
+        "weighted_channel_count": 640.0000000000007,
+        "weighted_signed_count_completeness": -1.7763568394002505e-14,
+        "weighted_signed_direct_energy": 48.26999985128743,
+        "weighted_signed_energy_completeness": -2.6645352591003757e-14
+      },
+      "channels": [
+        {
+          "count_bins": [
+            1.597865844685555e-07,
+            3.4209859371464294e-05,
+            0.0006772483019835501,
+            4.996134971837166,
+            0.0031534098460753693,
+            3.6882942347317775e-10
+          ],
+          "energy_bins": [
+            -1.674320582301185e-07,
+            -2.0653881549299633e-05,
+            -5.9919058888929764e-05,
+            0.35042304455874146,
+            0.0007163961879443118,
+            4.027463201517688e-10
+          ],
+          "k": 1,
+          "matched_count": 5.000000000000006,
+          "occupation_metadata": {
+            "f": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "n_dust": 5,
+            "occupation_domain": true,
+            "raw_count": 5.000000000000052,
+            "stored_gram_max": 2.0650148258027912e-14,
+            "weight": 16.0
+          },
+          "spectral_diagnostics": {
+            "count_completeness": 3.552713678800501e-15,
+            "direct_energy": 0.3510587007769355,
+            "edge_membership_certified": false,
+            "eigensystem_path": "<internal>/eigensystem_T16_k01.npz",
+            "eigensystem_sha256": "16b31c807bfd634e972ba28721dfbe67905e767875e8a4d2e504a921069e71c4",
+            "energy_completeness": 1.6653345369377348e-16,
+            "max_eigen_residual": 1.4188390922974637e-14,
+            "min_distance_to_edge": [
+              0.0001394556803435698,
+              4.9330307606010315e-06,
+              0.02885132402804967,
+              4.933030760462254e-06,
+              0.00013945568034379185
+            ],
+            "reconstruction_max": 1.3961495968248967e-15,
+            "site_completeness_max": 4.440892098500626e-16
+          },
+          "weight_applied_once": 16.0
+        },
+        {
+          "count_bins": [
+            1.1811287305493944e-07,
+            3.5520518456460284e-05,
+            4.777600797716836e-05,
+            3.9988006672746095,
+            0.001115917813160947,
+            2.729280698785214e-10
+          ],
+          "energy_bins": [
+            -1.2377826071988282e-07,
+            -2.1344037868430066e-05,
+            -4.651368760211069e-06,
+            0.2723592322650355,
+            0.00024406986066910692,
+            2.980903672250297e-10
+          ],
+          "k": 2,
+          "matched_count": 4.000000000000006,
+          "occupation_metadata": {
+            "f": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "n_dust": 4,
+            "occupation_domain": true,
+            "raw_count": 3.999999999999999,
+            "stored_gram_max": 1.8762769116165146e-14,
+            "weight": 32.0
+          },
+          "spectral_diagnostics": {
+            "count_completeness": -1.7763568394002505e-15,
+            "direct_energy": 0.27257718323890623,
+            "edge_membership_certified": false,
+            "eigensystem_path": "<internal>/eigensystem_T16_k02.npz",
+            "eigensystem_sha256": "27a98032df7b2974f692e4b2a2381582de8332ec566655a6afec91c5b20490af",
+            "energy_completeness": -3.3306690738754696e-16,
+            "max_eigen_residual": 1.4381269717902775e-14,
+            "min_distance_to_edge": [
+              0.00014744282928425,
+              5.295754147421894e-05,
+              0.03173145315561569,
+              5.295754147427445e-05,
+              0.00014744282928447205
+            ],
+            "reconstruction_max": 1.4734002284896296e-15,
+            "site_completeness_max": 5.273559366969494e-16
+          },
+          "weight_applied_once": 32.0
+        },
+        {
+          "count_bins": [
+            8.254668990646598e-08,
+            3.497160059297681e-05,
+            5.113446742817679e-06,
+            2.998994882566787,
+            0.0009649497014908316,
+            1.3770122838903686e-10
+          ],
+          "energy_bins": [
+            -8.649120724991146e-08,
+            -2.129019646619812e-05,
+            -4.876861464274991e-07,
+            0.21419990792804558,
+            0.00020210826144089307,
+            1.5050270782595656e-10
+          ],
+          "k": 3,
+          "matched_count": 3.000000000000003,
+          "occupation_metadata": {
+            "f": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "n_dust": 3,
+            "occupation_domain": true,
+            "raw_count": 3.000000000000045,
+            "stored_gram_max": 2.316999641094094e-14,
+            "weight": 48.0
+          },
+          "spectral_diagnostics": {
+            "count_completeness": 2.6645352591003757e-15,
+            "direct_energy": 0.21438015196616897,
+            "edge_membership_certified": false,
+            "eigensystem_path": "<internal>/eigensystem_T16_k03.npz",
+            "eigensystem_sha256": "eb84508d99f1a873575c3d8e1f6b0028454082e8bedb41c93bdfa0314d6d5a30",
+            "energy_completeness": 3.3306690738754696e-16,
+            "max_eigen_residual": 1.444084812152047e-14,
+            "min_distance_to_edge": [
+              0.00016089769283800237,
+              2.148068923668589e-05,
+              0.036014444597099536,
+              2.1480689236574868e-05,
+              0.00016089769283778033
+            ],
+            "reconstruction_max": 1.13969088034579e-15,
+            "site_completeness_max": 3.0531133177191805e-16
+          },
+          "weight_applied_once": 48.0
+        },
+        {
+          "count_bins": [
+            2.8109361601930596e-08,
+            2.6530242353653986e-05,
+            1.1706940797452938e-06,
+            1.9988341343689788,
+            0.0011381365183028515,
+            6.692795037038378e-11
+          ],
+          "energy_bins": [
+            -2.9560044661766737e-08,
+            -1.577190066083123e-05,
+            -1.156715153576932e-07,
+            0.14651080637023134,
+            0.00023592434106457482,
+            7.321501556142327e-11
+          ],
+          "k": 4,
+          "matched_count": 2.0000000000000058,
+          "occupation_metadata": {
+            "f": [
+              1.0,
+              1.0
+            ],
+            "n_dust": 2,
+            "occupation_domain": true,
+            "raw_count": 2.0000000000000204,
+            "stored_gram_max": 2.6201263382578847e-14,
+            "weight": 64.0
+          },
+          "spectral_diagnostics": {
+            "count_completeness": -8.881784197001252e-16,
+            "direct_energy": 0.14673081365229043,
+            "edge_membership_certified": false,
+            "eigensystem_path": "<internal>/eigensystem_T16_k04.npz",
+            "eigensystem_sha256": "e0950510b08ff4824e97b3bd16772b37beb05d603fa726903dbac8b230e2d69a",
+            "energy_completeness": -3.3306690738754696e-16,
+            "max_eigen_residual": 1.4307147838481878e-14,
+            "min_distance_to_edge": [
+              0.00017981926692312022,
+              7.394106800862055e-05,
+              0.041351329952939,
+              7.394106800850953e-05,
+              0.00017981926692334227
+            ],
+            "reconstruction_max": 1.3353179736535836e-15,
+            "site_completeness_max": 4.996003610813204e-16
+          },
+          "weight_applied_once": 64.0
+        },
+        {
+          "count_bins": [
+            2.654641259654543e-08,
+            3.096588442115914e-05,
+            4.89659501990471e-07,
+            1.998037636843004,
+            0.0019308810283133542,
+            3.834467269446842e-11
+          ],
+          "energy_bins": [
+            -2.7862029148346218e-08,
+            -1.8794415146870223e-05,
+            -6.41879200997395e-08,
+            0.17773995323675731,
+            0.00039857577509399796,
+            4.185422536675125e-11
+          ],
+          "k": 5,
+          "matched_count": 1.9999999999999987,
+          "occupation_metadata": {
+            "f": [
+              1.0,
+              1.0
+            ],
+            "n_dust": 2,
+            "occupation_domain": true,
+            "raw_count": 1.999999999999981,
+            "stored_gram_max": 1.487698868973801e-14,
+            "weight": 80.0
+          },
+          "spectral_diagnostics": {
+            "count_completeness": -1.1102230246251565e-15,
+            "direct_energy": 0.1781196425886096,
+            "edge_membership_certified": false,
+            "eigensystem_path": "<internal>/eigensystem_T16_k05.npz",
+            "eigensystem_sha256": "42374f0418986e1670ecda9c79a49aa22f2e87cee39cd6edd26aeabc6af7e4b5",
+            "energy_completeness": -1.6653345369377348e-16,
+            "max_eigen_residual": 1.4049622608766715e-14,
+            "min_distance_to_edge": [
+              0.00018199580528310833,
+              9.433959797133795e-06,
+              0.04755926747502066,
+              9.433959797022773e-06,
+              0.00018199580528355241
+            ],
+            "reconstruction_max": 1.1370473920057825e-15,
+            "site_completeness_max": 1.6653345369377348e-16
+          },
+          "weight_applied_once": 80.0
+        }
+      ],
+      "count_bins": [
+        1.422115055501251e-05,
+        0.00753785743333963,
+        0.012724347711924374,
+        639.6199308124429,
+        0.35979273266636697,
+        2.8595590613619332e-08
+      ],
+      "energy_bins": [
+        -1.4912200412934665e-05,
+        -0.004548355600998882,
+        -0.001143495688169022,
+        48.19974759260258,
+        0.0759589909333359,
+        3.1241061874546355e-08
+      ]
+    }
+  },
+  "source": {
+    "path": "<internal>/core_well_profiles_v1.json",
+    "sha256": "add2f39892240fe6f5ae0b1887c42b85459df7677d7e7ef4d14d4f93c7eff25c",
+    "size": 123910
+  },
+  "source_execution": {
+    "all_attempts_charged_cpu_upper_bound": 7621.32092539914,
+    "all_attempts_charged_wall_upper_bound": 5262.8687191307545,
+    "child_cpu_seconds": 6397.109923,
+    "child_pid": 3896249,
+    "child_timeout_seconds": 5939.998277761042,
+    "closed_prior_charged_wall_seconds": 899.9093604981899,
+    "closed_prior_cpu_upper_bound": 1220.1546343991404,
+    "closed_prior_local_reserve_flag": false,
+    "command": [
+      "timeout",
+      "--foreground",
+      "-s",
+      "KILL",
+      "5939.998277761042s",
+      "nice",
+      "-n",
+      "10",
+      "taskset",
+      "-c",
+      "0,1,2,3",
+      "<internal>/python",
+      "<internal>/finish_core_well_profiles_v1.py"
+    ],
+    "elapsed_seconds_before_final_save": 4361.9593586325645,
+    "environment_settings": {
+      "BLIS_NUM_THREADS": "4",
+      "CUDA_VISIBLE_DEVICES": "",
+      "MKL_NUM_THREADS": "4",
+      "NUMEXPR_NUM_THREADS": "4",
+      "OMP_NUM_THREADS": "4",
+      "OPENBLAS_NUM_THREADS": "4",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "QI2_CORE_WELL_CHILD_DEADLINE": "17952606.84320875",
+      "VECLIB_MAXIMUM_THREADS": "4"
+    },
+    "exit_code": 0,
+    "maximum_child_rss_kib": 625400,
+    "new_allocation_charged_cpu_upper_bound": 6401.166291,
+    "new_allocation_charged_wall_seconds": 4362.9593586325645,
+    "new_allocation_with_final_save_reserve_respected": true,
+    "preflight": {
+      "data_free_bytes": 723696062464,
+      "load_average": [
+        43.2451171875,
+        41.1279296875,
+        40.18603515625
+      ],
+      "mem_available_bytes": 572045373440,
+      "root_free_bytes": 133340499968
+    },
+    "prior_execution_path": "<internal>/execution.json",
+    "prior_execution_sha256": "1f49c90f8b83093e44b92632ebafbeb61c65bc4fd2f3ad99ae730916e1af16bc",
+    "producer_sha256": "a6a13f3935d7cd937eaf59e42e242285341a5210fe5b0f60467f6a232f8ccacc",
+    "producer_status": "completed",
+    "purpose": "same owner66 L target; exact missing work only",
+    "resources": {
+      "accounting_scope": "external default whole-wrapper 6000s guard; shared four-CPU affinity",
+      "address_space_bytes": 1610612736,
+      "child_reserve_scope": "nominal 60s reserve; relative-timeout launch latency may reduce it",
+      "child_scheduling_deadline_monotonic": 17952606.84320875,
+      "cpu_seconds": 24000,
+      "cpu_threads": 4,
+      "cuda": "disabled",
+      "finalization_window_seconds": 60,
+      "last_atomic_save_reserve_seconds": 1,
+      "new_spectrum_minimum_seconds": 420,
+      "nice": 10,
+      "separate_allocation": true,
+      "wall_seconds": 6000
+    },
+    "result_identity": {
+      "path": "<internal>/core_well_profiles_v1.json",
+      "sha256": "add2f39892240fe6f5ae0b1887c42b85459df7677d7e7ef4d14d4f93c7eff25c",
+      "size": 123910
+    },
+    "rss_scope": "fresh wrapper; maximum over this sole command and descendants",
+    "selected_cpus": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "started_unix": 1792348536.0481277,
+    "status": "finished",
+    "stderr_bytes": 233,
+    "stderr_path": "<internal>/profiles.stderr.log",
+    "stderr_sha256": "a46360aff8d68bedea198d08377e037fc1385dc24d6af85632426ec46047e6ca",
+    "stderr_tail": "<internal>/core_well_profiles_v1.py:397: RuntimeWarning: divide by zero encountered in divide\n  edge_slope[valid_edges] = np.diff(np.log(N))[valid_edges] / np.diff(np.log(cumulative))[valid_edges]\n",
+    "stdout_bytes": 0,
+    "stdout_path": "<internal>/profiles.stdout.log",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_tail": "",
+    "termination_rule": "missing final record or outer timeout is uncertain; never retry automatically",
+    "wrapper_cpu_seconds_before_final_save": 0.056368,
+    "wrapper_pid": 3895878,
+    "wrapper_sha256": "4f1874155efd82d70666c323d806173797d3afb095cb0e5c5aa2da1b3ecae9ab"
+  },
+  "source_execution_identity": {
+    "path": "<internal>/execution.json",
+    "sha256": "f0e698a51993ef98ff9ad28a59078dc89f7f0b8e2ca19b68bbee0a2d15a6f11f",
+    "size": 3930
+  },
+  "source_resources": {
+    "address_space_bytes": 1610612736,
+    "cpu_seconds": 24000,
+    "finalization_window_seconds": 60,
+    "spectral_start_minimum_seconds": 420,
+    "threads": 4,
+    "wall_seconds": 6000
+  },
+  "status": "completed",
+  "tag": "N",
+  "unknown_errors": {
+    "evolution": null,
+    "exact_historical_writer": null,
+    "fields": null,
+    "reference_history": null,
+    "spectral_membership": null,
+    "storage": null
+  }
+}

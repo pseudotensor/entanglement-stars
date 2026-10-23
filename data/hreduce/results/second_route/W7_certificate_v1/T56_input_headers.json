@@ -1,0 +1,1204 @@
+{
+  "scope": "Read-only ZIP/NPY headers and primitive clock metadata only; no numerical array action",
+  "path": "<internal>/orbitals_c19_rs64_A_R2_tau8_ell4_avg_ext100_T0056.00.npz",
+  "sha256_previously_read": "d495b84f65b5605c2ea1de2df8e8ffe0bf1897f5295778a80af49b8d38c53c1e",
+  "sha256_recomputed_here": false,
+  "members": [
+    {
+      "name": "T.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<f8",
+        "fortran_order": false,
+        "shape": []
+      },
+      "uncompressed_bytes": 136,
+      "compressed_bytes": 136,
+      "crc": 4125393620,
+      "primitive_scalar": 3584.0
+    },
+    {
+      "name": "rs.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<f8",
+        "fortran_order": false,
+        "shape": []
+      },
+      "uncompressed_bytes": 136,
+      "compressed_bytes": 136,
+      "crc": 1307389029,
+      "primitive_scalar": 64.0
+    },
+    {
+      "name": "N_applied.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<f8",
+        "fortran_order": false,
+        "shape": [
+          2048
+        ]
+      },
+      "uncompressed_bytes": 16512,
+      "compressed_bytes": 16512,
+      "crc": 696659892
+    },
+    {
+      "name": "v_applied.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<f8",
+        "fortran_order": false,
+        "shape": [
+          2048
+        ]
+      },
+      "uncompressed_bytes": 16512,
+      "compressed_bytes": 16512,
+      "crc": 359262827
+    },
+    {
+      "name": "R.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<f8",
+        "fortran_order": false,
+        "shape": [
+          2048
+        ]
+      },
+      "uncompressed_bytes": 16512,
+      "compressed_bytes": 16512,
+      "crc": 2264671595
+    },
+    {
+      "name": "kappas.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<i8",
+        "fortran_order": false,
+        "shape": [
+          10
+        ]
+      },
+      "uncompressed_bytes": 208,
+      "compressed_bytes": 208,
+      "crc": 3248091169
+    },
+    {
+      "name": "weights.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<f8",
+        "fortran_order": false,
+        "shape": [
+          10
+        ]
+      },
+      "uncompressed_bytes": 208,
+      "compressed_bytes": 208,
+      "crc": 1160992520
+    },
+    {
+      "name": "dtype.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<U10",
+        "fortran_order": false,
+        "shape": []
+      },
+      "uncompressed_bytes": 168,
+      "compressed_bytes": 168,
+      "crc": 918415553
+    },
+    {
+      "name": "sea_1.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<c16",
+        "fortran_order": false,
+        "shape": [
+          4096,
+          2048
+        ]
+      },
+      "uncompressed_bytes": 134217856,
+      "compressed_bytes": 134217856,
+      "crc": 2379532535
+    },
+    {
+      "name": "dust_1.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<c16",
+        "fortran_order": false,
+        "shape": [
+          4096,
+          5
+        ]
+      },
+      "uncompressed_bytes": 327808,
+      "compressed_bytes": 327808,
+      "crc": 67023076
+    },
+    {
+      "name": "f_1.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<f8",
+        "fortran_order": false,
+        "shape": [
+          5
+        ]
+      },
+      "uncompressed_bytes": 168,
+      "compressed_bytes": 168,
+      "crc": 1111941181
+    },
+    {
+      "name": "R2_1.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<c16",
+        "fortran_order": false,
+        "shape": [
+          4096,
+          2048
+        ]
+      },
+      "uncompressed_bytes": 134217856,
+      "compressed_bytes": 134217856,
+      "crc": 3400034305
+    },
+    {
+      "name": "e_1.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<f8",
+        "fortran_order": false,
+        "shape": [
+          4096
+        ]
+      },
+      "uncompressed_bytes": 32896,
+      "compressed_bytes": 32896,
+      "crc": 1175938729
+    },
+    {
+      "name": "mask_1.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "|u1",
+        "fortran_order": false,
+        "shape": [
+          512
+        ]
+      },
+      "uncompressed_bytes": 640,
+      "compressed_bytes": 640,
+      "crc": 2631579006
+    },
+    {
+      "name": "sea_2.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<c16",
+        "fortran_order": false,
+        "shape": [
+          4096,
+          2048
+        ]
+      },
+      "uncompressed_bytes": 134217856,
+      "compressed_bytes": 134217856,
+      "crc": 4096949187
+    },
+    {
+      "name": "dust_2.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<c16",
+        "fortran_order": false,
+        "shape": [
+          4096,
+          4
+        ]
+      },
+      "uncompressed_bytes": 262272,
+      "compressed_bytes": 262272,
+      "crc": 1093633487
+    },
+    {
+      "name": "f_2.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<f8",
+        "fortran_order": false,
+        "shape": [
+          4
+        ]
+      },
+      "uncompressed_bytes": 160,
+      "compressed_bytes": 160,
+      "crc": 2567132687
+    },
+    {
+      "name": "R2_2.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<c16",
+        "fortran_order": false,
+        "shape": [
+          4096,
+          2048
+        ]
+      },
+      "uncompressed_bytes": 134217856,
+      "compressed_bytes": 134217856,
+      "crc": 2616699198
+    },
+    {
+      "name": "e_2.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<f8",
+        "fortran_order": false,
+        "shape": [
+          4096
+        ]
+      },
+      "uncompressed_bytes": 32896,
+      "compressed_bytes": 32896,
+      "crc": 2686016599
+    },
+    {
+      "name": "mask_2.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "|u1",
+        "fortran_order": false,
+        "shape": [
+          512
+        ]
+      },
+      "uncompressed_bytes": 640,
+      "compressed_bytes": 640,
+      "crc": 2631579006
+    },
+    {
+      "name": "sea_3.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<c16",
+        "fortran_order": false,
+        "shape": [
+          4096,
+          2048
+        ]
+      },
+      "uncompressed_bytes": 134217856,
+      "compressed_bytes": 134217856,
+      "crc": 1234892556
+    },
+    {
+      "name": "dust_3.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<c16",
+        "fortran_order": false,
+        "shape": [
+          4096,
+          3
+        ]
+      },
+      "uncompressed_bytes": 196736,
+      "compressed_bytes": 196736,
+      "crc": 3816865004
+    },
+    {
+      "name": "f_3.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<f8",
+        "fortran_order": false,
+        "shape": [
+          3
+        ]
+      },
+      "uncompressed_bytes": 152,
+      "compressed_bytes": 152,
+      "crc": 1737770671
+    },
+    {
+      "name": "R2_3.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<c16",
+        "fortran_order": false,
+        "shape": [
+          4096,
+          2048
+        ]
+      },
+      "uncompressed_bytes": 134217856,
+      "compressed_bytes": 134217856,
+      "crc": 3479179343
+    },
+    {
+      "name": "e_3.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<f8",
+        "fortran_order": false,
+        "shape": [
+          4096
+        ]
+      },
+      "uncompressed_bytes": 32896,
+      "compressed_bytes": 32896,
+      "crc": 2338727628
+    },
+    {
+      "name": "mask_3.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "|u1",
+        "fortran_order": false,
+        "shape": [
+          512
+        ]
+      },
+      "uncompressed_bytes": 640,
+      "compressed_bytes": 640,
+      "crc": 2631579006
+    },
+    {
+      "name": "sea_4.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<c16",
+        "fortran_order": false,
+        "shape": [
+          4096,
+          2048
+        ]
+      },
+      "uncompressed_bytes": 134217856,
+      "compressed_bytes": 134217856,
+      "crc": 3184616571
+    },
+    {
+      "name": "dust_4.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<c16",
+        "fortran_order": false,
+        "shape": [
+          4096,
+          2
+        ]
+      },
+      "uncompressed_bytes": 131200,
+      "compressed_bytes": 131200,
+      "crc": 4115443870
+    },
+    {
+      "name": "f_4.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<f8",
+        "fortran_order": false,
+        "shape": [
+          2
+        ]
+      },
+      "uncompressed_bytes": 144,
+      "compressed_bytes": 144,
+      "crc": 1806489204
+    },
+    {
+      "name": "R2_4.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<c16",
+        "fortran_order": false,
+        "shape": [
+          4096,
+          2048
+        ]
+      },
+      "uncompressed_bytes": 134217856,
+      "compressed_bytes": 134217856,
+      "crc": 782004563
+    },
+    {
+      "name": "e_4.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<f8",
+        "fortran_order": false,
+        "shape": [
+          4096
+        ]
+      },
+      "uncompressed_bytes": 32896,
+      "compressed_bytes": 32896,
+      "crc": 204806488
+    },
+    {
+      "name": "mask_4.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "|u1",
+        "fortran_order": false,
+        "shape": [
+          512
+        ]
+      },
+      "uncompressed_bytes": 640,
+      "compressed_bytes": 640,
+      "crc": 2631579006
+    },
+    {
+      "name": "sea_5.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<c16",
+        "fortran_order": false,
+        "shape": [
+          4096,
+          2048
+        ]
+      },
+      "uncompressed_bytes": 134217856,
+      "compressed_bytes": 134217856,
+      "crc": 1620575011
+    },
+    {
+      "name": "dust_5.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<c16",
+        "fortran_order": false,
+        "shape": [
+          4096,
+          2
+        ]
+      },
+      "uncompressed_bytes": 131200,
+      "compressed_bytes": 131200,
+      "crc": 2592017484
+    },
+    {
+      "name": "f_5.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<f8",
+        "fortran_order": false,
+        "shape": [
+          2
+        ]
+      },
+      "uncompressed_bytes": 144,
+      "compressed_bytes": 144,
+      "crc": 1806489204
+    },
+    {
+      "name": "R2_5.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<c16",
+        "fortran_order": false,
+        "shape": [
+          4096,
+          2048
+        ]
+      },
+      "uncompressed_bytes": 134217856,
+      "compressed_bytes": 134217856,
+      "crc": 1664209109
+    },
+    {
+      "name": "e_5.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<f8",
+        "fortran_order": false,
+        "shape": [
+          4096
+        ]
+      },
+      "uncompressed_bytes": 32896,
+      "compressed_bytes": 32896,
+      "crc": 1396606761
+    },
+    {
+      "name": "mask_5.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "|u1",
+        "fortran_order": false,
+        "shape": [
+          512
+        ]
+      },
+      "uncompressed_bytes": 640,
+      "compressed_bytes": 640,
+      "crc": 2631579006
+    },
+    {
+      "name": "sea_6.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<c16",
+        "fortran_order": false,
+        "shape": [
+          4096,
+          2048
+        ]
+      },
+      "uncompressed_bytes": 134217856,
+      "compressed_bytes": 134217856,
+      "crc": 3159490041
+    },
+    {
+      "name": "dust_6.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<c16",
+        "fortran_order": false,
+        "shape": [
+          4096,
+          0
+        ]
+      },
+      "uncompressed_bytes": 128,
+      "compressed_bytes": 128,
+      "crc": 3820071040
+    },
+    {
+      "name": "f_6.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<f8",
+        "fortran_order": false,
+        "shape": [
+          0
+        ]
+      },
+      "uncompressed_bytes": 128,
+      "compressed_bytes": 128,
+      "crc": 1935362102
+    },
+    {
+      "name": "R2_6.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<c16",
+        "fortran_order": false,
+        "shape": [
+          4096,
+          2048
+        ]
+      },
+      "uncompressed_bytes": 134217856,
+      "compressed_bytes": 134217856,
+      "crc": 1157700442
+    },
+    {
+      "name": "e_6.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<f8",
+        "fortran_order": false,
+        "shape": [
+          4096
+        ]
+      },
+      "uncompressed_bytes": 32896,
+      "compressed_bytes": 32896,
+      "crc": 2923959892
+    },
+    {
+      "name": "mask_6.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "|u1",
+        "fortran_order": false,
+        "shape": [
+          512
+        ]
+      },
+      "uncompressed_bytes": 640,
+      "compressed_bytes": 640,
+      "crc": 2631579006
+    },
+    {
+      "name": "sea_7.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<c16",
+        "fortran_order": false,
+        "shape": [
+          4096,
+          2048
+        ]
+      },
+      "uncompressed_bytes": 134217856,
+      "compressed_bytes": 134217856,
+      "crc": 39225299
+    },
+    {
+      "name": "dust_7.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<c16",
+        "fortran_order": false,
+        "shape": [
+          4096,
+          0
+        ]
+      },
+      "uncompressed_bytes": 128,
+      "compressed_bytes": 128,
+      "crc": 3820071040
+    },
+    {
+      "name": "f_7.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<f8",
+        "fortran_order": false,
+        "shape": [
+          0
+        ]
+      },
+      "uncompressed_bytes": 128,
+      "compressed_bytes": 128,
+      "crc": 1935362102
+    },
+    {
+      "name": "R2_7.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<c16",
+        "fortran_order": false,
+        "shape": [
+          4096,
+          2048
+        ]
+      },
+      "uncompressed_bytes": 134217856,
+      "compressed_bytes": 134217856,
+      "crc": 453905991
+    },
+    {
+      "name": "e_7.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<f8",
+        "fortran_order": false,
+        "shape": [
+          4096
+        ]
+      },
+      "uncompressed_bytes": 32896,
+      "compressed_bytes": 32896,
+      "crc": 933196342
+    },
+    {
+      "name": "mask_7.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "|u1",
+        "fortran_order": false,
+        "shape": [
+          512
+        ]
+      },
+      "uncompressed_bytes": 640,
+      "compressed_bytes": 640,
+      "crc": 2631579006
+    },
+    {
+      "name": "sea_8.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<c16",
+        "fortran_order": false,
+        "shape": [
+          4096,
+          2048
+        ]
+      },
+      "uncompressed_bytes": 134217856,
+      "compressed_bytes": 134217856,
+      "crc": 2247949205
+    },
+    {
+      "name": "dust_8.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<c16",
+        "fortran_order": false,
+        "shape": [
+          4096,
+          0
+        ]
+      },
+      "uncompressed_bytes": 128,
+      "compressed_bytes": 128,
+      "crc": 3820071040
+    },
+    {
+      "name": "f_8.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<f8",
+        "fortran_order": false,
+        "shape": [
+          0
+        ]
+      },
+      "uncompressed_bytes": 128,
+      "compressed_bytes": 128,
+      "crc": 1935362102
+    },
+    {
+      "name": "R2_8.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<c16",
+        "fortran_order": false,
+        "shape": [
+          4096,
+          2048
+        ]
+      },
+      "uncompressed_bytes": 134217856,
+      "compressed_bytes": 134217856,
+      "crc": 689089476
+    },
+    {
+      "name": "e_8.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<f8",
+        "fortran_order": false,
+        "shape": [
+          4096
+        ]
+      },
+      "uncompressed_bytes": 32896,
+      "compressed_bytes": 32896,
+      "crc": 125637688
+    },
+    {
+      "name": "mask_8.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "|u1",
+        "fortran_order": false,
+        "shape": [
+          512
+        ]
+      },
+      "uncompressed_bytes": 640,
+      "compressed_bytes": 640,
+      "crc": 2631579006
+    },
+    {
+      "name": "sea_9.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<c16",
+        "fortran_order": false,
+        "shape": [
+          4096,
+          2048
+        ]
+      },
+      "uncompressed_bytes": 134217856,
+      "compressed_bytes": 134217856,
+      "crc": 4187769068
+    },
+    {
+      "name": "dust_9.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<c16",
+        "fortran_order": false,
+        "shape": [
+          4096,
+          0
+        ]
+      },
+      "uncompressed_bytes": 128,
+      "compressed_bytes": 128,
+      "crc": 3820071040
+    },
+    {
+      "name": "f_9.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<f8",
+        "fortran_order": false,
+        "shape": [
+          0
+        ]
+      },
+      "uncompressed_bytes": 128,
+      "compressed_bytes": 128,
+      "crc": 1935362102
+    },
+    {
+      "name": "R2_9.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<c16",
+        "fortran_order": false,
+        "shape": [
+          4096,
+          2048
+        ]
+      },
+      "uncompressed_bytes": 134217856,
+      "compressed_bytes": 134217856,
+      "crc": 3984441634
+    },
+    {
+      "name": "e_9.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<f8",
+        "fortran_order": false,
+        "shape": [
+          4096
+        ]
+      },
+      "uncompressed_bytes": 32896,
+      "compressed_bytes": 32896,
+      "crc": 3590961553
+    },
+    {
+      "name": "mask_9.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "|u1",
+        "fortran_order": false,
+        "shape": [
+          512
+        ]
+      },
+      "uncompressed_bytes": 640,
+      "compressed_bytes": 640,
+      "crc": 2631579006
+    },
+    {
+      "name": "sea_10.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<c16",
+        "fortran_order": false,
+        "shape": [
+          4096,
+          2048
+        ]
+      },
+      "uncompressed_bytes": 134217856,
+      "compressed_bytes": 134217856,
+      "crc": 2567389146
+    },
+    {
+      "name": "dust_10.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<c16",
+        "fortran_order": false,
+        "shape": [
+          4096,
+          0
+        ]
+      },
+      "uncompressed_bytes": 128,
+      "compressed_bytes": 128,
+      "crc": 3820071040
+    },
+    {
+      "name": "f_10.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<f8",
+        "fortran_order": false,
+        "shape": [
+          0
+        ]
+      },
+      "uncompressed_bytes": 128,
+      "compressed_bytes": 128,
+      "crc": 1935362102
+    },
+    {
+      "name": "R2_10.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<c16",
+        "fortran_order": false,
+        "shape": [
+          4096,
+          2048
+        ]
+      },
+      "uncompressed_bytes": 134217856,
+      "compressed_bytes": 134217856,
+      "crc": 2142258168
+    },
+    {
+      "name": "e_10.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "<f8",
+        "fortran_order": false,
+        "shape": [
+          4096
+        ]
+      },
+      "uncompressed_bytes": 32896,
+      "compressed_bytes": 32896,
+      "crc": 3188439285
+    },
+    {
+      "name": "mask_10.npy",
+      "npy_version": [
+        1,
+        0
+      ],
+      "header": {
+        "descr": "|u1",
+        "fortran_order": false,
+        "shape": [
+          512
+        ]
+      },
+      "uncompressed_bytes": 640,
+      "compressed_bytes": 640,
+      "crc": 2631579006
+    }
+  ],
+  "identity_before": {
+    "device": 2048,
+    "inode": 17782107,
+    "size": 2685802106,
+    "mtime_ns": 1792507685252102669,
+    "ctime_ns": 1792507685252102669
+  },
+  "identity_after": {
+    "device": 2048,
+    "inode": 17782107,
+    "size": 2685802106,
+    "mtime_ns": 1792507685252102669,
+    "ctime_ns": 1792507685252102669
+  }
+}

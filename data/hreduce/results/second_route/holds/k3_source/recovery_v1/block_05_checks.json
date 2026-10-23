@@ -1,0 +1,148 @@
+{
+  "method": "original-A-k3-source-four-subactions-1",
+  "index": 5,
+  "columns": [
+    1280,
+    1536
+  ],
+  "completed": true,
+  "endpoints": {
+    "120": {
+      "time": 960,
+      "after_operator_index": 119,
+      "before_operator_index": 120,
+      "source_columns": {
+        "columns": [
+          1280,
+          1536
+        ],
+        "shape": [
+          16384,
+          256
+        ],
+        "dtype": "complex128",
+        "byte_order": "native",
+        "sha256": "c6e0c8511426ba784cc28b4862ff267557d0263880d8385af7e9edc6babf5d00"
+      },
+      "error": {
+        "stored_operator": {
+          "error_upper": 7.616648464493413e-10,
+          "output_norm_upper": 16.000000000762526,
+          "components": {
+            "scaling": 5.667174093202431e-11,
+            "sparse_dot": 5.100456683882201e-10,
+            "recurrence_additions": 1.9077967608390365e-10,
+            "coefficient_product": 3.225586907996056e-12,
+            "coefficient_certificate": 9.421741308213207e-13,
+            "scalar_enclosure": 1.1532576807116493e-25,
+            "tail": 6.3756448684164105e-21
+          }
+        },
+        "model_operator": {
+          "error_upper": 7.695079573332352e-10,
+          "output_norm_upper": 16.00000000077027,
+          "components": {
+            "scaling": 5.667174093203848e-11,
+            "sparse_dot": 5.100456683883483e-10,
+            "recurrence_additions": 1.9077967608395537e-10,
+            "coefficient_product": 3.225586907996929e-12,
+            "coefficient_certificate": 9.421741308215755e-13,
+            "scalar_enclosure": 1.153257680711951e-25,
+            "tail": 6.375644868418131e-21,
+            "operator_assembly": 7.843110883698697e-12
+          }
+        }
+      },
+      "initial_norm_control": {
+        "index": 5,
+        "columns": [
+          1280,
+          1536
+        ],
+        "entry_count": 4194304,
+        "reduction_tree_depth": 22,
+        "squared_norm_measured": 256.0,
+        "squared_norm_lower": 255.99999999999932,
+        "squared_norm_upper": 256.00000000000074,
+        "norm_lower": 15.999999999999977,
+        "norm_upper": 16.000000000000025,
+        "norm_model": "binary64 explicit real products/addition, gamma24; exact/outward scalar bounds",
+        "energy_real": -248.48489118643397,
+        "energy_imaginary": 2.5777667586601604e-18,
+        "energy_error_upper_per_component": 2.809368545147692e-12,
+        "sparse_product_F_error_upper": 4.7886963837744605e-14
+      },
+      "error_scope": "target starts from actual stored seed; producer version/seed difference excluded"
+    },
+    "240": {
+      "time": 1920,
+      "after_operator_index": 239,
+      "before_operator_index": 240,
+      "source_columns": {
+        "columns": [
+          1280,
+          1536
+        ],
+        "shape": [
+          16384,
+          256
+        ],
+        "dtype": "complex128",
+        "byte_order": "native",
+        "sha256": "0962f4a7a2dbb1a17301cf3c9c974d516e57ac5ad87602fb9c83d4dc67ebc708"
+      },
+      "error": {
+        "stored_operator": {
+          "error_upper": 1.2634151636477765e-09,
+          "output_norm_upper": 16.000000001265192,
+          "components": {
+            "scaling": 8.735202893821475e-11,
+            "sparse_dot": 7.861682604439322e-10,
+            "recurrence_additions": 3.8155935217508416e-10,
+            "coefficient_product": 6.451173816115168e-12,
+            "coefficient_certificate": 1.884348261678585e-12,
+            "scalar_enclosure": 2.0219292020443848e-25,
+            "tail": 1.2751289737076048e-20
+          }
+        },
+        "model_operator": {
+          "error_upper": 1.274210803586978e-09,
+          "output_norm_upper": 16.00000000127588,
+          "components": {
+            "scaling": 8.735202893824667e-11,
+            "sparse_dot": 7.86168260444219e-10,
+            "recurrence_additions": 3.81559352175247e-10,
+            "coefficient_product": 6.451173816117903e-12,
+            "coefficient_certificate": 1.8843482616793827e-12,
+            "scalar_enclosure": 2.021929202045191e-25,
+            "tail": 1.2751289737081436e-20,
+            "operator_assembly": 1.0795639938716448e-11
+          }
+        }
+      },
+      "initial_norm_control": {
+        "index": 5,
+        "columns": [
+          1280,
+          1536
+        ],
+        "entry_count": 4194304,
+        "reduction_tree_depth": 22,
+        "squared_norm_measured": 256.0,
+        "squared_norm_lower": 255.99999999999932,
+        "squared_norm_upper": 256.00000000000074,
+        "norm_lower": 15.999999999999977,
+        "norm_upper": 16.000000000000025,
+        "norm_model": "binary64 explicit real products/addition, gamma24; exact/outward scalar bounds",
+        "energy_real": -248.48489118643397,
+        "energy_imaginary": 2.5777667586601604e-18,
+        "energy_error_upper_per_component": 2.809368545147692e-12,
+        "sparse_product_F_error_upper": 4.7886963837744605e-14
+      },
+      "error_scope": "target starts from actual stored seed; producer version/seed difference excluded"
+    }
+  },
+  "source_pass_input_sha256": "045eeca12fcb3b7fac3c3017dbfcd95636013a5bf5a3fc186edf9f74036c10f9",
+  "elapsed_seconds": 1924.4972894340754,
+  "pid": 3466867
+}

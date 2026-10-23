@@ -1,0 +1,108 @@
+\subsection*{What a Hermitian generator fixes}
+Work on a finite graph and finite-dimensional Hilbert space with
+ruler operators $\delta I\le s_x\le MI$, $\delta>0$,
+central real lapses, and a common
+differentiable operator domain.
+Requiring H2's row to be $C_x=\partial_{N_x}H$ for one Hermitian
+generator fixes Hermiticity and the compatibility of mixed
+derivatives.  It does not determine a unique factor ordering.
+
+One explicit counterfamily starts from the scalar polar densities
+$t_x(\psi)$, whose sum is zero, and chooses a linear
+adjoint-preserving lift $T_x=\Phi[t_x;s]$.
+Thus $\sum_xT_x=0$ is an operator identity.
+For $\alpha\in\mathbb R$ set
+\[
+ \begin{aligned}
+ \mathcal M_{s,\alpha}(Y)&=\tfrac12\{s,Y\}+i\alpha[s,Y],\\
+ H[L;s]&=\sum_x\left[
+ \mathcal M_{L_x,\alpha}(T_x)+\sum_rQ_{rx}^\dagger L_xQ_{rx}
+ \right].
+ \end{aligned}
+\]
+All adjoints are Hilbert-space adjoints.
+The matter columns, including their excitation filter, are chosen
+independently of the varied lapse.
+For $L_x=N_xs_x$ the derived row is
+$C_x=\mathcal M_{s_x,\alpha}(T_x)+\mathcal E_x$, where
+$\mathcal E_x=\sum_rQ_{rx}^\dagger s_xQ_{rx}\ge0$.
+The allocation is Hermitian and affine for every $\alpha$, and its
+vacuum part vanishes when all $L_x$ are the same operator.
+
+The inverse of the ruler multiplier is positive for every $\alpha$:
+\[
+ \begin{aligned}
+ \mathcal R_{s,\alpha}(Y)
+ &=\int_0^\infty e^{-u(1/2+i\alpha)s}
+       Y e^{-u(1/2-i\alpha)s}\,du,\\
+ \mathcal M_{s,\alpha}\mathcal R_{s,\alpha}&=1.
+ \end{aligned}
+\]
+Differentiating the integrand proves the inverse identity; each
+integrand is a congruence, so $\mathcal R_{s,\alpha}$ is completely
+positive and has norm at most $\delta^{-1}$.
+In an eigenbasis of $s$ an independent check gives
+\[
+ (\mathcal R_{s,\alpha}Y)_{ij}
+ =\frac{Y_{ij}}{(\lambda_i+\lambda_j)/2+
+                    i\alpha(\lambda_i-\lambda_j)} .
+\]
+[X: convergent Lyapunov integral; spectral matrix-element solution.]
+On strong operator constraints, or a physical subspace reducing all
+rulers and the restricted construction,
+\[
+ -T_x=\mathcal R_{s_x,\alpha}(\mathcal E_x)\ge0.
+\]
+At a unit collar the same-law charge is
+$B=-\sum_I T_x+\sum_{\rm collar}\mathcal E_x\ge0$.
+The weaker condition $C_xP=0$ alone does not justify applying this
+inverse on $P$.
+
+Hermiticity and agreement with $LT$ for commuting factors classify
+every constant-coefficient bilinear $aLT+bTL$:
+$b=\overline a$ and $a+b=1$, giving exactly this $\alpha$ family.
+Its distinct denominators can change the charge spectrum for
+$[s,\mathcal E]\ne0$, as the explicit rank-1 example below verifies.
+Requiring antiunitary time reversal with even $s,T$ selects
+$\alpha=0$ within this class, since it sends $\alpha$ to $-\alpha$.
+That is an additional selecting principle; multiruler lifts and
+matter-column orderings remain unspecified.
+A Hermitian row also does not imply a positive source:
+for $s=\operatorname{diag}(1,2)$ and
+$Y=\tfrac12(1,1)^T(1,1)$, $\{s,Y\}/2$ has eigenvalues
+$(3\pm\sqrt{10})/4$.
+The actual Gram source avoids that failure.
+For the same $s,Y$, the inverse charge has trace $3/4$ and determinant
+$1/8-[4(9/4+\alpha^2)]^{-1}$, so its spectrum varies with $|\alpha|$.
+
+\paragraph*{SOURCES.}
+\begingroup\footnotesize
+\path{<internal>/P26_operator_theory.md},
+actual attachment read completely, especially sections 1--6 and 9:
+trace-first lift, the Hermitian allocation family, positive inverse,
+strong-versus-weak constraint domain and complete source derivative.
+For example $\Phi$ may be the average of a fixed ordered
+multivariable resolvent calculus and its reverse on a compact
+positive spectral box.  Linearity preserves the traced flux identity;
+positivity of arbitrary scalar functions under this lift is not assumed.
+\path{<internal>/STATE.tex},
+the source/bridge [S] operator entry and open problem O5:
+the constructed finite-domain family does not establish a physical
+stellar representation, a scalar-limit error bound or its time law.
+No numerical checks reported by P26 are treated as executions here.
+\endgroup
+% Governing source: <internal>/GOAL_alt.md,
+% duty 4(4). Scalar traces must be formed before this chosen lift.
+% A full trace of |A^dagger|-|A| is zero, but a partial trace is not
+% cyclic for operator-valued entries. An explicit generic witness:
+% on C^2 tensor C^2 take E=I tensor diag(1,2), U=SWAP, A=UE.
+% Then E0=E, E1=diag(1,2) tensor I, and the partial trace over the
+% first factor of E1-E0 is diag(1,-1), although the full trace is zero.
+% This witnesses the invalid inference, not a special H_* polar stencil.
+% For s=diag(1,2), E=(1,1)^T(1,1)/2, the inverse charge has trace
+% 3/4 and determinant 1/8-1/[4(9/4+alpha^2)], so its spectrum
+% depends on alpha even while its positivity is retained.
+% At a collar s_b=I and N_b=1, the vacuum term is T_b and the
+% matter contribution is E_b; retaining it yields the displayed B.
+% Uniqueness of a strong representation and the open-exterior limit
+% are not implied by the positive inverse formula.

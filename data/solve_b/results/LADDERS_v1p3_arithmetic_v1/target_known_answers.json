@@ -1,0 +1,284 @@
+[
+  {
+    "name": "positive below rounding boundary",
+    "actual": {
+      "target": "1.00",
+      "own": 1.0049,
+      "rounding_interval": [
+        "0.995",
+        "1.005"
+      ],
+      "numerical_allowance": "7.10542735760100185871124267578125E-15",
+      "boundary_overlap": false,
+      "status": "agrees"
+    },
+    "expected_status": "agrees",
+    "passed": true
+  },
+  {
+    "name": "positive above rounding boundary",
+    "actual": {
+      "target": "1.00",
+      "own": 1.0051,
+      "rounding_interval": [
+        "0.995",
+        "1.005"
+      ],
+      "numerical_allowance": "7.10542735760100185871124267578125E-15",
+      "boundary_overlap": false,
+      "status": "arithmetic_mismatch"
+    },
+    "expected_status": "arithmetic_mismatch",
+    "passed": true
+  },
+  {
+    "name": "negative below magnitude boundary",
+    "actual": {
+      "target": "-1.00",
+      "own": -1.0049,
+      "rounding_interval": [
+        "-1.005",
+        "-0.995"
+      ],
+      "numerical_allowance": "7.10542735760100185871124267578125E-15",
+      "boundary_overlap": false,
+      "status": "agrees"
+    },
+    "expected_status": "agrees",
+    "passed": true
+  },
+  {
+    "name": "negative above magnitude boundary",
+    "actual": {
+      "target": "-1.00",
+      "own": -1.0051,
+      "rounding_interval": [
+        "-1.005",
+        "-0.995"
+      ],
+      "numerical_allowance": "7.10542735760100185871124267578125E-15",
+      "boundary_overlap": false,
+      "status": "arithmetic_mismatch"
+    },
+    "expected_status": "arithmetic_mismatch",
+    "passed": true
+  },
+  {
+    "name": "scientific notation",
+    "actual": {
+      "target": "6.4e-4",
+      "own": 0.000637,
+      "rounding_interval": [
+        "0.000635",
+        "0.000645"
+      ],
+      "numerical_allowance": "3.4694469519536141888238489627838134765625E-18",
+      "boundary_overlap": false,
+      "status": "agrees"
+    },
+    "expected_status": "agrees",
+    "passed": true
+  },
+  {
+    "name": "integer count exact",
+    "actual": {
+      "target": "1",
+      "own": 1,
+      "rounding_interval": [
+        "0.5",
+        "1.5"
+      ],
+      "numerical_allowance": "0",
+      "boundary_overlap": false,
+      "status": "agrees"
+    },
+    "expected_status": "agrees",
+    "passed": true
+  },
+  {
+    "name": "integer count mismatch",
+    "actual": {
+      "target": "1",
+      "own": 2,
+      "rounding_interval": [
+        "0.5",
+        "1.5"
+      ],
+      "numerical_allowance": "0",
+      "boundary_overlap": false,
+      "status": "arithmetic_mismatch"
+    },
+    "expected_status": "arithmetic_mismatch",
+    "passed": true
+  },
+  {
+    "name": "exact positive tie to even down",
+    "actual": {
+      "target": "1.00",
+      "own": "1.005",
+      "exact_rational": [
+        "201",
+        "200"
+      ],
+      "numerical_allowance": "0",
+      "rounding_interval": [
+        "0.995",
+        "1.005"
+      ],
+      "rounding_tie": true,
+      "tie_policy": "nearest, ties to even",
+      "boundary_overlap": false,
+      "status": "agrees"
+    },
+    "expected_status": "agrees",
+    "passed": true
+  },
+  {
+    "name": "exact positive tie to even up",
+    "actual": {
+      "target": "1.02",
+      "own": "1.015",
+      "exact_rational": [
+        "203",
+        "200"
+      ],
+      "numerical_allowance": "0",
+      "rounding_interval": [
+        "1.015",
+        "1.025"
+      ],
+      "rounding_tie": true,
+      "tie_policy": "nearest, ties to even",
+      "boundary_overlap": false,
+      "status": "agrees"
+    },
+    "expected_status": "agrees",
+    "passed": true
+  },
+  {
+    "name": "exact negative tie to even",
+    "actual": {
+      "target": "-1.00",
+      "own": "-1.005",
+      "exact_rational": [
+        "-201",
+        "200"
+      ],
+      "numerical_allowance": "0",
+      "rounding_interval": [
+        "-1.005",
+        "-0.995"
+      ],
+      "rounding_tie": true,
+      "tie_policy": "nearest, ties to even",
+      "boundary_overlap": false,
+      "status": "agrees"
+    },
+    "expected_status": "agrees",
+    "passed": true
+  },
+  {
+    "name": "odd tie rejected",
+    "actual": {
+      "target": "1.01",
+      "own": "1.005",
+      "exact_rational": [
+        "201",
+        "200"
+      ],
+      "numerical_allowance": "0",
+      "rounding_interval": [
+        "1.005",
+        "1.015"
+      ],
+      "rounding_tie": true,
+      "tie_policy": "nearest, ties to even",
+      "boundary_overlap": false,
+      "status": "arithmetic_mismatch"
+    },
+    "expected_status": "arithmetic_mismatch",
+    "passed": true
+  },
+  {
+    "name": "signed zero",
+    "actual": {
+      "target": "-0.0000",
+      "own": "0",
+      "exact_rational": [
+        "0",
+        "1"
+      ],
+      "numerical_allowance": "0",
+      "rounding_interval": [
+        "-0.00005",
+        "0.00005"
+      ],
+      "rounding_tie": false,
+      "tie_policy": "nearest, ties to even",
+      "boundary_overlap": false,
+      "status": "agrees"
+    },
+    "expected_status": "agrees",
+    "passed": true
+  },
+  {
+    "name": "percentage already scaled",
+    "actual": {
+      "target": "50.0",
+      "own": "50",
+      "exact_rational": [
+        "50",
+        "1"
+      ],
+      "numerical_allowance": "0",
+      "rounding_interval": [
+        "49.95",
+        "50.05"
+      ],
+      "rounding_tie": false,
+      "tie_policy": "nearest, ties to even",
+      "boundary_overlap": false,
+      "status": "agrees"
+    },
+    "expected_status": "agrees",
+    "passed": true
+  },
+  {
+    "name": "unavailable value",
+    "actual": {
+      "target": "1.0",
+      "own": null,
+      "status": "input_unavailable"
+    },
+    "expected_status": "input_unavailable",
+    "passed": true
+  },
+  {
+    "name": "uncertainty touches rounding endpoint",
+    "actual": {
+      "target": "1.0",
+      "own": "1.04",
+      "rounding_interval": [
+        "0.95",
+        "1.05"
+      ],
+      "numerical_allowance": "0.01",
+      "boundary_overlap": true,
+      "status": "definition_unresolved"
+    },
+    "expected_status": "definition_unresolved",
+    "passed": true
+  },
+  {
+    "name": "identifiers and field constants excluded",
+    "passed": true
+  },
+  {
+    "name": "sentence-ending decimal punctuation retained",
+    "passed": true
+  },
+  {
+    "name": "missing scalar differs from formula subtraction",
+    "passed": true
+  }
+]

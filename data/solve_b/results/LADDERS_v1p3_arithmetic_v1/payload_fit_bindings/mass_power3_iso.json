@@ -1,0 +1,1152 @@
+{
+  "old": [
+    {
+      "path": "/fits/mass_power3_iso",
+      "target": {
+        "type": "object",
+        "keys": [
+          "R_t_over_2gE",
+          "R_t_over_rs",
+          "T_f",
+          "members"
+        ],
+        "length": 4
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "old",
+          "path": "",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own_shape": {
+          "type": "object",
+          "keys": [
+            "R_t_over_2gE",
+            "R_t_over_rs",
+            "T_f",
+            "members"
+          ],
+          "length": 4
+        },
+        "target_shape": {
+          "type": "object",
+          "keys": [
+            "R_t_over_2gE",
+            "R_t_over_rs",
+            "T_f",
+            "members"
+          ],
+          "length": 4
+        }
+      }
+    },
+    {
+      "path": "/fits/mass_power3_iso/T_f",
+      "target": {
+        "type": "list",
+        "length": 1
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "old",
+          "path": "T_f",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 1
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 1
+        }
+      }
+    },
+    {
+      "path": "/fits/mass_power3_iso/T_f/0",
+      "target": {
+        "type": "object",
+        "keys": [
+          "A",
+          "Y0",
+          "p"
+        ],
+        "length": 3
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "old",
+          "path": "T_f/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own_shape": {
+          "type": "object",
+          "keys": [
+            "A",
+            "Y0",
+            "p"
+          ],
+          "length": 3
+        },
+        "target_shape": {
+          "type": "object",
+          "keys": [
+            "A",
+            "Y0",
+            "p"
+          ],
+          "length": 3
+        }
+      }
+    },
+    {
+      "path": "/fits/mass_power3_iso/T_f/0/p",
+      "target": {
+        "type": "float",
+        "value": 0.4120681560418129
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "old",
+          "path": "T_f/0/p",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own": {
+          "type": "float",
+          "value": 0.4120681560418133
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-3.88578058618804789148271083831787109375E-16",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/mass_power3_iso/T_f/0/A",
+      "target": {
+        "type": "float",
+        "value": 56.88972699450406
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "old",
+          "path": "T_f/0/A",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own": {
+          "type": "float",
+          "value": 56.88972699450408
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-2.131628207280300557613372802734375E-14",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/mass_power3_iso/T_f/0/Y0",
+      "target": {
+        "type": "float",
+        "value": -0.5365288893711089
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "old",
+          "path": "T_f/0/Y0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own": {
+          "type": "float",
+          "value": -0.5365288893710988
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-1.010302952408892451785504817962646484375E-14",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/mass_power3_iso/R_t_over_rs",
+      "target": {
+        "type": "list",
+        "length": 1
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "old",
+          "path": "R_t_over_rs",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 1
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 1
+        }
+      }
+    },
+    {
+      "path": "/fits/mass_power3_iso/R_t_over_rs/0",
+      "target": {
+        "type": "object",
+        "keys": [
+          "A",
+          "Y0",
+          "p"
+        ],
+        "length": 3
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "old",
+          "path": "R_t_over_rs/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own_shape": {
+          "type": "object",
+          "keys": [
+            "A",
+            "Y0",
+            "p"
+          ],
+          "length": 3
+        },
+        "target_shape": {
+          "type": "object",
+          "keys": [
+            "A",
+            "Y0",
+            "p"
+          ],
+          "length": 3
+        }
+      }
+    },
+    {
+      "path": "/fits/mass_power3_iso/R_t_over_rs/0/p",
+      "target": {
+        "type": "float",
+        "value": -0.5388663279697805
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "old",
+          "path": "R_t_over_rs/0/p",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own": {
+          "type": "float",
+          "value": -0.5388663279697798
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-6.661338147750939242541790008544921875E-16",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/mass_power3_iso/R_t_over_rs/0/A",
+      "target": {
+        "type": "float",
+        "value": -0.022468716448491997
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "old",
+          "path": "R_t_over_rs/0/A",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own": {
+          "type": "float",
+          "value": -0.022468716448492097
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "1.006139616066548114758916199207305908203125E-16",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/mass_power3_iso/R_t_over_rs/0/Y0",
+      "target": {
+        "type": "float",
+        "value": 0.762736881410178
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "old",
+          "path": "R_t_over_rs/0/Y0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own": {
+          "type": "float",
+          "value": 0.7627368814101783
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-2.220446049250313080847263336181640625E-16",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/mass_power3_iso/R_t_over_2gE",
+      "target": {
+        "type": "list",
+        "length": 1
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "old",
+          "path": "R_t_over_2gE",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 1
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 1
+        }
+      }
+    },
+    {
+      "path": "/fits/mass_power3_iso/R_t_over_2gE/0",
+      "target": {
+        "type": "object",
+        "keys": [
+          "A",
+          "Y0",
+          "p"
+        ],
+        "length": 3
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "old",
+          "path": "R_t_over_2gE/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own_shape": {
+          "type": "object",
+          "keys": [
+            "A",
+            "Y0",
+            "p"
+          ],
+          "length": 3
+        },
+        "target_shape": {
+          "type": "object",
+          "keys": [
+            "A",
+            "Y0",
+            "p"
+          ],
+          "length": 3
+        }
+      }
+    },
+    {
+      "path": "/fits/mass_power3_iso/R_t_over_2gE/0/p",
+      "target": {
+        "type": "float",
+        "value": -0.697328413157426
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "old",
+          "path": "R_t_over_2gE/0/p",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own": {
+          "type": "float",
+          "value": -0.6973284131574251
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-8.881784197001252323389053344726562500E-16",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/mass_power3_iso/R_t_over_2gE/0/A",
+      "target": {
+        "type": "float",
+        "value": -0.008634402260324638
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "old",
+          "path": "R_t_over_2gE/0/A",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own": {
+          "type": "float",
+          "value": -0.008634402260324685
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "4.683753385137379154912196099758148193359375E-17",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/mass_power3_iso/R_t_over_2gE/0/Y0",
+      "target": {
+        "type": "float",
+        "value": 0.771094778490244
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "old",
+          "path": "R_t_over_2gE/0/Y0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own": {
+          "type": "float",
+          "value": 0.7710947784902441
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-1.1102230246251565404236316680908203125E-16",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/mass_power3_iso/members",
+      "target": {
+        "type": "list",
+        "length": 3
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "old",
+          "path": "members",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 3
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 3
+        }
+      }
+    },
+    {
+      "path": "/fits/mass_power3_iso/members/0",
+      "target": {
+        "type": "string",
+        "value": "M3b_s4"
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "old",
+          "path": "members/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own": {
+          "type": "string",
+          "value": "M3b_s4"
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/fits/mass_power3_iso/members/1",
+      "target": {
+        "type": "string",
+        "value": "P64_s4"
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "old",
+          "path": "members/1",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own": {
+          "type": "string",
+          "value": "P64_s4"
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/fits/mass_power3_iso/members/2",
+      "target": {
+        "type": "string",
+        "value": "M3c_s4_nk"
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "old",
+          "path": "members/2",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own": {
+          "type": "string",
+          "value": "M3c_s4_nk"
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    }
+  ],
+  "current": [
+    {
+      "path": "/fits/mass_power3_iso",
+      "target": {
+        "type": "object",
+        "keys": [
+          "R_t_over_2gE",
+          "R_t_over_rs",
+          "T_f",
+          "members"
+        ],
+        "length": 4
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "current",
+          "path": "",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own_shape": {
+          "type": "object",
+          "keys": [
+            "R_t_over_2gE",
+            "R_t_over_rs",
+            "T_f",
+            "members"
+          ],
+          "length": 4
+        },
+        "target_shape": {
+          "type": "object",
+          "keys": [
+            "R_t_over_2gE",
+            "R_t_over_rs",
+            "T_f",
+            "members"
+          ],
+          "length": 4
+        }
+      }
+    },
+    {
+      "path": "/fits/mass_power3_iso/T_f",
+      "target": {
+        "type": "list",
+        "length": 1
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "current",
+          "path": "T_f",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 1
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 1
+        }
+      }
+    },
+    {
+      "path": "/fits/mass_power3_iso/T_f/0",
+      "target": {
+        "type": "object",
+        "keys": [
+          "A",
+          "Y0",
+          "p"
+        ],
+        "length": 3
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "current",
+          "path": "T_f/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own_shape": {
+          "type": "object",
+          "keys": [
+            "A",
+            "Y0",
+            "p"
+          ],
+          "length": 3
+        },
+        "target_shape": {
+          "type": "object",
+          "keys": [
+            "A",
+            "Y0",
+            "p"
+          ],
+          "length": 3
+        }
+      }
+    },
+    {
+      "path": "/fits/mass_power3_iso/T_f/0/p",
+      "target": {
+        "type": "float",
+        "value": 0.4120681560418129
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "current",
+          "path": "T_f/0/p",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own": {
+          "type": "float",
+          "value": 0.4120681560418133
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-3.88578058618804789148271083831787109375E-16",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/mass_power3_iso/T_f/0/A",
+      "target": {
+        "type": "float",
+        "value": 56.88972699450406
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "current",
+          "path": "T_f/0/A",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own": {
+          "type": "float",
+          "value": 56.88972699450408
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-2.131628207280300557613372802734375E-14",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/mass_power3_iso/T_f/0/Y0",
+      "target": {
+        "type": "float",
+        "value": -0.5365288893711089
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "current",
+          "path": "T_f/0/Y0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own": {
+          "type": "float",
+          "value": -0.5365288893710988
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-1.010302952408892451785504817962646484375E-14",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/mass_power3_iso/R_t_over_rs",
+      "target": {
+        "type": "list",
+        "length": 1
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "current",
+          "path": "R_t_over_rs",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 1
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 1
+        }
+      }
+    },
+    {
+      "path": "/fits/mass_power3_iso/R_t_over_rs/0",
+      "target": {
+        "type": "object",
+        "keys": [
+          "A",
+          "Y0",
+          "p"
+        ],
+        "length": 3
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "current",
+          "path": "R_t_over_rs/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own_shape": {
+          "type": "object",
+          "keys": [
+            "A",
+            "Y0",
+            "p"
+          ],
+          "length": 3
+        },
+        "target_shape": {
+          "type": "object",
+          "keys": [
+            "A",
+            "Y0",
+            "p"
+          ],
+          "length": 3
+        }
+      }
+    },
+    {
+      "path": "/fits/mass_power3_iso/R_t_over_rs/0/p",
+      "target": {
+        "type": "float",
+        "value": -0.5388663279697805
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "current",
+          "path": "R_t_over_rs/0/p",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own": {
+          "type": "float",
+          "value": -0.5388663279697798
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-6.661338147750939242541790008544921875E-16",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/mass_power3_iso/R_t_over_rs/0/A",
+      "target": {
+        "type": "float",
+        "value": -0.022468716448491997
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "current",
+          "path": "R_t_over_rs/0/A",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own": {
+          "type": "float",
+          "value": -0.022468716448492097
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "1.006139616066548114758916199207305908203125E-16",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/mass_power3_iso/R_t_over_rs/0/Y0",
+      "target": {
+        "type": "float",
+        "value": 0.762736881410178
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "current",
+          "path": "R_t_over_rs/0/Y0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own": {
+          "type": "float",
+          "value": 0.7627368814101783
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-2.220446049250313080847263336181640625E-16",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/mass_power3_iso/R_t_over_2gE",
+      "target": {
+        "type": "list",
+        "length": 1
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "current",
+          "path": "R_t_over_2gE",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 1
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 1
+        }
+      }
+    },
+    {
+      "path": "/fits/mass_power3_iso/R_t_over_2gE/0",
+      "target": {
+        "type": "object",
+        "keys": [
+          "A",
+          "Y0",
+          "p"
+        ],
+        "length": 3
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "current",
+          "path": "R_t_over_2gE/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own_shape": {
+          "type": "object",
+          "keys": [
+            "A",
+            "Y0",
+            "p"
+          ],
+          "length": 3
+        },
+        "target_shape": {
+          "type": "object",
+          "keys": [
+            "A",
+            "Y0",
+            "p"
+          ],
+          "length": 3
+        }
+      }
+    },
+    {
+      "path": "/fits/mass_power3_iso/R_t_over_2gE/0/p",
+      "target": {
+        "type": "float",
+        "value": -0.697328413157426
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "current",
+          "path": "R_t_over_2gE/0/p",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own": {
+          "type": "float",
+          "value": -0.6973284131574251
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-8.881784197001252323389053344726562500E-16",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/mass_power3_iso/R_t_over_2gE/0/A",
+      "target": {
+        "type": "float",
+        "value": -0.008634402260324638
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "current",
+          "path": "R_t_over_2gE/0/A",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own": {
+          "type": "float",
+          "value": -0.008634402260324685
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "4.683753385137379154912196099758148193359375E-17",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/mass_power3_iso/R_t_over_2gE/0/Y0",
+      "target": {
+        "type": "float",
+        "value": 0.771094778490244
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "current",
+          "path": "R_t_over_2gE/0/Y0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own": {
+          "type": "float",
+          "value": 0.7710947784902441
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "-1.1102230246251565404236316680908203125E-16",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/fits/mass_power3_iso/members",
+      "target": {
+        "type": "list",
+        "length": 3
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "current",
+          "path": "members",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 3
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 3
+        }
+      }
+    },
+    {
+      "path": "/fits/mass_power3_iso/members/0",
+      "target": {
+        "type": "string",
+        "value": "M3b_s4"
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "current",
+          "path": "members/0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own": {
+          "type": "string",
+          "value": "M3b_s4"
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/fits/mass_power3_iso/members/1",
+      "target": {
+        "type": "string",
+        "value": "P64_s4"
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "current",
+          "path": "members/1",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own": {
+          "type": "string",
+          "value": "P64_s4"
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/fits/mass_power3_iso/members/2",
+      "target": {
+        "type": "string",
+        "value": "M3c_s4_nk"
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "mass_power3_iso",
+          "version": "current",
+          "path": "members/2",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure",
+          "root_scope": "Only the independently bracketed prescribed nonzero three-point branch; no target exponent is used as input."
+        },
+        "own": {
+          "type": "string",
+          "value": "M3c_s4_nk"
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    }
+  ]
+}

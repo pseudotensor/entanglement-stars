@@ -1,0 +1,61 @@
+\subsection*{Shell lapse from the scalar rows}
+Use the continuum rows
+$\Delta\psi=-2\pi G\psi^5\rho$ and
+$\Delta L=2\pi GN\psi^5(\rho+2S)$, $L=N\psi$,
+with complete variational stress $S$.
+Choose a thin shell at coordinate radius $q$, a regular vacuum
+interior, and exterior $\psi=1+A/r$, $L=1+C/r$.
+Write $P=\psi(q)$,
+$\mathcal E=\int\psi^6\rho\,d^3x>0$,
+$\mathcal S=\int\psi^6S\,d^3x$, and $\chi=\mathcal S/\mathcal E$.
+The integrated rows and continuity give
+\[
+ A=\frac{G\mathcal E}{2P},\qquad
+ C=-AN_s(1+2\chi),\qquad
+ N_sP=1+C/q,\qquad P=1+A/q .
+\]
+Eliminating $C$ yields
+\[
+ N_s=\frac1{2P-1+2(P-1)\chi},
+ \qquad N_*\big|_{P=2}=\frac1{3+2\chi_*}.
+\]
+Independently, use the same-law reduced boundary energy
+$E=\mathcal E/P=2A/G$.
+At fixed $q$ and canonical matter variables,
+$\mathcal E_P=-2\mathcal S/P$.
+For $F=EP-\mathcal E(P)$ with $P=1+GE/(2q)$,
+$F_E=2P-1+2(P-1)\chi$; implicit variation gives
+$dE=d_{\rm matter}\mathcal E/F_E$.
+Its clock coefficient is therefore $N_s=F_E^{-1}$.
+[X: integrated row jumps; reduced-energy variation.]
+At $P=2$, $q=A$ and $R=qP^2=2GE$, finite $\chi_*$ with
+$3+2\chi_*>0$ gives a finite positive lapse.
+The spatial-radius condition is not a lapse-zero condition.
+No exterior lock is imposed: adding $C=-A$ instead requires
+$\chi=(P-1)/(2-P)$, divergent as $P\to2^-$.
+These are thin-shell continuum statements, not a finite-spacing
+collapse theorem.
+
+\paragraph*{SOURCES.}
+\begingroup\footnotesize
+\path{<internal>/P02_derivation.md},
+sections 1--2 and 6.1--6.3, equations (1)--(5), (23)--(30).
+The two row integrals use the shell's complete unit-lapse energy and
+conformal stress, including reference/filter derivatives when present.
+The alternative variation uses a common boundary-energy generator;
+no Lorentz dispersion or dust equation of state is required for the
+displayed multiplier.
+Sections 9--11 exclude extending a bounded classical stress ratio
+to arbitrary quantum coherent states without calculation.
+\endgroup
+% Governing source:
+% <internal>/GOAL_alt.md, duty 3(d).
+% Independent row integration: the exterior radial derivatives give
+% integral Delta psi=-4 pi A and integral Delta L=-4 pi C.
+% The shell's common P,Ns give integral psi^5 rho=Ecal/P and
+% integral Ns psi^5(rho+2S)=Ns(Ecal+2Scal)/P.
+% Independent implicit derivative:
+% P_E=G/(2q)=(P-1)/E and Ecal_P=-2 chi Ecal/P=-2 chi E.
+% Therefore F_E=P+(E-Ecal_P)P_E=2P-1+2(P-1)chi.
+% Matter-only variations at fixed q give the lapse factor 1/F_E;
+% a positive regular branch requires F_E>0.

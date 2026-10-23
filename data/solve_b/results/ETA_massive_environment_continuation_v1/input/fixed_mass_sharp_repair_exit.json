@@ -1,0 +1,56 @@
+{
+  "status": "finished",
+  "purpose": "insert I6a; item7 fixed-mass light-cut ratio",
+  "command": [
+    "timeout",
+    "-s",
+    "KILL",
+    "300s",
+    "nice",
+    "-n",
+    "10",
+    "taskset",
+    "-c",
+    "0",
+    "<internal>/python",
+    "<internal>/fixed_mass_interval_sharp_repair.py"
+  ],
+  "producer_sha256": "d962ea9b594c2495284069eb2814ba6d6263786c374bd1b51475d15b29f3e870",
+  "axial_input_sha256": "71c5df353b17ecde07d69872c611ce8c998fa419243d5151f71ca1713213bf52",
+  "launcher_sha256": "922d8ca10d631fe17de462944266390f6cd806878f7575383b683e0573d5eb0f",
+  "wrapper_pid": 1341164,
+  "started_unix": 1792332542.1933188,
+  "selected_cpu": 0,
+  "resources": {
+    "cpu_threads": 1,
+    "wall_seconds": 300,
+    "address_space_bytes": 805306368,
+    "nice": 10,
+    "cuda": "disabled"
+  },
+  "environment_settings": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "CUDA_VISIBLE_DEVICES": ""
+  },
+  "stdout_path": "<internal>/fixed_mass_sharp_repair.stdout.log",
+  "stderr_path": "<internal>/fixed_mass_sharp_repair.stderr.log",
+  "child_pid": 1341174,
+  "exit_code": 1,
+  "elapsed_seconds": 0.06138305366039276,
+  "maximum_child_rss_kib": 14400,
+  "stdout_bytes": 183,
+  "stdout_tail": "{\"status\": \"incomplete\", \"elapsed_seconds\": 0.00032440200448036194, \"accepted111\": 0, \"counts\": {\"evaluations\": 0, \"created_cells\": 0, \"refused_images\": 0, \"refusals_by_reason\": {}}}\n",
+  "stderr_bytes": 0,
+  "stderr_tail": "",
+  "result_identity": {
+    "path": "<internal>/fixed_mass_sharp_repair_result.json",
+    "size": 1921,
+    "sha256": "53ad011b7e46d3c6128c0cd130e109696fcaf22b383ec80ec1373a2f187f5ed4"
+  }
+}

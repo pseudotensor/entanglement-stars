@@ -1,0 +1,161 @@
+\documentclass[10pt]{article}
+\usepackage[margin=0.8in]{geometry}
+\usepackage{amsmath,amssymb,array}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\newcommand{\Tr}{\operatorname{Tr}}
+\begin{document}
+\begin{center}\textbf{What selects the momentum row?}\end{center}
+
+\paragraph{Result and premises.}
+Use the native CAR, the finite sine stencil and the declared
+spectral completion of $H_*$. A positive Hilbert norm and a
+self-adjoint generator are retained. H2's momentum multiplier
+role implies an affine extension before eliminating variables,
+\begin{equation}
+ H_{\rm ext}=H_*+\sum_{x,i}v_x^i C_{i,x}+H_{\partial,v},\qquad
+ C_i=g_i+\nabla_j\Pi_i{}^j .
+ \label{eq:fm-affine}
+\end{equation}
+The displayed Gauss realization is a choice until its source,
+flux algebra and boundary charge are identified. Varying a term
+$\sum v^ig_i$ alone imposes $g_i=0$; it does not determine a
+flow sourced by moving matter. H2 fixes neither the microscopic
+representative $g_i$ nor its action on a ruler operator.
+% [X]: multiplier variation and the explicit source/constraint
+% counterfamilies below; agrees with GAP_tensor1 and P16(40C)1,3,5.
+
+\paragraph{A derived free current, with two algebraic checks.}
+On the uniform infinite lattice (or its bulk/window symbol), set
+$X_i=i\partial_{p_i}$ on smooth periodic momentum wavefunctions.
+At $N=\psi=1$, let
+$h=m\beta+\alpha^jd_j(p)$, $d_j=\sin(ap_j)/a$, with Clifford
+matrices. The symmetrically allocated energy dipole gives
+\begin{align}
+ J_{E,i}&=i\left[h,\tfrac12\{X_i,h\}\right]
+       =\frac1{2i}[X_i,h^2]
+       =\frac12\partial_{p_i}(m^2+|d|^2)\notag\\
+       &=Q_i(p)\,\mathbf1,\qquad Q_i(p)=\frac{\sin(2ap_i)}{2a}.
+ \label{eq:fm-free}
+\end{align}
+Independently, the band-symbol current
+$\tfrac12\{h,\partial_{p_i}h\}$ reduces by the Clifford
+anticommutators to $d_i\partial_{p_i}d_i\,\mathbf1$, the same
+answer. At constant positive $N,\psi=P$, the energy current is
+$N^2P^{-4}Q_i$. Identifying a momentum density with this energy
+current requires a stress/boost identity for the complete theory;
+the free identity does not supply one. A finite periodic position
+matrix has wrap-boundary terms and is not the $X_i$ used here.
+% [X]: symmetric energy-dipole commutator; Clifford band-current identity.
+
+\paragraph{The selectors and their limits.}
+Within the reflection-odd polar-vector symbol class, the six
+selectors of the recorded representative have the following scope.
+\begin{center}
+\begin{tabular}{p{0.30\linewidth}p{0.64\linewidth}}
+Spin-scalar, packet-independent one-body source &
+Follows for the free current in \eqref{eq:fm-free}; H2 permits
+spin, species and composite contributions.\\[3pt]
+Axial hopping &
+Follows from the chosen separable $|d|^2$; H2 and completion
+equivariance do not exclude diagonal hops.\\[3pt]
+Support at most two steps &
+A minimal-range choice; finite locality alone allows larger ranges.\\[3pt]
+Doubling-even transport &
+A choice of the same undemodulated flow in every sine valley,
+realized by $Q_i$; not an abstract Gauss-law consequence.\\[3pt]
+Unit valley slope &
+Fixes the normalization of $v$ in the chosen operational chart.
+$C_i\mapsto cC_i$, $v^i\mapsto v^i/c$ leaves the constraint
+unchanged.\\[3pt]
+Endpoint-symmetric placement &
+Hermiticity gives the average within a real endpoint-only ansatz;
+that ansatz and the exclusion of gradient improvements are choices.
+\end{tabular}
+\end{center}
+Reflection oddness must be stated: without it,
+$Q_i+c[1-\cos(2ap_i)]/a$ satisfies the literal six conditions,
+including unit derivative at each valley, but is not a polar vector
+under reflection of direction $i$. With oddness, axial support two
+allows $a^{-1}(c_1\sin ap_i+c_2\sin2ap_i)$. Doubling evenness
+sets $c_1=0$ and unit slope sets $c_2=1/2$, proving the stated
+minimal-range uniqueness.
+
+Dropping only that range choice leaves the explicit family
+\begin{equation}
+ Q_i^{(b)}(p)=\sum_{r=1}^{R}b_r\frac{\sin(2rap_i)}{2ra},
+ \quad b_r\in\mathbb R,\quad\sum_rb_r=1,\qquad
+ J_b[v]=\frac12\sum_i\{v^i,Q_i^{(b)}\}.
+ \label{eq:fm-family}
+\end{equation}
+Every member is Hermitian, finite range, translation covariant,
+reflection odd and doubling even, with unit slope at all valleys.
+Its cubic error is $-(2/3)a^2p_i^3\sum_rb_rr^2$; the coefficients
+remain free. Even a fixed uniform source leaves Hermitian gradient
+terms such as $a^2\{\Delta v^i,Q_i\}/2$ and local divergence
+improvements. Equivariant spectral filtering and completion
+transport a chosen operator; they do not select among these
+operators.
+
+\paragraph{Conservation does not rescue the identification.}
+For $P_f=\sum_pf(p)c_p^\dagger c_p$ and a retained quartic vertex,
+\[
+ [P_f,V]=\sum_{1234}(f_1+f_2-f_3-f_4)
+ V_{12;34}c_1^\dagger c_2^\dagger c_4c_3.
+\]
+Crystal-momentum conservation does not annul this bracket. When
+the vertex connects $k,k$ to $0,2k$ with distinct internal labels,
+$2Q(k)-Q(2k)=4a^2k^3+O(a^4k^5)$ is nonzero. A translation-
+equivariant completion at a translation-invariant background
+nevertheless commutes with the exact lattice translation $T_i$,
+and hence with a modular logarithm chosen as a spectral function of $T_i$,
+$T_i=e^{-iaP_i^{\rm mod}}$. This conserved modular total momentum
+need not be an additive local one-body density. A continuous
+periodic finite-range matrix logarithm cannot reproduce the
+one-site shift: its determinant exponential has zero winding,
+whereas the shift determinant has nonzero winding.
+
+Even an abstract preserving constraint algebra leaves this freedom.
+On a finite-dimensional regulated source Hilbert space, choose
+Hermitian matrices $P_A$ and $H_*$. Adjoin
+$u_A,\pi_A=-i\partial_{u_A}$ and choose
+$U(u)=e^{i\sum_Au_AP_A}$. Then
+\[
+ \widetilde H=UH_*U^\dagger,\qquad C_A=U\pi_AU^\dagger,
+\qquad[C_A,C_B]=[C_A,\widetilde H]=0.
+\]
+These identities hold on the common core
+$U\bigl(C_c^\infty(\mathbb R^{\#A})\otimes\mathcal H_{\rm reg}\bigr)$.
+This is an auxiliary enlargement, not a native flux construction;
+its existence for every seed demonstrates non-selection. A native
+momentum row needs the independently specified readout/flux algebra
+and its Ward action. Requiring the complete energy-current
+identification, a chosen symmetric energy allocation and the
+minimal free range would select the displayed free representative,
+but those are additional principles. The $b_r$ family does not
+collapse under H2 and equivariant completion alone.
+
+\paragraph{SOURCES and check scope.}
+The free-current and non-selection statements are reconstructed
+above; no numerical result is used. The associated final2
+\texttt{STATE.tex} [S] candidate is thereby established as a free
+energy current, not promoted to an interacting momentum law.
+\begin{enumerate}
+\item Governing duty 4(6):
+\path{<internal>/GOAL_alt.md};
+base candidate and H2 scope:
+\path{<internal>/STATE.tex}, model,
+``Frozen surface'' and O2 entries.
+\item Actual six-selector, current and counterfamily source:
+\path{<internal>/result.md},
+sections 1.1--1.5, equations (1)--(13). The reflection premise
+repairs the literal six-item uniqueness statement.
+\item Actual WEB40C sources, read at the stated sections:
+\path{<internal>/P15_current_and_dilation.md},
+sections 2--3 and 5, current distinctions and transported completion;
+\path{<internal>/P16_derivation.md},
+sections 1, 3--6, modular translation, coefficient/operator
+distinction and declared auxiliary algebra. Its numerical and
+tensor-stiffness claims are not used.
+\end{enumerate}
+\end{document}

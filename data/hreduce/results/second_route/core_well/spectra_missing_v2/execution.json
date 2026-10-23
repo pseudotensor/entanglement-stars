@@ -1,0 +1,55 @@
+{
+  "status": "finished",
+  "purpose": "Task 3 phase B new missing-work-only allocation",
+  "producer_sha256": "3b2b1dd65f98f9f9d0d7b9715bddef3e8687c0fb889b42f75600ed8938661a19",
+  "wrapper_sha256": "fd93610631ef53a072d3d5e9b7954171e40d0a19070ab2189bc360ad4fe07ff3",
+  "command": [
+    "timeout",
+    "--foreground",
+    "-s",
+    "KILL",
+    "7200s",
+    "nice",
+    "-n",
+    "10",
+    "taskset",
+    "-c",
+    "0,1,2,3",
+    "<internal>/python",
+    "<internal>/finish_core_spectra_v2.py"
+  ],
+  "wrapper_pid": 4163791,
+  "environment_settings": {
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4",
+    "NUMEXPR_NUM_THREADS": "4",
+    "VECLIB_MAXIMUM_THREADS": "4",
+    "BLIS_NUM_THREADS": "4",
+    "CUDA_VISIBLE_DEVICES": "",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "resources": {
+    "wall_seconds": 7200,
+    "cpu_seconds": 28800,
+    "threads": 4,
+    "address_space_bytes": 4294967296,
+    "internal_deadline_seconds": 7180
+  },
+  "child_pid": 4163799,
+  "exit_code": 0,
+  "elapsed_seconds": 2093.9336785785854,
+  "maximum_child_rss_kib": 1151284,
+  "core_well_profiles_v1.json": {
+    "size": 118130,
+    "sha256": "05764b521bdd41ce3d270908fd6de428dac26132e87107033d8013d61934cc8c"
+  },
+  "stdout.log": {
+    "size": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stderr.log": {
+    "size": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

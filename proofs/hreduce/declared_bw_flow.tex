@@ -1,0 +1,227 @@
+% SOURCES. Binding final4/GOAL_alt.md and THINK sections 8,9,12.
+% [X] The native-chain reduction and modular prefactor: this author's onsite
+% alpha_x^n transformation agrees with the independent parity-sector+gauge
+% route LL1--LL3 in the actual strand_S1_lattice_limit.tex, read fully with
+% SOURCES in <internal>/. Only its
+% one-native-channel operator/cut and spectrum statements transfer; all its
+% graded, stiffness and gravitational comparisons are excluded.
+% Both routes use the common imported exact-chain theorem below, not two
+% independent proofs of that theorem. Our closed-operator/Carleman-domain
+% statement is an additional [R] derivation, not a claimed LL3 domain result.
+% Exact half-chain modular
+% equality uses Viktor Eisler, arXiv:2410.16433v1, section V, equations 64--72,
+% https://arxiv.org/html/2410.16433v1 (primary paper read, not an abstract alone).
+% Primary section III, equation 44, supplies the mu=0 half-filled channel,
+% whose modular spectrum is continuous and whose prefactor is exactly 2pi.
+% Predecessors webrounds/FRESH438 and webrounds/validation/t25-20260928/
+% fresh438-bw-normalisation: original response.md in
+% <internal>/41_20260924_cycle24d
+% FRESH438_20260925-0320_quantum-gravity-derivation/ and the correction
+% review_output/ledger_validation_T25_2026-09-28/a/evidence/
+% fresh438-bw-normalisation.txt read in full. Surviving issue: modular uniqueness
+% alone fixes no temperature relative to a prescribed external Hamiltonian.
+% Changed premise: the present model specifies one free sine operator; its
+% uniform no-crossing ground covariance and midbond half-space algebra are now
+% explicit. This does not select the physical collapse state or turn the
+% supercritical lab ground into a regular freely falling vacuum.
+% DERIVATION. At transverse momentum p_perp, M=beta m+alpha_y s_y+alpha_z s_z,
+% M^2=M_perp^2 I, {alpha_x,M}=0. A constant unitary puts alpha_x,M/M_perp into
+% Pauli form. The onsite transformation U_n=(-i)^n(alpha_x)^n makes the
+% hopping scalar and real, while M becomes (-1)^n M. Diagonalizing
+% M gives four independent staggered-potential chains, two of each sign of M.
+% Their cut is unchanged by these onsite transformations. Scaling h by a gives
+% hopping -1/2 and staggered potential +/-mu, exactly Eisler's equation 64.
+% With X_n=a(n-1/2), {X,h}/2 has hopping -n/2 and onsite
+% (-1)^n mu(n-1/2), exactly equation 67, so no factor of a or 2 is inferred.
+% The +/-mu chains have opposite spectral shifts but the same prefactor.
+% Actual cross-route numerical normalization: LL3 gives
+% epsilon_l=4pi K(k')/K(k) (l-sgn(mu)/4),
+% lambda_l=pi/[k K(k)] (l-sgn(mu)/4), so epsilon_l/lambda_l=4kK(k').
+% LL1--LL2 commute with the same midbond cut and give precisely four chains.
+% B is essentially self-adjoint on finitely supported half-chain sequences:
+% its off-diagonals grow as n, and the Jacobi Carleman sum sum 1/n diverges.
+% Equality of the closed operators supplies the domain of log((1-C_A)/C_A);
+% no bounded operator-norm approximation to the entire modular logarithm is used.
+% mu^2=a^2(m^2+k_perp^2)+O(a^4 k_perp^4) near each transverse valley.
+% K(k)=pi/2[1+k^2/4+9k^4/64+...], kappa=(1+mu^2)^(-1/2), so
+% 4 kappa K(mu*kappa)=2pi[1-mu^2/4+9mu^4/64+...].
+% Uniform flow is scalar in spin and commutes with h0; no-crossing makes the
+% occupied projector exactly P_-. The sufficient |v|<N follows from |Q|<=E.
+% For v along one lattice axis the exact crossing threshold is
+% |v|/N=sqrt(1+(ma)^2)+|ma|, obtained by maximizing |Q_x|/E at transverse valleys.
+% At m=0 and |v|>N an open occupied-set change remains as a->0 at fixed v/N.
+% The ground state's modular generator then has no small-a continuation to
+% the same Minkowski-vacuum boost. This is a counterexample to an unconditional
+% BW-with-flow assertion, even though the coefficients have no gradients.
+% In the continuum the algebra is the CAR algebra in the Rindler wedge
+% X>|T|, the state is the Minkowski Dirac vacuum, and rapidity s generates
+% the normal boost. Pullback to X=x-vt,T=Nt gives normal energy (H_m-v.P)/N.
+% Fermionic two-point functions are antiperiodic in imaginary rapidity 2pi;
+% the even observable algebra obeys the ordinary KMS condition at beta=2pi.
+% A local curved-horizon application additionally needs a regular evolved
+% state and scale separation a << ell << curvature/variation scale. A local
+% planar theorem is not a state-preparation theorem, and the exact coefficient
+% below is not claimed for arbitrary oriented finite lattice cuts.
+
+\paragraph{Vacuum modular flow [X; operator domain R].}
+Use the adjoint site fields $n=W_0^\dagger N$, $w=W_1^\dagger v$.
+Homogeneous continuation from the flat sea retains
+$P_-=(1-h_0/E)/2$ at every tilt, with zero-mode filling fixed.
+For constant $n>0,w$, this is also the ground covariance of
+$h_m=nh_0+w\cdot Q$ when
+$|w\cdot Q(p)|<nE(p)$ at nonzero energy.
+For the $[100]$ midbond half-space, put
+$X_j=a(j-\tfrac12)$ and let $C_A$ be its restricted covariance.  At each transverse
+momentum, an onsite unitary reduces the sine Dirac chain to staggered-potential
+chains.  The exact half-chain result gives
+\[
+ \log{1-C_A\over C_A}=b(\mu)B_A,\quad
+ B_A=\left.\tfrac12\{X,h_0\}\right|_A,\quad
+ b(\mu)=4k\,\mathrm K\!\left(\mu k\right)
+       =2\pi\left[1-\tfrac14\mu^2+O(\mu^4)\right],
+\]
+where $k=(1+\mu^2)^{-1/2}$,
+$\mu^2=(am)^2+\sin^2(ap_y)+\sin^2(ap_z)$; $\mathrm K$ uses the elliptic
+modulus.  These are closed operators on the half-chain;
+finite-support sequences form a core.  Thus for $a\sqrt{m^2+p^2}\ll1$
+the wedge modular flow is the normal Lorentz boost at inverse rapidity
+temperature $2\pi$, with relative lattice corrections of order
+$a^2(m^2+p^2)$.  The normal energy is $(H_m-w\cdot P)/n$.
+An observer with proper acceleration $\alpha$ in this vacuum reads
+$T=\alpha/(2\pi)$ in the continuum limit.
+For massless axial $|w|>n$, the ground changes while the continued sea does not.
+The delivered spectral-locality estimates require a gapped massive path or
+the stated subcritical finite-parent ground-state limit; they do not control
+the modular logarithm or detector KMS.
+A curved application still needs the actual state's regular local vacuum
+limit and detector transfer; subtraction alone does not prepare that state.
+% At m=0 the isolated zero-energy momenta are a measure-zero ambiguity on the
+% infinite lattice; a finite parent requires its zero-mode filling specified.
+% CURRENT REFERENCE/COUPLING QUALIFICATION. The actual binding goal uses
+% continued occupied spectral subspaces P[h], [h,P]=0, with no refilling at
+% a zero crossing, and h={W0^dagger N,h0}/2+sum_i{W1^dagger v_i,Q_i}/2.
+% Literal U P0 U^dagger is an adiabatic comparator, not the definition of P.
+% For homogeneous fields the fixed momentum eigenspaces make both choices
+% equal to P0 at every tilt; only ground-state equality requires no crossing.
+% C=P[h] has zero declared excess source. Neither a nonuniform continued
+% branch nor a physical excited state is selected by this homogeneous fact.
+% Actual delivered declared_local_area.tex SC1--SC6 and its RED SL1--SL6
+% were read at their stated domains: fixed positive mass and a norm-continuous
+% globally gapped path, smooth bounded adjoint fields, or the separate
+% size-comparable even-AP/subcritical/continued-ground finite-parent limit.
+% Their covariance/cut-entropy bounds do not control the unbounded modular
+% logarithm or establish a detector KMS condition. A curved use still needs
+% the actual continued-reference and physical-state local limit, detector
+% transfer, and the required history-time/allowed-ell uniformity.
+% This is the critical F4 qualification of paper 04_results.tex:147--193,
+% named in STATUS before work, not a new theorem or numerical specification.
+% CROSS-LANE STATE CHECK. Actual strand_Q_flow_reference.tex QF1--QF10 and
+% SOURCES were read in full, as was its independent review. QF2--QF4's band
+% projector/optimization route agrees with our unchanged covariance and axial
+% threshold; QF9--QF10 agree with the preserved flat evolved covariance and
+% its nonzero source difference RELATIVE TO THE FILLED GROUND after crossing.
+% This is [X] for the uniform state comparison, not a claimed inhomogeneous
+% or curved-horizon preparation. Its homogeneous comparison agrees with the
+% current continued-occupation prescription; literal transport remains a
+% distinct inhomogeneous control.
+%
+% ACTUAL J2 NUMERICAL INTAKE [N: prescribed finite-chain controls only].
+% Read-only SSH read the entire actual producer
+% compute-host:<internal>/obs_bw_modular_v1.py,
+% its full launch_obs_J2_v1.sh, and complete J2/J2_bw_modular_v1.log.
+% The full J2/J2_bw_modular_v1.json was obtained as tool output and parsed
+% solely for inspection: all 108 scalar-metric rows and the first/last full
+% entries were read, not every repeated eigenvalue array. No computation or
+% rerun was executed by this author. The actual local specification read is
+% .wt-solve_a/solve/specs/SPEC_final4b_observables.md section 2.
+% The launch uses L=512,1024,2048, a=1, m_c=0,0.05,0.2; two CPU workers,
+% one requested OMP thread each, nice10. It does not run the spec's L=4096.
+% There are 36 cases per length: 12 uniform cases and 24 prescribed tanh
+% profiles. These are two-component chains, with no solved Gauss fields or
+% transverse integral, and no time-evolved incoming reference. The producer
+% explicitly diagonalizes each h and fills every eigenvalue below zero.
+%
+% CODE/OBSERVABLE CHECK. chain_ops uses the native -i alpha_x/2 one-link
+% sine hopping and -i I/4 two-link Q hopping. sym_weight uses the ENDPOINT
+% arithmetic mean, exactly {f(X),M}/2. Its docstring's "midpoint rule" and
+% the spec's middle-site phrase must not be interpreted as f at the middle
+% site: these differ for nonuniform f. The implemented chart integrals use
+% 8-point Gauss--Legendre on every unit interval and the actual half-interval
+% to the midbond cut; the unused trapezoid helper is not the measured path.
+% A is the right half of the open chain, with x_c=L/2-1/2. The modular matrix
+% is reconstructed from eigenvalues of C_A clipped to [1e-15,1-1e-15].
+% The exact b(mu) factor is not used: the comparators are 2pi times the
+% continuum chart boost, the unflowed linear boost, and the naive flowing
+% linear boost. In compare(), beta ALREADY includes 2pi, so the reported
+% low subspace is |beta|<3 and has only 2 or 4 vectors in these cases, rather
+% than all 24 displayed small-|beta| eigenvalues. The separate Rayleigh
+% quotient_over_2pi column is divided by 2pi, but max_rel_diff compares the
+% original ray with beta, correctly. No extra temperature factor is missing.
+% The reported norm is Frobenius, not operator norm, and every comparator
+% selects its own low subspace. Their residuals are not norms on one common
+% fixed projector. The high modular arrays need clipping/precision control
+% before a claim about all 24 eigenvalues; the low-subspace test is narrower.
+% The spec's unscaled |beta_n|<3 convention is therefore not the implemented
+% low-subspace range. Positive/negative-flow paired controls and precision/
+% clipping refinements are not supplied merely by the existing case grid.
+%
+% ACTUAL RESULTS. Uniform massive controls at every listed flow and length
+% have residuals 0.0006241226 (m_c=.05) and 0.0097810646 (m_c=.2), measured
+% relative to 2pi B. These persistent offsets agree with the exact lattice
+% theorem's 1-b(mu)/(2pi)=mu²/4-9mu⁴/64+25mu⁶/256-...; they are not a
+% failure to approach the exact half-chain generator. The massive bulk
+% covariance differences at L=2048 are approximately 1e-14. The massless
+% uniform residual at v=0 decreases .0244141,.0223550,.0206313 over the L
+% ladder; at v=.9 it decreases .0406037,.0371080,.0343160. The corresponding
+% v=.9 naive residual at L=2048 is 6.60427, and the correct comparator's
+% occupation error is .0188980. Thus the data distinguish normal from tilted
+% boost energy, but their finite-length/clipping/cut response is not an
+% isolated coefficient of a². Increasing L at fixed a,m_c,W is not a
+% continuum a-refinement at fixed physical mass and profile scale.
+% Nonuniform massless tanh cases at L=2048 have chart residuals from .02510
+% to .04611. The chart comparator is not uniformly better than the unflowed
+% one: v0=-.5,v1=.3,W=32,centered cut gives .0461126 versus .0305902.
+% This does not invalidate the infinite continuum theorem below; finite ends,
+% lattice profile corrections and the selected subspace are not separated.
+% The massive tanh results are deviations from a massless conformal comparator,
+% not a theorem about massive curved modular flow. No case has a trapped
+% surface or measures a detector response, a transported collapse covariance,
+% a boundary-normalized temperature, or averaging-scale independence.
+%
+% INDEPENDENT CONTINUUM CHECK OF THE NONUNIFORM COMPARATOR [R]. This check
+% was derived directly from the actual chain generator before reading the
+% RED's corresponding continuum argument. For m=0,N=1 and smooth static
+% |v(x)|<1 on the whole line, diagonalize alpha_x with eigenvalue s=+/-1:
+% h_s=-i[(v+s)partial_x+v'/2]. Put
+% y_+'=1/(1+v), y_-'=1/(1-v), and transform the wavefunction by
+% phi_s(y_s)=sqrt(|v+s|) psi_s(x). This is unitary in the native continuum
+% inner product and sends h_s to -i s partial_y_s. For the ground of this
+% prescribed static generator, the cut x>x_c maps to y_s>y_s(x_c).
+% Its chiral vacuum modular derivative coefficient is
+% (v+s)[y_s(x)-y_s(x_c)]. With x*'=1/(1-v²), f'=v/(1-v²), choose both
+% integrals zero at x_c; then y_+=x*-f and y_-=x*+f. The two coefficients
+% are exactly s b^t+g, where b^t=x*-v f and g=v x*-f. Thus
+% K_A=2pi[{b^t,h0}/2+{g,p}/2]|_A for this continuum massless static ground.
+% This proves the producer's b^t,g signs for the actual +vQ microscopic
+% convention, independently of the spec's differently signed metric prose.
+% It assumes complete monotone chiral coordinates and the corresponding
+% whole-line vacuum; finite open ends and m!=0 are separate problems.
+% It is not automatically the transported incoming sea of an arbitrary
+% time-dependent history. The lattice replacement p->Q in the comparator
+% is a chosen finite-spacing test, not an exact curved lattice BW theorem.
+%
+% REMAINING NUMERICAL DECISION. The exact uniform b(mu) theorem is already
+% established analytically; J2 supplies a scoped independent finite-chain
+% consistency control. A nonuniform continued-reference or physical-state
+% modular error needs its actual covariance, a continuum/profile/parent refinement and
+% stable low-modular-subspace comparison. No extra run is specified here:
+% the full observable computation belongs to the solve lane, and the current
+% data are not promoted beyond their measured state, domain and comparator.
+% ACTUAL SAME-PAIR COMPARISON. The complete current
+% redteam_declared_bw_flow.tex and its SOURCES were read after the independent
+% chiral derivation above was saved. Its separate chiral-coordinate route
+% gives exactly the same b^t,g and state domain; its actual producer/output
+% inspection agrees on all stated finite-chain results, the 2pi convention,
+% Frobenius norm, selected-subspace caveat and unperformed refinements.
+% This is the original author/RED check, not new external analytical [X]
+% for a curved state. Final current author/SOURCES and RED rereads apply.

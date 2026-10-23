@@ -1,0 +1,38 @@
+{
+  "P0": 1.0,
+  "P1": 1.4142135623730951,
+  "w": 0.9743416490252567,
+  "gap": 2.23606797749979,
+  "initial_vacuum_energy_residual": 5.128561644869782e-17,
+  "gate_Frobenius_squared": 0.12500000000000017,
+  "variance": 0.12500000000000006,
+  "w_one_minus_w_gap_squared": 0.12500000000000117,
+  "gate_minus_variance": 1.1102230246251565e-16,
+  "gate_minus_overlap_identity": -9.992007221626409e-16,
+  "times": [
+    {
+      "T": 0.0,
+      "direct_probability": 7.703719777548943e-34,
+      "analytic_probability": 0.0,
+      "absolute_discrepancy": 7.703719777548943e-34
+    },
+    {
+      "T": 0.1,
+      "direct_probability": 0.0012448003394760305,
+      "analytic_probability": 0.0012448003394760418,
+      "absolute_discrepancy": 1.1275702593849246e-17
+    },
+    {
+      "T": 1.0,
+      "direct_probability": 0.08086364382285836,
+      "analytic_probability": 0.08086364382285907,
+      "absolute_discrepancy": 7.077671781985373e-16
+    },
+    {
+      "T": 1.4049629462081452,
+      "direct_probability": 0.10000000000000012,
+      "analytic_probability": 0.10000000000000091,
+      "absolute_discrepancy": 7.91033905045424e-16
+    }
+  ]
+}
