@@ -1,0 +1,67 @@
+{
+  "status": "finished",
+  "producer_sha256": "986b8e07217791452ffe050eecb6da1e61c46dcc224441e935818aaf1c1a0167",
+  "wrapper_sha256": "000a9ea6e598cf25ba58e3d5787abdb489e4ffe7962e0f4b8d843256f27bbb92",
+  "command": [
+    "timeout",
+    "--foreground",
+    "-s",
+    "KILL",
+    "30s",
+    "nice",
+    "-n",
+    "10",
+    "taskset",
+    "-c",
+    "8",
+    "<internal>/python",
+    "<internal>/rung2_T12p75_node_depth_v1.py"
+  ],
+  "wrapper_pid": 4132315,
+  "environment_settings": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1",
+    "CUDA_VISIBLE_DEVICES": "",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "resources": {
+    "wall_seconds": 30,
+    "handled_deadline_seconds": 25,
+    "cpu_soft_seconds": 20,
+    "cpu_hard_seconds": 25,
+    "address_space_bytes": 1073741824,
+    "threads": 1
+  },
+  "child_pid": 4132342,
+  "exit_code": 0,
+  "elapsed_seconds": 3.105082269757986,
+  "maximum_child_rss_kib": 95888,
+  "stdout.log": {
+    "size": 295,
+    "sha256": "d5e166087406220ae2a02aa41381db74522825c8d7d68abaeba290188949a935"
+  },
+  "stderr.log": {
+    "size": 641,
+    "sha256": "2ad9bc55bcd1ee6ce3d4d6222897fef1692f1e8228c0cd54d448ddf9fe2cb496"
+  },
+  "primary_record.json": {
+    "size": 31135,
+    "sha256": "f19b3282ea12b874ba38364a2262fd90f3995e6d6f734a54d4dc87b558850db8"
+  },
+  "selected_nodes.npz": {
+    "size": 14579,
+    "sha256": "69be75d4ac744a2611660bb7d518e317f7caecadcf25ab7f3381fc34d4888e19"
+  },
+  "node_depth.npz": {
+    "size": 8387,
+    "sha256": "dc9db1250383e5c575092a9faab13a187f505e75b14d742c978aaf39f2162600"
+  },
+  "rung2_T12p75_node_depth_result.json": {
+    "size": 104056,
+    "sha256": "63951b76cfe36d06fe7d37f5cbb05ae7e3d2daa4ecf2df3b41d8be1a0976565a"
+  }
+}

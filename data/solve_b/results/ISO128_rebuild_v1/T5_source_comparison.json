@@ -1,0 +1,251 @@
+{
+  "scope": "post-freeze original T5 source comparison only",
+  "available": true,
+  "runtime": {
+    "host": "compute-host",
+    "pid": 1248542,
+    "threads": 1,
+    "niceness": 10,
+    "device": "CPU"
+  },
+  "comparison_implementation": {
+    "path": "<internal>/compare_ISO128_sources_v1p1.py",
+    "bytes": 4058,
+    "sha256": "d4065b4a596ec2a7d4a70f7709aba7347eefee0159c10947ea2d3083115b7f43"
+  },
+  "supersedes": "v1 comparison missing-key failure; no source replay",
+  "spec_source_bindings": {
+    "source_spec": "677e87144a3027f8825bc7d6d37c8bb84b76e5190f0b477c3bd7f4914e0922ca",
+    "iso128_rebuild_core_v1.py": "9223ea098abe58fa33d2d0b9423e730b067a5b81986f1f700ccf7cbd9fc92391",
+    "control_ISO128_rebuild_v1.py": "4cd7f78b2c129619d4beddd29c2de18d24bd09f221e945b013fd60c60652f9e1",
+    "run_ISO128_sources_v1.py": "883a2b1a0e28fa8b805bdc8bd35a78df9565b64d3b3eafcb73dd23ba43002eb4",
+    "compare_ISO128_sources_v1.py": "7a24e3607c5fa79355ee78210e001e7062c6ae64b13d9a58ffa76d59aa660594",
+    "cpu_runtime.py": "207c7a16432e722fa0b77c1e9d05e0d2ef712b540a95f25762bcb13cd10feb85"
+  },
+  "own_complete": {
+    "path": "<internal>/source_complete.json",
+    "bytes": 6239752,
+    "sha256": "c95ebcdd3e974525835be7233b1e13d6b0bd3efd44457c9180af023cc125e40f"
+  },
+  "original_fields": {
+    "path": "<internal>/collapse_lad_ISO_128_s4_nkqh2_m0p2_rs128_n4096_R04_k10_tau8_ell4_prep4_A_R2_avg_newton_v36nq_fields.npz",
+    "bytes": 33520066,
+    "sha256": "12c7f0093f24648dc2a218dc46f2da48b21daaf884945a9f10e4b475f7cc2813"
+  },
+  "original_run": {
+    "path": "<internal>/collapse_lad_ISO_128_s4_nkqh2_m0p2_rs128_n4096_R04_k10_tau8_ell4_prep4_A_R2_avg_newton_v36nq.json",
+    "bytes": 3629991,
+    "sha256": "d7fa15299499a1971c709ae0241a21dc42628409a47961bcedbbc4027b6eb491"
+  },
+  "index": 80,
+  "T": 640.0,
+  "T_over_rs": 5.0,
+  "comparisons": {
+    "s64_eps_tot": {
+      "available": true,
+      "exact_equal": false,
+      "max_absolute": 6.696865284538944e-13,
+      "max_indices": [
+        1
+      ],
+      "max_radii": [
+        2.0
+      ],
+      "max_pointwise_normalized": 2.623296245462417e-16,
+      "normalized_max_indices": [
+        2814
+      ],
+      "normalized_max_radii": [
+        2815.0
+      ],
+      "global_max_absolute_over_max_scale": 5.4176188710359316e-17,
+      "zero_scale_exact_indices": [],
+      "zero_scale_nonzero_indices": [],
+      "zero_scale_policy": "exact agreement ratio0; nonzero difference ratio unavailable",
+      "order_concern": false,
+      "own_finite_count": 4096,
+      "stored_finite_count": 4096
+    },
+    "s64_J_tot": {
+      "available": true,
+      "exact_equal": false,
+      "max_absolute": 3.350100687311841e-14,
+      "max_indices": [
+        647
+      ],
+      "max_radii": [
+        648.0
+      ],
+      "max_pointwise_normalized": 2.8677358394235005e-08,
+      "normalized_max_indices": [
+        3848
+      ],
+      "normalized_max_radii": [
+        3849.0
+      ],
+      "global_max_absolute_over_max_scale": 6.54587000782003e-15,
+      "zero_scale_exact_indices": [],
+      "zero_scale_nonzero_indices": [],
+      "zero_scale_policy": "exact agreement ratio0; nonzero difference ratio unavailable",
+      "order_concern": false,
+      "own_finite_count": 4096,
+      "stored_finite_count": 4096
+    },
+    "s64_eps_pairs": {
+      "available": true,
+      "exact_equal": false,
+      "max_absolute": 6.696865284538944e-13,
+      "max_indices": [
+        1
+      ],
+      "max_radii": [
+        2.0
+      ],
+      "max_pointwise_normalized": 2.623296245462417e-16,
+      "normalized_max_indices": [
+        2814
+      ],
+      "normalized_max_radii": [
+        2815.0
+      ],
+      "global_max_absolute_over_max_scale": 5.4176188762067485e-17,
+      "zero_scale_exact_indices": [],
+      "zero_scale_nonzero_indices": [],
+      "zero_scale_policy": "exact agreement ratio0; nonzero difference ratio unavailable",
+      "order_concern": false,
+      "own_finite_count": 4096,
+      "stored_finite_count": 4096
+    },
+    "s64_J_pairs": {
+      "available": true,
+      "exact_equal": false,
+      "max_absolute": 3.35009797680641e-14,
+      "max_indices": [
+        647
+      ],
+      "max_radii": [
+        648.0
+      ],
+      "max_pointwise_normalized": 2.8677358394235005e-08,
+      "normalized_max_indices": [
+        3848
+      ],
+      "normalized_max_radii": [
+        3849.0
+      ],
+      "global_max_absolute_over_max_scale": 6.545864711675865e-15,
+      "zero_scale_exact_indices": [],
+      "zero_scale_nonzero_indices": [],
+      "zero_scale_policy": "exact agreement ratio0; nonzero difference ratio unavailable",
+      "order_concern": false,
+      "own_finite_count": 4096,
+      "stored_finite_count": 4096
+    },
+    "s127_eps_tot": {
+      "available": true,
+      "exact_equal": false,
+      "max_absolute": 1.0516032489249483e-12,
+      "max_indices": [
+        0
+      ],
+      "max_radii": [
+        1.0
+      ],
+      "max_pointwise_normalized": 1.3782249535716854e-16,
+      "normalized_max_indices": [
+        898
+      ],
+      "normalized_max_radii": [
+        899.0
+      ],
+      "global_max_absolute_over_max_scale": 8.507242365128041e-17,
+      "zero_scale_exact_indices": [],
+      "zero_scale_nonzero_indices": [],
+      "zero_scale_policy": "exact agreement ratio0; nonzero difference ratio unavailable",
+      "order_concern": false,
+      "own_finite_count": 4096,
+      "stored_finite_count": 4096
+    },
+    "s127_J_tot": {
+      "available": true,
+      "exact_equal": false,
+      "max_absolute": 2.3772650514786164e-14,
+      "max_indices": [
+        623
+      ],
+      "max_radii": [
+        624.0
+      ],
+      "max_pointwise_normalized": 1.6685805683760946e-08,
+      "normalized_max_indices": [
+        4018
+      ],
+      "normalized_max_radii": [
+        4019.0
+      ],
+      "global_max_absolute_over_max_scale": 4.645015017025997e-15,
+      "zero_scale_exact_indices": [],
+      "zero_scale_nonzero_indices": [],
+      "zero_scale_policy": "exact agreement ratio0; nonzero difference ratio unavailable",
+      "order_concern": false,
+      "own_finite_count": 4096,
+      "stored_finite_count": 4096
+    },
+    "s127_eps_pairs": {
+      "available": true,
+      "exact_equal": false,
+      "max_absolute": 1.0516032489249483e-12,
+      "max_indices": [
+        0
+      ],
+      "max_radii": [
+        1.0
+      ],
+      "max_pointwise_normalized": 1.378224953561091e-16,
+      "normalized_max_indices": [
+        898
+      ],
+      "normalized_max_radii": [
+        899.0
+      ],
+      "global_max_absolute_over_max_scale": 8.507242373247732e-17,
+      "zero_scale_exact_indices": [],
+      "zero_scale_nonzero_indices": [],
+      "zero_scale_policy": "exact agreement ratio0; nonzero difference ratio unavailable",
+      "order_concern": false,
+      "own_finite_count": 4096,
+      "stored_finite_count": 4096
+    },
+    "s127_J_pairs": {
+      "available": true,
+      "exact_equal": false,
+      "max_absolute": 2.3772650514786164e-14,
+      "max_indices": [
+        623
+      ],
+      "max_radii": [
+        624.0
+      ],
+      "max_pointwise_normalized": 1.6685805683760946e-08,
+      "normalized_max_indices": [
+        4018
+      ],
+      "normalized_max_radii": [
+        4019.0
+      ],
+      "global_max_absolute_over_max_scale": 4.645015017025997e-15,
+      "zero_scale_exact_indices": [],
+      "zero_scale_nonzero_indices": [],
+      "zero_scale_policy": "exact agreement ratio0; nonzero difference ratio unavailable",
+      "order_concern": false,
+      "own_finite_count": 4096,
+      "stored_finite_count": 4096
+    }
+  },
+  "arrays": {
+    "path": "<internal>/T5_source_comparison.npz",
+    "bytes": 1389712,
+    "sha256": "7dc17527a6af95ddbb69fa9a9e56f647f9604ac3a53eaf1961f3b75fb9a9b15e"
+  },
+  "T11_5_original_record": "unavailable; no substituted foreign rebuild"
+}

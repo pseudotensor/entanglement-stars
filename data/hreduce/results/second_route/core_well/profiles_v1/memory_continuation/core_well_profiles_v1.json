@@ -1,0 +1,1713 @@
+{
+  "status": "incomplete",
+  "purpose": "owner66 L; core compression, momentum and exponent control",
+  "slices": {
+    "16": {
+      "input": {
+        "path": "<internal>/orbitals_c19_rs64_A_R2_tau8_ell4_avg_r11_T0016.00.npz",
+        "size": 2685802106,
+        "mtime_ns": 1792108287000000000,
+        "device": 2048,
+        "inode": 17631792
+      },
+      "clock": 16,
+      "channels": {
+        "1": {
+          "n_dust": 5,
+          "weight": 16.0,
+          "f": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "occupation_domain": true,
+          "stored_gram_max": 2.0650148258027912e-14,
+          "raw_count": 5.000000000000052
+        },
+        "2": {
+          "n_dust": 4,
+          "weight": 32.0,
+          "f": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "occupation_domain": true,
+          "stored_gram_max": 1.8762769116165146e-14,
+          "raw_count": 3.999999999999999
+        },
+        "3": {
+          "n_dust": 3,
+          "weight": 48.0,
+          "f": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "occupation_domain": true,
+          "stored_gram_max": 2.316999641094094e-14,
+          "raw_count": 3.000000000000045
+        },
+        "4": {
+          "n_dust": 2,
+          "weight": 64.0,
+          "f": [
+            1.0,
+            1.0
+          ],
+          "occupation_domain": true,
+          "stored_gram_max": 2.6201263382578847e-14,
+          "raw_count": 2.0000000000000204
+        },
+        "5": {
+          "n_dust": 2,
+          "weight": 80.0,
+          "f": [
+            1.0,
+            1.0
+          ],
+          "occupation_domain": true,
+          "stored_gram_max": 1.487698868973801e-14,
+          "raw_count": 1.999999999999981
+        },
+        "6": {
+          "n_dust": 0,
+          "weight": 96.0,
+          "f": [],
+          "occupation_domain": true,
+          "stored_gram_max": 0,
+          "raw_count": 0.0
+        },
+        "7": {
+          "n_dust": 0,
+          "weight": 112.0,
+          "f": [],
+          "occupation_domain": true,
+          "stored_gram_max": 0,
+          "raw_count": 0.0
+        },
+        "8": {
+          "n_dust": 0,
+          "weight": 128.0,
+          "f": [],
+          "occupation_domain": true,
+          "stored_gram_max": 0,
+          "raw_count": 0.0
+        },
+        "9": {
+          "n_dust": 0,
+          "weight": 144.0,
+          "f": [],
+          "occupation_domain": true,
+          "stored_gram_max": 0,
+          "raw_count": 0.0
+        },
+        "10": {
+          "n_dust": 0,
+          "weight": 160.0,
+          "f": [],
+          "occupation_domain": true,
+          "stored_gram_max": 0,
+          "raw_count": 0.0
+        }
+      },
+      "archive_dtype": "complex128",
+      "record": {
+        "T": 1024.0,
+        "T_over_rs": 16.0,
+        "E": 108.54800241353853,
+        "R_c": 32.24700700099046,
+        "R_t": 50.837098539574995,
+        "r_in": 23.4437146266384,
+        "converged": true,
+        "solver": {
+          "module": "engine_fields_v14.solve_constraints_ivp",
+          "nfev": 5717,
+          "N_centre": 0.18049428465921527,
+          "residual_W": 4.188403054063548e-07,
+          "residual_invN": 9.169258116491955e-08,
+          "residual_matching_region": {
+            "W": 4.188403054063548e-07,
+            "invN": 9.169258116491955e-08
+          },
+          "residual_ladder": {
+            "h_ell/64_and_/128": [
+              4.188403054063548e-07,
+              9.169258116491955e-08
+            ],
+            "h_ell/32_and_/64": [
+              4.1907546218496253e-07,
+              9.163746465474471e-08
+            ]
+          },
+          "source_spline_error": {
+            "rho": 2.252055394884851e-12,
+            "J": 1.1177849539526956e-11
+          },
+          "centre_series_ratio": 0.999794067618946,
+          "centre_series_check": {
+            "rho_spline_minus_series_rel": 8.125234423530989e-10,
+            "J_spline_minus_series_rel": 1.8533580059875091e-09,
+            "regular_start": true
+          },
+          "collar_margin": {
+            "needed_node": 520,
+            "last_node": 512,
+            "deficit_ell": 8,
+            "eps_share_last_8ell": 2.6082063468045515e-06,
+            "J_abs_last_8ell": 0.0015873265091257576
+          },
+          "W_tail": {
+            "r_end": 2080.0,
+            "E_tail_end": 108.54802585786213,
+            "E_collar": 108.54800241353853,
+            "flagged": true
+          },
+          "W_roundoff_negative_points": 0,
+          "W_negative": null,
+          "site_fields": "averaged",
+          "kernel_norms": [
+            0.9999999999999842,
+            0.9999999999999992
+          ]
+        },
+        "label": "quasi-static (tau = 8); ell = 4; reference: R2 (the continued sea, Landau-Zener matched maximum overlap (c_LZ = 1, window 4)); site fields: averaged; engine_fields_v14 (one outward initial-value problem, the momentum equation kept everywhere, the flat-slice gauge continued and labelled); economy: lagged first iterate, stop |dE/E| < 1e-07 and fields < 1e-06, plain iteration, at most 20 iterations (the smallest-residual iterate returned, flagged); tau = 8; collar policy flag; dictionary: H = N E + v.p, ds^2 = -N^2 dt^2 + (dx - v dt)^2, the ADM sign of the momentum law (J_i = -(1/8 pi G) d_j (K^j_i - delta^j_i K) for K_ij = (d_i v_j + d_j v_i)/(2N)); the goal's display's sign of v amended per engine 12.2; the owner's confirmation pending; J_ell = <P_r> = -J_r of the goal's display (engine 20.3)"
+      },
+      "field_index": 128,
+      "dense_nodes": 513,
+      "applied_fields_vs_historical_max": 0.0,
+      "matched_channels": {
+        "1": {
+          "gram_min": 0.9999999999989198,
+          "gram_max": 1.0000000000011036,
+          "gram_condition": 1.0000000000021838,
+          "hermitian_defect": 1.333863159195491e-16,
+          "dust_orthogonality_max": 3.7747582839178344e-15,
+          "status": "complete",
+          "count": 5.000000000000006,
+          "shell_parseval_max": 1.3877787807814457e-17,
+          "spectral": {
+            "count_bins": [
+              1.597865844685555e-07,
+              3.4209859371464294e-05,
+              0.0006772483019835501,
+              4.996134971837166,
+              0.0031534098460753693,
+              3.6882942347317775e-10
+            ],
+            "energy_bins": [
+              -1.674320582301185e-07,
+              -2.0653881549299633e-05,
+              -5.9919058888929764e-05,
+              0.35042304455874146,
+              0.0007163961879443118,
+              4.027463201517688e-10
+            ],
+            "max_eigen_residual": 1.4188390922974637e-14,
+            "reconstruction_max": 1.3961495968248967e-15,
+            "site_completeness_max": 4.440892098500626e-16,
+            "count_completeness": 3.552713678800501e-15,
+            "energy_completeness": 1.6653345369377348e-16,
+            "min_distance_to_edge": [
+              0.0001394556803435698,
+              4.9330307606010315e-06,
+              0.02885132402804967,
+              4.933030760462254e-06,
+              0.00013945568034379185
+            ],
+            "edge_membership_certified": false,
+            "direct_energy": 0.3510587007769355,
+            "eigensystem_path": "<internal>/eigensystem_T16_k01.npz",
+            "eigensystem_sha256": "16b31c807bfd634e972ba28721dfbe67905e767875e8a4d2e504a921069e71c4"
+          }
+        },
+        "2": {
+          "gram_min": 0.9999999999989025,
+          "gram_max": 1.0000000000010625,
+          "gram_condition": 1.00000000000216,
+          "hermitian_defect": 1.8462512823384912e-16,
+          "dust_orthogonality_max": 2.3441099480769837e-15,
+          "status": "complete",
+          "count": 4.000000000000006,
+          "shell_parseval_max": 8.881784197001252e-16,
+          "spectral": {
+            "count_bins": [
+              1.1811287305493944e-07,
+              3.5520518456460284e-05,
+              4.777600797716836e-05,
+              3.9988006672746095,
+              0.001115917813160947,
+              2.729280698785214e-10
+            ],
+            "energy_bins": [
+              -1.2377826071988282e-07,
+              -2.1344037868430066e-05,
+              -4.651368760211069e-06,
+              0.2723592322650355,
+              0.00024406986066910692,
+              2.980903672250297e-10
+            ],
+            "max_eigen_residual": 1.4381269717902775e-14,
+            "reconstruction_max": 1.4734002284896296e-15,
+            "site_completeness_max": 5.273559366969494e-16,
+            "count_completeness": -1.7763568394002505e-15,
+            "energy_completeness": -3.3306690738754696e-16,
+            "min_distance_to_edge": [
+              0.00014744282928425,
+              5.295754147421894e-05,
+              0.03173145315561569,
+              5.295754147427445e-05,
+              0.00014744282928447205
+            ],
+            "edge_membership_certified": false,
+            "direct_energy": 0.27257718323890623,
+            "eigensystem_path": "<internal>/eigensystem_T16_k02.npz",
+            "eigensystem_sha256": "27a98032df7b2974f692e4b2a2381582de8332ec566655a6afec91c5b20490af"
+          }
+        },
+        "3": {
+          "gram_min": 0.9999999999989235,
+          "gram_max": 1.0000000000010603,
+          "gram_condition": 1.0000000000021367,
+          "hermitian_defect": 1.791417581263551e-16,
+          "dust_orthogonality_max": 2.2204461196008675e-15,
+          "status": "joint_and_fft_saved",
+          "count": 3.000000000000003,
+          "shell_parseval_max": 6.938893903907228e-18
+        }
+      },
+      "raw_weighted_count": 640.0000000000027
+    },
+    "12": {
+      "input": {
+        "path": "<internal>/orbitals_c19_rs64_A_R2_tau8_ell4_avg_r11_T0012.00.npz",
+        "size": 2685802106,
+        "mtime_ns": 1792107171000000000,
+        "device": 2048,
+        "inode": 17631790
+      },
+      "clock": 12,
+      "channels": {
+        "1": {
+          "n_dust": 5,
+          "weight": 16.0,
+          "f": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "occupation_domain": true,
+          "stored_gram_max": 1.887379141862766e-14,
+          "raw_count": 5.000000000000044
+        },
+        "2": {
+          "n_dust": 4,
+          "weight": 32.0,
+          "f": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "occupation_domain": true,
+          "stored_gram_max": 1.7985612998927536e-14,
+          "raw_count": 4.000000000000032
+        },
+        "3": {
+          "n_dust": 3,
+          "weight": 48.0,
+          "f": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "occupation_domain": true,
+          "stored_gram_max": 2.591737991382417e-14,
+          "raw_count": 3.0000000000000044
+        },
+        "4": {
+          "n_dust": 2,
+          "weight": 64.0,
+          "f": [
+            1.0,
+            1.0
+          ],
+          "occupation_domain": true,
+          "stored_gram_max": 3.10862446959344e-14,
+          "raw_count": 2.000000000000029
+        },
+        "5": {
+          "n_dust": 2,
+          "weight": 80.0,
+          "f": [
+            1.0,
+            1.0
+          ],
+          "occupation_domain": true,
+          "stored_gram_max": 1.809663543497383e-14,
+          "raw_count": 1.9999999999999714
+        },
+        "6": {
+          "n_dust": 0,
+          "weight": 96.0,
+          "f": [],
+          "occupation_domain": true,
+          "stored_gram_max": 0,
+          "raw_count": 0.0
+        },
+        "7": {
+          "n_dust": 0,
+          "weight": 112.0,
+          "f": [],
+          "occupation_domain": true,
+          "stored_gram_max": 0,
+          "raw_count": 0.0
+        },
+        "8": {
+          "n_dust": 0,
+          "weight": 128.0,
+          "f": [],
+          "occupation_domain": true,
+          "stored_gram_max": 0,
+          "raw_count": 0.0
+        },
+        "9": {
+          "n_dust": 0,
+          "weight": 144.0,
+          "f": [],
+          "occupation_domain": true,
+          "stored_gram_max": 0,
+          "raw_count": 0.0
+        },
+        "10": {
+          "n_dust": 0,
+          "weight": 160.0,
+          "f": [],
+          "occupation_domain": true,
+          "stored_gram_max": 0,
+          "raw_count": 0.0
+        }
+      },
+      "archive_dtype": "complex128",
+      "record": {
+        "T": 768.0,
+        "T_over_rs": 12.0,
+        "E": 116.93366105040074,
+        "R_c": 43.36352882424721,
+        "R_t": null,
+        "r_in": null,
+        "converged": true,
+        "solver": {
+          "module": "engine_fields_v14.solve_constraints_ivp",
+          "nfev": 3566,
+          "N_centre": 0.48883246452063805,
+          "residual_W": 7.483250823668603e-06,
+          "residual_invN": 3.3115002506694405e-06,
+          "residual_matching_region": {
+            "W": 7.483250823668603e-06,
+            "invN": 3.3115002506694405e-06
+          },
+          "residual_ladder": {
+            "h_ell/64_and_/128": [
+              7.483250823668603e-06,
+              3.3115002506694405e-06
+            ],
+            "h_ell/32_and_/64": [
+              7.4835974912534646e-06,
+              3.3095670920287344e-06
+            ]
+          },
+          "source_spline_error": {
+            "rho": 3.3385912652705155e-13,
+            "J": 5.385104446767541e-14
+          },
+          "centre_series_ratio": 1.000052731832802,
+          "centre_series_check": {
+            "rho_spline_minus_series_rel": 1.0557538094169471e-11,
+            "J_spline_minus_series_rel": 5.902289238088896e-11,
+            "regular_start": true
+          },
+          "collar_margin": {
+            "needed_node": 520,
+            "last_node": 512,
+            "deficit_ell": 8,
+            "eps_share_last_8ell": 2.33103289421754e-05,
+            "J_abs_last_8ell": 0.010625372545194368
+          },
+          "W_tail": {
+            "r_end": 2080.0,
+            "E_tail_end": 116.93389956617564,
+            "E_collar": 116.93366105040074,
+            "flagged": true
+          },
+          "W_roundoff_negative_points": 0,
+          "W_negative": null,
+          "site_fields": "averaged",
+          "kernel_norms": [
+            0.9999999999999842,
+            0.9999999999999992
+          ]
+        },
+        "label": "quasi-static (tau = 8); ell = 4; reference: R2 (the continued sea, Landau-Zener matched maximum overlap (c_LZ = 1, window 4)); site fields: averaged; engine_fields_v14 (one outward initial-value problem, the momentum equation kept everywhere, the flat-slice gauge continued and labelled); economy: lagged first iterate, stop |dE/E| < 1e-07 and fields < 1e-06, plain iteration, at most 20 iterations (the smallest-residual iterate returned, flagged); tau = 8; collar policy flag; dictionary: H = N E + v.p, ds^2 = -N^2 dt^2 + (dx - v dt)^2, the ADM sign of the momentum law (J_i = -(1/8 pi G) d_j (K^j_i - delta^j_i K) for K_ij = (d_i v_j + d_j v_i)/(2N)); the goal's display's sign of v amended per engine 12.2; the owner's confirmation pending; J_ell = <P_r> = -J_r of the goal's display (engine 20.3)"
+      },
+      "field_index": 96,
+      "dense_nodes": 513,
+      "applied_fields_vs_historical_max": 0.0,
+      "matched_channels": {},
+      "raw_weighted_count": 640.0000000000016
+    },
+    "15": {
+      "input": {
+        "path": "<internal>/orbitals_c19_rs64_A_R2_tau8_ell4_avg_r11_T0015.00.npz",
+        "size": 1343100290,
+        "mtime_ns": 1792108099000000000,
+        "device": 2048,
+        "inode": 17631791
+      },
+      "clock": 15,
+      "channels": {
+        "1": {
+          "n_dust": 5,
+          "weight": 16.0,
+          "f": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "occupation_domain": true,
+          "stored_gram_max": 8.482973878898292e-09,
+          "raw_count": 4.99999999977323
+        },
+        "2": {
+          "n_dust": 4,
+          "weight": 32.0,
+          "f": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "occupation_domain": true,
+          "stored_gram_max": 7.684594516277343e-09,
+          "raw_count": 3.999999995275607
+        },
+        "3": {
+          "n_dust": 3,
+          "weight": 48.0,
+          "f": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "occupation_domain": true,
+          "stored_gram_max": 8.834174725080857e-09,
+          "raw_count": 2.9999999841741247
+        },
+        "4": {
+          "n_dust": 2,
+          "weight": 64.0,
+          "f": [
+            1.0,
+            1.0
+          ],
+          "occupation_domain": true,
+          "stored_gram_max": 6.1696362463337096e-09,
+          "raw_count": 1.9999999912637283
+        },
+        "5": {
+          "n_dust": 2,
+          "weight": 80.0,
+          "f": [
+            1.0,
+            1.0
+          ],
+          "occupation_domain": true,
+          "stored_gram_max": 1.166110574768453e-08,
+          "raw_count": 1.9999999784756135
+        },
+        "6": {
+          "n_dust": 0,
+          "weight": 96.0,
+          "f": [],
+          "occupation_domain": true,
+          "stored_gram_max": 0,
+          "raw_count": 0.0
+        },
+        "7": {
+          "n_dust": 0,
+          "weight": 112.0,
+          "f": [],
+          "occupation_domain": true,
+          "stored_gram_max": 0,
+          "raw_count": 0.0
+        },
+        "8": {
+          "n_dust": 0,
+          "weight": 128.0,
+          "f": [],
+          "occupation_domain": true,
+          "stored_gram_max": 0,
+          "raw_count": 0.0
+        },
+        "9": {
+          "n_dust": 0,
+          "weight": 144.0,
+          "f": [],
+          "occupation_domain": true,
+          "stored_gram_max": 0,
+          "raw_count": 0.0
+        },
+        "10": {
+          "n_dust": 0,
+          "weight": 160.0,
+          "f": [],
+          "occupation_domain": true,
+          "stored_gram_max": 0,
+          "raw_count": 0.0
+        }
+      },
+      "archive_dtype": "complex64",
+      "record": {
+        "T": 960.0,
+        "T_over_rs": 15.0,
+        "E": 108.8272062902157,
+        "R_c": 27.21311380621345,
+        "R_t": 51.76040530856484,
+        "r_in": 7.04798671590984,
+        "converged": true,
+        "solver": {
+          "module": "engine_fields_v14.solve_constraints_ivp",
+          "nfev": 5222,
+          "N_centre": 0.15087342725282069,
+          "residual_W": 5.506975975845763e-07,
+          "residual_invN": 1.4955775916496472e-07,
+          "residual_matching_region": {
+            "W": 5.506975975845763e-07,
+            "invN": 1.4955775916496472e-07
+          },
+          "residual_ladder": {
+            "h_ell/64_and_/128": [
+              5.506975975845763e-07,
+              1.4955775916496472e-07
+            ],
+            "h_ell/32_and_/64": [
+              5.509443027227947e-07,
+              1.4946824165889226e-07
+            ]
+          },
+          "source_spline_error": {
+            "rho": 2.2558577433476935e-12,
+            "J": 1.2868506846521865e-11
+          },
+          "centre_series_ratio": 0.9997994192223427,
+          "centre_series_check": {
+            "rho_spline_minus_series_rel": 1.2291433888716067e-09,
+            "J_spline_minus_series_rel": 2.182287313888538e-09,
+            "regular_start": true
+          },
+          "collar_margin": {
+            "needed_node": 520,
+            "last_node": 512,
+            "deficit_ell": 8,
+            "eps_share_last_8ell": 3.6058583175251295e-06,
+            "J_abs_last_8ell": 0.002661562718162671
+          },
+          "W_tail": {
+            "r_end": 2080.0,
+            "E_tail_end": 108.82724825075104,
+            "E_collar": 108.8272062902157,
+            "flagged": true
+          },
+          "W_roundoff_negative_points": 0,
+          "W_negative": null,
+          "site_fields": "averaged",
+          "kernel_norms": [
+            0.9999999999999842,
+            0.9999999999999992
+          ]
+        },
+        "label": "quasi-static (tau = 8); ell = 4; reference: R2 (the continued sea, Landau-Zener matched maximum overlap (c_LZ = 1, window 4)); site fields: averaged; engine_fields_v14 (one outward initial-value problem, the momentum equation kept everywhere, the flat-slice gauge continued and labelled); economy: lagged first iterate, stop |dE/E| < 1e-07 and fields < 1e-06, plain iteration, at most 20 iterations (the smallest-residual iterate returned, flagged); tau = 8; collar policy flag; dictionary: H = N E + v.p, ds^2 = -N^2 dt^2 + (dx - v dt)^2, the ADM sign of the momentum law (J_i = -(1/8 pi G) d_j (K^j_i - delta^j_i K) for K_ij = (d_i v_j + d_j v_i)/(2N)); the goal's display's sign of v amended per engine 12.2; the owner's confirmation pending; J_ell = <P_r> = -J_r of the goal's display (engine 20.3)"
+      },
+      "field_index": 120,
+      "dense_nodes": 513,
+      "applied_fields_vs_historical_max": 0.0,
+      "matched_channels": {},
+      "raw_weighted_count": 639.9999968044767
+    }
+  },
+  "unknown_errors": {
+    "evolution": null,
+    "fields": null,
+    "storage": null,
+    "reference_history": null,
+    "exact_historical_writer": null,
+    "spectral_membership": null
+  },
+  "resources": {
+    "threads": 4,
+    "wall_seconds": 890,
+    "cpu_seconds": 3560,
+    "internal_deadline_seconds": 870,
+    "address_space_bytes": 1610612736
+  },
+  "conventions": {
+    "a": 1,
+    "m": 0.2,
+    "g": 0.25,
+    "source": "historical field arrays, not recomputed",
+    "dust": "raw and final dust columns of joint sea+dust polar factor",
+    "shell_sites": 128,
+    "fft_M": 4096,
+    "fit_min_count": 1,
+    "ratio_count_floor": 1e-09,
+    "bins": "(lo,hi] at -b,-m,0,m,b",
+    "shell_bins": "signed ReTr(Pi_shell P_bin D)"
+  },
+  "saved_arrays": [
+    {
+      "path": "<internal>/raw_T16.npz",
+      "size": 513124,
+      "sha256": "ee49209a0e9999f825ac5ff3c178a70727db5f7b3ff9b09721c97807e6f3ee52",
+      "members": {
+        "R": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "N_applied": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "v_applied": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "r_nodes": {
+          "shape": [
+            513
+          ],
+          "dtype": "float64"
+        },
+        "N_nodes": {
+          "shape": [
+            513
+          ],
+          "dtype": "float64"
+        },
+        "v_nodes": {
+          "shape": [
+            513
+          ],
+          "dtype": "float64"
+        },
+        "N_dense": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "v_dense": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "L_N_dense_nodes": {
+          "shape": [
+            513
+          ],
+          "dtype": "float64"
+        },
+        "L_N_dense_sites": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "L_N_applied": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "zero_gradient_dense_nodes": {
+          "shape": [
+            513
+          ],
+          "dtype": "bool"
+        },
+        "zero_gradient_applied": {
+          "shape": [
+            2048
+          ],
+          "dtype": "bool"
+        },
+        "raw_measures_by_channel": {
+          "shape": [
+            10,
+            3,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "weights": {
+          "shape": [
+            10
+          ],
+          "dtype": "float64"
+        },
+        "eps_tot": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "J_tot": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "eps_pairs": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "J_pairs": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "dense_w": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "dense_M": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "dense_I": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "dense_I_collar": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "dense_source": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "applied_w": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "applied_M": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "applied_I": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "applied_I_collar": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "applied_source": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/raw_T12.npz",
+      "size": 502371,
+      "sha256": "26419b88723e2df9b04db76c3cb192d26e0a102c363aa2a2f158dec92fb08060",
+      "members": {
+        "R": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "N_applied": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "v_applied": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "r_nodes": {
+          "shape": [
+            513
+          ],
+          "dtype": "float64"
+        },
+        "N_nodes": {
+          "shape": [
+            513
+          ],
+          "dtype": "float64"
+        },
+        "v_nodes": {
+          "shape": [
+            513
+          ],
+          "dtype": "float64"
+        },
+        "N_dense": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "v_dense": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "L_N_dense_nodes": {
+          "shape": [
+            513
+          ],
+          "dtype": "float64"
+        },
+        "L_N_dense_sites": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "L_N_applied": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "zero_gradient_dense_nodes": {
+          "shape": [
+            513
+          ],
+          "dtype": "bool"
+        },
+        "zero_gradient_applied": {
+          "shape": [
+            2048
+          ],
+          "dtype": "bool"
+        },
+        "raw_measures_by_channel": {
+          "shape": [
+            10,
+            3,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "weights": {
+          "shape": [
+            10
+          ],
+          "dtype": "float64"
+        },
+        "eps_tot": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "J_tot": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "eps_pairs": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "J_pairs": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "dense_w": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "dense_M": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "dense_I": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "dense_I_collar": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "dense_source": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "applied_w": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "applied_M": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "applied_I": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "applied_I_collar": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "applied_source": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/raw_T15.npz",
+      "size": 511717,
+      "sha256": "ebea3c7ea0d338c5ee71940babd61f849102f423ea6c37230e542d2f3213ffc5",
+      "members": {
+        "R": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "N_applied": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "v_applied": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "r_nodes": {
+          "shape": [
+            513
+          ],
+          "dtype": "float64"
+        },
+        "N_nodes": {
+          "shape": [
+            513
+          ],
+          "dtype": "float64"
+        },
+        "v_nodes": {
+          "shape": [
+            513
+          ],
+          "dtype": "float64"
+        },
+        "N_dense": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "v_dense": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "L_N_dense_nodes": {
+          "shape": [
+            513
+          ],
+          "dtype": "float64"
+        },
+        "L_N_dense_sites": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "L_N_applied": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "zero_gradient_dense_nodes": {
+          "shape": [
+            513
+          ],
+          "dtype": "bool"
+        },
+        "zero_gradient_applied": {
+          "shape": [
+            2048
+          ],
+          "dtype": "bool"
+        },
+        "raw_measures_by_channel": {
+          "shape": [
+            10,
+            3,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "weights": {
+          "shape": [
+            10
+          ],
+          "dtype": "float64"
+        },
+        "eps_tot": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "J_tot": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "eps_pairs": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "J_pairs": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "dense_w": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "dense_M": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "dense_I": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "dense_I_collar": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "dense_source": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "applied_w": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "applied_M": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "applied_I": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "applied_I_collar": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "applied_source": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/joint_T16_k01.npz",
+      "size": 924868,
+      "sha256": "dbc7bbff8208cafd363a8af841daa180cedb541547e93aec57e5457dd751a92a",
+      "members": {
+        "dust": {
+          "shape": [
+            4096,
+            5
+          ],
+          "dtype": "complex128"
+        },
+        "joint_inverse_root_columns": {
+          "shape": [
+            2053,
+            5
+          ],
+          "dtype": "complex128"
+        },
+        "joint_gram_eigenvalues": {
+          "shape": [
+            2053
+          ],
+          "dtype": "float64"
+        },
+        "measures": {
+          "shape": [
+            3,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "f": {
+          "shape": [
+            5
+          ],
+          "dtype": "float64"
+        },
+        "shell_fft_weights": {
+          "shape": [
+            16,
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "folded_index": {
+          "shape": [
+            4096
+          ],
+          "dtype": "int64"
+        },
+        "shell_number": {
+          "shape": [
+            16
+          ],
+          "dtype": "float64"
+        },
+        "shell_high_number": {
+          "shape": [
+            16
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/spectral_T16_k01.npz",
+      "size": 593297,
+      "sha256": "acadc6d210ebc9fd6ea034798fbd5e7130227f9b554fd65f9016391d6848ecbd",
+      "members": {
+        "omega": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "amplitudes": {
+          "shape": [
+            4096,
+            5
+          ],
+          "dtype": "complex128"
+        },
+        "level_weights": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "bins": {
+          "shape": [
+            4096
+          ],
+          "dtype": "int64"
+        },
+        "site_bins": {
+          "shape": [
+            6,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "energy_site_bins": {
+          "shape": [
+            6,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "eigen_residual_norms": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "edges": {
+          "shape": [
+            5
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/joint_T16_k02.npz",
+      "size": 850401,
+      "sha256": "5a422f42c215227d814d61421b9834aab820382e03de2052dbf0c77cf3f64a6b",
+      "members": {
+        "dust": {
+          "shape": [
+            4096,
+            4
+          ],
+          "dtype": "complex128"
+        },
+        "joint_inverse_root_columns": {
+          "shape": [
+            2052,
+            4
+          ],
+          "dtype": "complex128"
+        },
+        "joint_gram_eigenvalues": {
+          "shape": [
+            2052
+          ],
+          "dtype": "float64"
+        },
+        "measures": {
+          "shape": [
+            3,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "f": {
+          "shape": [
+            4
+          ],
+          "dtype": "float64"
+        },
+        "shell_fft_weights": {
+          "shape": [
+            16,
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "folded_index": {
+          "shape": [
+            4096
+          ],
+          "dtype": "int64"
+        },
+        "shell_number": {
+          "shape": [
+            16
+          ],
+          "dtype": "float64"
+        },
+        "shell_high_number": {
+          "shape": [
+            16
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/spectral_T16_k02.npz",
+      "size": 530354,
+      "sha256": "12f405928761895f9a5aed92046b74266377fe25f249231d032059bcaf4e0954",
+      "members": {
+        "omega": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "amplitudes": {
+          "shape": [
+            4096,
+            4
+          ],
+          "dtype": "complex128"
+        },
+        "level_weights": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "bins": {
+          "shape": [
+            4096
+          ],
+          "dtype": "int64"
+        },
+        "site_bins": {
+          "shape": [
+            6,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "energy_site_bins": {
+          "shape": [
+            6,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "eigen_residual_norms": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "edges": {
+          "shape": [
+            5
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "path": "<internal>/joint_T16_k03.npz",
+      "size": 776842,
+      "sha256": "0cb9ab1e7c95a1808ebe8b3b21a25f4e1a1f75291b9ec7533ec916ab0f212ba4",
+      "members": {
+        "dust": {
+          "shape": [
+            4096,
+            3
+          ],
+          "dtype": "complex128"
+        },
+        "joint_inverse_root_columns": {
+          "shape": [
+            2051,
+            3
+          ],
+          "dtype": "complex128"
+        },
+        "joint_gram_eigenvalues": {
+          "shape": [
+            2051
+          ],
+          "dtype": "float64"
+        },
+        "measures": {
+          "shape": [
+            3,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "f": {
+          "shape": [
+            3
+          ],
+          "dtype": "float64"
+        },
+        "shell_fft_weights": {
+          "shape": [
+            16,
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "folded_index": {
+          "shape": [
+            4096
+          ],
+          "dtype": "int64"
+        },
+        "shell_number": {
+          "shape": [
+            16
+          ],
+          "dtype": "float64"
+        },
+        "shell_high_number": {
+          "shape": [
+            16
+          ],
+          "dtype": "float64"
+        }
+      }
+    }
+  ],
+  "box_only_arrays": [
+    {
+      "path": "<internal>/eigensystem_T16_k01.npz",
+      "size": 268468744,
+      "sha256": "16b31c807bfd634e972ba28721dfbe67905e767875e8a4d2e504a921069e71c4",
+      "members": {
+        "omega": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "eigenvectors": {
+          "shape": [
+            4096,
+            4096
+          ],
+          "dtype": "complex128"
+        }
+      },
+      "reason": "own complete eigensystem, retained only on box for nonrepeated readouts"
+    },
+    {
+      "path": "<internal>/eigensystem_T16_k02.npz",
+      "size": 268468744,
+      "sha256": "27a98032df7b2974f692e4b2a2381582de8332ec566655a6afec91c5b20490af",
+      "members": {
+        "omega": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64"
+        },
+        "eigenvectors": {
+          "shape": [
+            4096,
+            4096
+          ],
+          "dtype": "complex128"
+        }
+      },
+      "reason": "own complete eigensystem, retained only on box for nonrepeated readouts"
+    }
+  ],
+  "implementation": {
+    "python": "3.12.12",
+    "numpy": "2.2.6",
+    "scipy": "1.17.0",
+    "producer_sha256": "d2b4540bd16e3e95304d57b2a4641597923021b70b94402a749e93783cb1f3b7",
+    "base_producer_sha256": "8a55cd10be12b2b0b4c36f8b364c31dd198ccc8bdf114ea4bb0c2d78ec86fd54",
+    "helper_sha256": "294ebd7e68dd8f260f4be2a70c8d250db0f00106679edbea8e2274d83c4f326b",
+    "cpu_affinity": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "nice": 19
+  },
+  "historical_inputs": {
+    "fields": {
+      "path": "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_r11_fields.npz",
+      "size": 34263267,
+      "mtime_ns": 1792113881000000000,
+      "device": 66307,
+      "inode": 202506491
+    },
+    "fields_sha256": "a7d74d1b5e8516caa68f8249e7794572ffa315ed92eccde824552e9b8d3f32bb",
+    "records": {
+      "path": "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_r11.json",
+      "size": 4083175,
+      "mtime_ns": 1792113879000000000,
+      "device": 66307,
+      "inode": 202506558
+    },
+    "records_sha256": "79b79bd15e5ba5ab3cb467af985c165c39c6a69c6bfe9ca360d438811a7d6372",
+    "source_reconstruction": false
+  },
+  "elapsed_seconds": 678.5278758257627,
+  "peak_rss_kib": 617880,
+  "prior_attempt_phases": [
+    {
+      "name": "T16 raw and recorded profiles starting",
+      "elapsed_seconds": 0.6879797987639904
+    },
+    {
+      "name": "T16 raw and recorded profiles saved",
+      "elapsed_seconds": 0.7271265462040901
+    },
+    {
+      "name": "T12 raw and recorded profiles starting",
+      "elapsed_seconds": 0.7278625443577766
+    },
+    {
+      "name": "T12 raw and recorded profiles saved",
+      "elapsed_seconds": 0.767978522926569
+    },
+    {
+      "name": "T15 raw and recorded profiles starting",
+      "elapsed_seconds": 0.7691803984344006
+    },
+    {
+      "name": "T15 raw and recorded profiles saved",
+      "elapsed_seconds": 0.8072087280452251
+    },
+    {
+      "name": "T16 k1 joint polar starting",
+      "elapsed_seconds": 0.8092280998826027
+    },
+    {
+      "name": "T16 k1 banded eigensystem starting",
+      "elapsed_seconds": 9.55290800333023
+    }
+  ],
+  "phases": [
+    {
+      "name": "saved raw/record profiles loaded without recomputation",
+      "elapsed_seconds": 0.4045492075383663
+    },
+    {
+      "name": "T16 k1 saved joint dust/FFT reused without recomputation",
+      "elapsed_seconds": 0.4239412918686867
+    },
+    {
+      "name": "T16 k1 banded eigensystem starting",
+      "elapsed_seconds": 0.4273456148803234
+    },
+    {
+      "name": "T16 k1 complete eigensystem saved",
+      "elapsed_seconds": 324.19100568816066
+    },
+    {
+      "name": "T16 k2 joint polar starting",
+      "elapsed_seconds": 326.6978539824486
+    },
+    {
+      "name": "T16 k2 banded eigensystem starting",
+      "elapsed_seconds": 334.43121310323477
+    },
+    {
+      "name": "T16 k2 complete eigensystem saved",
+      "elapsed_seconds": 663.3833592869341
+    },
+    {
+      "name": "T16 k3 joint polar starting",
+      "elapsed_seconds": 667.4907975718379
+    },
+    {
+      "name": "T16 k3 banded eigensystem starting",
+      "elapsed_seconds": 678.5278459303081
+    }
+  ],
+  "prior_failure": {
+    "error": "MemoryError: Unable to allocate 256. MiB for an array with shape (33574913,) and data type float64",
+    "result_path": "<internal>/core_well_profiles_v1.json",
+    "result_sha256": "96a9a3bfb67e4cc5759c8a50eb7cdf6bcf51e13c15ec10e5f6c3e42730a77aa8",
+    "execution_path": "<internal>/execution.json",
+    "execution_sha256": "3aa2a0082652c47d8d214da71ea9b66d6d7ba5d898a424a4f94d9473798b029d",
+    "elapsed_seconds": 9.88800534978509,
+    "maximum_child_rss_kib": 871756
+  },
+  "continuation": {
+    "prior_wall_seconds": 9.88800534978509,
+    "prior_cpu_seconds_upper_bound": 39.55202139914036,
+    "original_wall_seconds": 900,
+    "original_cpu_seconds": 3600,
+    "reuse": [
+      "raw_T16.npz",
+      "raw_T12.npz",
+      "raw_T15.npz",
+      "joint_T16_k01.npz"
+    ],
+    "driver": "eig_banded(select='i', select_range=(0,4095)); complete zhbevx path",
+    "remaining_nonempty_joint_actions": 14,
+    "remaining_complete_spectral_actions": 15
+  },
+  "aggregate_elapsed_seconds": 688.415858514607,
+  "aggregate_cpu_seconds_upper_bound": 1005.6992393991404
+}

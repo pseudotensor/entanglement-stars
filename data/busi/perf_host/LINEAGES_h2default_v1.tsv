@@ -1,0 +1,8 @@
+lineage	engine file	engine md5	field import (code dir)	engine_fields_v16.py before	engine_fields_v16.py in the kit dir	fixture gate (256 sites, box CPU, H2default/whole)
+v36q_srf	engine_collapse_v36q_srf.py	77857541452db4aa54544232a3ddd3c4	import engine_fields_v16 as FLD (+ _F16 for --field-kernel-cache; --fields-v17 rebinds FLD to engine_fields_v17, which imports engine_fields_v16 as F16)	1ffcf5e88c7953d7bfee025d57f4fb86	fa84dad3183704f4b908cba6c09c49ca	QN: BITWISE (Newton)
+v36r	engine_collapse_v36r.py	7b6d0f4f2db82a98780bdca78166f61b	as v36q_srf	1ffcf5e88c7953d7bfee025d57f4fb86	fa84dad3183704f4b908cba6c09c49ca	RN: BITWISE (Newton without --nk-host-release, which v36r lacks; runs_b)
+v36nq	engine_collapse_v36nq.py	8549c5429e0fcd2608c92434a3c26967	as v36q_srf	1ffcf5e88c7953d7bfee025d57f4fb86	fa84dad3183704f4b908cba6c09c49ca	NQN: BITWISE (Newton)
+v36y	engine_collapse_v36y.py	517d44664cb2cd61a466034a539d2fe9	as v36q_srf	1ffcf5e88c7953d7bfee025d57f4fb86	fa84dad3183704f4b908cba6c09c49ca	YN: BITWISE (Newton)
+v36z	engine_collapse_v36z.py	924eefed596c9a32fe029294a2dae498	as v36q_srf	1ffcf5e88c7953d7bfee025d57f4fb86	fa84dad3183704f4b908cba6c09c49ca	ZN, ZN with H2_PW_ONE=0 H2_LOCAL_SPLINE=0, ZP (plain), ZN17 (--fields-v17): BITWISE
+v37a	engine_collapse_v37a.py	2580dbfedccf898d07f22700d908ded2	as v36q_srf	1ffcf5e88c7953d7bfee025d57f4fb86	fa84dad3183704f4b908cba6c09c49ca	AN: BITWISE (Newton)
+v37n	engine_collapse_v37n.py	a68b046ed388444600394c1156b6e70e	as v36q_srf	1ffcf5e88c7953d7bfee025d57f4fb86	fa84dad3183704f4b908cba6c09c49ca	NN: BITWISE (Newton)

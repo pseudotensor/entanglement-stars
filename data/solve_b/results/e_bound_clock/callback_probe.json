@@ -1,0 +1,185 @@
+{
+  "scope": "engineering-only real-backend callback controls; no model result",
+  "backend": "python-flint0.9.0; Arb/Acb directed ball operations",
+  "admission": {
+    "assigned_gpu_uuid": "GPU-1c907351-ed3d-0d52-5072-e791dde9df56",
+    "cuda_allocation_bytes": 1048576,
+    "cuda_context_in_this_single_job_process": true,
+    "same_process_fresh_device_query_before_allocation": true,
+    "post_allocation_single_owned_compute_pid_verified": true,
+    "single_process_pid": 2147293,
+    "niceness": 10,
+    "threads_at_launch": 4,
+    "maximum_threads": 4
+  },
+  "precision_decimal_digits": 128,
+  "predeclared_caps": {
+    "seconds": 30,
+    "max_evaluations": 4096,
+    "integral_evaluations": 512,
+    "memory_mb": 4096
+  },
+  "predeclared_radius_bound": {
+    "lower_dyadic": {
+      "mantissa": "556938551955834377275533643273961343370755433013740225900780336657626363184653001282460059975265063449541297555370411048668054775",
+      "exponent2": -627
+    },
+    "upper_dyadic": {
+      "mantissa": "69617318994479297159441705409245167921344429126717528237597542082203295398081625160307507496908132931192662194421301381083506847",
+      "exponent2": -624
+    },
+    "display_ball": "[1.00000000000000000000000000000e-60 +/- 3e-94]"
+  },
+  "model_evaluation_attempted": false,
+  "model_evaluated": false,
+  "ground_preparation_certified": false,
+  "ramsey_certified": false,
+  "full_clock_certified": false,
+  "COM_response_or_triplet_gap_certified": false,
+  "checks": [
+    {
+      "name": "ordinary_polynomial",
+      "passed": true,
+      "enclosure": {
+        "real": {
+          "lower_dyadic": {
+            "mantissa": "231055807843401238298201182011923641953036422947984714597539965051218442317135327487962984850048951589753842785174530251185018197",
+            "exponent2": -428
+          },
+          "upper_dyadic": {
+            "mantissa": "231055807843401238298201182011923641953036422947984714597539965051218442317135609685366082833974311426478025708392731720310674773",
+            "exponent2": -428
+          },
+          "display_ball": "[0.333333333333333333333333333333 +/- 3.34e-31]"
+        },
+        "imag": {
+          "lower_dyadic": {
+            "mantissa": "0",
+            "exponent2": 0
+          },
+          "upper_dyadic": {
+            "mantissa": "0",
+            "exponent2": 0
+          },
+          "display_ball": "0"
+        }
+      },
+      "work_evaluations": 13
+    },
+    {
+      "name": "ordinary_time_cap",
+      "exception_type": "EngineeringCap",
+      "exception_message": "Predeclared engineering time cap reached",
+      "original_exception_identity_preserved": true,
+      "fatal_integral_returned": false,
+      "integration_depth_after_catch": 0,
+      "fatal_latch_cleared": true,
+      "failing_integrand_call_count": 0,
+      "nested_child_unwind_states": [],
+      "passed": true,
+      "work_evaluations": 1
+    },
+    {
+      "name": "nested_time_cap",
+      "exception_type": "EngineeringCap",
+      "exception_message": "Predeclared engineering time cap reached",
+      "original_exception_identity_preserved": true,
+      "fatal_integral_returned": false,
+      "integration_depth_after_catch": 0,
+      "fatal_latch_cleared": true,
+      "failing_integrand_call_count": 0,
+      "nested_child_unwind_states": [
+        {
+          "integration_depth": 1,
+          "fatal_latch_is_original_exception": true
+        }
+      ],
+      "passed": true,
+      "work_evaluations": 2
+    },
+    {
+      "name": "ordinary_recoverable",
+      "exception_type": "Unresolved",
+      "exception_message": "precreated recoverable callback sentinel",
+      "original_exception_identity_preserved": true,
+      "fatal_integral_returned": false,
+      "integration_depth_after_catch": 0,
+      "fatal_latch_cleared": true,
+      "failing_integrand_call_count": 1,
+      "nested_child_unwind_states": [],
+      "passed": true,
+      "same_integrals_recovery_passed": true,
+      "recovery_enclosure": {
+        "real": {
+          "lower_dyadic": {
+            "mantissa": "231055807843401238298201182011923641953036422947984714597539965051218442317135327487962984850048951589753842785174530251185018197",
+            "exponent2": -428
+          },
+          "upper_dyadic": {
+            "mantissa": "231055807843401238298201182011923641953036422947984714597539965051218442317135609685366082833974311426478025708392731720310674773",
+            "exponent2": -428
+          },
+          "display_ball": "[0.333333333333333333333333333333 +/- 3.34e-31]"
+        },
+        "imag": {
+          "lower_dyadic": {
+            "mantissa": "0",
+            "exponent2": 0
+          },
+          "upper_dyadic": {
+            "mantissa": "0",
+            "exponent2": 0
+          },
+          "display_ball": "0"
+        }
+      },
+      "work_evaluations": 14
+    },
+    {
+      "name": "nested_recoverable",
+      "exception_type": "Unresolved",
+      "exception_message": "precreated recoverable callback sentinel",
+      "original_exception_identity_preserved": true,
+      "fatal_integral_returned": false,
+      "integration_depth_after_catch": 0,
+      "fatal_latch_cleared": true,
+      "failing_integrand_call_count": 1,
+      "nested_child_unwind_states": [
+        {
+          "integration_depth": 1,
+          "fatal_latch_is_original_exception": true
+        }
+      ],
+      "passed": true,
+      "same_integrals_recovery_passed": true,
+      "recovery_enclosure": {
+        "real": {
+          "lower_dyadic": {
+            "mantissa": "231055807843401238298201182011923641953036422947984714597539965051218442317135327487962984850048951589753842785174530251185018197",
+            "exponent2": -428
+          },
+          "upper_dyadic": {
+            "mantissa": "231055807843401238298201182011923641953036422947984714597539965051218442317135609685366082833974311426478025708392731720310674773",
+            "exponent2": -428
+          },
+          "display_ball": "[0.333333333333333333333333333333 +/- 3.34e-31]"
+        },
+        "imag": {
+          "lower_dyadic": {
+            "mantissa": "0",
+            "exponent2": 0
+          },
+          "upper_dyadic": {
+            "mantissa": "0",
+            "exponent2": 0
+          },
+          "display_ball": "0"
+        }
+      },
+      "work_evaluations": 15
+    }
+  ],
+  "all_checks_pass": true,
+  "evaluation_count": 45,
+  "elapsed_seconds": 0.01149977371096611
+}

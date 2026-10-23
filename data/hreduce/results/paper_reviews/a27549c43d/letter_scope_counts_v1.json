@@ -1,0 +1,31 @@
+{
+  "source_sha256": "b76077117eafba23ad253ac1f536817079895a1af0fb33f79a4a035b46ad8144",
+  "cap": 44475,
+  "scope": "Character counts only; the original printable scope is unchanged and no omission is authorized",
+  "variants": {
+    "raw_delivery": {
+      "characters": 49871,
+      "rule": "Entire source including delivery heading",
+      "excess": 5396,
+      "margin": -5396
+    },
+    "letter_body": {
+      "characters": 49770,
+      "rule": "Remove delivery heading and its following blank line only",
+      "excess": 5295,
+      "margin": -5295
+    },
+    "body_without_sources_tails_and_partI_source_list": {
+      "characters": 42682,
+      "rule": "Remove inline SOURCES marker/tails to each line end; remove Part I source-list block up to, but not including, the Part II heading; join preceding paragraph and Part II by two newlines",
+      "excess": 0,
+      "margin": 1793
+    },
+    "body_without_backtick_source_labels_only": {
+      "characters": 46152,
+      "rule": "Delete only each complete backtick-delimited eq:/sec:/app: label token; preserve all remaining spaces and punctuation",
+      "excess": 1677,
+      "margin": -1677
+    }
+  }
+}

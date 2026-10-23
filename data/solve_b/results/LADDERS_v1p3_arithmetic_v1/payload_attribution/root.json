@@ -1,0 +1,66 @@
+[
+  {
+    "path": "",
+    "version_status": "changed",
+    "node_kind": "container",
+    "old": {
+      "type": "object",
+      "keys": [
+        "definitions",
+        "fits",
+        "members",
+        "order",
+        "spreads"
+      ],
+      "length": 5
+    },
+    "current": {
+      "type": "object",
+      "keys": [
+        "certext_check",
+        "definitions",
+        "fits",
+        "members",
+        "order",
+        "spreads"
+      ],
+      "length": 6
+    },
+    "attribution": "complete_top_level_structure",
+    "own_bindings": {
+      "old": {
+        "status": "object_shape_agrees",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 0,
+        "target": {
+          "type": "object",
+          "keys": [
+            "definitions",
+            "fits",
+            "members",
+            "order",
+            "spreads"
+          ],
+          "length": 5
+        }
+      },
+      "current": {
+        "status": "object_shape_agrees",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 0,
+        "target": {
+          "type": "object",
+          "keys": [
+            "certext_check",
+            "definitions",
+            "fits",
+            "members",
+            "order",
+            "spreads"
+          ],
+          "length": 6
+        }
+      }
+    }
+  }
+]

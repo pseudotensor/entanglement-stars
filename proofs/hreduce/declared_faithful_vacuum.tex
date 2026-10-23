@@ -1,0 +1,782 @@
+% Declared-model duty 2(f). Independent author derivation saved before
+% counterpart intake. [R] exact infinite-parent finite-region theorem,
+% extended to finite bounded native one-body histories;
+% [X] matched finite-parent averaged-mass variance/negative direction and
+% the named preparation/transport source controls. [S] actual coupled
+% collapse positivity and averaging-scale independence.
+\noindent\textbf{[R] Faithfulness and the sign of local energy.}
+For the infinite cubic sine lattice with nonzero native hopping and any
+finite $|ma|$, let $P_-$ be its flat occupied projector.  Every finite
+set of sites $A$ has
+\[
+ 0<C_A:=\Pi_A P_-\Pi_A<I_A,\qquad \rho_A>0.
+\]
+An endpoint eigenvalue would give a nonzero compactly supported vector
+in a single spectral band.  Its Fourier components are Laurent
+polynomials, whereas the sine Dirac energy cannot be a rational
+function along a generic transverse channel; hence no such vector exists.
+The Gaussian reduced density is therefore faithful.  Consequently,
+for a strictly local $O_A\geq0$,
+\[
+ \langle O_A\rangle_{P_-}=0\quad\Longrightarrow\quad O_A=0.
+\]
+Every nonzero Hermitian local energy density after subtraction of this
+vacuum expectation has both positive and negative spectrum.  A nonzero
+finite support average has the same property.
+
+The conclusion also holds for its transported sea at every finite time
+under a common one-body history with uniformly finite hopping range
+and finite integrated operator norm.  Dyson's factorial tail bound
+and the energy's simple complex zeros extend the proof.  This gives
+no uniform faithfulness margin, finite-parent theorem or interacting-reference theorem.
+An explicit mixed Gaussian particle preparation has positive initial
+energy and zero current; exact vertex spectra bound both sources during
+transport.  A specified radial projection admits a local transported
+history with positive mass and clock and a bounded angular residual.
+Exact unprojected spherical evolution, collapse-time persistence and
+independence of $\ell$ remain unproved.  Reached-state positivity concerns
+averaged sources and their fluctuation margins, not operator positivity.
+
+% INDEPENDENT PROOF AND DOMAIN.
+% Set a=1 in the proof, retaining any finite real mass mu. The full
+% four-component symbol is h(k)=sum_i alpha_i sin k_i+mu beta,
+% E(k)^2=mu^2+sum_i sin^2 k_i. The finitely many massless nodes have
+% zero Brillouin-zone measure, so their assigned filling cannot change
+% a finite-region covariance in the infinite parent.
+%
+% If C_A f=f for a normalized vector supported in finite A, then
+% ||(1-P_-)f||^2=<f,(1-C_A)f>=0, so P_-f=f. If C_A f=0 then
+% ||P_-f||^2=0 and f lies in the other band. Each component of its
+% Fourier transform is a finite Laurent polynomial in z_i=e^{ik_i}.
+% The band condition gives h(k)f(k)=+/-E(k)f(k) almost everywhere.
+% A nonzero component f_j makes E=(h f)_j/(+/-f_j), hence rational
+% in z_x after fixing transverse k_y,k_z for which f_j is not identically
+% zero. Such transverse values exist on an open set by the polynomial
+% identity theorem. Choose them with
+% M^2=mu^2+sin^2 k_y+sin^2 k_z>0; this excludes no open set even at mu=0.
+% Along that slice,
+% 4z_x^2 E^2=-z_x^4+(4M^2+2)z_x^2-1.
+% For M>0 its quadratic in z_x^2 has two distinct positive nonzero
+% roots, hence the displayed quartic has four simple complex roots.
+% A rational square has only even zero/pole orders; E^2 cannot be such
+% a square. Equality of the rational functions on the real momentum
+% circle would extend as a rational identity, a contradiction. Thus
+% neither endpoint occurs and 0<C_A<I_A. This is an exact lattice proof,
+% not an assumed continuum vacuum property or a gap-only argument.
+%
+% The number-conserving Gaussian reduced density has eigenvalues
+% product_j nu_j^{n_j}(1-nu_j)^(1-n_j). With every 0<nu_j<1, all
+% 2^(4|A|) many-body eigenvalues are strictly positive. For O_A>=0,
+% Tr rho_A O_A>=lambda_min(rho_A) Tr O_A, so zero expectation implies
+% O_A=0. The same conclusion holds on the physical even local algebra.
+% If B_A=B_A^dag is non-scalar and
+% B_A^normal=B_A-Tr(rho_A B_A)I, it is nonzero with zero expectation.
+% Neither B_A^normal nor its negative can be positive, proving both signs.
+% The site-symmetrized sine energy has a nonzero hopping coefficient on
+% its finite site-and-neighbor support, so its second-quantized operator
+% is not scalar. This applies directly to the declared local Hcal_x.
+% Any nonzero finite-support weighted energy average has the same
+% conclusion once its actual support includes the crossed hopping bonds.
+% Subtraction changes its mean, not its spectrum's relative spacings.
+%
+% Qualifications are necessary. The proof uses an infinite translation-
+% invariant parent, not every finite periodic grid. On a finite pure parent
+% with 4n total modes and rank(P)=2n, a region with more than 2n modes has
+% an exact intersection with the occupied or empty subspace by dimension
+% counting, so its reduced covariance need not be faithful. Its actual
+% eigenvalues must be used. Zero hopping gives an onsite product sea;
+% the |ma|->infinity product limit is not a finite-mass counterexample.
+% Infinite-tail averaging kernels are not strictly local: the finite-
+% support theorem applies to a truncation only after its tail error is
+% bounded, not by calling a Gaussian kernel compactly supported.
+% Rapid decay alone is insufficient: a band-projected annihilator
+% a((1-P_-)f) annihilates the sea, and its positive square is nonzero
+% with zero vacuum expectation. It has spatial tails, exponentially
+% decaying at positive mass, and so is not a strictly local counterexample.
+%
+% Finite-history extension [R]. Let h(t) be a self-adjoint one-body
+% generator on the infinite native parent, with a common finite hopping
+% range R_h and B_T=int_0^T ||h(t)||dt<infinity. Strong measurability
+% suffices for its norm-convergent Dyson series. This covers a bounded
+% finite-time clock/flow history of the declared native hopping, whether
+% prescribed or obtained from an actual Hartree solution. Start from
+% the flat sine sea and put P_T=U P_- U^dag. If a finite C_A(P_T) had
+% occupation 0 or 1, a nonzero finite-support f would give
+% g=U^dag f wholly in one initial band.
+%
+% Put the support of f in |x|<=R_f. The n-th Dyson term for g is supported
+% in |x|<=R_f+nR_h and has norm at most B_T^n||f||/n!. Consequently
+% ||exp(s|X|)g||<=exp(sR_f+B_T exp(sR_h))||f|| for every s>0.
+% Cauchy--Schwarz then makes the Laurent Fourier series of g absolutely
+% and locally uniformly convergent on (C*)^3; it is holomorphic there.
+% The transformed vector is nonzero by unitarity. Choose a nonzero
+% component and a real transverse slice with M^2>0 on which that
+% component is not identically zero and the band identity holds.
+% Such slices exist by Fourier uniqueness, continuity and Fubini;
+% the excluded massless transverse nodes have zero measure.
+%
+% On the real z_x circle, [(h0 g)_j]^2=E^2 g_j^2. Both sides are
+% holomorphic on C*, so the identity theorem extends this equality
+% throughout C*. The same quartic displayed above gives four simple
+% nonzero zeros of E^2. At any such zero, the right side has order
+% 1+2k for some finite zero order k of the nonzero analytic g_j;
+% the left side has even order, a contradiction. An identically zero
+% left side would force g_j identically zero and is also excluded.
+% Thus 0<C_A(P_T)<I for every finite A at every such finite time.
+% The Gaussian reduced state is faithful, and every nonzero centered
+% strictly local Hermitian observable again has both signs. This needs
+% neither an instantaneous gap nor adiabatic ground-state following.
+%
+% All-exponential-moment tails, rather than an assumed compact light
+% cone or merely exponential decay, are essential in this proof. They
+% are compatible with the band-annihilator counterexample above, which
+% has only a finite analytic strip at positive mass. No uniform lower
+% eigenvalue bound follows as A, time, fields or mass vary; an infinite-
+% time limit or a history with nonintegrable operator norm is outside
+% the theorem. A quantitative small-change control remains
+% ||C_A(T)-C_A(0)||<min(lambda_min C_A(0),1-lambda_max C_A(0)),
+% by Weyl's inequality. The finite-parent rank counterexample is also
+% unchanged. Beyond a common quadratic Hartree history the transported
+% reference need not be Gaussian, and the operator-valued geometry need
+% not generate a bounded finite-range one-body h. That case requires
+% its actual many-body reduced state, not this one-body theorem.
+%
+% A useful separate test needs no faithfulness. For any reference state,
+% a centered Hermitian operator B with <B>=0 and <B^2>>0 has both
+% positive and negative spectral support: a positive or negative B
+% would annihilate the reference support and have zero variance. For a
+% transported Slater reference and B=dGamma(A)-Tr(P_T A),
+% Var(B)=Tr[P_T A(1-P_T)A]. A positive value therefore extends the
+% nonpositivity conclusion for that specified averaged/enclosed observable
+% without pretending that the initial flat proof is uniform in time.
+% There is an explicit charge-preserving witness for a pure reference:
+% |Psi_t>=(|Omega>+t B|Omega>)/sqrt(1+t^2 sigma^2), sigma^2=<B^2>>0,
+% has <B>_t=[2t sigma^2+t^2<B^3>]/[1+t^2 sigma^2]. Small negative
+% t gives a negative expectation, and small positive t gives a positive
+% one. For a local number-conserving bilinear this remains in the same
+% charge sector. This independent RED construction was checked by direct
+% expansion; it does not require an unproved transported faithfulness.
+%
+% Reached-state positivity is a distinct allowed calculation. With a
+% common one-body transported reference, D=C-P_T gives the source mean
+% Tr(A D), while its physical-state variance is Tr[C A(1-C)A]. Even
+% D>=0 does not make a local energy vertex A positive. On a positive-
+% mass Hartree branch one must calculate the averaged rho,J, solve the
+% actual current-dependent Gauss rows, and retain a positive mass/clock
+% margin larger than the stated approximation and fluctuation errors.
+% No N_f^-1/2 error is assumed outside its proved particle-sector domain.
+% This is a constructive check of the states reached, not a positive-
+% operator premise or a claim that no positive Hartree sector exists.
+%
+% POSITIVE PREPARATION AND REACHED-SOURCE MARGINS [R].
+% Derived and saved before reading the new B causal-sea/preparation/control
+% counterparts. This is an explicit allowed particle preparation and a
+% conditional finite-time margin, not a cold dust construction or a proof
+% that a collapse remains in this sector. Keep the native four components,
+% the full Brillouin zone and the initial flat reference P_-=1-P_+.
+% Let F be multiplication by a real scalar 0<=F_x<=1 of finite support,
+% and choose 0<lambda<=1. Then
+% Gamma=lambda P_+ F P_+, C_in=P_-+Gamma,
+% is a valid gauge-invariant mixed Gaussian state: 0<=Gamma<=P_+ and
+% 0<=C_in<=1. Its mean particle number is N_f=Tr Gamma=2lambda sum_x F_x.
+% It is generally neither a pure Slater state nor an exact fixed-number
+% sector. No spin or valley multiplicity is added to the native trace.
+%
+% Write E(k)=sqrt(m^2+a^-2 sum_i sin^2 k_i), with normalized dimensionless
+% Brillouin average <f>=int_{[-pi,pi]^3} f(k)d^3k/(2pi)^3, and put
+% e0=<E>, b0=m^2<1/E>, c_i=<sin^2 k_i/E>/(2a^2)>0.
+% At m=0 the inverse-energy integral is integrable in three dimensions
+% and b0=0. The identity e0=b0+2 sum_i c_i holds exactly.
+% The actual cell energy e_x={Pi_x,h0}/2 has expectation
+% Tr(e_x Gamma)=lambda[(e0+b0)F_x
+%                  +sum_i c_i(F_{x+ae_i}+F_{x-ae_i})]>=0.
+% Proof: h0 P_+=(E+h0)/2, P_+=(1+h0/E)/2. Expanding the spin trace
+% of (h0 P_+)_{xy} F_y(P_+)_{yx}, the terms linear in a Dirac matrix
+% vanish. The scalar E term contributes e0 F_x; the remaining h0 term
+% has only the onsite and nearest-neighbor matrix elements. Its onsite
+% trace is b0 F_x and each nearest-neighbor trace is the positive c_i.
+% This is a native projector/kernel identity, not a gradient expansion.
+% Time reversal leaves real scalar F and P_+ invariant and reverses
+% each site-symmetrized Q current, hence J_{x,i}=0 exactly initially.
+%
+% Thus every nonnegative normalized spatial average preserves the initial
+% energy sign. The cell energy obeys 0<=Tr(e_x Gamma)<=2lambda e0;
+% the physical density is bounded by 2lambda e0/a^3, and
+% E_in=sum_x Tr(e_x Gamma)=e0 N_f. This is a computed bound for this
+% family, with e0=a^-1<sqrt((ma)^2+sum sin^2 k_i)>; it is not a universal
+% reached-state core bound. A smooth radial F has cubic corrections
+% under the displayed nearest-neighbor convolution; it is not exactly
+% rotationally invariant merely by its name. To use spherical Gauss rows,
+% their actual averaged radial sources or controlled angular residuals
+% must be established. No shell-degeneracy reduction is being used.
+%
+% A quantitative continuity control retains the actual dynamics. On an
+% existing common Hartree history D(t)=U(t)Gamma U(t)^dag, define
+% delta_D(T)=||D(T)-Gamma||. Duhamel gives the useful bound
+% delta_D(T)<=int_0^T ||[h(s),Gamma]|| ds.
+% It uses the actual h(s); replacing this by zero would falsely assume
+% that the prepared source is invariant. The native vertices have rank
+% at most 8, ||e_x||<=E_max=sqrt(m^2+3/a^2), and
+% ||q_{x,i}||<=1/(2a). Therefore their physical density errors satisfy
+% |rho_x(T)-rho_x(0)|<=8 E_max delta_D(T)/a^3,
+% |J_{x,i}(T)|<=4 delta_D(T)/a^4.
+% A nonnegative normalized average preserves these upper error bounds.
+% If the initial averaged density on a compact core is >=rho_*>0,
+% choosing the actual time/control so that 8E_max delta_D/a^3<rho_*
+% establishes a positive reached mean there. This is a sufficient bound,
+% not an assertion that it remains small over a collapse time.
+%
+% For an inversion-even C^1 smoothing kernel K_ell and an actually odd
+% current, bar J(0)=0 and the additional measured/bounded gradient gives
+% |bar J(r)|<=j_* r on the core. One available bound is
+% j_*<=||grad K_ell||_1 sup_x |J_raw(x)|, in a compatible vector norm;
+% the component bound above implies sup |J_raw|<=4sqrt(3)delta_D/a^4.
+% This convolution bound uses a specified continuum cell interpolation
+% of the raw source. A direct site-sampling prescription instead uses
+% the actual derivative row-sum norm of its discrete averaging map.
+% A merely zero first moment of K does not establish inversion symmetry;
+% alternatively bar J(0)=0 may be supplied as an actual source condition.
+% This displays rather than removes the ell dependence. The requested
+% independence across a<<ell<<R still requires the actual state/profile
+% controls and is not implied by normalization or positivity of K_ell.
+%
+% Explicit mass/clock margins for the coherent spherical Gauss branch.
+% Assume its actual smooth radial averaged sources on 0<=r<=R obey
+% 0<rho_l<=bar rho<=rho_u and |bar J(r)|<=j_* r. With signed inward
+% u=-sqrt(2G M/r), the coherent rows are
+% M'=4pi r^2(bar rho+u bar J), (log N)'=-4pi G r bar J/u.
+% Set M=r^3 mu, K=4pi j_* R^2 sqrt(2G), and
+% z_l=[sqrt(K^2+48pi rho_l)-K]/6,
+% z_u=[sqrt(K^2+48pi rho_u)+K]/6.
+% The equation r mu'=4pi bar rho-3mu-4pi r sqrt(2Gmu)bar J
+% points inward at mu=z_l^2 and mu=z_u^2. Regular center data
+% mu(0)=4pi bar rho(0)/3 lie between these barriers, so
+% 0<z_l^2<=mu(r)<=z_u^2 for the regular branch. In particular the
+% enclosed Hartree mass stays positive and the core flow remains finite.
+% If the outer solution supplies N(R)>0, integration gives
+% |log[N(r)/N(R)]|<=2pi G j_*(R^2-r^2)/(sqrt(2G) z_l).
+% This is an explicit positive clock margin, conditional on the reached
+% source bounds and a compatible outer branch. It does not assume a
+% positive mass operator. The literal momentum-sign choice is not silently
+% repaired: changing J to -J leaves these absolute-value barriers unchanged,
+% but the Hamiltonian consistency distinction in the H2 note remains.
+%
+% Fluctuation margin for the same PREPARED Gaussian state. For a Hermitian
+% averaged energy vertex A={W,h0}/2, mean subtraction leaves
+% Var_C dGamma(A)=Tr[C A(1-C)A]. With C=P_-+Gamma and Gamma=P_+Gamma P_+,
+% this equals Tr[A_{-+}(1-Gamma)A_{+-}]
+%              +Tr[Gamma A_{++}(1-Gamma)A_{++}],
+% and is <=V_0+N_f ||A||^2, V_0=Tr[P_- A P_+ A].
+% If 0<=W<=1 equals one on the support of the positive cell-energy
+% convolution above, its mean is e0 N_f and ||A||<=E_max, hence
+% sigma_A/<M_W> <= sqrt[V_0/(e0^2 N_f^2)+(E_max/e0)^2/N_f].
+% The reference variance V_0 is retained, not subtracted or clipped.
+% At W=1 on the whole parent V_0=0; for a compact average it must be
+% evaluated/bounded at that window. This is an explicit N_f^-1/2 upper
+% term for this preparation, not a universal correction coefficient.
+% It concerns the specified intrinsic-energy observable. The full
+% current-dependent operator Gauss charge and its ordering need the
+% additional construction in the exchange/H2 notes. At a later time,
+% C=P_T+D need not be block diagonal in the initial P_+/- decomposition;
+% use its exact covariance variance and the actual mass/source response.
+% The existing RED's complementary window bound was checked independently
+% in the covariance eigenbasis: Var_C dGamma(A)<=Tr(A^2)/2 for every
+% Hermitian Hilbert--Schmidt A and Gaussian 0<=C<=1. The paired off-
+% diagonal coefficient c_i+c_j-2c_i c_j is <=1, and the diagonal one
+% c_i(1-c_i) is <=1/4. For scalar W this gives
+% Var_C dGamma(A_W)<=2 E_max^2 sum_x w_x^2.
+% If F=f0>0 on a finite window and all its nearest neighbors, the exact
+% prepared mean is 2lambda f0 e0 sum_x w_x, so
+% sigma/mean<=E_max/[sqrt(2)lambda f0 e0 sqrt(V_eff)],
+% V_eff=(sum_x w_x)^2/sum_x w_x^2.
+% This retains the sea variance and controls a specified macroscopic
+% averaging volume. An infinite-tail window cannot assume an infinite
+% constant plateau of the finite-particle F; use its actual mean instead.
+%
+% Lattice-unit reporting for all these margins: put mu_m=ma, g=G/a^2,
+% x=r/a, x_R=R/a, ell_tilde=ell/a, rho_tilde=a^4 bar rho,
+% J_tilde=a^4 bar J, j_tilde=a^5 j_*, M_tilde=a M and
+% mu_tilde=a^4(M/r^3)=M_tilde/x^3. With
+% epsilon0=<sqrt(mu_m^2+sum sin^2 k_i)>, b_tilde=mu_m^2<1/epsilon(k)>,
+% c_tilde_i=<sin^2 k_i/epsilon(k)>/2, the cell formula becomes
+% a e_x=lambda[(epsilon0+b_tilde)F_x+sum_i c_tilde_i(F_{x+i}+F_{x-i})],
+% 0<=rho_tilde_in<=2lambda epsilon0, and
+% |Delta rho_tilde|<=8sqrt(mu_m^2+3)delta_D,
+% |J_tilde_i|<=4delta_D. The dimensionless source equation is
+% M_tilde'=4pi x^2(rho_tilde+u J_tilde), u^2=2g M_tilde/x.
+% Set K_tilde=4pi j_tilde x_R^2 sqrt(2g) and
+% z_tilde_l,u=[sqrt(K_tilde^2+48pi rho_tilde_l,u) minus/plus K_tilde]/6.
+% Then z_tilde_l^2<=mu_tilde<=z_tilde_u^2 and
+% |log[N(x)/N(x_R)]|<=2pi g j_tilde(x_R^2-x^2)/(sqrt(2g)z_tilde_l).
+% The variance ratios contain E_max/e0=sqrt(mu_m^2+3)/epsilon0 and
+% the explicit dimensionless vacuum term a^2 V_0. Their geometric
+% dependence is through g and the actual history/source margins; lambda,
+% F, time t/a and ell/a remain declared preparation/control arguments.
+% No universal choice of those state arguments or ell dropout is implied.
+%
+% EXACT REACHED-PARTICLE SOURCE CEILINGS [R].
+% Independently derived after the prepared-state/source-margin result;
+% no new counterpart or RED formula was read for this extension. This
+% strengthens an upper bound, not positivity of the local operator.
+% Work on the infinite native parent, or a finite parent whose center,
+% six nearest neighbors and six two-step neighbors are distinct and
+% have the native links. Let D(t)=U(t)Gamma U(t)^dag with
+% 0<=Gamma<=nu I, 0<nu<=1. For the preparation above one may take
+% nu=lambda||F||_infinity. The common one-body evolution conserves this
+% occupation cap exactly, whether its fields are prescribed or obtained
+% from an existing Hartree trajectory. No instantaneous spectral gap,
+% adiabaticity or Gaussianity of the physical state is needed for this
+% one-body expectation bound; full interacting evolution need not retain
+% this common-unitary D law.
+%
+% Let q_{x,i}={Pi_x,Q_i}/2 be the actual cell-current vertex. For real
+% s and a real three-vector t, the finite-support Hermitian vertex
+% A_x(s,t)=s e_x+sum_i t_i q_{x,i} has a central 4-component block
+% s m beta, a central-to-neighbor row B, and zero outer block. The
+% energy links in B are +/-s alpha_i/(4ia), and its distinct two-step
+% current links are +/-t_i I_4/(8ia). Hence exactly
+% B B^dag=[3s^2/(8a^2)+|t|^2/(32a^2)]I_4.
+% The eight nonzero eigenvalues solve
+% z^2-(+/-s m)z-[3s^2/(8a^2)+|t|^2/(32a^2)]=0,
+% with spin multiplicity two for each beta sign. Their positive sum is
+% Tr A_+=2 sqrt[s^2(m^2+3/(2a^2))+|t|^2/(8a^2)],
+% and their negative sum is its opposite. At s=t=0 the same formula
+% holds by continuity. There is no added valley multiplier: this is
+% the exact native four-orbital matrix with all its links retained.
+%
+% Since 0<=D<=nu I, the variational trace inequality gives the sharp
+% universal upper bound
+% |s Tr(e_x D)+t.J_cell(x)|
+% <=2nu sqrt[s^2 E_*^2+|t|^2/(8a^2)],
+% E_*=sqrt(m^2+3/(2a^2)). Equivalently the vector of actual cell means
+% lies in the ellipsoid
+% [Tr(e_x D)/(2nu E_*)]^2+2a^2|J_cell(x)|^2/nu^2<=1.
+% Its sharpness is over all positive contractions at this local vertex;
+% a particular incoming-particle orbit can have a smaller attainable set.
+% In physical density units this proves
+% |rho_x|<=2nu E_*/a^3, |J_raw(x)|<=nu/(sqrt(2)a^4).
+% Both signs of the energy remain possible. This bound does not turn
+% D>=0 into a positive local energy, nor replace the transported sea
+% by an instantaneous filling. If C-P is not positive but only
+% -I<=C-P<=I, the corresponding support-function bound is twice as
+% large; the particle-sector cap must not be applied to arbitrary holes.
+%
+% A common nonnegative normalized spatial average of rho and J
+% preserves this ellipsoid by convexity. In particular the two printed
+% ceilings are independent of ell for every such average. This is
+% independence of a bound, not independence of the actual fields or
+% observables under changes of the averaging scale. Different source
+% allocations require their actual positive weights/norms; a signed
+% smoothing kernel cannot invoke this convexity argument.
+%
+% Inversion gives an explicit reached current-gradient control. For
+% the native Dirac parity operation (mathcal P psi)_x=beta psi_{-x},
+% h0 and every radial point-field h[N(r),v(r) x/r] commute with
+% mathcal P. An even F makes Gamma parity invariant. Uniqueness of
+% the one-body propagator therefore preserves that symmetry along
+% every such existing history: rho_x=rho_{-x} and J_x=-J_{-x}.
+% An inversion-even source kernel then gives bar J(0)=0 exactly.
+% For an actual continuum cell interpolation followed by a Gaussian
+% of coordinate variance ell^2, its directional derivative has
+% ||partial_n K_ell||_1=sqrt(2/pi)/ell for every unit n. The uniform
+% native vector ceiling consequently implies
+% |bar J(r)|<=j_cap r, j_cap=nu/(sqrt(pi)a^4 ell).
+% This bounds the actual reached source for every finite bounded radial
+% history in this particle/parity sector; it requires no small D-Gamma
+% error. For direct native sampling use instead the actual directional
+% derivative row-sum bound, and for a finite parent retain its boundary
+% normalization and parity. The Gaussian constant is not assumed for
+% an arbitrary discrete allocation.
+%
+% On an actual smooth radial real-flow branch, insert
+% rho_u=2nu E_*/a^3 and j_*=j_cap into the upper z_u barrier above.
+% It bounds M/r^3 throughout any fixed core radius R independently of
+% the detailed particle history. A positive lower density is still
+% needed for the stated z_l and clock margin; the prepared-state
+% Duhamel estimate is one sufficient short-time test for that lower
+% density. Bounded energy/current alone cannot prevent M from reaching
+% zero or establish a positive clock in every state. Native cubic
+% sources need not be exactly spherical; the actual radial component
+% and angular residual must still be controlled before using radial
+% Gauss rows. No source projection or alternative coupling is silently
+% introduced, and bounded mean sources alone do not bound all curvature.
+%
+% In lattice units, epsilon_* =sqrt((ma)^2+3/2),
+% [rho_tilde/(2nu epsilon_*)]^2+2|J_tilde|^2/nu^2<=1,
+% rho_tilde_u=2nu epsilon_*, j_tilde_cap=nu/(sqrt(pi)ell_tilde).
+% The upper mass barrier uses
+% K_tilde=4pi j_tilde_cap x_R^2 sqrt(2g),
+% z_tilde_u=[sqrt(K_tilde^2+48pi rho_tilde_u)+K_tilde]/6,
+% M_tilde(x)/x^3<=z_tilde_u^2.
+% Thus the computed ceiling and its geometric consequence display
+% ma and g=G/a^2 explicitly. The state occupation nu, averaging scale
+% and core radius are not fixed by the declarations. Clock lower bounds
+% retain the actual reached positive-density premise and outer lapse.
+%
+% LOCAL SELF-CONSISTENT CONTINUATION AND ITS ANGULAR SCOPE [R].
+% This continuation was derived from the transported D equation and the
+% radial integral equations before reading any new external branch source.
+% The mechanics author supplied the idea of a center-weighted contraction
+% and its finite-parent local-ODE route. The trace-class construction,
+% explicit positive preparation, exterior bounds and angular residual
+% below were then derived directly; no blindness to that idea is claimed.
+%
+% First state the source map completely. On the infinite native lattice,
+% take a nonnegative normalized smooth radial compact kernel K_ell and
+% the cell box b_a=a^-3 1_{[-a/2,a/2]^3}. Put W=K_ell*b_a, and
+% rho_D(y)=sum_x Tr(e_x D) W(y-a x),
+% J_D(y)=sum_x Tr(q_x D) W(y-a x).
+% The cells tile space, so sum_x a^3 W(y-a x)=1. These are the actual
+% full Cartesian averaged sources. Their radial components are
+% rho^r_D(r)=int rho_D(r n)dOmega/(4pi),
+% J^r_D(r)=int n.J_D(r n)dOmega/(4pi).
+% Solving only these radial rows is an EXPLICIT angular projection. It
+% is an exact closed auxiliary radial system; it is an exact solution
+% of the full source equations only if the residual components vanish.
+% No such vanishing is assumed for a general cubic state. The same
+% existence proof applies without this auxiliary projection whenever
+% an actual declared source allocation already supplies radial sources
+% with the bounds below. Point sampling of the resulting N,v in h is
+% retained throughout; adjoint matter coupling is not substituted.
+%
+% The one-body difference D is trace class. In particular the prepared
+% Gamma=lambda P_+ F P_+ has finite trace even though its kernel has
+% spatial tails. For any Hermitian trace-class X, pinching h0 X onto
+% site blocks and using trace-norm duality gives
+% sum_x |Tr(e_x X)|<=E_max||X||_1,
+% sum_x |Tr(q_{x,i}X)|<=||Q_i||||X||_1<=||X||_1/(2a).
+% Thus with C_Q=3/(2a),
+% ||rho_X||_L1<=E_max||X||_1, ||J_X||_L1<=C_Q||X||_1,
+% ||rho_X||_infinity<=E_max||W||_infinity||X||_1,
+% ||grad J_X||_infinity<=C_Q||grad W||_infinity||X||_1,
+% with vector/tensor norms chosen consistently. Radial projection is
+% contractive in these L1 and supremum estimates. It also gives
+% J^r_X(0)=0 and
+% ||J^r_X/r||_infinity<=C_Q||grad W||_infinity||X||_1:
+% subtract the constant vector J_X(0) inside the angular average and
+% use the mean-value theorem. Higher source derivatives are bounded
+% by the corresponding derivatives of W. These are bounded linear
+% source maps, with no instantaneous projector or susceptibility.
+%
+% Choose the explicit finite-support preparation above with F=f0>0
+% on a sufficiently large central lattice ball, and keep a protected
+% radius r0>0 inside that ball by more than one hopping length plus
+% the support radius of W. Then the EXACT initial cell convolution
+% and the partition of unity give
+% rho_0(r)=rho_*=2lambda f0 e0/a^3>0 for 0<=r<=r0,
+% J_0(r)=0, rho_0(r)>=0 everywhere, E0=e0 N_f<infinity.
+% Here rho_0 denotes the radial component; the full averaged density
+% is also exactly constant in the protected central ball. This works
+% for every finite ma, including m=0; no reference spectral gap is
+% needed. The baseline radial constraints have
+% M0(r)=4pi int_0^r s^2 rho_0(s)ds, N0=1,
+% u0=-sqrt(2G M0/r), M_c=M0(r0)>0, E0=M0(infinity).
+% These fields are bounded, regular at the center and asymptotically
+% flat on this initial radial solution. The initial native h(D0) need
+% not commute with D0; the continuation below is not a stationary ansatz.
+%
+% Take G>0 and retain either radial momentum sign explicitly. Let sigma=+1 denote
+% the compatible -J row and sigma=-1 the literal +J row, so
+% M'=4pi r^2(rho+sigma u J),
+% (log N)'=-sigma 4pi G r J/u, u=-sqrt(2G M/r).
+% This is sigma_here=-sigma_H2 in the mechanics note's finite-parent
+% continuation, where sigma_H2=+1 names the literal +J row. Both
+% conventions therefore give the same mass and lapse equations; the
+% conversion must be made before comparing their displayed formulas.
+% The positive-branch existence estimates use absolute values and
+% apply to either sign; their Hamiltonian-consistency difference remains.
+% Write M=r^3 mu and J=r j on 0<=r<=r0. The center equation is
+% mu(r)=4pi r^-3 int_0^r s^2 rho(s)ds
+%       -sigma 4pi sqrt(2G) r^-3 int_0^r s^4 sqrt(mu(s))j(s)ds.
+% Let mu0_min=min_[0,r0] M0/r^3>0, b=mu0_min/2,
+% mu_l=mu0_min/2 and mu_u=max_[0,r0] M0/r^3+b. On the supremum ball
+% ||mu-mu0||<=b the current part has Lipschitz constant at most
+% L_c=2pi sqrt(2G) r0^2||j||_infinity/(5sqrt(mu_l)).
+% If L_c<=1/2 and
+% A_c=(4pi/3)||rho-rho_0||_infinity
+%       +(4pi sqrt(2G)/5)r0^2 sqrt(mu_u)||j||_infinity<=b,
+% the map sends that ball into itself and is a contraction. Hence a
+% unique regular center branch exists, with ||mu-mu0||<=A_c and
+% mu>=mu_l. Its dependence on rho,j is locally Lipschitz; comparison
+% of two inputs incurs the usual factor (1-L_c)^-1. All these strict
+% inequalities hold for a sufficiently small trace-norm neighborhood
+% of the explicit Gamma because j0=0 and the source map is bounded.
+%
+% Outside r0 set M_l=M_c/2 and M_u=2E0, and define
+% R_delta=4pi int_r0^infinity r^2|rho-rho_0|dr,
+% J_delta=4pi int_r0^infinity r^(3/2)|J|dr.
+% The preceding source estimates give
+% R_delta<=E_max||D-Gamma||_1,
+% J_delta<=r0^-1/2 C_Q||D-Gamma||_1.
+% If
+% r0^3 A_c+R_delta+sqrt(2G M_u)J_delta<M_c/2,
+% the integral form of the mass equation keeps
+% |M(r)-M0(r)|<M_c/2 on the entire exterior. A first-exit argument
+% closes this bound: M stays in [M_l,M_u], and its square-root term
+% is locally Lipschitz with integrable coefficient proportional to
+% r^(3/2)|J|. Ordinary continuation and Gronwall give a unique global
+% radial mass branch and locally Lipschitz dependence on these sources.
+% No zero-density exterior lower bound is incorrectly required.
+%
+% The lapse integral with N(infinity)=1 converges and satisfies
+% ||log N||_infinity<=
+% 2pi sqrt(G/2) r0^2||j||_infinity/sqrt(mu_l)
+%                   +sqrt(G/2)J_delta/sqrt(M_l).
+% Thus N has a positive lower bound, while v=N u is uniformly bounded.
+% Differences obey the same locally Lipschitz estimates, since the
+% center uses mu>=mu_l and the exterior uses M>=M_l. For example
+% ||u||_infinity<=max{r0 sqrt(2G mu_u),sqrt(2G M_u/r0)}.
+% Derivative bounds follow from the actual smooth source allocation.
+% The hydrodynamic hierarchy is a further open condition on these
+% fields, retained by shrinking the neighborhood. In the constant
+% initial core, u0=-omega_c r with omega_c^2=8pi G rho_*/3; choosing
+% omega_c ell<<1 and r0>>ell>>a gives a resolved central curvature scale.
+% The complete profile and exterior require the corresponding actual
+% derivative bounds; smoothness alone is not a quantified hierarchy.
+%
+% Consequently there is a trace-norm ball ||D-Gamma||_1<delta in which
+% the native point-field map D->h(D) is bounded and locally Lipschitz.
+% A convenient bound is
+% ||h(D)||<=E_max||N||_infinity
+%               +(1/(2a))sum_i||v_i||_infinity=:H_*.
+% The trace-class equation dot D=-i[h(D),D] therefore has a unique
+% local solution. Its associated bounded propagator gives
+% D(t)=U(t)Gamma U(t)^dag, P_T(t)=U(t)P_-U(t)^dag,
+% C(t)=U(t)(P_-+Gamma)U(t)^dag exactly. Positivity, the occupation cap
+% and Tr D=N_f are conserved. Since ||dot D||_1<=2H_* N_f, the solution
+% remains in the positive-field neighborhood at least through
+% T=delta/(4H_* N_f), after choosing uniform Lipschitz/field bounds on
+% the closed half-neighborhood. Continuation of a Banach-space ODE
+% supplies this residence interval; it is not a lifetime inferred from
+% a formal Taylor expansion. The construction gives actual positive
+% radial mass and clock on that nonzero interval for the named radial
+% source map. It does not prove a collapse-time interval, a fixed full-
+% Fock Hamiltonian, boundary-energy conservation for finite averaged
+% point coupling, or the complete H2 deformation algebra.
+%
+% Angular residual is kept as an observable error of the auxiliary
+% radial closure, not declared absent. Write Pi_r for the scalar and
+% radial-vector angular projections and R(D)=(1-Pi_r)(rho_D,J_D).
+% Contractivity gives
+% ||R_rho(D(t))-R_rho(Gamma)||_infinity
+%       <=2 E_max||W||_infinity||D(t)-Gamma||_1,
+% ||R_J(D(t))-R_J(Gamma)||_infinity
+%       <=2 C_Q||W||_infinity||D(t)-Gamma||_1.
+% Initially R_J=0 and R_rho=0 in the protected constant core. For a
+% smooth radial taper f with F_x=f(a x), compare the actual cell source
+% to the radial continuum function 2lambda e0 f/a^3. The cell-center
+% distance is at most sqrt(3)a/2, and the neighbor centers are at most
+% (1+sqrt(3)/2)a away. The positive native convolution therefore gives
+% ||rho_raw-2lambda e0 f/a^3||_infinity
+% <=lambda[(sqrt(3)+1)e0-b0]||grad f||_infinity/a^2,
+% where b0=m^2<1/E> as in the preparation. Radial K convolution
+% preserves this bound, and
+% ||R_rho(Gamma)|| is at most twice its right-hand side. This is a
+% conservative O(a/L_f) preparation bound, not a claimed optimal
+% anisotropy coefficient. It can be made small in the stated smooth
+% hierarchy. The finite-time residual remains bounded by the displayed
+% trace-class estimate. More explicitly, for a desired absolute error
+% epsilon rho_* require the initial density-residual bound to be at
+% most epsilon rho_*/2. This is a concrete smooth-taper requirement
+% a||grad f||_infinity/f0=O(epsilon). With
+% C_src=max(E_max,C_Q), both residuals are then <=epsilon rho_* on
+% 0<=t<=T_epsilon, where
+% T_epsilon=min{T,epsilon rho_*/[8H_* N_f C_src||W||_infinity]}.
+% This is a nonzero controlled reached interval in the stated hierarchy,
+% measured against the core density rather than a vanishing exterior
+% density. The conservative global trace bound need not give a
+% macroscopic interval as the object/averaging hierarchy is enlarged;
+% no collapse-time or uniform hydrodynamic-time estimate is inferred.
+% Extending it requires a local propagation/source bound for the actual
+% trajectory, such as the trace-duality preparation errors compared
+% with the actual CS/NT sources below, evaluated through the desired
+% time and with their angular residual retained. Exact vanishing is
+% not established, so this
+% explicit example is not promoted to an exact unprojected spherical
+% solution of the binding model. If an admitted source assignment
+% realizes genuinely radial sources, the same ODE theorem applies
+% without this residual qualification.
+% There is a precise obstruction to exact radiality for this particular
+% finite-support preparation and ordinary radial averaging. Its positive
+% cell-energy measure mu=sum_x e_x delta_{a x} has finite support and
+% nonzero weight away from the origin, because every nonzero F produces
+% strictly positive nearest-neighbor contributions. If a normalized
+% radial L1 kernel K made K*mu exactly radial, then for every rotation O,
+% Khat(k)[muhat(k)-muhat(O k)]=0. Khat is nonzero near k=0, while the
+% finite-support measure has entire Fourier transform. Analytic
+% continuation therefore makes mu rotation invariant, which a finite
+% point support can satisfy only at the origin: a contradiction.
+% For the specified cell-box allocation the same argument instead makes
+% the compact cell-constant interpolation radial. On any open cell face
+% with a nonzero jump its distributional rotational derivative has
+% coefficient proportional to x cross the face normal. This is nonzero
+% on a positive-area subset, contradicting rotational invariance. Every
+% face jump must thus vanish; compactness then forces the function to
+% vanish, again a contradiction. This supplies an exact obstruction,
+% rather than leaving exact radiality of this family an untested hope.
+% It does not exclude a different admissible preparation or allocation,
+% or a controlled hydrodynamic approximation with the errors just given.
+% This independent RED proposal was checked by Fourier uniqueness and
+% the explicit face-distribution argument before incorporation.
+%
+% All variables can be made dimensionless without a new coupling:
+% x=r/a, tau=t/a, g=G/a^2, rho_tilde=a^4 rho,
+% J_tilde=a^4 J, M_tilde=a M, h_tilde=a h,
+% epsilon_max=sqrt((ma)^2+3), W_tilde=a^3 W.
+% The preceding contraction/exterior/lapse inequalities then have the
+% identical form with a=1, G=g and E0_tilde=epsilon0 N_f. In particular
+% tau_min=delta/(4 Htilde_* N_f), and the constant-core hierarchy is
+% (8pi/3)g rho_tilde_* ell_tilde^2<<1,
+% rho_tilde_*=2lambda f0 epsilon0. The source norms and delta depend
+% explicitly on the chosen kernel ell/a and the preparation; no exact
+% ell independence of the solved trajectory or universal clock bound
+% follows from this local existence theorem.
+%
+% ACTUAL B PREPARATION / SOURCE-MARGIN COMPARISON [X at matched scope].
+% After saving the preceding independent construction, read the complete
+% strand_B_native_dust_control.tex (NF), strand_B_causal_sea_budget.tex
+% (CS) and strand_B_tapered_dust_preparation.tex (NT), their actual
+% reviews and staged scopes. CS1 and NT2 use the same transported
+% reference and physical propagator: D=U D_in U^dag. Their positive
+% preparation remains a positive contraction, but positivity of a local
+% energy mean is established by its actual source bound, not by D>=0.
+% CS4 and NT11 use exactly our independent finite-vertex trace-duality
+% control |Tr O Delta D|<=||O||_1||Delta D||. In the NT core this gives
+% rho_l(T)=rho_d(T)[1-epsilon_add(T)]
+%           -a^-3 sup_x||e_x||_1 e_A(T).
+% When this is positive, the actual matching upper bound and a measured
+% or bounded radial current gradient may be inserted into the mass/clock
+% barriers above. The condition is to be evaluated; neither source proves
+% it for an entire self-consistent collapse. Named agreeing methods are
+% common-unitary covariance transport and finite-CAR/trace-duality source
+% control. Our additional constrained-ODE barriers and exact positive
+% cell convolution remain [R], with no matched external proof asserted.
+%
+% NT's finite Cartesian preparation P_+^Lambda chi F_Lambda chi P_+^Lambda
+% uses a compressed low-momentum filling between finite-parent positive
+% projectors. Direct partial spin trace gives its exact expected count
+% 2nu0 sum chi^2, agreeing with our count method at its own preparation.
+% Its normal energy lies between m N and
+% m N+N(K0^2+k_chi^2)/(2m); this is an integrated positive-band kinetic
+% estimate, not a pointwise energy theorem. Its exponential projector
+% tail and buffer bounds preserve the difference between an open-parent
+% sea and a compressed infinite sea. Our full-zone scalar-F preparation
+% and exact nearest-neighbor positive convolution remain [R]; a low-
+% momentum taper is a different state with its own errors.
+%
+% The explicit NF Fourier characteristic solves tan(ap_i(T))=tan(ap_i(0))/b
+% under the auxiliary infinite affine flow, with spin transport retained.
+% Its exact odd-Q cancellation and density bounds are matched only in
+% that auxiliary domain; CS/NT retain the finite-history, taper and
+% boundary errors. NF14--15's instantaneous reference is a comparator,
+% replaced by actual transport in CS/NT, and is not imported as our law.
+% All three use adjoint-averaged fields in the actual history. A normalized
+% even average preserves constants and affine fields in a protected core;
+% outside it that history differs from binding point sampling. The
+% prescribed-source agreement therefore does not prove the binding
+% coupled equations or independence of ell. No complete geometric stress,
+% exactly empty collar, actual collapsed state or invariant positive
+% domain follows from the matched partial preparation/source controls.
+%
+% ACTUAL OTHER-LANE COMPARISON [X], finite-parent mass scope only.
+% The complete current strand_E_operator_mass.tex, its review and scope
+% were read. OM2--OM5 use the same native cell energy e_x={Pi_x,h0}/2
+% and flat reference P_0 on a periodic massive parent, with a positive
+% compact average and an enclosed ball. Their selected kernel has support
+% b=ell+sqrt(3)a/2, and the actual ball weights are
+% w_x=int_{B_R}k_ell,a(y-x)dy. Thus A_w={W,h0}/2 and
+% M_w=dGamma(A_w)-Tr(P_0 A_w). Direct occupied/empty-band multiplication,
+% independently of the local-faithfulness proof above, gives
+% P_+(p)A_w(p,k)P_-(k)=wtilde(p-k)(E_p-E_k)P_+(p)P_-(k)/2,
+% Var_0 M_w=(1/4)sum_pk |wtilde(p-k)|^2(E_p-E_k)^2
+%       [1-(m^2+d_p.d_k)/(E_p E_k)].
+% This is the same native spin-traced variance derived in the exchange
+% note; there is no extra valley factor after the full momentum sum.
+%
+% For m>0, L/a>2 and L>4(R+b), q=(2pi/L,0,0) has d_q!=0 and
+% |wtilde(q)|>=cos[2pi(R+b)/L] wbar>0. The single p=q,k=0 term
+% is strictly positive. Compressing M_w to span{Omega,M_w Omega/sigma}
+% gives [[0,sigma],[sigma,d]], with one negative eigenvalue. This
+% agrees with the direct same-charge perturbative witness above and with
+% OM's variational bound; no invariance of that two-dimensional span is
+% asserted. A constant full-parent weight has zero interband block and
+% instead gives the nonnegative total excitation energy, consistently
+% outside this local/compact-support witness.
+%
+% Named agreeing methods are the Laurent-polynomial/strict-locality
+% route for the infinite-parent theorem and, at their COMMON finite-mass
+% local-source scope, the independent interband covariance and neutral-
+% sector variational routes for negative energy. Only the latter matched
+% variance/witness is [X]; OM does not prove every finite-region reduced
+% state faithful and is not credited with the infinite-parent theorem.
+% Its general instantaneous-reference language is not the binding
+% transport law. At flat initial fields P_T=P_0, so the compared witness
+% is exactly matched; at later times its actual transported variance
+% must be checked. No coupled current-dependent Gauss charge, positive
+% physical sector or clock bound follows from this comparison.
+%
+% SOURCES.
+% Full current <internal>/GOAL_alt.md read;
+% duty 2(f), transported-reference paragraph and positivity qualifications
+% govern this source. Required THINK8,9,12 and pinned REQUIREMENTS items
+% 11,19,22,26,27 were read for this declared-model task. The polynomial,
+% reduced-covariance and positive-operator arguments above were derived
+% independently before reading any new counterpart for this duty.
+% Predecessor idea scope only: local faithfulness and the positive-operator
+% zero-expectation lemma were read in the response.md sources under
+% <internal>/:
+% FRESH1292_20261015-0331_lattice-gravity-entropy-derivation, lines 385--414
+% (web/fresh1292-p02-two-ninths-theorem-local-clock-quarter-20261015);
+% FRESH1298_20261015-0346_fixed-lattice-gravity-derivation, section 6.2,
+% lines 503--518
+% (web/fresh1298-p08-proper-spectral-cutoff-constant-stiffness-20261015);
+% FRESH1300_20261015-0351_derive-first-law-quantity, lines 355--381
+% (web/fresh1300-p10-first-law-entropy-reciprocal-rate-gram-page-20261015).
+% Their locality lemma is an idea source, not a proof for this sine
+% operator. In particular the constant-projector open-momentum argument
+% of P08 is not transferred; the Laurent rational-square obstruction
+% above establishes the stated infinite-parent sine-fermion domain.
+% The existing local-area and exchange sources supply only the named
+% transported-state and variance algebra; no additional field, interaction
+% or geometric degree of freedom is introduced. Actual external source:
+% <internal>/strand_E_operator_mass.tex,
+% review_E_operator_mass.tex and staged strand_E_operator_mass_scope.tex,
+% including complete SOURCES, read at the precisely matched scope above.
+% The independent redteam_declared_faithful_vacuum.tex was read in full
+% after both derivations were saved. Its same-charge witness and explicit
+% infinite-tail limitation were checked and incorporated; the exact
+% polynomial theorem and transported-state qualifications agree.
+% The existing RED proposed the stronger finite-history holomorphic
+% extension after the initial paired result was saved. Its Dyson bound,
+% analytic continuation and zero-order contradiction were then derived
+% and checked directly by the author as above. No external matched route
+% for this extension has been read, so its tag is [R], not [X].
+% The positive preparation, exact native convolution, Duhamel/source
+% errors and radial mass/clock barriers above were derived independently
+% before new B causal-sea, tapered-preparation or native-control intake.
+% They assert only the printed initial-state and conditional reached-time
+% scopes. No actual evolved collapse or external agreement is supplied
+% by this construction alone.
+% Actual new B sources, each with its full review and staged scope, read
+% in <internal>/:
+% strand_B_native_dust_control.tex, review_B_native_dust_control.tex;
+% strand_B_causal_sea_budget.tex, review_B_causal_sea_budget.tex;
+% strand_B_tapered_dust_preparation.tex, review_B_tapered_dust_preparation.tex;
+% the corresponding deliveries/solve_b/*_scope.tex files.
+% Their named matching algebra/source-error claims, distinct preparations,
+% adjoint allocation and unsolved coupled-history scope are retained above.
+% The new exact native vertex spectrum and center/exterior trace-class
+% construction were saved before reading the RED continuation. Its full
+% current source/SOURCES was then read: the independent star reduction,
+% Gaussian derivative bound and global relative-mass contraction agree
+% with the local-center plus exterior route above. The RED's precise
+% angular obstruction was independently checked and incorporated. These
+% new results remain [R]; no external matched isolated collapse or
+% exact unprojected radial state has been supplied by this construction.
+% The complete current declared_h2_continuum.tex and all SOURCES were
+% read after this independent continuation. Its finite-parent center
+% contraction, normalized lapse and conserved-norm residence argument
+% agree after sigma_here=-sigma_H2. Its open-parent fractional positive-
+% band preparation and source projection are distinct from the localized
+% infinite-parent preparation here; both retain the angular and geometry-
+% scale conditions. This same-lane comparison is [R], not an external [X].

@@ -1,0 +1,146 @@
+{
+  "old": [
+    {
+      "path": "/fits/size_formed_certified",
+      "target": {
+        "type": "list",
+        "length": 2
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_formed_certified",
+          "version": "old",
+          "path": "",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 2
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 2
+        }
+      }
+    },
+    {
+      "path": "/fits/size_formed_certified/0",
+      "target": {
+        "type": "string",
+        "value": "RS32_s4"
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_formed_certified",
+          "version": "old",
+          "path": "0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "string",
+          "value": "RS32_s4"
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/fits/size_formed_certified/1",
+      "target": {
+        "type": "string",
+        "value": "P64_s4"
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_formed_certified",
+          "version": "old",
+          "path": "1",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "string",
+          "value": "P64_s4"
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    }
+  ],
+  "current": [
+    {
+      "path": "/fits/size_formed_certified",
+      "target": {
+        "type": "list",
+        "length": 2
+      },
+      "own_arithmetic": {
+        "status": "fit_shape_agrees",
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_formed_certified",
+          "version": "current",
+          "path": "",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own_shape": {
+          "type": "list",
+          "length": 2
+        },
+        "target_shape": {
+          "type": "list",
+          "length": 2
+        }
+      }
+    },
+    {
+      "path": "/fits/size_formed_certified/0",
+      "target": {
+        "type": "string",
+        "value": "RS32_s4"
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_formed_certified",
+          "version": "current",
+          "path": "0",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "string",
+          "value": "RS32_s4"
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/fits/size_formed_certified/1",
+      "target": {
+        "type": "string",
+        "value": "P64_s4"
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "descriptive_arithmetic.json/record_diagnostics.json/historical_width_direct_control.json",
+          "fit": "size_formed_certified",
+          "version": "current",
+          "path": "1",
+          "source": "descriptive_arithmetic.json",
+          "precision_scope": "cached own80/160; empirical precision, not an enclosure"
+        },
+        "own": {
+          "type": "string",
+          "value": "P64_s4"
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    }
+  ]
+}

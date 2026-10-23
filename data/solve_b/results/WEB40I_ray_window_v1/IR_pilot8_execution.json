@@ -1,0 +1,40 @@
+{
+  "started_utc": "2026-10-18T20:27:21.247914+00:00",
+  "finished_utc": "2026-10-18T20:28:15.074066+00:00",
+  "outer_wall_seconds": 53.82618924602866,
+  "actual_outer_returncode": 0,
+  "command": [
+    "timeout",
+    "-s",
+    "KILL",
+    "119s",
+    "taskset",
+    "-c",
+    "4",
+    "nice",
+    "-n",
+    "10",
+    "<internal>/python",
+    "<internal>/compute_WEB40I_ray_window_IR_v1.py",
+    "--phase",
+    "pilot8",
+    "--stage1",
+    "<internal>/scalar_and_inherited.json",
+    "--stage1-execution",
+    "<internal>/execution.json",
+    "--output",
+    "<internal>/IR_pilot8.json"
+  ],
+  "code_sha256": "e191462b5814bb3e6c6acd4ebb58eb6937a02b39775de6d461fff67654fa6385",
+  "stage1_sha256": "1bf75ab20dfbe657e81d671b2fc03edbdc3e45455b065e98f8119145c5fc1ebb",
+  "root_free_bytes_before": 132975124480,
+  "mem_available_bytes_before": 564898746368,
+  "stdout": "{\"phase\": \"pilot8\", \"complete\": true, \"reason\": \"prescribed phase completed; no automatic next phase\", \"resources\": {\"phase_wall_seconds\": 53.62590388581157, \"process_user_cpu_seconds\": 53.047147, \"process_system_cpu_seconds\": 0.344118, \"peak_rss_kib\": 93792, \"new_ode_solves_started\": 130, \"new_rhs_evaluations\": 3771242}}\n",
+  "stderr": "",
+  "child_usage": {
+    "user_cpu_seconds": 53.207455,
+    "system_cpu_seconds": 0.36008799999999996,
+    "peak_rss_kib": 93792
+  },
+  "output_sha256": "9ad3fda8a208c4f026a6a1c73cdc50ff061bf4934ee0e358183596d7931af31c"
+}

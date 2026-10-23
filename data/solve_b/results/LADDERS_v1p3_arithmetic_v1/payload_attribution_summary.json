@@ -1,0 +1,1925 @@
+{
+  "scope": "Complete typed-node coverage with independent stage pointers or explicit unresolved/input/format/process dispositions. This is coverage, not blanket numerical agreement or foreign execution clearance.",
+  "input_sources": {
+    "files": [
+      {
+        "path": "<internal>/ladders_readout_v1_2.json",
+        "sha256": "bf3ecf93d2f5fb5900173c519a2a091d644a6629f3beb29f69fac1f1484086d0",
+        "md5": "10668910124199e89fb54d92c266e546"
+      },
+      {
+        "path": "<internal>/ladders_readout_v1_3.json",
+        "sha256": "1c1034d3bf165a57648b63f529b9207a0edb83fd78d248d3b57b634e77b8bb99",
+        "md5": "930e75da87c1559f0318ed7a8a5206ed"
+      },
+      {
+        "path": "<internal>/scalar_tables.json",
+        "sha256": "ec881addf685efc53990c4abe0c09d1cbb115b107607f92508230d916931c703",
+        "md5": "bbd779733b0cd2c76a449c4c78ff296a"
+      },
+      {
+        "path": "<internal>/residual_series.json",
+        "sha256": "aa88dba5b65538d7cefd7d80da8b6ce59de43a000a1517f52467103a637c6e1f",
+        "md5": "31429414e4980798c3d0ddd1780cba3f"
+      },
+      {
+        "path": "<internal>/record_diagnostics.json",
+        "sha256": "af00af49acaddfa31947cf8588d4cfd6d46459af4e13c57fd98fc126c7e3e568",
+        "md5": "dcacb62fc0c28890ea6ea0ebbc29007e"
+      },
+      {
+        "path": "<internal>/controls_catalogs.json",
+        "sha256": "f4fce3b6de42d9f82ea9990d3256c9731fbfafeee3ff6dc2f4370521aa60096c",
+        "md5": "d6e018bcee3726214d2f7cfa59d39abf"
+      },
+      {
+        "path": "<internal>/descriptive_arithmetic.json",
+        "sha256": "b2cd5c528c595e877ecf8e85b4ca0374962dbd6d0cc3e3f9cde16fb9de7f4a13",
+        "md5": "8fec8bdbafe7762999fc47a7b5f7a508"
+      },
+      {
+        "path": "<internal>/historical_width_direct_control.json",
+        "sha256": "947c5b5009784f27723ac33a85d42abd4fa32414a7b1c5bd5bcd71520ffc8f18",
+        "md5": "4be4760210c4bc3ae7aba8d526d9f576"
+      }
+    ],
+    "raw_file_identity_audit": "<internal>/source_audit.json",
+    "complete_metadata_binding": "<internal>/source_metadata_audit.json",
+    "crosswalk": "LADDERS_v1p3_manual_occurrence_map_v1.md section8.5"
+  },
+  "stage_sources": [
+    {
+      "path": "<internal>/M3a_s2.json",
+      "sha256": "31b6f4d09a112e473a7331909b09ffa1c0798440ed5d36a773508fdcc98afc59"
+    },
+    {
+      "path": "<internal>/M3a_s4.json",
+      "sha256": "6351ab0df96e4f9f6a98c9067661a3b7aaa70ba17991179913402c646689ff3a"
+    },
+    {
+      "path": "<internal>/M3a_s4_tau4.json",
+      "sha256": "98b951c7868088f20d1cd2559f25557c4a9c6ed58a8cbf0153743e51c1535398"
+    },
+    {
+      "path": "<internal>/M3b_s4.json",
+      "sha256": "7b7662a41ffd9a6b15fad36820be3f76434d2503d47529d455da16511e35d415"
+    },
+    {
+      "path": "<internal>/M3b_s8.json",
+      "sha256": "f0a00a4c03796e36b824b3b2c566fe072ba52b1088ff2168a7b3df69462be634"
+    },
+    {
+      "path": "<internal>/M3c_s4_nk.json",
+      "sha256": "c2f709dd4c3c37c163eb4722c13766b13785483b968effd2eab02f61edcad849"
+    },
+    {
+      "path": "<internal>/M3c_s4_plain.json",
+      "sha256": "50f6753609e0e78c2b47836b64752f7019834688fb3d732cd71e03d656b8514d"
+    },
+    {
+      "path": "<internal>/M3d_s4.json",
+      "sha256": "f54d256b74e1e7ceadc9f40e9802356cf386848ba6d82faf5ecd5cb537457832"
+    },
+    {
+      "path": "<internal>/P64_s2.json",
+      "sha256": "06142454480716ea5b37221031cf53d6e9ec1bec841db374e61ee3abc4dc8e5e"
+    },
+    {
+      "path": "<internal>/P64_s4.json",
+      "sha256": "d70722868fe62fe76b26dd7a8544e11db02bd90f67d3af6fbb6172e5d493d8ba"
+    },
+    {
+      "path": "<internal>/P64_s4_c19.json",
+      "sha256": "116857d8897189581395f0edeea156ea2f58ec4b8005988b8773b1abaaad6204"
+    },
+    {
+      "path": "<internal>/P64_s4_tau2.json",
+      "sha256": "09491b0200e887c9f99634be27bed2542afd93ad8dbaebd2daa5d4c42f166882"
+    },
+    {
+      "path": "<internal>/P64_s4_tau4.json",
+      "sha256": "7c438e8d08bbc1fd45a8f3746c3cf4cb9973d03266acfea9452a7ac41f2f56c9"
+    },
+    {
+      "path": "<internal>/P64_s8.json",
+      "sha256": "37c0ce5fce588a96f604e6775009def586b141ce96c623c2333dfc7013c7bb5b"
+    },
+    {
+      "path": "<internal>/RS32_s2.json",
+      "sha256": "bcb13740a4099923c9bf2d12d8b5540ce902da9539eea29f9da6f5043e58813f"
+    },
+    {
+      "path": "<internal>/RS32_s4.json",
+      "sha256": "964842ae252ab5d8beb6a23da68e6904b100123ad3da915eb5ee298c0532b864"
+    },
+    {
+      "path": "<internal>/RS32_s4_tau1.json",
+      "sha256": "f80de1200e9aac566d030f42652106ad9fbeaa17bd59757bd22ad9d59f32d5ec"
+    },
+    {
+      "path": "<internal>/S4_128_s16.json",
+      "sha256": "4c6993a31fc359f2fd747060bad7cdd86d79a18c95f2d765ff9cb0b56be52e9c"
+    },
+    {
+      "path": "<internal>/S4_128_s4.json",
+      "sha256": "b1415c1e1794b859df806c3d1581afc94ce70b45debf4a12b43ad77d224fde19"
+    },
+    {
+      "path": "<internal>/S4_128_s4_nk_v36m.json",
+      "sha256": "bc0a5d4a74dc2da607f893f5818f06514e23b1fd9fb364fbc4bfabc71c4b2510"
+    },
+    {
+      "path": "<internal>/S4_128_s4_nk_v36q.json",
+      "sha256": "fe7fe5e1b91dea83856ff70593209c8dfa77d316fa2d3bbc775351bc408d7da9"
+    },
+    {
+      "path": "<internal>/S4_128_s8.json",
+      "sha256": "71ba84145be55b6e4f1826cb60db8a1430021192cfe28659d7d6105d8019d9ea"
+    },
+    {
+      "path": "<internal>/S4_16_s2.json",
+      "sha256": "3cf26f22a6a684857f410e8a2ca6eaf8bc32b8feaf7bfbf6d93bcf329bae75a3"
+    },
+    {
+      "path": "<internal>/S4_16_s4.json",
+      "sha256": "f010eec03cec8fb881fe8a2c4f51f2dd2b0b1530e852051f7f4f24fe7d878989"
+    },
+    {
+      "path": "<internal>/S4_16_s4_tau1.json",
+      "sha256": "48ebc5c935468e07c0963b84c7d0cc53b0f0d7bd6935c6c99ca3c3dc32c1ea71"
+    },
+    {
+      "path": "<internal>/S4_R2_m0p1.json",
+      "sha256": "92a67e1acd72bb595ce702e008b5fcef5c85e6a6deebe2799cf669f891734da8"
+    },
+    {
+      "path": "<internal>/S4_R2_m0p2.json",
+      "sha256": "a39c2ee7648cfdc9d1c2ba946f18245838ad0f5fb1997032bf88d1c5ce0ca6f5"
+    },
+    {
+      "path": "<internal>/design_rank.json",
+      "sha256": "531a911a468b0e6f58a612fbd45863f7c5d87649f39f831a70e5c8e4df257e2b"
+    },
+    {
+      "path": "<internal>/mass_diag_iso.json",
+      "sha256": "8cab36016866d0b3994d3b4c96099831a4daa62d30f908c0ceecbc2e0cb07650"
+    },
+    {
+      "path": "<internal>/mass_diag_own.json",
+      "sha256": "198fe0140e50d4ecc9058231216911d069fe68e3cdf1e70fa9ff07d342849a51"
+    },
+    {
+      "path": "<internal>/mass_formed_certified.json",
+      "sha256": "0865355770d023dee618dac59911e7d625cb660efaa033ce1729020f67469b80"
+    },
+    {
+      "path": "<internal>/mass_power3_iso.json",
+      "sha256": "067c3d14f64db0939b939919f59175e7beb167bc947ae589475e4684964a150c"
+    },
+    {
+      "path": "<internal>/size_diag_third.json",
+      "sha256": "4e578813fceb8a7083295503e395dbe65b76c1aea18a7cd22f218e3f59e48a44"
+    },
+    {
+      "path": "<internal>/size_diag_third_with_uncertified.json",
+      "sha256": "fe6632fd934b6551b2808e68b0eba6bd1d4cfed4c043637712309fdf80657082"
+    },
+    {
+      "path": "<internal>/size_formed_certified.json",
+      "sha256": "dddbf31dfc8ac82317507b390e9200b5a56905c8531f12a9acdd4233a7f344c4"
+    },
+    {
+      "path": "<internal>/size_power3_with_uncertified.json",
+      "sha256": "e90fc6c9223f237b8ed6b26fd9a44eb693187b9376c81a372dcc4f61e3294de8"
+    },
+    {
+      "path": "<internal>/width_cross_certified.json",
+      "sha256": "5a983c22cca50a00b52ebe8a71f18c606ba0b479af97f7059b8df8a181610b1e"
+    },
+    {
+      "path": "<internal>/width_cross_with_s2.json",
+      "sha256": "07120af6fb0f4f284034bb74e3e988bec611ed8bfbd7dc36c7d84d814865b49f"
+    },
+    {
+      "path": "<internal>/width_cross_with_uncertified.json",
+      "sha256": "d8798e555ec26699e806c9a3c3560cac2628b59b80153733d61400b463850b0c"
+    },
+    {
+      "path": "<internal>/width_per_doubling.json",
+      "sha256": "88393965369f01c64cf6498abab34bdcf7a8a7597594c1bd397f748b149fb064"
+    },
+    {
+      "path": "<internal>/M3a_s4__M3a_s2.json",
+      "sha256": "a6d3cdfc811037567c07adc9007cd4833d19e47daae8f16fe81db97c4f07c344"
+    },
+    {
+      "path": "<internal>/M3a_s4__M3a_s4_tau4.json",
+      "sha256": "5240e713b8e44ca8e21db1279603405eec8ee4547825463371ae204a8ad66b94"
+    },
+    {
+      "path": "<internal>/M3a_s4__S4_R2_m0p1.json",
+      "sha256": "999a684845cbd9e0b988d98d14cc2a73eefabcccfe91a4e0f82434573222cd9b"
+    },
+    {
+      "path": "<internal>/M3b_s4__M3b_s8.json",
+      "sha256": "d73ad33738d75f8a869014499633d524a947d0fec8d34bce026b4ca17318a057"
+    },
+    {
+      "path": "<internal>/M3c_s4_nk__M3c_s4_plain.json",
+      "sha256": "60a68f98f7732535e1ecf74dd4b92d74b70f941da32f880e9527ecb83d64e790"
+    },
+    {
+      "path": "<internal>/P64_s4__P64_s2.json",
+      "sha256": "35f2ab7384628a39a6d93749be28683b9e15bd188248c8b2b87a636e7f452b16"
+    },
+    {
+      "path": "<internal>/P64_s4__P64_s4_c19.json",
+      "sha256": "44e4c8577382bff8ac1719cf9c8fd22a0a2abbe36e6b4e9a84e5cf5cc0d4fb95"
+    },
+    {
+      "path": "<internal>/P64_s4__P64_s4_tau2.json",
+      "sha256": "77b9b37556580b0f527677e72c0fa18dbf5e98180f57ccaa9905a6abf5ce68e6"
+    },
+    {
+      "path": "<internal>/P64_s4__P64_s4_tau4.json",
+      "sha256": "7ec6dfb74bcdea37b226265a7ace2aa763982616cf87d722d22666a0b9a22485"
+    },
+    {
+      "path": "<internal>/P64_s4__P64_s8.json",
+      "sha256": "ab70b93f2405a3904f8b3747e23bfb321e140b4b35e55e2a535ac0500369adfb"
+    },
+    {
+      "path": "<internal>/P64_s4__S4_R2_m0p2.json",
+      "sha256": "a2bf88be6515dfd42d2d0890dee9de0deaa58547d41efb7a7447c3ca7d0eb3ce"
+    },
+    {
+      "path": "<internal>/RS32_s4__RS32_s2.json",
+      "sha256": "b79bc3b20097088a454b3a7453e2ee29866d3a52932c470c884154338a06f97c"
+    },
+    {
+      "path": "<internal>/RS32_s4__RS32_s4_tau1.json",
+      "sha256": "751d434f6286e9a88f3b81e6b87c00702fa608e0fcd2355a54ee3f454cc86c16"
+    },
+    {
+      "path": "<internal>/S4_128_s4__S4_128_s16.json",
+      "sha256": "fd4831abf6d2cdae917cfa2304db4647bfdba095524efe73d29de40c652d2e62"
+    },
+    {
+      "path": "<internal>/S4_128_s4__S4_128_s4_nk_v36m.json",
+      "sha256": "8e554762d268b7fcad50d55f892a39ce3908cf7846afa3f66e4c8f491e87fc95"
+    },
+    {
+      "path": "<internal>/S4_128_s4__S4_128_s4_nk_v36q.json",
+      "sha256": "f7599a2d6d43a0b1dcbc2b94be8036ba3ee9dabe78034f6c39fe4aff249c41cf"
+    },
+    {
+      "path": "<internal>/S4_128_s4__S4_128_s8.json",
+      "sha256": "5cf9a6e1aec9d0a4d6ce33d345667f6368b6c1045b9827fad41600945938f47b"
+    },
+    {
+      "path": "<internal>/S4_128_s8__S4_128_s16.json",
+      "sha256": "d34d97150c76f1f95efa789124cb1cd6b7faa4f5c885d3e8359bedcaab8011fd"
+    },
+    {
+      "path": "<internal>/S4_16_s4__S4_16_s2.json",
+      "sha256": "55db4c93f1f5f731b9d88784eea524dbbc59fc8fe92883e6900709ce0a1c1bc2"
+    },
+    {
+      "path": "<internal>/S4_16_s4__S4_16_s4_tau1.json",
+      "sha256": "be965079a95326cc5e0943d998c82385eb8f8ab1a55d8087a5ee8ce7e2d5c0d4"
+    },
+    {
+      "path": "<internal>/payload_top_bindings.json",
+      "sha256": "05ac26aff733dbff3cf6af43d6558ed6f933cd60ac7072785f312bc25b63e324"
+    }
+  ],
+  "known_answers": [
+    {
+      "name": "absent differs from null",
+      "passed": true
+    },
+    {
+      "name": "false differs from zero",
+      "passed": true
+    },
+    {
+      "name": "empty object differs from empty list",
+      "passed": true
+    },
+    {
+      "name": "list order preserved",
+      "passed": true
+    },
+    {
+      "name": "semantic join survives changed list position",
+      "passed": true
+    },
+    {
+      "name": "changed descendant retained under ancestor",
+      "passed": true
+    },
+    {
+      "name": "nonempty list versus numeric-key object detected",
+      "passed": true
+    },
+    {
+      "name": "duplicate object keys rejected",
+      "passed": true
+    },
+    {
+      "name": "both-absent subtree cannot pass",
+      "passed": true
+    },
+    {
+      "name": "null target cannot hide available root-free row",
+      "passed": true
+    },
+    {
+      "name": "absent row null differs from empty object",
+      "passed": true
+    },
+    {
+      "name": "representation-only clock match retains difference",
+      "passed": true
+    },
+    {
+      "name": "different saved-step clock not substituted",
+      "passed": true
+    },
+    {
+      "name": "empty-prefix sentinel is never a final-row index",
+      "passed": true
+    },
+    {
+      "name": "empty minimum cannot hide a nonempty prefix",
+      "passed": true
+    },
+    {
+      "name": "complete query sets independently checked",
+      "passed": true
+    },
+    {
+      "name": "missing query cannot disappear during child traversal",
+      "passed": true
+    },
+    {
+      "name": "null cannot hide a present minimum or bracket",
+      "passed": true
+    },
+    {
+      "name": "complete episode tail cannot disappear",
+      "passed": true
+    },
+    {
+      "name": "episode row type and order checked",
+      "passed": true
+    },
+    {
+      "name": "old plain confirmer inapplicable, current retained",
+      "passed": true
+    },
+    {
+      "name": "old-only Newton confirming failure",
+      "passed": true
+    },
+    {
+      "name": "all current gate reasons ordered",
+      "passed": true
+    },
+    {
+      "name": "local band beyond prefix retained",
+      "passed": true
+    },
+    {
+      "name": "plain empty Newton null old absent stay distinct",
+      "passed": true
+    },
+    {
+      "name": "last-kept exception retained with null following",
+      "passed": true
+    },
+    {
+      "name": "own missing formation permits joint event absence",
+      "passed": true
+    },
+    {
+      "name": "null or partial event fields are not absence",
+      "passed": true
+    },
+    {
+      "name": "two formations require every event field",
+      "passed": true
+    },
+    {
+      "name": "target identity does not imply own agreement",
+      "passed": true
+    },
+    {
+      "name": "missing child pointer stays blocked",
+      "passed": true
+    },
+    {
+      "name": "known parent cannot hide unknown child status",
+      "passed": true
+    },
+    {
+      "name": "pending or mismatch stage stays blocked",
+      "passed": true
+    },
+    {
+      "name": "stale null versus absent target rejected",
+      "passed": true
+    },
+    {
+      "name": "explicit unresolved disposition remains nonnumerical coverage",
+      "passed": true
+    }
+  ],
+  "typed_nodes": 22840,
+  "attribution_counts": {
+    "complete_top_level_structure": 1,
+    "documentary_order_or_admission_bookkeeping": 246,
+    "prescribed_fit_rank_width_values_and_membership": 889,
+    "complete_member_structure": 28,
+    "versioned_extremum_or_episode_selection": 621,
+    "preparation_scalar_or_catalog_readout": 1327,
+    "versioned_admission_and_summaries": 2452,
+    "physical_formation_or_query_value_and_presence": 12236,
+    "versioned_record_admission_annotation": 2964,
+    "raw_preparation_or_source_binding": 1188,
+    "explicit_source_process_metadata": 356,
+    "versioned_semantic_control_sample_sets_and_reductions": 532
+  },
+  "changed_attribution_counts": {
+    "complete_top_level_structure": 1,
+    "documentary_order_or_admission_bookkeeping": 218,
+    "prescribed_fit_rank_width_values_and_membership": 290,
+    "complete_member_structure": 28,
+    "versioned_admission_and_summaries": 1741,
+    "physical_formation_or_query_value_and_presence": 1015,
+    "versioned_record_admission_annotation": 1111,
+    "versioned_extremum_or_episode_selection": 83,
+    "raw_preparation_or_source_binding": 3,
+    "explicit_source_process_metadata": 3,
+    "versioned_semantic_control_sample_sets_and_reductions": 93
+  },
+  "binding_status_counts": {
+    "object_shape_agrees": 407,
+    "named_roster_agrees": 1,
+    "exact_primitive_or_discrete_agreement": 27854,
+    "source_summary_format_unresolved": 5,
+    "inapplicable_followup_encoding": 5,
+    "adopted_definition": 15,
+    "fit_shape_agrees": 401,
+    "derived_value_diagnostic": 8156,
+    "structural_container": 324,
+    "empty_minimum_encoding": 4,
+    "catalog_required_shape_agrees": 52,
+    "metadata_or_source_process": 920,
+    "input_unavailable": 32,
+    "legacy_empty_prefix_encoding": 4,
+    "legacy_format_unresolved": 206,
+    "definition_unresolved": 2078,
+    "episode_sequence_agrees": 54,
+    "record_presence_agrees": 2448,
+    "binding_input_unavailable": 48,
+    "presentation_roster_agrees": 2,
+    "control_identity_set_agrees": 2,
+    "control_shape_agrees": 40,
+    "unprinted_clock_format_diagnostic": 10
+  },
+  "blocking_stage_bindings": [],
+  "unmapped_bindings": [],
+  "unclassified_paths": [],
+  "stale_target_bindings": [],
+  "named_unchanged_fit_subtrees": {
+    "size_diag_third": true,
+    "size_diag_third_with_uncertified": true,
+    "size_power3_with_uncertified": true,
+    "mass_formed_certified": true,
+    "mass_diag_iso": true,
+    "mass_diag_own": true,
+    "mass_power3_iso": true
+  },
+  "release_preparation_and_firstroot_checks": {
+    "S4_R2_m0p2": {
+      "checks": {
+        "meta/path": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "meta/md5": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "meta/bytes": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "meta/args": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "meta/head": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "meta/m": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "meta/rs": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "meta/sigma": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "meta/tau": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "meta/R0_over_rs": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "meta/nsites": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation_presence": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/T": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/index": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/R_t": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/R_t_over_rs": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/R_t_over_2gE": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/E_over_E0": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/minNv": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/R_c": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/zeros": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/n_zeros": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/tangencies": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/slope": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/four_gE_kappa_T": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/simple": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/residual": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/gate_sigma_over_Rt": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/converged": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/bracket": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/prev_record_T": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/prev_minNv": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        }
+      },
+      "scope": "Only named preparation/source fields and represented physical first-root fields; excludes admission flags, release-control spreads, unexported profiles and parent histories."
+    },
+    "S4_R2_m0p1": {
+      "checks": {
+        "meta/path": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "meta/md5": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "meta/bytes": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "meta/args": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "meta/head": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "meta/m": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "meta/rs": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "meta/sigma": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "meta/tau": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "meta/R0_over_rs": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "meta/nsites": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation_presence": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/T": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/index": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/R_t": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/R_t_over_rs": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/R_t_over_2gE": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/E_over_E0": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/minNv": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/R_c": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/zeros": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/n_zeros": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/tangencies": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/slope": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/four_gE_kappa_T": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/simple": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/residual": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/gate_sigma_over_Rt": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/converged": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/bracket": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/prev_record_T": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        },
+        "formation/prev_minNv": {
+          "present_in_both": true,
+          "exact_typed_identity": true
+        }
+      },
+      "scope": "Only named preparation/source fields and represented physical first-root fields; excludes admission flags, release-control spreads, unexported profiles and parent histories."
+    }
+  },
+  "old_labelled_five_current_primary_design_identity": {
+    "members": true,
+    "z": true,
+    "h": true,
+    "T_f": true,
+    "R_t_over_rs": true,
+    "R_t_over_2gE": true
+  },
+  "removed_old_labelled_five_key": true,
+  "files": {
+    "root": "<internal>/root.json",
+    "certext_check": "<internal>/certext_check.json",
+    "definitions": "<internal>/definitions.json",
+    "fits": "<internal>/fits.json",
+    "members": "<internal>/members.json",
+    "members_M3a_s2": "<internal>/members_M3a_s2.json",
+    "members_M3a_s4": "<internal>/members_M3a_s4.json",
+    "members_M3a_s4_tau4": "<internal>/members_M3a_s4_tau4.json",
+    "members_M3b_s4": "<internal>/members_M3b_s4.json",
+    "members_M3b_s8": "<internal>/members_M3b_s8.json",
+    "members_M3c_s4_nk": "<internal>/members_M3c_s4_nk.json",
+    "members_M3c_s4_plain": "<internal>/members_M3c_s4_plain.json",
+    "members_M3d_s4": "<internal>/members_M3d_s4.json",
+    "members_P64_s2": "<internal>/members_P64_s2.json",
+    "members_P64_s4": "<internal>/members_P64_s4.json",
+    "members_P64_s4_c19": "<internal>/members_P64_s4_c19.json",
+    "members_P64_s4_tau2": "<internal>/members_P64_s4_tau2.json",
+    "members_P64_s4_tau4": "<internal>/members_P64_s4_tau4.json",
+    "members_P64_s8": "<internal>/members_P64_s8.json",
+    "members_RS32_s2": "<internal>/members_RS32_s2.json",
+    "members_RS32_s4": "<internal>/members_RS32_s4.json",
+    "members_RS32_s4_tau1": "<internal>/members_RS32_s4_tau1.json",
+    "members_S4_128_s16": "<internal>/members_S4_128_s16.json",
+    "members_S4_128_s4": "<internal>/members_S4_128_s4.json",
+    "members_S4_128_s4_nk_v36m": "<internal>/members_S4_128_s4_nk_v36m.json",
+    "members_S4_128_s4_nk_v36q": "<internal>/members_S4_128_s4_nk_v36q.json",
+    "members_S4_128_s8": "<internal>/members_S4_128_s8.json",
+    "members_S4_16_s2": "<internal>/members_S4_16_s2.json",
+    "members_S4_16_s4": "<internal>/members_S4_16_s4.json",
+    "members_S4_16_s4_tau1": "<internal>/members_S4_16_s4_tau1.json",
+    "members_S4_R2_m0p1": "<internal>/members_S4_R2_m0p1.json",
+    "members_S4_R2_m0p2": "<internal>/members_S4_R2_m0p2.json",
+    "order": "<internal>/order.json",
+    "spreads": "<internal>/spreads.json"
+  },
+  "container_checks": {
+    "old": {
+      "/members": {
+        "status": "object_shape_agrees",
+        "expected_keys": [
+          "S4_16_s4",
+          "RS32_s4",
+          "P64_s4",
+          "S4_128_s4",
+          "S4_16_s2",
+          "S4_16_s4_tau1",
+          "RS32_s2",
+          "RS32_s4_tau1",
+          "P64_s2",
+          "P64_s8",
+          "P64_s4_tau4",
+          "P64_s4_tau2",
+          "S4_128_s4_nk_v36m",
+          "S4_128_s4_nk_v36q",
+          "S4_128_s8",
+          "S4_128_s16",
+          "S4_R2_m0p2",
+          "S4_R2_m0p1",
+          "M3a_s4",
+          "M3b_s4",
+          "M3c_s4_nk",
+          "M3d_s4",
+          "M3b_s8",
+          "P64_s4_c19",
+          "M3a_s2",
+          "M3a_s4_tau4",
+          "M3c_s4_plain"
+        ],
+        "target_type": "object",
+        "actual_keys": [
+          "M3b_s4",
+          "P64_s4",
+          "M3a_s4",
+          "M3c_s4_nk",
+          "M3d_s4",
+          "S4_16_s4",
+          "RS32_s4",
+          "S4_128_s4",
+          "M3b_s8",
+          "M3a_s2",
+          "M3a_s4_tau4",
+          "M3c_s4_plain",
+          "P64_s2",
+          "P64_s8",
+          "P64_s4_tau4",
+          "P64_s4_tau2",
+          "P64_s4_c19",
+          "S4_16_s2",
+          "S4_16_s4_tau1",
+          "RS32_s2",
+          "RS32_s4_tau1",
+          "S4_128_s4_nk_v36m",
+          "S4_128_s4_nk_v36q",
+          "S4_128_s8",
+          "S4_128_s16",
+          "S4_R2_m0p2",
+          "S4_R2_m0p1"
+        ]
+      },
+      "/fits": {
+        "status": "object_shape_agrees",
+        "expected_keys": [
+          "mass_formed_certified",
+          "mass_diag_iso",
+          "mass_diag_own",
+          "mass_power3_iso",
+          "size_formed_certified",
+          "size_diag_third",
+          "size_diag_third_with_uncertified",
+          "size_power3_with_uncertified",
+          "width_cross_certified",
+          "width_cross_with_uncertified",
+          "width_per_doubling",
+          "design_rank",
+          "width_cross_with_s2"
+        ],
+        "target_type": "object",
+        "actual_keys": [
+          "mass_formed_certified",
+          "mass_diag_iso",
+          "mass_diag_own",
+          "mass_power3_iso",
+          "size_formed_certified",
+          "size_diag_third",
+          "size_diag_third_with_uncertified",
+          "size_power3_with_uncertified",
+          "width_cross_certified",
+          "width_cross_with_s2",
+          "width_cross_with_uncertified",
+          "width_per_doubling",
+          "design_rank"
+        ]
+      },
+      "/spreads": {
+        "status": "control_identity_set_agrees",
+        "expected_identities": [
+          [
+            "P64_s4",
+            "P64_s2",
+            "control_sigma"
+          ],
+          [
+            "P64_s4",
+            "P64_s8",
+            "control_sigma"
+          ],
+          [
+            "P64_s4",
+            "P64_s4_tau4",
+            "control_step"
+          ],
+          [
+            "P64_s4",
+            "P64_s4_tau2",
+            "control_step"
+          ],
+          [
+            "P64_s4",
+            "P64_s4_c19",
+            "comparator"
+          ],
+          [
+            "P64_s4",
+            "S4_R2_m0p2",
+            "preparation"
+          ],
+          [
+            "S4_16_s4",
+            "S4_16_s2",
+            "control_sigma"
+          ],
+          [
+            "S4_16_s4",
+            "S4_16_s4_tau1",
+            "control_step"
+          ],
+          [
+            "RS32_s4",
+            "RS32_s2",
+            "control_sigma"
+          ],
+          [
+            "RS32_s4",
+            "RS32_s4_tau1",
+            "control_step"
+          ],
+          [
+            "S4_128_s4",
+            "S4_128_s4_nk_v36m",
+            "control_solver"
+          ],
+          [
+            "S4_128_s4",
+            "S4_128_s4_nk_v36q",
+            "control_solver"
+          ],
+          [
+            "S4_128_s4",
+            "S4_128_s8",
+            "control_sigma"
+          ],
+          [
+            "S4_128_s4",
+            "S4_128_s16",
+            "control_sigma"
+          ],
+          [
+            "S4_128_s8",
+            "S4_128_s16",
+            "control_sigma (the certified factor-2 pair at 128)"
+          ],
+          [
+            "M3b_s4",
+            "M3b_s8",
+            "control_sigma"
+          ],
+          [
+            "M3a_s4",
+            "M3a_s2",
+            "control_sigma"
+          ],
+          [
+            "M3a_s4",
+            "M3a_s4_tau4",
+            "control_step"
+          ],
+          [
+            "M3a_s4",
+            "S4_R2_m0p1",
+            "preparation"
+          ],
+          [
+            "M3c_s4_nk",
+            "M3c_s4_plain",
+            "control_solver"
+          ]
+        ],
+        "actual_identities": [
+          [
+            "M3b_s4",
+            "M3b_s8",
+            "control_sigma"
+          ],
+          [
+            "M3a_s4",
+            "M3a_s2",
+            "control_sigma"
+          ],
+          [
+            "M3a_s4",
+            "M3a_s4_tau4",
+            "control_step"
+          ],
+          [
+            "M3c_s4_nk",
+            "M3c_s4_plain",
+            "control_solver"
+          ],
+          [
+            "P64_s4",
+            "P64_s2",
+            "control_sigma"
+          ],
+          [
+            "P64_s4",
+            "P64_s8",
+            "control_sigma"
+          ],
+          [
+            "P64_s4",
+            "P64_s4_tau4",
+            "control_step"
+          ],
+          [
+            "P64_s4",
+            "P64_s4_tau2",
+            "control_step"
+          ],
+          [
+            "P64_s4",
+            "P64_s4_c19",
+            "comparator"
+          ],
+          [
+            "S4_16_s4",
+            "S4_16_s2",
+            "control_sigma"
+          ],
+          [
+            "S4_16_s4",
+            "S4_16_s4_tau1",
+            "control_step"
+          ],
+          [
+            "RS32_s4",
+            "RS32_s2",
+            "control_sigma"
+          ],
+          [
+            "RS32_s4",
+            "RS32_s4_tau1",
+            "control_step"
+          ],
+          [
+            "S4_128_s4",
+            "S4_128_s4_nk_v36m",
+            "control_solver"
+          ],
+          [
+            "S4_128_s4",
+            "S4_128_s4_nk_v36q",
+            "control_solver"
+          ],
+          [
+            "S4_128_s4",
+            "S4_128_s8",
+            "control_sigma"
+          ],
+          [
+            "S4_128_s4",
+            "S4_128_s16",
+            "control_sigma"
+          ],
+          [
+            "P64_s4",
+            "S4_R2_m0p2",
+            "preparation"
+          ],
+          [
+            "M3a_s4",
+            "S4_R2_m0p1",
+            "preparation"
+          ],
+          [
+            "S4_128_s8",
+            "S4_128_s16",
+            "control_sigma (the certified factor-2 pair at 128)"
+          ]
+        ]
+      }
+    },
+    "current": {
+      "/members": {
+        "status": "object_shape_agrees",
+        "expected_keys": [
+          "S4_16_s4",
+          "RS32_s4",
+          "P64_s4",
+          "S4_128_s4",
+          "S4_16_s2",
+          "S4_16_s4_tau1",
+          "RS32_s2",
+          "RS32_s4_tau1",
+          "P64_s2",
+          "P64_s8",
+          "P64_s4_tau4",
+          "P64_s4_tau2",
+          "S4_128_s4_nk_v36m",
+          "S4_128_s4_nk_v36q",
+          "S4_128_s8",
+          "S4_128_s16",
+          "S4_R2_m0p2",
+          "S4_R2_m0p1",
+          "M3a_s4",
+          "M3b_s4",
+          "M3c_s4_nk",
+          "M3d_s4",
+          "M3b_s8",
+          "P64_s4_c19",
+          "M3a_s2",
+          "M3a_s4_tau4",
+          "M3c_s4_plain"
+        ],
+        "target_type": "object",
+        "actual_keys": [
+          "M3b_s4",
+          "P64_s4",
+          "M3a_s4",
+          "M3c_s4_nk",
+          "M3d_s4",
+          "S4_16_s4",
+          "RS32_s4",
+          "S4_128_s4",
+          "M3b_s8",
+          "M3a_s2",
+          "M3a_s4_tau4",
+          "M3c_s4_plain",
+          "P64_s2",
+          "P64_s8",
+          "P64_s4_tau4",
+          "P64_s4_tau2",
+          "P64_s4_c19",
+          "S4_16_s2",
+          "S4_16_s4_tau1",
+          "RS32_s2",
+          "RS32_s4_tau1",
+          "S4_128_s4_nk_v36m",
+          "S4_128_s4_nk_v36q",
+          "S4_128_s8",
+          "S4_128_s16",
+          "S4_R2_m0p2",
+          "S4_R2_m0p1"
+        ]
+      },
+      "/fits": {
+        "status": "object_shape_agrees",
+        "expected_keys": [
+          "mass_formed_certified",
+          "mass_diag_iso",
+          "mass_diag_own",
+          "mass_power3_iso",
+          "size_formed_certified",
+          "size_diag_third",
+          "size_diag_third_with_uncertified",
+          "size_power3_with_uncertified",
+          "width_cross_certified",
+          "width_cross_with_uncertified",
+          "width_per_doubling",
+          "design_rank"
+        ],
+        "target_type": "object",
+        "actual_keys": [
+          "mass_formed_certified",
+          "mass_diag_iso",
+          "mass_diag_own",
+          "mass_power3_iso",
+          "size_formed_certified",
+          "size_diag_third",
+          "size_diag_third_with_uncertified",
+          "size_power3_with_uncertified",
+          "width_cross_certified",
+          "width_cross_with_uncertified",
+          "width_per_doubling",
+          "design_rank"
+        ]
+      },
+      "/spreads": {
+        "status": "control_identity_set_agrees",
+        "expected_identities": [
+          [
+            "P64_s4",
+            "P64_s2",
+            "control_sigma"
+          ],
+          [
+            "P64_s4",
+            "P64_s8",
+            "control_sigma"
+          ],
+          [
+            "P64_s4",
+            "P64_s4_tau4",
+            "control_step"
+          ],
+          [
+            "P64_s4",
+            "P64_s4_tau2",
+            "control_step"
+          ],
+          [
+            "P64_s4",
+            "P64_s4_c19",
+            "comparator"
+          ],
+          [
+            "P64_s4",
+            "S4_R2_m0p2",
+            "preparation"
+          ],
+          [
+            "S4_16_s4",
+            "S4_16_s2",
+            "control_sigma"
+          ],
+          [
+            "S4_16_s4",
+            "S4_16_s4_tau1",
+            "control_step"
+          ],
+          [
+            "RS32_s4",
+            "RS32_s2",
+            "control_sigma"
+          ],
+          [
+            "RS32_s4",
+            "RS32_s4_tau1",
+            "control_step"
+          ],
+          [
+            "S4_128_s4",
+            "S4_128_s4_nk_v36m",
+            "control_solver"
+          ],
+          [
+            "S4_128_s4",
+            "S4_128_s4_nk_v36q",
+            "control_solver"
+          ],
+          [
+            "S4_128_s4",
+            "S4_128_s8",
+            "control_sigma"
+          ],
+          [
+            "S4_128_s4",
+            "S4_128_s16",
+            "control_sigma"
+          ],
+          [
+            "S4_128_s8",
+            "S4_128_s16",
+            "control_sigma (the certified factor-2 pair at 128)"
+          ],
+          [
+            "M3b_s4",
+            "M3b_s8",
+            "control_sigma"
+          ],
+          [
+            "M3a_s4",
+            "M3a_s2",
+            "control_sigma"
+          ],
+          [
+            "M3a_s4",
+            "M3a_s4_tau4",
+            "control_step"
+          ],
+          [
+            "M3a_s4",
+            "S4_R2_m0p1",
+            "preparation"
+          ],
+          [
+            "M3c_s4_nk",
+            "M3c_s4_plain",
+            "control_solver"
+          ]
+        ],
+        "actual_identities": [
+          [
+            "M3b_s4",
+            "M3b_s8",
+            "control_sigma"
+          ],
+          [
+            "M3a_s4",
+            "M3a_s2",
+            "control_sigma"
+          ],
+          [
+            "M3a_s4",
+            "M3a_s4_tau4",
+            "control_step"
+          ],
+          [
+            "M3c_s4_nk",
+            "M3c_s4_plain",
+            "control_solver"
+          ],
+          [
+            "P64_s4",
+            "P64_s2",
+            "control_sigma"
+          ],
+          [
+            "P64_s4",
+            "P64_s8",
+            "control_sigma"
+          ],
+          [
+            "P64_s4",
+            "P64_s4_tau4",
+            "control_step"
+          ],
+          [
+            "P64_s4",
+            "P64_s4_tau2",
+            "control_step"
+          ],
+          [
+            "P64_s4",
+            "P64_s4_c19",
+            "comparator"
+          ],
+          [
+            "S4_16_s4",
+            "S4_16_s2",
+            "control_sigma"
+          ],
+          [
+            "S4_16_s4",
+            "S4_16_s4_tau1",
+            "control_step"
+          ],
+          [
+            "RS32_s4",
+            "RS32_s2",
+            "control_sigma"
+          ],
+          [
+            "RS32_s4",
+            "RS32_s4_tau1",
+            "control_step"
+          ],
+          [
+            "S4_128_s4",
+            "S4_128_s4_nk_v36m",
+            "control_solver"
+          ],
+          [
+            "S4_128_s4",
+            "S4_128_s4_nk_v36q",
+            "control_solver"
+          ],
+          [
+            "S4_128_s4",
+            "S4_128_s8",
+            "control_sigma"
+          ],
+          [
+            "S4_128_s4",
+            "S4_128_s16",
+            "control_sigma"
+          ],
+          [
+            "P64_s4",
+            "S4_R2_m0p2",
+            "preparation"
+          ],
+          [
+            "M3a_s4",
+            "S4_R2_m0p1",
+            "preparation"
+          ],
+          [
+            "S4_128_s8",
+            "S4_128_s16",
+            "control_sigma (the certified factor-2 pair at 128)"
+          ]
+        ]
+      }
+    }
+  },
+  "changed_raw_preparation_binding_nodes": [
+    {
+      "path": "/members/P64_s2/meta",
+      "version_status": "changed",
+      "node_kind": "container",
+      "old": {
+        "type": "object",
+        "keys": [
+          "R0_over_rs",
+          "args",
+          "bytes",
+          "engine_entries",
+          "head",
+          "label",
+          "load_seconds",
+          "m",
+          "md5",
+          "name",
+          "newton",
+          "nsites",
+          "path",
+          "read_from",
+          "records",
+          "records_dropped_without_E",
+          "role",
+          "rs",
+          "running",
+          "script",
+          "sigma",
+          "stop_E",
+          "stop_fields",
+          "tau"
+        ],
+        "length": 24
+      },
+      "current": {
+        "type": "object",
+        "keys": [
+          "R0_over_rs",
+          "args",
+          "bytes",
+          "engine_entries",
+          "head",
+          "label",
+          "load_seconds",
+          "m",
+          "md5",
+          "name",
+          "newton",
+          "nsites",
+          "path",
+          "read_from",
+          "records",
+          "records_dropped_without_E",
+          "role",
+          "rs",
+          "running",
+          "script",
+          "sigma",
+          "stop_E",
+          "stop_fields",
+          "tau"
+        ],
+        "length": 24
+      },
+      "attribution": "raw_preparation_or_source_binding",
+      "own_bindings": {
+        "old": {
+          "status": "object_shape_agrees",
+          "file": "<internal>/P64_s2.json",
+          "entry_index": 1,
+          "target": {
+            "type": "object",
+            "keys": [
+              "R0_over_rs",
+              "args",
+              "bytes",
+              "engine_entries",
+              "head",
+              "label",
+              "load_seconds",
+              "m",
+              "md5",
+              "name",
+              "newton",
+              "nsites",
+              "path",
+              "read_from",
+              "records",
+              "records_dropped_without_E",
+              "role",
+              "rs",
+              "running",
+              "script",
+              "sigma",
+              "stop_E",
+              "stop_fields",
+              "tau"
+            ],
+            "length": 24
+          }
+        },
+        "current": {
+          "status": "object_shape_agrees",
+          "file": "<internal>/P64_s2.json",
+          "entry_index": 1,
+          "target": {
+            "type": "object",
+            "keys": [
+              "R0_over_rs",
+              "args",
+              "bytes",
+              "engine_entries",
+              "head",
+              "label",
+              "load_seconds",
+              "m",
+              "md5",
+              "name",
+              "newton",
+              "nsites",
+              "path",
+              "read_from",
+              "records",
+              "records_dropped_without_E",
+              "role",
+              "rs",
+              "running",
+              "script",
+              "sigma",
+              "stop_E",
+              "stop_fields",
+              "tau"
+            ],
+            "length": 24
+          }
+        }
+      }
+    },
+    {
+      "path": "/members/S4_128_s16/meta",
+      "version_status": "changed",
+      "node_kind": "container",
+      "old": {
+        "type": "object",
+        "keys": [
+          "R0_over_rs",
+          "args",
+          "bytes",
+          "engine_entries",
+          "head",
+          "label",
+          "load_seconds",
+          "m",
+          "md5",
+          "name",
+          "newton",
+          "nsites",
+          "path",
+          "read_from",
+          "records",
+          "records_dropped_without_E",
+          "role",
+          "rs",
+          "running",
+          "script",
+          "sigma",
+          "stop_E",
+          "stop_fields",
+          "tau"
+        ],
+        "length": 24
+      },
+      "current": {
+        "type": "object",
+        "keys": [
+          "R0_over_rs",
+          "args",
+          "bytes",
+          "engine_entries",
+          "head",
+          "label",
+          "load_seconds",
+          "m",
+          "md5",
+          "name",
+          "newton",
+          "nsites",
+          "path",
+          "read_from",
+          "records",
+          "records_dropped_without_E",
+          "role",
+          "rs",
+          "running",
+          "script",
+          "sigma",
+          "stop_E",
+          "stop_fields",
+          "tau"
+        ],
+        "length": 24
+      },
+      "attribution": "raw_preparation_or_source_binding",
+      "own_bindings": {
+        "old": {
+          "status": "object_shape_agrees",
+          "file": "<internal>/S4_128_s16.json",
+          "entry_index": 1,
+          "target": {
+            "type": "object",
+            "keys": [
+              "R0_over_rs",
+              "args",
+              "bytes",
+              "engine_entries",
+              "head",
+              "label",
+              "load_seconds",
+              "m",
+              "md5",
+              "name",
+              "newton",
+              "nsites",
+              "path",
+              "read_from",
+              "records",
+              "records_dropped_without_E",
+              "role",
+              "rs",
+              "running",
+              "script",
+              "sigma",
+              "stop_E",
+              "stop_fields",
+              "tau"
+            ],
+            "length": 24
+          }
+        },
+        "current": {
+          "status": "object_shape_agrees",
+          "file": "<internal>/S4_128_s16.json",
+          "entry_index": 1,
+          "target": {
+            "type": "object",
+            "keys": [
+              "R0_over_rs",
+              "args",
+              "bytes",
+              "engine_entries",
+              "head",
+              "label",
+              "load_seconds",
+              "m",
+              "md5",
+              "name",
+              "newton",
+              "nsites",
+              "path",
+              "read_from",
+              "records",
+              "records_dropped_without_E",
+              "role",
+              "rs",
+              "running",
+              "script",
+              "sigma",
+              "stop_E",
+              "stop_fields",
+              "tau"
+            ],
+            "length": 24
+          }
+        }
+      }
+    },
+    {
+      "path": "/members/S4_16_s4_tau1/meta",
+      "version_status": "changed",
+      "node_kind": "container",
+      "old": {
+        "type": "object",
+        "keys": [
+          "R0_over_rs",
+          "args",
+          "bytes",
+          "engine_entries",
+          "head",
+          "label",
+          "load_seconds",
+          "m",
+          "md5",
+          "name",
+          "newton",
+          "nsites",
+          "path",
+          "read_from",
+          "records",
+          "records_dropped_without_E",
+          "role",
+          "rs",
+          "running",
+          "script",
+          "sigma",
+          "stop_E",
+          "stop_fields",
+          "tau"
+        ],
+        "length": 24
+      },
+      "current": {
+        "type": "object",
+        "keys": [
+          "R0_over_rs",
+          "args",
+          "bytes",
+          "engine_entries",
+          "head",
+          "label",
+          "load_seconds",
+          "m",
+          "md5",
+          "name",
+          "newton",
+          "nsites",
+          "path",
+          "read_from",
+          "records",
+          "records_dropped_without_E",
+          "role",
+          "rs",
+          "running",
+          "script",
+          "sigma",
+          "stop_E",
+          "stop_fields",
+          "tau"
+        ],
+        "length": 24
+      },
+      "attribution": "raw_preparation_or_source_binding",
+      "own_bindings": {
+        "old": {
+          "status": "object_shape_agrees",
+          "file": "<internal>/S4_16_s4_tau1.json",
+          "entry_index": 1,
+          "target": {
+            "type": "object",
+            "keys": [
+              "R0_over_rs",
+              "args",
+              "bytes",
+              "engine_entries",
+              "head",
+              "label",
+              "load_seconds",
+              "m",
+              "md5",
+              "name",
+              "newton",
+              "nsites",
+              "path",
+              "read_from",
+              "records",
+              "records_dropped_without_E",
+              "role",
+              "rs",
+              "running",
+              "script",
+              "sigma",
+              "stop_E",
+              "stop_fields",
+              "tau"
+            ],
+            "length": 24
+          }
+        },
+        "current": {
+          "status": "object_shape_agrees",
+          "file": "<internal>/S4_16_s4_tau1.json",
+          "entry_index": 1,
+          "target": {
+            "type": "object",
+            "keys": [
+              "R0_over_rs",
+              "args",
+              "bytes",
+              "engine_entries",
+              "head",
+              "label",
+              "load_seconds",
+              "m",
+              "md5",
+              "name",
+              "newton",
+              "nsites",
+              "path",
+              "read_from",
+              "records",
+              "records_dropped_without_E",
+              "role",
+              "rs",
+              "running",
+              "script",
+              "sigma",
+              "stop_E",
+              "stop_fields",
+              "tau"
+            ],
+            "length": 24
+          }
+        }
+      }
+    }
+  ],
+  "changed_physical_record_scalar_nodes": [],
+  "S32_named_membership_changes": {
+    "status": "agrees",
+    "checks": {
+      "primary_five_exact_order": true,
+      "P64_s2_leaves_uncertified": true,
+      "width_two_to_four_becomes_both_certified": true,
+      "rank_adds_exact_two": true
+    },
+    "primary_member_order": [
+      "P64_s2",
+      "P64_s4",
+      "P64_s8",
+      "S4_128_s8",
+      "S4_128_s16"
+    ],
+    "old_current_uncertified": {
+      "old": [
+        "P64_s2",
+        "S4_128_s4"
+      ],
+      "current": [
+        "S4_128_s4"
+      ]
+    },
+    "width_pair_source_rows": {
+      "old": [
+        {
+          "member": "P64_s2",
+          "source_index": 96,
+          "certified": false
+        },
+        {
+          "member": "P64_s4",
+          "source_index": 97,
+          "certified": true
+        }
+      ],
+      "current": [
+        {
+          "member": "P64_s2",
+          "source_index": 96,
+          "certified": true
+        },
+        {
+          "member": "P64_s4",
+          "source_index": 97,
+          "certified": true
+        }
+      ]
+    },
+    "old_rank_members": [
+      "RS32_s4",
+      "RS32_s4_tau1",
+      "P64_s4",
+      "P64_s8",
+      "P64_s4_tau4",
+      "P64_s4_tau2",
+      "S4_128_s8",
+      "S4_128_s16"
+    ],
+    "current_rank_members": [
+      "RS32_s4",
+      "RS32_s4_tau1",
+      "RS32_s2",
+      "P64_s4",
+      "P64_s2",
+      "P64_s8",
+      "P64_s4_tau4",
+      "P64_s4_tau2",
+      "S4_128_s8",
+      "S4_128_s16"
+    ],
+    "own_sources": [
+      "descriptive_arithmetic.json/160/fits/width_certified/members",
+      "descriptive_arithmetic.json/160/fits/width_labelled/members",
+      "record_diagnostics.json/historical/old_report/members/*/formation/row",
+      "scalar_tables.json/*/formation/row",
+      "record_diagnostics.json/historical/old_rank/members",
+      "descriptive_arithmetic.json/160/rank_tables/certified/members"
+    ]
+  }
+}

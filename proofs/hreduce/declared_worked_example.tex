@@ -1,0 +1,107 @@
+% SOURCES. Binding final4/GOAL_alt.md, declared H2; REQUIREMENTS
+% at 061ccbe55ee items 11,19,22,26,27. [X] Named agreeing methods: this author's
+% principal-curvature/explicit-chart/Hamilton-ray route and the other lane's
+% E11,E15,E16,E18 radial Gauss/Bloch route in actual
+% <internal>/strand_E_declared_equations.tex,
+% read in full with SOURCES after the independent example was saved.
+% Agreement concerns the stationary continuum vacuum and local sine correction;
+% no full finite-a coupled evolution is asserted. Its actual independent review
+% was also read. J=0 makes the earlier sourced momentum-sign control
+% irrelevant to the vacuum calculation. The binding row has the coherent -J
+% sign and the actual complete adjoint source/coupling map.
+% Source for reviewer A's writing, not manuscript text. One-page ceiling.
+% Predecessor lane_z/B11-007's original g30b source was read; its cos(2ap)
+% dressing is the exact finite-momentum flow correction used here. Geometry
+% obeys the continuum Gauss law, with no lattice-scale geometric law supplied.
+% No old induced static exterior or matched stiffness is used.
+% Averaging comparison: actual strand_E_hydrodynamic_sources.tex HA3,HA10,
+% its review and scope/SOURCES in <internal>/solve were read.
+% Both routes preserve the integral of a FIXED bare source array. Changing ell
+% at fixed physical C can change the reference and the array; no coupled-branch
+% scale independence follows. The exterior comparison below fixes boundary E.
+% Check conventions: inward v=-u, metric ds^2=-dt^2+(dr+u dt)^2+r^2dOmega^2.
+% Put dt=dT+(u/F)dr; then cross terms cancel and g_rr=1/F.
+% Integral u/F dr=2sqrt(r_s r)+r_s ln|(sqrt r-sqrt r_s)/(sqrt r+sqrt r_s)|.
+% Isotropic r=varrho(1+r_s/(4varrho))^2 gives beta=gamma=1.
+% The massive k=0 ray at N=1 has dr/dt=v, acceleration v v'=-r_s/(2r^2).
+% The finite-k turning condition below is a local group-velocity statement;
+% it is not a unique horizon for all frequencies or a state-temperature theorem.
+% CURRENT BINDING QUALIFICATION, STATUS-mapped critical duty4/W1. The
+% actual goal and critical-first addendum were read fully. The geometric
+% source is the angular average of the averaged bare density, subtracted
+% against the continued occupied spectral reference P_b(h), with
+% P_b^2=P_b and [h,P_b]=0 on its stated smooth occupation sheet. Neither
+% instantaneous pocket refilling nor literal unitary transport is used
+% as its definition. The example holds the boundary charge fixed; it
+% does not prove a self-consistent source/history or varying-ell branch.
+% Complete adjoint back-averaging gives the native site fields; N=1 is
+% reproduced by a normalized scalar kernel in the exterior, while the
+% l=1 flow back-average need not equal geometric v. The metric/chart/PPN
+% calculation below concerns the declared continuum geometry. Its use
+% as the point-coupling matter cone is a control or ell/L limit.
+% The local Bloch calculation freezes the actual effective flow to -u_*;
+% it is exact for that homogeneous operator and is a local symbol control
+% in the smooth exterior. Full Weyl transport also retains its endpoint
+% allocation; a finite packet has additional band/width effects. Thus
+% u_*=1 is not identified with r=r_s at finite ell or finite a.
+% The independently checked exterior convolution control has
+% v_ell/v=1-9sigma_ell^2/(8r^2)+O(ell^4/r^4); it preserves the leading
+% asymptotic Cavendish coefficient, but not exact finite-radius matter
+% observables. Arbitrary allocation kernels use their own adjoint moments.
+% SOURCES: binding GOAL_alt.md and ADDENDUM_critical_first_all.md;
+% actual current declared_h2_continuum.tex boundary/adjoint/spectral
+% theorem and declared_exterior.tex finite-ell/local-symbol comparison;
+% the already full-read independent E11/E15/E16/E18 and HA3/HA10 routes
+% named above. No new example, numerical job or coefficient derivation.
+
+\paragraph{Point-source example [X; averaging R].}
+Take a stationary vacuum region of the declared continuum flat-slice
+constraints, outside a localized source and its averaging support.
+The angular-averaged sources use the continued occupied spectral reference,
+on a sheet where it commutes with the matter Hamiltonian.
+For a fixed bare source array on the regular $J=0$, $N=1$ branch,
+normalized compact averaging preserves the boundary energy
+$E=\int\rho\,d^3x$. At fixed $E$, this vacuum geometry is independent of $\ell$.
+For $v=v(r)\boldsymbol n$, the principal curvatures
+are $v'/N,v/(Nr),v/(Nr)$.  The two vacuum rows reduce to
+\[
+ 0={vN'\over4\pi G rN^2},\qquad
+ 0={1\over8\pi G r^2}{d\over dr}(rv^2),
+\]
+after the asymptotic clock fixes $N=1$.  The inward branch and the source
+boundary charge therefore give $v=-\sqrt{r_s/r}$, $r_s=2GE$.
+The declared continuum metric reads
+\[
+ ds^2=-dt^2+(dr+\sqrt{r_s/r}\,dt)^2+r^2d\Omega^2 .
+\]
+Writing $F=1-r_s/r$ and
+\[
+ T=t-2\sqrt{r_s r}
+      -r_s\log\left|{\sqrt r-\sqrt{r_s}\over\sqrt r+\sqrt{r_s}}\right|
+\]
+gives $ds^2=-F\,dT^2+F^{-1}dr^2+r^2d\Omega^2$.
+A continuum rest ray follows $\dot r=v$ and hence
+$\ddot r=vv'=-GE/r^2$ in the weak field: $G$ is defined by the Cavendish
+measurement of this coefficient.  With $r=\varrho(1+r_s/(4\varrho))^2$
+and $U=GE/\varrho$, the metric
+has $g_{TT}=-1+2U-2U^2+\cdots$ and $g_{ij}=(1+2U+\cdots)\delta_{ij}$,
+so $\beta=\gamma=1$.
+
+Matter uses the actual adjoint-averaged site fields. One lattice correction
+can be checked by freezing that effective flow to $-u_*$ with $N=1$.
+On a lattice axis, a massless outward mode with $0<ak\ll1$ has
+\[
+ \omega={\sin(ak)\over a}-u_*\,{\sin(2ak)\over2a},\qquad
+ \dot r=\cos(ak)-u_*\cos(2ak).
+\]
+At $u_*=1$ its speed is
+$\tfrac32(ak)^2+O((ak)^4)$.
+The identification of this local flow with $r=r_s$ belongs to the point
+control. Finite-$\ell$ back-averaging and endpoint/packet corrections must
+be retained for an actual exterior ray; no universal trapping shift is inferred.
+In lattice units $r_s/a=2g\mathcal E$, with $g=G/a^2$ and
+$\mathcal E=aE$; no value of the spacing is selected by this example.
+% A fixed-k zero-group-speed test gives u=cos(ak)/cos(2ak) and
+% r/r_s=1-3(ak)^2 on the uncorrected profile, but its Killing energy is
+% -sin^3(ak)/(a cos(2ak))<0 for small positive k. It is therefore not presented
+% as the turning radius of a positive-energy outgoing ray.

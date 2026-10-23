@@ -1,0 +1,148 @@
+{
+  "control": "R2C14a conditional massive smooth-volume ceiling",
+  "producer": "check_massive_entropy_ceiling.py",
+  "host": "gpu",
+  "python": "3.12.12",
+  "mpmath": "1.3.0",
+  "nice": 10,
+  "threads": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  },
+  "cuda_visible_devices": "",
+  "g": 0.25,
+  "mu": 0.2,
+  "count_slope": 10.0,
+  "root_relative_width": 1e-12,
+  "root_max_iterations": 80,
+  "crosscheck_relative_radius_tolerance": 1e-10,
+  "wall_limit_seconds": 60,
+  "rss_limit_kib": 262144,
+  "scope": "Conditional R2C14 Gaussian/purifier/closed-energy premises; smooth volumes only. Observed floating-point sandwich, no outward-rounded certificate. Not a massless Page run or state count.",
+  "complete": true,
+  "rows": [
+    {
+      "initial_radius": 32.0,
+      "joining_radius": 3.2496854928758694,
+      "joining_bracket": [
+        3.2496854928613175,
+        3.2496854928904213
+      ],
+      "joining_bracket_width": 2.9103830456733704e-11,
+      "joining_iterations": 41,
+      "joining_stop": "requested_width",
+      "joining_equation_residual": 7.973312676767819e-09,
+      "stationary_bracket": [
+        12.05054049464609,
+        12.050540494672237
+      ],
+      "stationary_bracket_width": 2.6147972675971687e-11,
+      "stationary_iterations": 41,
+      "stationary_stop": "requested_width",
+      "stationary_endpoint_signs": [
+        2.0605739337042905e-10,
+        -4.7471360176132293e-11
+      ],
+      "optimum_radius": 12.050540494659163,
+      "occupation_fraction": 0.006803978831076653,
+      "excitation_count": 199.49459505340837,
+      "volume_sites_smooth": 7330.071124789221,
+      "retained_modes": 29320.284499156885,
+      "max_entropy_nats": 1194.341819316386,
+      "endpoint_entropies": [
+        0.0,
+        0.0
+      ],
+      "joining_entropy_nats": 398.56398882202234,
+      "normalized_stationary_residual": 7.95603838378024e-13,
+      "observed_sandwich": [
+        1194.341819316386,
+        1194.341819317689
+      ],
+      "observed_sandwich_width": 1.303078533965163e-09,
+      "bounded_objective_crosscheck": {
+        "precision_digits": 50,
+        "iterations": 48,
+        "bracket": [
+          "12.050540493091922450953319500307188922482457890452",
+          "12.050540495766380979561911907595332869523903626747"
+        ],
+        "bracket_width": "0.0000000026744585286085924072881439470414457362949182867658",
+        "requested_radius_tolerance": "0.0000000032",
+        "radius": "12.0505404944291517152576157039512608960031807586",
+        "entropy": "1194.3418193163857487995180348911605058128662634629"
+      },
+      "crosscheck_entropy_difference": -1.5987853956864688e-13,
+      "crosscheck_radius_difference": -2.3001150011644904e-10,
+      "initial_volume_comparison": {
+        "volume_sites_smooth": 137258.27743044044,
+        "retained_modes": 549033.1097217618,
+        "excitation_count": 320.0,
+        "entropy_nats": 2703.136497276084
+      }
+    },
+    {
+      "initial_radius": 64.0,
+      "joining_radius": 4.1493813097768,
+      "joining_bracket": [
+        4.149381309747696,
+        4.149381309805904
+      ],
+      "joining_bracket_width": 5.820766091346741e-11,
+      "joining_iterations": 41,
+      "joining_stop": "requested_width",
+      "joining_equation_residual": 1.3537828635890037e-08,
+      "stationary_bracket": [
+        21.447735276854413,
+        21.447735276908844
+      ],
+      "stationary_bracket_width": 5.4431126272902475e-11,
+      "stationary_iterations": 41,
+      "stationary_stop": "requested_width",
+      "stationary_endpoint_signs": [
+        1.8469137330612284e-10,
+        -1.326370124843379e-10
+      ],
+      "optimum_radius": 21.44773527688163,
+      "occupation_fraction": 0.002574125735407624,
+      "excitation_count": 425.52264723118367,
+      "volume_sites_smooth": 41326.90969384604,
+      "retained_modes": 165307.63877538417,
+      "max_entropy_nats": 2962.0449154760613,
+      "endpoint_entropies": [
+        0.0,
+        0.0
+      ],
+      "joining_entropy_nats": 829.7057520073153,
+      "normalized_stationary_residual": 2.181225466969955e-13,
+      "observed_sandwich": [
+        2962.0449154760618,
+        2962.0449154793055
+      ],
+      "observed_sandwich_width": 3.2437128538731486e-09,
+      "bounded_objective_crosscheck": {
+        "precision_digits": 50,
+        "iterations": 48,
+        "bracket": [
+          "21.447735273375467755234525044789611281593793078727",
+          "21.447735278942989375177419586946361025180503223408"
+        ],
+        "bracket_width": "0.0000000055675216199428945421567497435867101446809604999565",
+        "requested_radius_tolerance": "0.0000000064",
+        "radius": "21.447735276159228565205972315867986153387148151067",
+        "entropy": "2962.0449154760614876067398611633233586155909782316"
+      },
+      "crosscheck_entropy_difference": 1.8208079436162395e-13,
+      "crosscheck_radius_difference": -7.224017189454975e-10,
+      "initial_volume_comparison": {
+        "volume_sites_smooth": 1098066.2194435236,
+        "retained_modes": 4392264.877774094,
+        "excitation_count": 640.0,
+        "entropy_nats": 6293.641301924073
+      }
+    }
+  ],
+  "elapsed_seconds": 0.037553977221250534,
+  "max_rss_kib": 17280
+}

@@ -1,0 +1,159 @@
+{
+  "metadata_runtime": {
+    "host": "compute-host",
+    "pid": 2123388,
+    "threads": 1,
+    "niceness": 10,
+    "device": "CPU"
+  },
+  "control_runtime": {
+    "host": "compute-host",
+    "pid": 2076195,
+    "threads": 1,
+    "niceness": 10,
+    "device": "CPU"
+  },
+  "controls_sha256": "9d74c2e91128f2ee303711aff83125cd8957980299667ad02b080e9f2a92bfdd",
+  "controls_exit_code": 0,
+  "control_command": [
+    "nice",
+    "-n",
+    "10",
+    "<internal>/python",
+    "<internal>/control_PACKET_v1.py",
+    "--output",
+    "<internal>/PACKET_secondroute_v1",
+    "--spec",
+    "<internal>/PACKET_secondroute_spec_v1.md"
+  ],
+  "control_environment": {
+    "QI2_REMOTE_CPU": "1",
+    "CUDA_VISIBLE_DEVICES": "",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1"
+  },
+  "transport": "passwordless ssh compute-host; physical execution on that host only",
+  "python": "3.12.12 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 20:16:04) [GCC 11.2.0]",
+  "executable": "<internal>/python",
+  "numpy": "2.2.6",
+  "scipy": "1.17.0",
+  "platform": "Linux-6.2.0-26-generic-x86_64-with-glibc2.35",
+  "numpy_backend_configuration": "Build Dependencies:\n  blas:\n    detection method: pkgconfig\n    found: true\n    include directory: /opt/_internal/cpython-3.12.7/lib/python3.12/site-packages/scipy_openblas64/include\n    lib directory: /opt/_internal/cpython-3.12.7/lib/python3.12/site-packages/scipy_openblas64/lib\n    name: scipy-openblas\n    openblas configuration: OpenBLAS 0.3.29  USE64BITINT DYNAMIC_ARCH NO_AFFINITY\n      Haswell MAX_THREADS=64\n    pc file directory: /project/.openblas\n    version: 0.3.29\n  lapack:\n    detection method: pkgconfig\n    found: true\n    include directory: /opt/_internal/cpython-3.12.7/lib/python3.12/site-packages/scipy_openblas64/include\n    lib directory: /opt/_internal/cpython-3.12.7/lib/python3.12/site-packages/scipy_openblas64/lib\n    name: scipy-openblas\n    openblas configuration: OpenBLAS 0.3.29  USE64BITINT DYNAMIC_ARCH NO_AFFINITY\n      Haswell MAX_THREADS=64\n    pc file directory: /project/.openblas\n    version: 0.3.29\nCompilers:\n  c:\n    commands: cc\n    linker: ld.bfd\n    name: gcc\n    version: 10.2.1\n  c++:\n    commands: c++\n    linker: ld.bfd\n    name: gcc\n    version: 10.2.1\n  cython:\n    commands: cython\n    linker: cython\n    name: cython\n    version: 3.1.0\nMachine Information:\n  build:\n    cpu: x86_64\n    endian: little\n    family: x86_64\n    system: linux\n  host:\n    cpu: x86_64\n    endian: little\n    family: x86_64\n    system: linux\nPython Information:\n  path: <internal>/python\n  version: '3.12'\nSIMD Extensions:\n  baseline:\n  - SSE\n  - SSE2\n  - SSE3\n  found:\n  - SSSE3\n  - SSE41\n  - POPCNT\n  - SSE42\n  - AVX\n  - F16C\n  - FMA3\n  - AVX2\n  - AVX512F\n  - AVX512CD\n  - AVX512_SKX\n  - AVX512_CLX\n  not found:\n  - AVX512_KNL\n  - AVX512_KNM\n  - AVX512_CNL\n  - AVX512_ICL\n\n",
+  "metadata_code_sha256": "39a4f4a3c348b48368574614dedebfdd1e78abc74258674b1e2b99ecf09305e1",
+  "physical_executions": [
+    {
+      "stage": "stored_source",
+      "environment_threads": 1,
+      "command": [
+        "nice",
+        "-n",
+        "10",
+        "<internal>/python",
+        "<internal>/read_PACKET_sources_v1.py",
+        "--output",
+        "<internal>/PACKET_secondroute_v1",
+        "--spec",
+        "<internal>/PACKET_secondroute_spec_v1.md"
+      ],
+      "exit_code": 0
+    },
+    {
+      "stage": "producer",
+      "channel": 1,
+      "environment_threads": 8,
+      "command": [
+        "nice",
+        "-n",
+        "10",
+        "<internal>/python",
+        "<internal>/run_PACKET_secondroute_v1.py",
+        "--output",
+        "<internal>/k1",
+        "--channel",
+        "1",
+        "--spec",
+        "<internal>/PACKET_secondroute_spec_v1.md"
+      ],
+      "tool_session": 64128,
+      "exit_code": 0
+    },
+    {
+      "stage": "producer",
+      "channel": 5,
+      "environment_threads": 8,
+      "command": [
+        "nice",
+        "-n",
+        "10",
+        "<internal>/python",
+        "<internal>/run_PACKET_secondroute_v1.py",
+        "--output",
+        "<internal>/k5",
+        "--channel",
+        "5",
+        "--spec",
+        "<internal>/PACKET_secondroute_spec_v1.md"
+      ],
+      "tool_session": 34262,
+      "exit_code": 0
+    },
+    {
+      "stage": "saved_state_readout",
+      "channel": 1,
+      "environment_threads": 8,
+      "command": [
+        "nice",
+        "-n",
+        "10",
+        "<internal>/python",
+        "<internal>/read_PACKET_secondroute_v1.py",
+        "--output",
+        "<internal>/k1",
+        "--channel",
+        "1",
+        "--spec",
+        "<internal>/PACKET_secondroute_spec_v1.md"
+      ],
+      "tool_session": 23876,
+      "exit_code": 0
+    },
+    {
+      "stage": "saved_state_readout",
+      "channel": 5,
+      "environment_threads": 8,
+      "command": [
+        "nice",
+        "-n",
+        "10",
+        "<internal>/python",
+        "<internal>/read_PACKET_secondroute_v1.py",
+        "--output",
+        "<internal>/k5",
+        "--channel",
+        "5",
+        "--spec",
+        "<internal>/PACKET_secondroute_spec_v1.md"
+      ],
+      "tool_session": 80055,
+      "exit_code": 0
+    },
+    {
+      "stage": "saved_output_summary",
+      "environment_threads": 1,
+      "command": [
+        "nice",
+        "-n",
+        "10",
+        "<internal>/python",
+        "<internal>/summarize_PACKET_secondroute_v1.py",
+        "--output",
+        "<internal>/PACKET_secondroute_v1",
+        "--spec",
+        "<internal>/PACKET_secondroute_spec_v1.md"
+      ],
+      "tool_session": 85070,
+      "exit_code": 0
+    }
+  ]
+}

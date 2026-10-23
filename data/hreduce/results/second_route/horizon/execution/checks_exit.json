@@ -1,0 +1,43 @@
+{
+  "stage": "checks",
+  "status": "completed",
+  "command": [
+    "timeout",
+    "-s",
+    "TERM",
+    "-k",
+    "5s",
+    "4h",
+    "nice",
+    "-n",
+    "10",
+    "<internal>/python",
+    "<internal>/hreduce_horizon_stage.py",
+    "checks",
+    "--out",
+    "<internal>/exterior"
+  ],
+  "cpu_only": true,
+  "maximum_numerical_threads": 16,
+  "memory_limit_bytes": 68719476736,
+  "inherited_code_pins": {
+    "hold_spectral_checks.py": "cac12901c4a0f6815f0b22d2dbadc578ed9f1ad747692a1f871afe85e0155fbe",
+    "hold_exact.py": "4b58467b3a76f14894885220b8cb247c964be0a086478958e856308a42c60598",
+    "horizon_fixtures.py": "80860368aecaf6c53d66ddcd04680ec27a22d9f65a8142142b1468397d832475",
+    "horizon_exact.py": "5411e253cb6bad08a27eee2d5afa97a347bffdf71e42766e91554bc82db95f38",
+    "horizon_bins.py": "030ab15b9c3ff30a0193557c9f8932c06b4f7eecab0e7ba578d61231f364a711",
+    "hold_error_bounds.py": "12bacc16d463d8906da8010acffc59497d6dfab810b2804bd23ef37e45ba58c8",
+    "hold_endpoint_control.py": "25d43bd4bb0342fb02d61b5579073683177079351efdf263f30f21def08bc421",
+    "hold_precision_checks.py": "1f6f58a5a87958ba62f9de8a8797ab282864c71d24700eab5dcfc032c6d5b7da",
+    "hreduce_horizon_json.py": "b14df91339323133a59e455974761ad0c8c3a199d82cbaadf3efd93329d45b8b",
+    "hreduce_horizon_stage.py": "503cafe6b4ac49d05298327272799e1742459ccb7517ffa485697749a07fd484",
+    "recover_saved_horizon_fixture.py": "2147e5bd543d47fbf3f35da2116e018c55cacd2d0293340262c339665835b960"
+  },
+  "started_unix": 1792309686.4467947,
+  "runner_sha256": "63c53092e1a2a09fc6ee5f3ee33b68a692c40d4d861961ce078d41d70c39ba10",
+  "returncode": 0,
+  "elapsed_seconds": 80.50610182061791,
+  "maximum_child_rss_kib": 5842988,
+  "stdout": "{\"event\": \"resources\", \"available_bytes\": 575976415232, \"estimated_bytes\": 34024194048, \"root_free_bytes\": 159467466752}\n{\"event\": \"horizon_checks_complete\", \"bin_numerical_controls_pass\": true}\n",
+  "stderr": ""
+}

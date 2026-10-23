@@ -1,0 +1,309 @@
+{
+  "scope": "Actual reviewed open2^3 seed on exact n0,n1,n2 blocks with all pp/ph/hh charges. Full 2^32 light Fock space and higher sectors are not built. One complete cell does not test a nontrivial ruler-distance derivative; arbitrary algebraic partition is not a geometric interior or isolated exterior.",
+  "parameters": {
+    "a": 1.0,
+    "mass_squared": [
+      0.25,
+      0.75,
+      1.0,
+      1.5
+    ],
+    "Lambda": 0.5,
+    "ell": 2.0,
+    "g_M": 0.05,
+    "g_B": 0.02,
+    "complete_cells": 1,
+    "one_sine_operator": true,
+    "regulator_filter_order": "Walsh M_nu after R_psi",
+    "Walsh_weight": "1/8, no sqrt8",
+    "bond_distance": 0.0
+  },
+  "profiles": [
+    {
+      "profile": "nonuniform prescribed diagnostic",
+      "psi": [
+        0.9299999999999999,
+        0.95,
+        0.97,
+        0.99,
+        1.01,
+        1.03,
+        1.05,
+        1.07
+      ],
+      "N": [
+        0.97,
+        1.03,
+        0.97,
+        1.03,
+        0.97,
+        1.03,
+        0.97,
+        1.03
+      ],
+      "clamped_collar": false,
+      "dimensions": {
+        "n0": 1,
+        "n1": 32,
+        "n2": 496,
+        "charge_plus2": 120,
+        "charge_zero": 256,
+        "charge_minus2": 120
+      },
+      "seed": {
+        "V2_frobenius": 2.1929504165789615e-05,
+        "S2_frobenius": 5.5976642102013315e-06,
+        "S2_min_eigenvalue": -1.467329787619227e-06,
+        "S2_max_eigenvalue": 5.38819410430184e-07,
+        "V2_hermiticity_error_frobenius": 6.540913214962307e-21,
+        "S2_hermiticity_error_frobenius": 0.0,
+        "charge_commutator_error_frobenius": 1.3201168393814095e-20,
+        "unit_lapse_sylvester_error_frobenius": 7.240222436865687e-20,
+        "independent_pp_four_leg_coefficient_error_frobenius": 2.998402952053809e-21,
+        "full_Wick_vs_raw_number_product_difference_frobenius": 6.492018687325385e-05,
+        "unregulated_Walsh_CAR_1_over_8_error_frobenius": 0.0,
+        "filtered_native_field_ranks": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ]
+      },
+      "completion": {
+        "exact_congruence_vs_annihilator_form_error_frobenius": 1.392277855033049e-14,
+        "minimum_two_excitation_energy_above_W0": 1.7288862995074563,
+        "first_two_excitation_energies_above_W0": [
+          1.7288862995074563,
+          1.7288866231616449,
+          1.7288866984428461,
+          1.728886846430893,
+          1.7288869399467892,
+          1.7288869399467899,
+          1.7438842765032037,
+          1.7438849997849872,
+          1.7438852790185382,
+          1.743885480149876,
+          1.7438859002537925,
+          1.7438860036376418
+        ],
+        "interaction_energy_matrix_difference_frobenius": 2.197932042560333e-05,
+        "S0_norm": 0.0,
+        "S1_norm": 0.0,
+        "native_greater_two_point_error_frobenius": 2.3386562093472e-15,
+        "native_lesser_two_point_error_frobenius": 2.3334457139985202e-15,
+        "two_point_time": 0.37,
+        "minimum_excitation_clock_source_eigenvalue": -3.8476925048285485e-15
+      },
+      "source_finite_differences": [
+        {
+          "step": 0.001,
+          "max_total_clock_source_error_frobenius": 7.274679036649326e-12
+        },
+        {
+          "step": 0.0001,
+          "max_total_clock_source_error_frobenius": 6.631715658375101e-11
+        },
+        {
+          "step": 1e-05,
+          "max_total_clock_source_error_frobenius": 6.740900049012324e-10
+        }
+      ],
+      "coupling_finite_differences": [
+        {
+          "step": 0.1,
+          "projected_seed_derivative_error_frobenius": 1.5406357384874543e-13,
+          "relative_to_seed": 7.025401608901268e-09
+        },
+        {
+          "step": 0.01,
+          "projected_seed_derivative_error_frobenius": 1.6330106079339504e-12,
+          "relative_to_seed": 7.446637167845654e-08
+        },
+        {
+          "step": 0.001,
+          "projected_seed_derivative_error_frobenius": 1.6693407788159587e-11,
+          "relative_to_seed": 7.612305167483711e-07
+        }
+      ],
+      "vacuum": {
+        "W0": -0.005382399055183527,
+        "trace_X_sum": -1.2656542480726785e-14
+      },
+      "boundary": {
+        "interior": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "collar": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "geometric_three_dimensional_interior": false,
+        "A19_affine_boundary_identity_error_frobenius": 1.6435262797762953e-14,
+        "A20_clamped_boundary_identity_error_frobenius": null,
+        "A21_vacuum_crossing_identity_absolute_error": 7.660631275993799e-15
+      },
+      "validation_flags": {
+        "nonzero_actual_seed": true,
+        "independent_pp_coefficients_below_1e_minus_10": true,
+        "sylvester_error_below_1e_minus_10": true,
+        "exact_annihilator_congruence_below_1e_minus_10": true,
+        "positive_n2_excitation_energy": true,
+        "source_positive_to_1e_minus_10": true,
+        "clock_FD_error_below_1e_minus_6": true,
+        "boundary_identities_below_1e_minus_10": true
+      }
+    },
+    {
+      "profile": "separately rebuilt collar-clamped",
+      "psi": [
+        0.9299999999999999,
+        0.95,
+        0.97,
+        0.99,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "N": [
+        0.97,
+        1.03,
+        0.97,
+        1.03,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "clamped_collar": true,
+      "dimensions": {
+        "n0": 1,
+        "n1": 32,
+        "n2": 496,
+        "charge_plus2": 120,
+        "charge_zero": 256,
+        "charge_minus2": 120
+      },
+      "seed": {
+        "V2_frobenius": 1.4021776429908528e-05,
+        "S2_frobenius": 3.42104536165228e-06,
+        "S2_min_eigenvalue": -8.280985861007789e-07,
+        "S2_max_eigenvalue": 2.9209838279572883e-07,
+        "V2_hermiticity_error_frobenius": 4.132832219423457e-21,
+        "S2_hermiticity_error_frobenius": 0.0,
+        "charge_commutator_error_frobenius": 8.681779073076397e-21,
+        "unit_lapse_sylvester_error_frobenius": 4.685580432297428e-20,
+        "independent_pp_four_leg_coefficient_error_frobenius": 1.847673205142593e-21,
+        "full_Wick_vs_raw_number_product_difference_frobenius": 3.9608795124561676e-05,
+        "unregulated_Walsh_CAR_1_over_8_error_frobenius": 0.0,
+        "filtered_native_field_ranks": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ]
+      },
+      "completion": {
+        "exact_congruence_vs_annihilator_form_error_frobenius": 1.3827767307141754e-14,
+        "minimum_two_excitation_energy_above_W0": 1.884906173127375,
+        "first_two_excitation_energies_above_W0": [
+          1.884906173127375,
+          1.8849064639376283,
+          1.8849065172408368,
+          1.8849065395709315,
+          1.8849066716827294,
+          1.8849066716827318,
+          1.9077256579140365,
+          1.9077257929831053,
+          1.9077258281619014,
+          1.9077258636118177,
+          1.907725905734228,
+          1.9077260282634303
+        ],
+        "interaction_energy_matrix_difference_frobenius": 1.4035414919127297e-05,
+        "S0_norm": 0.0,
+        "S1_norm": 0.0,
+        "native_greater_two_point_error_frobenius": 2.393610204915139e-15,
+        "native_lesser_two_point_error_frobenius": 2.4019727064117125e-15,
+        "two_point_time": 0.37,
+        "minimum_excitation_clock_source_eigenvalue": -3.844010408080782e-15
+      },
+      "source_finite_differences": [
+        {
+          "step": 0.001,
+          "max_total_clock_source_error_frobenius": 8.388273996435262e-12
+        },
+        {
+          "step": 0.0001,
+          "max_total_clock_source_error_frobenius": 7.260340496083105e-11
+        },
+        {
+          "step": 1e-05,
+          "max_total_clock_source_error_frobenius": 6.745860680535345e-10
+        }
+      ],
+      "coupling_finite_differences": [
+        {
+          "step": 0.1,
+          "projected_seed_derivative_error_frobenius": 1.5385738307014098e-13,
+          "relative_to_seed": 1.09727454177605e-08
+        },
+        {
+          "step": 0.01,
+          "projected_seed_derivative_error_frobenius": 1.6135572370797612e-12,
+          "relative_to_seed": 1.1507509374047889e-07
+        },
+        {
+          "step": 0.001,
+          "projected_seed_derivative_error_frobenius": 1.6041318326194424e-11,
+          "relative_to_seed": 1.144028961407358e-06
+        }
+      ],
+      "vacuum": {
+        "W0": -0.0022843329577793454,
+        "trace_X_sum": -1.2097961521462253e-14
+      },
+      "boundary": {
+        "interior": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "collar": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "geometric_three_dimensional_interior": false,
+        "A19_affine_boundary_identity_error_frobenius": 1.6069319679482924e-14,
+        "A20_clamped_boundary_identity_error_frobenius": 2.696302136810513e-13,
+        "A21_vacuum_crossing_identity_absolute_error": 1.0103051115679626e-14
+      },
+      "validation_flags": {
+        "nonzero_actual_seed": true,
+        "independent_pp_coefficients_below_1e_minus_10": true,
+        "sylvester_error_below_1e_minus_10": true,
+        "exact_annihilator_congruence_below_1e_minus_10": true,
+        "positive_n2_excitation_energy": true,
+        "source_positive_to_1e_minus_10": true,
+        "clock_FD_error_below_1e_minus_6": true,
+        "boundary_identities_below_1e_minus_10": true
+      }
+    }
+  ]
+}

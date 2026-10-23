@@ -1,0 +1,730 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,mathtools,mathrsfs,url}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlength{\emergencystretch}{2em}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\diag}{diag}
+\begin{document}
+\paragraph{Nonlinear causal state, clock elimination and a finite-parent test
+[X/S; V:X,W,D].}
+This result specifies an auxiliary mean-state time prescription for the
+unchanged sine-polar $H_*$.  It proves a local nonlinear construction using
+its exact clock allocations, and gives one bounded implementation
+specification for a declared $g_M=g_B=0$ coupling control.  The theorem
+uses the complete interacting light law at fixed finite couplings; the
+Gaussian implementation does not.  Neither construction minimizes the
+sea at every time, truncates a moving state to its pair sector, fixes
+$A=B$, or prescribes an inward characteristic.  The single independent
+review \path{solve/review_X_nonlinear_response.tex} passes this bounded
+result and its Gaussian implementation specification after the
+incorporated repairs.  Exactly two claim-specific [X] groups apply:
+the reduced state generator and conserved collar Hamiltonian, and
+the strict clamped flat clock coercivity with its kernel.  The
+remaining checked identities and bounds have supporting [S] scope,
+with the named methods in SOURCES.  No numerical result is asserted.
+
+\paragraph{1. Exact finite-parent functional and domain.}
+Let $\Lambda=I\sqcup B$ be a finite native parent, with all coefficients
+crossing the interior/collar partition retained.  Set $\psi_B=N_B=1$;
+$T$ is this collar clock.  The state is expressed in one fixed native
+CAR Hilbert space.  Use its full finite fermionic Fock space and the
+exactly invariant empty sector of the untruncated fixed-CCR bosons.
+The latter retain their original vacuum scalar.  This is not a
+boson-number modification of the law.  Other boson states require
+additional invariant-domain and moment estimates, and are outside the
+local finite-dimensional theorem below.
+
+Write the complete lapse-affine expectation as
+\begin{equation}
+ {\cal H}(N,\psi,\rho)=\sum_{x\in\Lambda}N_x C_x(\psi,\rho),
+ \qquad
+ C_x=w_x(\psi)+\Tr\{\rho\,e_x(\psi)\},\qquad e_x\geq0 ,
+ \tag{XN1}
+\end{equation}
+where $\rho\geq0$, $\Tr\rho=1$, and
+\[
+ w_x=\psi_x\tr_{\rm spin}
+       \sum_{s=1}^4\eta_s(E_{s1}-E_{s0})_{xx},\quad
+ A_s=m_s\Psi^{-1}+i\Psi^{-3}D,\quad
+ E_{s0}=|A_s|,\quad E_{s1}=|A_s^\dagger|.
+\]
+Here $\eta=(+,-,-,+)$ and the squared masses are
+$(x_0,x_0+h_1,x_0+h_2,x_0+h_1+h_2)$ with $x_0,h_1,h_2>0$.
+The $e_x$ are the original complete positive squares in native
+coordinates.  Their light component contains the actual pp/ph/hh
+seed, moving excitation filter, four-$B_1$ denominator and the full
+$n-1$ middle factor, as in W5--W15.  The splitting, seed and completion
+are independent of $N$.  All field derivatives hold the native state
+fixed.  On a compact positive ruler chart the polar roots have a gap.
+Require also the actual interpolation and ruler-distance prescription
+in the seed to be smooth on that chart; a shortest-path minimum with
+unresolved ties is not made smooth merely by a polar gap.
+
+The exact vacuum functional is used in (XN1).  Its decomposition into
+$W_2=-k_*\int\nabla\psi\cdot\nabla(N\psi)$ and the complete remainder
+does not remove any term from the construction.  The only match is
+$k_*=k_a(1)=(2\pi G)^{-1}$.  W's continuum coefficient, moving-filter
+identity and boundary work retain their separate assumptions.
+
+\paragraph{2. Eliminate the clock, not the causal state.}
+Define the rectangular fixed-state derivative
+$J_{xy}=\partial_{\psi_y}C_x$, $x\in\Lambda$, $y\in I$.
+At a solution $C_I=0$ with invertible $J_{II}$, the implicit function
+theorem defines $\psi_I(\rho)$.  The complete ruler equation then gives
+\begin{equation}
+ J_{II}^{T}N_I+J_{BI}^{T}{\bf1}_B=0,\qquad
+ N_I=-J_{II}^{-T}J_{BI}^{T}{\bf1}_B .
+ \tag{XN2}
+\end{equation}
+This is a full transpose solve, including collar source derivatives.
+It does not replace those derivatives by a prescribed boundary
+normalization.  Positivity of its solution is an additional branch
+property.
+
+The reduced autonomous generator is
+\begin{equation}
+ {\cal E}(\rho)=\sum_{b\in B}C_b(\psi(\rho),\rho),\qquad
+ \delta{\cal E}
+   =\Tr\{H_{\rm exc}^{\rm nat}(N(\rho),\psi(\rho))\,\delta\rho\},
+ \quad H_{\rm exc}^{\rm nat}=\sum_xN_xe_x .
+ \tag{XN3}
+\end{equation}
+Indeed $J_{II}\delta\psi_I=-(\Tr e_x\delta\rho)_{x\in I}$.
+Substitute this into $\delta\sum_b C_b$ and use (XN2); the coefficients
+of the interior state rows become $N_I$.  Equivalently, restrict the
+native state action to $C_I=0$.  Its symplectic term has no ruler
+dependence, and the ruler equation cancels the field chain rule.
+Both routes give
+\begin{equation}
+ i\dot\rho=[H_{\rm exc}^{\rm nat}(N(\rho),\psi(\rho)),\rho],
+ \qquad \dot{\cal E}=0 .
+ \tag{XN4}
+\end{equation}
+The scalar vacuum is still present in the fields and in ${\cal E}$;
+adding it to the state generator changes only the representative phase.
+Finite-dimensional local existence and uniqueness follow from the
+smooth implicit branch and the ordinary ODE theorem.  The commutator
+preserves the density-matrix spectrum, positivity, trace, and every
+fixed native charge commuting with the full Hamiltonian.
+
+There is an exact positive charge identity on this finite constraint
+surface:
+\begin{equation}
+ {\cal E}=\sum_{x\in\Lambda}
+       \frac{\Tr(\rho e_x)}{\psi_x}\geq0.
+ \tag{XN5}
+\end{equation}
+To see it, divide $C_x$ by $\psi_x$, sum, and use the finite polar
+isospectral trace $\sum_xw_x/\psi_x=0$ and $\psi_B=1$.
+This identity does not identify a finite box with an isolated
+$1/r$ exterior.  At an approximate root the discrepancy is exactly
+$-\sum_{i\in I}C_i/\psi_i$ when ${\cal E}$ denotes the collar sum.
+
+\paragraph{3. The actual flat clock branch exists.}
+Let $\rho_0=|\Omega_1\rangle\langle\Omega_1|$ be the complete protected
+flat reference.  At $\psi=N=1$, $C_x=0$.  Positivity and the common
+kernel imply
+$\langle\Omega_1,\partial_{\psi_y}e_x\,\Omega_1\rangle=0$.
+Thus $J$ at this point is precisely the original vacuum Jacobian,
+at unchanged finite couplings.
+
+Here is a finite-polar coercivity proof which needs no gradient
+approximation.  For a real site-scalar $\Phi=\diag(\phi)\otimes I_2$
+and $E_s=(m_s^2+D^2)^{1/2}$, let
+$\mathscr L_s(Y)=E_sY+YE_s$.  Direct root differentiation gives
+\begin{equation}
+ \delta(E_{s1}-E_{s0})
+  =\mathscr L_s^{-1}
+          \{-2im_s[D,\Phi]-3[D,[D,\Phi]]\}.
+ \tag{XN6}
+\end{equation}
+The extra clock factor $\psi$ contributes zero since the flat root
+difference is zero.  In a $D$ eigenbasis, exchanging its two indices
+cancels the first commutator in the real quadratic form.  Consequently
+\begin{equation}
+ -\phi^T J_0\phi
+   =3\langle[D,\Phi],\mathscr F_D[D,\Phi]\rangle_{\rm HS},
+ \qquad \mathscr F_D=\sum_s\eta_s\mathscr L_s^{-1}.
+ \tag{XN7}
+\end{equation}
+For eigenvalues $d_j,d_l$ of $D$, the weight is the mass-rectangle
+difference of
+\[
+ f_{jl}(x)=\frac1{\sqrt{x+d_j^2}+\sqrt{x+d_l^2}}
+   =\frac12\int_0^1[x+td_j^2+(1-t)d_l^2]^{-1/2}\,dt .
+\]
+Its second derivative is a positive integral.  Therefore
+\[
+ (\mathscr F_D)_{jl}\geq
+   w_*:=\frac{3h_1h_2}{8(m_4^2+\|D\|^2)^{5/2}}>0 .
+\]
+Let
+$g_D=\inf_{\phi_B=0,\|\phi_I\|_2=1}\|[D,\Phi]\|_{\rm HS}^2$.
+If $B$ meets every connected component of the graph of the nonzero
+blocks $D_{xy}$, then $g_D>0$.  Hence
+\begin{equation}
+ -\phi_I^T J_{0,II}\phi_I\geq
+       \gamma_0\|\phi_I\|_2^2,\qquad
+ \gamma_0=3w_*g_D,\qquad
+ \|J_{0,II}^{-1}\|_2\leq\gamma_0^{-1}.
+ \tag{XN8}
+\end{equation}
+Symmetry of $J_0$ is not needed for this inverse conclusion.
+On the Cartesian open sine parent it also follows from D5--D9.
+An independent positive heat representation of (XN7) is
+\[
+ -\phi^TJ_0\phi=\frac3{2\sqrt\pi}\int_0^\infty
+ t^{-1/2}e^{-tx_0}(1-e^{-th_1})(1-e^{-th_2})
+ \int_0^1
+ \left\|e^{-(1-u)tD^2/2}[D,\Phi]e^{-utD^2/2}\right\|_{\rm HS}^2
+ \,du\,dt .
+\]
+It follows by inserting the elementary Laplace integral for the
+inverse square root into $f_{jl}$; no continuum spectrum is used.
+Every finite heat operator is invertible, so this route gives the
+same clamped commutator kernel directly.
+The full summed linear vacuum derivative is zero at the flat point:
+differentiate $\Tr(E_{s1}-E_{s0})=0$ and use $E_{s1}=E_{s0}$ there.
+Thus $J_{0,II}^T{\bf1}_I+J_{0,BI}^T{\bf1}_B=0$ and (XN2) gives $N=1$.
+
+It follows that an open neighborhood of $\rho_0$ has an actual
+positive-clock-root and positive-lapse branch.  This is a local
+finite-parent nonlinear mean-state theorem at every fixed finite
+coupling for which the stated source chart is smooth.  It assumes no
+adiabatic sea elimination or full-Fock excitation gap.  Its
+neighborhood need not be uniform in volume, a small light mass or
+coupling.
+
+For a quantitative sufficient test, put $b=\|J_{0,II}^{-1}\|_2$.
+On a radius-$r<1$ ruler ball and a fixed physical state, suppose
+$q=b\sup\|J_{II}-J_{0,II}\|_2<1$ and
+$b\|C_I(1,\rho)\|_2\leq(1-q)r$.  The map
+$\psi\mapsto\psi-J_{0,II}^{-1}C_I(\psi,\rho)$ is a contraction.
+The further sufficient estimate
+\begin{equation}
+ \|N_I-{\bf1}_I\|_2
+ \leq\frac b{1-q}
+ \bigl\|(J_{\Lambda I}-J_{0,\Lambda I})^T{\bf1}_\Lambda\bigr\|_2<1
+ \tag{XN9}
+\end{equation}
+keeps every lapse positive.  The supremum conditions must be checked
+or bounded; a small residual alone does not prove a root.
+
+For an implementation diagnostic at an already evaluated trial field,
+put $r^{(1)}=J_{\Lambda I}^{T}{\bf1}_\Lambda$.  The transpose solve
+in (XN2) gives, even before the clock residual vanishes,
+\[
+ J_{II}^{T}(N_I-{f1}_I)=-r^{(1)},\qquad
+ \|N_I-{f1}_I\|_\infty
+ \leq\frac{\|r^{(1)}\|_2}{\sigma_{\min}(J_{II})}.
+\]
+In particular, an upper bound strictly below $7/8$ guarantees that
+both declared lapse guards pass.  Without an arithmetic enclosure
+this is a consistency diagnostic, not a certified neighborhood.
+Its converse is false.  Record the interior minimum and maximum
+and which guard fires: rejection at $\max N_I\geq8$ is not loss of
+lapse positivity, and the collar minimum $N_B=1$ can conceal that
+upper excursion.  Failure of a corrector within the declared trial
+budget neither disproves the local branch nor places its radius
+below the attempted load.  These readbacks use the existing trial
+Jacobian and lapse; they introduce no new load, field evaluation,
+acceptance rule, or allowance beyond the declared work caps.
+
+\paragraph{4. Tangency and finite-frequency meaning.}
+Along (XN4),
+\begin{equation}
+ J_{II}\dot\psi_I
+  =-\bigl(i\Tr\rho[H_{\rm exc}^{\rm nat},e_x]\bigr)_{x\in I}.
+ \tag{XN10}
+\end{equation}
+Differentiating (XN2) determines $\dot N$ with the full derivative of
+$J$, not with a frozen vacuum kernel.  Equations (XN2)--(XN4) therefore
+provide preservation while the regular branch exists.  Continuing
+them requires a compact positive-field region, bounded inverse
+Jacobian and the stated source/domain regularity.  Loss of one of
+these conditions ends this theorem; it is not a proof of a
+long-wavelength trapping surface or of its absence.
+
+In a moving polar chart the same evolution is
+$i\dot\rho_{\rm pol}=[H_{\rm exc}-iT_\psi^\dagger\dot T_\psi,
+\rho_{\rm pol}]$.  Its complete connection is retained once,
+including pair and higher-sector transitions.  For one oriented
+packet $({\cal A},E,V)$,
+$E(V^\dagger\dot V)+(V^\dagger\dot V)E
+=V^\dagger\dot{\cal A}-\dot{\cal A}^\dagger V$.
+The native formulation (XN4) needs no added connection term.
+
+The causal sea is already in $\rho(T)$.  There is no new vacuum
+kinetic term in (XN1).  The accepted XS frozen-field finite-frequency
+kernel is a component of the linearized state/source system, not
+by itself the reduced response after the clock and lapse have
+been eliminated self-consistently.  Its local adiabatic form
+is only an approximation to that component.  In the interacting theorem its
+light response uses
+$H_{2,\ell}=e^{S_2}{\cal B}_{N,2}e^{S_2}$ and its actual inverse.
+An independent scale check must compare the causal response to the
+spatial ruler stiffness, not just to a one-excitation mass.  The
+finite-parent construction remains meaningful when that derivative
+approximation fails, provided its exact branch remains regular.
+
+\paragraph{5. Exact Gaussian specialization for a bounded test.}
+The numerical specification selects $g_M=g_B=0$ before outcomes.
+This removes the dressing only for this control.  It is not a
+finite-coupling Thomas--Fermi calculation or a production parameter
+choice.  Keep all four actual fermionic seas and every full native
+mode.  For the $+$ orientation take $(E,V)=(E_0,U)$; for the $-$
+orientation take $(E,V)=(E_1,U^\dagger)$.  For each packet define
+\begin{equation}
+ X=E^{1/2},\quad B_N=X(N\Psi)X,\quad
+ h=\begin{pmatrix}0&B_NV^\dagger\\VB_N&0\end{pmatrix},\quad
+ W_\pm=2^{-1/2}\binom{I}{\pm V},\quad P_-=W_-W_-^\dagger .
+ \tag{XN11}
+\end{equation}
+Let $0\leq C_s\leq I$ be its native one-particle covariance, defined
+so that a one-body expectation is $\Tr(h_sC_s)$.
+The exact Gaussian functional and its evolution are
+\begin{equation}
+ \begin{aligned}
+ {\cal H}_G&=W_0+\sum_s\{\Tr(h_s C_s)+\Tr B_{N,s}\},&
+ i\dot C_s&=[h_s,C_s],\\
+ C_x^{G}&=w_x+\sum_s\{\Tr(h_{s,x}C_s)+\Tr B_{s,x}\},&
+ R_y^{G}&=\partial_{\psi_y}W_0+
+       \sum_s\{\Tr((\partial_{\psi_y}h_s)C_s)
+                              +\Tr\partial_{\psi_y}B_{N,s}\}.
+ \end{aligned}\tag{XN12}
+\end{equation}
+Here $h_{s,x}=\partial_{N_x}h_s$ and
+$B_{s,x}=X_s(\psi_x\Pi_x)X_s$.
+In the instantaneous polar blocks the excitation clock source is
+\[
+ e_x^G=\sum_s\Tr B_{s,x}
+      \{(W_s^\dagger C_s W_s)_{++}
+                     +I-(W_s^\dagger C_s W_s)_{--}\}\geq0 .
+\]
+Cross-band coherence remains in $C_s$.  No sea reset is made.
+Gaussianity is preserved exactly under this state-dependent
+quadratic Hamiltonian: once its self-consistent field history is
+given, each covariance evolves by a one-particle unitary.  Thus
+(XN12), its clock root and transpose lapse are a closed exact
+nonlinear system at the declared zero couplings, not a nonlinear
+pair approximation.
+
+All source derivatives are literal fixed-native derivatives of
+(XN12).  Use, for example,
+$E\,\delta E+\delta E\,E=\delta({\cal A}^\dagger{\cal A})$,
+$X\,\delta X+\delta X\,X=\delta E$,
+$\delta V=(\delta{\cal A}-V\delta E)E^{-1}$, with the actual
+orientation.  The $W_\pm$ and $\Tr B_N$ derivatives may not be
+discarded or counted twice.  Degenerate eigenvalues require
+Sylvester divided differences, not derivative choices for
+individual eigenvectors.
+
+\paragraph{6. Fixed diagnostic input and preparation.}
+Use units $\hbar=c=a=1$ for computation, retaining $a$ in the
+definitions.  The selected squared masses are
+\[
+ a^2(m_1^2,m_2^2,m_3^2,m_4^2)
+       =(1/12,1/6,1/6,1/4).
+ \tag{XN13}
+\]
+This is the positive diagnostic rectangle $R_D$ with $aM=1/2$,
+not a Tier-1 or physical light hierarchy.  Set the unused seed
+parameters $\Lambda=m_1$ and $\ell=a$; at zero couplings they
+do not affect any displayed operator.
+The Newton readout is only the single finite-spacing match:
+use C3's exact full-zone $I(1/2)$ for this rectangle and
+$k_*=3I(1/2)/a^2$, $G=(2\pi k_*)^{-1}$.
+No value is tuned to a radius, lapse or observed contraction.
+The row evolution itself needs no numerical evaluation of $G$.
+For the primary/remainder readout, evaluate $I(1/2)$ using C3's
+positive grouped heat integral, with relative enclosure width
+at most $10^{-8}$ and at most $10^5$ scalar integrand evaluations
+inside the same whole-batch time cap.  Retain this scalar
+uncertainty in the comparison.  Failure leaves that readout
+unresolved and does not replace the exact polar evolution by
+a fitted coefficient.
+
+The parent boxes are $L=5$ and $L=7$ sites in each direction,
+centered at the origin.  $B$ is the outermost layer and $I$ its
+complement.  The original open centered sine derivative has
+$(D_i)_{x,x+ae_i}=1/(2ia)$ and the Hermitian reverse entry,
+with no periodic wrap and no external sites.  All links between
+$I$ and $B$ are retained.  $D=\sum_i\sigma_iD_i$.  There is no
+spherical averaging in the equations or exclusion of high native
+momenta.  The two boxes test a finite-parent collar dependence;
+they do not establish an isolated or continuum limit.
+
+At the flat ruler use each packet's actual $P_{s,-}^{\,0}$.
+Let $r=|x|$, $r_0=a$, $\sigma=a/2$, $r_c=7a/4$, and $p_0=1/(4a)$.
+Define a single scalar lattice envelope by
+\[
+ g_x={\cal N}
+ \begin{cases}
+ \exp\!\left[-\dfrac1{1-r^2/r_c^2}
+            -\dfrac{(r-r_0)^2}{2\sigma^2}
+            -ip_0\sqrt{r^2+\sigma^2}\right],&r<r_c,\\
+ 0,&r\geq r_c ,
+ \end{cases}
+ \qquad \sum_x|g_x|^2=1 .
+\]
+Use both spin vectors $g\otimes e_\uparrow,g\otimes e_\downarrow$
+and embed them with $W_{1,+}^{\,0}$.  Their orthogonal rank-two
+projector is $P_g$.  Prepare
+\begin{equation}
+ C_{1}(0;\lambda)=P_{1,-}^{\,0}+\lambda P_g,\qquad
+ C_s(0;\lambda)=P_{s,-}^{\,0}\ (s\ne1),\qquad
+ \lambda\in\{1/256,1/16,1\}.
+ \tag{XN14}
+\end{equation}
+This is a valid Gaussian density operator.  Its added mean native
+charge is $2\lambda$, with variance $2\lambda(1-\lambda)$.
+Only $\lambda=1$ is the pure filled rank-two preparation.
+The phase selects an inward seed tendency, not an imposed
+trajectory; the actual initial and later radius derivative must
+be calculated.  The native state in (XN14) is held fixed while
+the initial clock root is continued from $\lambda=0$.
+The heavy initial seas consequently need not be the instantaneous
+seas at the solved ruler.  This is part of the declared preparation,
+and its excitation energy is retained rather than subtracted.
+
+Continue the branch connected to $(\lambda,\psi,N)=(0,1,1)$,
+with $\lambda$ steps at most $1/16$, halved after a failed corrector.
+Stop this preparation after 96 attempted load-continuation
+correctors per box or below a $\lambda$ step $2^{-16}$.
+Each such attempt has one field solve, limited to 12 field
+evaluation trials, including its initial evaluation, rejected
+Newton steps and backtracking trials.  A restart at the same
+load counts as another continuation attempt; it does not reset
+the counter without cost.  Report every prescribed load
+reached, and no substitute load selected for a favorable outcome.
+Only reached loads with the regularity conditions below are evolved.
+The continuation parameter is a preparation label, not physical time
+and not an adjustable coupling.
+
+\paragraph{7. Evolution, budgets and dispositions.}
+For each reached load use (XN12) and the exact clock/lapse solves,
+up to $T_{\max}=2a$.  Use a symmetric implicit unitary midpoint
+iteration: at a step solve the fields at
+$\overline C_s=(C_s^n+C_s^{n+1})/2$, and impose
+\[
+ C_s^{n+1}
+  =e^{-i\Delta T\,h_s(\overline C)}C_s^n
+                        e^{i\Delta T\,h_s(\overline C)}.
+ \tag{XN15}
+\]
+This specified second-order method preserves covariance eigenvalues
+at its converged discrete nodes.  It does not conserve ${\cal E}$
+exactly at finite step.  Its charge drift and time convergence are
+measured rather than corrected by rescaling a field or energy.
+Use the predeclared step ladder
+$\Delta T/a=1/8,1/16,1/32$, a maximum of 24 outer covariance
+midpoint attempts per step, and no more than 768 accepted time steps in the whole
+batch.  Each ladder trajectory starts from the same continued
+initial covariances and field root for its box and load, and
+uses one fixed declared step.  A failed run may start the next
+finer declared run from that initial state; a mixed-step rescue
+is not a time-convergence comparison.  No unlisted step or
+longer trajectory is automatically authorized.
+At each corrector keep all source labels and recompute both the
+clock Jacobian and its transpose ruler solve.  Reconstruct these
+fields again at every candidate endpoint covariance before
+accepting the step.  Endpoint charges, sources and all readouts
+use those endpoint solutions, never the midpoint fields.
+Require the field residuals and branch guards at both endpoints
+and midpoint iterates.  An out-of-domain iterate is not admitted
+as a valid midpoint; any backtracking or rejected corrector
+still counts toward the declared iteration and whole-batch caps.
+Each outer midpoint attempt has one inner clock/lapse field
+solve with at most 12 field evaluation trials, including its
+initial evaluation and every Newton/backtracking trial.
+Restarting that inner solve counts as a new outer attempt.
+Endpoint reconstruction has a separate limit of 12 such trials;
+exhausting it rejects the step rather than resetting its counter.
+The 24 limit is thus an outer-attempt count, not a shared count
+of all inner field iterations.  Keep the outer, inner, endpoint
+and preparation counters separately in the output.
+
+The initial implementation uses complex binary64 or higher
+precision.  Required normalized residuals are $a\|C_I\|_\infty,
+a\|R_I\|_\infty\leq10^{-10}$, Hermiticity and covariance spectral
+defects at most $10^{-10}$, and nonlinear update residual at most
+$10^{-11}$ in Frobenius norm divided by
+$\max(1,\|C\|_{\rm F})$.  Time-ladder agreement for each reported
+normalized observable must reach $10^{-4}$ between the two finest
+completed fixed-step trajectories on the same common reporting
+interval.  Both evolve from the shared initial state; partial
+histories cannot be joined to create such a comparison.
+Require energy drift at most
+$10^{-7}\max({\cal E}(0),10^{-6}/a)$.
+For the time comparison use
+$\|O_1-O_2\|/\max(s_O,\|O_1\|,\|O_2\|)$.
+The fixed floors are 1 for fields, speeds and dimensionless
+ratios, $a$ for radii and $Z_f$, $a^{-1}$ for individual source
+rows and Jacobians, and $\max({\cal E}(0),10^{-6}/a)$ for total
+energies.  Matrix comparisons use Frobenius norm; covariances
+use floor 1 and the marked material covariance is additionally
+divided by its fixed trace $2\lambda$.  A stated operator-norm
+or spectral guard is still evaluated in that norm, not replaced
+by this reporting convention.
+These are declared engineering acceptance tolerances, not
+mathematical enclosures or a physical approximation budget.
+If directed bounds on accumulated residuals are not supplied,
+label the result a converged numerical diagnostic, not a
+certified exact trajectory.
+
+For a claimed root enclosure, a Newton residual must be supplemented
+by an inverse bound and a local Jacobian-variation bound, as in
+(XN9) or a Newton--Kantorovich bound around the actual root.
+For trajectory error, a continuous interpolant and an independently
+bounded differential defect and local Lipschitz bound permit the
+usual Duhamel/Gronwall estimate.  Step comparison alone is not
+that estimate.  Source errors must include field errors through
+the full fixed-native derivatives.
+
+Predeclare regularity stops: $\min N_I\leq1/8$, $\max N_I\geq8$,
+$\min\psi_I\leq1/2$, $\max\psi_I\geq4$, or
+$\sigma_{\min}(J_{II})/\sigma_{\min}(J_{0,II})\leq10^{-4}$.
+Stop also at a failed required residual, exhausted iteration/step
+ladder, nonfinite operator, or resource cap.  These are limits of
+this bounded diagnostic, not physical exclusions of a smaller
+lapse or another regular branch.  All last valid states and the
+actual cause are retained.  Every partial accepted step and
+failed corrector evaluation remains charged to the whole-batch
+step, evaluation and time caps.  An apparent charge drift above
+tolerance first fails the numerical realization of (XN3)--(XN4);
+it is not evidence that their exact autonomous charge is drifting.
+
+The whole batch is capped at 6 hours, 24 GiB device memory,
+32 GiB host memory, and 16384 complete field/source evaluations.
+Every evaluation at a new trial field or covariance is charged
+to that last limit, including rejected, backtracking, midpoint,
+endpoint and preparation evaluations.  A residual-only trial
+still counts even if it reuses rather than rebuilds a Jacobian.
+These inner limits add no allowance to the whole-batch caps.
+These are upper work limits, not a feasibility promise or
+reservation.  Root controls launch admission on the mandated
+remote host/environment: free GPU at launch, one own process per
+device, nice 10 and no more than 16 own threads.  No execution is
+authorized by an analytical formula alone; implementation remains
+Sol's task after this single specification review.  Cap exhaustion
+is unresolved.  There is no parameter fit or rerun expansion.
+
+\paragraph{8. Required physical and numerical readouts.}
+Store the actual native covariances, fields, all source rows and
+their derivatives at initial/final states and every $a/8$ of
+accepted physical time.  The following quantities belong to the
+same state and field solution:
+\begin{itemize}
+\item The clock and ruler residuals, field positivity, polar gaps,
+$\sigma_{\min}(J_{II})$, inverse norm, and the differentiated
+clock residual from (XN10).  Verify the finite flat Jacobian
+quadratic form (XN7) and its column-sum identity as algebraic
+controls before continuation.
+\item The collar charge $\sum_b C_b$, full functional
+$\sum_xN_xC_x$, positive readout $\sum_x e_x/\psi_x$, and their
+residual identities and drifts.  The collar data are fixed, so
+there is no imposed boundary work.  Compare the two boxes on
+their common interior, including initial state/completion
+differences; do not identify box agreement with an isolated limit.
+\item For each sea, the actual instantaneous excitation number,
+positive clock profile and energy; retain particle--hole
+coherence and the full moving polar connection in an independent
+representation check.  The native equation has no separate
+connection term to add.
+\item Propagate the marked material covariance
+$M(T)=\lambda U_1(T)P_gU_1(T)^\dagger$ with the same $h_1$.
+Its positive density $\tr_{\rm carrier}M_{xx}$ has conserved sum
+$2\lambda$.  Use it for the coordinate median, 90-percent
+radius and root-mean-square radius, and compute
+\[
+ \dot r_{\rm rms}
+   =\frac{i\Tr\{M[h_1,r^2]\}}
+                {4\lambda r_{\rm rms}} .
+\]
+This marking separates added matter from sea response; it is
+not a new clock source.  Neither a thin surface nor a limiting
+inward speed is assumed.  Report its collar fraction and the
+cubic angular variation.
+\item Record $\chi=N\psi$ and $c_{\rm principal}=N\psi^{-2}$
+throughout the material quantile shells, their minima and angular
+spread.  On these small boxes this is the principal long-wave
+coefficient, not an established propagation speed for every
+represented wave.  No areal surface is inferred from a cubic
+quantile.  A spherical transfer needs resolved radial profiles,
+small angular errors, a native momentum window and exterior
+convergence before $R=r\psi^2$ and a test of $R=2G{\cal E}$ acquire
+that interpretation.
+\item Compare the actual scalar rows to the chosen diagnostic
+nearest-neighbor primary
+$W_{2,a}=-k_*a\sum_{\{x,y\}}(\psi_y-\psi_x)
+[(N\psi)_y-(N\psi)_x]$ on every native edge, retaining its collar.
+The remainder is exactly $W_0-W_{2,a}$ with the same boundary
+allocation.  Report its clock/ruler derivatives and their
+relative size wherever the primary denominator is nonzero.
+This finite-spacing control does not suppress the remainder.
+\end{itemize}
+
+\paragraph{9. Causal-response comparison and the next transfer.}
+At each stored state form the actual ruler velocity from (XN10).
+Where it is nonzero, normalize its real profile $f$ in Euclidean
+site norm.  At that frozen field calculate the free pair response
+of each reference sea.  Diagonalize its positive $B_N$ and write
+the sea tangent in the corresponding particle--hole basis as
+$\eta_{ij}=-(V^\dagger\partial_fV)_{ij}/2$, with the basis
+transformation applied to both indices.  Then
+\begin{equation}
+ Z_f(\omega)=2\sum_{ij}
+   \frac{(b_i+b_j)|\eta_{ij}|^2}
+        {(b_i+b_j)^2-\omega^2},\qquad
+ L_{\rm ad}=\langle\eta_{\dot\psi},H_2^{-1}
+                                      \eta_{\dot\psi}\rangle .
+ \tag{XN16}
+\end{equation}
+Here the pair Hamiltonian is free because the selected couplings
+are zero, not because a protected one-particle mass is substituted
+for an interacting pair gap.  Compute $Z_f(0)$ and the values at
+$\omega/\Delta_2=1/8,1/4,1/2$, where $\Delta_2=2\min_i b_i$ over
+the reached packets.  Compare $\omega^2Z_f$ to the actual
+fixed-lapse vacuum second variation along $f$, and to the
+two-derivative stiffness when that comparison has a resolved
+spatial meaning.  A zero static denominator is reported as such.
+These are response probes, not imposed collapse rates.
+
+The observed history additionally gives a resolved time spectrum
+or finite-difference turnover scale of $\dot\psi$; a turnover
+ratio is not itself a monochromatic error theorem.  Compare the
+actual heavy-sea clock/ruler sources to the XS adiabatic sources,
+retaining the specified initial preparation transient.  The
+ruler comparison includes
+$2\operatorname{Re}\langle\eta_x,\dot\xi\rangle$,
+$\xi=H_2^{-1}\eta_{\dot\psi}$, and the XS state/force residual
+budget.  Do not certify that force from a first-order state
+residual alone.  The occupied light covariance has its actual
+in-medium response; a vacuum susceptibility may be reported as
+a benchmark, not added to its matter source a second time.
+The exact Gaussian trajectory is used whether or not this
+adiabatic comparison passes.
+Time derivatives beyond (XN10) may use centered differences on
+the actual fixed-step histories, with their own step-ladder
+comparison; endpoint one-sided values are labelled separately.
+Such differences are not analytic derivative enclosures.
+
+This comparison does not require building a fermionic Fock matrix.
+In the common polar column basis solve
+$B_N\Xi+\Xi B_N=\eta_{\dot\psi}$ and put
+$n_\Xi=\Tr(\Xi^\dagger\Xi)$.  The exactly normalized trial vector
+$(\Omega+i\xi)/\sqrt{1+n_\Xi}$ has one-particle covariance
+\[
+ \widetilde C_{\rm ad}=\frac1{1+n_\Xi}
+ \begin{pmatrix}
+   \Xi\Xi^\dagger&i\Xi\\
+   -i\Xi^\dagger&(1+n_\Xi)I-\Xi^\dagger\Xi
+ \end{pmatrix}.
+\]
+Transform it with the actual $W$ before evaluating (XN12).
+For any free one-body row with coefficient $O$, its actual/trial
+expectation difference is bounded by
+$\|O\|\,\|C-C_{\rm ad}\|_1$; scalar row terms cancel in the
+difference.  This is an a posteriori source comparison and
+does not bound an uncomputed full-state error.
+In a locally parallel sea phase the pair-preserving derivative
+needed by the acceleration term is the matrix
+\[
+ {\cal D}_T\Xi=\dot\Xi+\tfrac12[K,\Xi],
+ \qquad K=V^\dagger\dot V,\qquad
+ \langle\eta_x,\dot\xi\rangle
+       =\Tr\{\eta_x^\dagger{\cal D}_T\Xi\}.
+\]
+The formula uses the common polar basis; a time-dependent
+diagonalizing basis must carry its additional connection.
+The first-order adiabatic ruler force also differs from the
+normalized trial expectation by its explicit normalization
+correction.  For real ruler variations
+$\langle\eta_x,\eta_{\dot\psi}\rangle
+=\Tr(K_x^\dagger K)/4$ is real, so the trial's linear ruler
+cross term vanishes.  In the notation of the retained XS
+adiabatic expression this gives the explicit comparison
+\[
+ R^{\rm exc}_{{\rm ad},x}-R^{\rm exc}_{{\rm trial},x}
+   =n_\Xi R^{\rm exc}_{{\rm trial},x}
+          +2\operatorname{Re}\Tr(\eta_x^\dagger{\cal D}_T\Xi),
+ \qquad
+ R^{\rm exc}_{{\rm trial},x}
+   =\Tr\{(\partial_{\psi_x}h)(C_{\rm ad}-P_-)\}.
+\]
+The clock comparison similarly has its factor $1+n_\Xi$.
+Record the normalization and acceleration terms separately.
+This prevents a small trial covariance error from being mistaken
+for a complete second-derivative ruler certificate.
+
+The bounded question is whether this same-law causal state
+construction supports regular inward motion with a conserved
+collar charge, and how much the generated sea source changes
+the scalar solution and its principal speed relative to an
+instantaneous-reference approximation.  The approximation can
+be evaluated as a residual at the exact state/fields; it is not
+silently substituted into the evolution.  A root or lapse failure
+is located before any proposed continuation.  A quantitative
+spherical/open or dressed extension needs, respectively, enlarged
+parent/window control or the full W source and many-body state
+solver.  Removing the sea connection, re-minimizing it, or using
+only a moving pair sector is a named time/state-law change.
+No such change is made here.  The physical late-time rate,
+mass lock, trapping condition and outgoing massive/thermal
+spectrum remain open tests of the resulting self-consistent
+history, not inputs to this diagnostic.
+
+\paragraph{Scope and SOURCES delivery.}
+The reviewed bounded result is the exact finite-parent local
+mean-state reduction with positive
+collar charge and the explicit Gaussian zero-coupling control
+above.  It constructs the causal state rather than imposing a
+vacuum-response kinetic term.  The microscopic full-coupling
+formula is retained in the theorem, but only the declared
+zero-coupling covariance system is specified for computation.
+No isolated/spherical/continuum, physical H2, production-parameter,
+long-wavelength trapping, late-time or thermal conclusion follows
+without the stated transfer checks.
+
+The decisive calculations are (XN2)--(XN10) in this source.
+For the first [X] group, differentiating the implicit clock root
+and the full transpose lapse equation gives the same reduced
+state generator and conserved collar Hamiltonian as restricting
+the native state action.  For the second [X] group, the
+spectral Sylvester mass-rectangle weights and the positive
+root-heat quadratic form give the same strict clamped sign
+and graph kernel.  These are the two independently agreeing
+method pairs recorded in
+\path{solve/review_X_nonlinear_response.tex}.
+The positive charge trace identity, contraction/lapse estimates,
+local ODE and tangency consequences, Gaussian normalization and
+marked matter, and response/trial-covariance formulas are checked
+supporting [S] deductions.  Auxiliary time prescription, diagnostic
+inputs and budgets are choices; physical, isolated, stellar and
+infinite-domain applications remain [V:X,W,D].  There is no
+new [R] or [N] claim.
+The finite polar row and its Cartesian coercivity input are
+D1--D9 of \path{solve/strand_D_existence.tex}, with
+\path{solve/review_D.tex}; the general quadratic-form derivation
+is also written here.  The complete differentiated light source
+is W5--W15 of \path{solve/strand_W.tex}, with
+\path{solve/review_W.tex}.  Exact causal/adiabatic distinctions
+and force budgets are XS1--XS18 of
+\path{solve/strand_X_causal_sea.tex}, with
+\path{solve/review_X_causal_sea.tex}.
+The primary shell and charge/lock diagnostics are
+\path{solve/strand_X.tex}, with \path{solve/review_X.tex}.
+The exact single-match coefficient and diagnostic mass convention
+are C1--C2 of \path{solve/strand_C3.tex}; no secondary-branch
+numerical value or production coupling is used.
+The original free covariance construction underlying (XN11)--(XN12)
+is rederived explicitly here from its carrier and polar blocks.
+The native-state time prescription, Gaussian preparation, finite
+boxes, step ladder and work limits are declared choices.
+The independent result disposition belongs to
+\path{solve/review_X_nonlinear_response.tex}.  There is no code,
+runtime or executed numerical result in this author source.
+\end{document}

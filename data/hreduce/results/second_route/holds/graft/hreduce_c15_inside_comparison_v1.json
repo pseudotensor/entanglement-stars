@@ -1,0 +1,625 @@
+{
+  "method": "graft-origin-partial-inside-scalar-comparison-1",
+  "artifacts": {
+    "loader": {
+      "path": "<internal>/hold_graft_inside_table.py",
+      "size": 12400,
+      "sha256": "8edc606c48ccc8d5cf4ddb9ebe17ab456cd4422298dab4e52cc8f1652ac7934a",
+      "device": 2048,
+      "inode": 7602527,
+      "mtime_ns": 1792302141432693682
+    },
+    "1": {
+      "path": "<internal>/origin_energy_checks.json",
+      "size": 72798,
+      "sha256": "fd0bf7e12243e405fb28178600abbe9e13757feb3f497e328f0ce22e919d5db5",
+      "device": 2048,
+      "inode": 7602479,
+      "mtime_ns": 1792296824735381319
+    },
+    "2": {
+      "path": "<internal>/origin_energy_checks.json",
+      "size": 143197,
+      "sha256": "8ed7ac582196587bbd32bb5bd16dd041be92686fd2e0b09390887b7430a68005",
+      "device": 2048,
+      "inode": 7602492,
+      "mtime_ns": 1792297557919596434
+    },
+    "graft": {
+      "path": "<internal>/c15_app8192_origin_input_v1.json",
+      "size": 5092,
+      "sha256": "eb59f403353167ea4487f188ac5a2708fa2b0a397fd8aa6ba6c6560efaa2d684",
+      "device": 2048,
+      "inode": 7602526,
+      "mtime_ns": 1792302141756705049
+    }
+  },
+  "completed": true,
+  "rows": [
+    {
+      "row": "kappa1",
+      "own_full_short_inside": {
+        "value": 0.06698027438027643,
+        "exact": {
+          "numerator": "603304677480373",
+          "denominator": "9007199254740992"
+        },
+        "reporting_conversion_error_upper": 0.0
+      },
+      "own_imaginary": {
+        "value": -1.0647468844782572e-20,
+        "exact": {
+          "numerator": "-1609",
+          "denominator": "151115727451828646838272"
+        },
+        "reporting_conversion_error_upper": 0.0
+      },
+      "own_saved_scalar_error_positive_sum": {
+        "value": 2.386257473945076e-16,
+        "exact": {
+          "numerator": "4839905150632919",
+          "denominator": "20282409603651670423947251286016"
+        },
+        "reporting_conversion_error_upper": 0.0
+      },
+      "own_fixed_scalar_interval": {
+        "lower": 0.06698027438027618,
+        "upper": 0.06698027438027668,
+        "exact_lower": {
+          "numerator": "2413218709921483",
+          "denominator": "36028797018963968"
+        },
+        "exact_upper": {
+          "numerator": "2413218709921501",
+          "denominator": "36028797018963968"
+        }
+      },
+      "retained_graft_inside": {
+        "value": 0.06698027437975393,
+        "exact": {
+          "numerator": "2413218709902667",
+          "denominator": "36028797018963968"
+        },
+        "reporting_conversion_error_upper": 0.0
+      },
+      "own_full_minus_retained": {
+        "value": 5.224987109642143e-13,
+        "exact": {
+          "numerator": "18825",
+          "denominator": "36028797018963968"
+        },
+        "reporting_conversion_error_upper": 0.0
+      },
+      "difference_interval": {
+        "lower": 5.222489107836736e-13,
+        "upper": 5.22748511144755e-13,
+        "exact_lower": {
+          "numerator": "147",
+          "denominator": "281474976710656"
+        },
+        "exact_upper": {
+          "numerator": "9417",
+          "denominator": "18014398509481984"
+        }
+      },
+      "energy_format": "%.6e",
+      "own_declared_6e": "6.698027e-02",
+      "target_declared_6e": "6.698027e-02",
+      "central_reported_cells_match": true,
+      "exact_open_target_cell": [
+        "13396053/200000000",
+        "2679211/40000000"
+      ],
+      "exact_target_strictly_in_reported_cell": true,
+      "fixed_saved_full_value_versus_retained_target_cell_status": "inside",
+      "conditional_declared_drop_comparison": {
+        "declared_allowance": {
+          "value": 1.1476348621338133e-10,
+          "exact": {
+            "numerator": "4439697332235015",
+            "denominator": "38685626227668133590597632"
+          },
+          "reporting_conversion_error_upper": 0.0
+        },
+        "status": "within_declared_allowance",
+        "drop_expanded_difference_interval": {
+          "lower": -1.1424123730259766e-10,
+          "upper": 1.1528623472452608e-10,
+          "exact_lower": {
+            "numerator": "-4419493806074631",
+            "denominator": "38685626227668133590597632"
+          },
+          "exact_upper": {
+            "numerator": "4459920185748231",
+            "denominator": "38685626227668133590597632"
+          }
+        },
+        "drop_expanded_interval_contains_zero": true,
+        "scope": "conditional scalar bookkeeping; producer inside-energy allowance is not independently certified"
+      },
+      "inherited_status": {
+        "own_scalar_status": {
+          "real": 0.06698027438027643,
+          "imaginary": -1.0647468844782572e-20,
+          "declared_6e": "6.698027e-02",
+          "fixed_saved_input_error_upper_per_component": 2.386257473945076e-16,
+          "fixed_saved_input_real_interval": [
+            0.06698027438027618,
+            0.06698027438027668
+          ],
+          "own_fixed_scalar_cell_status": "resolved",
+          "construction_status": "unresolved; scalar interval is not a physical-observable certificate"
+        },
+        "own_arithmetic_assumptions": "binary64 round-to-nearest; no material underflow/overflow; saved complex-absolute scale model retained",
+        "own_construction_status": "unresolved; kernel construction, Dhat transform, eigensystem/projector and root-effect errors are separate",
+        "original_record_gate": "withheld: compatible first-route held spectral extrema absent",
+        "producer_truncation": {
+          "taken": true,
+          "kept_pairs": 14446,
+          "dropped_pairs": 1938,
+          "dropped_sum": 7.677744418345412e-11,
+          "largest_dropped": 8.353014469180111e-14,
+          "certificate": {
+            "L_at_t": 1.0122070137510687e-11,
+            "I_inside": 1.1476348621338133e-10,
+            "split_E_flux": 8.21610083218303e-10
+          },
+          "digit": 1.644586285442289e-09,
+          "split_weight": 10.70119085046808
+        },
+        "producer_coefficient_declaration": {
+          "sigma": 0.009947183943243459,
+          "sigma_TH": 8.0,
+          "M": 715,
+          "eps": 9.747570714231074e-13,
+          "M_2sigma": 359,
+          "eps_2sigma": 8.096351266052548e-13,
+          "index_range": 4,
+          "window_rows": [
+            10656,
+            22112
+          ],
+          "Lambda": 1.4947567244182842,
+          "walled_equals_connected": false,
+          "short_block_vs_short_h_max_abs": 0.0
+        },
+        "source_association": "older pod paths and exact massless source/reference remain unresolved"
+      },
+      "physical_agreement": "unresolved; unavailable construction/source/factorization/coefficient terms"
+    },
+    {
+      "row": "kappa2",
+      "own_full_short_inside": {
+        "value": 0.03403720688044875,
+        "exact": {
+          "numerator": "4905278471152687",
+          "denominator": "144115188075855872"
+        },
+        "reporting_conversion_error_upper": 0.0
+      },
+      "own_imaginary": {
+        "value": -2.9778502051908996e-22,
+        "exact": {
+          "numerator": "-45",
+          "denominator": "151115727451828646838272"
+        },
+        "reporting_conversion_error_upper": 0.0
+      },
+      "own_saved_scalar_error_positive_sum": {
+        "value": 7.758716579497583e-17,
+        "exact": {
+          "numerator": "6294618706560529",
+          "denominator": "81129638414606681695789005144064"
+        },
+        "reporting_conversion_error_upper": 0.0
+      },
+      "own_fixed_scalar_interval": {
+        "lower": 0.034037206880448666,
+        "upper": 0.03403720688044883,
+        "exact_lower": {
+          "numerator": "4905278471152675",
+          "denominator": "144115188075855872"
+        },
+        "exact_upper": {
+          "numerator": "4905278471152699",
+          "denominator": "144115188075855872"
+        }
+      },
+      "retained_graft_inside": {
+        "value": 0.03403720688080876,
+        "exact": {
+          "numerator": "2452639235602285",
+          "denominator": "72057594037927936"
+        },
+        "reporting_conversion_error_upper": 0.0
+      },
+      "own_full_minus_retained": {
+        "value": -3.6001063241641873e-13,
+        "exact": {
+          "numerator": "-51883",
+          "denominator": "144115188075855872"
+        },
+        "reporting_conversion_error_upper": 0.0
+      },
+      "difference_interval": {
+        "lower": -3.600938991432656e-13,
+        "upper": -3.5992736568957184e-13,
+        "exact_lower": {
+          "numerator": "-51895",
+          "denominator": "144115188075855872"
+        },
+        "exact_upper": {
+          "numerator": "-51871",
+          "denominator": "144115188075855872"
+        }
+      },
+      "energy_format": "%.6e",
+      "own_declared_6e": "3.403721e-02",
+      "target_declared_6e": "3.403721e-02",
+      "central_reported_cells_match": true,
+      "exact_open_target_cell": [
+        "6807441/200000000",
+        "6807443/200000000"
+      ],
+      "exact_target_strictly_in_reported_cell": true,
+      "fixed_saved_full_value_versus_retained_target_cell_status": "inside",
+      "conditional_declared_drop_comparison": {
+        "declared_allowance": {
+          "value": 1.162455820252496e-10,
+          "exact": {
+            "numerator": "8994066273693087",
+            "denominator": "77371252455336267181195264"
+          },
+          "reporting_conversion_error_upper": 0.0
+        },
+        "status": "within_declared_allowance",
+        "drop_expanded_difference_interval": {
+          "lower": -1.1660567592439288e-10,
+          "upper": 1.1588565465956003e-10,
+          "exact_lower": {
+            "numerator": "-9021927189671327",
+            "denominator": "77371252455336267181195264"
+          },
+          "exact_upper": {
+            "numerator": "8966218242616735",
+            "denominator": "77371252455336267181195264"
+          }
+        },
+        "drop_expanded_interval_contains_zero": true,
+        "scope": "conditional scalar bookkeeping; producer inside-energy allowance is not independently certified"
+      },
+      "inherited_status": {
+        "own_scalar_status": {
+          "real": 0.03403720688044875,
+          "imaginary": -2.9778502051908996e-22,
+          "declared_6e": "3.403721e-02",
+          "fixed_saved_input_error_upper_per_component": 7.758716579497583e-17,
+          "fixed_saved_input_real_interval": [
+            0.034037206880448666,
+            0.03403720688044883
+          ],
+          "own_fixed_scalar_cell_status": "resolved",
+          "construction_status": "unresolved; scalar interval is not a physical-observable certificate"
+        },
+        "own_arithmetic_assumptions": "binary64 round-to-nearest; no material underflow/overflow; saved complex-absolute scale model retained",
+        "own_construction_status": "unresolved; kernel construction, Dhat transform, eigensystem/projector and root-effect errors are separate",
+        "original_record_gate": "withheld: compatible first-route held spectral extrema absent",
+        "producer_truncation": {
+          "taken": true,
+          "kept_pairs": 15026,
+          "dropped_pairs": 1358,
+          "dropped_sum": 7.677754677037737e-11,
+          "largest_dropped": 1.2039637784602218e-13,
+          "certificate": {
+            "L_at_t": 1.0122086421584279e-11,
+            "I_inside": 1.162455820252496e-10,
+            "split_E_flux": 8.216156021223454e-10
+          },
+          "digit": 1.644586285442289e-09,
+          "split_weight": 10.701248433732772
+        },
+        "producer_coefficient_declaration": {
+          "sigma": 0.009947183943243459,
+          "sigma_TH": 8.0,
+          "M": 725,
+          "eps": 9.186753213344034e-13,
+          "M_2sigma": 363,
+          "eps_2sigma": 8.774607815350382e-13,
+          "index_range": 4,
+          "window_rows": [
+            10576,
+            22192
+          ],
+          "Lambda": 1.5140585126859252,
+          "walled_equals_connected": false,
+          "short_block_vs_short_h_max_abs": 0.0
+        },
+        "source_association": "older pod paths and exact massless source/reference remain unresolved"
+      },
+      "physical_agreement": "unresolved; unavailable construction/source/factorization/coefficient terms"
+    },
+    {
+      "row": "fixed16_32_sum",
+      "own_full_short_inside": {
+        "value": 2.160875010258783,
+        "exact": {
+          "numerator": "9731715890995671",
+          "denominator": "4503599627370496"
+        },
+        "reporting_conversion_error_upper": 2.220446049250313e-16
+      },
+      "own_imaginary": {
+        "value": -1.7988862217313203e-19,
+        "exact": {
+          "numerator": "-1699",
+          "denominator": "9444732965739290427392"
+        },
+        "reporting_conversion_error_upper": 0.0
+      },
+      "own_saved_scalar_error_positive_sum": {
+        "value": 6.300801263751349e-15,
+        "exact": {
+          "numerator": "15974429007826367",
+          "denominator": "2535301200456458802993406410752"
+        },
+        "reporting_conversion_error_upper": 3.944304526105059e-31
+      },
+      "own_fixed_scalar_interval": {
+        "lower": 2.160875010258776,
+        "upper": 2.1608750102587897,
+        "exact_lower": {
+          "numerator": "9731715890995641",
+          "denominator": "4503599627370496"
+        },
+        "exact_upper": {
+          "numerator": "9731715890995701",
+          "denominator": "4503599627370496"
+        }
+      },
+      "retained_graft_inside": {
+        "value": 2.160875010261943,
+        "exact": {
+          "numerator": "608232243188119",
+          "denominator": "281474976710656"
+        },
+        "reporting_conversion_error_upper": 0.0
+      },
+      "own_full_minus_retained": {
+        "value": -3.1603608618979706e-12,
+        "exact": {
+          "numerator": "-14233",
+          "denominator": "4503599627370496"
+        },
+        "reporting_conversion_error_upper": 0.0
+      },
+      "difference_interval": {
+        "lower": -3.1670222000457215e-12,
+        "upper": -3.1536995237502197e-12,
+        "exact_lower": {
+          "numerator": "-14263",
+          "denominator": "4503599627370496"
+        },
+        "exact_upper": {
+          "numerator": "-14203",
+          "denominator": "4503599627370496"
+        }
+      },
+      "energy_format": "%.6e",
+      "own_declared_6e": "2.160875e+00",
+      "target_declared_6e": "2.160875e+00",
+      "central_reported_cells_match": true,
+      "exact_open_target_cell": [
+        "4321749/2000000",
+        "4321751/2000000"
+      ],
+      "exact_target_strictly_in_reported_cell": true,
+      "fixed_saved_full_value_versus_retained_target_cell_status": "inside",
+      "conditional_declared_drop_comparison": {
+        "declared_allowance": {
+          "value": 5.556074404222089e-09,
+          "exact": {
+            "numerator": "6716881802964051",
+            "denominator": "1208925819614629174706176"
+          },
+          "reporting_conversion_error_upper": 0.0
+        },
+        "status": "within_declared_allowance",
+        "drop_expanded_difference_interval": {
+          "lower": -5.559241426422134e-09,
+          "upper": 5.5529207046983384e-09,
+          "exact_lower": {
+            "numerator": "-6720710497872979",
+            "denominator": "1208925819614629174706176"
+          },
+          "exact_upper": {
+            "numerator": "6713069214182483",
+            "denominator": "1208925819614629174706176"
+          }
+        },
+        "drop_expanded_interval_contains_zero": true,
+        "scope": "conditional scalar bookkeeping; producer inside-energy allowance is not independently certified"
+      },
+      "inherited_status": {
+        "1": {
+          "own_scalar_status": {
+            "real": 0.06698027438027643,
+            "imaginary": -1.0647468844782572e-20,
+            "declared_6e": "6.698027e-02",
+            "fixed_saved_input_error_upper_per_component": 2.386257473945076e-16,
+            "fixed_saved_input_real_interval": [
+              0.06698027438027618,
+              0.06698027438027668
+            ],
+            "own_fixed_scalar_cell_status": "resolved",
+            "construction_status": "unresolved; scalar interval is not a physical-observable certificate"
+          },
+          "own_arithmetic_assumptions": "binary64 round-to-nearest; no material underflow/overflow; saved complex-absolute scale model retained",
+          "own_construction_status": "unresolved; kernel construction, Dhat transform, eigensystem/projector and root-effect errors are separate",
+          "original_record_gate": "withheld: compatible first-route held spectral extrema absent",
+          "producer_truncation": {
+            "taken": true,
+            "kept_pairs": 14446,
+            "dropped_pairs": 1938,
+            "dropped_sum": 7.677744418345412e-11,
+            "largest_dropped": 8.353014469180111e-14,
+            "certificate": {
+              "L_at_t": 1.0122070137510687e-11,
+              "I_inside": 1.1476348621338133e-10,
+              "split_E_flux": 8.21610083218303e-10
+            },
+            "digit": 1.644586285442289e-09,
+            "split_weight": 10.70119085046808
+          },
+          "producer_coefficient_declaration": {
+            "sigma": 0.009947183943243459,
+            "sigma_TH": 8.0,
+            "M": 715,
+            "eps": 9.747570714231074e-13,
+            "M_2sigma": 359,
+            "eps_2sigma": 8.096351266052548e-13,
+            "index_range": 4,
+            "window_rows": [
+              10656,
+              22112
+            ],
+            "Lambda": 1.4947567244182842,
+            "walled_equals_connected": false,
+            "short_block_vs_short_h_max_abs": 0.0
+          },
+          "source_association": "older pod paths and exact massless source/reference remain unresolved"
+        },
+        "2": {
+          "own_scalar_status": {
+            "real": 0.03403720688044875,
+            "imaginary": -2.9778502051908996e-22,
+            "declared_6e": "3.403721e-02",
+            "fixed_saved_input_error_upper_per_component": 7.758716579497583e-17,
+            "fixed_saved_input_real_interval": [
+              0.034037206880448666,
+              0.03403720688044883
+            ],
+            "own_fixed_scalar_cell_status": "resolved",
+            "construction_status": "unresolved; scalar interval is not a physical-observable certificate"
+          },
+          "own_arithmetic_assumptions": "binary64 round-to-nearest; no material underflow/overflow; saved complex-absolute scale model retained",
+          "own_construction_status": "unresolved; kernel construction, Dhat transform, eigensystem/projector and root-effect errors are separate",
+          "original_record_gate": "withheld: compatible first-route held spectral extrema absent",
+          "producer_truncation": {
+            "taken": true,
+            "kept_pairs": 15026,
+            "dropped_pairs": 1358,
+            "dropped_sum": 7.677754677037737e-11,
+            "largest_dropped": 1.2039637784602218e-13,
+            "certificate": {
+              "L_at_t": 1.0122086421584279e-11,
+              "I_inside": 1.162455820252496e-10,
+              "split_E_flux": 8.216156021223454e-10
+            },
+            "digit": 1.644586285442289e-09,
+            "split_weight": 10.701248433732772
+          },
+          "producer_coefficient_declaration": {
+            "sigma": 0.009947183943243459,
+            "sigma_TH": 8.0,
+            "M": 725,
+            "eps": 9.186753213344034e-13,
+            "M_2sigma": 363,
+            "eps_2sigma": 8.774607815350382e-13,
+            "index_range": 4,
+            "window_rows": [
+              10576,
+              22192
+            ],
+            "Lambda": 1.5140585126859252,
+            "walled_equals_connected": false,
+            "short_block_vs_short_h_max_abs": 0.0
+          },
+          "source_association": "older pod paths and exact massless source/reference remain unresolved"
+        }
+      },
+      "physical_agreement": "unresolved; unavailable construction/source/factorization/coefficient terms"
+    }
+  ],
+  "weights": {
+    "1": 16,
+    "2": 32
+  },
+  "quantity": "signed native Hermitian allocated inside energy",
+  "unit": "1/a",
+  "cut": "R<=1024a, both spinor rows",
+  "absolute_time": 960.0,
+  "elapsed_time": 0.0,
+  "difference_sign": "own full-short-D minus producer retained-graft",
+  "source_input": {
+    "state": "<internal>/v6bA_s4_state_at_015.000.pt",
+    "fields": "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_r11_fields.npz",
+    "record": "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_r11.json",
+    "k": 120,
+    "nsites": 8192,
+    "mass": 0.0,
+    "rs_nominal": 64.0,
+    "hold_rs": 15.0,
+    "charge": 108.8272062902157,
+    "g": 0.25,
+    "time_start": 960.0
+  },
+  "external_provenance": {
+    "rows": {
+      "path": "<internal>/graft_v2_c15_app8192_rows.json",
+      "size": 827669,
+      "sha256": "db54cb26cf75b91ff74d082ccfa66eec82800036b171ecdfdfd55ea04a20cf59"
+    },
+    "blocks": {
+      "path": "<internal>/graft_v2_c15_app8192_blocks.npz",
+      "size": 47668800,
+      "sha256": "d4168945f92d91a516c1b9c8e2755583bffb42d91886292ed02d5a0f25c6cd5d"
+    },
+    "scope": "reported external provenance from reviewed extract; no producer matrix/execution validation"
+  },
+  "external_graft_settings": {
+    "record": "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_r11.json",
+    "fields": "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_r11_fields.npz",
+    "fields_key": "applied",
+    "init_state": "in/v6bA_s4_state_at_015.000.pt",
+    "nsites_short": 8192,
+    "append": 8192,
+    "channels": "1,2",
+    "freeze_at_rs": 15.0,
+    "R_collar_rs": 16.0,
+    "collect_every_rs": 2.0,
+    "duration_rs": 200.0,
+    "windows": "32,16,64",
+    "cheb_tol": 1e-14,
+    "chunk": 512,
+    "device": "cuda:0",
+    "threads": 8,
+    "out": "runs",
+    "tag": "graft_v2_c15_app8192",
+    "compare": null,
+    "compare_rows": null,
+    "null": 1,
+    "null_every": 1,
+    "null_sigma_TH": 8.0,
+    "null_tol": 1e-12,
+    "trunc": 1,
+    "trunc_drop_sum": 0.0,
+    "trunc_digit_frac": 0.001,
+    "LH": 1.644586285442289e-06,
+    "ckpt_every": 100,
+    "resume": 0
+  },
+  "physical_rows_released": false,
+  "physical_agreement": "unresolved",
+  "graft_total_outside_full_retained_complete": false,
+  "unavailable": {
+    "own_kernel_Dhat_eigenprojector_construction": "kappa1 legacy association and both historical transform/construction gaps retained",
+    "producer_source_reference_and_arithmetic": "unavailable",
+    "retained_version_factorization": "unavailable",
+    "independent_retained_block_inside_delta_h": "unavailable; producer zero declaration is not substituted",
+    "native_initial_graft_total_and_outside": "unavailable",
+    "paired_full_retained_energy": "unavailable"
+  },
+  "conditional_scope": "declared I_inside certificate only; no filter/norm, luminosity or unrelated retained-version bound",
+  "combined_physical_error_budget": null,
+  "release": "withheld; actual scalar judgment and all original physical gates remain"
+}

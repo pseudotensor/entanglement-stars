@@ -1,0 +1,1131 @@
+#!/usr/bin/env python
+"""page_history_v6c.py (builder analyst, 2026-10-16): page_history_v6b.py with five changes; the state and the collector of A are v6b's.
+(1) The continuum comparator's greybody table on its 48 fixed nodes is computed once per channel and kept (v6b recomputed it at every
+    checkpoint, about 19 s of CPU per channel pair): the same function on the same nodes, the numbers unchanged.
+(2) --transfer-at-peak (S1 A.11, "at the S_esc peak"): the transfer ledger of P14 sec. 7 restarts at every checkpoint whose weighted S_esc
+    exceeds every earlier one (the previous ledger dropped), so the one kept at the end starts at the run's peak; the restart clocks are
+    printed (transfer_starts). With --transfer-at-rs the v6b behaviour is kept.
+(3) C (#36 C, "the pilot's stage machinery, 1 dense eigendecomposition per control"): with --frozen-prop eig (the default) the sea, the
+    archive and the ledger's partner modes are carried in the eigenbasis of the frozen record's h by exact phases from the freeze clock
+    and materialized at each checkpoint (one dense product per channel and checkpoint, no Chebyshev series on the frozen h); the collar
+    energy flow is evaluated per checkpoint interval (on a frozen h the per-record flows telescope to it) and the collar current at the
+    checkpoint clock. --frozen-prop cheb keeps v6b's per-record Chebyshev propagation.
+(5) A run continued from a saved state of A (--init-state without --freeze-at-rs, e.g. the ledger run from T/r_s 15) keeps A's collection
+    clocks: the schedule's origin is the history's start (--T-start-rs), not the saved record (v6b counted from the saved record); the
+    saved record itself is not collected again (A collected it before saving).
+(4) C prints the chain end's reflection clock: the continuum light round trip from R_collar to the chain end and back in the frozen
+    record's fields (outgoing N - |v|, ingoing N + |v|), with |v|/N at R_collar; each frozen row carries after_reflection_clock. The
+    drain rule is S1's, unchanged.
+
+v6b's docstring: page_history_v6b.py (builder analyst, 2026-10-16): page_history_v6.py with inbox #41's changes to S1 (REVIEWA_RULING_oneobject_MI.md E
+and D15, owner-approved): no mutual information is computed or printed. v6's slab mutual information at --mi-at-rs (S1 A.12) is removed
+(replaced by S4's A.3, another builder's post-processing of the stored states); its checkpoint clocks are kept by --extra-ck-rs (default
+15,30), so the collection schedule is v6's; the collection step prints S(M) - S(M') = S_old - S_new, the archive's entropy before minus
+after the new batch (minus the conditional entropy S(B|M) of the batch given the archive; positive when the escaping entropy falls), in
+place of v6's S_old + S_B - S_new. Nothing else changes (the state, the collector, the identities, the transfer ledger W_R).
+
+v6's docstring: page_history_v6.py (builder analyst, 2026-10-16; inbox #36 S1 revised, Computation A; REVIEWA_RULING_quasifrozen.md; the ideas of
+P01_theorems.md secs. 2, 4, 5, 7, P07's DERIVATION.md sec. 10 and P14's response sec. 7 re-derived, not used as sources). Imports
+page_ops_v6 (the operators, the Chebyshev order, the entropies, the hull and the ledgers), page_core_v6 (principal_delta, the principal
+angles with the sharp dropped-pair ledger) and page_scatter_v5 (the continuum greybody for the comparators).
+
+Computation A: the massless channel of the lattice Dirac operator propagated on the solved history of the massive collapse, its sources
+not fed back. The background (#36 A 1): per stored record k of the history (record json + fields npz in the engine's layout), the applied
+(averaged-back) site fields N_k, v_k on the engine's sites R = 1 ... n_e and the collar charge E_k; beyond the engine's domain the vacuum
+Painleve-Gullstrand exterior at E_k (N = 1, v = -(2 g E_k / R)^(1/2)) appended to --nsites; the fields piecewise constant over
+[T_k, T_k + tau) (the engine propagates its sea with record k's accepted fields over that interval: engine_collapse_v19's loop); the join
+checked per record (the largest relative difference of N and v from the vacuum exterior at E_k over --join-rs, 16 to 32 r_s by default).
+The channel (A 2): h[N, v] = (1/2){N, h_0} + (1/2){v, Q} of page_ops_v6 at m = 0, kappa = 1, 2 with weights 16 kappa (kappa 3 the guard).
+The initial state (A 3): the ground state of h(T_0) per channel (one dense eigendecomposition), the occupied columns Phi (n2 x n0);
+min(N - |v|) of the record printed. The propagation (A 4): per record, the Chebyshev action of exp(-i h_k tau) on Phi and on the archive of
+collected modes F (the order set by the Bessel tail below --cheb-tol; printed), no dense eigendecomposition in the propagation; --cubic-window
+T0,T1 (in r_s) replaces the piecewise-constant fields inside the window by the cubic (Catmull-Rom) time interpolation of the records with
+sub-steps of 1 lattice unit (the control).
+
+The state is propagated whole (the sea's every occupied column), so the global state C = Phi Phi^dagger is pure and known at every clock
+and the escaping entropy is the direct route on the cumulative collected set (S1 repair 4): S_esc = tr s(F^dagger C F) with F every
+collected mode propagated to the clock, exact up to the propagation's Chebyshev tail and rounding (the band printed: the accumulated tail
+bound and the sea's unitarity defect). The collector (repairs 1 to 3 in their time-dependent form; collection every --collect-every-rs): at
+a checkpoint the dense eigendecomposition of h(T_k) gives P_-(T_k) = 1(h(T_k) < 0); the deviation C - P_- is represented by its principal
+pairs (page_core_v6.principal_delta on V_k^dagger Phi: the split hull in h(T_k)'s halves with the sharp dropped-pair ledger, repairs 1 and
+2); per half h the memory's weight beyond R_cut outside the archive, G_h = c_h^dagger K chi K c_h with K = 1 - F F^dagger, is diagonalized
+and its directions with weight at least 1 - eps_loc are the candidates (the active-subspace rule, repair 3); each candidate y = K c_h u is
+split in the Killing shells of the exterior block of h(T_k) beyond R_cut (one dense eigendecomposition of the exterior block per
+--ext-every-rs; bins of --bin-TH T_H up to --bin-max-TH T_H and one overflow bin, particles and holes by the sign of the Killing energy) by
+the sign of the radial velocity i[h, R] within each shell: the outgoing part is collected (escaped), the incoming part stays in the system
+and is printed as the bin's incoming fraction; the outgoing parts are orthonormalized against the archive (twice) and appended to F. The
+archive is never pruned; its full Gram is checked every block (the new block against every earlier mode at one clock).
+
+Readouts per checkpoint, per channel and weighted (A 7 to 12): E_inv(T_k) = Tr[h(T_k)(C - P_-)]; the creation rate W = dE_inv/dt + L
+against Tr[h_dot (C - P_-)] from the records' field differences (h_dot = ({dN, h_0} + {dv, Q})/(2 tau) at the record); the collar current L
+= Tr[C j_chi] with j_chi = (i/2)[h^2, chi_c] (chi_c beyond --R-collar-rs) per record and its time integral; the exact collar identity at
+the checkpoint, E_out = Tr[{chi_c, h}/2 (C - P_-)] = E_remove + M_chi with E_remove the collected sector's energy (the mode ledger) and
+M_chi = Tr[({chi_c, h}/2 - h + K h K)(C - P_-)] printed; the comparators L_H at the record's dense surface slope kappa_T and at 1/(4 g E_k)
+(the run's channels' continuum greybody, page_scatter_v5), L/L_H; the collected occupation per bin per block, the window-averaged spectrum
+over --window-rs, the implied partner occupation nu = n_out/(Gamma f_FD) in the soft bins at T_m from kappa_T; S_esc with its band against
+eta A/a^2 and A/(4G) at the run's g; the transfer ledger (P14 sec. 7's construction) at --transfer-at-rs; (v6b: no slab readout, no
+mutual information); the label on every output. The run ends at the last
+record of the history (or --T-end-rs).
+
+Usage: python page_history_v6c.py --record JSON --fields NPZ --out DIR --tag TAG [--nsites 8192 --channels 1,2 --R-cut-rs 24 ...]
+       python page_history_v6c.py --synthetic-fixture ... (the oracle's moving profile; see page_history_oracle_v6c.py)"""
+import argparse
+import json
+import math
+import os
+import sys
+import time
+
+import numpy as np
+import scipy.sparse as sp
+
+import torch
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+import page_ops_v6 as OPS            # noqa: E402
+import page_core_v6 as CORE          # noqa: E402
+
+CD = OPS.CD
+RD = OPS.RD
+T_START = time.time()
+LABEL_A = ("the massless channel of the lattice Dirac operator on the solved history of the massive collapse, its sources not fed back, "
+           "E_rad^(0)/E = %s over the window; the interior beyond the hydrodynamic gate H sigma > 0.1 from T/r_s 11.75, the record's own limit")
+
+
+def log(msg):
+    print("[%8.1f s] %s" % (time.time() - T_START, msg), flush=True)
+
+
+def _f(x, fmt):
+    if x is None:
+        return "-"
+    try:
+        return fmt % x
+    except (TypeError, ValueError):
+        return str(x)
+
+
+# ---------------------------------------------------------------------------------------------------------------- the history
+class History:
+    """the stored records of a solved collapse history in the engine's layout: the fields npz (R, T, N_applied, v_applied, tau, ell) and the
+    record json (records with T and E, args with g and rs). The site fields of the chain of --nsites sites: the record's applied fields on
+    the engine's sites, the vacuum exterior at the record's E beyond them."""
+
+    def __init__(self, record, fields, nsites, g=None, fields_key="applied", synthetic=None):
+        if synthetic is not None:
+            self.D = synthetic["json"]; Z = synthetic["npz"]
+        else:
+            self.D = json.load(open(record))
+            Z = np.load(fields, allow_pickle=True)
+        args = self.D.get("args", {})
+        self.g = float(g if g is not None else args.get("g", 0.25))
+        self.rs_nom = float(args.get("rs", 0.0)) or None
+        recs = [r for r in self.D["records"] if r.get("E") is not None]
+        self.T = np.asarray(Z["T"], float)
+        self.Re = np.asarray(Z["R"], float)
+        self.ne = len(self.Re)
+        kN, kv = ("N_applied", "v_applied") if fields_key == "applied" else ("N", "v")
+        self.N_e = np.asarray(Z[kN], float); self.v_e = np.asarray(Z[kv], float)
+        self.tau = float(Z["tau"]); self.ell = float(Z["ell"]) if "ell" in Z else None
+        byT = {round(float(r["T"]), 6): r for r in recs}
+        self.rec = [byT.get(round(float(t), 6)) or min(recs, key=lambda q: abs(q["T"] - t)) for t in self.T]
+        self.E = np.array([float(r["E"]) for r in self.rec])
+        self.nsites = int(nsites)
+        self.R = np.arange(self.nsites, dtype=float) + 1.0
+        if self.nsites < self.ne:
+            raise ValueError("the chain (%d sites) is shorter than the engine's domain (%d)" % (self.nsites, self.ne))
+        if not np.allclose(self.Re, self.R[: self.ne]):
+            raise ValueError("the engine's sites are not R = 1 ... n_e")
+        self.label = str(Z["label"]) if "label" in Z else ""
+        self.fields_key = fields_key
+
+    def __len__(self):
+        return len(self.T)
+
+    def fields(self, k):
+        """(N, v) on the chain at record k: the record's applied fields, the vacuum exterior at E_k beyond the engine's sites."""
+        N = np.ones(self.nsites); v = -np.sqrt(2.0 * self.g * self.E[k] / self.R)
+        N[: self.ne] = self.N_e[k]; v[: self.ne] = self.v_e[k]
+        return N, v
+
+    def join_check(self, k, lo, hi):
+        """the largest relative differences of the record's N and v from the vacuum exterior at E_k over lo <= R <= hi (engine sites)."""
+        sel = (self.Re >= lo) & (self.Re <= hi)
+        if not sel.any():
+            return None, None
+        vpg = -np.sqrt(2.0 * self.g * self.E[k] / self.Re[sel])
+        return float(np.max(np.abs(self.N_e[k][sel] - 1.0))), float(np.max(np.abs(self.v_e[k][sel] - vpg) / np.abs(vpg)))
+
+    def cubic_fields(self, t):
+        """the Catmull-Rom interpolation in time of the chain's fields at clock t (the control of A 4)."""
+        k = int(np.clip(np.searchsorted(self.T, t, side="right") - 1, 0, len(self.T) - 2))
+        u = (t - self.T[k]) / (self.T[k + 1] - self.T[k])
+        ks = [max(k - 1, 0), k, k + 1, min(k + 2, len(self.T) - 1)]
+        F = [self.fields(q) for q in ks]
+        w = [-0.5 * u ** 3 + u ** 2 - 0.5 * u, 1.5 * u ** 3 - 2.5 * u ** 2 + 1.0, -1.5 * u ** 3 + 2.0 * u ** 2 + 0.5 * u, 0.5 * u ** 3 - 0.5 * u ** 2]
+        N = sum(wi * Fi[0] for wi, Fi in zip(w, F)); v = sum(wi * Fi[1] for wi, Fi in zip(w, F))
+        return N, v
+
+
+# --------------------------------------------------------------------------------------------------------------- the operators
+class ChannelOps:
+    """one channel kappa: the chain h_0 and Q (page_ops_v6.chain_sparse, m = 0), the clocked operator at given fields as a host CSR and a
+    device banded operator, the collar current, the radial-velocity operator."""
+
+    def __init__(self, kappa, R, device):
+        self.kappa = int(kappa); self.w = 16.0 * self.kappa
+        self.R = R; self.n2 = 2 * len(R); self.device = device
+        self.h0, self.Q = OPS.chain_sparse(R, 0.0, float(kappa))
+        self.R2 = torch.as_tensor(np.repeat(R, 2), dtype=RD, device=device)
+
+    def h_csr(self, N, v):
+        return OPS.clocked_csr(self.h0, self.Q, N, v)
+
+    def banded(self, h):
+        return OPS.Banded(h, self.device)
+
+    def velocity_apply(self, h, X):
+        """i[h, R] X for the clocked host h (CSR) on the device: (i h_ab (R_b - R_a)) applied banded."""
+        co = h.tocoo()
+        r2 = np.repeat(self.R, 2)
+        V = sp.csr_matrix((1j * co.data * (r2[co.col] - r2[co.row]), (co.row, co.col)), shape=co.shape)
+        return OPS.Banded(V, self.device).apply(X)
+
+    def hdot_csr(self, dN, dv, dt):
+        """({dN, h_0} + {dv, Q})/(2 dt): the operator derivative of the clocked h at record field differences dN, dv over dt."""
+        Nd = sp.diags(np.repeat(np.asarray(dN, float), 2)); Vd = sp.diags(np.repeat(np.asarray(dv, float), 2))
+        return ((Nd @ self.h0 + self.h0 @ Nd) + (Vd @ self.Q + self.Q @ Vd)).tocsr() * (0.5 / dt)
+
+
+def cheb_apply(Bh, X, tau, tol):
+    """exp(-i tau h) X for a device Banded h (Gershgorin bound w): the Chebyshev series on [-w, w], the order by the Bessel tail below tol
+    (page_ops_v6.cheb_order); returns (Y, K, tail)."""
+    if X.shape[1] == 0:
+        return X, 0, 0.0
+    w = Bh.bound
+    z = w * tau
+    K, tail = OPS.cheb_order(z, tol)
+    k = np.arange(K + 1)
+    from scipy.special import jv
+    ck = jv(k, z) * ((-1j) ** k) * np.where(k == 0, 1.0, 2.0)
+    T0 = X
+    T1 = Bh.apply(X) / w
+    Y = complex(ck[0]) * T0 + complex(ck[1]) * T1
+    for kk in range(2, K + 1):
+        T2 = 2.0 * Bh.apply(T1) / w - T0
+        Y = Y + complex(ck[kk]) * T2
+        T0, T1 = T1, T2
+    return Y, K, tail
+
+
+def propagate(Bh, X, tau, tol, chunk):
+    """cheb_apply over column chunks (device memory); returns (X, K, tail)."""
+    K = 0; tail = 0.0
+    for j0 in range(0, X.shape[1], chunk):
+        X[:, j0: j0 + chunk], K, tail = cheb_apply(Bh, X[:, j0: j0 + chunk], tau, tol)
+    return X, K, tail
+
+
+# ---------------------------------------------------------------------------------------------------------------- the state
+class HistChannel:
+    """one channel's state on the history: the sea Phi (n2 x n0, every occupied column, propagated), the archive F of collected modes
+    (n2 x m, propagated with the sea, never pruned) with each mode's collection clock, outside weight and bin, and the accumulators."""
+
+    def __init__(self, ops):
+        self.ops = ops
+        self.Phi = None
+        self.F = None
+        self.F_t = []; self.F_g = []; self.F_bin = []
+        self.cheb_K_max = 0; self.cheb_tail_acc = 0.0
+        self.collar_flow_acc = 0.0                      # sum over records of the exact collar energy flow (frozen h_k over each record)
+        self.gram_F2 = 0.0; self.gram_max = 0.0
+        self.unit_defect = 0.0
+        self.ext = None                                 # the exterior block's shells (cached; recomputed every ext_every)
+        self.ext_t = None
+
+    def trace_h(self, Bh, X):
+        """Re tr[X^dagger h X] for a device Banded h."""
+        return float(torch.sum((X.conj() * Bh.apply(X)).real))
+
+    def outer_root(self, N, v):
+        """the outermost zero of N - |v| (linear interpolation) or None."""
+        f = np.asarray(N, float) - np.abs(np.asarray(v, float))
+        s = np.nonzero((f[:-1] <= 0) & (f[1:] > 0))[0]
+        if len(s) == 0:
+            return None
+        i = int(s[-1]); R = self.ops.R
+        return float(R[i] + (R[i + 1] - R[i]) * (-f[i]) / (f[i + 1] - f[i]))
+
+
+def exterior_shells(ops, h, R_cut, TH, bin_TH, bin_max_TH, device):
+    """the exterior block beyond R_cut of the clocked h (dense eigendecomposition): its Killing energies and eigenvectors; per bin of
+    |omega|/T_H (width bin_TH up to bin_max_TH, one overflow bin) and per sign of omega (particles omega > 0, holes omega < 0) the outgoing
+    and incoming subspaces by the sign of the radial velocity i[h_X, R] within the bin; returns the index set, the eigenvalues and the per-bin
+    (O, I) bases in the exterior coordinates."""
+    idx = np.nonzero(np.repeat(ops.R, 2) > R_cut)[0]
+    hX = h[idx][:, idx]
+    e, U = OPS.eigh_csr(hX.tocsr(), device)
+    RX = ops.R[idx // 2]
+    co = hX.tocoo()
+    r2 = RX
+    VX = sp.csr_matrix((1j * co.data * (r2[co.col] - r2[co.row]), (co.row, co.col)), shape=co.shape)   # i[h_X, R]
+    VXd = OPS.dense_from_csr(VX, device)
+    nb = int(round(bin_max_TH / bin_TH))
+    edges = [b * bin_TH for b in range(nb + 1)] + [1e30]
+    eabs = (e.abs() / TH).cpu().numpy()
+    bins = []
+    for sgn in (1, -1):
+        sel_sign = (e > 0) if sgn > 0 else (e < 0)
+        ss = sel_sign.cpu().numpy()
+        for b in range(len(edges) - 1):
+            j = np.nonzero(ss & (eabs >= edges[b]) & (eabs < edges[b + 1]))[0]
+            if len(j) == 0:
+                continue
+            Ub = U[:, torch.as_tensor(j, device=device)]
+            Wb = Ub.mH @ (VXd @ Ub)
+            wv, wu = torch.linalg.eigh(0.5 * (Wb + Wb.mH))
+            O = Ub @ wu[:, wv > 0]; I_ = Ub @ wu[:, wv <= 0]
+            bins.append({"sign": sgn, "bin": b, "lo": edges[b], "hi": edges[b + 1], "n": len(j), "O": O, "I": I_})
+    del VXd
+    return {"idx": torch.as_tensor(idx, device=device), "e": e, "bins": bins, "TH": TH, "R_cut": R_cut, "nX": len(idx)}
+
+
+def split_outgoing(ext, Y):
+    """the candidates Y (n2 x c, site basis) split in the exterior shells by the sign of the Killing energy and, within each shell, by the sign
+    of the radial velocity: per sign s the outgoing part sum over the bins of sign s of O O^dagger Y_X (embedded in the full space), so that
+    every collected column lies in one spectral half of the exterior block (its vacuum occupation 0 or 1 up to the spectral tails at R_cut;
+    an unsplit outgoing part would carry the vacuum's entanglement across R_cut as escaped entropy, P01 sec. 3); per bin the outgoing and
+    incoming squared norms (c candidates summed). Returns (the 2c columns [the positive-energy parts, the negative-energy parts], rows)."""
+    idx = ext["idx"]
+    YX = Y[idx]
+    rows = []
+    out_X = {1: torch.zeros_like(YX), -1: torch.zeros_like(YX)}
+    for bn in ext["bins"]:
+        a_o = bn["O"].mH @ YX; a_i = bn["I"].mH @ YX
+        out_X[bn["sign"]] += bn["O"] @ a_o
+        rows.append({"sign": bn["sign"], "bin": bn["bin"], "out": float(a_o.abs().pow(2).sum()), "in": float(a_i.abs().pow(2).sum())})
+    Yout = torch.zeros((Y.shape[0], 2 * Y.shape[1]), dtype=Y.dtype, device=Y.device)
+    Yout[idx, : Y.shape[1]] = out_X[1]; Yout[idx, Y.shape[1]:] = out_X[-1]
+    return Yout, rows
+
+
+def orthonormal_against(Y, F, eps):
+    """the orthonormal basis of span(Y) projected out of span(F) (classical Gram-Schmidt twice, then an SVD with relative threshold eps)."""
+    if Y.shape[1] == 0:
+        return Y
+    for _ in range(2):
+        if F is not None and F.shape[1]:
+            Y = Y - F @ (F.mH @ Y)
+    U, s, _ = torch.linalg.svd(Y, full_matrices=False)
+    if s.numel() == 0:
+        return Y[:, :0]
+    keep = s > eps * max(float(s.max()), 1e-300)
+    Q = U[:, keep]
+    if F is not None and F.shape[1]:
+        Q = Q - F @ (F.mH @ Q)
+        U2, s2, _ = torch.linalg.svd(Q, full_matrices=False)
+        Q = U2[:, s2 > 0.5]
+    return Q
+
+
+def entropy_of(Phi, F):
+    """tr s(F^dagger C F) with C = Phi Phi^dagger (the direct route): (S, the covariance's eigenvalues)."""
+    if F is None or F.shape[1] == 0:
+        return 0.0, None
+    A = Phi.mH @ F
+    G = A.mH @ A
+    ev = torch.linalg.eigvalsh(0.5 * (G + G.mH))
+    return float(OPS.binary_entropy_t(ev).sum()), ev
+
+
+# v6b (#41 D15): v6's slabs_p07 (the slab mutual information) is removed.
+
+
+# --------------------------------------------------------------------------------------------------------------- the driver
+def parse(argv=None):
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--record", default=None); ap.add_argument("--fields", default=None)
+    ap.add_argument("--fields-key", dest="fields_key", default="applied", choices=["applied", "stored"])
+    ap.add_argument("--g", type=float, default=None, help="G/a^2 (default: the record's)")
+    ap.add_argument("--rs-nominal", dest="rs_nominal", type=float, default=None, help="the r_s of the settings in units of r_s (default: the record's rs)")
+    ap.add_argument("--nsites", type=int, default=8192)
+    ap.add_argument("--channels", default="1,2")
+    ap.add_argument("--T-start-rs", dest="T_start_rs", type=float, default=0.0)
+    ap.add_argument("--T-end-rs", dest="T_end_rs", type=float, default=None, help="default: the history's last record")
+    ap.add_argument("--collect-every-rs", dest="collect_every_rs", type=float, default=2.0)
+    ap.add_argument("--R-cut-rs", dest="R_cut_rs", type=float, default=24.0)
+    ap.add_argument("--R-collar-rs", dest="R_collar_rs", type=float, default=16.0)
+    ap.add_argument("--join-rs", dest="join_rs", default="16,32")
+    ap.add_argument("--eps-loc", dest="eps_loc", type=float, default=1e-2)
+    ap.add_argument("--eps-form", dest="eps_form", type=float, default=1e-7)
+    ap.add_argument("--eps-orth", dest="eps_orth", type=float, default=1e-12)
+    ap.add_argument("--eps-coll", dest="eps_coll", type=float, default=1e-5, help="a candidate's outgoing part below this squared norm is not collected")
+    ap.add_argument("--pair-ledger", dest="pair_ledger", default="sharp", choices=["sharp", "v5"])
+    ap.add_argument("--collector-mode", dest="collector_mode", default="velocity", choices=["velocity", "shells"],
+                    help="velocity: the outgoing directions of the outside-weight candidate subspace by i[h, R] within it (the collected modes stay "
+                         "combinations of one half's memory directions); shells: the candidates' outgoing parts in the exterior block's shells (they "
+                         "carry the vacuum's entanglement across R_cut; kept as the comparison)")
+    ap.add_argument("--cheb-tol", dest="cheb_tol", type=float, default=1e-14)
+    ap.add_argument("--chunk", type=int, default=2048)
+    ap.add_argument("--ext-every-rs", dest="ext_every_rs", type=float, default=10.0)
+    ap.add_argument("--bin-TH", dest="bin_TH", type=float, default=0.5)
+    ap.add_argument("--bin-max-TH", dest="bin_max_TH", type=float, default=40.0)
+    ap.add_argument("--window-rs", dest="window_rs", type=float, default=13.0)
+    ap.add_argument("--soft-max-TH", dest="soft_max_TH", type=float, default=5.0)
+    ap.add_argument("--extra-ck-rs", dest="extra_ck_rs", default="15,30",
+                    help="v6b: extra checkpoint clocks (r_s), v6's --mi-at-rs schedule kept; no mutual information is computed (#41 D15)")
+    ap.add_argument("--transfer-at-rs", dest="transfer_at_rs", type=float, default=None)
+    ap.add_argument("--transfer-modes", dest="transfer_modes", type=int, default=16)
+    ap.add_argument("--transfer-at-peak", dest="transfer_at_peak", action="store_true",
+                    help="v6c: the transfer ledger restarts at each new maximum of the weighted S_esc at a checkpoint (S1 A.11, at the peak)")
+    ap.add_argument("--frozen-prop", dest="frozen_prop", default="eig", choices=["eig", "cheb"],
+                    help="v6c: C's propagation, the frozen h's eigenbasis by exact phases (eig) or v6b's per-record Chebyshev series (cheb)")
+    ap.add_argument("--cubic-window", dest="cubic_window", default=None, help="T0,T1 in r_s: cubic time interpolation with 1-unit sub-steps inside")
+    ap.add_argument("--eta", type=float, default=0.9192)
+    ap.add_argument("--save-every", dest="save_every", type=int, default=4, help="checkpoints between saved states")
+    ap.add_argument("--device", default="cuda:0"); ap.add_argument("--threads", type=int, default=16)
+    ap.add_argument("--out", required=True); ap.add_argument("--tag", required=True)
+    ap.add_argument("--resume", action="store_true")
+    ap.add_argument("--max-wall-hours", dest="max_wall_hours", type=float, default=24.0)
+    # the frozen-record controls (#36 C) and their starting states
+    ap.add_argument("--save-at-rs", dest="save_at_rs", default="", help="clocks (r_s) at which the state is also saved to <tag>_state_at_<T>.pt")
+    ap.add_argument("--init-state", dest="init_state", default=None, help="start from a saved state of run A (the archive kept) instead of the ground state")
+    ap.add_argument("--freeze-at-rs", dest="freeze_at_rs", type=float, default=None, help="C: h frozen at the record of this clock from there on")
+    ap.add_argument("--freeze-duration-rs", dest="freeze_duration_rs", type=float, default=300.0)
+    ap.add_argument("--end-flux-frac", dest="end_flux_frac", type=float, default=1e-3)
+    ap.add_argument("--end-window", dest="end_window", type=int, default=10)
+    ap.add_argument("--end-entropy-frac", dest="end_entropy_frac", type=float, default=0.01)
+    return ap.parse_args(argv)
+
+
+_GAMMA_TABLE = {}                                                       # v6c (1): kappa -> Gamma on the 48 fixed nodes
+
+
+def continuum_comparator(channels, rs, T):
+    """sum over the run's channels of (64 kappa/(2 pi)) int domega omega Gamma_kappa f(omega/T), omega = x/r_s (page_recursion_v5's
+    comparator: the continuum massless greybody of page_scatter_v5 on 48 Gauss-Legendre nodes of x in [0, 1.5])."""
+    import page_scatter_v5 as SC
+    if T is None or T <= 0:
+        return None
+    xs, ws = np.polynomial.legendre.leggauss(48)
+    x = 0.75 * (xs + 1.0); w = 0.75 * ws
+    tot = 0.0
+    for k in channels:
+        G = _GAMMA_TABLE.get(k)
+        if G is None:
+            G = SC.gamma_table(k, x); _GAMMA_TABLE[k] = G
+        arg = np.clip(x / (rs * T), -700, 700)
+        tot += 64.0 * float(k) / (2.0 * math.pi) * float(np.sum(w * x * G / (np.exp(arg) + 1.0))) / (rs * rs)
+    return tot
+
+
+class HistRun:
+    def __init__(self, a, history=None):
+        self.a = a
+        self.dev = torch.device(a.device if (a.device.startswith("cpu") or torch.cuda.is_available()) else "cpu")
+        torch.set_num_threads(a.threads)
+        os.makedirs(a.out, exist_ok=True)
+        self.prefix = os.path.join(a.out, a.tag)
+        self.H = history if history is not None else History(a.record, a.fields, a.nsites, a.g, a.fields_key)
+        H = self.H
+        self.g = H.g
+        self.rs_nom = float(a.rs_nominal or H.rs_nom or 2.0 * H.g * H.E[0])
+        self.tau = H.tau
+        self.channels = [int(x) for x in a.channels.split(",") if x.strip()]
+        self.chs = [HistChannel(ChannelOps(k, H.R, self.dev)) for k in self.channels]
+        self.R_cut_abs = a.R_cut_rs * self.rs_nom; self.R_collar_abs = a.R_collar_rs * self.rs_nom
+        self.k0 = int(np.argmin(np.abs(H.T - a.T_start_rs * self.rs_nom)))
+        self.k_sched0 = self.k0                       # v6c (5): the collection schedule's origin, kept when a run continues from a saved state
+        self.k_init = None                            # v6c (5): the saved state's record (no second collection there)
+        self.kend = (int(np.argmin(np.abs(H.T - a.T_end_rs * self.rs_nom))) if a.T_end_rs is not None else len(H) - 1)
+        every = max(1, int(round(a.collect_every_rs * self.rs_nom / self.tau)))
+        self.ck = set(range(self.k0, self.kend + 1, every)) | {self.kend}
+        self.xk = set(int(np.argmin(np.abs(H.T - float(x) * self.rs_nom))) for x in a.extra_ck_rs.split(",") if x.strip())
+        self.ck |= {k for k in self.xk if self.k0 <= k <= self.kend}
+        self.tr_k = int(np.argmin(np.abs(H.T - a.transfer_at_rs * self.rs_nom))) if a.transfer_at_rs is not None else None
+        if self.tr_k is not None:
+            self.ck.add(self.tr_k)
+        self.cw = [float(x) * self.rs_nom for x in a.cubic_window.split(",")] if a.cubic_window else None
+        self.rows = []; self.k = self.k0; self.n_ck = 0; self.records = []
+        self.last_ck = None
+        self.transfer = None
+        self.label = None
+        self.save_at_k = set(int(np.argmin(np.abs(H.T - float(x) * self.rs_nom))) for x in a.save_at_rs.split(",") if x.strip())
+        self.kf = int(np.argmin(np.abs(H.T - a.freeze_at_rs * self.rs_nom))) if a.freeze_at_rs is not None else None
+        self.frozen = False; self.fz = {}; self.t_now = None
+        self.end_count = 0; self.S_peak = 0.0; self.end_reason = None
+        self.tr_peak_S = 0.0; self.transfer_starts = []; self.transfer_epoch = 0          # v6c (2)
+        self.refl = None; self.t_freeze = None                                         # v6c (4)
+
+    # -------------------------------------------------------------------------------------------------------------- start
+    def start(self):
+        a, H = self.a, self.H
+        N, v = H.fields(self.k0)
+        mnv = float(np.min(N - np.abs(v)))
+        log("Computation A: %s; the history %s (%d records, T/r_s %.3f to %.3f, tau %g, ell %s, g %g, the engine's %d sites), the chain %d sites "
+            "(%.1f r_s nominal); r_s nominal %g; channels %s; R_cut %.1f r_s, collar %.1f r_s" % (
+                "start", H.label or a.record, len(H), H.T[self.k0] / self.rs_nom, H.T[self.kend] / self.rs_nom, self.tau, H.ell, self.g, H.ne,
+                H.nsites, H.nsites / self.rs_nom, self.rs_nom, self.channels, a.R_cut_rs, a.R_collar_rs))
+        log("the initial record T/r_s %.4f: min(N - |v|) %.6f (A 3: subcritical, the continued sea's start with no pockets when positive); E %.6f, 2 g E %.4f" % (
+            H.T[self.k0] / self.rs_nom, mnv, H.E[self.k0], 2 * self.g * H.E[self.k0]))
+        for c in self.chs:
+            h = c.ops.h_csr(N, v)
+            e, V = OPS.eigh_csr(h, self.dev)
+            neg = e < 0
+            c.Phi = V[:, neg].clone()
+            c.F = torch.zeros((c.ops.n2, 0), dtype=CD, device=self.dev)
+            log("kappa %d: the ground state of h(T_0): %d occupied of %d, %d levels within 1e-12 of zero" % (c.ops.kappa, int(neg.sum()), c.ops.n2, int((e.abs() < 1e-12).sum())))
+            del V, e
+            if self.dev.type == "cuda":
+                torch.cuda.empty_cache()
+        self.min_N_minus_absv_T0 = mnv
+
+    # ------------------------------------------------------------------------------------------------------------ records
+    def step_record(self, k, t0=None, t1=None):
+        """propagate every channel over [T_k, T_k + tau): record k's fields (or the cubic interpolation inside the control window); the
+        exact collar energy flow over the record (frozen h over each sub-step: Re tr[C chi h] at both ends with the same h) and the
+        instantaneous collar current at T_k. C: t0, t1 given (the frozen record's fields over any interval)."""
+        a, H = self.a, self.H
+        if t0 is None:
+            t0 = H.T[k]; t1 = H.T[k + 1] if k + 1 < len(H) else t0 + self.tau
+        sub = [(t0, t1, None)]
+        if self.cw is not None and self.cw[0] <= t0 < self.cw[1]:
+            nsub = max(1, int(round(t1 - t0)))
+            sub = [(t0 + i * (t1 - t0) / nsub, t0 + (i + 1) * (t1 - t0) / nsub, "cubic") for i in range(nsub)]
+        rec = {"k": k, "t": t0, "per_channel": {}}
+        for c in self.chs:
+            flow = 0.0; L0 = None; Kmax = 0; tail = 0.0
+            for (sa, sb, mode) in sub:
+                if mode == "cubic":
+                    N, v = H.cubic_fields(0.5 * (sa + sb))
+                else:
+                    N, v = H.fields(k)
+                h = c.ops.h_csr(N, v)
+                Bh = c.ops.banded(h)
+                chi = (c.ops.R2 > self.R_collar_abs).to(CD)[:, None]
+                Eo0 = float(torch.sum((c.Phi.conj() * (chi * Bh.apply(c.Phi))).real))
+                if L0 is None:
+                    J = OPS.Banded(OPS.current_out_csr(h, c.ops.R, self.R_collar_abs), self.dev)
+                    L0 = float(torch.sum((c.Phi.conj() * J.apply(c.Phi)).real))
+                    del J
+                c.Phi, K_, tl = propagate(Bh, c.Phi, sb - sa, a.cheb_tol, a.chunk)
+                if c.F.shape[1]:
+                    c.F, _, _ = propagate(Bh, c.F, sb - sa, a.cheb_tol, a.chunk)
+                Eo1 = float(torch.sum((c.Phi.conj() * (chi * Bh.apply(c.Phi))).real))
+                flow += Eo1 - Eo0
+                Kmax = max(Kmax, K_); tail += tl
+            c.collar_flow_acc += flow
+            c.cheb_K_max = max(c.cheb_K_max, Kmax); c.cheb_tail_acc += tail
+            rec["per_channel"][str(c.ops.kappa)] = {"collar_flow": flow, "L_at_t": L0, "cheb_K": Kmax, "cheb_tail": tail}
+        rec["collar_flow_weighted"] = sum(c.ops.w * rec["per_channel"][str(c.ops.kappa)]["collar_flow"] for c in self.chs)
+        rec["L_weighted"] = sum(c.ops.w * rec["per_channel"][str(c.ops.kappa)]["L_at_t"] for c in self.chs)
+        rec["sub_steps"] = len(sub)
+        self.records.append(rec)
+
+    # --------------------------------------------------------------------------------------------------------- checkpoints
+    def bin_occupation(self, c, Q, Phi):
+        """the block's excess occupation per exterior shell bin in its outgoing subspace: particles N_b = tr[P G P^dagger] (omega > 0) and
+        holes tr[P P^dagger] - tr[P G P^dagger] (omega < 0) with P = O_b^dagger Q_X and G = Q^dagger C Q."""
+        A = Phi.mH @ Q
+        GQ = A.mH @ A
+        QX = Q[c.ext["idx"]]
+        out = []
+        for bn in c.ext["bins"]:
+            if bn["O"].shape[1] == 0:
+                continue
+            P = bn["O"].mH @ QX
+            occ = float(torch.trace(P @ GQ @ P.mH).real); w_ = float(torch.trace(P @ P.mH).real)
+            val = occ if bn["sign"] > 0 else (w_ - occ)
+            if abs(val) > 0 or w_ > 0:
+                out.append({"sign": bn["sign"], "bin": bn["bin"], "lo_TH": bn["lo"], "hi_TH": bn["hi"], "excess": val, "weight": w_})
+        return out
+
+    def checkpoint(self, k, t=None, collect_override=None):
+        a, H = self.a, self.H
+        t = float(H.T[k]) if t is None else float(t)
+        E_k = float(H.E[k]); rs_k = 2.0 * self.g * E_k; TH = 1.0 / (4.0 * math.pi * rs_k)
+        N, v = H.fields(k)
+        if self.frozen:
+            dN = np.zeros_like(N); dv = np.zeros_like(v)                      # C: h frozen, h_dot = 0
+        else:
+            kn = k + 1 if k + 1 < len(H) else k - 1
+            Nn, vn = H.fields(kn)
+            sgn_d = 1.0 if kn > k else -1.0
+            dN, dv = sgn_d * (Nn - N), sgn_d * (vn - v)
+        lo, hi = [float(x) * self.rs_nom for x in a.join_rs.split(",")]
+        jN, jv = H.join_check(k, lo, hi)
+        rj = H.rec[k] or {}
+        collect = (((k - self.k_sched0) % max(1, int(round(a.collect_every_rs * self.rs_nom / self.tau))) == 0) and k != self.k_sched0
+                   and k != self.k_init)                                  # v6c (5): the saved record was collected by A before its save
+        if collect_override is not None:
+            collect = collect_override
+        row = {"k": k, "t": t, "t_over_rs": t / self.rs_nom, "E": E_k, "two_gE": rs_k, "T_H": TH, "join_max_dN": jN, "join_max_rel_dv": jv,
+               "kappa_T": rj.get("kappa_T"), "four_gE_kappa_T": rj.get("four_gE_kappa_T"), "R_t_record": rj.get("R_t"), "n_pocket_record": rj.get("n_pocket"),
+               "min_N_minus_absv": float(np.min(N - np.abs(v))), "collect": collect, "per_channel": {}}
+        t_ck = time.time()
+        for c in self.chs:
+            tc = time.time()
+            h = c.ops.h_csr(N, v); Bh = c.ops.banded(h)
+            fzc = self.fz.get(str(c.ops.kappa)) if self.frozen else None
+            if fzc is not None:
+                e, V = fzc["e"], fzc["V"]                                       # C: the one eigendecomposition of the frozen h
+            else:
+                e, V = OPS.eigh_csr(h, self.dev)
+            neg = e < 0; nneg = int(neg.sum())
+            Vneg = V[:, neg]
+            Phi = c.Phi; n0 = Phi.shape[1]
+            E_hC = c.trace_h(Bh, Phi); E_ref = float(e[neg].sum())
+            E_inv = E_hC - E_ref
+            chi_c = (c.ops.R2 > self.R_collar_abs).to(CD)[:, None]
+            E_out = float(torch.sum((Phi.conj() * (chi_c * Bh.apply(Phi))).real)) - float(torch.sum((Vneg.conj() * (chi_c * Bh.apply(Vneg))).real))
+            Bd = OPS.Banded(c.ops.hdot_csr(dN, dv, self.tau), self.dev)
+            W_hdot = c.trace_h(Bd, Phi) - c.trace_h(Bd, Vneg)
+            Gs = Phi.mH @ Phi
+            Gs.diagonal().sub_(1.0)
+            unit = float(torch.linalg.norm(Gs)); del Gs
+            c.unit_defect = max(c.unit_defect, unit)
+            # the deviation's principal pairs in h(T_k)'s halves (repairs 1, 2 in the representation; the state itself is not truncated); C: computed
+            # once at the freeze, then rotated by the frozen phases (the deviation's span is invariant under the frozen h)
+            method = "sine" if n0 == nneg else "cos+sin"
+            if fzc is not None:
+                c_mem = torch.exp(-1j * e.to(CD) * (t - fzc["t0"]))[:, None] * fzc["c0"]; half_mem = fzc["half0"]; pinfo = fzc["pinfo"]
+            else:
+                Phi_c = V.mH @ Phi
+                c_mem, half_mem, MD, lam, pinfo = CORE.principal_delta(Phi_c, neg, a.eps_form, a.eps_orth, self.dev, method=method, ledger=a.pair_ledger)
+                del Phi_c
+                if self.frozen:
+                    self.fz[str(c.ops.kappa)] = {"e": e, "V": V, "c0": c_mem.clone(), "half0": half_mem.clone(), "pinfo": pinfo, "t0": t}
+            D = V @ c_mem
+            del c_mem
+            pc = {"n0": n0, "n_neg": nneg, "E_hC": E_hC, "E_ref": E_ref, "E_inv": E_inv, "E_out": E_out, "E_inv_inside": E_inv - E_out, "W_hdot": W_hdot,
+                  "sea_unitarity_F": unit, "memory_rank": int(D.shape[1]), "principal_method": method, "sin_max": pinfo["sin_theta_max"],
+                  "dropped_pairs": pinfo["n_dropped_pairs"], "dropped_pair_ledger": pinfo["entropy_bound_dropped_pairs"], "pair_ledger": pinfo["pair_ledger"],
+                  "collar_flow_acc": c.collar_flow_acc, "cheb_K_max": c.cheb_K_max, "cheb_tail_acc": c.cheb_tail_acc}
+            F = c.F
+            if collect:
+                KD = (D - F @ (F.mH @ D)) if F.shape[1] else D
+                chi_cut = (c.ops.R2 > self.R_cut_abs).to(CD)[:, None]
+                X = chi_cut * KD
+                Gw = X.mH @ X
+                Gw = 0.5 * (Gw + Gw.mH)
+                del X
+                cand = []; gsel = []; n_unsel = 0; w_unsel = 0.0; g_unsel_max = 0.0
+                for hs in (1, -1):
+                    idx = (half_mem == hs).nonzero().ravel()
+                    if idx.numel() == 0:
+                        continue
+                    g_, U_ = torch.linalg.eigh(Gw[idx][:, idx])
+                    sel = g_ >= 1.0 - a.eps_loc
+                    n_unsel += int((~sel).sum()); w_unsel += float(g_[~sel].clamp_min(0.0).sum())
+                    if bool((~sel).any()):
+                        g_unsel_max = max(g_unsel_max, float(g_[~sel].max()))
+                    if bool(sel.any()):
+                        cand.append(KD[:, idx] @ U_[:, sel]); gsel.append(g_[sel])
+                del KD
+                bin_rows = []; Q = torch.zeros((c.ops.n2, 0), dtype=CD, device=self.dev); n_cand = 0
+                if cand:
+                    Y = torch.cat(cand, dim=1); g_all = torch.cat(gsel)
+                    n_cand = int(Y.shape[1])
+                    Y = Y / torch.linalg.norm(Y, dim=0).clamp_min(1e-300)[None, :]
+                    if c.ext is None or (t - c.ext_t) >= a.ext_every_rs * self.rs_nom - 1e-9:
+                        c.ext = None
+                        if self.dev.type == "cuda":
+                            torch.cuda.empty_cache()
+                        c.ext = exterior_shells(c.ops, h, self.R_cut_abs, TH, a.bin_TH, a.bin_max_TH, self.dev); c.ext_t = t
+                    if a.collector_mode == "shells":
+                        Yout, bin_rows = split_outgoing(c.ext, Y)
+                        no = torch.linalg.norm(Yout, dim=0) ** 2
+                        nc_ = Y.shape[1]
+                        parts = []
+                        for half_cols in (slice(0, nc_), slice(nc_, 2 * nc_)):              # per sign of the exterior Killing energy
+                            Ys = Yout[:, half_cols]; ks = no[half_cols] > a.eps_coll
+                            if bool(ks.any()):
+                                base = torch.cat([F] + parts, dim=1) if (F.shape[1] or parts) else None
+                                q_ = orthonormal_against(Ys[:, ks], base, 1e-12)
+                                if q_.shape[1]:
+                                    parts.append(q_)
+                        if parts:
+                            Q = torch.cat(parts, dim=1)
+                        del Yout
+                    else:
+                        # per half: the candidate subspace orthonormalized against the archive, the radial velocity i[h, R] diagonalized in it, its
+                        # positive directions collected (outgoing), the negative kept in the system (incoming); the shells classify the collected
+                        parts = []; n_in_dirs = 0; vel_rows = []
+                        offs = 0
+                        for blk, gb in zip(cand, gsel):
+                            nb_ = blk.shape[1]
+                            Yb = Y[:, offs: offs + nb_]; offs += nb_
+                            base = torch.cat([F] + parts, dim=1) if (F.shape[1] or parts) else None
+                            Qb = orthonormal_against(Yb, base, 1e-12)
+                            if Qb.shape[1] == 0:
+                                continue
+                            VQ = c.ops.velocity_apply(h, Qb)
+                            Wv = Qb.mH @ VQ
+                            wv, wu = torch.linalg.eigh(0.5 * (Wv + Wv.mH))
+                            pos = wv > 0
+                            n_in_dirs += int((~pos).sum())
+                            vel_rows.append({"candidates": int(Qb.shape[1]), "outgoing": int(pos.sum()), "velocity_min": float(wv.min()), "velocity_max": float(wv.max())})
+                            if bool(pos.any()):
+                                parts.append(Qb @ wu[:, pos])
+                        if parts:
+                            Q = torch.cat(parts, dim=1)
+                        pc_vel = {"velocity_split": vel_rows, "incoming_directions_kept": n_in_dirs}
+                        if Q.shape[1]:
+                            _, bin_rows = split_outgoing(c.ext, Q)
+                    del Y
+                S_old, _ = entropy_of(Phi, F)
+                Fn = torch.cat([F, Q], dim=1) if Q.shape[1] else F
+                S_new, evn = entropy_of(Phi, Fn)
+                S_vac, _ = entropy_of(Vneg, Fn)                                       # tr s(F^dagger P_- F): the archive's vacuum entropy now
+                pc["S_vac_archive"] = S_vac; pc["S_esc_minus_S_vac"] = S_new - S_vac
+                S_B, _ = entropy_of(Phi, Q) if Q.shape[1] else (0.0, None)
+                inc = 0.0; ov_max = 0.0
+                if Q.shape[1]:
+                    g1 = Q.mH @ Q
+                    g1.diagonal().sub_(1.0)
+                    inc = float(torch.linalg.norm(g1)) ** 2
+                    if F.shape[1]:
+                        ov = F.mH @ Q
+                        ov_max = float(ov.abs().max()); inc += 2.0 * float(torch.linalg.norm(ov)) ** 2
+                c.gram_F2 += inc; c.gram_max = max(c.gram_max, math.sqrt(c.gram_F2))
+                wout = ((Q.abs() ** 2) * (c.ops.R2 > self.R_cut_abs).to(RD)[:, None]).sum(dim=0) if Q.shape[1] else torch.zeros(0, dtype=RD, device=self.dev)
+                occ = self.bin_occupation(c, Q, Phi) if Q.shape[1] else []
+                n_in = sum(r_["in"] for r_ in bin_rows); n_out = sum(r_["out"] for r_ in bin_rows)
+                if self.transfer is not None and Q.shape[1]:
+                    tb = Q.mH @ self.transfer[str(c.ops.kappa)]["B"]
+                    self.transfer[str(c.ops.kappa)]["W_R"] += tb.mH @ tb
+                c.F = Fn
+                c.F_t += [t] * int(Q.shape[1]); c.F_g += [float(x) for x in wout]
+                F = c.F
+                if a.collector_mode == "velocity" and cand:
+                    pc.update(pc_vel)
+                pc.update({"candidates": n_cand, "collected": int(Q.shape[1]), "archive": int(F.shape[1]), "S_old": S_old, "S_esc": S_new, "S_B": S_B,
+                           "S_M_minus_S_Mprime": S_old - S_new, "gram_all_history_F": math.sqrt(c.gram_F2), "gram_new_vs_old_max": ov_max,
+                           "outside_weight_min": float(wout.min()) if wout.numel() else None, "outside_weight_max": float(wout.max()) if wout.numel() else None,
+                           "incoming_fraction": (n_in / (n_in + n_out)) if (n_in + n_out) > 0 else None, "bins_split": bin_rows, "bins_occupation": occ,
+                           "unselected_count": n_unsel, "unselected_weight_beyond_cut": w_unsel, "unselected_g_max": g_unsel_max,
+                           "covariance_eigs_extremes": [float(evn.min()), float(evn.max())] if evn is not None else None})
+            else:
+                S_now, _ = entropy_of(Phi, F)
+                S_vac, _ = entropy_of(Vneg, F)
+                pc.update({"S_esc": S_now, "archive": int(F.shape[1]), "collected": 0, "S_vac_archive": S_vac, "S_esc_minus_S_vac": S_now - S_vac})
+            # the energy identity and the collar identity with the archive at this clock
+            if F.shape[1]:
+                FPhi = F.mH @ Phi; FV = F.mH @ Vneg
+                KPhi = Phi - F @ FPhi; KV = Vneg - F @ FV
+                E_K = c.trace_h(Bh, KPhi) - c.trace_h(Bh, KV)
+                hF = Bh.apply(F)
+                E_F = float(torch.trace((F.mH @ hF) @ (FPhi @ FPhi.mH - FV @ FV.mH)).real)
+                E_x = 2.0 * float(torch.trace((hF.mH @ KPhi) @ FPhi.mH - (hF.mH @ KV) @ FV.mH).real)
+                del FPhi, FV, KPhi, KV, hF
+            else:
+                E_K = E_inv; E_F = 0.0; E_x = 0.0
+            pc.update({"E_K": E_K, "E_F": E_F, "E_cross": E_x, "E_remove": E_F + E_x, "M_chi": E_out - E_inv + E_K,
+                       "energy_identity_residual": E_inv - (E_K + E_F + E_x), "collar_identity_residual": E_out - (E_F + E_x) - (E_out - E_inv + E_K)})
+            # the outer root, the transfer ledger's start
+            r_t = c.outer_root(N, v)
+            pc["r_t"] = r_t
+            if self.tr_k is not None and k == self.tr_k and F.shape[1] and (self.transfer is None or str(c.ops.kappa) not in self.transfer):
+                self.start_transfer(c, Phi, F, r_t)
+            pc["seconds"] = time.time() - tc
+            row["per_channel"][str(c.ops.kappa)] = pc
+            if not self.frozen:
+                del V, e
+            del Vneg, D
+            if self.dev.type == "cuda":
+                torch.cuda.empty_cache()
+        self.finish_row(row, t_ck)
+        if a.transfer_at_peak:
+            self.transfer_peak_check(row)
+
+    def transfer_peak_check(self, row):
+        """v6c (2): a checkpoint whose weighted S_esc exceeds every earlier one restarts the ledger here (the previous one dropped)."""
+        S = row.get("S_esc_weighted") or 0.0
+        if S <= self.tr_peak_S + 1e-12 or not any(c.F is not None and c.F.shape[1] for c in self.chs):
+            return
+        self.tr_peak_S = S
+        self.transfer = None
+        for c in self.chs:
+            if c.F is not None and c.F.shape[1]:
+                self.start_transfer(c, c.Phi, c.F, row["per_channel"][str(c.ops.kappa)].get("r_t"), t0=row["t"])
+        self.transfer_epoch += 1
+        self.transfer_starts.append({"t": row["t"], "t_over_rs": row["t_over_rs"], "S_esc_weighted": S})
+        row["transfer_restart"] = True
+
+    def start_transfer(self, c, Phi, F, r_t, t0=None):
+        """P14 sec. 7's transfer ledger re-derived: the collected sector's covariance G = F^dagger C F = U diag(f) U^dagger; for the p modes
+        with the largest f(1 - f) the partner b_j = K C F u_j/(f_j(1 - f_j))^(1/2) in the retained complement (K = 1 - F F^dagger; unit norm
+        for a pure state); their weights inside r_t, between r_t and R_cut and beyond; then B is propagated with the sea and W_R accumulates
+        (Q^dagger B)^dagger (Q^dagger B) over the later blocks."""
+        a = self.a
+        A = Phi.mH @ F
+        G = A.mH @ A
+        f, U = torch.linalg.eigh(0.5 * (G + G.mH))
+        ff = (f * (1.0 - f)).clamp_min(0.0)
+        order = torch.argsort(ff, descending=True)[: a.transfer_modes]
+        order = order[ff[order] > 1e-12]
+        if order.numel() == 0:
+            return
+        Fu = F @ U[:, order]
+        CFu = Phi @ (Phi.mH @ Fu)
+        B = CFu - F @ (F.mH @ CFu)
+        B = B / torch.sqrt(ff[order]).to(CD)[None, :]
+        R2 = c.ops.R2
+        rt = r_t if r_t is not None else 0.0
+        w_in = ((B.abs() ** 2) * (R2 < rt).to(RD)[:, None]).sum(dim=0); w_mid = ((B.abs() ** 2) * ((R2 >= rt) & (R2 <= self.R_cut_abs)).to(RD)[:, None]).sum(dim=0)
+        w_out = ((B.abs() ** 2) * (R2 > self.R_cut_abs).to(RD)[:, None]).sum(dim=0)
+        if self.transfer is None:
+            self.transfer = {}
+        self.transfer[str(c.ops.kappa)] = {"B": B, "W_R": torch.zeros((B.shape[1], B.shape[1]), dtype=CD, device=self.dev), "f": [float(x) for x in f[order]],
+                                           "t0": float(t0) if t0 is not None else float(self.H.T[self.tr_k]), "norms": [float(x) for x in torch.linalg.norm(B, dim=0)],
+                                           "w_inside_rt": [float(x) for x in w_in], "w_rt_to_cut": [float(x) for x in w_mid], "w_beyond_cut": [float(x) for x in w_out]}
+        log("kappa %d: the transfer ledger starts at T/r_s %.3f with %d partner modes (f %s; their weights inside r_t %s, r_t to R_cut %s, beyond %s)" % (
+            c.ops.kappa, self.transfer[str(c.ops.kappa)]["t0"] / self.rs_nom, B.shape[1], ["%.3f" % x for x in f[order]], ["%.3f" % x for x in w_in], ["%.3f" % x for x in w_mid], ["%.3f" % x for x in w_out]))
+
+    def finish_row(self, row, t_ck):
+        a = self.a
+        wsum = lambda key: sum(c.ops.w * (row["per_channel"][str(c.ops.kappa)].get(key) or 0.0) for c in self.chs)
+        for key in ("E_inv", "E_out", "E_inv_inside", "W_hdot", "S_esc", "S_B", "S_M_minus_S_Mprime", "E_K", "E_F", "E_cross", "E_remove", "M_chi", "S_vac_archive", "S_esc_minus_S_vac",
+                    "energy_identity_residual", "collar_identity_residual", "collar_flow_acc", "dropped_pair_ledger"):
+            row[key + "_weighted"] = wsum(key)
+        rs_k = row["two_gE"]; TH = row["T_H"]
+        kT = row.get("kappa_T")
+        row["L_H_kappaT"] = continuum_comparator(self.channels, rs_k, kT / (2.0 * math.pi)) if kT else None
+        row["L_H_TH"] = continuum_comparator(self.channels, rs_k, TH)
+        recs_since = [r for r in self.records if self.last_ck is None or (self.last_ck["t"] <= r["t"] < row["t"])]
+        if self.last_ck is not None and row["t"] > self.last_ck["t"]:
+            dt = row["t"] - self.last_ck["t"]
+            flow = sum(r["collar_flow_weighted"] for r in recs_since)
+            row["L_interval"] = flow / dt
+            row["W_creation"] = (row["E_inv_inside_weighted"] - self.last_ck["E_inv_inside_weighted"]) / dt + row["L_interval"]
+            row["W_hdot_trapezoid"] = 0.5 * (row["W_hdot_weighted"] + self.last_ck["W_hdot_weighted"])
+            row["dE_inv_dt"] = (row["E_inv_weighted"] - self.last_ck["E_inv_weighted"]) / dt
+        row["L_at_t"] = recs_since[-1]["L_weighted"] if recs_since else None
+        if row.get("L_interval") is not None:
+            row["L_over_LH_kappaT"] = row["L_interval"] / row["L_H_kappaT"] if row.get("L_H_kappaT") else None
+            row["L_over_LH_TH"] = row["L_interval"] / row["L_H_TH"] if row.get("L_H_TH") else None
+        row["t_inf_collar"] = OPS.chart_retarded_time(row["t"], rs_k, self.R_collar_abs) - OPS.chart_retarded_time(self.H.T[self.k0], 2 * self.g * self.H.E[self.k0], self.R_collar_abs)
+        A = math.pi * rs_k * rs_k
+        row["levels"] = {"eta_A_over_a2": 4.0 * a.eta * A, "A_over_4G": A / self.g}
+        row["band"] = sum(c.ops.w * (c.cheb_tail_acc + c.unit_defect) for c in self.chs)
+        row["seconds"] = time.time() - t_ck
+        self.rows.append(row); self.last_ck = row; self.n_ck += 1
+        log("T/r_s %.3f (k %d; 2gE %.4f, T_H %.4e; join dN %s dv/v %s; min(N-|v|) %.4f; r_t %s): E_inv %.6e (inside the collar %.6e, beyond %.6e), W %s against "
+            "Tr[h_dot (C - P)] %s (trapezoid %s); L %s (L_H at kappa_T %s, at T_H %s; ratios %s, %s); S_esc %.6f (band %.2e; the archive's vacuum entropy %.4e, the excess %.6f) S_B %s, S(M) - S(M') %s (the archive's entropy before minus after the batch: minus the conditional entropy S(B|M)); collected %s (archive %s; "
+            "outside weight min %s; incoming fraction %s); E_remove %.6e, M_chi %.6e, the identities %.2e, %.2e; collar flow %.6e; %.0f s" % (
+                row["t_over_rs"], row["k"], rs_k, TH, _f(row["join_max_dN"], "%.2e"), _f(row["join_max_rel_dv"], "%.2e"), row["min_N_minus_absv"],
+                ", ".join("%s" % _f(row["per_channel"][str(c.ops.kappa)].get("r_t"), "%.3f") for c in self.chs),
+                row["E_inv_weighted"], row["E_inv_inside_weighted"], row["E_out_weighted"], _f(row.get("W_creation"), "%.4e"), _f(row["W_hdot_weighted"], "%.4e"),
+                _f(row.get("W_hdot_trapezoid"), "%.4e"), _f(row.get("L_interval"), "%.4e"), _f(row["L_H_kappaT"], "%.4e"), _f(row["L_H_TH"], "%.4e"),
+                _f(row.get("L_over_LH_kappaT"), "%.3f"), _f(row.get("L_over_LH_TH"), "%.3f"), row["S_esc_weighted"], row["band"], row["S_vac_archive_weighted"],
+                row["S_esc_minus_S_vac_weighted"], _f(row.get("S_B_weighted"), "%.4e"),
+                _f(row.get("S_M_minus_S_Mprime_weighted"), "%.4e"), ", ".join("%s" % row["per_channel"][str(c.ops.kappa)].get("collected") for c in self.chs),
+                ", ".join("%s" % row["per_channel"][str(c.ops.kappa)].get("archive") for c in self.chs),
+                ", ".join(_f(row["per_channel"][str(c.ops.kappa)].get("outside_weight_min"), "%.5f") for c in self.chs),
+                ", ".join(_f(row["per_channel"][str(c.ops.kappa)].get("incoming_fraction"), "%.3f") for c in self.chs),
+                row["E_remove_weighted"], row["M_chi_weighted"], row["energy_identity_residual_weighted"], row["collar_identity_residual_weighted"],
+                row["collar_flow_acc_weighted"], row["seconds"]))
+
+    # ----------------------------------------------------------------------------------------------------------- the loop
+    def propagate_transfer(self, k, dt):
+        a = self.a
+        if self.transfer is None:
+            return
+        for c in self.chs:
+            tr = self.transfer.get(str(c.ops.kappa))
+            if tr is not None:
+                N, v = self.H.fields(k)
+                Bh = c.ops.banded(c.ops.h_csr(N, v))
+                tr["B"], _, _ = propagate(Bh, tr["B"], dt, a.cheb_tol, a.chunk)
+
+    def run(self, resumed=False):
+        a = self.a
+        if not resumed:
+            if a.init_state:
+                self.load_init_state(a.init_state)
+            else:
+                self.start()
+        done = {r_["k"] for r_ in self.rows if not r_.get("frozen")}
+        k = self.k
+        while not self.frozen:
+            if k in self.ck and k not in done:
+                self.checkpoint(k); done.add(k)
+                if self.n_ck % max(1, a.save_every) == 0:
+                    self.save_state(k)
+            if k in self.save_at_k:
+                self.save_state(k, path="%s_state_at_%07.3f.pt" % (self.prefix, self.H.T[k] / self.rs_nom))
+            if self.kf is not None and k >= self.kf:
+                self.frozen = True
+                break
+            if k >= self.kend:
+                break
+            self.step_record(k)
+            self.propagate_transfer(k, self.tau)
+            k += 1; self.k = k
+            if (time.time() - T_START) / 3600.0 > a.max_wall_hours:
+                log("the wall cap: the state saved at record %d" % k)
+                self.save_state(k); self.write_outputs(final=False)
+                return
+        if self.frozen:
+            self.run_frozen()
+        self.finish()
+
+    def run_frozen(self):
+        """C (#36): h frozen at the record kf from the clock T_kf on for --freeze-duration-rs, checkpoints and collections every
+        --collect-every-rs with the one cached eigendecomposition and the phase-rotated memory; S1's drain rule: |L| below --end-flux-frac
+        of the comparator (L_H at kappa_T of the frozen record, else at T_H) for --end-window consecutive blocks after S_esc has fallen below
+        --end-entropy-frac of its peak; else the duration."""
+        a, H = self.a, self.H
+        kf = self.kf
+        every = max(1, int(round(a.collect_every_rs * self.rs_nom / self.tau)))
+        nsteps = int(round(a.freeze_duration_rs * self.rs_nom / self.tau))
+        t = float(H.T[kf])
+        log("C: h frozen at the record T/r_s %.4f (k %d) for %.1f r_s (%d steps of tau %g), collection every %d steps; propagation %s" % (
+            t / self.rs_nom, kf, a.freeze_duration_rs, nsteps, self.tau, every, a.frozen_prop))
+        self.t_freeze = t
+        self.refl = self.reflection_clock(kf)
+        if self.refl is not None:
+            log("C: the chain end's reflection clock (v6c (4)): %.1f r_s after the freeze (out %.1f r_s, in %.1f r_s, R_collar %.1f r_s to the chain end %.1f r_s; |v|/N at R_collar %.4f)" % (
+                self.refl["T_refl_rs"], self.refl["t_out_rs"], self.refl["t_in_rs"], self.refl["R_from_rs"], self.refl["R_end_rs"], self.refl["s_at_R_collar"]))
+        self.checkpoint(kf, t=t, collect_override=False)
+        self.rows[-1]["frozen"] = True
+        self.rows[-1]["after_reflection_clock"] = False
+        eig = (a.frozen_prop == "eig")
+        if eig:
+            self.frozen_eig_init(t)
+        t_last = t
+        for j in range(1, nsteps + 1):
+            t += self.tau
+            if eig:
+                if j % every == 0 or j == nsteps:
+                    self.frozen_materialize(kf, t_last, t); t_last = t
+            else:
+                self.step_record(kf, t0=t - self.tau, t1=t)
+                self.propagate_transfer(kf, self.tau)
+            self.t_now = t
+            if j % every == 0:
+                n_before = {str(c.ops.kappa): int(c.F.shape[1]) for c in self.chs}
+                epoch = self.transfer_epoch
+                self.checkpoint(kf, t=t, collect_override=True)
+                if eig:
+                    self.frozen_eig_update(t, n_before, epoch)
+                row = self.rows[-1]; row["frozen"] = True
+                row["after_reflection_clock"] = bool(self.refl is not None and (t - self.t_freeze) > self.refl["T_refl"])
+                S = row["S_esc_weighted"]; self.S_peak = max(self.S_peak, S)
+                comp = row.get("L_H_kappaT") or row.get("L_H_TH")
+                L = row.get("L_interval")
+                armed = self.S_peak > 0 and S < a.end_entropy_frac * self.S_peak
+                small = (L is not None and comp is not None and abs(L) < a.end_flux_frac * comp)
+                self.end_count = (self.end_count + 1) if (armed and small) else 0
+                row["end_rule"] = {"armed": bool(armed), "small_flux": bool(small), "count": self.end_count, "S_peak": self.S_peak}
+                if self.end_count >= a.end_window:
+                    self.end_reason = "drained (S1's rule: %d blocks with |L| below %g of the comparator after S_esc below %g of its peak)" % (a.end_window, a.end_flux_frac, a.end_entropy_frac)
+                    break
+            if (time.time() - T_START) / 3600.0 > a.max_wall_hours:
+                self.end_reason = "the wall cap"
+                if eig and t_last != t:
+                    self.frozen_materialize(kf, t_last, t); t_last = t
+                break
+        if eig and t_last != t:
+            self.frozen_materialize(kf, t_last, t); t_last = t
+        if self.end_reason is None:
+            self.end_reason = "the duration (%.1f r_s) reached without the drain" % a.freeze_duration_rs
+        log("C: the frozen control ends: %s" % self.end_reason)
+
+    def reflection_clock(self, k):
+        """v6c (4): the continuum light round trip R_collar -> the chain end -> R_collar in record k's site fields (trapezoid over the sites)."""
+        N, v = self.H.fields(k)
+        N = np.asarray(N, float); v = np.asarray(v, float); R = np.asarray(self.H.R, float)
+        sel = R >= self.R_collar_abs
+        if sel.sum() < 2:
+            return None
+        cp = N[sel] - np.abs(v[sel]); cm = N[sel] + np.abs(v[sel]); Rs = R[sel]
+        if np.any(cp <= 0):
+            return None
+        trap = lambda f: float(np.sum(0.5 * (f[1:] + f[:-1]) * np.diff(Rs)))
+        t_out = trap(1.0 / cp); t_in = trap(1.0 / cm)
+        return {"T_refl": t_out + t_in, "T_refl_rs": (t_out + t_in) / self.rs_nom, "t_out_rs": t_out / self.rs_nom, "t_in_rs": t_in / self.rs_nom,
+                "R_from_rs": float(Rs[0]) / self.rs_nom, "R_end_rs": float(Rs[-1]) / self.rs_nom, "s_at_R_collar": float(abs(v[sel][0]) / N[sel][0]),
+                "label": "the continuum light round trip R_collar -> the chain end -> R_collar in the frozen record's fields (outgoing N - |v|, ingoing N + |v|); "
+                         "a frozen row after it may carry the chain end's reflection in its collar readouts"}
+
+    def _frozen_ops(self, c, kf):
+        N, v = self.H.fields(kf)
+        h = c.ops.h_csr(N, v)
+        return h, c.ops.banded(h), (c.ops.R2 > self.R_collar_abs).to(CD)[:, None]
+
+    def frozen_eig_init(self, t):
+        """v6c (3): the sea, the archive and the ledger's partner modes in the frozen h's eigenbasis, referred to the freeze clock fz t0."""
+        for c in self.chs:
+            fz = self.fz[str(c.ops.kappa)]; V = fz["V"]
+            ph = torch.exp(1j * fz["e"].to(CD) * (t - fz["t0"]))[:, None]
+            c.Phi_eig = ph * (V.mH @ c.Phi)
+            c.F_eig = (ph * (V.mH @ c.F)) if c.F.shape[1] else torch.zeros((c.ops.n2, 0), dtype=CD, device=self.dev)
+            h, Bh, chi = self._frozen_ops(c, self.kf)
+            c.Eo_last = float(torch.sum((c.Phi.conj() * (chi * Bh.apply(c.Phi))).real))
+            tr = (self.transfer or {}).get(str(c.ops.kappa))
+            if tr is not None:
+                tr["B_eig"] = ph * (V.mH @ tr["B"])
+        log("C: the frozen eigenbasis carries the sea (%s columns) and the archives (%s modes) by exact phases from the freeze clock" % (
+            ", ".join(str(int(c.Phi.shape[1])) for c in self.chs), ", ".join(str(int(c.F.shape[1])) for c in self.chs)))
+
+    def frozen_materialize(self, kf, ta, tb):
+        """v6c (3): Phi, F and the ledger's B at tb from the eigenbasis; the collar energy flow over [ta, tb] (Re tr[C chi h] at tb minus at ta,
+        the per-record flows' telescoped sum on a frozen h) and the collar current at tb, as one interval record."""
+        rec = {"k": kf, "t": ta, "t_end": tb, "frozen_interval": True, "per_channel": {}}
+        for c in self.chs:
+            fz = self.fz[str(c.ops.kappa)]; V = fz["V"]
+            ph = torch.exp(-1j * fz["e"].to(CD) * (tb - fz["t0"]))[:, None]
+            c.Phi = V @ (ph * c.Phi_eig)
+            if c.F_eig.shape[1]:
+                c.F = V @ (ph * c.F_eig)
+            tr = (self.transfer or {}).get(str(c.ops.kappa))
+            if tr is not None and "B_eig" in tr:
+                tr["B"] = V @ (ph * tr["B_eig"])
+            h, Bh, chi = self._frozen_ops(c, kf)
+            Eo1 = float(torch.sum((c.Phi.conj() * (chi * Bh.apply(c.Phi))).real))
+            J = OPS.Banded(OPS.current_out_csr(h, c.ops.R, self.R_collar_abs), self.dev)
+            L1 = float(torch.sum((c.Phi.conj() * J.apply(c.Phi)).real))
+            del J
+            flow = Eo1 - c.Eo_last; c.Eo_last = Eo1
+            c.collar_flow_acc += flow
+            rec["per_channel"][str(c.ops.kappa)] = {"collar_flow": flow, "L_at_t": L1, "L_clock": "the interval's end", "cheb_K": 0, "cheb_tail": 0.0}
+        rec["collar_flow_weighted"] = sum(c.ops.w * rec["per_channel"][str(c.ops.kappa)]["collar_flow"] for c in self.chs)
+        rec["L_weighted"] = sum(c.ops.w * rec["per_channel"][str(c.ops.kappa)]["L_at_t"] for c in self.chs)
+        rec["sub_steps"] = 0
+        self.records.append(rec)
+        if self.dev.type == "cuda":
+            torch.cuda.empty_cache()
+
+    def frozen_eig_update(self, t, n_before, epoch):
+        """v6c (3): after a frozen checkpoint, its newly collected modes (and a restarted ledger's B) enter the eigenbasis at the clock t."""
+        for c in self.chs:
+            fz = self.fz[str(c.ops.kappa)]; V = fz["V"]
+            ph = torch.exp(1j * fz["e"].to(CD) * (t - fz["t0"]))[:, None]
+            m0 = n_before[str(c.ops.kappa)]
+            if int(c.F.shape[1]) > m0:
+                c.F_eig = torch.cat([c.F_eig, ph * (V.mH @ c.F[:, m0:])], dim=1)
+            tr = (self.transfer or {}).get(str(c.ops.kappa))
+            if tr is not None and (self.transfer_epoch != epoch or "B_eig" not in tr):
+                tr["B_eig"] = ph * (V.mH @ tr["B"])
+
+    def load_init_state(self, path):
+        """C: start from run A's saved state (the sea, the archive, the accumulators) at its record; the rows and records start empty."""
+        st = torch.load(path, map_location="cpu", weights_only=False)
+        self.k = st["k"]; self.k0 = st["k"]; self.k_init = st["k"]
+        for c in self.chs:
+            s = st["channels"][str(c.ops.kappa)]
+            c.Phi = s["Phi"].to(self.dev); c.F = s["F"].to(self.dev); c.F_t = list(s["F_t"]); c.F_g = list(s["F_g"])
+            c.cheb_K_max = s["cheb_K_max"]; c.cheb_tail_acc = s["cheb_tail_acc"]; c.collar_flow_acc = s["collar_flow_acc"]
+            c.gram_F2 = s["gram_F2"]; c.gram_max = s["gram_max"]; c.unit_defect = s["unit_defect"]
+        self.min_N_minus_absv_T0 = st.get("min_N_minus_absv_T0")
+        log("C: started from the saved state %s at record %d (T/r_s %.4f): archives %s" % (path, self.k, self.H.T[self.k] / self.rs_nom,
+                                                                                            ", ".join("kappa %d %d modes" % (c.ops.kappa, c.F.shape[1]) for c in self.chs)))
+
+    def save_state(self, k, path=None):
+        st = {"k": k, "rows": self.rows, "records": self.records, "n_ck": self.n_ck, "last_ck": self.last_ck,
+              "min_N_minus_absv_T0": getattr(self, "min_N_minus_absv_T0", None), "channels": {}}
+        for c in self.chs:
+            st["channels"][str(c.ops.kappa)] = {"Phi": c.Phi.cpu(), "F": c.F.cpu(), "F_t": c.F_t, "F_g": c.F_g, "cheb_K_max": c.cheb_K_max,
+                                                 "cheb_tail_acc": c.cheb_tail_acc, "collar_flow_acc": c.collar_flow_acc, "gram_F2": c.gram_F2,
+                                                 "gram_max": c.gram_max, "unit_defect": c.unit_defect}
+        if self.transfer is not None:
+            st["transfer"] = {k_: {kk: (vv.cpu() if isinstance(vv, torch.Tensor) else vv) for kk, vv in tr.items() if kk != "B_eig"} for k_, tr in self.transfer.items()}
+        st["v6c"] = {"tr_peak_S": self.tr_peak_S, "transfer_starts": self.transfer_starts, "transfer_epoch": self.transfer_epoch}
+        dest = path or (self.prefix + "_state.pt")
+        tmp = dest + ".tmp"
+        torch.save(st, tmp)
+        os.replace(tmp, dest)
+        self.write_outputs(final=False)
+        log("state saved at record %d (T/r_s %.3f)" % (k, self.H.T[min(k, len(self.H) - 1)] / self.rs_nom))
+
+    def load_state(self):
+        st = torch.load(self.prefix + "_state.pt", map_location="cpu", weights_only=False)
+        self.k = st["k"]; self.rows = st["rows"]; self.records = st["records"]; self.n_ck = st["n_ck"]; self.last_ck = st["last_ck"]
+        self.min_N_minus_absv_T0 = st.get("min_N_minus_absv_T0")
+        for c in self.chs:
+            s = st["channels"][str(c.ops.kappa)]
+            c.Phi = s["Phi"].to(self.dev); c.F = s["F"].to(self.dev); c.F_t = s["F_t"]; c.F_g = s["F_g"]
+            c.cheb_K_max = s["cheb_K_max"]; c.cheb_tail_acc = s["cheb_tail_acc"]; c.collar_flow_acc = s["collar_flow_acc"]
+            c.gram_F2 = s["gram_F2"]; c.gram_max = s["gram_max"]; c.unit_defect = s["unit_defect"]
+        if st.get("transfer"):
+            self.transfer = {k_: {kk: (vv.to(self.dev) if isinstance(vv, torch.Tensor) else vv) for kk, vv in tr.items()} for k_, tr in st["transfer"].items()}
+        v6c = st.get("v6c") or {}
+        self.tr_peak_S = v6c.get("tr_peak_S", 0.0); self.transfer_starts = v6c.get("transfer_starts", []); self.transfer_epoch = v6c.get("transfer_epoch", 0)
+        log("resumed at record %d (T/r_s %.3f), %d checkpoints done" % (self.k, self.H.T[self.k] / self.rs_nom, len(self.rows)))
+
+    def finish(self):
+        a = self.a
+        if self.transfer is not None:
+            for c in self.chs:
+                tr = self.transfer.get(str(c.ops.kappa))
+                if tr is None:
+                    continue
+                B = tr["B"]; F = c.F
+                TK = B - F @ (F.mH @ B)
+                TT = TK.mH @ TK
+                WR = tr["W_R"]
+                p = B.shape[1]
+                I_ = torch.eye(p, dtype=CD, device=self.dev)
+                WH = I_ - TT - WR
+                tr["end"] = {"t_end": float(self.t_now) if (self.frozen and self.t_now is not None) else float(self.H.T[self.k]), "diag_TK_TK": [float(x) for x in torch.diagonal(TT).real], "diag_W_R": [float(x) for x in torch.diagonal(WR).real],
+                             "diag_W_H": [float(x) for x in torch.diagonal(WH).real], "trace_W_R_over_p": float(torch.trace(WR).real) / p,
+                             "identity_residual_F": float(torch.linalg.norm(WH)), "label": "T_K^dagger T_K + W_R + W_H = I_p; W_H is the residual of the identity here"}
+                log("kappa %d: the transfer ledger at the end: tr W_R/p %.4f, diag W_R %s, diag T_K^dagger T_K %s, ||W_H||_F %.3e" % (
+                    c.ops.kappa, tr["end"]["trace_W_R_over_p"], ["%.3f" % x for x in tr["end"]["diag_W_R"]], ["%.3f" % x for x in tr["end"]["diag_TK_TK"]],
+                    tr["end"]["identity_residual_F"]))
+        last = self.rows[-1] if self.rows else {}
+        E_rad0 = last.get("collar_flow_acc_weighted")
+        self.label = LABEL_A % (("%.4e (the collar flow over E at the end)" % (E_rad0 / last["E"])) if (E_rad0 is not None and last.get("E")) else "-")
+        if self.kf is not None:
+            self.label += "; C: h frozen at T/r_s %.4f, %s" % (self.H.T[self.kf] / self.rs_nom, self.end_reason)
+        self.write_outputs(final=True)
+        log("done: %s" % self.label)
+
+    def write_outputs(self, final):
+        a = self.a
+        rows = self.rows
+        summary = {"code": "page_history_v6c.py", "settings": vars(a), "final": final, "label": self.label or (LABEL_A % "-"),
+                   "transfer_starts": self.transfer_starts, "reflection_clock": self.refl, "frozen_prop": a.frozen_prop if self.kf is not None else None,
+                   "label_v6c": "the greybody table cached (the numbers unchanged); --transfer-at-peak restarts the ledger at each new S_esc maximum; C's propagation in the frozen h's eigenbasis by exact phases (one eigendecomposition), the collar flow per checkpoint interval and the collar current at the checkpoint clock; the reflection clock printed",
+                   "label_d15": "no mutual information computed or printed (#41 D15); S(M) - S(M') = S_old - S_new is minus the conditional entropy S(B|M) of each collected batch given the archive", "history": {
+            "label": self.H.label, "records": len(self.H), "tau": self.tau, "ell": self.H.ell, "g": self.g, "rs_nominal": self.rs_nom, "engine_sites": self.H.ne,
+            "T_start": float(self.H.T[self.k0]), "T_end": float(self.H.T[self.kend]), "min_N_minus_absv_T0": getattr(self, "min_N_minus_absv_T0", None)},
+            "rows": rows, "records": self.records, "end_reason": self.end_reason, "transfer": ({k_: {kk: vv for kk, vv in tr.items() if kk not in ("B", "W_R", "B_eig")} for k_, tr in self.transfer.items()} if self.transfer else None),
+            "archive": {str(c.ops.kappa): {"modes": int(c.F.shape[1]) if c.F is not None else 0, "t": c.F_t, "outside_weight": c.F_g, "gram_all_history_max": c.gram_max,
+                                           "sea_unitarity_max": c.unit_defect, "cheb_K_max": c.cheb_K_max, "cheb_tail_acc": c.cheb_tail_acc} for c in self.chs},
+            "wall_s": time.time() - T_START}
+        with open(self.prefix + "_summary.json", "w") as f:
+            json.dump(summary, f, default=lambda o: float(o) if isinstance(o, (np.floating, np.integer)) else str(o), indent=1)
+        L = ["# %s: Computation A (%s)\n" % (a.tag, "final" if final else "running"), "Label: **%s**.\n" % summary["label"],
+             "History: %s; %d records, tau %g, ell %s, g %g, r_s nominal %g, the engine's %d sites, the chain %d sites; channels %s (weights 16 kappa); R_cut %g r_s, collar %g r_s; eps_loc %g, eps_form %g, the pair ledger %s; collection every %g r_s.\n" % (
+                 self.H.label, len(self.H), self.tau, self.H.ell, self.g, self.rs_nom, self.H.ne, self.H.nsites, self.channels, a.R_cut_rs, a.R_collar_rs, a.eps_loc, a.eps_form,
+                 a.pair_ledger, a.collect_every_rs),
+             "| T/r_s | 2gE | E_inv | inside the collar | beyond | W (creation) | Tr[h_dot (C - P)] | L (interval) | L_H(kappa_T) | L_H(T_H) | L/L_H(kappa_T) | L/L_H(T_H) | S_esc | band | S_vac (archive) | S_esc - S_vac | S_B | S(M) - S(M') | collected | archive | outside weight min | incoming fraction | E_remove | M_chi | energy identity | collar identity | join dN | join dv/v |",
+             "|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
+        for r in rows:
+            pcs = [r["per_channel"][str(c.ops.kappa)] for c in self.chs]
+            L.append("| %.3f | %.4f | %.6e | %.6e | %.6e | %s | %.4e | %s | %s | %s | %s | %s | %.6f | %.2e | %.4e | %.6f | %s | %s | %s | %s | %s | %s | %.6e | %.6e | %.2e | %.2e | %s | %s |" % (
+                r["t_over_rs"], r["two_gE"], r["E_inv_weighted"], r["E_inv_inside_weighted"], r["E_out_weighted"], _f(r.get("W_creation"), "%.4e"), r["W_hdot_weighted"],
+                _f(r.get("L_interval"), "%.4e"), _f(r.get("L_H_kappaT"), "%.4e"), _f(r.get("L_H_TH"), "%.4e"), _f(r.get("L_over_LH_kappaT"), "%.3f"), _f(r.get("L_over_LH_TH"), "%.3f"),
+                r["S_esc_weighted"], r["band"], r["S_vac_archive_weighted"], r["S_esc_minus_S_vac_weighted"], _f(r.get("S_B_weighted"), "%.4e"), _f(r.get("S_M_minus_S_Mprime_weighted"), "%.4e"), ", ".join(str(p.get("collected")) for p in pcs),
+                ", ".join(str(p.get("archive")) for p in pcs), ", ".join(_f(p.get("outside_weight_min"), "%.5f") for p in pcs), ", ".join(_f(p.get("incoming_fraction"), "%.3f") for p in pcs),
+                r["E_remove_weighted"], r["M_chi_weighted"], r["energy_identity_residual_weighted"], r["collar_identity_residual_weighted"], _f(r.get("join_max_dN"), "%.2e"),
+                _f(r.get("join_max_rel_dv"), "%.2e")))
+        with open(self.prefix + "_tables.md", "w") as f:
+            f.write("\n".join(L) + "\n")
+
+
+def main(argv=None):
+    a = parse(argv)
+    run = HistRun(a)
+    if a.resume and os.path.exists(run.prefix + "_state.pt"):
+        run.load_state()
+        run.run(resumed=True)
+    else:
+        run.run()
+
+
+if __name__ == "__main__":
+    main()

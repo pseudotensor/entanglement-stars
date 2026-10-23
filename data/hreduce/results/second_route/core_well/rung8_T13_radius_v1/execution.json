@@ -1,0 +1,55 @@
+{
+  "status": "finished",
+  "purpose": "Task 3 one missing rung-eight T13 half-number radius",
+  "producer_sha256": "5e72b48a98c1c1d92075f09c8de5d192ed4d98b19645d8fb2a076c95b22a5024",
+  "wrapper_sha256": "c6cfb13b8c954ae0b044d280da759e6798db10c6bd3340f471a9e6391f92d6c3",
+  "command": [
+    "timeout",
+    "--foreground",
+    "-s",
+    "KILL",
+    "180s",
+    "nice",
+    "-n",
+    "10",
+    "taskset",
+    "-c",
+    "0,1,2,3",
+    "<internal>/python",
+    "<internal>/rung8_T13_radius_v1.py"
+  ],
+  "wrapper_pid": 650005,
+  "environment_settings": {
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4",
+    "NUMEXPR_NUM_THREADS": "4",
+    "VECLIB_MAXIMUM_THREADS": "4",
+    "BLIS_NUM_THREADS": "4",
+    "CUDA_VISIBLE_DEVICES": "",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "resources": {
+    "wall_seconds": 180,
+    "cpu_seconds": 720,
+    "threads": 4,
+    "address_space_bytes": 4294967296,
+    "internal_deadline_seconds": 160
+  },
+  "child_pid": 650037,
+  "exit_code": 0,
+  "elapsed_seconds": 93.63084826990962,
+  "maximum_child_rss_kib": 473800,
+  "rung8_T13_radius_result.json": {
+    "size": 21430,
+    "sha256": "4825a6aea81396318a86b4c9a049475bf6850d4aefffc542e2c9e98b7e7c59d1"
+  },
+  "stdout.log": {
+    "size": 119,
+    "sha256": "95ab520bedde8810384d6b8fd60f3236c0f1227708d36ba6b201e4dc9ad8105e"
+  },
+  "stderr.log": {
+    "size": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

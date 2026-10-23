@@ -1,0 +1,55 @@
+{
+  "status": "finished",
+  "purpose": "Task 3 phase A remaining allocation after input-only failure",
+  "producer_sha256": "a7c9fd8a2d27216d47330ddbbec5fdad786ec8970996e5ac2949e206da06cc83",
+  "wrapper_sha256": "653cd619403ea6dbf4bc9e0bb6a77d52e352f58db813b3b21b0a26d153ab3266",
+  "command": [
+    "timeout",
+    "--foreground",
+    "-s",
+    "KILL",
+    "299s",
+    "nice",
+    "-n",
+    "10",
+    "taskset",
+    "-c",
+    "0,1,2,3",
+    "<internal>/python",
+    "<internal>/finish_core_profiles_relocated_v2.py"
+  ],
+  "wrapper_pid": 3884780,
+  "environment_settings": {
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4",
+    "NUMEXPR_NUM_THREADS": "4",
+    "VECLIB_MAXIMUM_THREADS": "4",
+    "BLIS_NUM_THREADS": "4",
+    "CUDA_VISIBLE_DEVICES": "",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "resources": {
+    "wall_seconds": 299,
+    "cpu_seconds": 1196,
+    "threads": 4,
+    "address_space_bytes": 4294967296,
+    "internal_deadline_seconds": 279
+  },
+  "child_pid": 3884790,
+  "exit_code": 0,
+  "elapsed_seconds": 134.56951662153006,
+  "maximum_child_rss_kib": 483248,
+  "core_well_profiles_v1.json": {
+    "size": 90547,
+    "sha256": "859e538c30e0f92622efee0c8009b6c2b749edc372b5a14a2deb0d26280b5246"
+  },
+  "stdout.log": {
+    "size": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stderr.log": {
+    "size": 233,
+    "sha256": "a46360aff8d68bedea198d08377e037fc1385dc24d6af85632426ec46047e6ca"
+  }
+}

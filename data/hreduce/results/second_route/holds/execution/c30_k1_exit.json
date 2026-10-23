@@ -1,0 +1,34 @@
+{
+  "case": "c30_k1",
+  "status": "completed",
+  "command": [
+    "timeout",
+    "-s",
+    "TERM",
+    "-k",
+    "2s",
+    "300s",
+    "nice",
+    "-n",
+    "10",
+    "<internal>/python",
+    "<internal>/hold_part_a.py",
+    "--case",
+    "c30_k1"
+  ],
+  "inherited_code_pins": {
+    "hold_part_a.py": "ed7a3c3c03126fa9e98cef032a578679de0faf19e861b799249693af5abf37b6",
+    "hold_part_a_io.py": "b768fc14f5870481999d98924771da94a5dde188625c7a0b30256f5645e1cadc",
+    "hold_part_a_assess.py": "6aa3f5a3973ff51e6ac5baf4079cc7d93bcc7dd2519f02aa16decf69981cb4d6"
+  },
+  "memory_limit_bytes": 17179869184,
+  "numerical_threads": 1,
+  "cpu_only": true,
+  "started_unix": 1792307114.2232497,
+  "runner_sha256": "3207a661206d8036ce5c685acc65797d58179d60eedede9d6985eb0abee46508",
+  "returncode": 0,
+  "elapsed_seconds": 108.89918747916818,
+  "maximum_child_rss_kib": 8419696,
+  "stdout": "",
+  "stderr": ""
+}

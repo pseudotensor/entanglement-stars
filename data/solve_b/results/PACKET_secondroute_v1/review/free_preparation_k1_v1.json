@@ -1,0 +1,1017 @@
+{
+  "free_projector": {
+    "residual_frobenius": 2.5036620549150367e-12,
+    "orthogonality_frobenius": 3.721975910967035e-12,
+    "isometry_tolerance": 5.820766091346741e-11,
+    "edge": 1.2092061703139074,
+    "edge_allowance": 7.004298292233325e-12,
+    "norm_estimate": 1.2092061703209116,
+    "nearest_zero": 0.2000024848459049,
+    "negative_count": 2048,
+    "positive_count": 2048,
+    "gap_consistent_with_mass": true,
+    "pairing_max_defect": 2.914335439641036e-15,
+    "interval_certificate": false,
+    "coarse_bound": 2.2,
+    "seconds": 79.77848603576422
+  },
+  "preparation": {
+    "kappa": 1,
+    "labels": [
+      [
+        "amplitude",
+        "centre",
+        -0.45
+      ],
+      [
+        "amplitude",
+        "centre",
+        -0.3
+      ],
+      [
+        "amplitude",
+        "centre",
+        0.3
+      ],
+      [
+        "amplitude",
+        "centre",
+        0.45
+      ],
+      [
+        "amplitude",
+        "inner",
+        -0.45
+      ],
+      [
+        "amplitude",
+        "inner",
+        -0.3
+      ],
+      [
+        "amplitude",
+        "inner",
+        0.3
+      ],
+      [
+        "amplitude",
+        "inner",
+        0.45
+      ],
+      [
+        "amplitude",
+        "mid",
+        -0.45
+      ],
+      [
+        "amplitude",
+        "mid",
+        -0.3
+      ],
+      [
+        "amplitude",
+        "mid",
+        0.3
+      ],
+      [
+        "amplitude",
+        "mid",
+        0.45
+      ],
+      [
+        "amplitude",
+        "outer",
+        -0.45
+      ],
+      [
+        "amplitude",
+        "outer",
+        -0.3
+      ],
+      [
+        "amplitude",
+        "outer",
+        0.3
+      ],
+      [
+        "amplitude",
+        "outer",
+        0.45
+      ],
+      [
+        "probability",
+        "centre",
+        -0.45
+      ],
+      [
+        "probability",
+        "centre",
+        -0.3
+      ],
+      [
+        "probability",
+        "centre",
+        0.3
+      ],
+      [
+        "probability",
+        "centre",
+        0.45
+      ],
+      [
+        "probability",
+        "inner",
+        -0.45
+      ],
+      [
+        "probability",
+        "inner",
+        -0.3
+      ],
+      [
+        "probability",
+        "inner",
+        0.3
+      ],
+      [
+        "probability",
+        "inner",
+        0.45
+      ],
+      [
+        "probability",
+        "mid",
+        -0.45
+      ],
+      [
+        "probability",
+        "mid",
+        -0.3
+      ],
+      [
+        "probability",
+        "mid",
+        0.3
+      ],
+      [
+        "probability",
+        "mid",
+        0.45
+      ],
+      [
+        "probability",
+        "outer",
+        -0.45
+      ],
+      [
+        "probability",
+        "outer",
+        -0.3
+      ],
+      [
+        "probability",
+        "outer",
+        0.3
+      ],
+      [
+        "probability",
+        "outer",
+        0.45
+      ]
+    ],
+    "packets": [
+      {
+        "convention": "amplitude",
+        "site_label": "centre",
+        "centre": 4.0,
+        "momentum": -0.45,
+        "unprojected_norm": 6.332904372426835,
+        "retained_fraction": 0.9108251416576727,
+        "projected_norm": 0.9999999999999998,
+        "negative_band_weight": 7.827139164615934e-29,
+        "rounded_centre": 4.0,
+        "rounded_overlap_real": 0.9999999999999998,
+        "rounded_overlap_imag": 0.0,
+        "placement_pure_distance": 2.2717705276242524e-16,
+        "placement_distance_diagnostics": {
+          "left_norm": 0.9999999999999998,
+          "right_norm": 0.9999999999999998,
+          "overlap_real": 1.0000000000000002,
+          "overlap_imag": 0.0,
+          "raw_radicand": -4.440892098500626e-16,
+          "raw_roundoff_clipped": true,
+          "raw_derived_distance": 0.0,
+          "stable_squared_raw": 5.160941330182173e-32,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 2.2717705276242524e-16
+        }
+      },
+      {
+        "convention": "amplitude",
+        "site_label": "centre",
+        "centre": 4.0,
+        "momentum": -0.3,
+        "unprojected_norm": 6.332904372426835,
+        "retained_fraction": 0.8749252166656597,
+        "projected_norm": 0.9999999999999998,
+        "negative_band_weight": 6.596483680725713e-29,
+        "rounded_centre": 4.0,
+        "rounded_overlap_real": 0.9999999999999998,
+        "rounded_overlap_imag": 0.0,
+        "placement_pure_distance": 4.477558821037636e-16,
+        "placement_distance_diagnostics": {
+          "left_norm": 0.9999999999999998,
+          "right_norm": 0.9999999999999998,
+          "overlap_real": 1.0000000000000004,
+          "overlap_imag": 0.0,
+          "raw_radicand": -8.881784197001252e-16,
+          "raw_roundoff_clipped": true,
+          "raw_derived_distance": 0.0,
+          "stable_squared_raw": 2.004853299585195e-31,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 4.477558821037636e-16
+        }
+      },
+      {
+        "convention": "amplitude",
+        "site_label": "centre",
+        "centre": 4.0,
+        "momentum": 0.3,
+        "unprojected_norm": 6.332904372426835,
+        "retained_fraction": 0.8749252166656597,
+        "projected_norm": 0.9999999999999998,
+        "negative_band_weight": 6.596483680725713e-29,
+        "rounded_centre": 4.0,
+        "rounded_overlap_real": 0.9999999999999998,
+        "rounded_overlap_imag": 0.0,
+        "placement_pure_distance": 4.477558821037636e-16,
+        "placement_distance_diagnostics": {
+          "left_norm": 0.9999999999999998,
+          "right_norm": 0.9999999999999998,
+          "overlap_real": 1.0000000000000004,
+          "overlap_imag": 0.0,
+          "raw_radicand": -8.881784197001252e-16,
+          "raw_roundoff_clipped": true,
+          "raw_derived_distance": 0.0,
+          "stable_squared_raw": 2.004853299585195e-31,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 4.477558821037636e-16
+        }
+      },
+      {
+        "convention": "amplitude",
+        "site_label": "centre",
+        "centre": 4.0,
+        "momentum": 0.45,
+        "unprojected_norm": 6.332904372426835,
+        "retained_fraction": 0.9108251416576727,
+        "projected_norm": 0.9999999999999998,
+        "negative_band_weight": 7.827139164615934e-29,
+        "rounded_centre": 4.0,
+        "rounded_overlap_real": 0.9999999999999998,
+        "rounded_overlap_imag": 0.0,
+        "placement_pure_distance": 2.2717705276242524e-16,
+        "placement_distance_diagnostics": {
+          "left_norm": 0.9999999999999998,
+          "right_norm": 0.9999999999999998,
+          "overlap_real": 1.0000000000000002,
+          "overlap_imag": 0.0,
+          "raw_radicand": -4.440892098500626e-16,
+          "raw_roundoff_clipped": true,
+          "raw_derived_distance": 0.0,
+          "stable_squared_raw": 5.160941330182173e-32,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 2.2717705276242524e-16
+        }
+      },
+      {
+        "convention": "amplitude",
+        "site_label": "inner",
+        "centre": 23.239359818215107,
+        "momentum": -0.45,
+        "unprojected_norm": 7.08981540362206,
+        "retained_fraction": 0.9868622803586096,
+        "projected_norm": 1.0,
+        "negative_band_weight": 3.175592935040188e-29,
+        "rounded_centre": 23.24,
+        "rounded_overlap_real": 0.9999999516788411,
+        "rounded_overlap_imag": 0.0002903961676330993,
+        "placement_pure_distance": 0.00011096116961104427,
+        "placement_distance_diagnostics": {
+          "left_norm": 1.0,
+          "right_norm": 0.9999999999999999,
+          "overlap_real": 0.9999999516788413,
+          "overlap_imag": 0.0002903961676330941,
+          "raw_radicand": 1.2312381114654158e-08,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 0.00011096116940017421,
+          "stable_squared_raw": 1.2312381161450934e-08,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 0.00011096116961104427
+        }
+      },
+      {
+        "convention": "amplitude",
+        "site_label": "inner",
+        "centre": 23.239359818215107,
+        "momentum": -0.3,
+        "unprojected_norm": 7.089815403622062,
+        "retained_fraction": 0.964166173865508,
+        "projected_norm": 1.0,
+        "negative_band_weight": 2.3217301964758235e-29,
+        "rounded_centre": 23.24,
+        "rounded_overlap_real": 0.999999974554371,
+        "rounded_overlap_imag": 0.00019793769336808997,
+        "placement_pure_distance": 0.00010822165731200221,
+        "placement_distance_diagnostics": {
+          "left_norm": 1.0,
+          "right_norm": 1.0000000000000002,
+          "overlap_real": 0.999999974554371,
+          "overlap_imag": 0.00019793769336808997,
+          "raw_radicand": 1.1711926983792864e-08,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 0.0001082216567226397,
+          "stable_squared_raw": 1.1711927111356441e-08,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 0.00010822165731200221
+        }
+      },
+      {
+        "convention": "amplitude",
+        "site_label": "inner",
+        "centre": 23.239359818215107,
+        "momentum": 0.3,
+        "unprojected_norm": 7.089815403622062,
+        "retained_fraction": 0.964166173865508,
+        "projected_norm": 1.0,
+        "negative_band_weight": 2.3217301964758235e-29,
+        "rounded_centre": 23.24,
+        "rounded_overlap_real": 0.999999974554371,
+        "rounded_overlap_imag": -0.00019793769336808997,
+        "placement_pure_distance": 0.00010822165731200221,
+        "placement_distance_diagnostics": {
+          "left_norm": 1.0,
+          "right_norm": 1.0000000000000002,
+          "overlap_real": 0.999999974554371,
+          "overlap_imag": -0.00019793769336808997,
+          "raw_radicand": 1.1711926983792864e-08,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 0.0001082216567226397,
+          "stable_squared_raw": 1.1711927111356441e-08,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 0.00010822165731200221
+        }
+      },
+      {
+        "convention": "amplitude",
+        "site_label": "inner",
+        "centre": 23.239359818215107,
+        "momentum": 0.45,
+        "unprojected_norm": 7.08981540362206,
+        "retained_fraction": 0.9868622803586096,
+        "projected_norm": 1.0,
+        "negative_band_weight": 3.175592935040188e-29,
+        "rounded_centre": 23.24,
+        "rounded_overlap_real": 0.9999999516788411,
+        "rounded_overlap_imag": -0.0002903961676330993,
+        "placement_pure_distance": 0.00011096116961104427,
+        "placement_distance_diagnostics": {
+          "left_norm": 1.0,
+          "right_norm": 0.9999999999999999,
+          "overlap_real": 0.9999999516788413,
+          "overlap_imag": -0.0002903961676330941,
+          "raw_radicand": 1.2312381114654158e-08,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 0.00011096116940017421,
+          "stable_squared_raw": 1.2312381161450934e-08,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 0.00011096116961104427
+        }
+      },
+      {
+        "convention": "amplitude",
+        "site_label": "mid",
+        "centre": 30.897790398550885,
+        "momentum": -0.45,
+        "unprojected_norm": 7.089815403622062,
+        "retained_fraction": 0.9873657376209329,
+        "projected_norm": 1.0,
+        "negative_band_weight": 2.0896865545535772e-29,
+        "rounded_centre": 30.9,
+        "rounded_overlap_real": 0.9999994243595682,
+        "rounded_overlap_imag": 0.001002322352418785,
+        "placement_pure_distance": 0.0003829235351940346,
+        "placement_distance_diagnostics": {
+          "left_norm": 1.0,
+          "right_norm": 1.0,
+          "overlap_real": 0.9999994243595682,
+          "overlap_imag": 0.001002322352418785,
+          "raw_radicand": 1.4663043401696996e-07,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 0.000382923535470164,
+          "stable_squared_raw": 1.4663043380549706e-07,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 0.0003829235351940346
+        }
+      },
+      {
+        "convention": "amplitude",
+        "site_label": "mid",
+        "centre": 30.897790398550885,
+        "momentum": -0.3,
+        "unprojected_norm": 7.0898154036220635,
+        "retained_fraction": 0.9645340025202467,
+        "projected_norm": 1.0000000000000002,
+        "negative_band_weight": 1.365634264832338e-29,
+        "rounded_centre": 30.9,
+        "rounded_overlap_real": 0.9999996968028325,
+        "rounded_overlap_imag": 0.0006833697675218669,
+        "placement_pure_distance": 0.0003733630996567212,
+        "placement_distance_diagnostics": {
+          "left_norm": 1.0000000000000002,
+          "right_norm": 1.0,
+          "overlap_real": 0.9999996968028325,
+          "overlap_imag": 0.0006833697675218669,
+          "raw_radicand": 1.3940000376244654e-07,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 0.0003733630990904786,
+          "stable_squared_raw": 1.3940000418527475e-07,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 0.0003733630996567212
+        }
+      },
+      {
+        "convention": "amplitude",
+        "site_label": "mid",
+        "centre": 30.897790398550885,
+        "momentum": 0.3,
+        "unprojected_norm": 7.0898154036220635,
+        "retained_fraction": 0.9645340025202467,
+        "projected_norm": 1.0000000000000002,
+        "negative_band_weight": 1.365634264832338e-29,
+        "rounded_centre": 30.9,
+        "rounded_overlap_real": 0.9999996968028325,
+        "rounded_overlap_imag": -0.0006833697675218669,
+        "placement_pure_distance": 0.0003733630996567212,
+        "placement_distance_diagnostics": {
+          "left_norm": 1.0000000000000002,
+          "right_norm": 1.0,
+          "overlap_real": 0.9999996968028325,
+          "overlap_imag": -0.0006833697675218669,
+          "raw_radicand": 1.3940000376244654e-07,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 0.0003733630990904786,
+          "stable_squared_raw": 1.3940000418527475e-07,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 0.0003733630996567212
+        }
+      },
+      {
+        "convention": "amplitude",
+        "site_label": "mid",
+        "centre": 30.897790398550885,
+        "momentum": 0.45,
+        "unprojected_norm": 7.089815403622062,
+        "retained_fraction": 0.9873657376209329,
+        "projected_norm": 1.0,
+        "negative_band_weight": 2.0896865545535772e-29,
+        "rounded_centre": 30.9,
+        "rounded_overlap_real": 0.9999994243595682,
+        "rounded_overlap_imag": -0.001002322352418785,
+        "placement_pure_distance": 0.0003829235351940346,
+        "placement_distance_diagnostics": {
+          "left_norm": 1.0,
+          "right_norm": 1.0,
+          "overlap_real": 0.9999994243595682,
+          "overlap_imag": -0.001002322352418785,
+          "raw_radicand": 1.4663043401696996e-07,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 0.000382923535470164,
+          "stable_squared_raw": 1.4663043380549706e-07,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 0.0003829235351940346
+        }
+      },
+      {
+        "convention": "amplitude",
+        "site_label": "outer",
+        "centre": 38.556220978886664,
+        "momentum": -0.45,
+        "unprojected_norm": 7.089815403622063,
+        "retained_fraction": 0.9875907621237469,
+        "projected_norm": 1.0000000000000002,
+        "negative_band_weight": 2.032284988100666e-29,
+        "rounded_centre": 38.56,
+        "rounded_overlap_real": 0.9999983162453466,
+        "rounded_overlap_imag": 0.0017142580028396918,
+        "placement_pure_distance": 0.0006548480522262481,
+        "placement_distance_diagnostics": {
+          "left_norm": 1.0000000000000002,
+          "right_norm": 1.0,
+          "overlap_real": 0.9999983162453466,
+          "overlap_imag": 0.0017142580028396918,
+          "raw_radicand": 4.2882597139914935e-07,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 0.0006548480521458008,
+          "stable_squared_raw": 4.288259715045111e-07,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 0.0006548480522262481
+        }
+      },
+      {
+        "convention": "amplitude",
+        "site_label": "outer",
+        "centre": 38.556220978886664,
+        "momentum": -0.3,
+        "unprojected_norm": 7.0898154036220635,
+        "retained_fraction": 0.96469242371616,
+        "projected_norm": 1.0,
+        "negative_band_weight": 1.511098216037121e-29,
+        "rounded_centre": 38.56,
+        "rounded_overlap_real": 0.9999991130524357,
+        "rounded_overlap_imag": 0.0011688963746596826,
+        "placement_pure_distance": 0.0006384164840587956,
+        "placement_distance_diagnostics": {
+          "left_norm": 1.0,
+          "right_norm": 0.9999999999999999,
+          "overlap_real": 0.9999991130524359,
+          "overlap_imag": 0.0011688963746596835,
+          "raw_radicand": 4.07575606820032e-07,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 0.0006384164838254351,
+          "stable_squared_raw": 4.075756071179944e-07,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 0.0006384164840587956
+        }
+      },
+      {
+        "convention": "amplitude",
+        "site_label": "outer",
+        "centre": 38.556220978886664,
+        "momentum": 0.3,
+        "unprojected_norm": 7.0898154036220635,
+        "retained_fraction": 0.96469242371616,
+        "projected_norm": 1.0,
+        "negative_band_weight": 1.511098216037121e-29,
+        "rounded_centre": 38.56,
+        "rounded_overlap_real": 0.9999991130524357,
+        "rounded_overlap_imag": -0.0011688963746596826,
+        "placement_pure_distance": 0.0006384164840587956,
+        "placement_distance_diagnostics": {
+          "left_norm": 1.0,
+          "right_norm": 0.9999999999999999,
+          "overlap_real": 0.9999991130524359,
+          "overlap_imag": -0.0011688963746596835,
+          "raw_radicand": 4.07575606820032e-07,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 0.0006384164838254351,
+          "stable_squared_raw": 4.075756071179944e-07,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 0.0006384164840587956
+        }
+      },
+      {
+        "convention": "amplitude",
+        "site_label": "outer",
+        "centre": 38.556220978886664,
+        "momentum": 0.45,
+        "unprojected_norm": 7.089815403622063,
+        "retained_fraction": 0.9875907621237469,
+        "projected_norm": 1.0000000000000002,
+        "negative_band_weight": 2.032284988100666e-29,
+        "rounded_centre": 38.56,
+        "rounded_overlap_real": 0.9999983162453466,
+        "rounded_overlap_imag": -0.0017142580028396918,
+        "placement_pure_distance": 0.0006548480522262481,
+        "placement_distance_diagnostics": {
+          "left_norm": 1.0000000000000002,
+          "right_norm": 1.0,
+          "overlap_real": 0.9999983162453466,
+          "overlap_imag": -0.0017142580028396918,
+          "raw_radicand": 4.2882597139914935e-07,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 0.0006548480521458008,
+          "stable_squared_raw": 4.288259715045111e-07,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 0.0006548480522262481
+        }
+      },
+      {
+        "convention": "probability",
+        "site_label": "centre",
+        "centre": 4.0,
+        "momentum": -0.45,
+        "unprojected_norm": 8.119826288311948,
+        "retained_fraction": 0.923345371112441,
+        "projected_norm": 1.0,
+        "negative_band_weight": 5.955350832864345e-29,
+        "rounded_centre": 4.0,
+        "rounded_overlap_real": 1.0,
+        "rounded_overlap_imag": 0.0,
+        "placement_pure_distance": 0.0,
+        "placement_distance_diagnostics": {
+          "left_norm": 1.0,
+          "right_norm": 1.0,
+          "overlap_real": 1.0,
+          "overlap_imag": 0.0,
+          "raw_radicand": 0.0,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 0.0,
+          "stable_squared_raw": 0.0,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 0.0
+        }
+      },
+      {
+        "convention": "probability",
+        "site_label": "centre",
+        "centre": 4.0,
+        "momentum": -0.3,
+        "unprojected_norm": 8.119826288311948,
+        "retained_fraction": 0.8955615221923425,
+        "projected_norm": 0.9999999999999998,
+        "negative_band_weight": 5.585468056860809e-29,
+        "rounded_centre": 4.0,
+        "rounded_overlap_real": 0.9999999999999998,
+        "rounded_overlap_imag": 0.0,
+        "placement_pure_distance": 2.1750930329657558e-16,
+        "placement_distance_diagnostics": {
+          "left_norm": 0.9999999999999998,
+          "right_norm": 0.9999999999999998,
+          "overlap_real": 1.0000000000000002,
+          "overlap_imag": 0.0,
+          "raw_radicand": -4.440892098500626e-16,
+          "raw_roundoff_clipped": true,
+          "raw_derived_distance": 0.0,
+          "stable_squared_raw": 4.7310297020561706e-32,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 2.1750930329657558e-16
+        }
+      },
+      {
+        "convention": "probability",
+        "site_label": "centre",
+        "centre": 4.0,
+        "momentum": 0.3,
+        "unprojected_norm": 8.119826288311948,
+        "retained_fraction": 0.8955615221923425,
+        "projected_norm": 0.9999999999999998,
+        "negative_band_weight": 5.585468056860809e-29,
+        "rounded_centre": 4.0,
+        "rounded_overlap_real": 0.9999999999999998,
+        "rounded_overlap_imag": 0.0,
+        "placement_pure_distance": 2.1750930329657558e-16,
+        "placement_distance_diagnostics": {
+          "left_norm": 0.9999999999999998,
+          "right_norm": 0.9999999999999998,
+          "overlap_real": 1.0000000000000002,
+          "overlap_imag": 0.0,
+          "raw_radicand": -4.440892098500626e-16,
+          "raw_roundoff_clipped": true,
+          "raw_derived_distance": 0.0,
+          "stable_squared_raw": 4.7310297020561706e-32,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 2.1750930329657558e-16
+        }
+      },
+      {
+        "convention": "probability",
+        "site_label": "centre",
+        "centre": 4.0,
+        "momentum": 0.45,
+        "unprojected_norm": 8.119826288311948,
+        "retained_fraction": 0.923345371112441,
+        "projected_norm": 1.0,
+        "negative_band_weight": 5.955350832864345e-29,
+        "rounded_centre": 4.0,
+        "rounded_overlap_real": 1.0,
+        "rounded_overlap_imag": 0.0,
+        "placement_pure_distance": 0.0,
+        "placement_distance_diagnostics": {
+          "left_norm": 1.0,
+          "right_norm": 1.0,
+          "overlap_real": 1.0,
+          "overlap_imag": 0.0,
+          "raw_radicand": 0.0,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 0.0,
+          "stable_squared_raw": 0.0,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 0.0
+        }
+      },
+      {
+        "convention": "probability",
+        "site_label": "inner",
+        "centre": 23.239359818215107,
+        "momentum": -0.45,
+        "unprojected_norm": 10.026513038277166,
+        "retained_fraction": 0.9945914584425332,
+        "projected_norm": 1.0,
+        "negative_band_weight": 2.7780665646680224e-29,
+        "rounded_centre": 23.24,
+        "rounded_overlap_real": 0.99999995520598,
+        "rounded_overlap_imag": 0.00028855314777745985,
+        "placement_pure_distance": 7.953061525362548e-05,
+        "placement_distance_diagnostics": {
+          "left_norm": 1.0,
+          "right_norm": 0.9999999999999999,
+          "overlap_real": 0.9999999552059802,
+          "overlap_imag": 0.0002885531477774658,
+          "raw_radicand": 6.325118651062667e-09,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 7.953061455227583e-05,
+          "stable_squared_raw": 6.325118762620205e-09,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 7.953061525362548e-05
+        }
+      },
+      {
+        "convention": "probability",
+        "site_label": "inner",
+        "centre": 23.239359818215107,
+        "momentum": -0.3,
+        "unprojected_norm": 10.026513038277166,
+        "retained_fraction": 0.983814512052221,
+        "projected_norm": 1.0000000000000002,
+        "negative_band_weight": 2.027002245998011e-29,
+        "rounded_centre": 23.24,
+        "rounded_overlap_real": 0.9999999781670215,
+        "rounded_overlap_imag": 0.00019367308889086223,
+        "placement_pure_distance": 7.846458550961915e-05,
+        "placement_distance_diagnostics": {
+          "left_norm": 1.0000000000000002,
+          "right_norm": 0.9999999999999998,
+          "overlap_real": 0.9999999781670217,
+          "overlap_imag": 0.0001936730888908581,
+          "raw_radicand": 6.156690712799673e-09,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 7.846458253759891e-05,
+          "stable_squared_raw": 6.156691179196336e-09,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 7.846458550961915e-05
+        }
+      },
+      {
+        "convention": "probability",
+        "site_label": "inner",
+        "centre": 23.239359818215107,
+        "momentum": 0.3,
+        "unprojected_norm": 10.026513038277166,
+        "retained_fraction": 0.983814512052221,
+        "projected_norm": 1.0000000000000002,
+        "negative_band_weight": 2.027002245998011e-29,
+        "rounded_centre": 23.24,
+        "rounded_overlap_real": 0.9999999781670215,
+        "rounded_overlap_imag": -0.00019367308889086223,
+        "placement_pure_distance": 7.846458550961915e-05,
+        "placement_distance_diagnostics": {
+          "left_norm": 1.0000000000000002,
+          "right_norm": 0.9999999999999998,
+          "overlap_real": 0.9999999781670217,
+          "overlap_imag": -0.0001936730888908581,
+          "raw_radicand": 6.156690712799673e-09,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 7.846458253759891e-05,
+          "stable_squared_raw": 6.156691179196336e-09,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 7.846458550961915e-05
+        }
+      },
+      {
+        "convention": "probability",
+        "site_label": "inner",
+        "centre": 23.239359818215107,
+        "momentum": 0.45,
+        "unprojected_norm": 10.026513038277166,
+        "retained_fraction": 0.9945914584425332,
+        "projected_norm": 1.0,
+        "negative_band_weight": 2.7780665646680224e-29,
+        "rounded_centre": 23.24,
+        "rounded_overlap_real": 0.99999995520598,
+        "rounded_overlap_imag": -0.00028855314777745985,
+        "placement_pure_distance": 7.953061525362548e-05,
+        "placement_distance_diagnostics": {
+          "left_norm": 1.0,
+          "right_norm": 0.9999999999999999,
+          "overlap_real": 0.9999999552059802,
+          "overlap_imag": -0.0002885531477774658,
+          "raw_radicand": 6.325118651062667e-09,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 7.953061455227583e-05,
+          "stable_squared_raw": 6.325118762620205e-09,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 7.953061525362548e-05
+        }
+      },
+      {
+        "convention": "probability",
+        "site_label": "mid",
+        "centre": 30.897790398550885,
+        "momentum": -0.45,
+        "unprojected_norm": 10.026513098523871,
+        "retained_fraction": 0.9952233585952694,
+        "projected_norm": 1.0,
+        "negative_band_weight": 2.1294506415789475e-29,
+        "rounded_centre": 30.9,
+        "rounded_overlap_real": 0.9999994663926398,
+        "rounded_overlap_imag": 0.0009959172828982368,
+        "placement_pure_distance": 0.0002745235898259253,
+        "placement_distance_diagnostics": {
+          "left_norm": 1.0,
+          "right_norm": 1.0000000000000002,
+          "overlap_real": 0.9999994663926398,
+          "overlap_imag": 0.0009959172828982368,
+          "raw_radicand": 7.536320134615693e-08,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 0.00027452358978083635,
+          "stable_squared_raw": 7.536320137091287e-08,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 0.0002745235898259253
+        }
+      },
+      {
+        "convention": "probability",
+        "site_label": "mid",
+        "centre": 30.897790398550885,
+        "momentum": -0.3,
+        "unprojected_norm": 10.026513098523873,
+        "retained_fraction": 0.9844846287739974,
+        "projected_norm": 1.0,
+        "negative_band_weight": 1.207658810645375e-29,
+        "rounded_centre": 30.9,
+        "rounded_overlap_real": 0.9999997398840725,
+        "rounded_overlap_imag": 0.000668510073689157,
+        "placement_pure_distance": 0.00027078786643754696,
+        "placement_distance_diagnostics": {
+          "left_norm": 1.0,
+          "right_norm": 1.0,
+          "overlap_real": 0.9999997398840725,
+          "overlap_imag": 0.000668510073689157,
+          "raw_radicand": 7.332606855037227e-08,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 0.00027078786632781806,
+          "stable_squared_raw": 7.332606860979876e-08,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 0.00027078786643754696
+        }
+      },
+      {
+        "convention": "probability",
+        "site_label": "mid",
+        "centre": 30.897790398550885,
+        "momentum": 0.3,
+        "unprojected_norm": 10.026513098523873,
+        "retained_fraction": 0.9844846287739974,
+        "projected_norm": 1.0,
+        "negative_band_weight": 1.207658810645375e-29,
+        "rounded_centre": 30.9,
+        "rounded_overlap_real": 0.9999997398840725,
+        "rounded_overlap_imag": -0.000668510073689157,
+        "placement_pure_distance": 0.00027078786643754696,
+        "placement_distance_diagnostics": {
+          "left_norm": 1.0,
+          "right_norm": 1.0,
+          "overlap_real": 0.9999997398840725,
+          "overlap_imag": -0.000668510073689157,
+          "raw_radicand": 7.332606855037227e-08,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 0.00027078786632781806,
+          "stable_squared_raw": 7.332606860979876e-08,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 0.00027078786643754696
+        }
+      },
+      {
+        "convention": "probability",
+        "site_label": "mid",
+        "centre": 30.897790398550885,
+        "momentum": 0.45,
+        "unprojected_norm": 10.026513098523871,
+        "retained_fraction": 0.9952233585952694,
+        "projected_norm": 1.0,
+        "negative_band_weight": 2.1294506415789475e-29,
+        "rounded_centre": 30.9,
+        "rounded_overlap_real": 0.9999994663926398,
+        "rounded_overlap_imag": -0.0009959172828982368,
+        "placement_pure_distance": 0.0002745235898259253,
+        "placement_distance_diagnostics": {
+          "left_norm": 1.0,
+          "right_norm": 1.0000000000000002,
+          "overlap_real": 0.9999994663926398,
+          "overlap_imag": -0.0009959172828982368,
+          "raw_radicand": 7.536320134615693e-08,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 0.00027452358978083635,
+          "stable_squared_raw": 7.536320137091287e-08,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 0.0002745235898259253
+        }
+      },
+      {
+        "convention": "probability",
+        "site_label": "outer",
+        "centre": 38.556220978886664,
+        "momentum": -0.45,
+        "unprojected_norm": 10.026513098524,
+        "retained_fraction": 0.9954972425829806,
+        "projected_norm": 1.0000000000000002,
+        "negative_band_weight": 1.8981948058258753e-29,
+        "rounded_centre": 38.56,
+        "rounded_overlap_real": 0.9999984392152247,
+        "rounded_overlap_imag": 0.001703268758701386,
+        "placement_pure_distance": 0.0004695132058215706,
+        "placement_distance_diagnostics": {
+          "left_norm": 1.0000000000000002,
+          "right_norm": 1.0000000000000002,
+          "overlap_real": 0.9999984392152247,
+          "overlap_imag": 0.001703268758701386,
+          "raw_radicand": 2.2044265024501186e-07,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 0.00046951320561301773,
+          "stable_squared_raw": 2.2044265044084847e-07,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 0.0004695132058215706
+        }
+      },
+      {
+        "convention": "probability",
+        "site_label": "outer",
+        "centre": 38.556220978886664,
+        "momentum": -0.3,
+        "unprojected_norm": 10.026513098524003,
+        "retained_fraction": 0.9847667322888958,
+        "projected_norm": 1.0,
+        "negative_band_weight": 1.2531486329996565e-29,
+        "rounded_centre": 38.56,
+        "rounded_overlap_real": 0.9999992391289325,
+        "rounded_overlap_imag": 0.0011433733465728976,
+        "placement_pure_distance": 0.0004630755296492672,
+        "placement_distance_diagnostics": {
+          "left_norm": 1.0,
+          "right_norm": 0.9999999999999998,
+          "overlap_real": 0.9999992391289328,
+          "overlap_imag": 0.0011433733465728956,
+          "raw_radicand": 2.1443894571149258e-07,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 0.00046307552916505164,
+          "stable_squared_raw": 2.1443894615994933e-07,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 0.0004630755296492672
+        }
+      },
+      {
+        "convention": "probability",
+        "site_label": "outer",
+        "centre": 38.556220978886664,
+        "momentum": 0.3,
+        "unprojected_norm": 10.026513098524003,
+        "retained_fraction": 0.9847667322888958,
+        "projected_norm": 1.0,
+        "negative_band_weight": 1.2531486329996565e-29,
+        "rounded_centre": 38.56,
+        "rounded_overlap_real": 0.9999992391289325,
+        "rounded_overlap_imag": -0.0011433733465728976,
+        "placement_pure_distance": 0.0004630755296492672,
+        "placement_distance_diagnostics": {
+          "left_norm": 1.0,
+          "right_norm": 0.9999999999999998,
+          "overlap_real": 0.9999992391289328,
+          "overlap_imag": -0.0011433733465728956,
+          "raw_radicand": 2.1443894571149258e-07,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 0.00046307552916505164,
+          "stable_squared_raw": 2.1443894615994933e-07,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 0.0004630755296492672
+        }
+      },
+      {
+        "convention": "probability",
+        "site_label": "outer",
+        "centre": 38.556220978886664,
+        "momentum": 0.45,
+        "unprojected_norm": 10.026513098524,
+        "retained_fraction": 0.9954972425829806,
+        "projected_norm": 1.0000000000000002,
+        "negative_band_weight": 1.8981948058258753e-29,
+        "rounded_centre": 38.56,
+        "rounded_overlap_real": 0.9999984392152247,
+        "rounded_overlap_imag": -0.001703268758701386,
+        "placement_pure_distance": 0.0004695132058215706,
+        "placement_distance_diagnostics": {
+          "left_norm": 1.0000000000000002,
+          "right_norm": 1.0000000000000002,
+          "overlap_real": 0.9999984392152247,
+          "overlap_imag": -0.001703268758701386,
+          "raw_radicand": 2.2044265024501186e-07,
+          "raw_roundoff_clipped": false,
+          "raw_derived_distance": 0.00046951320561301773,
+          "stable_squared_raw": 2.2044265044084847e-07,
+          "stable_roundoff_clipped": false,
+          "stable_distance": 0.0004695132058215706
+        }
+      }
+    ]
+  }
+}

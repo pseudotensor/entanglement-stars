@@ -1,0 +1,315 @@
+{
+  "a": 1,
+  "length": 4,
+  "site_order": "x, y, z; z fastest; spin fastest within site",
+  "translation_convention": "T_i sends a site basis ket to the next periodic site",
+  "spectral_root": "Hermitian eigendecomposition of A-dagger A; no entrywise roots or negative-eigenvalue clipping",
+  "linear_solves": "scipy.linalg.solve(assume_a=her) for polar factor; solve_sylvester for K",
+  "roundoff_proxy": "eps_machine*(||h_Nplus||_F+||h_Nminus||_F)/(2*epsilon), descriptive, not a certified enclosure",
+  "D_hermiticity_defect": 0.0,
+  "minimum_psi": 0.78,
+  "minimum_N": 0.87,
+  "cases": [
+    {
+      "mass": 0.1,
+      "orientation": 1,
+      "minimum_singular_value_A": 0.09023740733439005,
+      "minimum_eigenvalue_E": 0.09023740733439192,
+      "minimum_eigenvalue_C": 0.08753668317284788,
+      "polar_unitarity_defect": 3.5648078850481387e-13,
+      "hamiltonian_hermiticity_defect": 7.388955792133216e-15,
+      "K_antihermiticity_defect": 1.0026016286664165e-13,
+      "Sylvester_residual": 9.021277018805475e-14,
+      "vertex_Frobenius_norm": 7.755340690174078,
+      "steps": [
+        {
+          "epsilon": 0.001,
+          "normalized_ruler_vertex_error": 1.813571507488566e-06,
+          "lapse_interband_norm": 1.4465618085409792e-12,
+          "lapse_roundoff_proxy": 4.64423360987542e-12,
+          "lapse_norm_over_roundoff_proxy": 0.3114748158802853
+        },
+        {
+          "epsilon": 0.0003,
+          "normalized_ruler_vertex_error": 1.632214314122653e-07,
+          "lapse_interband_norm": 5.028307306419545e-12,
+          "lapse_roundoff_proxy": 1.5480771289686893e-11,
+          "lapse_norm_over_roundoff_proxy": 0.32480986976206694
+        },
+        {
+          "epsilon": 0.0001,
+          "normalized_ruler_vertex_error": 1.813607508100886e-08,
+          "lapse_interband_norm": 1.4981157505151092e-11,
+          "lapse_roundoff_proxy": 4.6442311914802194e-11,
+          "lapse_norm_over_roundoff_proxy": 0.3225756188157434
+        },
+        {
+          "epsilon": 3e-05,
+          "normalized_ruler_vertex_error": 1.6325878190753875e-09,
+          "lapse_interband_norm": 4.957453239260497e-11,
+          "lapse_roundoff_proxy": 1.548077056416843e-10,
+          "lapse_norm_over_roundoff_proxy": 0.3202329766927072
+        },
+        {
+          "epsilon": 1e-05,
+          "normalized_ruler_vertex_error": 1.9196430695245434e-10,
+          "lapse_interband_norm": 1.4136078838476012e-10,
+          "lapse_roundoff_proxy": 4.6442311672962696e-10,
+          "lapse_norm_over_roundoff_proxy": 0.30437931121989364
+        }
+      ],
+      "best_normalized_ruler_error": 1.9196430695245434e-10
+    },
+    {
+      "mass": 0.1,
+      "orientation": -1,
+      "minimum_singular_value_A": 0.09023740733439006,
+      "minimum_eigenvalue_E": 0.09023740733438743,
+      "minimum_eigenvalue_C": 0.09787895549020956,
+      "polar_unitarity_defect": 3.864646257420569e-13,
+      "hamiltonian_hermiticity_defect": 6.794988971603083e-15,
+      "K_antihermiticity_defect": 1.1008004085290207e-13,
+      "Sylvester_residual": 1.0036474156506245e-13,
+      "vertex_Frobenius_norm": 7.512876858025682,
+      "steps": [
+        {
+          "epsilon": 0.001,
+          "normalized_ruler_vertex_error": 1.0752473580797957e-06,
+          "lapse_interband_norm": 1.3887757903243392e-12,
+          "lapse_roundoff_proxy": 4.561904592156098e-12,
+          "lapse_norm_over_roundoff_proxy": 0.30442894240099844
+        },
+        {
+          "epsilon": 0.0003,
+          "normalized_ruler_vertex_error": 9.677249375992281e-08,
+          "lapse_interband_norm": 5.028463586403962e-12,
+          "lapse_roundoff_proxy": 1.52063411604202e-11,
+          "lapse_norm_over_roundoff_proxy": 0.33068201833405464
+        },
+        {
+          "epsilon": 0.0001,
+          "normalized_ruler_vertex_error": 1.0752564112913949e-08,
+          "lapse_interband_norm": 1.5116728557571157e-11,
+          "lapse_roundoff_proxy": 4.561902150848718e-11,
+          "lapse_norm_over_roundoff_proxy": 0.33136897850294245
+        },
+        {
+          "epsilon": 3e-05,
+          "normalized_ruler_vertex_error": 9.697910773213765e-10,
+          "lapse_interband_norm": 4.7188937571079454e-11,
+          "lapse_roundoff_proxy": 1.5206340428028063e-10,
+          "lapse_norm_over_roundoff_proxy": 0.3103240901019263
+        },
+        {
+          "epsilon": 1e-05,
+          "normalized_ruler_vertex_error": 1.34041428785732e-10,
+          "lapse_interband_norm": 1.445932072394535e-10,
+          "lapse_roundoff_proxy": 4.561902126435648e-10,
+          "lapse_norm_over_roundoff_proxy": 0.3169581530510137
+        }
+      ],
+      "best_normalized_ruler_error": 1.34041428785732e-10
+    },
+    {
+      "mass": 1.0,
+      "orientation": 1,
+      "minimum_singular_value_A": 0.8875639913333266,
+      "minimum_eigenvalue_E": 0.8875639913333269,
+      "minimum_eigenvalue_C": 0.8796512320612396,
+      "polar_unitarity_defect": 1.1427362982749868e-13,
+      "hamiltonian_hermiticity_defect": 1.0400815067565127e-14,
+      "K_antihermiticity_defect": 5.561773283006084e-14,
+      "Sylvester_residual": 1.3042531050783708e-13,
+      "vertex_Frobenius_norm": 12.900312925350836,
+      "steps": [
+        {
+          "epsilon": 0.001,
+          "normalized_ruler_vertex_error": 1.3804706209762132e-06,
+          "lapse_interband_norm": 1.9725745820228415e-12,
+          "lapse_roundoff_proxy": 5.8430373824984745e-12,
+          "lapse_norm_over_roundoff_proxy": 0.3375940376372145
+        },
+        {
+          "epsilon": 0.0003,
+          "normalized_ruler_vertex_error": 1.2424209970721957e-07,
+          "lapse_interband_norm": 6.55366159719969e-12,
+          "lapse_roundoff_proxy": 1.9476781422570185e-11,
+          "lapse_norm_over_roundoff_proxy": 0.3364858625771269
+        },
+        {
+          "epsilon": 0.0001,
+          "normalized_ruler_vertex_error": 1.3804974700837958e-08,
+          "lapse_interband_norm": 1.93791833263522e-11,
+          "lapse_roundoff_proxy": 5.84303416692692e-11,
+          "lapse_norm_over_roundoff_proxy": 0.3316630156989903
+        },
+        {
+          "epsilon": 3e-05,
+          "normalized_ruler_vertex_error": 1.2424202571753179e-09,
+          "lapse_interband_norm": 6.193306427716627e-11,
+          "lapse_roundoff_proxy": 1.9476780457898832e-10,
+          "lapse_norm_over_roundoff_proxy": 0.3179840960421631
+        },
+        {
+          "epsilon": 1e-05,
+          "normalized_ruler_vertex_error": 1.408104413425054e-10,
+          "lapse_interband_norm": 1.9081949316055253e-10,
+          "lapse_roundoff_proxy": 5.84303413477121e-10,
+          "lapse_norm_over_roundoff_proxy": 0.3265760369685471
+        }
+      ],
+      "best_normalized_ruler_error": 1.408104413425054e-10
+    },
+    {
+      "mass": 1.0,
+      "orientation": -1,
+      "minimum_singular_value_A": 0.8875639913333269,
+      "minimum_eigenvalue_E": 0.8875639913333266,
+      "minimum_eigenvalue_C": 0.9603399072108442,
+      "polar_unitarity_defect": 1.4719816321730632e-13,
+      "hamiltonian_hermiticity_defect": 9.736899710589547e-15,
+      "K_antihermiticity_defect": 5.482705856654183e-14,
+      "Sylvester_residual": 1.2985196862323119e-13,
+      "vertex_Frobenius_norm": 12.850339609807087,
+      "steps": [
+        {
+          "epsilon": 0.001,
+          "normalized_ruler_vertex_error": 8.791519246312127e-07,
+          "lapse_interband_norm": 1.8099061458142875e-12,
+          "lapse_roundoff_proxy": 5.777763298732501e-12,
+          "lapse_norm_over_roundoff_proxy": 0.3132537717859325
+        },
+        {
+          "epsilon": 0.0003,
+          "normalized_ruler_vertex_error": 7.91235242382838e-08,
+          "lapse_interband_norm": 6.8041202953216576e-12,
+          "lapse_roundoff_proxy": 1.925920105754418e-11,
+          "lapse_norm_over_roundoff_proxy": 0.3532919291403503
+        },
+        {
+          "epsilon": 0.0001,
+          "normalized_ruler_vertex_error": 8.791808397393822e-09,
+          "lapse_interband_norm": 1.9063865472662067e-11,
+          "lapse_roundoff_proxy": 5.7777600551561044e-11,
+          "lapse_norm_over_roundoff_proxy": 0.32995252988481877
+        },
+        {
+          "epsilon": 3e-05,
+          "normalized_ruler_vertex_error": 7.910721487950451e-10,
+          "lapse_interband_norm": 6.33623574317512e-11,
+          "lapse_roundoff_proxy": 1.9259200084471384e-10,
+          "lapse_norm_over_roundoff_proxy": 0.3289978667537704
+        },
+        {
+          "epsilon": 1e-05,
+          "normalized_ruler_vertex_error": 9.333078210369236e-11,
+          "lapse_interband_norm": 1.870257632567579e-10,
+          "lapse_roundoff_proxy": 5.777760022720344e-10,
+          "lapse_norm_over_roundoff_proxy": 0.32369943113127175
+        }
+      ],
+      "best_normalized_ruler_error": 9.333078210369236e-11
+    },
+    {
+      "mass": 3.0,
+      "orientation": 1,
+      "minimum_singular_value_A": 2.5238760202306887,
+      "minimum_eigenvalue_E": 2.523876020230689,
+      "minimum_eigenvalue_C": 2.6456201055547415,
+      "polar_unitarity_defect": 1.030272964006019e-13,
+      "hamiltonian_hermiticity_defect": 1.9778231172170273e-14,
+      "K_antihermiticity_defect": 3.801055106085287e-14,
+      "Sylvester_residual": 1.8955896349858884e-13,
+      "vertex_Frobenius_norm": 18.26726308598414,
+      "steps": [
+        {
+          "epsilon": 0.001,
+          "normalized_ruler_vertex_error": 1.1339496598000293e-06,
+          "lapse_interband_norm": 4.01855746988649e-12,
+          "lapse_roundoff_proxy": 1.1643658193744795e-11,
+          "lapse_norm_over_roundoff_proxy": 0.3451284298301834
+        },
+        {
+          "epsilon": 0.0003,
+          "normalized_ruler_vertex_error": 1.0205529340096427e-07,
+          "lapse_interband_norm": 1.2434922565460477e-11,
+          "lapse_roundoff_proxy": 3.881217391560684e-11,
+          "lapse_norm_over_roundoff_proxy": 0.3203871700796498
+        },
+        {
+          "epsilon": 0.0001,
+          "normalized_ruler_vertex_error": 1.1339808146900566e-08,
+          "lapse_interband_norm": 4.066591221866402e-11,
+          "lapse_roundoff_proxy": 1.1643651645533738e-10,
+          "lapse_norm_over_roundoff_proxy": 0.3492539407451494
+        },
+        {
+          "epsilon": 3e-05,
+          "normalized_ruler_vertex_error": 1.0207980153966856e-09,
+          "lapse_interband_norm": 1.5099930895464127e-10,
+          "lapse_roundoff_proxy": 3.881217195114372e-10,
+          "lapse_norm_over_roundoff_proxy": 0.3890514273324289
+        },
+        {
+          "epsilon": 1e-05,
+          "normalized_ruler_vertex_error": 1.1546288930428693e-10,
+          "lapse_interband_norm": 3.883416119156981e-10,
+          "lapse_roundoff_proxy": 1.1643651580051633e-09,
+          "lapse_norm_over_roundoff_proxy": 0.3335221852404278
+        }
+      ],
+      "best_normalized_ruler_error": 1.1546288930428693e-10
+    },
+    {
+      "mass": 3.0,
+      "orientation": -1,
+      "minimum_singular_value_A": 2.5238760202306882,
+      "minimum_eigenvalue_E": 2.523876020230691,
+      "minimum_eigenvalue_C": 2.7375135950882066,
+      "polar_unitarity_defect": 5.718731881309703e-14,
+      "hamiltonian_hermiticity_defect": 2.257079744540793e-14,
+      "K_antihermiticity_defect": 3.59722041011755e-14,
+      "Sylvester_residual": 1.9952425372283502e-13,
+      "vertex_Frobenius_norm": 18.258399411621948,
+      "steps": [
+        {
+          "epsilon": 0.001,
+          "normalized_ruler_vertex_error": 1.0111083375408752e-06,
+          "lapse_interband_norm": 4.834992571646222e-12,
+          "lapse_roundoff_proxy": 1.161099968764833e-11,
+          "lapse_norm_over_roundoff_proxy": 0.41641483952408
+        },
+        {
+          "epsilon": 0.0003,
+          "normalized_ruler_vertex_error": 9.099960324933377e-08,
+          "lapse_interband_norm": 1.3984856819047e-11,
+          "lapse_roundoff_proxy": 3.870331216274231e-11,
+          "lapse_norm_over_roundoff_proxy": 0.3613348842146255
+        },
+        {
+          "epsilon": 0.0001,
+          "normalized_ruler_vertex_error": 1.011143417567093e-08,
+          "lapse_interband_norm": 4.4599908696900433e-11,
+          "lapse_roundoff_proxy": 1.1610993117936997e-10,
+          "lapse_norm_over_roundoff_proxy": 0.38411794963517126
+        },
+        {
+          "epsilon": 3e-05,
+          "normalized_ruler_vertex_error": 9.103977119721632e-10,
+          "lapse_interband_norm": 1.269154685025263e-10,
+          "lapse_roundoff_proxy": 3.870331019182918e-10,
+          "lapse_norm_over_roundoff_proxy": 0.3279188985993243
+        },
+        {
+          "epsilon": 1e-05,
+          "normalized_ruler_vertex_error": 1.0519494770905756e-10,
+          "lapse_interband_norm": 5.426865225318083e-10,
+          "lapse_roundoff_proxy": 1.161099305223989e-09,
+          "lapse_norm_over_roundoff_proxy": 0.467390274105037
+        }
+      ],
+      "best_normalized_ruler_error": 1.0519494770905756e-10
+    }
+  ],
+  "specified_ruler_vertex_criterion": true
+}

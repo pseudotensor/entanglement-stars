@@ -1,0 +1,97 @@
+{
+  "status": "finished",
+  "purpose": "insert I6a; item7 fixed-mass light-cut ratio",
+  "inputs": {
+    "producer": {
+      "path": "<internal>/fixed_mass_interval_sharp_repair.py",
+      "bytes": 29510,
+      "sha256": "d962ea9b594c2495284069eb2814ba6d6263786c374bd1b51475d15b29f3e870"
+    },
+    "stable_result.json": {
+      "path": "<internal>/stable_result.json",
+      "bytes": 20031,
+      "sha256": "71c5df353b17ecde07d69872c611ce8c998fa419243d5151f71ca1713213bf52"
+    },
+    "fixed_mass_sharp_repair_result.json": {
+      "path": "<internal>/fixed_mass_sharp_repair_result.json",
+      "bytes": 1921,
+      "sha256": "53ad011b7e46d3c6128c0cd130e109696fcaf22b383ec80ec1373a2f187f5ed4"
+    },
+    "fixed_mass_sharp_repair_exit.json": {
+      "path": "<internal>/fixed_mass_sharp_repair_exit.json",
+      "bytes": 1981,
+      "sha256": "613fcaff816e4a9dc8e9372eec8ac0255053427175766972acc5afdad11687e3"
+    }
+  },
+  "launcher": {
+    "path": "<internal>/run_ETA_massive_environment_continuation_v1.py",
+    "bytes": 7220,
+    "sha256": "7fb6f2f4ef9f6381cb5309e82dfb655441c91e90c2d4bf0ac31a714680af59e7"
+  },
+  "dependency": {
+    "path": "<internal>/python_flint_0_9_0",
+    "version": "0.9.0",
+    "file_count": 115,
+    "bytes": 25952168,
+    "sha256": "ab973b61f29d812c0a6af918f052edfd7ae5bdb39a9e77023a70bee5b4e1088e"
+  },
+  "command": [
+    "timeout",
+    "--signal=KILL",
+    "297.396918s",
+    "nice",
+    "-n",
+    "10",
+    "taskset",
+    "-c",
+    "0",
+    "<internal>/python",
+    "<internal>/fixed_mass_interval_sharp_repair.py"
+  ],
+  "wrapper_pid": 3696564,
+  "started_unix": 1792368705.5016284,
+  "selected_cpu": 0,
+  "prior_launch_debit_seconds": 0.06138305366039276,
+  "aggregate_ceiling_seconds": 300,
+  "external_hard_seconds": 299,
+  "producer_specification_seconds": 300,
+  "child_hard_seconds": 297.3969175890088,
+  "internal_save_seconds": 295,
+  "address_space_bytes": 805306368,
+  "cpu_threads": 1,
+  "nice": 10,
+  "environment_settings": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONNOUSERSITE": "1",
+    "CUDA_VISIBLE_DEVICES": "",
+    "PYTHONPATH": "<internal>/python_flint_0_9_0"
+  },
+  "available_memory_bytes": 571353042944,
+  "root_free_bytes": 132344000512,
+  "child_pid": 3696584,
+  "exit_code": 1,
+  "elapsed_seconds": 296.47581478208303,
+  "maximum_child_rss_kib": 124244,
+  "aggregate_elapsed_seconds": 296.5371978357434,
+  "stdout.log": {
+    "path": "<internal>/stdout.log",
+    "bytes": 565,
+    "sha256": "df039450dad1f6aee383331f814e7d1b39efb2ba0d5f0c00e8adff5d85e5a9b3"
+  },
+  "stderr.log": {
+    "path": "<internal>/stderr.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "fixed_mass_sharp_repair_result.json": {
+    "path": "<internal>/fixed_mass_sharp_repair_result.json",
+    "bytes": 13217476,
+    "sha256": "5143da29239d9838a6ee744da8dfac5b3fa67728ed31421972853922e9c41e50"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "metadata_runtime": {
+    "host": "compute-host",
+    "pid": 2262564,
+    "threads": 15,
+    "niceness": 10,
+    "device": "CPU"
+  },
+  "loaded_library_pools": [
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 8,
+      "prefix": "libscipy_openblas",
+      "filepath": "<internal>/libscipy_openblas64_-56d6093b.so",
+      "version": "0.3.29",
+      "threading_layer": "pthreads",
+      "architecture": "SkylakeX"
+    },
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 8,
+      "prefix": "libscipy_openblas",
+      "filepath": "<internal>/libscipy_openblas-6cdc3b4a.so",
+      "version": "0.3.30",
+      "threading_layer": "pthreads",
+      "architecture": "SkylakeX"
+    }
+  ],
+  "environment": {
+    "QI2_REMOTE_CPU": "1",
+    "CUDA_VISIBLE_DEVICES": "",
+    "OMP_NUM_THREADS": "8",
+    "MKL_NUM_THREADS": "8",
+    "OPENBLAS_NUM_THREADS": "8"
+  },
+  "historical_producer_startup_runtime": {
+    "1": {
+      "host": "compute-host",
+      "pid": 2126561,
+      "threads": 15,
+      "niceness": 10,
+      "device": "CPU"
+    },
+    "5": {
+      "host": "compute-host",
+      "pid": 2126560,
+      "threads": 15,
+      "niceness": 10,
+      "device": "CPU"
+    }
+  },
+  "historical_aggregate_active_thread_measurement": null,
+  "scope": "metadata-only new process with same imports and environment; not a measurement of completed producer activity",
+  "correction": "environment cap eight per backend is not an observation of eight resident process threads; both completed producer runtimes record fifteen",
+  "future_allocation": "use one environment thread for any subsequent numerical job unless aggregate resident and active pool accounting is established before launch",
+  "documentation": "https://github.com/joblib/threadpoolctl/blob/master/README.md",
+  "metadata_code_sha256": "7394312f42fb2596aaf5cf123689e8e7be1b262337f14f5b31f901393984486a",
+  "command": [
+    "<internal>/record_PACKET_pool_metadata_v1.py",
+    "--output",
+    "<internal>/PACKET_secondroute_v1"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "started_utc": "2026-10-18T20:17:21.428237+00:00",
+  "finished_utc": "2026-10-18T20:17:23.658852+00:00",
+  "outer_wall_seconds": 2.230655424296856,
+  "actual_outer_returncode": 0,
+  "command": [
+    "timeout",
+    "-s",
+    "KILL",
+    "65s",
+    "taskset",
+    "-c",
+    "4",
+    "nice",
+    "-n",
+    "10",
+    "<internal>/python",
+    "<internal>/check_WEB40I_ray_window_v1.py",
+    "--inherited",
+    "<internal>/continuum_flux.json",
+    "--inherited-sha256",
+    "4572a7b9aa730c2faa7fef764514dde44258d03873aba198e3937e486e89a077",
+    "--output",
+    "<internal>/scalar_and_inherited.json"
+  ],
+  "code_sha256": "7b1f724946f1b250673eb48eb12ac7298b236d3a16b88856c1c5c2731b672153",
+  "input_sha256": "4572a7b9aa730c2faa7fef764514dde44258d03873aba198e3937e486e89a077",
+  "root_free_bytes_before": 132993597440,
+  "mem_available_bytes_before": 567126474752,
+  "stdout": "{\"complete\": true, \"error\": null, \"new_ode_solves\": 0, \"resources\": {\"elapsed_wall_seconds\": 1.7060591876506805, \"cpu_seconds\": 1.6896724810000001, \"peak_rss_kib\": 37936, \"root_function_evaluations\": 5060}}\n",
+  "stderr": "",
+  "child_usage": {
+    "user_cpu_seconds": 2.06886,
+    "system_cpu_seconds": 0.11237699999999999,
+    "peak_rss_kib": 56008
+  },
+  "output_sha256": "1bf75ab20dfbe657e81d671b2fc03edbdc3e45455b065e98f8119145c5fc1ebb"
+}

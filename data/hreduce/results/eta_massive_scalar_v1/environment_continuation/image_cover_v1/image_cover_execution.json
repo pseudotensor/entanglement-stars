@@ -1,0 +1,56 @@
+{
+  "status": "finished",
+  "purpose": "Task2 SecIII G5/I6a T27--T29 fixed missing-image cover",
+  "producer_sha256": "a9c9a47f4bb100bec3ddfdf09b3eaf778a837da38c9b789af2735c7eb874bef7",
+  "wrapper_sha256": "15f18ddc17e927bd3a8dadec14b1b97dfa588cdc8189fdb6ddcf647bf6cdd44f",
+  "command": [
+    "timeout",
+    "--foreground",
+    "-s",
+    "KILL",
+    "720s",
+    "nice",
+    "-n",
+    "10",
+    "taskset",
+    "-c",
+    "8",
+    "<internal>/python",
+    "<internal>/repair_110_image_cover_v1.py"
+  ],
+  "wrapper_pid": 3181190,
+  "environment_settings": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1",
+    "CUDA_VISIBLE_DEVICES": "",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONPATH": "<internal>/python_flint_0_9_0"
+  },
+  "resources": {
+    "wall_seconds": 720,
+    "cpu_seconds": 600,
+    "threads": 1,
+    "address_space_bytes": 2147483648,
+    "internal_deadline_seconds": 690
+  },
+  "child_pid": 3181302,
+  "exit_code": 0,
+  "elapsed_seconds": 246.14745373278856,
+  "maximum_child_rss_kib": 939184,
+  "image_cover_result.json": {
+    "size": 105029780,
+    "sha256": "1773c9756663208c84b4fb5bc59ffed2a05c1fdfaf17a63e35f2552a1b7bd9a4"
+  },
+  "image_cover_stdout.log": {
+    "size": 337,
+    "sha256": "8d6b944168d9f1c1bc395d3906a47a89b4493617f007d4d20866cbc4ca2c3516"
+  },
+  "image_cover_stderr.log": {
+    "size": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

@@ -1,0 +1,395 @@
+{
+  "history": "P64_s4_tau4",
+  "metadata": {
+    "history": "P64_s4_tau4",
+    "role": "metric_nodes",
+    "variant": "primary",
+    "sigma": 4.0,
+    "cap_center": 10.396303882584464,
+    "gate_scale": 0.0006250000000000001,
+    "original_archive_radial_domain": [
+      0.0,
+      2048.0
+    ],
+    "variant_radial_domain": [
+      0.0,
+      2048.0
+    ],
+    "source_binding": {
+      "record_path": "<internal>/collapse_c19_rs64_A_R2_tau4_ell4_avg.json",
+      "fields_path": "<internal>/collapse_c19_rs64_A_R2_tau4_ell4_avg_fields.npz",
+      "record_sha256": "65ea1610573fcd863bec526bd8c3d8fee81394cf36e03a70796421ee8f9e680f",
+      "fields_sha256": "c27afd4e0e1fe626eb50cd66d318beb9cfb6ddc0d80a6e9037dccc9ce34ce9ae",
+      "arrays": {
+        "R": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "T": {
+          "shape": [
+            641
+          ],
+          "dtype": "float64"
+        },
+        "N": {
+          "shape": [
+            641,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "v": {
+          "shape": [
+            641,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "eps_tot": {
+          "shape": [
+            641,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "J_tot": {
+          "shape": [
+            641,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "eps_pairs": {
+          "shape": [
+            641,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "J_pairs": {
+          "shape": [
+            641,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "N_applied": {
+          "shape": [
+            641,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "v_applied": {
+          "shape": [
+            641,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "N_cinit": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "v_cinit": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "g": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "ell": {
+          "shape": [],
+          "dtype": "int64"
+        },
+        "tau": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "solver": {
+          "shape": [],
+          "dtype": "<U357"
+        },
+        "r_nodes": {
+          "shape": [
+            641,
+            513
+          ],
+          "dtype": "object"
+        },
+        "N_nodes": {
+          "shape": [
+            641,
+            513
+          ],
+          "dtype": "object"
+        },
+        "v_nodes": {
+          "shape": [
+            641,
+            513
+          ],
+          "dtype": "object"
+        },
+        "label": {
+          "shape": [],
+          "dtype": "<U802"
+        }
+      }
+    },
+    "seams": [
+      {
+        "kind": "no_declared_seam_in_inspected_metadata"
+      }
+    ],
+    "support_rule": "V direct; U/Z radial-first; Y current radial-first union time-direct; X/full-frame current radial-second union time-first x radial-first. Stencil indices locate all primitive samples. Strict support excludes any center touch and known/unknown seam.",
+    "center_status": "parity-conditioned extrapolation only",
+    "native_per_site_covariance_check": "unavailable"
+  },
+  "records": 641,
+  "first_gate_failure": {
+    "T": 708.0,
+    "previous_T": 704.0,
+    "previous_local_gate": true,
+    "previous_prefix": true,
+    "bracket_status": "passing_prefix_to_failure"
+  },
+  "pre_gate_record_count": 177,
+  "post_gate_record_count": 464,
+  "unresolved_gate_record_count": 0,
+  "all_sphere": {
+    "value": 0.10902465772139021,
+    "T": [
+      832.0
+    ],
+    "radii": [
+      [
+        4.0
+      ]
+    ],
+    "selected_records": 641,
+    "evaluated_records": 641,
+    "unavailable_records": 0,
+    "partially_available_records": 0,
+    "partial": false
+  },
+  "all_frame": {
+    "value": 0.5493204381727654,
+    "T": [
+      836.0
+    ],
+    "radii": [
+      [
+        4.0
+      ]
+    ],
+    "selected_records": 641,
+    "evaluated_records": 641,
+    "unavailable_records": 0,
+    "partially_available_records": 0,
+    "partial": false
+  },
+  "all_centered_radial_and_time_frame": {
+    "value": 0.5493204381727654,
+    "T": [
+      836.0
+    ],
+    "radii": [
+      [
+        4.0
+      ]
+    ],
+    "selected_records": 641,
+    "evaluated_records": 639,
+    "unavailable_records": 2,
+    "partially_available_records": 0,
+    "partial": true
+  },
+  "all_all_support_restricted_frame": {
+    "value": 0.0021357281423026414,
+    "T": [
+      700.0
+    ],
+    "radii": [
+      [
+        8.0
+      ]
+    ],
+    "selected_records": 641,
+    "evaluated_records": 176,
+    "unavailable_records": 465,
+    "partially_available_records": 0,
+    "partial": true
+  },
+  "all_all_support_restricted_sphere": {
+    "value": 0.0006158682791577215,
+    "T": [
+      704.0
+    ],
+    "radii": [
+      [
+        4.0
+      ]
+    ],
+    "selected_records": 641,
+    "evaluated_records": 177,
+    "unavailable_records": 464,
+    "partially_available_records": 0,
+    "partial": true
+  },
+  "pre_gate_evaluation_sphere": {
+    "value": 0.0006158682791577215,
+    "T": [
+      704.0
+    ],
+    "radii": [
+      [
+        4.0
+      ]
+    ],
+    "selected_records": 177,
+    "evaluated_records": 177,
+    "unavailable_records": 0,
+    "partially_available_records": 0,
+    "partial": false
+  },
+  "pre_gate_evaluation_frame": {
+    "value": 0.0023864584604879084,
+    "T": [
+      704.0
+    ],
+    "radii": [
+      [
+        4.0
+      ]
+    ],
+    "selected_records": 177,
+    "evaluated_records": 177,
+    "unavailable_records": 0,
+    "partially_available_records": 0,
+    "partial": false
+  },
+  "pre_gate_evaluation_centered_radial_and_time_frame": {
+    "value": 0.0023864584604879084,
+    "T": [
+      704.0
+    ],
+    "radii": [
+      [
+        4.0
+      ]
+    ],
+    "selected_records": 177,
+    "evaluated_records": 176,
+    "unavailable_records": 1,
+    "partially_available_records": 0,
+    "partial": true
+  },
+  "pre_gate_evaluation_all_support_restricted_frame": {
+    "value": 0.0021357281423026414,
+    "T": [
+      700.0
+    ],
+    "radii": [
+      [
+        8.0
+      ]
+    ],
+    "selected_records": 177,
+    "evaluated_records": 176,
+    "unavailable_records": 1,
+    "partially_available_records": 0,
+    "partial": true
+  },
+  "pre_gate_evaluation_all_support_restricted_sphere": {
+    "value": 0.0006158682791577215,
+    "T": [
+      704.0
+    ],
+    "radii": [
+      [
+        4.0
+      ]
+    ],
+    "selected_records": 177,
+    "evaluated_records": 177,
+    "unavailable_records": 0,
+    "partially_available_records": 0,
+    "partial": false
+  },
+  "post_gate_evaluation_sphere": {
+    "value": 0.10902465772139021,
+    "T": [
+      832.0
+    ],
+    "radii": [
+      [
+        4.0
+      ]
+    ],
+    "selected_records": 464,
+    "evaluated_records": 464,
+    "unavailable_records": 0,
+    "partially_available_records": 0,
+    "partial": false
+  },
+  "post_gate_evaluation_frame": {
+    "value": 0.5493204381727654,
+    "T": [
+      836.0
+    ],
+    "radii": [
+      [
+        4.0
+      ]
+    ],
+    "selected_records": 464,
+    "evaluated_records": 464,
+    "unavailable_records": 0,
+    "partially_available_records": 0,
+    "partial": false
+  },
+  "post_gate_evaluation_centered_radial_and_time_frame": {
+    "value": 0.5493204381727654,
+    "T": [
+      836.0
+    ],
+    "radii": [
+      [
+        4.0
+      ]
+    ],
+    "selected_records": 464,
+    "evaluated_records": 463,
+    "unavailable_records": 1,
+    "partially_available_records": 0,
+    "partial": true
+  },
+  "post_gate_evaluation_all_support_restricted_frame": {
+    "value": null,
+    "T": [],
+    "radii": [],
+    "selected_records": 464,
+    "evaluated_records": 0,
+    "unavailable_records": 464,
+    "partially_available_records": 0,
+    "partial": true
+  },
+  "post_gate_evaluation_all_support_restricted_sphere": {
+    "value": null,
+    "T": [],
+    "radii": [],
+    "selected_records": 464,
+    "evaluated_records": 0,
+    "unavailable_records": 464,
+    "partially_available_records": 0,
+    "partial": true
+  }
+}

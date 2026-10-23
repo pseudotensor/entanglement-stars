@@ -1,0 +1,34 @@
+{
+  "purpose": "Actual outer execution receipts for the original L completion and separate terminal table formatting",
+  "native_outer_tool_result": {
+    "chunk_id": "8005e4",
+    "wall_time_seconds": 0.000007634,
+    "exit_code": 0,
+    "original_token_count": 0,
+    "output": ""
+  },
+  "formatter_outer_tool_result": {
+    "chunk_id": "5471f4",
+    "wall_time_seconds": 0.344696225,
+    "exit_code": 0,
+    "original_token_count": 32,
+    "output": "{\"status\": \"completed\", \"rows\": 18, \"output\": \"<internal>/killing_tables.json\"}\n"
+  },
+  "formatter_command": "ssh -o BatchMode=yes -o ConnectTimeout=10 compute-host 'taskset -c 4 timeout -s KILL 10s nice -n 10 <internal>/python <internal>/format_core_well_spectra_v1.py'",
+  "native_execution_result_file": "<internal>/execution.json",
+  "file_identities": {
+    "core_well_profiles_v1.json": {
+      "bytes": 123910,
+      "sha256": "add2f39892240fe6f5ae0b1887c42b85459df7677d7e7ef4d14d4f93c7eff25c"
+    },
+    "execution.json": {
+      "bytes": 3930,
+      "sha256": "f0e698a51993ef98ff9ad28a59078dc89f7f0b8e2ca19b68bbee0a2d15a6f11f"
+    },
+    "killing_tables.json": {
+      "bytes": 42176,
+      "sha256": "a4f0a33cd60a10b3a34bc318f755552f23f802051f830d304dbab9ac45111428"
+    }
+  },
+  "scope": "Literal tool receipts and file identities only; no scientific or independent numerical-reading acceptance"
+}

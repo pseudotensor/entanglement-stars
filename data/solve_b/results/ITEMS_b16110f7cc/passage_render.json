@@ -1,0 +1,50 @@
+{
+  "scope": "Read-only named-head VI/VII passage rendering, not a full-PDF or scientific clearance.",
+  "source_pdf": "<internal>/DRAFT_29pages_marks_on_b16110f7cc.pdf",
+  "source_pdf_sha256": "7df5cf07e98ce8b1a186c4eefd931decc0a9fe74f5f6702493d1e108667700ca",
+  "renderer": "pdftoppm",
+  "dpi": 160,
+  "images": [
+    {
+      "image": "<internal>/ITEM6_p21_leftVI.png",
+      "page_one_based": 21,
+      "crop_pixels": {
+        "x": 0,
+        "y": 1245,
+        "width": 670,
+        "height": 515
+      },
+      "sha256": "69937979383e56a86ff1478ea1d9a2605537c52f75a1b87cca2ebb61caf5f2c7"
+    },
+    {
+      "image": "<internal>/ITEM6_p21_rightVI.png",
+      "page_one_based": 21,
+      "crop_pixels": {
+        "x": 670,
+        "y": 0,
+        "width": 690,
+        "height": 1760
+      },
+      "sha256": "e56a4b94de0af3ca8bbbcfd493a63b6bd09ba3445d6bd14d11259c71c4043105"
+    },
+    {
+      "image": "<internal>/ITEM6_p22.png",
+      "page_one_based": 22,
+      "crop_pixels": null,
+      "sha256": "cbd9915c7b7faf578de8a5854fb01b2d1f801d0d4825b3dd0ed90c0855f50801"
+    },
+    {
+      "image": "<internal>/ITEM8_p23.png",
+      "page_one_based": 23,
+      "crop_pixels": null,
+      "sha256": "4ec26a1e10181c21c8f867566934f2a6b05507fdf4281ed2c3c8a7df94bcb252"
+    },
+    {
+      "image": "<internal>/ITEM8_p24.png",
+      "page_one_based": 24,
+      "crop_pixels": null,
+      "sha256": "854d444ca0f9e9b7d6ca456f55d045d69eb6967322af2d9882b5f732543a7188"
+    }
+  ],
+  "observation": "All five images were visually inspected. The VI opener/continuation and VI/VII passages are legible without observed clipping or overlap. The page21 left crop begins at the VI heading to exclude the adjacent preceding section; the right crop covers its VI continuation. Pages23/24 include surrounding source context, which confers no new scientific scope."
+}

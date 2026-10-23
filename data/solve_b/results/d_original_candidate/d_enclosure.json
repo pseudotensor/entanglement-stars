@@ -1,0 +1,869 @@
+{
+  "scope": "Full1431-dimensional original-A open3^3 charge+2/excitation2 finite ground-state diagnostic with one clamped-collar interior site. No full-charge comparison, stellar state, Thomas-Fermi result, internal ruler operator, production couplings or physical spacing claim.",
+  "parameters": {
+    "law": "original_A_sine_polar",
+    "shape": [
+      3,
+      3,
+      3
+    ],
+    "a": "1",
+    "mass_squared": [
+      "1/4",
+      "3/4",
+      "1",
+      "3/2"
+    ],
+    "eta": [
+      1,
+      -1,
+      -1,
+      1
+    ],
+    "Lambda": "1/2",
+    "ell": "2",
+    "g_M": "1/80",
+    "g_B": "1/200",
+    "source_load": "1",
+    "complete_cells": 8,
+    "ordered_cell_pairs": 64,
+    "particle_modes": 54,
+    "pair_dimension": 1431,
+    "interior": [
+      1,
+      1,
+      1
+    ],
+    "collar_s_n": "1",
+    "domain": {
+      "s": [
+        "999/1000",
+        "1001/1000"
+      ],
+      "n": [
+        "999/1000",
+        "1001/1000"
+      ]
+    }
+  },
+  "status": "candidate only; enclosure not executed",
+  "certificate_passed": false,
+  "candidate": {
+    "s": 1.0000000000000047,
+    "n": 1.0000148907685387,
+    "energy": {
+      "center": 0.999993896496993,
+      "lower": 0.9999938964240312,
+      "upper": 0.9999938965699547,
+      "radius": 7.29617477546185e-11
+    }
+  },
+  "gap_budget": {
+    "d_A": {
+      "center": 0.004182095849749389,
+      "lower": 0.004182095849744067,
+      "upper": 0.004182095849754711,
+      "radius": 5.3212708433150196e-15
+    },
+    "d_E": {
+      "center": 0.011109978372888832,
+      "lower": 0.011109978372874616,
+      "upper": 0.011109978372903048,
+      "radius": 1.421451512947522e-14
+    },
+    "d_H": {
+      "center": 0.027558567252665405,
+      "lower": 0.027558567252632726,
+      "upper": 0.027558567252698084,
+      "radius": 3.2676666554975884e-14
+    },
+    "v_star": {
+      "center": 0.040018749994529194,
+      "lower": 0.040018749994529,
+      "upper": 0.04001874999452939,
+      "radius": 1.929349852333398e-16
+    },
+    "sigma_star": {
+      "center": 0.02012979217767704,
+      "lower": 0.020129792177676797,
+      "upper": 0.020129792177677283,
+      "radius": 2.3957814795034184e-16
+    },
+    "eta_star": {
+      "center": 0.13738077683062797,
+      "lower": 0.13738077683059108,
+      "upper": 0.13738077683066485,
+      "radius": 3.688573991312781e-14
+    },
+    "free_gap": {
+      "center": 0.3660254037844386,
+      "lower": 0.3660254037844378,
+      "upper": 0.3660254037844394,
+      "radius": 7.394367382667514e-16
+    },
+    "ground_gap": {
+      "center": 0.09126385012318267,
+      "lower": 0.09126385012310777,
+      "upper": 0.09126385012325756,
+      "radius": 7.489723713385476e-14
+    },
+    "ground_gap_lower": 0.09126385012310777,
+    "second_level_lower": 1.2286446269537723,
+    "eta_below_7_over50": 0.002619223169335133,
+    "gap_above_2_over25": 0.011263850123107752
+  },
+  "actual_alpha": {
+    "center": 0.3074131485696494,
+    "lower": 0.30741314582607554,
+    "upper": 0.3074131513132233,
+    "radius": 2.743573827903085e-09
+  },
+  "independent_alpha_graph_lower": {
+    "center": 0.16237976320958228,
+    "lower": 0.16237976320958208,
+    "upper": 0.16237976320958247,
+    "radius": 1.7744812284218382e-16
+  },
+  "alpha_margin_above_graph_bound": 0.14503338261649307,
+  "initial_residual": [
+    {
+      "center": 1.4361144549224772e-15,
+      "lower": -2.0200437270305535e-10,
+      "upper": 2.020072449319652e-10,
+      "radius": 2.0200580881751027e-10
+    },
+    {
+      "center": 4.57761804396392e-06,
+      "lower": 4.575977466321056e-06,
+      "upper": 4.579258621606783e-06,
+      "radius": 1.6405776428633024e-09
+    }
+  ],
+  "initial_J": [
+    [
+      {
+        "center": -0.3074131485696116,
+        "lower": -0.30741373522602006,
+        "upper": -0.30741256191320315,
+        "radius": 5.866564084105656e-07
+      },
+      {
+        "center": -3.4317431126338983e-15,
+        "lower": -2.0382229792289343e-07,
+        "upper": 2.038222910594072e-07,
+        "radius": 2.038222944911503e-07
+      }
+    ],
+    [
+      {
+        "center": -0.6148262971270577,
+        "lower": -0.6148284156983226,
+        "upper": -0.6148241785557929,
+        "radius": 2.1185712647825397e-06
+      },
+      {
+        "center": -0.3074131485696116,
+        "lower": -0.30741373522602006,
+        "upper": -0.30741256191320315,
+        "radius": 5.866564084105656e-07
+      }
+    ]
+  ],
+  "initial_source": {
+    "center": 1.4361144549224772e-15,
+    "lower": 1.2728611635563334e-15,
+    "upper": 1.599367746288621e-15,
+    "radius": 1.632532913661437e-16
+  },
+  "mechanism": {
+    "V_norm_upper": 1.3495481588419141e-05,
+    "S2_norm_upper": 5.591505331077572e-06,
+    "V_phi_norm_lower": 6.594632828836199e-06,
+    "S2_phi_norm_lower": 3.1829329821132255e-06,
+    "seed_ground_expectation": {
+      "center": -6.103515624999994e-06,
+      "lower": -6.103517947890018e-06,
+      "upper": -6.1035133021099706e-06,
+      "radius": 2.3228900237937667e-12
+    },
+    "exact_E14a_seed_target": {
+      "center": -6.103515625e-06,
+      "lower": -6.103515625000001e-06,
+      "upper": -6.1035156249999995e-06,
+      "radius": 3.3881317890172015e-22
+    },
+    "seed_identity_difference": {
+      "center": 5.929230630780102e-21,
+      "lower": -2.322890020913855e-12,
+      "upper": 2.3228900327723163e-12,
+      "radius": 2.3228900268430857e-12
+    },
+    "flat_seed_ruler_derivative": {
+      "center": 4.5776367187499964e-06,
+      "lower": 4.577601656223283e-06,
+      "upper": 4.57767178127671e-06,
+      "radius": 3.506252671255769e-11
+    },
+    "exact_E14a_derivative_target": {
+      "center": 4.57763671875e-06,
+      "lower": 4.577636718749999e-06,
+      "upper": 4.577636718750001e-06,
+      "radius": 1.6940658945086008e-22
+    },
+    "derivative_identity_difference": {
+      "center": -3.3881317890172014e-21,
+      "lower": -3.506252671814811e-11,
+      "upper": 3.506252671137185e-11,
+      "radius": 3.506252671475998e-11
+    },
+    "seed_identity_passed": true,
+    "derivative_identity_passed": true,
+    "E14_tau2_coefficient": {
+      "center": 1.4361394828795853e-15,
+      "lower": 1.4345737032410146e-15,
+      "upper": 1.437705262518156e-15,
+      "radius": 1.5657796385705027e-18
+    },
+    "free_reduced_resolvent_residual": 2.3237520063475316e-12,
+    "nonzero_gate_passed": true
+  },
+  "center_residual": [
+    {
+      "center": 7.431267684653511e-15,
+      "lower": -2.0208466130001464e-10,
+      "upper": 2.0209952383538396e-10,
+      "radius": 2.020920925676993e-10
+    },
+    {
+      "center": 7.433205391265893e-15,
+      "lower": -1.6408724875474625e-09,
+      "upper": 1.640887353958245e-09,
+      "radius": 1.6408799207528538e-09
+    }
+  ],
+  "candidate_gate": {
+    "V_action_resolved": true,
+    "S2_action_resolved": true,
+    "mechanism_and_exact_seed_identities": true,
+    "load1_interior_source_resolved": true,
+    "passed": true
+  },
+  "reusable_seed_gate": {
+    "scope": "Ordinary small reusable algebra gate; not an enclosure or arithmetic bound on the final1431 matrices.",
+    "shape": [
+      2,
+      2,
+      2
+    ],
+    "pp_dimension": 120,
+    "all_charge_number2_dimension": 496,
+    "dedicated_vs_shared_pp_Frobenius": 4.549988325963248e-21,
+    "dedicated_vs_full_sea_Wick_pp_Frobenius": 4.959959995783634e-21,
+    "shared_pp_vs_independent_normal_product_Frobenius": 8.896175110439025e-22,
+    "dedicated_seed_operator_radius": 2.78198950279074e-15,
+    "passed": true
+  },
+  "center_J": [
+    [
+      {
+        "center": -0.30741314856958796,
+        "lower": -0.30741373545219136,
+        "upper": -0.30741256168698455,
+        "radius": 5.868826033584465e-07
+      },
+      {
+        "center": -3.4315392351016273e-15,
+        "lower": -2.039010823211834e-07,
+        "upper": 2.0390107545810496e-07,
+        "radius": 2.0390107888964417e-07
+      }
+    ],
+    [
+      {
+        "center": -0.6148381931210887,
+        "lower": -0.6148403123743086,
+        "upper": -0.6148360738678688,
+        "radius": 2.1192532198599146e-06
+      },
+      {
+        "center": -0.30741314856958796,
+        "lower": -0.30741373545219136,
+        "upper": -0.30741256168698455,
+        "radius": 5.868826033584465e-07
+      }
+    ]
+  ],
+  "eigenpair_validation": {
+    "eigenpair_residual": 1.4592936138337024e-10,
+    "vector_error": 1.2764390574078667e-09,
+    "second_level_separation": 0.22865073038381767
+  },
+  "response_validation": {
+    "s": {
+      "true_response_residual": 1.2526473350804951e-08,
+      "orthogonality_error": 3.4136875541872695e-15,
+      "response_radius": 1.3725559074544843e-07
+    },
+    "n": {
+      "true_response_residual": 3.516731421774541e-09,
+      "orthogonality_error": 4.1213842027370906e-17,
+      "response_radius": 3.853367374696641e-08
+    }
+  },
+  "center_source": {
+    "center": 1.4360633516776386e-15,
+    "lower": 1.2727480484581605e-15,
+    "upper": 1.5993786548971168e-15,
+    "radius": 1.63315303219478e-16
+  },
+  "source_profile": {
+    "scope": "Certified center ground state at fixed candidate fields; root-box envelopes are separately reported when executed.",
+    "coordinates": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        2,
+        1
+      ],
+      [
+        0,
+        2,
+        2
+      ],
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        2
+      ],
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        2
+      ],
+      [
+        1,
+        2,
+        0
+      ],
+      [
+        1,
+        2,
+        1
+      ],
+      [
+        1,
+        2,
+        2
+      ],
+      [
+        2,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        1
+      ],
+      [
+        2,
+        0,
+        2
+      ],
+      [
+        2,
+        1,
+        0
+      ],
+      [
+        2,
+        1,
+        1
+      ],
+      [
+        2,
+        1,
+        2
+      ],
+      [
+        2,
+        2,
+        0
+      ],
+      [
+        2,
+        2,
+        1
+      ],
+      [
+        2,
+        2,
+        2
+      ]
+    ],
+    "excitation_sources": [
+      0.12499923706120354,
+      6.029555064619133e-13,
+      0.12499923706120315,
+      6.029555062800551e-13,
+      2.1935489386461708e-14,
+      6.029555062800561e-13,
+      0.12499923706120407,
+      6.029555062793901e-13,
+      0.12499923706120268,
+      6.029555062800582e-13,
+      2.1935489386461642e-14,
+      6.02955506280059e-13,
+      2.193548938646165e-14,
+      1.4360633516776386e-15,
+      2.193548938646161e-14,
+      6.02955506280058e-13,
+      2.1935489386461563e-14,
+      6.029555062800541e-13,
+      0.12499923706120426,
+      6.029555062794233e-13,
+      0.12499923706120271,
+      6.029555062800553e-13,
+      2.1935489386461614e-14,
+      6.029555062800534e-13,
+      0.1249992370612023,
+      6.029555062808364e-13,
+      0.12499923706120172
+    ],
+    "source_intervals": [
+      {
+        "center": 0.12499923706120354,
+        "lower": 0.12499923563666518,
+        "upper": 0.1249992384857419,
+        "radius": 1.4245383578919412e-09
+      },
+      {
+        "center": 6.029555064619133e-13,
+        "lower": 5.99817788308307e-13,
+        "upper": 6.060932246155195e-13,
+        "radius": 3.1377181536061388e-15
+      },
+      {
+        "center": 0.12499923706120315,
+        "lower": 0.12499923563666479,
+        "upper": 0.12499923848574152,
+        "radius": 1.4245383613017207e-09
+      },
+      {
+        "center": 6.029555062800551e-13,
+        "lower": 5.998177881269214e-13,
+        "upper": 6.060932244331888e-13,
+        "radius": 3.137718153133577e-15
+      },
+      {
+        "center": 2.1935489386461708e-14,
+        "lower": 2.1322711478453683e-14,
+        "upper": 2.2548267294469734e-14,
+        "radius": 6.127779080080242e-16
+      },
+      {
+        "center": 6.029555062800561e-13,
+        "lower": 5.998177881269224e-13,
+        "upper": 6.060932244331898e-13,
+        "radius": 3.1377181531336024e-15
+      },
+      {
+        "center": 0.12499923706120407,
+        "lower": 0.1249992356366657,
+        "upper": 0.12499923848574243,
+        "radius": 1.424538357796509e-09
+      },
+      {
+        "center": 6.029555062793901e-13,
+        "lower": 5.998177881262582e-13,
+        "upper": 6.060932244325219e-13,
+        "radius": 3.137718153131841e-15
+      },
+      {
+        "center": 0.12499923706120268,
+        "lower": 0.12499923563666432,
+        "upper": 0.12499923848574104,
+        "radius": 1.4245383585641125e-09
+      },
+      {
+        "center": 6.029555062800582e-13,
+        "lower": 5.998177881269245e-13,
+        "upper": 6.060932244331919e-13,
+        "radius": 3.1377181531335866e-15
+      },
+      {
+        "center": 2.1935489386461642e-14,
+        "lower": 2.1322711478453617e-14,
+        "upper": 2.2548267294469667e-14,
+        "radius": 6.127779080080232e-16
+      },
+      {
+        "center": 6.02955506280059e-13,
+        "lower": 5.998177881269254e-13,
+        "upper": 6.060932244331927e-13,
+        "radius": 3.1377181531335965e-15
+      },
+      {
+        "center": 2.193548938646165e-14,
+        "lower": 2.1322711478453626e-14,
+        "upper": 2.2548267294469677e-14,
+        "radius": 6.127779080080239e-16
+      },
+      {
+        "center": 1.4360633516776386e-15,
+        "lower": 1.2727480484581605e-15,
+        "upper": 1.5993786548971168e-15,
+        "radius": 1.63315303219478e-16
+      },
+      {
+        "center": 2.193548938646161e-14,
+        "lower": 2.1322711478453585e-14,
+        "upper": 2.2548267294469636e-14,
+        "radius": 6.127779080080222e-16
+      },
+      {
+        "center": 6.02955506280058e-13,
+        "lower": 5.998177881269243e-13,
+        "upper": 6.060932244331917e-13,
+        "radius": 3.1377181531335866e-15
+      },
+      {
+        "center": 2.1935489386461563e-14,
+        "lower": 2.132271147845354e-14,
+        "upper": 2.2548267294469585e-14,
+        "radius": 6.12777908008022e-16
+      },
+      {
+        "center": 6.029555062800541e-13,
+        "lower": 5.998177881269204e-13,
+        "upper": 6.060932244331878e-13,
+        "radius": 3.1377181531336056e-15
+      },
+      {
+        "center": 0.12499923706120426,
+        "lower": 0.12499923563666589,
+        "upper": 0.12499923848574264,
+        "radius": 1.4245383631842341e-09
+      },
+      {
+        "center": 6.029555062794233e-13,
+        "lower": 5.998177881262912e-13,
+        "upper": 6.060932244325554e-13,
+        "radius": 3.1377181531319628e-15
+      },
+      {
+        "center": 0.12499923706120271,
+        "lower": 0.12499923563666435,
+        "upper": 0.12499923848574107,
+        "radius": 1.424538358897099e-09
+      },
+      {
+        "center": 6.029555062800553e-13,
+        "lower": 5.998177881269216e-13,
+        "upper": 6.06093224433189e-13,
+        "radius": 3.1377181531335768e-15
+      },
+      {
+        "center": 2.1935489386461614e-14,
+        "lower": 2.1322711478453588e-14,
+        "upper": 2.254826729446964e-14,
+        "radius": 6.127779080080222e-16
+      },
+      {
+        "center": 6.029555062800534e-13,
+        "lower": 5.998177881269198e-13,
+        "upper": 6.060932244331869e-13,
+        "radius": 3.1377181531335665e-15
+      },
+      {
+        "center": 0.1249992370612023,
+        "lower": 0.12499923563666394,
+        "upper": 0.12499923848574067,
+        "radius": 1.4245383616661461e-09
+      },
+      {
+        "center": 6.029555062808364e-13,
+        "lower": 5.998177881277007e-13,
+        "upper": 6.060932244339721e-13,
+        "radius": 3.137718153135628e-15
+      },
+      {
+        "center": 0.12499923706120172,
+        "lower": 0.12499923563666336,
+        "upper": 0.12499923848574009,
+        "radius": 1.424538360461797e-09
+      }
+    ],
+    "sum_sources": {
+      "center": 0.9999938964969931,
+      "lower": 0.9999938851006416,
+      "upper": 0.9999939078933446,
+      "radius": 1.1396351480969656e-08
+    },
+    "f_I": {
+      "center": 1.4360721167481216e-15,
+      "lower": 1.2727557984998098e-15,
+      "upper": 1.5993884349964334e-15,
+      "radius": 1.6331631824831166e-16
+    },
+    "free_control_sources": [
+      0.125,
+      0,
+      0.125,
+      0,
+      0,
+      0,
+      0.125,
+      0,
+      0.125,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0.125,
+      0,
+      0.125,
+      0,
+      0,
+      0,
+      0.125,
+      0,
+      0.125
+    ],
+    "free_control_f_I": 0.0
+  },
+  "affine_boundary_check": {
+    "vacuum_full_trace": {
+      "center": -1.4876899256777006e-14,
+      "lower": -5.456499976018079e-09,
+      "upper": 5.4564702222195655e-09,
+      "radius": 5.456485099118822e-09
+    },
+    "vacuum_E6": {
+      "center": 8.927320009231071e-20,
+      "lower": -3.0092148700415372e-15,
+      "upper": 3.0093934164417218e-15,
+      "radius": 3.0093041432416293e-15
+    },
+    "vacuum_full_minus_E6": {
+      "center": -1.4876988529977098e-14,
+      "lower": -5.456502985411495e-09,
+      "upper": 5.456473231434435e-09,
+      "radius": 5.456488108422965e-09
+    },
+    "grouped_full_trace": {
+      "center": -1.4876988529977098e-14,
+      "lower": -5.4564969668031945e-09,
+      "upper": 5.456467212826135e-09,
+      "radius": 5.4564820898146646e-09
+    },
+    "total_energy": {
+      "center": 0.999993896496993,
+      "lower": 0.9999938964240279,
+      "upper": 0.9999938965699581,
+      "radius": 7.296497910201143e-11
+    },
+    "direct_total_energy": {
+      "center": 0.9999938964969781,
+      "lower": 0.999993890967531,
+      "upper": 0.9999939020264252,
+      "radius": 5.5294470689166905e-09
+    },
+    "collar_energy": {
+      "center": 0.9999938964969708,
+      "lower": 0.9999938798462291,
+      "upper": 0.9999939131477125,
+      "radius": 1.665074158923826e-08
+    },
+    "total_minus_collar": {
+      "center": 2.220446049250313e-14,
+      "lower": -1.672368480796628e-08,
+      "upper": 1.6723729216887264e-08,
+      "radius": 1.672370701242677e-08
+    },
+    "total_minus_collar_minus_nR1": {
+      "center": 1.4773082150562576e-14,
+      "lower": -1.69257873412189e-08,
+      "upper": 1.6925816887383198e-08,
+      "radius": 1.6925802114301046e-08
+    }
+  },
+  "candidate_state_archive": "d_candidate.npz",
+  "candidate_history": [
+    {
+      "s": 1.0,
+      "n": 1.0,
+      "R": [
+        1.4361144549224808e-15,
+        4.577618043963932e-06
+      ],
+      "J": [
+        [
+          -0.3074131485696116,
+          -3.4317431126339035e-15
+        ],
+        [
+          -0.6148262971270577,
+          -0.3074131485696116
+        ]
+      ],
+      "kind": "actual flat rebuild"
+    },
+    {
+      "s": 1.0000000000000047,
+      "n": 1.0000148907685387,
+      "R": [
+        2.6152980965617514e-18,
+        4.125897486075697e-18
+      ],
+      "J": [
+        [
+          -0.3074131485696153,
+          -3.4315392351015965e-15
+        ],
+        [
+          -0.6148381931211285,
+          -0.3074131485696153
+        ]
+      ],
+      "kind": "third-order Taylor candidate search"
+    },
+    {
+      "s": 1.0000000000000047,
+      "n": 1.0000148907685387,
+      "R": [
+        7.431267684653513e-15,
+        7.43320962643063e-15
+      ],
+      "J": [
+        [
+          -0.30741314856958796,
+          -3.4315392351016292e-15
+        ],
+        [
+          -0.6148381931210887,
+          -0.30741314856958796
+        ]
+      ],
+      "kind": "actual final-load rebuild"
+    }
+  ],
+  "arithmetic": {
+    "center_significand_bits": 53,
+    "scalar_decimal_digits": 80,
+    "roundoff_model": "explicit sequential gamma_(8k+4) complex binary64 products; directed scalar bounds; underflow allowance2^-1022",
+    "implementation_events": {
+      "deterministic_binary64_dot_used": 1.0,
+      "deterministic_norm_reduction_used": 1.0,
+      "largest_matmul_roundoff": 513.2500009560035,
+      "extended_matvec_significand_bits": 64.0,
+      "production_shape_kernel_verified": 1431.0,
+      "arithmetic_backend_verified": 1.0,
+      "remote_cpu_candidate_eigensolver_used": 1.0,
+      "largest_root_equation_residual": 2.276969026498761e-11,
+      "largest_root_radius": 1.8571379203732648e-11,
+      "largest_sylvester_equation_residual": 4.8815876548158515e-08,
+      "largest_sylvester_radius": 4.88158765508264e-08,
+      "largest_inverse_residual": 3.7277605730969613e-11,
+      "largest_exponential_degree": 36.0,
+      "largest_exponential_tail": 2.746297471820756e-19,
+      "remote_cpu_candidate_linear_solve_used": 1.0
+    }
+  },
+  "backend_verification": {
+    "passed": true,
+    "backend": "cupy",
+    "binary64_significand_bits": 53,
+    "longdouble_significand_bits": 64,
+    "complex_dot_operations_per_inner_step": 8,
+    "norm_sum_additions_per_entry": 2,
+    "production_shape": [
+      1431,
+      1431
+    ],
+    "strided_and_partial_block_checks_passed": true,
+    "cuda_options": [
+      "--fmad=false",
+      "--prec-div=true",
+      "--prec-sqrt=true",
+      "-ftz=true (CuPy-added; bounded absolute underflow)"
+    ],
+    "exact_reference_product_error": 5e-324,
+    "product_roundoff_bound": 2.2391046333930256e-05
+  },
+  "remote_runtime": {
+    "assigned_gpu_uuid": "GPU-1c907351-ed3d-0d52-5072-e791dde9df56",
+    "cuda_allocation_bytes": 1048576,
+    "cuda_context_in_this_single_job_process": true,
+    "same_process_fresh_device_query_before_allocation": true,
+    "post_allocation_single_owned_compute_pid_verified": true,
+    "single_process_pid": 2708593,
+    "niceness": 10,
+    "threads_at_launch": 6,
+    "maximum_threads": 8
+  },
+  "unproved_constants": [],
+  "arithmetic_hypotheses": [
+    "The deterministic CUDA double or NumPy real ufuncs implement IEEE elementary operations; CUDA fast math/FMA are disabled and CuPy's added FTZ is covered by the2^-1022 absolute underflow allowance.",
+    "Explicit NumPy longdouble ufunc accumulation uses its reported>=64-bit significand; each dot has8k elementary operations."
+  ]
+}

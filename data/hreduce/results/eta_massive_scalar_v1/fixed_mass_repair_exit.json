@@ -1,0 +1,29 @@
+{
+  "status": "finished",
+  "command": [
+    "timeout",
+    "-s",
+    "TERM",
+    "-k",
+    "2s",
+    "300s",
+    "nice",
+    "-n",
+    "10",
+    "<internal>/python",
+    "<internal>/fixed_mass_interval_repair.py"
+  ],
+  "purpose": "necessary enclosure repair for insert I6a and item7 fixed-mass light-cut ratio",
+  "resources": {
+    "cpu_threads": 1,
+    "wall_seconds": 300,
+    "address_space_bytes": 805306368,
+    "cuda": "disabled"
+  },
+  "exit_code": 1,
+  "elapsed_seconds": 120.05973755940795,
+  "stdout_bytes": 461,
+  "stdout": "{\"status\": \"incomplete\", \"elapsed_seconds\": 119.11890449374914, \"accepted111\": 0, \"counts\": {\"evaluations\": 18052, \"created_cells\": 10000, \"refused_images\": 16895, \"refusals_by_reason\": {\"nonpositive_real_p\": 11131, \"denominator_contains_zero\": 792, \"epsilon_real_guard\": 1306, \"nonpositive_real_mass_squared\": 257, \"nonpositive_real_sqrt_argument\": 1679, \"nonfinite_elliptic_value\": 1286, \"nonfinite_p\": 344, \"nonfinite_RF\": 95, \"nonpositive_real_delta\": 5}}}\n",
+  "stderr_bytes": 0,
+  "stderr": ""
+}

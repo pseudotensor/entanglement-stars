@@ -1,0 +1,1938 @@
+{
+  "status": "unresolved",
+  "specification": "solve/strand_X_nonlinear_response.tex XN1--XN16",
+  "single_review": "solve/review_X_nonlinear_response.tex",
+  "runtime": {
+    "PID": 2878166,
+    "nice": 10,
+    "interpreter": "<internal>/python",
+    "backend": "CPU",
+    "cuda_admission": null
+  },
+  "inputs": {
+    "mass_squared_exact": [
+      "1/12",
+      "1/6",
+      "1/6",
+      "1/4"
+    ],
+    "orientation": [
+      1,
+      -1,
+      -1,
+      1
+    ],
+    "g_M": "0",
+    "g_B": "0",
+    "a": "1",
+    "Lambda": "sqrt(1/12)",
+    "ell": "1",
+    "boxes": [
+      5,
+      7
+    ],
+    "loads_exact": [
+      "1/256",
+      "1/16",
+      "1"
+    ],
+    "dt_exact": [
+      "1/8",
+      "1/16",
+      "1/32"
+    ],
+    "Tmax": "2"
+  },
+  "caps": {
+    "seconds": 21600,
+    "device_bytes": 25769803776,
+    "host_bytes": 34359738368,
+    "complete_field_source_evaluations": 16384,
+    "accepted_steps": 768,
+    "own_threads": 16,
+    "outer_midpoint_attempts_per_step": 24,
+    "load_corrector_attempts_per_box": 96,
+    "inner_field_trials_per_solve": 12,
+    "endpoint_field_trials_per_solve": 12
+  },
+  "boxes": [
+    {
+      "L": 5,
+      "status": "unresolved",
+      "loads": [],
+      "flat_controls": {
+        "quadratic_form": [
+          {
+            "profile": "constant interior",
+            "minus_phi_J0_phi": 0.008886573448188075,
+            "spectral_commutator_form": 0.008886573448190344,
+            "relative_difference": 2.2690183065776637e-15
+          },
+          {
+            "profile": "central site",
+            "minus_phi_J0_phi": 0.02551716363337686,
+            "spectral_commutator_form": 0.025517163633380205,
+            "relative_difference": 3.344546861683284e-15
+          },
+          {
+            "profile": "alternating interior",
+            "minus_phi_J0_phi": 0.02387159488572929,
+            "spectral_commutator_form": 0.02387159488573644,
+            "relative_difference": 7.147060721024445e-15
+          }
+        ],
+        "column_sum_inf": 2.153565991234155e-14,
+        "sea_clock_inf": [
+          4.200839155485439e-15,
+          1.9048392600432325e-15,
+          1.9048392600432325e-15,
+          2.87321011614984e-15
+        ],
+        "sea_clock_J_inf": [
+          3.964273514248253e-15,
+          3.4787755552078302e-15,
+          3.4787755552078302e-15,
+          2.3784527603728367e-15
+        ],
+        "sigma_min_J0": 0.008824918027730132
+      },
+      "feasibility": {
+        "native_one_particle_dimension": 250,
+        "carrier_covariance_dimension": 500,
+        "interior_fields": 27,
+        "derivative_batch_columns": 8,
+        "flat_field_seconds": 13.140795711427927,
+        "resources": {
+          "elapsed_seconds": 14.849218033254147,
+          "requested_field_source_evaluations": 1,
+          "completed_field_source_evaluations": 1,
+          "failed_or_incomplete_field_source_evaluations": 0,
+          "scalar_integrand_evaluations": 591,
+          "accepted_time_steps": 0,
+          "peak_host_RSS_bytes": 427499520,
+          "peak_own_device_pool_bytes": 0,
+          "own_threads": 7
+        }
+      },
+      "preparation": {
+        "status": "partial_or_unresolved",
+        "corrector_attempts": [
+          {
+            "attempt": 1,
+            "from_load": "0",
+            "candidate_load": "1/256",
+            "load_step": "1/256",
+            "status": "failed_or_incomplete",
+            "field_counter_before": 1,
+            "failure": {
+              "class": "Unresolved",
+              "message": "L=5 load 1/256 inner field solve exhausted its declared nonlinear corrector limit"
+            },
+            "field_counter_after": 13
+          },
+          {
+            "attempt": 2,
+            "from_load": "0",
+            "candidate_load": "1/512",
+            "load_step": "1/512",
+            "status": "failed_or_incomplete",
+            "field_counter_before": 13,
+            "failure": {
+              "class": "Unresolved",
+              "message": "L=5 load 1/512 inner field solve exhausted its declared nonlinear corrector limit"
+            },
+            "field_counter_after": 25
+          },
+          {
+            "attempt": 3,
+            "from_load": "0",
+            "candidate_load": "1/1024",
+            "load_step": "1/1024",
+            "status": "failed_or_incomplete",
+            "field_counter_before": 25,
+            "field_counter_after": 35
+          }
+        ],
+        "reached_loads": []
+      }
+    }
+  ],
+  "root_enclosure": false,
+  "trajectory_enclosure": false,
+  "physical_collapse_claim": false,
+  "spherical_transfer": false,
+  "open_parent_limit": false,
+  "production_parameters_adopted": false,
+  "full_Fock_matrix_built": false,
+  "moving_pair_state_truncation": false,
+  "sea_reset_in_evolution": false,
+  "Newton_coefficient": {
+    "status": "enclosed",
+    "input_mu_exact": "1/2",
+    "shape": "R_D",
+    "scalar_evaluation_cap": 100000,
+    "I": {
+      "lower_dyadic": {
+        "mantissa": "264750053118808496407455649036230804853309823315234557112541242067996812146034215",
+        "exponent2": -275
+      },
+      "upper_dyadic": {
+        "mantissa": "264750053120424501122368771519482400630794279502416198687622165158381904075605543",
+        "exponent2": -275
+      },
+      "display_ball": "[0.0043610116648 +/- 1.99e-14]",
+      "full_width_exact": "1005642203/37778931862957161709568"
+    },
+    "relative_enclosure_width_exact": "1616004714913122483251595777484456187181641575080923090385091929571328/264750053118808496407455649036230804853309823315234557112541242067996812146034215",
+    "heat_records": {
+      "heat_calls": [
+        {
+          "label": "X original single Newton coefficient",
+          "shape": "R_D",
+          "mu": {
+            "lower_dyadic": {
+              "mantissa": "1",
+              "exponent2": -1
+            },
+            "upper_dyadic": {
+              "mantissa": "1",
+              "exponent2": -1
+            },
+            "display_ball": "0.500000000000000000000000",
+            "full_width_exact": "0"
+          },
+          "decimal_digits": 80,
+          "panels_bisected": false,
+          "parameters": [
+            {
+              "lower_dyadic": {
+                "mantissa": "158094799172015712151648918198528556855664619063487916768539421365470726335059285",
+                "exponent2": -268
+              },
+              "upper_dyadic": {
+                "mantissa": "316189598344031424303297836397057113711329238126975833537078842730941452670118571",
+                "exponent2": -269
+              },
+              "display_ball": "[0.333333333333333333333333 +/- 3.34e-25]"
+            },
+            {
+              "lower_dyadic": {
+                "mantissa": "158094799172015712151648918198528556855664619063487916768539421365470726335059285",
+                "exponent2": -268
+              },
+              "upper_dyadic": {
+                "mantissa": "316189598344031424303297836397057113711329238126975833537078842730941452670118571",
+                "exponent2": -269
+              },
+              "display_ball": "[0.333333333333333333333333 +/- 3.34e-25]"
+            },
+            {
+              "lower_dyadic": {
+                "mantissa": "158094799172015712151648918198528556855664619063487916768539421365470726335059285",
+                "exponent2": -268
+              },
+              "upper_dyadic": {
+                "mantissa": "316189598344031424303297836397057113711329238126975833537078842730941452670118571",
+                "exponent2": -269
+              },
+              "display_ball": "[0.333333333333333333333333 +/- 3.34e-25]"
+            }
+          ],
+          "components": {
+            "0": {
+              "panels": [
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "737514769",
+                      "exponent2": -306
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "737514769",
+                      "exponent2": -306
+                    },
+                    "display_ball": "[5.65707645790384736723687e-84 +/- 3.62e-108]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "0",
+                  "right": "1",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "580431259761116870216038507111291335489865359336046948355174349951696184596161711",
+                      "exponent2": -316
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "580431259761116870216038507111291335489865359336046948355174349951696184596161711",
+                      "exponent2": -316
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 1,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "19528580889574944565373216351916382534149407523677031211036334384630338925436589",
+                      "exponent2": -275
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "19528580889574944720136814349935246710015608178064612246380920201458287585337005",
+                      "exponent2": -275
+                    },
+                    "display_ball": "[0.00032167838326294982 +/- 4.11e-21]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "403951839",
+                      "exponent2": -98
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "403951839",
+                      "exponent2": -98
+                    },
+                    "display_ball": "[1.27464725351692968094711e-21 +/- 1.63e-45]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 28
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "940909361",
+                      "exponent2": -303
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "940909361",
+                      "exponent2": -303
+                    },
+                    "display_ball": "[5.77376499440319945728259e-83 +/- 4.21e-107]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "1",
+                  "right": "2",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "580431259761116870216038507111291335489865359336046948355174349951751806311056559",
+                      "exponent2": -316
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "580431259761116870216038507111291335489865359336046948355174349951751806311056559",
+                      "exponent2": -316
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 29,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "382421737770614611925518803149095496713860579492361353377526739497338676265084867",
+                      "exponent2": -277
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "382421737770619045892448544662913204487498755869792613509474514481319448766834627",
+                      "exponent2": -277
+                    },
+                    "display_ball": "[0.0015748303349110 +/- 5.64e-17]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "706371685",
+                      "exponent2": -86
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "706371685",
+                      "exponent2": -86
+                    },
+                    "display_ball": "[9.12964004825647360235233e-18 +/- 6.3e-44]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 56
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "708171275",
+                      "exponent2": -303
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "708171275",
+                      "exponent2": -303
+                    },
+                    "display_ball": "[4.34559872301757408463399e-83 +/- 4.98e-107]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "2",
+                  "right": "4",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "580431259761116870216038507111291335489865359336046948355174349951782964300530863",
+                      "exponent2": -316
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "580431259761116870216038507111291335489865359336046948355174349951782964300530863",
+                      "exponent2": -316
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 57,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "500199406488382886818304643453827862504762889623711181950850995696632069058651097",
+                      "exponent2": -277
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "500199406488405922659101746622618698770608824470692046405251340437124321230382041",
+                      "exponent2": -277
+                    },
+                    "display_ball": "[0.0020598442008934 +/- 5.69e-17]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "917455291",
+                      "exponent2": -84
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "917455291",
+                      "exponent2": -84
+                    },
+                    "display_ball": "[4.74313268499622661487626e-17 +/- 3.08e-42]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 108
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "742024495",
+                      "exponent2": -307
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "742024495",
+                      "exponent2": -307
+                    },
+                    "display_ball": "[2.84583406210573872672577e-84 +/- 3.70e-108]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "4",
+                  "right": "8",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "580431259761116870216038507111291335489865359336046948355174349951702300204500143",
+                      "exponent2": -316
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "580431259761116870216038507111291335489865359336046948355174349951702300204500143",
+                      "exponent2": -316
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 109,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "392016053161240693111787723636950443860049339955081783142040956717415063309937087",
+                      "exponent2": -279
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "392016053161240693111787723636950443860049339955081783142219683026205132213348799",
+                      "exponent2": -279
+                    },
+                    "display_ball": "[0.000403585041928689363947472 +/- 7.32e-29]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "317481701",
+                      "exponent2": -231
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "317481701",
+                      "exponent2": -231
+                    },
+                    "display_ball": "[9.20003967249925672535850e-62 +/- 3.45e-86]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 294
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "331615331",
+                      "exponent2": -320
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "331615331",
+                      "exponent2": -320
+                    },
+                    "display_ball": "[1.55251565399612675137743e-88 +/- 3.30e-112]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "8",
+                  "right": "16",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "580431259761116870216038507111291335489865359336046948355174349951690144201635387",
+                      "exponent2": -316
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "580431259761116870216038507111291335489865359336046948355174349951690144201635387",
+                      "exponent2": -316
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 295,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "266988918666523270373010127280639293731608063271452295261993828321360213642093647",
+                      "exponent2": -287
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "266988918669706126698377799951126713421914415362389173935827290758178971576476751",
+                      "exponent2": -287
+                    },
+                    "display_ball": "[1.0737037770e-6 +/- 3.29e-17]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "990348177",
+                      "exponent2": -87
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "990348177",
+                      "exponent2": -87
+                    },
+                    "display_ball": "[6.39997509134089276280819e-18 +/- 9.70e-44]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 541
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "141807329",
+                      "exponent2": -374
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "141807329",
+                      "exponent2": -374
+                    },
+                    "display_ball": "[3.68536323181654780163496e-105 +/- 5.31e-131]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "16",
+                  "right": "32",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 542,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "239316783266456445237751700734902095246004263117769310615701100491966562997132415",
+                      "exponent2": -314
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "378517861509980386849485809226112319073735495784696068211357830780118785639603327",
+                      "exponent2": -314
+                    },
+                    "display_ball": "[+/- 1.14e-14]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "315140073",
+                      "exponent2": -77
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "315140073",
+                      "exponent2": -77
+                    },
+                    "display_ball": "[2.08542206899316686263997e-15 +/- 2.00e-39]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 557
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "582824101",
+                      "exponent2": -585
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "582824101",
+                      "exponent2": -585
+                    },
+                    "display_ball": "[4.60246017265051142858156e-168 +/- 1.19e-192]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "32",
+                  "right": "64",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 558,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "-511477202873157460279492702967487253201440202066260958720169218742330492234629905",
+                      "exponent2": -341
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "740966643388836717545160036810696551411175897543650644755416289567748701032676591",
+                      "exponent2": -341
+                    },
+                    "display_ball": "[+/- 1.66e-22]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "44303631",
+                      "exponent2": -98
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "44303631",
+                      "exponent2": -98
+                    },
+                    "display_ball": "[1.39797609820950721894420e-22 +/- 1.02e-46]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 559
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "280157331",
+                      "exponent2": -1416
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "280157331",
+                      "exponent2": -1416
+                    },
+                    "display_ball": "[1.54499874551649455595785e-418 +/- 4.18e-442]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "64",
+                  "right": "128",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 560,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "-644452376455350495044338582235495604536224702769712618755818370787031856756176421",
+                      "exponent2": -528
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "233468652091655988191157941281853639406271268506618943102664287255511604873556599",
+                      "exponent2": -526
+                    },
+                    "display_ball": "[+/- 1.07e-78]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "111662677",
+                      "exponent2": -286
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "111662677",
+                      "exponent2": -286
+                    },
+                    "display_ball": "[8.98109469455729867051264e-79 +/- 4.66e-103]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 561
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "141464827",
+                      "exponent2": -4740
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "141464827",
+                      "exponent2": -4740
+                    },
+                    "display_ball": "[1.85553446549354207372968e-1419 +/- 2.96e-1443]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "128",
+                  "right": "256",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 562,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "-407795902268026697573226797256422904157403807261269139729064294319015232630453421",
+                      "exponent2": -1268
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "590978760269136662151321516233273848463938997376102067645342148589126380721507155",
+                      "exponent2": -1268
+                    },
+                    "display_ball": "[+/- 1.17e-301]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "282643213",
+                      "exponent2": -1028
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "282643213",
+                      "exponent2": -1028
+                    },
+                    "display_ball": "[9.82659413329348097741668e-302 +/- 4.32e-326]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 563
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "153570615",
+                      "exponent2": -18037
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "153570615",
+                      "exponent2": -18037
+                    },
+                    "display_ball": "[3.22311894034162479977846e-5422 +/- 1.80e-5446]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "256",
+                  "right": "512",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 564,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "-65450553229081629430188149454987840783167890507495138678808075372661105811504771",
+                      "exponent2": -4222
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "758822398142723036757474321067678230232095641993730085118370445865662599315721193",
+                      "exponent2": -4225
+                    },
+                    "display_ball": "[+/- 1.07e-1191]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "181456965",
+                      "exponent2": -3984
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "181456965",
+                      "exponent2": -3984
+                    },
+                    "display_ball": "[9.02133722501824834583336e-1192 +/- 7.72e-1217]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 565
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "862090627",
+                      "exponent2": -71224
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "862090627",
+                      "exponent2": -71224
+                    },
+                    "display_ball": "[2.37214783841428269847165e-21432 +/- 2.41e-21456]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "512",
+                  "right": "1024",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 566,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "-355877616691026321484899993794713189119470923430549947977764861235566679677162831",
+                      "exponent2": -16045
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "257875132237652371063624522482720634502459064054180208802742334003540573425522009",
+                      "exponent2": -16044
+                    },
+                    "display_ball": "[+/- 4.86e-4750]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "246661949",
+                      "exponent2": -15805
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "246661949",
+                      "exponent2": -15805
+                    },
+                    "display_ball": "[4.10223645334296682390608e-4750 +/- 5.57e-4775]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 567
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "838402177",
+                      "exponent2": -283959
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "838402177",
+                      "exponent2": -283959
+                    },
+                    "display_ball": "[5.58359164719971299590422e-85472 +/- 4.97e-85496]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "1024",
+                  "right": "2048",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 568,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "-151896930249742827790652777936930029593904336099174074073192455839577304386402497",
+                      "exponent2": -63320
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "220134581321502028141612609776116906415827989759985488030490047536915483681195839",
+                      "exponent2": -63320
+                    },
+                    "display_ball": "[+/- 1.33e-18981]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "421124747",
+                      "exponent2": -63082
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "421124747",
+                      "exponent2": -63082
+                    },
+                    "display_ball": "[1.12259806116395842493540e-18981 +/- 1.38e-19005]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 569
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "750464201",
+                      "exponent2": -1134896
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "750464201",
+                      "exponent2": -1134896
+                    },
+                    "display_ball": "[1.37205307209610268074204e-341629 +/- 2.47e-341653]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "2048",
+                  "right": "4096",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 570,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "-645296766260169060321380324813281374323269343795887532998728062339418228381899683",
+                      "exponent2": -252421
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "467593956699738763885744550228553024422295573132486063273416530210976505325195823",
+                      "exponent2": -252420
+                    },
+                    "display_ball": "[+/- 4.77e-75906]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "223630657",
+                      "exponent2": -252180
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "223630657",
+                      "exponent2": -252180
+                    },
+                    "display_ball": "[4.02925540278438334046166e-75906 +/- 1.34e-75930]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 571
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "963695831",
+                      "exponent2": -4538642
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "963695831",
+                      "exponent2": -4538642
+                    },
+                    "display_ball": "[4.00276060906371080759233e-1366259 +/- 1.22e-1366283]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "4096",
+                  "right": "8192",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 572,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "-334429769",
+                      "exponent2": -1008570
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "334429769",
+                      "exponent2": -1008570
+                    },
+                    "display_ball": "[+/- 5.04e-303602]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "334429769",
+                      "exponent2": -1008570
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "334429769",
+                      "exponent2": -1008570
+                    },
+                    "display_ball": "[5.03011723782549248613092e-303602 +/- 4.98e-303626]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 573
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "81893307",
+                      "exponent2": -18153618
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "81893307",
+                      "exponent2": -18153618
+                    },
+                    "display_ball": "[2.31965201204818621449640e-5464776 +/- 1.48e-5464800]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "8192",
+                  "right": "16384",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 574,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "-429322913",
+                      "exponent2": -4034123
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "429322913",
+                      "exponent2": -4034123
+                    },
+                    "display_ball": "[+/- 4.02e-1214384]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "429322913",
+                      "exponent2": -4034123
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "429322913",
+                      "exponent2": -4034123
+                    },
+                    "display_ball": "[4.01408071131903100048785e-1214384 +/- 1.95e-1214408]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 575
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "279876393",
+                      "exponent2": -72613535
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "279876393",
+                      "exponent2": -72613535
+                    },
+                    "display_ball": "[2.09300334009847807983917e-21858844 +/- 1.57e-21858868]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "16384",
+                  "right": "32768",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 576,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "-291501459",
+                      "exponent2": -16136327
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "291501459",
+                      "exponent2": -16136327
+                    },
+                    "display_ball": "[+/- 1.05e-4857510]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "291501459",
+                      "exponent2": -16136327
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "291501459",
+                      "exponent2": -16136327
+                    },
+                    "display_ball": "[1.04183309725619207712509e-4857510 +/- 3.94e-4857534]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 577
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "596566431",
+                      "exponent2": -290453194
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "596566431",
+                      "exponent2": -290453194
+                    },
+                    "display_ball": "[1.10981176114931221651162e-87435115 +/- 3.44e-87435139]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "32768",
+                  "right": "65536",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 578,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "-247814899",
+                      "exponent2": -64545139
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "247814899",
+                      "exponent2": -64545139
+                    },
+                    "display_ball": "[+/- 3.03e-19430015]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "247814899",
+                      "exponent2": -64545139
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "247814899",
+                      "exponent2": -64545139
+                    },
+                    "display_ball": "[3.02570337518142575430595e-19430015 +/- 4.58e-19430039]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 579
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "192419601",
+                      "exponent2": -1161811821
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "192419601",
+                      "exponent2": -1161811821
+                    },
+                    "display_ball": "[7.01870862139542813395073e-349740200 +/- 4.26e-349740224]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "65536",
+                  "right": "131072",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 580,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "-129441681",
+                      "exponent2": -258180381
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "129441681",
+                      "exponent2": -258180381
+                    },
+                    "display_ball": "[+/- 1.38e-77720031]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "129441681",
+                      "exponent2": -258180381
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "129441681",
+                      "exponent2": -258180381
+                    },
+                    "display_ball": "[1.37758730308242063283163e-77720031 +/- 2.09e-77720056]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 581
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "1066304761",
+                      "exponent2": -4647246335
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "1066304761",
+                      "exponent2": -4647246335
+                    },
+                    "display_ball": "[8.98211988551080425229854e-1398960536 +/- 4.72e-1398960560]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "131072",
+                  "right": "262144",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 582,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "-308326637",
+                      "exponent2": -1032721348
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "308326637",
+                      "exponent2": -1032721348
+                    },
+                    "display_ball": "[+/- 3.79e-310880095]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "308326637",
+                      "exponent2": -1032721348
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "308326637",
+                      "exponent2": -1032721348
+                    },
+                    "display_ball": "[3.78852564171493830722493e-310880095 +/- 4.88e-310880119]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 583
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "981995599",
+                      "exponent2": -18588984378
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "981995599",
+                      "exponent2": -18588984378
+                    },
+                    "display_ball": "[1.92732682607783654954053e-5595841878 +/- 3.12e-5595841902]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "262144",
+                  "right": "524288",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 584,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "-77544083",
+                      "exponent2": -4130885203
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "77544083",
+                      "exponent2": -4130885203
+                    },
+                    "display_ball": "[+/- 1.39e-1243520347]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "77544083",
+                      "exponent2": -4130885203
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "77544083",
+                      "exponent2": -4130885203
+                    },
+                    "display_ball": "[1.38693013710539201003052e-1243520347 +/- 1.87e-1243520371]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 585
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "353176941",
+                      "exponent2": -74355936546
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "353176941",
+                      "exponent2": -74355936546
+                    },
+                    "display_ball": "[3.26852229432255939802959e-22383367248 +/- 2.76e-22383367272]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "524288",
+                  "right": "1048576",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 586,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "-158843373",
+                      "exponent2": -16523540626
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "158843373",
+                      "exponent2": -16523540626
+                    },
+                    "display_ball": "[+/- 1.60e-4974081355]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "158843373",
+                      "exponent2": -16523540626
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "158843373",
+                      "exponent2": -16523540626
+                    },
+                    "display_ball": "[1.59430708695706431772600e-4974081355 +/- 1.67e-4974081380]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 587
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "756368603",
+                      "exponent2": -297423745222
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "756368603",
+                      "exponent2": -297423745222
+                    },
+                    "display_ball": "[2.16284683545565091711914e-89533468726 +/- 3.08e-89533468750]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "1048576",
+                  "right": "2097152",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 588,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "-174795747",
+                      "exponent2": -66094162308
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "174795747",
+                      "exponent2": -66094162308
+                    },
+                    "display_ball": "[+/- 1.79e-19896325385]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "174795747",
+                      "exponent2": -66094162308
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "174795747",
+                      "exponent2": -66094162308
+                    },
+                    "display_ball": "[1.78164640383028974426682e-19896325385 +/- 6.51e-19896325410]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 589
+                },
+                {
+                  "midpoint_full_parameter_radius": {
+                    "lower_dyadic": {
+                      "mantissa": "994438941",
+                      "exponent2": -1189694979919
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "994438941",
+                      "exponent2": -1189694979919
+                    },
+                    "display_ball": "[3.31751588469106534761663e-358133874638 +/- 3.85e-358133874662]"
+                  },
+                  "radius_is_only_a_request_heuristic": true,
+                  "left": "2097152",
+                  "right": "4194304",
+                  "requested_absolute_goal": {
+                    "lower_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "36276953735069804388502406694455708468116584958502934272198396871980633929698379",
+                      "exponent2": -312
+                    },
+                    "display_ball": "[4.34782608695652173913043e-15 +/- 4.79e-39]"
+                  },
+                  "requested_relative_goal": "0",
+                  "preceding_counter": 590,
+                  "status": "finite_directed_integral_enclosed",
+                  "returned_ball": {
+                    "lower_dyadic": {
+                      "mantissa": "-256317293",
+                      "exponent2": -264376649030
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "256317293",
+                      "exponent2": -264376649030
+                    },
+                    "display_ball": "[+/- 1.78e-79585301503]"
+                  },
+                  "actual_radius_upper": {
+                    "lower_dyadic": {
+                      "mantissa": "256317293",
+                      "exponent2": -264376649030
+                    },
+                    "upper_dyadic": {
+                      "mantissa": "256317293",
+                      "exponent2": -264376649030
+                    },
+                    "display_ball": "[1.77827796973258796225333e-79585301503 +/- 1.81e-79585301527]"
+                  },
+                  "requested_goal_is_not_an_error_certificate": true,
+                  "counter_after": 591
+                }
+              ],
+              "tail_upper": {
+                "lower_dyadic": {
+                  "mantissa": "372502094737168716062960581404395379357074818384273848277782682744769427933373717",
+                  "exponent2": -313
+                },
+                "upper_dyadic": {
+                  "mantissa": "372502094737168716062960581404395379357074818384273848277782682744769427933373717",
+                  "exponent2": -313
+                },
+                "display_ball": "[2.23223583872552441566671e-14 +/- 4.18e-38]"
+              },
+              "tail_kind": "positive",
+              "status": "enclosed",
+              "finite_panels_sum": {
+                "lower_dyadic": {
+                  "mantissa": "8273439159962765512794940858208347853843222518934855058850454507951993794336651",
+                  "exponent2": -270
+                },
+                "upper_dyadic": {
+                  "mantissa": "8273439159970917074816725743819302693436923258532966212382004797760015725762443",
+                  "exponent2": -270
+                },
+                "display_ball": "[0.00436101166478 +/- 4.42e-15]",
+                "full_width_exact": "10145459/2361183241434822606848"
+              },
+              "with_tail": {
+                "lower_dyadic": {
+                  "mantissa": "264750053118808496407455649036230804853309823315234557112541242067996812146034215",
+                  "exponent2": -275
+                },
+                "upper_dyadic": {
+                  "mantissa": "264750053120424501122368771519482400630794279502416198687622165158381904075605543",
+                  "exponent2": -275
+                },
+                "display_ball": "[0.0043610116648 +/- 1.99e-14]",
+                "full_width_exact": "1005642203/37778931862957161709568"
+              },
+              "numerical_and_parameter_widths": "joint_full_enclosure"
+            }
+          },
+          "status": "enclosed",
+          "full_parameter_balls_retained": true
+        }
+      ],
+      "last_active_call": "X original single Newton coefficient"
+    },
+    "k_star": {
+      "lower_dyadic": {
+        "mantissa": "794250159356425489216742663953785948595532602622509602228796015725750661514547829",
+        "exponent2": -275
+      },
+      "upper_dyadic": {
+        "mantissa": "794250159361273503372730597713353667856779705830442665171694205953385487150371445",
+        "exponent2": -275
+      },
+      "display_ball": "[0.0130830349944 +/- 5.97e-14]"
+    },
+    "G": {
+      "lower_dyadic": {
+        "mantissa": "224404391223758938095",
+        "exponent2": -64
+      },
+      "upper_dyadic": {
+        "mantissa": "224404391225128698325",
+        "exponent2": -64
+      },
+      "display_ball": "[12.1649864240 +/- 7.86e-11]"
+    }
+  },
+  "failure": {
+    "class": "KeyboardInterrupt",
+    "message": "",
+    "phase": "L=5 load 1/1024 backtrack 4"
+  },
+  "resources": {
+    "elapsed_seconds": 446.38216284289956,
+    "requested_field_source_evaluations": 35,
+    "completed_field_source_evaluations": 7,
+    "failed_or_incomplete_field_source_evaluations": 28,
+    "scalar_integrand_evaluations": 591,
+    "accepted_time_steps": 0,
+    "peak_host_RSS_bytes": 555962368,
+    "peak_own_device_pool_bytes": 0,
+    "own_threads": 7
+  },
+  "field_work_records": [
+    {
+      "requested_field_evaluation": 1,
+      "phase": "L=5 flat algebraic control",
+      "elapsed_start": 1.7084692120552063,
+      "status": "completed",
+      "clock_residual": 1.0121136896129179e-14,
+      "ruler_residual": 9.467172864124212e-18,
+      "sigma_min": 0.008824918027730132,
+      "minimum_ruler": 1.0,
+      "minimum_lapse": 0.9999999999996084,
+      "elapsed_end": 14.80018200352788
+    },
+    {
+      "requested_field_evaluation": 2,
+      "phase": "L=5 load 1/256 initial field trial",
+      "elapsed_start": 14.861292574554682,
+      "status": "completed",
+      "clock_residual": 0.0013550105792765762,
+      "ruler_residual": 9.768165863385815e-18,
+      "sigma_min": 0.009218858924677801,
+      "minimum_ruler": 1.0,
+      "minimum_lapse": 0.904687580219777,
+      "elapsed_end": 27.102795869112015
+    },
+    {
+      "requested_field_evaluation": 3,
+      "phase": "L=5 load 1/256 backtrack 0",
+      "elapsed_start": 27.10309809818864,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 4,
+      "phase": "L=5 load 1/256 backtrack 1",
+      "elapsed_start": 39.38117070868611,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 5,
+      "phase": "L=5 load 1/256 backtrack 2",
+      "elapsed_start": 51.669398970901966,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 6,
+      "phase": "L=5 load 1/256 backtrack 3",
+      "elapsed_start": 63.74095172807574,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 7,
+      "phase": "L=5 load 1/256 backtrack 4",
+      "elapsed_start": 75.66575848683715,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 8,
+      "phase": "L=5 load 1/256 backtrack 5",
+      "elapsed_start": 87.62081518769264,
+      "status": "completed",
+      "clock_residual": 0.0013214875212948223,
+      "ruler_residual": 2.4015078120553923e-17,
+      "sigma_min": 0.0037396186170973104,
+      "minimum_ruler": 1.0,
+      "minimum_lapse": 1.0,
+      "elapsed_end": 99.8541404902935
+    },
+    {
+      "requested_field_evaluation": 9,
+      "phase": "L=5 load 1/256 backtrack 0",
+      "elapsed_start": 99.85456319898367,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 10,
+      "phase": "L=5 load 1/256 backtrack 1",
+      "elapsed_start": 112.64477072656155,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 11,
+      "phase": "L=5 load 1/256 backtrack 2",
+      "elapsed_start": 125.37972646206617,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 12,
+      "phase": "L=5 load 1/256 backtrack 3",
+      "elapsed_start": 138.8522151336074,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 13,
+      "phase": "L=5 load 1/256 backtrack 4",
+      "elapsed_start": 154.21108826994896,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 14,
+      "phase": "L=5 load 1/512 initial field trial",
+      "elapsed_start": 167.96337746083736,
+      "status": "completed",
+      "clock_residual": 0.0006775052896389612,
+      "ruler_residual": 1.2278589603398338e-17,
+      "sigma_min": 0.009018002417946239,
+      "minimum_ruler": 1.0,
+      "minimum_lapse": 0.9530944492612031,
+      "elapsed_end": 180.83431787788868
+    },
+    {
+      "requested_field_evaluation": 15,
+      "phase": "L=5 load 1/512 backtrack 0",
+      "elapsed_start": 180.83457339182496,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 16,
+      "phase": "L=5 load 1/512 backtrack 1",
+      "elapsed_start": 196.48901026323438,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 17,
+      "phase": "L=5 load 1/512 backtrack 2",
+      "elapsed_start": 209.49315286055207,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 18,
+      "phase": "L=5 load 1/512 backtrack 3",
+      "elapsed_start": 223.15912317484617,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 19,
+      "phase": "L=5 load 1/512 backtrack 4",
+      "elapsed_start": 235.727396491915,
+      "status": "completed",
+      "clock_residual": 0.0006437354308708264,
+      "ruler_residual": 1.0821689345794678e-17,
+      "sigma_min": 0.003681935500320844,
+      "minimum_ruler": 1.0,
+      "minimum_lapse": 1.0,
+      "elapsed_end": 248.05776453763247
+    },
+    {
+      "requested_field_evaluation": 20,
+      "phase": "L=5 load 1/512 backtrack 0",
+      "elapsed_start": 248.05814381316304,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 21,
+      "phase": "L=5 load 1/512 backtrack 1",
+      "elapsed_start": 259.9312578290701,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 22,
+      "phase": "L=5 load 1/512 backtrack 2",
+      "elapsed_start": 272.7693460807204,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 23,
+      "phase": "L=5 load 1/512 backtrack 3",
+      "elapsed_start": 285.2485292740166,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 24,
+      "phase": "L=5 load 1/512 backtrack 4",
+      "elapsed_start": 298.4680576622486,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 25,
+      "phase": "L=5 load 1/512 backtrack 5",
+      "elapsed_start": 311.39069414138794,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 26,
+      "phase": "L=5 load 1/1024 initial field trial",
+      "elapsed_start": 324.90552074834704,
+      "status": "completed",
+      "clock_residual": 0.00033875264482028533,
+      "ruler_residual": 8.844822339740596e-18,
+      "sigma_min": 0.00892047967898143,
+      "minimum_ruler": 1.0,
+      "minimum_lapse": 0.9767303092363467,
+      "elapsed_end": 337.986466486007
+    },
+    {
+      "requested_field_evaluation": 27,
+      "phase": "L=5 load 1/1024 backtrack 0",
+      "elapsed_start": 337.9867037795484,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 28,
+      "phase": "L=5 load 1/1024 backtrack 1",
+      "elapsed_start": 351.6765318252146,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 29,
+      "phase": "L=5 load 1/1024 backtrack 2",
+      "elapsed_start": 364.83557184413075,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 30,
+      "phase": "L=5 load 1/1024 backtrack 3",
+      "elapsed_start": 378.0091960839927,
+      "status": "completed",
+      "clock_residual": 0.00030486365955391723,
+      "ruler_residual": 1.3213713977167085e-17,
+      "sigma_min": 0.0036522386205098496,
+      "minimum_ruler": 1.0,
+      "minimum_lapse": 1.0,
+      "elapsed_end": 391.5187906585634
+    },
+    {
+      "requested_field_evaluation": 31,
+      "phase": "L=5 load 1/1024 backtrack 0",
+      "elapsed_start": 391.5190832875669,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 32,
+      "phase": "L=5 load 1/1024 backtrack 1",
+      "elapsed_start": 404.6700552366674,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 33,
+      "phase": "L=5 load 1/1024 backtrack 2",
+      "elapsed_start": 417.3634699136019,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 34,
+      "phase": "L=5 load 1/1024 backtrack 3",
+      "elapsed_start": 430.06714154034853,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "BranchStop",
+        "message": "The solved lapse left the declared open (1/8,8) chart"
+      }
+    },
+    {
+      "requested_field_evaluation": 35,
+      "phase": "L=5 load 1/1024 backtrack 4",
+      "elapsed_start": 443.51350765675306,
+      "status": "failed_or_incomplete",
+      "failure": {
+        "class": "KeyboardInterrupt",
+        "message": ""
+      }
+    }
+  ]
+}

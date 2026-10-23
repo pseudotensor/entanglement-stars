@@ -1,0 +1,93 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\begin{document}
+\noindent\textbf{Conditional Page expectation: an independent route.}
+
+Use natural logarithms and $\hbar=c=k_B=1$. At each clock let $R$
+be the escaping subsystem and $B$ its entire retained complement in a
+pure, charge-invariant Gaussian state, with one-particle covariance
+\[
+ C=\begin{pmatrix}C_R&K\\K^\dagger&C_B\end{pmatrix},\qquad
+ C^2=C,\quad 0\leq C\leq1.
+\]
+Here $R$ consists of $n_R$ orthonormal, complete complex CAR modes,
+including physical multiplicities; $n_R$ is neither a particle expectation
+nor a Majorana count. Work in a finite mode space, or with a finite
+entangled sector for which the displayed entropies exist. Unitary,
+number-conserving quadratic evolution preserves these premises before
+any modes are discarded.
+The entropy is that of the physical state, without a sea-entropy subtraction.
+
+Diagonalizing $C_R$ gives independent Bernoulli factors with probabilities
+$\lambda_j,1-\lambda_j$, so
+\[
+ S_R=\sum_{j=1}^{n_R}h(\lambda_j)\leq n_R\ln2,
+ \qquad h(x)=-x\ln x-(1-x)\ln(1-x).
+ \tag{1}
+\]
+Indeed $h''(x)=-1/[x(1-x)]<0$ and $h(1/2)=\ln2$. Purity also gives
+$S_R=S_B$ and
+\[
+ C_R(1-C_R)=KK^\dagger,\qquad
+ C_B(1-C_B)=K^\dagger K.
+ \tag{2}
+\]
+Thus only $\operatorname{rank}K$ retained natural modes have fractional
+occupations; all other retained factors are pure. Assume, separately,
+that these entangled retained modes fit into an accessible set of at most
+$n_{\rm acc}(E)$ complete complex modes whose capacity obeys
+\[
+ n_{\rm acc}(E)\ln2\leq B(E),\qquad B(E):=\frac{\eta A(E)}{a^2}.
+ \tag{3}
+\]
+Equivalently, a sufficient state-count premise is that the retained
+reduced state is supported on a space of dimension $D_{\rm acc}$ with
+$\ln D_{\rm acc}\leq B(E)$. Equations (1)--(3) then give
+\[
+ \boxed{S_{\rm esc}(t)\leq\min\{n_R(t)\ln2,B(E(t))\}.} \tag{4}
+\]
+Equation (3) is the unproved accessible-count identification; purity and
+the vacuum spatial area law do not imply it. For example,
+$\prod_{j=1}^{m}(r_j^\dagger+b_j^\dagger)|0\rangle/\sqrt{2^m}$
+is a pure, fixed-charge Slater state with $S_R=m\ln2$ across the chosen
+split, irrespective of the vacuum cut entropy. This tests the inference
+from purity alone; the witness is not asserted to solve the declared
+Gauss law. The matching
+$a^2=4G\eta$ makes $B=A/(4G)$ only for the same coefficient $\eta$;
+if a light cut has coefficient $\eta_2$ while the spacing uses $\eta_1$,
+then $B=(\eta_2/\eta_1)A/(4G)$.
+
+For the crossing use the continuous-capacity comparator assumptions
+$n_R(t)\ln2=B(E_0)-B(E(t))$, constant $\eta/a^2$, and
+$A(E)=A(E_0)(E/E_0)^2$ along a decreasing positive-energy sequence;
+integer mode-count rounding is omitted in this comparator.
+The two bounds in (4) meet at
+\[
+ B(E_\times)=\tfrac12B(E_0),\qquad E_\times=E_0/\sqrt2. \tag{5}
+\]
+This is the crossing of a conditional upper envelope, not a proof of
+saturation, entropy turnover, or an evaporation curve. The clock at
+infinity follows only after a luminosity law is specified; $t_*$ is
+the formal comparator's time from $E_0$ to $0$:
+\[
+\begin{array}{c|c|c}
+ \dot E=-L(E)&t_*&t_\times/t_*\\ \hline
+ L(E)=c_L/E^2,\quad c_L>0
+ &E_0^3/(3c_L)&1-2^{-3/2}\\
+ L(E)=L_0,\quad L_0>0
+ &E_0/L_0&1-2^{-1/2}
+\end{array} \tag{6}
+\]
+The first row follows by integrating $E^2\,dE=-c_L\,dt$, giving
+$E^3=E_0^3-3c_Lt$; the second gives $E=E_0-L_0t$.
+Consequently the printed $1-2^{-3/2}$ clock must name the $E^{-2}$
+luminosity comparator. ``Constant luminosity'' fits that row only if
+explicitly defined to mean a constant coefficient $c_L$, not a
+luminosity constant in time. Neither comparator establishes a sustained
+flux of the model's object.
+% Reciprocal repairs from the sole independent RED: the Slater witness's
+% scope is explicitly limited to the purity-only inference and t_* is
+% explicitly the formal comparator lifetime. The saved independent
+% derivation and its full self-read preceded peer-source access.
+\end{document}

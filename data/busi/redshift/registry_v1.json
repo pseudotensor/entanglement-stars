@@ -1,0 +1,358 @@
+{
+ "P64_s4_prod": {
+  "npz": "<internal>/collapse_c32_rs64_A_R2_tau8_ell4_prep4_avg_plain_v36d_from0_to40_fields.npz",
+  "json": "<internal>/collapse_c32_rs64_A_R2_tau8_ell4_prep4_avg_plain_v36d_from0_to40.json",
+  "npz_md5": "01444a399b9466047a5b0f118af61f77",
+  "json_md5": "d7d69adcea7a43f8375ab4c7c5a80efc",
+  "rs": 64.0,
+  "desc": "r_s/a 64 production pair, sigma/a 4 (v36d plain, from T=0 to 40)",
+  "site_fields": "averaged",
+  "copies_same_npz": [
+   "<internal>/collapse_c32_rs64_A_R2_tau8_ell4_prep4_avg_plain_v36d_from0_to40_fields.npz",
+   "<internal>/collapse_c32_rs64_A_R2_tau8_ell4_prep4_avg_plain_v36d_from0_to40_fields.npz"
+  ]
+ },
+ "P64_s8_prod": {
+  "npz": "<internal>/collapse_c32_rs64_A_R2_tau8_ell8_prep4_avg_plain_v36d_from0_to40_fields.npz",
+  "json": "<internal>/collapse_c32_rs64_A_R2_tau8_ell8_prep4_avg_plain_v36d_from0_to40.json",
+  "npz_md5": "29042448c9b1be23fda15325f16bf8af",
+  "json_md5": "d1ca037a77c198aa83b33055495eceff",
+  "rs": 64.0,
+  "desc": "r_s/a 64 production pair, sigma/a 8 (v36d plain, from T=0 to 40)",
+  "site_fields": "averaged",
+  "copies_same_npz": []
+ },
+ "P64_s4_prod56": {
+  "npz": "<internal>/collapse_c32_rs64_A_R2_tau8_ell4_prep4_avg_plain_v36d_from0_to56m325_fields.npz",
+  "json": "<internal>/collapse_c32_rs64_A_R2_tau8_ell4_prep4_avg_plain_v36d_from0_to56m325.json",
+  "npz_md5": "5520e7accf13ac59909b257408d4fc7b",
+  "json_md5": "b81505fb271e9fba8728936edc4ce0d8",
+  "rs": 64.0,
+  "desc": "P64_s4 production continued to 56 (marks325 own56)",
+  "site_fields": "averaged",
+  "copies_same_npz": []
+ },
+ "P64_ref_c19r11": {
+  "npz": "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_r11_fields.npz",
+  "json": "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_r11.json",
+  "npz_md5": "876dd5c6dee34b1c290b33eaeb4d25b1",
+  "json_md5": "e27e457d37615cff8d5216f05a494f89",
+  "rs": 64.0,
+  "desc": "the reference collapse c19 r11 (r_s/a 64, sigma/a 4, plain, 0 to 40)",
+  "site_fields": "averaged",
+  "copies_same_npz": [
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_r11_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_r11_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_r11_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_r11_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_r11_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_r11_fields.npz"
+  ]
+ },
+ "P64_s4_newton": {
+  "npz": "<internal>/collapse_lad_P64_s4_newton_v36nq_h100_1_fields.npz",
+  "json": "<internal>/collapse_lad_P64_s4_newton_v36nq_h100_1.json",
+  "npz_md5": "e50744edf19fd59d5c70153f69414864",
+  "json_md5": "8f31394bc66d929e3d53aad9e43c1d21",
+  "rs": 64.0,
+  "desc": "P64_s4 by Newton from T=0 (FORMATION_newton_route_v1)",
+  "site_fields": "averaged",
+  "copies_same_npz": []
+ },
+ "ISO_128_s4": {
+  "npz": "<internal>/collapse_lad_ISO_128_s4_rd_m0p2_rs128_n4096_R04_k10_tau8_ell4_prep4_A_R2_avg_newton_v36nq_rd2_fields.npz",
+  "json": "<internal>/collapse_lad_ISO_128_s4_rd_m0p2_rs128_n4096_R04_k10_tau8_ell4_prep4_A_R2_avg_newton_v36nq_rd2.json",
+  "npz_md5": "694fe93d9d6c43bc68b292cc8f07e1b2",
+  "json_md5": "dd7c2fb07146b82c55bd37031cd42b45",
+  "rs": 128.0,
+  "desc": "ISO_128_s4, job (b), to 12.0625 (ended by its engine rule)",
+  "site_fields": "averaged",
+  "copies_same_npz": [
+   "<internal>/collapse_lad_ISO_128_s4_rd_m0p2_rs128_n4096_R04_k10_tau8_ell4_prep4_A_R2_avg_newton_v36nq_rd2_fields.npz"
+  ]
+ },
+ "W256_s4": {
+  "npz": "<internal>/collapse_lad_W256_s4_m0p2_rs256_n4096_R04_k14_tau16_ell4_prep4_A_R2_avg_newton_v36nq_rd13mf_fields.npz",
+  "json": "<internal>/collapse_lad_W256_s4_m0p2_rs256_n4096_R04_k14_tau16_ell4_prep4_A_R2_avg_newton_v36nq_rd13mf.json",
+  "npz_md5": "7bb4efdaa51f5a56f8b5c9f620de5d45",
+  "json_md5": "10ec017a7ec75c8a4346e108e89d9f27",
+  "rs": 256.0,
+  "desc": "W256_s4 (h100-f), ended by its engine rule at 2.125 (box copy of the card's final run files)",
+  "site_fields": "averaged",
+  "copies_same_npz": []
+ },
+ "S4_128_s16": {
+  "npz": "<internal>/collapse_lad_S4_128_s16_m0p2_rs128_n4096_R04_k10_tau8_ell16_prep4_A_R2_avg_plain_v36d_fields.npz",
+  "json": "<internal>/collapse_lad_S4_128_s16_m0p2_rs128_n4096_R04_k10_tau8_ell16_prep4_A_R2_avg_plain_v36d.json",
+  "npz_md5": "e855b96aed8c8cbecba78385e6ec37e8",
+  "json_md5": "c2aee55e56201f6a216aa9844dd6bcdb",
+  "rs": 128.0,
+  "desc": "the r_s/a 128 sigma/a 16 member (plain, 0 to 40)",
+  "site_fields": "averaged",
+  "copies_same_npz": []
+ },
+ "P64_s2_nk": {
+  "npz": "<internal>/collapse_c32_rs64_A_R2_tau8_ell2_prep4_avg_nk40r2b_fields.npz",
+  "json": "<internal>/collapse_c32_rs64_A_R2_tau8_ell2_prep4_avg_nk40r2b.json",
+  "npz_md5": "57807326cc99cdfee0266937ef6765e3",
+  "json_md5": "25450fc7f424e993c96a4e9614b2146b",
+  "rs": 64.0,
+  "desc": "64 triple sigma/a 2 (Newton nk40r2b, 0 to 18.125)",
+  "site_fields": "averaged",
+  "copies_same_npz": [
+   "<internal>/collapse_c32_rs64_A_R2_tau8_ell2_prep4_avg_nk40r2b_fields.npz"
+  ]
+ },
+ "P64_s4_c27": {
+  "npz": "<internal>/collapse_c27_rs64_A_R2_tau8_ell4_prep4_avg_fields.npz",
+  "json": "<internal>/collapse_c27_rs64_A_R2_tau8_ell4_prep4_avg.json",
+  "npz_md5": "ff9c3e3261fe85fd97849aad38da669f",
+  "json_md5": "ced7f62385c9f050e979fb5c92d3acd5",
+  "rs": 64.0,
+  "desc": "64 triple sigma/a 4 (c27 plain, 0 to 40)",
+  "site_fields": "averaged",
+  "copies_same_npz": [
+   "<internal>/collapse_c27_rs64_A_R2_tau8_ell4_prep4_avg_fields.npz",
+   "<internal>/collapse_c27_rs64_A_R2_tau8_ell4_prep4_avg_fields.npz",
+   "<internal>/collapse_c27_rs64_A_R2_tau8_ell4_prep4_avg_fields.npz"
+  ]
+ },
+ "P64_s8_c27": {
+  "npz": "<internal>/collapse_c27_rs64_A_R2_tau8_ell8_prep4_avg_fields.npz",
+  "json": "<internal>/collapse_c27_rs64_A_R2_tau8_ell8_prep4_avg.json",
+  "npz_md5": "a9d6472d9180a331543b183b019e6fd4",
+  "json_md5": "ef0ae52090957ae6749c83d2db958ce8",
+  "rs": 64.0,
+  "desc": "64 triple sigma/a 8 (c27 plain, 0 to 40)",
+  "site_fields": "averaged",
+  "copies_same_npz": [
+   "<internal>/collapse_c27_rs64_A_R2_tau8_ell8_prep4_avg_fields.npz",
+   "<internal>/collapse_c27_rs64_A_R2_tau8_ell8_prep4_avg_fields.npz",
+   "<internal>/collapse_c27_rs64_A_R2_tau8_ell8_prep4_avg_fields.npz",
+   "<internal>/collapse_c27_rs64_A_R2_tau8_ell8_prep4_avg_fields.npz",
+   "<internal>/collapse_c27_rs64_A_R2_tau8_ell8_prep4_avg_fields.npz",
+   "<internal>/collapse_c27_rs64_A_R2_tau8_ell8_prep4_avg_fields.npz"
+  ]
+ },
+ "P64_s2_to40": {
+  "npz": "<internal>/collapse_c32_rs64_A_R2_tau8_ell2_prep4_avg_nk40r2b_v36cc_v36d_fields.npz",
+  "json": "<internal>/collapse_c32_rs64_A_R2_tau8_ell2_prep4_avg_nk40r2b_v36cc_v36d.json",
+  "npz_md5": "a68c736e845715b0ac22fde0913e70c3",
+  "json_md5": "0a005ac5f66bef02a0104e4278867765",
+  "rs": 64.0,
+  "desc": "sigma/a 2 Newton lineage continued to 40 (v36cc_v36d)",
+  "site_fields": "averaged",
+  "copies_same_npz": []
+ },
+ "W2_v36v": {
+  "npz": "<internal>/collapse_lad_W2_dg_m0p2_rs64_n2048_R04_k10_tau8_ell4_prep4_A_R2_avg_plain_v36f_v36p_v36v_anc_fields.npz",
+  "json": "<internal>/collapse_lad_W2_dg_m0p2_rs64_n2048_R04_k10_tau8_ell4_prep4_A_R2_avg_plain_v36f_v36p_v36v_anc.json",
+  "npz_md5": "a1c0567cdb3129e9187dea25e55b0604",
+  "json_md5": "c40c10690dccd65a19bc89d7583b41c6",
+  "rs": 64.0,
+  "desc": "W2 (dg step) v36v anchored history, 0 to 40",
+  "site_fields": "averaged",
+  "copies_same_npz": []
+ },
+ "S4_128_s8": {
+  "npz": "<internal>/collapse_lad_S4_128_s8_m0p2_rs128_n4096_R04_k10_tau8_ell8_prep4_A_R2_avg_plain_v36d_fields.npz",
+  "json": "<internal>/collapse_lad_S4_128_s8_m0p2_rs128_n4096_R04_k10_tau8_ell8_prep4_A_R2_avg_plain_v36d.json",
+  "npz_md5": "84ef7aee8540fed859ee11aaad16187e",
+  "json_md5": "ff475918f57758118221aa59fda52a86",
+  "rs": 128.0,
+  "desc": "r_s/a 128 sigma/a 8 (plain, 0 to 40)",
+  "site_fields": "averaged",
+  "copies_same_npz": []
+ },
+ "S4_128_s4": {
+  "npz": "<internal>/collapse_lad_S4_128_s4_m0p2_rs128_n4096_R04_k10_tau8_ell4_prep4_A_R2_avg_plain_v36d_fields.npz",
+  "json": "<internal>/collapse_lad_S4_128_s4_m0p2_rs128_n4096_R04_k10_tau8_ell4_prep4_A_R2_avg_plain_v36d.json",
+  "npz_md5": "677f36773a5b95aecd88e9a1df91ef71",
+  "json_md5": "5fe643bb6c3ef225f05e194c38908a6a",
+  "rs": 128.0,
+  "desc": "r_s/a 128 sigma/a 4 well (plain; no certified formation)",
+  "site_fields": "averaged",
+  "copies_same_npz": []
+ },
+ "ISO_128_s4_plain": {
+  "npz": "<internal>/collapse_lad_ISO_128_s4_m0p2_rs128_n4096_R04_k10_tau8_ell4_prep4_A_R2_avg_plain_v36n_fields.npz",
+  "json": "<internal>/collapse_lad_ISO_128_s4_m0p2_rs128_n4096_R04_k10_tau8_ell4_prep4_A_R2_avg_plain_v36n.json",
+  "npz_md5": "69eef455d7608ab92533941b12f72524",
+  "json_md5": "1c955a60f6f02ce601676eab63d96390",
+  "rs": 128.0,
+  "desc": "ISO_128_s4 plain mix (v36n, 0 to 14.375)",
+  "site_fields": "averaged",
+  "copies_same_npz": []
+ },
+ "ISO_64_s4": {
+  "npz": "<internal>/collapse_lad_ISO_64_s4_m0p2_rs64_n2048_R04_k10_tau8_ell4_prep4_A_R2_avg_plain_v36n_fields.npz",
+  "json": "<internal>/collapse_lad_ISO_64_s4_m0p2_rs64_n2048_R04_k10_tau8_ell4_prep4_A_R2_avg_plain_v36n.json",
+  "npz_md5": "1801417465d27e3e96eec0fcd03ce157",
+  "json_md5": "fde06ed72e8ec1d22759f576186af5aa",
+  "rs": 64.0,
+  "desc": "ISO_64_s4 (isotropic, plain, 0 to 40)",
+  "site_fields": "averaged",
+  "copies_same_npz": []
+ },
+ "M3c_s4_96": {
+  "npz": "<internal>/collapse_lad_M3c_s4_m0p1_rs96_n3072_R04_k10_tau8_ell4_prep4_A_R2_avg_plain_v36d_fields.npz",
+  "json": "<internal>/collapse_lad_M3c_s4_m0p1_rs96_n3072_R04_k10_tau8_ell4_prep4_A_R2_avg_plain_v36d.json",
+  "npz_md5": "d4839b1305cb69f2932d8cc2e638fde7",
+  "json_md5": "6489517c34dccd5c536e99a7a03d3bb3",
+  "rs": 96.0,
+  "desc": "r_s/a 96 (m 0.1) sigma/a 4 plain",
+  "site_fields": "averaged",
+  "copies_same_npz": [
+   "<internal>/collapse_lad_M3c_s4_m0p1_rs96_n3072_R04_k10_tau8_ell4_prep4_A_R2_avg_plain_v36d_fields.npz"
+  ]
+ },
+ "M3c_s4_96_nk": {
+  "npz": "<internal>/collapse_lad_M3c_s4_nk_m0p1_rs96_n3072_R04_k10_tau8_ell4_prep4_A_R2_avg_newton_v36j_fields.npz",
+  "json": "<internal>/collapse_lad_M3c_s4_nk_m0p1_rs96_n3072_R04_k10_tau8_ell4_prep4_A_R2_avg_newton_v36j.json",
+  "npz_md5": "dde103ca77a3903ac1f895f24cbbb39d",
+  "json_md5": "60f92fbfae76f621867f543eaad49029",
+  "rs": 96.0,
+  "desc": "r_s/a 96 (m 0.1) sigma/a 4 Newton",
+  "site_fields": "averaged",
+  "copies_same_npz": [
+   "<internal>/collapse_lad_M3c_s4_nk_m0p1_rs96_n3072_R04_k10_tau8_ell4_prep4_A_R2_avg_newton_v36j_fields.npz"
+  ]
+ },
+ "P64_s4_B2n4096": {
+  "npz": "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+  "json": "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096.json",
+  "npz_md5": "cb26fcfaf3d6e80a17f0e73bac687301",
+  "json_md5": "417a4018cf6497f9b0020408783f44f5",
+  "rs": 64.0,
+  "desc": "c19 at r_s/a 64 on 4096 sites (doubled box), 0 to 100",
+  "site_fields": "averaged",
+  "copies_same_npz": [
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz",
+   "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz"
+  ]
+ },
+ "P64_s4_ext200": {
+  "npz": "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_ext200_r100_fields.npz",
+  "json": "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_ext200_r100.json",
+  "npz_md5": "533f5ae7dbb77d885bb5722ab6c2f613",
+  "json_md5": "ce9f9f223cb7ac5bd215dc39ae55c981",
+  "rs": 64.0,
+  "desc": "c19 extended to 200 (2048 sites)",
+  "site_fields": "averaged",
+  "copies_same_npz": []
+ },
+ "P64_s4_tau4": {
+  "npz": "<internal>/collapse_c19_rs64_A_R2_tau4_ell4_avg_fields.npz",
+  "json": "<internal>/collapse_c19_rs64_A_R2_tau4_ell4_avg.json",
+  "npz_md5": "98cf9fe0aae3fad0e1f35fc38747f993",
+  "json_md5": "f2e1d8a7483447426855e3211535a367",
+  "rs": 64.0,
+  "desc": "c19 at tau 4 (0 to 40)",
+  "site_fields": "averaged",
+  "copies_same_npz": [
+   "<internal>/collapse_c19_rs64_A_R2_tau4_ell4_avg_fields.npz"
+  ]
+ },
+ "P64_s4_tau2": {
+  "npz": "<internal>/collapse_c25_rs64_A_R2_tau2_ell4_avg_fields.npz",
+  "json": "<internal>/collapse_c25_rs64_A_R2_tau2_ell4_avg.json",
+  "npz_md5": "e62f495500284ef69718f7cd53a5273a",
+  "json_md5": "9ba6f6ff302d8a903925f20583c96656",
+  "rs": 64.0,
+  "desc": "c25 at tau 2 (0 to 21.5)",
+  "site_fields": "averaged",
+  "copies_same_npz": [
+   "<internal>/collapse_c25_rs64_A_R2_tau2_ell4_avg_fields.npz",
+   "<internal>/collapse_c25_rs64_A_R2_tau2_ell4_avg_fields.npz",
+   "<internal>/collapse_c25_rs64_A_R2_tau2_ell4_avg_fields.npz"
+  ]
+ },
+ "C64_s4_tau1_v4L": {
+  "npz": "<internal>/collapse_C64_s4_ell4_tau1_twofield_v4L_fields.npz",
+  "json": "<internal>/collapse_C64_s4_ell4_tau1_twofield_v4L.json",
+  "npz_md5": "ba2335b0e8fb0f1b57695a099e7db4d0",
+  "json_md5": "98e352bd8fcc2c80ff0260325c494748",
+  "rs": 64.0,
+  "desc": "Computation C two-field v4L, sigma/a 4, tau 1 (0 to 16)",
+  "site_fields": "averaged",
+  "copies_same_npz": []
+ },
+ "C64_s8_v4L": {
+  "npz": "<internal>/collapse_C64_s8_ell8_tau2_twofield_v4L_fields.npz",
+  "json": "<internal>/collapse_C64_s8_ell8_tau2_twofield_v4L.json",
+  "npz_md5": "87643cd8145b11bc1735d0877a708373",
+  "json_md5": "e8369dd62cce2bd86fad3d976de8c07c",
+  "rs": 64.0,
+  "desc": "Computation C two-field v4L, sigma/a 8, tau 2 (0 to 16)",
+  "site_fields": "averaged",
+  "copies_same_npz": []
+ }
+}

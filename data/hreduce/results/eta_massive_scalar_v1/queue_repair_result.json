@@ -1,0 +1,185 @@
+{
+  "status": "incomplete",
+  "science_specification": "ETA_massive_directions_v1.tex E6/E8",
+  "prior_failed_result": "result.json (preserved unchanged)",
+  "purpose": "insert I6a; item 7 light-cut ratio",
+  "parameters": {
+    "ma": "1/5",
+    "y": "1/25",
+    "delta": "2^-40"
+  },
+  "resources": {
+    "wall_seconds": 60,
+    "address_space_bytes": 268435456,
+    "threads": 1,
+    "nice": 10,
+    "cuda": "disabled"
+  },
+  "quadrature": {
+    "primary_bits": 192,
+    "failed_piece_retry_bits": 256,
+    "piece_width_limit": "2e-9",
+    "final_width_limit": "2e-8",
+    "absolute_tolerance": "1e-12",
+    "relative_tolerance": "1e-12",
+    "degree_limit": 64,
+    "evaluation_limit": 20000,
+    "queue_limit": "2*precision (384 or 512)"
+  },
+  "massless_input": {
+    "lower": "0.91905664456747",
+    "upper": "0.91929747790884",
+    "premise": "conditional on the earlier supplied directional errors"
+  },
+  "attempts": [
+    {
+      "quantity": "b100_integral",
+      "piece": 0,
+      "bits": 192,
+      "variable": "u",
+      "queue_limit": 384,
+      "endpoints": [
+        "1",
+        "40"
+      ],
+      "calls": {
+        "total": 859,
+        "refused_images": 383,
+        "refusals_by_reason": {
+          "elliptic_cut_K": 3,
+          "nonfinite_elliptic_value_E": 377,
+          "nonfinite_elliptic_value_K": 3
+        }
+      },
+      "accepted": false,
+      "real": {
+        "ball": "[-2.6756612356003382696892169881171602607987593151678972660914896221 +/- 44.8]",
+        "lower": "-47.4068953688438990607048419881171602607988",
+        "upper": "42.0555728976432225213264080118828397392013",
+        "lower_exact": {
+          "numerator": "-2324827384289569048831430789215559705522628369782982147207",
+          "denominator": "49039857307708443467467104868809893875799651909875269632"
+        },
+        "upper_exact": {
+          "numerator": "4124798587788708289862835553653471098085877319134524802803",
+          "denominator": "98079714615416886934934209737619787751599303819750539264"
+        },
+        "width_upper": "89.4624682664871215820312500000000000000001"
+      },
+      "imaginary": {
+        "ball": "0",
+        "lower": "0.0000000000000000000000000000000000000000",
+        "upper": "0.0000000000000000000000000000000000000000",
+        "lower_exact": {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        "upper_exact": {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        "width_upper": "0.0000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "quantity": "b100_integral",
+      "piece": 0,
+      "bits": 256,
+      "variable": "u",
+      "queue_limit": 512,
+      "endpoints": [
+        "1",
+        "40"
+      ],
+      "calls": {
+        "total": 1243,
+        "refused_images": 511,
+        "refusals_by_reason": {
+          "elliptic_cut_K": 3,
+          "nonfinite_elliptic_value_E": 505,
+          "nonfinite_elliptic_value_K": 3
+        }
+      },
+      "accepted": false,
+      "real": {
+        "ball": "[-1.6816501497261150928167944126759734100484470487564433699511069894 +/- 26.6]",
+        "lower": "-28.2108825026981457324652319126759734100485",
+        "upper": "24.8475822032459155468316430873240265899516",
+        "lower_exact": {
+          "numerator": "-51040578503372902122973387366477588152867348933725015861290983575366756757395",
+          "denominator": "1809251394333065553493296640760748560207343510400633813116524750123642650624"
+        },
+        "upper_exact": {
+          "numerator": "89911045494056275494811421255072014118139744907300828340028876391998205403355",
+          "denominator": "3618502788666131106986593281521497120414687020801267626233049500247285301248"
+        },
+        "width_upper": "53.0584647059440612792968750000000000000001"
+      },
+      "imaginary": {
+        "ball": "0",
+        "lower": "0.0000000000000000000000000000000000000000",
+        "upper": "0.0000000000000000000000000000000000000000",
+        "lower_exact": {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        "upper_exact": {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        "width_upper": "0.0000000000000000000000000000000000000000"
+      }
+    }
+  ],
+  "guard_samples": {
+    "elliptic_cut_K": {
+      "quantity": "b100_integral",
+      "piece": 0,
+      "bits": 192,
+      "analytic": false,
+      "argument": "[+/- 40.1]",
+      "tested_image": "[+/- 1.01]"
+    },
+    "nonfinite_elliptic_value_E": {
+      "quantity": "b100_integral",
+      "piece": 0,
+      "bits": 192,
+      "analytic": false,
+      "argument": "[+/- 20.6]",
+      "tested_image": "nan + nanj"
+    },
+    "nonfinite_elliptic_value_K": {
+      "quantity": "b100_integral",
+      "piece": 0,
+      "bits": 192,
+      "analytic": true,
+      "argument": "[3e+0 +/- 0.743] + [+/- 0.528]j",
+      "tested_image": "nan + nanj"
+    }
+  },
+  "tilted_coefficients": "not calculated; native-error and finite-mass remainder certificates missing",
+  "implementation": {
+    "python": "3.12.12",
+    "python_flint": "0.9.0",
+    "box": "compute-host",
+    "cuda_visible_devices": "",
+    "nice_actual": 10
+  },
+  "active_piece": {
+    "quantity": "b100_integral",
+    "piece": 0,
+    "bits": 256,
+    "calls": {
+      "total": 1243,
+      "refused_images": 511,
+      "refusals_by_reason": {
+        "elliptic_cut_K": 3,
+        "nonfinite_elliptic_value_E": 505,
+        "nonfinite_elliptic_value_K": 3
+      }
+    }
+  },
+  "elapsed_seconds": 0.2780095301568508,
+  "peak_rss_kib": 21312,
+  "error": "ArithmeticError: a scalar piece failed the agreed finite/width test"
+}

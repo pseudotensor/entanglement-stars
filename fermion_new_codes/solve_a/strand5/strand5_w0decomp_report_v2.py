@@ -1,0 +1,196 @@
+#!/usr/bin/env python
+"""Strand 5 J5 decomposition report (spec 10(p'''') (3); builder analyst): per grid spacing h,
+(A) the radial operator's own k_a(P) and g_4(P) at the uniform rulers P from the Gaussian records of strand5_w0radial_v8.py --rulers (psi = P + e f_w,
+    N = 1, e = +-1e-2): W_0^(2)(w; P) = (W(e) + W(-e))/(2 e^2) with the wall terms added (k the P = 1 value), -k_a(P) a(w) - g_4(P) b(w) = W_0^(2)(w; P),
+    a(w) = (3 pi^(3/2)/2) w, b(w) = (15 pi^(3/2)/4)/w, solved at the two widths; the fit k_a(P) = k_1 [1 + q_0 (P - 1) + q_2 (P - 1)^2] by least squares
+    over the rulers (its largest residual reported); q_0 = k_a'(1)/k_a(1);
+(B) the eq. 7 class on the pilot profile: with Dk(psi) = k_a(psi) - k_a(1) from the fit, the two-derivative ruler-dependent law x = div(k_a(psi) grad psi)
+    gives for the cumulative sums of table Q
+        sum_{r <= rho} (L - 1)(d - d_lin)  ->  W_7(rho) + S(rho),   W_7(rho) = - int_0^rho 4 pi r^2 Dk(psi) psi' chi' dr,
+                                                                      S(rho) = 4 pi rho^2 (chi(rho) - 1) Dk(psi(rho)) psi'(rho),
+        sum_{r <= rho} (d - d_lin)         ->  F(rho) = 4 pi rho^2 Dk(psi(rho)) psi'(rho)   (the flux difference),
+    the profile the cubic spline of the stage-1 member and the exact exterior beyond r_J, the integral by composite Gauss-Legendre;
+(C) against the measured cumulative sums (the star record at the same h, its e = 1 and e = +-1e-2 densities, L - 1 weighting) at rho = 40, 80
+    (r_s), r_J, 240, 300: the predicted and measured values, the remainder (measured - predicted) over the linear sum (L - 1) d_lin at the same rho,
+    and the measured in-star ratio's h-sequence with a Richardson estimate if the differences fall by a steady ratio.
+Numbers emitted, not retyped.
+(Version 2, before any run of version 1: table A also gives each Gaussian's cubic coefficient c_3(w; P) = (W(e) - W(-e))/(2 e^3) beside the
+eq. 7 class's cubic, -k_a'(P) (2/3)^(5/2) a(w) (from -int k_a(P + e f)|grad e f|^2, int f |grad f|^2 = (2/3)^(5/2) a(w) for f = exp(-r^2/(2 w^2))),
+with k_a'(P) from the fit; and table A' lists every (h, P) by H = P^2 h.  The reason for A': on the radial grid two exact identities hold (up to
+the fast route's resolvent quadrature): A'(P (1 + u); m) = P^-3 A'(1 + u; m P^2), and (m, h, w) -> (m/s, s h, s w) maps A' to A'/s on the same
+node indices (the channel starts and the j range are index-based); together W^(2)(P; m, h, w) = P^-2 W^(2)(1; m, P^2 h, P^2 w), so the
+two-width extraction gives k_a(P; h) = k_1(P^2 h; widths P^2 w) and P^4 g_4(P; h) = g_4,1(P^2 h; widths P^2 w): the uniform-ruler values are the
+flat-ruler coefficients at grid spacing P^2 h and widths P^2 w.)"""
+import argparse
+import json
+import math
+import os
+import sys
+
+import numpy as np
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+
+
+def f(v, sig=4):
+    if v is None:
+        return "-"
+    v = float(v)
+    if v == 0:
+        return "0"
+    return ("%.*e" % (sig - 1, v)) if (abs(v) < 1e-3 or abs(v) >= 1e5) else ("%.*g" % (sig, v))
+
+
+def table(head, rows):
+    return "\n".join(["| " + " | ".join(str(c) for c in head) + " |", "|" + "---|" * len(head)] + ["| " + " | ".join(str(c) for c in r) + " |" for r in rows])
+
+
+def kfit(G):
+    cf = G["configs"]
+    A_ = lambda w: 1.5 * math.pi ** 1.5 * w
+    B_ = lambda w: 3.75 * math.pi ** 1.5 / w
+    rul = sorted({c["ruler"] for c in cf.values() if c.get("ruler") is not None})
+    widths = sorted({c["width"] for c in cf.values() if c.get("width") is not None})
+    out = {}
+    for P in rul:
+        W2, W3 = {}, {}
+        for w in widths:
+            key = (lambda e: ("gauss_w%g_e%+.0e" % (w, e)) if P == 1.0 else ("gauss_P%g_w%g_e%+.0e" % (P, w, e)))
+            p, m = cf.get(key(1e-2)), cf.get(key(-1e-2))
+            if p is None or m is None:
+                continue
+            W2[w] = (p["L_variants"]["psi_only"]["W_c"] + m["L_variants"]["psi_only"]["W_c"]) / 2 / 1e-4
+            W3[w] = (p["L_variants"]["psi_only"]["W_c"] - m["L_variants"]["psi_only"]["W_c"]) / 2 / 1e-6
+        if len(W2) >= 2:
+            w1, w2 = widths[0], widths[-1]
+            k, g4 = np.linalg.solve(np.array([[-A_(w1), -B_(w1)], [-A_(w2), -B_(w2)]]), np.array([W2[w1], W2[w2]]))
+            out[P] = (float(k), float(g4), W2, W3)
+    return out, widths, A_
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--decomp", required=True, help="comma-separated h=path of the Gaussian ruler records")
+    ap.add_argument("--stars", required=True, help="comma-separated h=path of the star records with densities at the same h")
+    ap.add_argument("--md", required=True)
+    a = ap.parse_args()
+    import strand5_w0radial_v4 as W4
+    dec = dict(x.split("=", 1) for x in a.decomp.split(","))
+    sts = dict(x.split("=", 1) for x in a.stars.split(","))
+    out = ["# Strand 5 J5 decomposition tables (generated by solve/code/strand5/strand5_w0decomp_report_v2.py)", ""]
+    summ = []
+    arow, brow, hseq, idrow = [], [], {}, []
+    c23 = (2.0 / 3.0) ** 2.5
+    for hl in sorted(dec, key=lambda x: -float(x)):
+        G = json.load(open(dec[hl]))
+        K, widths, A_ = kfit(G)
+        if 1.0 not in K or len(K) < 3:
+            continue
+        Ps = np.array(sorted(K))
+        ks = np.array([K[P][0] for P in Ps])
+        X = np.stack([np.ones_like(Ps), Ps - 1, (Ps - 1) ** 2], 1)
+        cfit, *_ = np.linalg.lstsq(X, ks, rcond=None)
+        k1 = float(cfit[0])
+        q0, q2 = float(cfit[1] / k1), float(cfit[2] / k1)
+        res = float(np.max(np.abs(X @ cfit - ks)) / abs(k1))
+        for P in Ps:
+            kp = k1 * (q0 + 2 * q2 * (P - 1))
+            c3m = ["%.5e" % K[P][3][w] if w in K[P][3] else "-" for w in (widths[0], widths[-1])]
+            c3p = ["%.5e" % (-kp * c23 * A_(w)) for w in (widths[0], widths[-1])]
+            arow.append([hl, "%.2f" % P, "%.10e" % K[P][0], "%.6e" % K[P][1], "%.6e" % (K[P][0] / K[1.0][0] - 1), c3m[0], c3p[0], c3m[1], c3p[1]])
+            idrow.append((P * P * float(hl), [hl, "%.2f" % P, "%.4f" % (P * P * float(hl)), "%.10e" % K[P][0], "%.6e" % (P ** 4 * K[P][1])]))
+        summ.append("A (h = %s): k_a(1) = %s per cone; q_0 = k_a'(1)/k_a(1) = %s, q_2 = %s (fit over P = %s; largest residual %s of k_a(1))." % (
+            hl, "%.8e" % K[1.0][0], "%.5e" % q0, "%.4e" % q2, ", ".join("%g" % P for P in Ps), f(res, 2)))
+        if hl not in sts or not os.path.exists(sts[hl]):
+            continue
+        S = json.load(open(sts[hl]))
+        M = S["meta"]
+        mem = W4.Member(M["family"], M["profiles"], M["z_c"], M.get("interp", "cubic"))
+        Dn = np.load(sts[hl].replace(".json", "_density.npz"))
+        ri, rh = Dn["r_int"], Dn["r_half"]
+        pi_, Ni = mem.fields(ri)
+        ph_, Nh = mem.fields(rh)
+        L1 = np.concatenate([Ni * pi_, Nh * ph_]) - 1
+        d1 = Dn["star_density_e+1e+00"]
+        dl = (Dn["star_density_e+1e-02"] - Dn["star_density_e-1e-02"]) / 2e-2
+        rr = np.concatenate([ri, rh])
+        o = np.argsort(rr)
+        rs_ = rr[o]
+        cQ = np.cumsum((L1 * (d1 - dl))[o])
+        cF = np.cumsum((d1 - dl)[o])
+        cL = np.cumsum((L1 * dl)[o])
+        Dk = lambda P: k1 * (q0 * (P - 1) + q2 * (P - 1) ** 2)
+
+        def prof(r):
+            r = np.asarray(r, float)
+            ins = r <= mem.rJ
+            ps = np.where(ins, mem.sp(np.minimum(r, mem.rJ)), 1 + mem.A / r)
+            dps = np.where(ins, mem.sp(np.minimum(r, mem.rJ), 1), -mem.A / r ** 2)
+            Nn = np.where(ins, mem.sn(np.minimum(r, mem.rJ)), 0.0)
+            dNn = np.where(ins, mem.sn(np.minimum(r, mem.rJ), 1), 0.0)
+            chi = np.where(ins, Nn * ps, 1 - mem.B / r)
+            dchi = np.where(ins, dNn * ps + Nn * dps, mem.B / r ** 2)
+            return ps, dps, chi, dchi
+        xg, wg = np.polynomial.legendre.leggauss(16)
+
+        def W7(rho):
+            edges = np.linspace(0.0, rho, 401)
+            tot = 0.0
+            for lo, hi in zip(edges[:-1], edges[1:]):
+                r = 0.5 * (hi - lo) * xg + 0.5 * (hi + lo)
+                ps, dps, chi, dchi = prof(r)
+                tot += float(np.sum(0.5 * (hi - lo) * wg * 4 * math.pi * r * r * Dk(ps) * dps * dchi))
+            return -tot
+
+        def SF(rho):
+            ps, dps, chi, dchi = prof(np.array([rho]))
+            Fv = float(4 * math.pi * rho * rho * Dk(ps[0]) * dps[0])
+            return float((chi[0] - 1) * Fv), Fv
+        for rho in (40.0, 80.0, float(mem.rJ), 240.0, 300.0):
+            if rho > rs_[-1]:
+                continue
+            kq = np.searchsorted(rs_, rho, side="right") - 1
+            w7 = W7(rho)
+            s_, Fv = SF(rho)
+            pred = w7 + s_
+            rem = (cQ[kq] - pred) / cL[kq]
+            brow.append([hl, "%.0f" % rho, "%.5e" % cQ[kq], "%.5e" % w7, "%.5e" % s_, "%.5e" % pred, f(cQ[kq] / pred, 4) if pred else "-", "%.4e" % rem,
+                         "%.5e" % cF[kq], "%.5e" % Fv, "%.4e" % (cQ[kq] / cL[kq])])
+            if abs(rho - 80.0) < 1e-9:
+                hseq[float(hl)] = (cQ[kq] / cL[kq], rem, pred / cL[kq])
+    out += ["## A The radial operator's own k_a(P) and g_4(P) at uniform rulers (per cone), k_a(P)/k_a(1) - 1, and each width's cubic coefficient "
+            "c_3 = (W(e) - W(-e))/(2 e^3) (e = 1e-2) beside the eq. 7 class's cubic -k_a'(P) (2/3)^(5/2) a(w) (k_a' from the fit at that h)", "",
+            table(["h", "P", "k_a(P)", "g_4(P)", "k_a(P)/k_a(1) - 1", "c_3 (narrow w)", "eq. 7 cubic (narrow w)", "c_3 (wide w)", "eq. 7 cubic (wide w)"], arow),
+            "", "## A' Every (h, P) ordered by H = P^2 h: on the grid k_a(P; h) = k_1(P^2 h; widths P^2 w) and P^4 g_4(P; h) = g_4,1(P^2 h; widths P^2 w) "
+            "exactly (docstring), so the column k_a is the flat-ruler k at grid spacing H (widths scaled by P^2)", "",
+            table(["h", "P", "H = P^2 h", "k_a(P; h)", "P^4 g_4(P; h)"], [r for _, r in sorted(idrow, key=lambda x: x[0])]), ""]
+    out += ["## B Table Q's cumulative sums against the eq. 7 class (two-derivative, ruler-dependent coefficient): measured sum (L - 1)(d - d_lin), the predicted "
+            "W_7 + S, their ratio, the remainder over the linear sum (L - 1) d_lin, the measured and predicted flux differences, and the measured ratio", "",
+            table(["h", "rho", "measured", "W_7", "S", "predicted W_7 + S", "measured/predicted", "remainder/linear", "flux measured", "flux predicted F",
+                   "measured ratio sum (L-1)(d - d_lin)/sum (L-1) d_lin"], brow), ""]
+    if hseq:
+        hs = sorted(hseq, reverse=True)
+        line = "C: the in-star (rho = 80) measured ratio over h = %s: %s; eq. 7's predicted ratio %s; the remainder over the linear sum %s." % (
+            ", ".join("%g" % h for h in hs), ", ".join("%.4e" % hseq[h][0] for h in hs), ", ".join("%.4e" % hseq[h][2] for h in hs),
+            ", ".join("%.4e" % hseq[h][1] for h in hs))
+        if len(hs) == 3:
+            dv = [hseq[hs[0]][0] - hseq[hs[1]][0], hseq[hs[1]][0] - hseq[hs[2]][0]]
+            ratio = dv[1] / dv[0] if dv[0] else None
+            line += " Successive differences of the measured ratio %s and %s (ratio %s)" % ("%.4e" % dv[0], "%.4e" % dv[1], f(ratio, 3))
+            if ratio is not None and 0 < ratio < 1:
+                lim = hseq[hs[2]][0] - dv[1] * ratio / (1 - ratio)
+                line += "; the observed order log2(1/ratio) = %s and the extrapolation at that order %s" % ("%.3f" % (-math.log(ratio, 2)), "%.4e" % lim)
+            else:
+                line += "; no steady ratio, no extrapolation at the observed order"
+            line += "; Richardson from the two finest at assumed order 1 and 2: %s and %s." % (
+                "%.4e" % (hseq[hs[2]][0] - dv[1]), "%.4e" % (hseq[hs[2]][0] - dv[1] / 3))
+        summ.append(line)
+    out = out[:2] + ["## S Summary (emitted)", ""] + ["- " + x for x in summ] + [""] + out[2:]
+    open(a.md, "w").write("\n".join(out) + "\n")
+    print("\n".join("- " + x for x in summ))
+    print("wrote", a.md)
+
+
+if __name__ == "__main__":
+    main()

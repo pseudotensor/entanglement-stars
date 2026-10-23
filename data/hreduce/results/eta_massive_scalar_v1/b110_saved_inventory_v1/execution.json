@@ -1,0 +1,55 @@
+{
+  "status": "finished",
+  "purpose": "T38 exact saved b110 midpoint-tree and width inventory",
+  "producer_sha256": "b1b8306af672121b2d59079fab64f4b1863f11c2b4b6d3988e90859856d7610f",
+  "wrapper_sha256": "eef27f5850bf0c6a188db3e332e16d21b46c45495c3ad3ef95e8458dc41d277e",
+  "command": [
+    "timeout",
+    "--foreground",
+    "-s",
+    "KILL",
+    "90s",
+    "nice",
+    "-n",
+    "10",
+    "taskset",
+    "-c",
+    "8",
+    "<internal>/python",
+    "<internal>/b110_saved_inventory_v1.py"
+  ],
+  "wrapper_pid": 4089594,
+  "environment_settings": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1",
+    "CUDA_VISIBLE_DEVICES": "",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "resources": {
+    "wall_seconds": 90,
+    "cpu_seconds": 60,
+    "threads": 1,
+    "address_space_bytes": 2147483648,
+    "internal_deadline_seconds": 85
+  },
+  "child_pid": 4089948,
+  "exit_code": 0,
+  "elapsed_seconds": 4.293963432312012,
+  "maximum_child_rss_kib": 140212,
+  "inventory_result.json": {
+    "size": 2612074,
+    "sha256": "a487afb751090d7066ac5ed48f3306ae9f1bde5adff0a9b7e072eabe604b74ce"
+  },
+  "stdout.log": {
+    "size": 78,
+    "sha256": "0ab1679d04adb6fe451ad1f925c0936ae1318ab74c4186df08c80f158be5e10e"
+  },
+  "stderr.log": {
+    "size": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

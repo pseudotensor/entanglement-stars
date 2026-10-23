@@ -1,0 +1,272 @@
+[
+  {
+    "site_shift": -1,
+    "interior_sites": 35,
+    "partition_bond_midpoint": 35.5,
+    "normalization_area_over_a2": 16300.937722281038,
+    "normalization_eta_area": 14983.82195432073,
+    "normalization_radius_is_primary": true,
+    "raw": {
+      "exterior": {
+        "entropy": null,
+        "dimension": 2051,
+        "minimum": 1.5220048097757215e-11,
+        "maximum": 1.000000052756433,
+        "rounding_tolerance": 2.9146464558542734e-11,
+        "outside_count": 998,
+        "clipping_displacement": 2.241256637014466e-05,
+        "valid": false,
+        "covariance_gate": "rejected",
+        "borderline_policy": "leave unresolved; no beta adjudication performed"
+      },
+      "interior": {
+        "entropy": null,
+        "dimension": 70,
+        "minimum": 1.7546067043595318e-11,
+        "maximum": 1.0000000015828525,
+        "rounding_tolerance": 9.947598316386983e-13,
+        "outside_count": 3,
+        "clipping_displacement": 3.03569924753333e-09,
+        "valid": false,
+        "covariance_gate": "rejected",
+        "borderline_policy": "leave unresolved; no beta adjudication performed"
+      },
+      "global_raw_physical": false,
+      "physical_exterior_entropy": null,
+      "physical_interior_entropy": null
+    },
+    "orthonormal_control": {
+      "exterior": {
+        "entropy": 2.2199190652471743,
+        "dimension": 2051,
+        "minimum": 1.5223176594951392e-11,
+        "maximum": 1.0000000000008618,
+        "rounding_tolerance": 2.914646302090443e-11,
+        "outside_count": 994,
+        "clipping_displacement": 8.601652723427833e-11,
+        "valid": true,
+        "covariance_gate": "accepted",
+        "borderline_policy": "leave unresolved; no beta adjudication performed"
+      },
+      "interior": {
+        "entropy": 2.219919062659634,
+        "dimension": 70,
+        "minimum": 1.7545960567316538e-11,
+        "maximum": 0.9999999999847773,
+        "rounding_tolerance": 9.947598300641403e-13,
+        "outside_count": 0,
+        "clipping_displacement": 0.0,
+        "valid": true,
+        "covariance_gate": "accepted",
+        "borderline_policy": "leave unresolved; no beta adjudication performed"
+      },
+      "global_raw_physical": null,
+      "physical_exterior_entropy": 2.2199190652471743,
+      "physical_interior_entropy": 2.219919062659634
+    },
+    "held": {
+      "entropy": 0.9474807033169677,
+      "dimension": 70,
+      "minimum": -8.972610196246615e-16,
+      "maximum": 1.000000000000006,
+      "rounding_tolerance": 9.947598300641463e-13,
+      "outside_count": 24,
+      "clipping_displacement": 2.9102358314083e-14,
+      "valid": true,
+      "covariance_gate": "accepted",
+      "borderline_policy": "leave unresolved; no beta adjudication performed"
+    },
+    "flat": {
+      "entropy": 0.9469791600437137,
+      "dimension": 70,
+      "minimum": -7.257667918210761e-16,
+      "maximum": 1.0000000000000069,
+      "rounding_tolerance": 9.947598300641471e-13,
+      "outside_count": 21,
+      "clipping_displacement": 3.739054157514586e-14,
+      "valid": true,
+      "covariance_gate": "accepted",
+      "borderline_policy": "leave unresolved; no beta adjudication performed"
+    }
+  },
+  {
+    "site_shift": 0,
+    "interior_sites": 36,
+    "partition_bond_midpoint": 36.5,
+    "normalization_area_over_a2": 16300.937722281038,
+    "normalization_eta_area": 14983.82195432073,
+    "normalization_radius_is_primary": true,
+    "raw": {
+      "exterior": {
+        "entropy": null,
+        "dimension": 2051,
+        "minimum": 1.1581316703881465e-11,
+        "maximum": 1.0000000527452333,
+        "rounding_tolerance": 2.91464645582163e-11,
+        "outside_count": 997,
+        "clipping_displacement": 2.2390094059687726e-05,
+        "valid": false,
+        "covariance_gate": "rejected",
+        "borderline_policy": "leave unresolved; no beta adjudication performed"
+      },
+      "interior": {
+        "entropy": null,
+        "dimension": 72,
+        "minimum": 1.239117199121244e-11,
+        "maximum": 1.0000000018629251,
+        "rounding_tolerance": 1.023181541400655e-12,
+        "outside_count": 3,
+        "clipping_displacement": 3.864947029086352e-09,
+        "valid": false,
+        "covariance_gate": "rejected",
+        "borderline_policy": "leave unresolved; no beta adjudication performed"
+      },
+      "global_raw_physical": false,
+      "physical_exterior_entropy": null,
+      "physical_interior_entropy": null
+    },
+    "orthonormal_control": {
+      "exterior": {
+        "entropy": 2.219279320249331,
+        "dimension": 2051,
+        "minimum": 1.1580717268926014e-11,
+        "maximum": 1.0000000000008626,
+        "rounding_tolerance": 2.9146463020904455e-11,
+        "outside_count": 994,
+        "clipping_displacement": 8.586331645688006e-11,
+        "valid": true,
+        "covariance_gate": "accepted",
+        "borderline_policy": "leave unresolved; no beta adjudication performed"
+      },
+      "interior": {
+        "entropy": 2.2192793176638093,
+        "dimension": 72,
+        "minimum": 1.239043878007212e-11,
+        "maximum": 0.9999999999884234,
+        "rounding_tolerance": 1.0231815394945443e-12,
+        "outside_count": 0,
+        "clipping_displacement": 0.0,
+        "valid": true,
+        "covariance_gate": "accepted",
+        "borderline_policy": "leave unresolved; no beta adjudication performed"
+      },
+      "global_raw_physical": null,
+      "physical_exterior_entropy": 2.219279320249331,
+      "physical_interior_entropy": 2.2192793176638093
+    },
+    "held": {
+      "entropy": 0.9490173654416236,
+      "dimension": 72,
+      "minimum": -7.726389519694089e-16,
+      "maximum": 1.0000000000000058,
+      "rounding_tolerance": 1.0231815394945501e-12,
+      "outside_count": 22,
+      "clipping_displacement": 2.7761754838084828e-14,
+      "valid": true,
+      "covariance_gate": "accepted",
+      "borderline_policy": "leave unresolved; no beta adjudication performed"
+    },
+    "flat": {
+      "entropy": 0.9485147506211894,
+      "dimension": 72,
+      "minimum": -7.678447361480898e-16,
+      "maximum": 1.000000000000007,
+      "rounding_tolerance": 1.0231815394945515e-12,
+      "outside_count": 26,
+      "clipping_displacement": 4.0315471169447714e-14,
+      "valid": true,
+      "covariance_gate": "accepted",
+      "borderline_policy": "leave unresolved; no beta adjudication performed"
+    }
+  },
+  {
+    "site_shift": 1,
+    "interior_sites": 37,
+    "partition_bond_midpoint": 37.5,
+    "normalization_area_over_a2": 16300.937722281038,
+    "normalization_eta_area": 14983.82195432073,
+    "normalization_radius_is_primary": true,
+    "raw": {
+      "exterior": {
+        "entropy": null,
+        "dimension": 2051,
+        "minimum": 8.510215679962081e-12,
+        "maximum": 1.0000000527421893,
+        "rounding_tolerance": 2.914646455812758e-11,
+        "outside_count": 996,
+        "clipping_displacement": 2.236806940358882e-05,
+        "valid": false,
+        "covariance_gate": "rejected",
+        "borderline_policy": "leave unresolved; no beta adjudication performed"
+      },
+      "interior": {
+        "entropy": null,
+        "dimension": 74,
+        "minimum": 9.519225222343935e-12,
+        "maximum": 1.0000000019345618,
+        "rounding_tolerance": 1.0516032509593398e-12,
+        "outside_count": 3,
+        "clipping_displacement": 4.211756721161919e-09,
+        "valid": false,
+        "covariance_gate": "rejected",
+        "borderline_policy": "leave unresolved; no beta adjudication performed"
+      },
+      "global_raw_physical": false,
+      "physical_exterior_entropy": null,
+      "physical_interior_entropy": null
+    },
+    "orthonormal_control": {
+      "exterior": {
+        "entropy": 2.2188123169994873,
+        "dimension": 2051,
+        "minimum": 8.511442314103719e-12,
+        "maximum": 1.0000000000008582,
+        "rounding_tolerance": 2.9146463020904325e-11,
+        "outside_count": 993,
+        "clipping_displacement": 8.578093790845287e-11,
+        "valid": true,
+        "covariance_gate": "accepted",
+        "borderline_policy": "leave unresolved; no beta adjudication performed"
+      },
+      "interior": {
+        "entropy": 2.2188123144206853,
+        "dimension": 74,
+        "minimum": 9.519385095639492e-12,
+        "maximum": 0.9999999999914952,
+        "rounding_tolerance": 1.0516032489249483e-12,
+        "outside_count": 0,
+        "clipping_displacement": 0.0,
+        "valid": true,
+        "covariance_gate": "accepted",
+        "borderline_policy": "leave unresolved; no beta adjudication performed"
+      },
+      "global_raw_physical": null,
+      "physical_exterior_entropy": 2.2188123169994873,
+      "physical_interior_entropy": 2.2188123144206853
+    },
+    "held": {
+      "entropy": 0.9504344980473,
+      "dimension": 74,
+      "minimum": -9.561529495502288e-16,
+      "maximum": 1.0000000000000058,
+      "rounding_tolerance": 1.0516032489249543e-12,
+      "outside_count": 26,
+      "clipping_displacement": 3.0065199155336593e-14,
+      "valid": true,
+      "covariance_gate": "accepted",
+      "borderline_policy": "leave unresolved; no beta adjudication performed"
+    },
+    "flat": {
+      "entropy": 0.9499391534859482,
+      "dimension": 74,
+      "minimum": -6.976526346046934e-16,
+      "maximum": 1.0000000000000078,
+      "rounding_tolerance": 1.0516032489249564e-12,
+      "outside_count": 24,
+      "clipping_displacement": 4.046706309970237e-14,
+      "valid": true,
+      "covariance_gate": "accepted",
+      "borderline_policy": "leave unresolved; no beta adjudication performed"
+    }
+  }
+]

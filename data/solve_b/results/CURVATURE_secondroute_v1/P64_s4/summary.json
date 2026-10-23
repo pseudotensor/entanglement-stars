@@ -1,0 +1,403 @@
+{
+  "history": "P64_s4",
+  "metadata": {
+    "history": "P64_s4",
+    "role": "metric_nodes",
+    "variant": "primary",
+    "sigma": 4.0,
+    "cap_center": 10.396303882584464,
+    "gate_scale": 0.0006250000000000001,
+    "original_archive_radial_domain": [
+      0.0,
+      2048.0
+    ],
+    "variant_radial_domain": [
+      0.0,
+      2048.0
+    ],
+    "source_binding": {
+      "record_path": "<internal>/collapse_c32_rs64_A_R2_tau8_ell4_prep4_avg_plain_v36d_from0_to40.json",
+      "fields_path": "<internal>/collapse_c32_rs64_A_R2_tau8_ell4_prep4_avg_plain_v36d_from0_to40_fields.npz",
+      "record_sha256": "3bdfc6ef74c6efb15bc48a62cb0d2647dc205445cdd2cd143f8db4c4774d6975",
+      "fields_sha256": "bd7e19e868ce1ede02f935ee42e0959206524925128339527928eb3319aec473",
+      "arrays": {
+        "R": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "T": {
+          "shape": [
+            321
+          ],
+          "dtype": "float64"
+        },
+        "N": {
+          "shape": [
+            321,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "v": {
+          "shape": [
+            321,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "eps_tot": {
+          "shape": [
+            321,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "J_tot": {
+          "shape": [
+            321,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "eps_pairs": {
+          "shape": [
+            321,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "J_pairs": {
+          "shape": [
+            321,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "N_applied": {
+          "shape": [
+            321,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "v_applied": {
+          "shape": [
+            321,
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "N_cinit": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "v_cinit": {
+          "shape": [
+            2048
+          ],
+          "dtype": "float64"
+        },
+        "g": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "ell": {
+          "shape": [],
+          "dtype": "int64"
+        },
+        "tau": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "solver": {
+          "shape": [],
+          "dtype": "<U375"
+        },
+        "r_nodes": {
+          "shape": [
+            321,
+            513
+          ],
+          "dtype": "object"
+        },
+        "N_nodes": {
+          "shape": [
+            321,
+            513
+          ],
+          "dtype": "object"
+        },
+        "v_nodes": {
+          "shape": [
+            321,
+            513
+          ],
+          "dtype": "object"
+        },
+        "label": {
+          "shape": [],
+          "dtype": "<U1219"
+        }
+      }
+    },
+    "seams": [
+      {
+        "boundary_k": 144,
+        "locators": [
+          {
+            "kind": "declared_resume",
+            "source": "head.resume_slice_v34",
+            "T": 1152.0,
+            "record_index": 144
+          }
+        ]
+      }
+    ],
+    "support_rule": "V direct; U/Z radial-first; Y current radial-first union time-direct; X/full-frame current radial-second union time-first x radial-first. Stencil indices locate all primitive samples. Strict support excludes any center touch and known/unknown seam.",
+    "center_status": "parity-conditioned extrapolation only",
+    "native_per_site_covariance_check": "unavailable"
+  },
+  "records": 321,
+  "first_gate_failure": {
+    "T": 720.0,
+    "previous_T": 712.0,
+    "previous_local_gate": true,
+    "previous_prefix": true,
+    "bracket_status": "passing_prefix_to_failure"
+  },
+  "pre_gate_record_count": 90,
+  "post_gate_record_count": 231,
+  "unresolved_gate_record_count": 0,
+  "all_sphere": {
+    "value": 0.10890788806134749,
+    "T": [
+      848.0
+    ],
+    "radii": [
+      [
+        4.0
+      ]
+    ],
+    "selected_records": 321,
+    "evaluated_records": 321,
+    "unavailable_records": 0,
+    "partially_available_records": 0,
+    "partial": false
+  },
+  "all_frame": {
+    "value": 0.5435544081610079,
+    "T": [
+      848.0
+    ],
+    "radii": [
+      [
+        4.0
+      ]
+    ],
+    "selected_records": 321,
+    "evaluated_records": 321,
+    "unavailable_records": 0,
+    "partially_available_records": 0,
+    "partial": false
+  },
+  "all_centered_radial_and_time_frame": {
+    "value": 0.5435544081610079,
+    "T": [
+      848.0
+    ],
+    "radii": [
+      [
+        4.0
+      ]
+    ],
+    "selected_records": 321,
+    "evaluated_records": 319,
+    "unavailable_records": 2,
+    "partially_available_records": 0,
+    "partial": true
+  },
+  "all_all_support_restricted_frame": {
+    "value": 0.0019353561440163685,
+    "T": [
+      704.0
+    ],
+    "radii": [
+      [
+        8.0
+      ]
+    ],
+    "selected_records": 321,
+    "evaluated_records": 89,
+    "unavailable_records": 232,
+    "partially_available_records": 0,
+    "partial": true
+  },
+  "all_all_support_restricted_sphere": {
+    "value": 0.0006086242427098438,
+    "T": [
+      712.0
+    ],
+    "radii": [
+      [
+        4.0
+      ]
+    ],
+    "selected_records": 321,
+    "evaluated_records": 90,
+    "unavailable_records": 231,
+    "partially_available_records": 0,
+    "partial": true
+  },
+  "pre_gate_evaluation_sphere": {
+    "value": 0.0006086242427098438,
+    "T": [
+      712.0
+    ],
+    "radii": [
+      [
+        4.0
+      ]
+    ],
+    "selected_records": 90,
+    "evaluated_records": 90,
+    "unavailable_records": 0,
+    "partially_available_records": 0,
+    "partial": false
+  },
+  "pre_gate_evaluation_frame": {
+    "value": 0.002328360379002134,
+    "T": [
+      712.0
+    ],
+    "radii": [
+      [
+        4.0
+      ]
+    ],
+    "selected_records": 90,
+    "evaluated_records": 90,
+    "unavailable_records": 0,
+    "partially_available_records": 0,
+    "partial": false
+  },
+  "pre_gate_evaluation_centered_radial_and_time_frame": {
+    "value": 0.002328360379002134,
+    "T": [
+      712.0
+    ],
+    "radii": [
+      [
+        4.0
+      ]
+    ],
+    "selected_records": 90,
+    "evaluated_records": 89,
+    "unavailable_records": 1,
+    "partially_available_records": 0,
+    "partial": true
+  },
+  "pre_gate_evaluation_all_support_restricted_frame": {
+    "value": 0.0019353561440163685,
+    "T": [
+      704.0
+    ],
+    "radii": [
+      [
+        8.0
+      ]
+    ],
+    "selected_records": 90,
+    "evaluated_records": 89,
+    "unavailable_records": 1,
+    "partially_available_records": 0,
+    "partial": true
+  },
+  "pre_gate_evaluation_all_support_restricted_sphere": {
+    "value": 0.0006086242427098438,
+    "T": [
+      712.0
+    ],
+    "radii": [
+      [
+        4.0
+      ]
+    ],
+    "selected_records": 90,
+    "evaluated_records": 90,
+    "unavailable_records": 0,
+    "partially_available_records": 0,
+    "partial": false
+  },
+  "post_gate_evaluation_sphere": {
+    "value": 0.10890788806134749,
+    "T": [
+      848.0
+    ],
+    "radii": [
+      [
+        4.0
+      ]
+    ],
+    "selected_records": 231,
+    "evaluated_records": 231,
+    "unavailable_records": 0,
+    "partially_available_records": 0,
+    "partial": false
+  },
+  "post_gate_evaluation_frame": {
+    "value": 0.5435544081610079,
+    "T": [
+      848.0
+    ],
+    "radii": [
+      [
+        4.0
+      ]
+    ],
+    "selected_records": 231,
+    "evaluated_records": 231,
+    "unavailable_records": 0,
+    "partially_available_records": 0,
+    "partial": false
+  },
+  "post_gate_evaluation_centered_radial_and_time_frame": {
+    "value": 0.5435544081610079,
+    "T": [
+      848.0
+    ],
+    "radii": [
+      [
+        4.0
+      ]
+    ],
+    "selected_records": 231,
+    "evaluated_records": 230,
+    "unavailable_records": 1,
+    "partially_available_records": 0,
+    "partial": true
+  },
+  "post_gate_evaluation_all_support_restricted_frame": {
+    "value": null,
+    "T": [],
+    "radii": [],
+    "selected_records": 231,
+    "evaluated_records": 0,
+    "unavailable_records": 231,
+    "partially_available_records": 0,
+    "partial": true
+  },
+  "post_gate_evaluation_all_support_restricted_sphere": {
+    "value": null,
+    "T": [],
+    "radii": [],
+    "selected_records": 231,
+    "evaluated_records": 0,
+    "unavailable_records": 231,
+    "partially_available_records": 0,
+    "partial": true
+  }
+}

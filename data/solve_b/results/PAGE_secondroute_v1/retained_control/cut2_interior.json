@@ -1,0 +1,29 @@
+{
+  "frobenius": 11.299157286249253,
+  "max_abs_entry": 0.5000000000000302,
+  "max_abs_row_sum": 2.0057374608801264,
+  "unsymmetrized_hermiticity_frobenius": 0.0,
+  "full_eigenvector_checks": {
+    "residual_frobenius": 2.5738541725052698e-14,
+    "orthogonality_frobenius": 2.7381655576392768e-12,
+    "residual_upper_bound": 2.0663356529616435e-11,
+    "orthogonality_upper_bound": 3.195923556599765e-11,
+    "full_sorted_eigenvalue_error_bound": 6.829185743134331e-10
+  },
+  "evaluated_clipped_entropy": 1.1050596191380229,
+  "n_eigenvalues": 256,
+  "minimum": -2.753890782519839e-15,
+  "maximum": 1.0000000000000693,
+  "outside_count": 91,
+  "maximum_excursion": 6.927791673660977e-14,
+  "endpoint_tolerance": 1e-08,
+  "within_endpoint_tolerance": true,
+  "clipping_displacement": 6.946648111829892e-13,
+  "clipping_continuity_allowance": 2.399408685786884e-11,
+  "continuity_scope": "Evaluation diagnostic only; raw covariance and unbounded eigensolver error are not certified.",
+  "representation": "row covariance",
+  "assembly_error_upper_bound": 4.657193852943398e-10,
+  "eigensolver": "scipy.linalg.eigh/eigvalsh driver evr",
+  "eigensolver_full_spectrum_residual_bound": 6.829185743134331e-10,
+  "eigensolver_scope": "Full eigenvector checks with assembly/product allowances."
+}

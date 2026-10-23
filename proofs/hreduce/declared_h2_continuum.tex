@@ -1,0 +1,936 @@
+% SOURCES. Binding final4/GOAL_alt.md, hydrodynamic continuum geometry;
+% REQUIREMENTS 061ccbe55ee items 22,25,27. [R] Independent CAR, compactly
+% supported dilation, and normalized-convolution derivations. Saved before
+% reading new icloud E3/E4 sources. The author's declared_ds_closure.tex was
+% independently written before any new counterpart energy-algebra source.
+% The integrating-factor argument is an independent extension from the radial
+% rows; no new E4 source was consulted for it.
+% This is an exact check of what the matter algebra supplies, not a metric
+% phase-space declaration or an HKT derivation. H2's Einstein flux is declared.
+% CURRENT BINDING SCOPE: the fully reread live goal declares the coherent
+% -J row, spherical angular projection, adjoint back-averaged coupling and
+% the continued OCCUPIED SPECTRAL reference commuting with h. Literal
+% transport is only its adiabatic comparator. The literal +J, point-field,
+% unprojected and transported-reference blocks below retain their stated
+% control scopes; none is an obstruction to these binding choices. The
+% constructive boundary variation applies on a smooth positive-mass branch
+% with a differentiable fixed-occupation spectral sheet, as stated below.
+% Context citation: S. A. Hojman, K. Kuchar and C. Teitelboim, Geometrodynamics
+% regained, Annals of Physics 96 (1976) 88--135,
+% https://doi.org/10.1016/0003-4916(76)90112-3 . Primary publisher bibliographic
+% record checked. No step of its uniqueness proof is imported or claimed read.
+%
+% CHARGE-ALGEBRA CHECK. In the continuum near a valley let
+% h=alpha.p+beta m, h[f]={f,h}/2, p[v]={v_i,p_i}/2.
+% CAR implies i[H[f],H[g]]=P[f grad g-g grad f]
+% + (1/4) integral psi^dag Sigma.curl(f grad g-g grad f) psi.
+% For radial f,g the curl vanishes identically. At finite lattice spacing the
+% exact axis quadrature coefficient is [sin(2aq)+2sin(aq)]/(4a), while arbitrary
+% continuum-irrotational Fourier pairs have a residual spin vertex at a^2 q^4.
+% Therefore 'exact for longitudinal' requires a specified shape/current
+% placement, or means the strict continuum limit, not arbitrary lattice radial
+% smearings. The complete finite-a identity is in declared_ds_closure.tex.
+% The independent exact radial link test in that note now settles the
+% stronger statement: compact smooth f=chi(r/L)r^2/L^2 and
+% g=chi(r/L)r^6/L^6, with chi=1 up to 3L, give at x=(L,2L,0),
+% y=x+a(e_1+e_2), L/a an integer >=4,
+% <x|i[h[f],h[g]]|y>=-a^2(2L+a)(3L+a)(4L+a)Sigma_3/(4L^7).
+% Every scalar two-step Q current has zero block there. Thus arbitrary
+% radial smearings do not close exactly on only Q even when L/a is
+% arbitrarily large; their continuum radial identity retains a finite-a
+% corner-spin remainder. The original RED's independently saved midpoint
+% determinant and full source/SOURCES were read and agree with this endpoint
+% derivation. The new radial theorem remains [R]; no new other-lane comparison
+% or general HDA conclusion is inferred from it.
+% Near a valley Q_i=p_i+O(a^2p_i^3); the full-zone momentum-energy bracket
+% contains cos(2ap_i), which is not made close to 1 by small external q alone.
+%
+% MIXED-BRACKET COUNTEREXAMPLE. On C_c^infty spinors supported in a ball choose
+% v_i=x_i in that ball, smoothly cut off outside, and N=1 in a larger ball.
+% p[v]=D=(x.p+p.x)/2 on that core, [D,p_i]=i p_i, and [D,beta m]=0.
+% Consequently i[P[x],H[1]]= - integral psi^dag alpha.p psi, nonzero already
+% at a=0. In the scalar-lapse deformation algebra the expected RHS is
+% +/- H[v.grad 1]=0. This is a radial longitudinal counterexample, with no
+% finite-a, curl, boundary, subtraction or ordering loophole. A massless
+% positive-band packet has expectation -E. A massive low-momentum packet
+% has -<p^2/E>, also nonzero. This is a nonzero generator, not an instability.
+% General local v produces the stress-strain term proportional to
+% alpha_i (partial_i v_j) p_j in the matter bracket at fixed spatial metric.
+% In canonical gravity it is compensated by variation of the spatial metric;
+% that cancellation cannot be attributed to the fixed-flat matter bilinears.
+% A reduced formulation may reconstruct geometry as a functional of matter
+% and supply its induced bracket and boundary Hamiltonian. That construction
+% must be specified and checked; normal-normal CAR alone does not supply it.
+% No independent physical gravitational mode is demanded by this observation.
+%
+% SIGN CHECK. The long-wave matter dictionary is
+% ds^2=-N^2dt^2+|dx-vdt|^2, g_0i=-v_i, Kplus=sym(partial v)/N.
+% At linear order G_0i=partial_j(Kplus_ji-delta_ji Kplus), whereas for a
+% positive-energy band T_0i=-J_i in these coordinates. Thus the compatible
+% sourced momentum equation has -8pi G J_i on the RHS. The literal-plus
+% comparator is incompatible with these simultaneous conventions; the
+% binding goal declares the compatible minus sign. Vacuum J=0 is unchanged.
+%
+% CONSTRUCTIVE REDUCED HARTREE GENERATOR. This independent integrating-factor
+% derivation uses the continuum radial rows, not a declared metric phase space.
+% Work on a smooth M>0 branch with signed u=v/N !=0 for r>0, regular fixed
+% center M(0)=0 and N(infinity)=1. Set M=r u^2/(2G), E=M(infinity).
+% Pullback to C assumes a smooth branch of the implicit source/field/reference
+% equations; this variation theorem does not prove its existence or make
+% every independent density variation realizable by an admissible covariance.
+% For the compatible momentum sign J=-v N'/(4pi G r N^2), the two rows are
+% M'=4pi r^2(rho+u J), n'=N'/N=-4pi G r J/u.
+% Since delta u=G delta M/(r u), their linearized first row is
+% delta M'+n' delta M=4pi r^2(delta rho+u delta J).
+% Multiplying by N and integrating proves exactly
+% delta E=int_0^infinity 4pi r^2[N delta rho+v delta J] dr.
+% Thus delta E/delta rho=N and delta E/delta J=v, with the spatial measure
+% understood. The literal printed plus-J row instead gives
+% M'=4pi r^2(rho-u J), n'=+4pi G r J/u and
+% delta E=int 4pi r^2[N delta rho-v delta J]dr. It has the wrong flow derivative
+% for the stated +v.P Hamiltonian. This strengthens the linear sign check to
+% an exact nonlinear radial integrability statement.
+% An independent-source reciprocity check at J=0,N=1 is stronger still.
+% With functional derivatives defined using dV=4pi r^2dr, the literal plus
+% row gives delta N(r)/delta J(s)=-G Theta(s-r)/[s v(s)], whereas
+% delta v(s)/delta rho(r)=+G Theta(s-r)/[s v(s)]. Thus the one-form
+% int(N delta rho+v delta J)dV is not closed on independent-source variations;
+% no C^2 Hamiltonian on that source domain has these proposed derivatives.
+% The corrected minus row reverses the first sign and restores reciprocity.
+% CONDITIONAL SPECTRAL-REFERENCE CONTROL. For unsmoothed sources
+% rho_x=a^-3 Tr[(C-P)e_x], J_x=a^-3 Tr[(C-P)p_x],
+% Tr[h delta P]=0 on a differentiable gapped fixed-rank spectral branch:
+% delta P is occupied/unoccupied off-diagonal and h commutes with P. Hence
+% delta E=Tr[h delta C]. The canonical covariance equation i Cdot=[h,C]
+% is generated by this reduced boundary energy and conserves it for fixed
+% external boundary data. This is a constructive Hartree-level consistency
+% result after the explicit sign correction, not a positive mass-operator
+% square root, a full quantum reduced bracket, or a full HDA reconstruction.
+%
+% CONDITIONAL SPECTRAL-REFERENCE FINITE-AVERAGING CONTACT. If rho,J in the
+% Gauss law are W_ell*rho_bare and
+% W_ell*J_bare with an even kernel, the preceding variation gives
+% hbar=h[W_ell*N,W_ell*v],
+% delta E=Tr[hbar delta C]-Tr[(hbar-h)delta P],
+% since Tr[h delta P]=0 follows for the conditional reference P=P_-(h).
+% The microscopic generator h[N,v] then follows if W_ell reproduces N and v,
+% or if the stated allowed-tangent contact criterion below is established.
+% For a smooth isotropic kernel, hbar-h starts at (sigma_ell^2/2) times the
+% lapse/flow Laplacians and is generally nonzero. This identifies the needed
+% averaging compatibility, rather than assuming exact ell cancellation.
+% Explicitly the exterior v=-C r^(-1/2)n has Delta v=-9v/(4r^2), so
+% W_ell*v=v[1-9sigma_ell^2/(8r^2)]+O(ell^4), although W_ell*N=N=1.
+% The mismatch is already present outside a compact source. The Gauss-law
+% geometry at fixed boundary E is ell independent there, while its boundary
+% Hamiltonian's derivative does not automatically equal the declared
+% microscopic flow coupling. The exact condition for equality is
+% Tr[(hbar-h)delta C]=Tr[(hbar-h)delta P] on every allowed tangent variation;
+% a separately proved reference compensation is not excluded by W*v != v.
+% In the unsmoothed continuum limit the integrating-factor construction above
+% supplies an allowed reduced route with no independent gravitational mode.
+%
+% CONDITIONAL SPECTRAL REFERENCE FEEDBACK AND THE RESPONSE CURL. This test uses
+% finite source coordinates dual to independent Hermitian matter vertices B_I.
+% All cell/radial measures are included in those coordinates. Let
+% q_I=Tr[B_I(C-P(h))], h=sum phi_I B_I, and let A=d phi/d q be the actual
+% point-field response, including all actual sampling and source averaging.
+% If K is a continuum geometric response, W maps native sources to continuum
+% averages and R samples continuum fields at the native coupling, then the
+% matrix used here is A=R K W, not K W with R silently identified as the identity.
+% On a differentiable gapped reference branch Pi_IJ=Tr[B_I DP_h[B_J]] is
+% symmetric and negative semidefinite in this ground-projector convention. If
+% L=I+A Pi is invertible, linearization gives
+% delta phi=T b, b_I=Tr(B_I delta C), T=L^(-1)A.
+% Direct multiplication, without assuming A invertible, proves
+% T-T^T=L^(-1)(A-A^T)L^(-T).
+% Thus reference feedback cannot erase a nonzero antisymmetric source
+% response on such a branch. If b maps the admissible tangent space onto the
+% retained source coordinates, this antisymmetry is detected by two physical
+% tangent variations; the one-form Tr(h dC) is not closed there. Hence no
+% scalar functional has that differential on this chart. In particular,
+% 0<C<I and independent B_I suffice on the unrestricted affine mixed-state
+% chart: the Gram matrix Tr(B_I B_J) constructs every b by a small Hermitian
+% delta C. A fixed-spectrum or pure-Slater orbit needs its own surjectivity
+% test (or two detecting tangents). A component commuting with C does not
+% change its evolution, so this is not a theorem against every other reduced
+% Poisson bracket or quantum construction. Actual branch existence, its gap,
+% and invertibility are premises, not inferred from positive Hartree mass.
+%
+% In the compatible-sign continuum independent-source pairing,
+% K=d phi/d qbar is symmetric and qbar=W q, so the point-field response is
+% K W. Its symmetry requires K W=W^T K.
+% This fails for a concrete radial Gaussian average already at J=0,N=1.
+% Define (A0 f)(r)=int_r^infinity c(s)f(s)ds, c(s)=4pi Gs/u(s);
+% this is K_rho,J with ordinary dr inside the integral. Scalar and radial
+% vector averages are W0=exp[(ell^2/2)L0], W1=exp[(ell^2/2)L1], with
+% L0=partial_r^2+(2/r)partial_r and L1=L0-2/r^2. The mixed-block reciprocity
+% condition is W0 A0=A0 W1. Direct differentiation gives
+% partial_r(L0 A0-A0 L1)=-2c' partial_r-c''-2c'/r.
+% On a smooth exterior interval u is proportional to r^(-1/2), hence
+% c is proportional to r^(3/2) and this operator is nonzero. Smooth compact
+% test functions in that interval detect a nonzero order-ell^2 difference.
+% A dual Galerkin projection retaining both tests preserves that witness;
+% an actual native sampling/source map must instead be checked to retain
+% the detected range. Whenever its complete A has the nonzero antisymmetric
+% part, the matrix identity transfers the obstruction to exactly those actual
+% covariance branches/tangent charts satisfying the stated premises. Neither
+% that source range nor branch existence follows for an arbitrary state.
+% Named same-lane check: the independent source-kernel/averaging derivation
+% in declared_exchange_kernel.tex sections 7--9 agrees with this direct
+% differentiation and independently checked the congruence identity. [R],
+% not an other-lane [X] claim.
+%
+% OTHER-LANE TRANSPORT COMPARISON. Actual complete
+% <internal>/solve_b
+% strand_E_conservative_transport.tex and its scope/SOURCES were read.
+% EC4--EC8's direct bond-divergence route agrees with this author's constant-
+% lapse DS calculation: the conserved smooth line current has sinc(aq),
+% whereas the endpoint current has cos(aq). EC3 explicitly changes the line
+% allocation, and even its endpoint comparator couples W^dagger N,W^dagger v
+% to matter. The actual strand_E_hydrodynamic_sources.tex HA1--HA15, its review,
+% and its scope/SOURCES at <internal>/solve were also read.
+% HA3--HA4 explicitly select that adjoint allocation; the comparator is thus
+% an alternative to the present bare point-field Hamiltonian. EC12--EC14
+% retain the local work and reference terms; they do not establish coupled
+% Gauss propagation or remove the averaging-response issue above. No candidate
+% coupling change is adopted by this comparison.
+%
+% CONDITIONAL SPECTRAL-REFERENCE ADJOINT ALTERNATIVE. Derived before HA intake:
+% explicitly choose qbar=W q, native coefficients psi=W^dagger phi, and
+% the actual reference P=P_-(h_psi), h_psi=sum psi_I B_I. On the compatible-sign
+% smooth regular-center branch, the boundary variation proved above becomes
+% delta E=phi.W delta q=Tr(h_psi delta C)-Tr(h_psi delta P)
+% =Tr(h_psi delta C). The complete native response is W^dagger K W, symmetric
+% in the true source/field pairings, and its symmetric reference feedback
+% preserves that property. This supplies a conditional reduced Hartree
+% generator for the explicitly changed coupling. HA4 selects that same
+% adjoint interface, but HA6 proves coordinate-energy work, not this boundary-
+% energy variation theorem. This extension remains [R], with no branch-existence,
+% full-HDA, quantum-ordering or coupled-scale-independence conclusion.
+%
+% TRANSPORTED-SEA CONSTRUCTION [R]. Derived independently during the actual
+% items3/4 audit, before reading a counterpart transport construction. The
+% current goal replaces spectral refilling by P_T=U P_in U^dagger, where
+% i dot U=hU and P_in is the specified initial sea. Both C and P_T use that
+% same h and U. Put D=C-P_T. Then
+% i dot D=[h,D], dot E_m=Tr(D dot h), E_m=Tr(Dh),
+% with no spectral gap needed for these finite-matrix identities. D need
+% not itself be a covariance, but is Hermitian and has a fixed spectrum.
+% An actual initial pair 0<=C_in<=I and P_in^2=P_in stays admissible under
+% the common U, and C,P_T can be reconstructed from it after solving D.
+% The equations for h through the averaged sources depend on D alone.
+%
+% For a general variation of the initial history,
+% delta E_m=Tr(h delta C)+Tr(D delta h)-Tr(h delta P_T).
+% With P_in fixed the exact response is
+% delta P_T(t)=-i int_{t0}^t U(t,s)[delta h(s),P_T(s)]U(t,s)^dagger ds.
+% If P_in varies add U delta P_in U^dagger. This is a retarded history
+% response, not the instantaneous symmetric spectral susceptibility Pi.
+% Tr(h dot P_T)=0 along the actual trajectory, but Tr(h delta P_T) need not
+% vanish for arbitrary variations. The spectral cancellation above cannot
+% be imported into the transported model merely by changing its symbol P.
+%
+% On the conditional compatible-sign radial branch with the regular center,
+% fixed asymptotic clock and smooth M>0 hypotheses already stated, the
+% geometric integrating factor is unchanged. Since the bare sources are now
+% q_I=Tr(B_I D), its pullback is exactly
+% delta E_boundary=Tr[h delta D] (unsmoothed source/coupling),
+% delta E_boundary=Tr[hbar delta D] (averaged source, point-field coupling).
+% No spectral rank or reference-contact premise is used. The first equality
+% gives an autonomous Hamiltonian representation of the closed Hartree source
+% equation on the coadjoint orbit of D:
+% {F,G}(D)=-i Tr D[grad F,grad G], grad E=h,
+% hence i dot D=[h,D] and dot E=0 for fixed boundary data. This is a genuine
+% conditional constructor for the closed transported source variable, not a
+% claim that the arbitrary-history derivative at fixed C is Tr(h delta C).
+% The orbit is inherited from the actual initial pair and unitary matter
+% evolution; no metric phase space or independent gravitational mode is added.
+% Existence of the smooth implicit geometric branch, the literal sign repair,
+% full HDA and a quantum operator realization remain distinct requirements.
+% In particular, this D bracket is not yet identified with the native CAR
+% physical reduction. At fixed reference P_T, affine normal-ordered observables
+% F_A=Tr[(C-P_T)A] have their native covariance bracket
+% -i Tr(C[A,B])=-i Tr(D[A,B])-i Tr(P_T[A,B]), including its central term.
+% Transporting P_T closes the equation for D; it does not by itself prove a
+% symplectic reduction that removes that term from the physical observable
+% algebra. No complete matter-plus-geometry quantum theory follows here.
+% There is nevertheless a native Hartree construction without identifying
+% those two brackets. At each fixed reference value R define
+% E_R(C)=E_boundary[C-R]. Its fixed-R derivative is exactly h in the
+% unsmoothed compatible-sign model. The ordinary covariance bracket
+% {F,G}_C=-i Tr C[grad_C F,grad_C G] therefore generates i dot C=[h,C].
+% Prescribe the already-declared companion i dot R=[h,R], with the same
+% h(C-R). Along the actual pair,
+% dot E=Tr[h(dot C-dot R)]=-i Tr[h[h,C-R]]=0.
+% This is a conditional time-local Hartree construction of both equations,
+% not an autonomous C-only Hamiltonian after eliminating the reference
+% history, nor a derived native reduced symplectic or quantum theory.
+% The independent RED fixed-reference covariance derivation supplies this
+% constructive comparison; the author checked its gradient, bracket sign
+% and exact pairwise conservation directly. Its scope remains [R].
+%
+% At finite averaging, hbar=h[W^dagger N,W^dagger v] is the exact gradient
+% of boundary E in D coordinates. The declared microscopic generator is h.
+% On the coadjoint orbit of D, they produce the same SOURCE vector field
+% exactly iff [hbar-h,D]=0. Equality of the full physical C and reference P_T
+% evolutions requires [hbar-h,C]=[hbar-h,P_T]=0 separately. A degeneracy of D
+% can hide differences in the evolving state and its correlations.
+% On a larger affine variation chart, equality of their
+% differentials requires Tr[(hbar-h)delta D]=0 for every allowed delta D.
+% The point-sampled flow v need not be reproduced by W, as the explicit
+% exterior Laplacian below shows. No spectral-reference contact is available
+% to cancel it in these D coordinates. A special commuting state can make
+% the source evolution coincide despite field mismatch, so Wv!=v alone is not a
+% theorem that every admissible branch fails. The actual drift of boundary
+% energy under the prescribed matter equation is
+% dot E=-i Tr[D [hbar,h]], not automatically zero at finite averaging.
+% A complete point-field response A=R K W retains the independent-source
+% reciprocity test above, but its pullback now has no static Pi feedback.
+%
+% A constructive alternative, if explicitly adopted, is the adjoint native
+% coupling psi=W^dagger phi with the SAME transported P_T evolving under
+% h_psi. Then delta E=Tr(h_psi delta D), A=W^dagger K W is symmetric, and
+% the common transported Hartree history conserves boundary E. This is the
+% transported version of the conditional alternative discussed with HA3--4;
+% it changes point sampling and does not silently alter the binding model.
+% It proves neither ell independence of a solved object nor the full HDA.
+%
+% ACTUAL SOURCE-EVOLUTION / COLLAR / AFFINE COMPARISON. After the preceding
+% independent constructions, the complete actual author sources
+% strand_E_spherical_source_evolution.tex (SE1--SE13),
+% strand_E_radial_charge_flux.tex (GC1--GC12), and
+% strand_E_affine_constrained_branch.tex (AB1--AB13), their three respective
+% review_E_*.tex sources, and all three scope files and SOURCES were read in
+% <internal>/solve and its deliveries/solve_b/.
+% Existing RED's independent checks in section J were then read. No source
+% is inferred from its title, and AB's new branch is not claimed as an
+% independent pre-intake discovery by this author.
+%
+% SE3's half-density commutator gives the stress-strain contribution
+% i[P(v),H(f)]=H(v.grad f)-T(f partial v). For compactly supported v=x
+% and f=1 on the packet core, this is -H_kin. It agrees with this author's
+% compact dilation calculation: named [X] for that precise continuum
+% mixed-bracket counterexample, not for full deformation closure. SE12's
+% common-reference identity with Gamma_R=dot R+i[h,R]=0 agrees with the
+% direct unitary/history construction above. SE's introduction and scope
+% still discuss instantaneous spectral subtraction and an 'unadopted'
+% transported reference; that framing is not the current binding model.
+% Its spectral-contact assertions transfer only as conditional controls.
+% SE9 and GC1 additionally stipulate continuum geometric evolution rows.
+% Neither their propagation estimate nor this comparison derives those
+% rows from the fixed-flat CAR algebra or declares a metric phase space.
+% All three sources explicitly use the compatible momentum-sign hypothesis.
+%
+% GC2 differentiates M=r^3 B^2/(2G), B=v/(rN), to obtain on those constraints
+% M'=4pi r^2(rho+uJ), u=v/N. This agrees with the radial-row input of the
+% independent integrating-factor derivation above. It does not independently
+% supply the complete boundary variation or fixed-R native constructor.
+% GC7 can be checked directly without a gradient expansion. In its uniform
+% collar put h=N h0+v q_r, alpha_r^a=sum_i n_i alpha_i cos(ap_i), and
+% c_r=sum_i n_i^2 cos(2ap_i). Since {h0,alpha_r^a}=2q_r,
+% j_H={h,partial_pr h}/2
+%    =N^2 q_r+Nv(c_r h0+q_r alpha_r^a)+v^2 q_r c_r,
+% N j_G=(N^2+v^2)q_r+Nv(h0+q_r alpha_r^a),
+% and j_H-N j_G=v(c_r-1)h exactly. This verifies the collar clock factor
+% and finite-spacing flux defect. Its relative positive-band bound requires
+% the stated outgoing margin b>=|v|+delta, not arbitrary grazing modes.
+% GC11's monotone radial comparison constructs nonnegative source data and
+% a positive lapse on its stated annulus; a microscopic covariance realizing
+% those data and its subsequent constraint-preserving history are separate.
+% Source flux and detector-relative flux also have different reference terms.
+%
+% AB is a substantive special microscopic history, not a resolution of the
+% general point-field averaging issue. It takes infinite homogeneous density,
+% N=1 and unbounded affine v=b(t)x, b=-sqrt(8pi G rho/3). The momentum-space
+% half-density generator h0+i b(q.grad_p+div q/2) gives characteristic
+% p_dot=-bq, tan(ak_i)=exp(theta)tan(ak_i0), theta=-int bdt, while the spin
+% matrix evolves with the full h0(p(t)). Thus an incoming positive-band
+% addition remains an admissible covariance under common transport without
+% being refilled into instantaneous bands. Normalized even averaging exactly
+% reproduces the homogeneous sources and the affine fields; HA's adjoint
+% coupling therefore happens to equal point coupling in this configuration.
+%
+% Its cold-support premises K0<=m/4, K*=2K0, aK*<=1/2 and theta<=log 2
+% imply the pointwise transported energy bound >=3m eta/4 and Jacobian
+% between 1 and 8. Consequently 3mn0/4<=rho<=12mn0; square-root feedback
+% stays regular, supplying the stated local interval log 2/(4b0).
+% This is an actual homogeneous transported-state constructor, not a proof
+% of an isolated finite-energy source branch or Fock implementability for
+% an infinite sea. Cubic/parity symmetry gives J=0 and stress s delta_ij.
+% Torus integration by parts independently verifies
+% rho_dot=-b(3rho+3s-Delta),
+% Delta=int(3-sum_i cos(2ap_i))Tr(h0 D)dmu,
+% 0<=Delta<=2a^2 K*^2 rho.
+% The positive-energy bound, rather than D>=0 alone, proves this sign.
+% Differentiating the exact constraint 3b^2=8pi G rho gives
+% b_dot=-4pi G(rho+s)+(4pi G/3)Delta. Thus both constraints hold on that
+% interval, but the additionally stipulated continuum evolution has a
+% nonzero order-a^2 defect for nonzero occupied momentum of positive measure.
+% It is bounded relative to b^2 by a^2 K*^2; absolute vanishing also uses
+% the controlled density of the displayed family.
+%
+% For AB's actual averaged compact-sphere selector, parity eliminates the
+% flow energy and explicit selector-work trace, and partition gives
+% E_R=V_R rho. Therefore L_H=V_R b(3rho+3s-Delta),
+% L_G=3V_R b(rho+s), L_H-L_G=-V_R b Delta, and dot M(R)=-L_H.
+% This includes the evolving spin matrix and full native flow paths. It
+% supplies a useful nonzero microscopic flux defect on an actual sourced
+% history. No isolated exterior, asymptotic boundary-energy constructor,
+% full HDA, arbitrary ell independence or general detector balance follows.
+% SE7's product/averaging remainder remains order ell^2 as a tends to zero
+% with ell fixed; zero residual requires its joint long-wave/averaging limit
+% or exact field reproduction, not smoothness alone. This note remains [R]
+% as a whole; the specifically named dilation and radial-row agreements do
+% not promote the conditional native boundary-Hamiltonian construction.
+%
+% FINITE-PARENT POSITIVE-BRANCH CONTINUATION [R, conditional construction].
+% This extension is derived from the radial rows and common transported D,
+% separately from AB's infinite homogeneous history. It supplies the local
+% geometric-map estimate needed to turn an ACTUAL positive source preparation
+% into a finite-time Hartree history. It assumes that preparation and the
+% complete radial source map, rather than asserting that every native
+% covariance realizes spherical positive sources. No new job is needed.
+%
+% Keep the literal and compatible signs in one formula: let sigma=+1 denote
+% the binding printed momentum RHS +J, and sigma=-1 its conditional repair.
+% The infinite-parent continuation in declared_faithful_vacuum.tex uses
+% sigma_faithful=-sigma_here; its explicit row definitions give the same
+% two systems. This conversion concerns notation, not a sign repair.
+% For inward u=v/N=-sqrt(2GM/r), the radial constraints are
+% M'=4pi r^2(rho-sigma u J), (log N)'=sigma 4pi GrJ/u.
+% Let rho(r) and j(r)=J(r)/r be regular even radial functions supported in
+% [0,R_b]. Assume an actual baseline source has rho(0)>0 and a solution
+% M_0(r)>0 for r>0, with fixed regular center M(0)=0 and N(infinity)=1.
+% In particular an actual source with rho>=0, rho(0)>0 and J=0 supplies
+% the explicit baseline M_0=4pi int_0^r s^2 rho(s)ds, N_0=1 for either sign.
+% On a small inner interval [0,r_0], put mu=M/r^3. Then exactly
+% mu(r)=4pi r^-3 int_0^r s^2 rho(s)ds
+%       +sigma 4pi r^-3 int_0^r s^4 sqrt(2G mu(s))j(s)ds,
+% mu(0)=4pi rho(0)/3.
+% This removes the misleading non-Lipschitz sqrt(M) at the regular center.
+% Choose 0<mu_min<mu_max and an inner source neighborhood such that the
+% first term stays strictly inside this interval and the second is smaller
+% than its boundary margin. Its magnitude is bounded by
+% (4pi r_0^2/5)sqrt(2G mu_max)||j||_infinity.
+% On mu_min<=mu<=mu_max its Lipschitz constant in mu is at most
+% L_mu=(2pi sqrt(2G)/(5sqrt(mu_min)))r_0^2||j||_infinity.
+% Taking r_0 small makes L_mu<1/2, without altering the physical source.
+% The Volterra map is therefore a contraction on that positive interval.
+% For two nearby source pairs its fixed points obey
+% ||delta mu|| <=[(4pi/3)||delta rho||
+% +(4pi r_0^2/5)sqrt(2G mu_max)||delta j||]/(1-L_mu).
+% This is an explicit locally Lipschitz regular-center geometric map.
+%
+% On [r_0,R_b], the actual baseline has a positive minimum of M_0. The
+% ordinary first-order M equation is locally Lipschitz there; continuous
+% dependence and Gronwall bounds keep sufficiently nearby sources on a
+% positive branch. Outside R_b, M is its constant boundary value. The lapse
+% is the normalized integral
+% N(r)=exp[sigma 4pi G int_r^{R_b}
+%                         s j(s)/sqrt(2G mu(s)) ds], r<=R_b,
+% and N=1 outside. Its integrand is O(r) at the center. Thus N is strictly
+% positive, has a uniform lower bound on a small source neighborhood, and
+% depends locally Lipschitz on (rho,j); v=-N r sqrt(2G mu) does too, with
+% its regular vector value at the center. Smoothness follows to the finite
+% derivative order of the source data. This proves a neighborhood theorem
+% around the actual positive baseline, not global positivity for all states.
+%
+% Now fix a finite native parent, a fixed averaging scale and a SPECIFIED
+% bounded real linear source map A:D -> (rho,j) in the preceding weighted
+% norm. The transported subtraction makes this map linear: D=C-R, with no
+% instantaneous spectral projector or static reference susceptibility.
+% Let C_in,R_in be an actual admissible pair, R_in^2=R_in, whose D_0 gives
+% the positive baseline above. Use the declared point-sampled N,v in the
+% native sine/endpoint Hamiltonian h(D), not the adjoint coupling unless
+% that alternative is separately selected. The geometric estimate makes
+% h(D) a locally Lipschitz Hermitian matrix on a ball around D_0. Therefore
+% i dot D=[h(D),D] has a unique local solution there. If that ball has
+% Hilbert--Schmidt radius delta and ||h(D)||<=H_*>0 within it, the solution
+% stays in the ball at least for
+% T_*=delta/[4H_*||D_0||_HS], after shrinking the ball to the regular
+% source neighborhood if needed. Indeed ||D||_HS is conserved and
+% ||dot D||_HS<=2H_*||D_0||_HS, so this time uses only half its radius;
+% the finite-dimensional locally Lipschitz flow extends throughout that
+% compact interior interval. No spectral gap or negative-band refilling
+% is required.
+%
+% Let i dot U=h(D)U, U(0)=I. Uniqueness gives D=U D_0 U^dagger. Consequently
+% C=U C_in U^dagger and R=U R_in U^dagger remain admissible and satisfy
+% the actual common microscopic transport, with the constraints solved at
+% each time by the selected geometric map. Positive mass and lapse persist
+% on this controlled interval. This construction includes finite-a point
+% coupling and either explicitly retained source sign; it does not rely on
+% boundary E being its Hamiltonian gradient. In particular it proves neither
+% conservation of boundary E for the literal/averaged model, nor the extra
+% SE9 evolution rows, full deformation closure, quantum ordering, or global
+% continuation through vanishing mass. Those remain distinct questions.
+%
+% Source-map precision is essential. A radial projection of an averaged
+% native array is a possible bounded A, but projection and its nonzero
+% angular residual must be stated and checked. The theorem does not identify
+% that projected flow with a solution of all angular constraints. Likewise
+% fixed ell is part of A: the theorem establishes no independence of a
+% coupled history as ell varies. An actual positive preparation plus this
+% complete map is needed to instantiate the constructor; a formal source
+% profile alone is insufficient. All constants may depend on the fixed
+% parent, a and ell, so no uniform continuum/thermodynamic-time bound follows.
+%
+% EXPLICIT FINITE-PARENT BASELINE AND A CONDITIONAL RADIAL INTERFACE [R].
+% This additional construction makes the preceding baseline nonempty without
+% assuming positivity of a local normal-ordered energy operator. Fix an open
+% cubic parent centered at the origin, with at least two sites per direction;
+% its one-step sine matrices commute across directions. Keep its actual
+% truncated two-step Q and all open endpoint paths. Let P_+ and P_- be the
+% strictly positive and negative spectral projectors of its free h0; take
+% any zero modes unoccupied in the specified incoming reference R_in=P_-.
+% For 0<lambda<=1 choose C_in=P_-+lambda P_+, D_0=lambda P_+.
+% This is an actual gauge-invariant Gaussian covariance on this finite
+% parent, not an assumed sign of every local energy observable. It fills
+% the complete positive band fractionally; it is not a low-energy gas or
+% a claimed isolated cold object.
+%
+% For e_x={Pi_x,h0}/2 and E_max=sqrt(m^2+3/a^2), spectral calculus gives
+% h0 P_+=(h0+|h0|)/2>=0 and |h0|>=h0^2/E_max. The onsite spin trace of
+% h0 is zero. If z_x is the number of existing nearest-neighbor links at x,
+% Tr_spin(h0^2)_xx=4[m^2+z_x/(4a^2)]. Therefore the ACTUAL cell mean obeys
+% Tr(e_x D_0)=lambda Tr(Pi_x h0 P_+)
+%           >=(2lambda/E_max)[m^2+z_x/(4a^2)]>0.
+% The density is this cell mean divided by a^3. Native time reversal leaves
+% h0,P_+,Pi_x invariant and reverses the site-symmetrized Q current, so
+% Tr(q_xi D_0)=0 exactly. This argument holds on the stated open parent;
+% no translation-invariant Brillouin integral or periodic boundary is used.
+% It gives an explicit positive baseline for either constraint sign, and
+% native cell means themselves stay positive for a sufficiently short
+% interval by finite-matrix continuity. It does not establish a continuum-
+% uniform time or positivity for other states.
+%
+% One COMPLETE bounded radial source map, retained as an explicit conditional
+% interface rather than silently adopted, is the following. Interpolate the
+% actual cell densities and vector currents as constant values on their
+% cubes, zero outside the parent. Convolve with a fixed nonnegative normalized
+% C^k spherical kernel K_ell of compact support, with k sufficient for the
+% desired hydrodynamic regularity and a<<ell. Call these fields rho_ell(x)
+% and J_ell(x). Define
+% rho(r)=(4pi)^-1 int rho_ell(r n)dOmega,
+% J(r)=(4pi)^-1 int n.J_ell(r n)dOmega, j(r)=J(r)/r.
+% This entire map A is linear in D and bounded into the center-weighted
+% source norm. Angular integration makes J(0)=0 and
+% j(0)=div J_ell(0)/3; its radial parity gives a regular center. Compact
+% support supplies a common finite R_b. The positive baseline just proved
+% has rho(0)>0 and rho>=0 provided the parent/kernel cover the center,
+% and J=0. Hence its M_0,N_0 are explicit, and the local continuation
+% theorem applies to the actual native covariance under point coupling.
+% The inequality a<<ell alone does not establish ell<<L_geometry near a
+% finite parent's edge. A hydrodynamic application additionally needs strict
+% geometric derivative bounds on its chosen baseline. With a sufficiently
+% regular kernel these bounds persist in a small C^k source neighborhood
+% by the same continuous-dependence argument; no uniform scale separation
+% is inferred from positivity or from this finite-parent construction.
+%
+% The angular projection is MATERIAL. Retain the exact residual fields
+% rho_perp(r,n)=rho_ell(rn)-rho(r),
+% J_perp(r,n)=J_ell(rn)-J(r)n.
+% They need not vanish even for this cubic-invariant baseline; the cube's
+% boundary and native dispersion are not rotationally invariant. The
+% constructor solves the radial projected constraints and native matrix
+% dynamics for this explicitly specified interface. It does not solve all
+% unprojected angular constraints or authorize adding this projection to the
+% binding model. A claim for that model requires actual residual control or
+% a source map/state with those residuals zero. Positivity of the native
+% prepared/reached means and local existence of this stated control are
+% exact finite-parent statements; no angular degeneracy weights replace
+% its four-component native trace, and no metric degree of freedom is added.
+%
+% AVERAGING CHECK. Take a normalized even rotationally invariant kernel W_ell
+% of compact support ell and let int z_i z_j W_ell(z) dz=sigma_ell^2 delta_ij.
+% Keep the bare source fixed as ell changes. For smooth radial rho,
+% rho_ell=rho+(sigma_ell^2/2) Delta rho+O(ell^4 partial^4 rho).
+% Its integral is unchanged exactly by Fubini. On the J=0,N=1 source branch
+% this integral equals the boundary charge E. For a radial source on that branch
+% M_ell(r)=4pi int_0^r s^2 rho_ell(s) ds,
+% M_ell-M=2pi sigma_ell^2 r^2 rho'(r)+O(ell^4).
+% A smooth Gaussian rho=rho0 exp(-r^2/L^2) has nonzero correction
+% -4pi sigma_ell^2 rho0 r^3 exp(-r^2/L^2)/L^2 even for a<<ell<<L.
+% Thus exact ell independence holds for the exterior total charge, not for
+% every interior profile of a fixed smooth bare source. Matching/effective-gradient
+% corrections or an ell->0 convergence statement would be additional work.
+% In vacuum outside the enlarged compact source N=1, rv^2=2GE, independently
+% of ell at fixed E. HA3/HA10's adjoint proof agrees with this fixed-array
+% normalization. Even at fixed physical C, changing ell may change the implicit
+% fields, reference history and bare source array; normalization does not establish
+% coupled-branch independence. HA's cell kernel is cubic rather than exactly
+% radial; its projected radial builder retains the discarded angular residuals.
+% No exact rotational symmetry of that native kernel is imported here.
+% For noncompact averaging kernels the tail must be explicitly bounded.
+
+% ACTUAL CURRENT-CHANNEL EXCHANGE COMPARISON [R, scoped continuation].
+% Read the full current binding GOAL; actual shared solve_b
+% strand_E_current_exchange.tex CE1--13, its scope and independent review,
+% with all their SOURCES; and the existing exchange note's core, section7,
+% section14 and SOURCES. Also read the original RED's complete section M.
+% This compares a coefficient of the previously derived CONDITIONAL
+% compatible-sign boundary functional. Its HA adjoint legs and spherical
+% projection are not substituted for the binding point-field coupling.
+%
+% At a smooth regular J=0,N=1 background write w=-sqrt(2GM/r),
+% g=G/(r w), a_alpha=4pi r^2 delta_alpha rho,
+% j_alpha=4pi r^2 delta_alpha J and
+% C_alpha(r)=int_0^r(a_alpha+w j_alpha)ds. The integrating-factor
+% variation gives delta M=C, delta w=g C and
+% delta N(r)=int_r^infinity g(s)j(s)ds. Differentiating the original
+% boundary variation and interchanging these finite integrals gives
+% K(1,2)=int g(r)[j1(r)C2(r)+j2(r)C1(r)]dr.
+% Therefore its current block, with the stated dr source measure, is
+% K_JJ(r,s)=G M(min(r,s))/sqrt[rM(r)sM(s)]. There is no additional
+% factor2: the two ordered triangles form one square. If M'>=0, then
+% K_JJ=G int M'(u) b_u(r)b_u(s)du,
+% b_u(r)=1_{u<=r}/sqrt[rM(r)], exactly the CE3--4 Gram factorization.
+% The mixed density/current block is still order sqrt(G), so neither
+% this positive Gram block nor its O(G) size removes that earlier term
+% or estimates the omitted SOURCE-Taylor remainder by powers of G.
+%
+% Pulling this kernel through the actual normalized angular source map
+% gives j_row(r)=r^2 int dOmega sum_xi n_i k_(ell,a)(r n-x)p_xi and
+% A_u=int_u^R+ j_row(r)/sqrt[rM(r)]dr. Thus BOTH legs are HA adjoints.
+% Subtracting k_(ell,a)(-x) before the angular integral gives j_row=O(r^3)
+% and the finite-center A_u bound stated in CE5. Direct finite-CAR
+% multiplication checks its full incoming-Wick identity
+% <W_P(A,A)>=(Tr DA)^2-Tr(DADA), D=C-P.
+% Consequently the current Hartree term is K_JJ(D,D)/2 and the Fock
+% derivative is -G int M'(u)A_u D A_u du. Its sign for D>=0 and its
+% finite norm bound follow from the positive weighted map D->A_u D A_u;
+% no positive TWO-BODY operator or normalized contraction follows.
+%
+% The strict open-parent witness also checks in its stated m>0 domain:
+% the actual two-step bond at0,2ae1 has value f_u^1(2ae1)/(8ia)I4,
+% and Tr_spin[P_+(p)P_+(k)]=1+(m^2+d_p.d_k)/(E_p E_k)
+% >=2m^2/Omega^2. Keeping the adjoint bond gives the CE12 denominator32.
+% Time reversal makes the mixed EXPECTATION vanish for nu P_+, while
+% its operator and derivative remain. Recomputing M_nu=nu M_1 and
+% A_(u,nu)=nu^(-1/2)A_(u,1) yields exchange proportional to-G nu^2.
+% This is a fixed-parent filling result, not a universal N_f correction
+% or a ratio to its zero current Hartree energy. The CE13 connected
+% trace-norm estimates likewise supply no actual small connected norm.
+%
+% Named agreement: our integrating-factor Hessian and direct finite-CAR
+% multiplication versus CE's radial Gram and incoming-Wick routes. This
+% annotation remains[R]; the counterpart's result is explicitly[S] and
+% does not close the literal sign, point/adjoint, angular, full transported-
+% history or quantum-domain conditions. No H2 core change, automatic[X],
+% exchange-manuscript edit or additional run follows from this comparison.
+% SOURCES: the complete actual shared CE author/review/scope paths above;
+% declared_exchange_kernel.tex sections7,14 and complete SOURCES; this
+% note's independently saved boundary variation and the original RED's
+% actual section M. No title/status label is used as mathematical evidence.
+% FINAL CURRENT-SOURCE READ: the entire actual author and original RED H2
+% sources, including every SOURCES block and the saved section M, were read
+% after this comparison. The integrating-factor, current Gram and incoming-
+% Wick coefficients agree at precisely the stated conditional scope. The
+% visible core is unchanged; no literal-sign repair, adjoint adoption,
+% full transported-history reduction or automatic other-lane promotion
+% follows. No mandatory mathematical repair or new execution is requested.
+
+% ACTUAL QUANTUM-AFFINITY BENCHMARK COMPARISON [R, narrow H2 continuation].
+% After independently saving the current full-MP8 controls, read the full
+% actual shared solve_b strand_E_quantum_affinity_test.tex QA1--11,
+% its scope and independent review, with every SOURCES block. The actual
+% cited SN1--3/SN9, BH1--6 and EL2--8/SOURCES were also read, together
+% with this original RED's complete section N. The HA kernel/adjoint is
+% the already compared alternative, with the COMPATIBLE radial sign.
+% Neither it nor spherical projection is adopted as a point-field identity.
+%
+% The finite-parent witness closes its required nonzero premise directly.
+% The product zero mode of the odd open sine matrices is real, supported
+% on the even sites, and nonzero at0 and +/-2ae_i. The full positive-m
+% eigenspace Gamma=|phi0><phi0| tensor P_beta+ has rank2, density
+% 2m|phi0(x)|^2 and zero current. On D_s=s Gamma, the conditional radial
+% rows therefore give M_s=s Mbar,N_s=1,v_s=sqrt(Gs)W exactly. HA's
+% actual adjoint gives h_s=h0+sqrt(Gs)V; no weak-coupling truncation
+% is used in this initial identity. Coordinatewise monotonicity of the
+% cell-convolved positive kernel and reflection give its strictly inward
+% coefficient at2ae_i. The exact endpoint stencil gives
+% (V_sp phi0)(0)=phi0(0)sum_i vbar_i(2ae_i)/(4ia), not zero.
+% Since V_sp is imaginary Hermitian, f=V_sp phi0 is orthogonal to phi0.
+% Thus K=i[V,Gamma] has eigenvalues+/-||f|| twice each. For
+% A=K/(2||f||), ||A||=1/2 and ||dGamma(A)||=1, and the actual
+% subtracted initial readout obeys dot q_s=-b s^(3/2), b=2sqrt(G)||f||.
+%
+% The positive gauge-invariant Fock state with covariance P0+s Gamma is
+% exactly the four-state mixture with probabilities
+% (1-s)^2,s(1-s),s(1-s),s^2. Consequently ONE fixed linear evolution
+% shared by all physical preparations and their SAME reference has
+% q_s(t)=a1(t)s+a2(t)s^2, even for an interacting candidate Hamiltonian.
+% This is a stronger across-preparation premise than the declared common
+% physical/reference propagator WITHIN each Hartree history. At
+% s=(1/9,4/9,1), weights(15,-6,1) kill s and s^2, but give
+% sum w s^(3/2)=-2/9 and sum|w|=22. This proves QA8's exact maximum
+% derivative mismatch>=b/99. It tests an exact common linear realization
+% of the stated conditional family, not every approximate construction.
+%
+% On the stated closed d-neighborhood of the compact positive segment,
+% the actual analytic branch has finite h_*,L_h. Positivity and trace<=2
+% give speed<=4h_* and the common time d/(8h_*). Differentiation gives
+% ||Dddot||_1<=4n h_*(h_*+nL_h), so |qddot|<=4h_*(h_*+2L_h)=C2.
+% The weighted remainder11C2 t^2 then yields mismatch>=bt/198 for
+% t<=min[d/(8h_*),b/(99C2)]. A candidate remainder bound is unnecessary:
+% its weighted readout is exactly zero. All finite-parent/halo/mass-domain
+% constants remain; no regulator-uniform history follows.
+%
+% The mixture(5/8)rho_(1/9)+(3/8)rho_1 has the same covariance as
+% rho_(4/9) but differs by theta Xi, theta=5/27,
+% Xi=sigma-tau1-tau2+tau12. Its covariance and trace vanish and
+% ||Xi||_1=4. Direct Wick subtraction gives the ORDINARY connected matrix
+% theta(Gamma tensor Gamma)(I-S), with trace norm2theta, not a missing
+% degeneracy factor. For the common linear initial-response functional L,
+% theta L(Xi)=-11b/108+(5/8)e1+(3/8)e3-e2.
+% The Gaussian-preparation errors therefore remain separate from the
+% connected response. A quadratic number-preserving generator has
+% L(Xi)=0 and maximum error>=11b/216; higher-body generators can respond
+% to Xi but still satisfy the general b/99 bound. No pair law or ordering
+% was selected by this comparison.
+%
+% Named agreement: direct native endpoint/spectral calculation and the
+% finite-CAR probability polynomial here versus QA's selector and affinity
+% test; the original RED's section N independently agrees. The source is
+% explicitly[S], and this conditional H2 annotation remains[R]. It does
+% not establish a fixed-charge theorem, suppress fluctuations at large
+% number, exclude approximate completion, repair the literal sign, equate
+% point and adjoint fields or supply full H2. The visible core is unchanged;
+% no new execution, exchange-source edit or automatic[X] follows.
+% SOURCES: the full actual shared QA author/review/scope named above;
+% .wt-solve_b/solve/strand_B_stationary_native_branch.tex SN1--3/SN9;
+% strand_E_boundary_hessian.tex BH1--6 and full SOURCES;
+% strand_E_coupled_averaging.tex EL2--8 and full SOURCES; original RED H2
+% section N. The unrelated stationary-energy and doubled-Fock proposals
+% are not imported as consequences of the binding model.
+
+% NATIVE AFFINE-COVARIANCE SIGN WITNESS [R, independent continuation].
+% This complements the independent-source curl and QA tests with actual
+% admissible finite-parent covariance tangents. It is not an ordering
+% choice, a new exchange source, or a repair of the literal binding sign.
+% Fix the same open Cartesian parent, transported incoming reference at
+% its initial value R=P_-(h0), and the conditional radial source interface
+% already constructed above: cell interpolation, positive normalized
+% compact spherical convolution, then angular scalar/vector projection.
+% Take its kernel radially nonincreasing; convolution with the centered
+% cell preserves evenness and monotonicity in each absolute coordinate.
+% The point-sampled native Hamiltonian is retained. No HA adjoint field
+% substitution is used. This tests that precise projected control, not
+% an exact unprojected spherical operator sector on a cubic parent.
+%
+% The actual physical covariance C_*=I/2 is strictly Pauli admissible.
+% Its difference from the fixed reference is D_*=I/2-P_-. Time reversal
+% gives every bare current zero, while the energy array is exactly
+% rho_x^bare=Tr_spin|h0|_(xx)/2>0.
+% Indeed h0 P_-=(h0-|h0|)/2, also when zero modes are empty, and the
+% onsite spin trace of h0 is zero. The previous finite-parent bound
+% |h0|>=h0^2/Emax gives
+% rho_x^bare>=[2m^2+z_x/(2a^2)]/Emax>0,
+% Emax=sqrt(m^2+3/a^2), with z_x the number of nearest neighbours.
+% This is valid at m=0 as well. Averaging/projection therefore gives a
+% regular positive radial mass branch with N=1 and inward u=v<0.
+% For a fixed finite parent every sufficiently small Hermitian affine
+% covariance perturbation remains admissible and stays on this smooth
+% source branch. This is an open chart, not an assumed Slater-orbit range.
+% The earlier finite-parent theorem supplies its local common transport;
+% no incoming collapse history preparing this sourced initial pair is
+% asserted. A restriction to such a history class would need its own
+% tangent-range test and is not covered merely by this affine chart.
+%
+% Choose an interior nearest-neighbour bond w=z+a e_j in a compact
+% inner region and a disjoint outer two-step bond y=x+2a e_1, x=R_b e_1.
+% Both bonds stay away from the parent edge. Their source supports,
+% enlarged by the averaging radius and cell half-diagonal, are disjoint,
+% with the nearest-neighbour source wholly inside the outer one. Define
+% the Hermitian norm-one tangents
+% A=-i|z><w| tensor alpha_j+i|w><z| tensor alpha_j,
+% B=-i|x><y| tensor I4+i|y><x| tensor I4.
+% The family C(s,t)=I/2+s A+t B is positive with spectrum strictly
+% between0 and1 whenever |s|+|t|<1/2. All tangents are traceless, so
+% even the expected total fermion number is fixed on this affine chart.
+%
+% Direct native matrix multiplication gives the EXACT bare responses:
+% Tr(e_z A)=Tr(e_w A)=2/a, with all other energy rows zero;
+% Tr(p_(x,1) B)=Tr(p_(y,1) B)=1/a, with all other current rows zero.
+% Also Tr(p_(r,i) A)=0 and Tr(e_r B)=0 for every site and component.
+% Here e_r={Pi_r,h0}/2 and p_(r,i)={Pi_r,Q_i}/2, and the numbers are
+% array units before the common positive cell-volume factor. The check
+% uses h0_(z,w)=-i alpha_j/(2a) and Q1_(x,y)=-i I4/(4a), including
+% the site half factors and all four spinor components. Thus A makes a
+% positive scalar source delta rho_A in the inner region and no current;
+% B makes only a radial current delta J_B in the outer region.
+%
+% The last current is nonnegative and not identically zero. For an
+% endpoint atR e1 its radial projection pairs n1>0 with -n1 and is
+% proportional to n1[k(r n-R e1)-k(r n+R e1)]>=0. The other coordinates
+% are unchanged and the coordinate-monotone effective kernel gives the
+% inequality; strict overlap gives strict positivity on a radial set.
+% The second endpoint has the same sign. This verifies the actual
+% source-map range, rather than appealing to abstract surjectivity.
+%
+% Linearize the LITERAL +J radial rows about this current-free branch.
+% With the normalized outer clock, the B variation is
+% delta_B N(r)=-int_r^infinity4pi G s delta J_B(s)/u(s) ds>0
+% at both inner sites. The A variation has delta_A N=0 and
+% delta_A M(r)=int_0^r4pi s^2 delta rho_A(s)ds>0
+% at both outer sites, so
+% delta_A v(r)=G delta_A M(r)/(r u(r))<0 there.
+% These strict signs are independent of the averaging adjoint because
+% the Hamiltonian is sampled at the actual four sites. In particular
+% Tr[A Dh(C_*)[B]]=(2/a)[delta_B N(z)+delta_B N(w)]>0,
+% Tr[B Dh(C_*)[A]]=(1/a)[delta_A v_1(x)+delta_A v_1(y)]<0.
+% Hence the one-form alpha_C(delta C)=Tr[h(C-R)delta C] has a strictly
+% nonzero exterior derivative on these two ACTUAL admissible tangents.
+% No C^2 scalar functional on this open covariance chart has gradient h.
+%
+% This resolves a specific previously conditional range question for
+% the literal-sign projected finite-parent control. In particular no
+% state-independent ordering can supply a scalar Hartree energy whose
+% variational one-body derivative is exactly that h on this chart:
+% any such scalar has symmetric second variations. The conclusion is
+% about that required variational identification, not every conceivable
+% noncanonical bracket, a restriction to a special family, or an
+% approximate quantum completion. Adding a state-independent constant
+% or a multiple of identity to the gradient cannot fix this traceless
+% two-direction test. An arbitrary state-dependent term commuting only
+% with C would require separate checking against the declared companion
+% transport of R and is not silently identified with the same model.
+%
+% Reversing the momentum source to the compatible -J reverses the first
+% strict sign; the present sign-only argument then no longer establishes
+% nonintegrability. The finite point/adjoint averaging question still
+% requires its own exact test. The theorem neither constructs the full
+% operator mass/clock/flow nor proves their coupled angular constraints,
+% quantum ordering, or deformation algebra. It uses the stated radial
+% projected interface solely as a precise native-state control; it is
+% not a solution of the unprojected binding problem. The full quantum
+% construction and first-G exchange target remain active.
+% SOURCES: independent finite-CAR bond multiplication and radial first
+% variations, using the already saved regular-center finite-parent source
+% map and literal-sign equations. No new RED native-state sign witness or
+% entropy author's angular-operator derivation was read before this save.
+% No scientific execution or additional source file is involved.
+
+% ACTUAL ORIGINAL-RED O/P AND SAME-FLOW STRENGTHENING [R].
+% Read the complete actual O/P and their SOURCES after saving the native
+% sign witness above. The mass variance, off-diagonal native Fourier
+% block, negative Slater rotation and current-free time-reversal mixture
+% check directly. In particular, subtraction removes the sea mean, not
+% Tr[P A_R(1-P)A_R]. For C=P+D, D supported in1-P, the exact variance
+% splits into Tr[(1-D)R R^dagger]+Tr[D B(1-D)B], with
+% R=(1-P)A_R P and B=(1-P)A_R(1-P). Both terms survive in the correct
+% domain; no universal relative-fluctuation or invariant positive-mass
+% sector is supplied by this identity. The full-Fock square-root failure
+% is therefore scoped to the actual normal-ordered M_R and its stated
+% current-free Gauss row. The fixed-Hessian incoming-Wick/HF formula is
+% a conditional construction, not the full operator functional.
+%
+% The following strengthening of our native sign witness also checks.
+% Suppose a C^2 scalar energy E(C) generated the SAME physical covariance
+% flow as h(C-R) on this full open Hermitian chart, with R fixed at its
+% incoming value. Its gradient g would obey [g-h,C]=0. Write K=g-h.
+% At C_*=I/2, expansion along every Hermitian X gives K(C_*) scalar and
+% [L(X),X]=0, where L=DK(C_*). Polarizing this last relation and using
+% diagonal and real/imaginary off-diagonal matrix units gives exactly
+% L(X)=lambda X+ell(X)I. The single real lambda is common to every
+% off-diagonal pair: for distinct i,j,k the differences of L(D)'s three
+% diagonal entries must add, forcing the two independent ratios to agree.
+% The remaining diagonal part of L(E_ij) is scalar by polarization with
+% E_ik; dimension2 needs only its two equal diagonal entries. Thus for
+% the actual traceless bond tangents A,B,
+% Tr[A L(B)]-Tr[B L(A)]=0.
+% A commuting correction cannot cancel the strictly nonzero curl already
+% evaluated above. This rules out a C^2 energy for the same native CAR
+% covariance vector field on the entire chart, not only gradient equality.
+% It strengthens, and replaces at this chart, the earlier statement that
+% a general commuting correction still needed checking. The prescribed
+% reference transport need not be tested to obtain this contradiction:
+% failure already occurs for the physical C equation at the initial R.
+%
+% This has an exact finite-Fock ordering consequence. For any ONE fixed
+% self-adjoint many-body Hhat, possibly depending parametrically on that
+% fixed R, let E(C)=Tr[rho_C Hhat] for the gauge-invariant quasifree state
+% rho_C. Finite CAR expansion makes E a real polynomial in C. Differentiating
+% rho_C along the one-body unitary generated by any Hermitian A gives
+% <[dGamma(A),Hhat]>_C=Tr[C[A,grad E(C)]]. Consequently the EXACT
+% initial covariance equation on these states is
+% i Cdot=[grad E(C),C]. This is not a closure assumption about later
+% non-Gaussian evolution. The nonzero curl therefore excludes every fixed
+% body order or fixed ordering that reproduces the literal-sign projected
+% point-field flow throughout this open chart. The conclusion needs no
+% Gaussian approximation to the many-body derivative at the initial time.
+%
+% This theorem still does not exclude a smaller reached-history tangent
+% family, an approximate Hartree limit, a preparation-dependent generator,
+% or a separately defined noncanonical theory. The compatible -J sign
+% remains outside the sign proof, and the projected source map is not
+% silently equated to an unprojected spherical operator sector. It neither
+% supplies the missing full H2 quantum functional nor changes the model.
+% SOURCES: full actual original RED H2 sections O/P/SOURCES; independent
+% verification by native block multiplication, polarized Hermitian matrix
+% units and exact finite-CAR one-body unitary differentiation, compared
+% with the author's previously saved affine sign witness. No new external
+% ordering theorem, source file, scientific execution or review role used.
+
+% BINDING ADJOINT/SPECTRAL HARTREE CONSTRUCTOR [R].
+% Let A_ell be the complete linear source map, including native site/link
+% allocation, angular projection and scalar/vector averaging, with its true
+% physical-volume adjoint A_ell^*. On a differentiable implicit branch put
+% q=A_ell(C-P_b(h)), h=A_ell^*(N,v), and E=E_boundary(q). Here P_b is the
+% continued occupied spectral projector on a fixed occupation sheet b,
+% not theta(-h) after an energy crossing and not literal time transport.
+% Its existence/differentiability through any relevant degeneracy must be
+% checked for that branch; no global single-valued sheet is asserted.
+% For P_b^2=P_b, differentiation gives P_b dP_b P_b=0 and
+% (1-P_b)dP_b(1-P_b)=0. Since [h,P_b]=0, h is block diagonal and
+% Tr(h dP_b)=0 exactly. The radial integrating-factor identity therefore
+% gives dE=Tr[h(dC-dP_b)]=Tr(h dC), including the implicit field response.
+% This is an ordinary native covariance Hamiltonian on that smooth sheet:
+% i Cdot=[h,C], Edot=0. In infinite volume the same trace statements
+% require the stated finite-charge/trace-pairing domain, not formal cyclicity
+% for two infinite sea traces. A finite parent has no such trace ambiguity.
+% This constructor is the binding Hartree result. It does not identify a
+% complete deformation algebra or quantize the nonlinear boundary functional.
+% Its reduced positive-mass expansion and same-reference Wick correction
+% are the separate active duty9. The earlier literal-sign/point-coupling
+% and strong unprojected constraints are controls only. In particular the
+% point-field curl test is not applied to the adjoint coupling, and the
+% transported D equation is not substituted for spectral subtraction.
+% SOURCES: full actual current final4/GOAL_alt.md; independent radial
+% integrating factor and adjoint/spectral trace arguments already saved
+% above, now restricted to their common binding premises. No new quantum
+% ordering or implicit-branch existence is assumed as a proved result.
+
+\paragraph{Continuum Gauss law and consistency [R].}
+Einstein's continuum Gauss law is declared H2; $G$ is defined by the
+Cavendish measurement and $\Lambda=0$ by subtraction. Hojman--Kucha\v r--Teitelboim
+is context; no metric phase space is declared. Continuum radial smearings give
+$i[H[f],H[g]]=P[f\nabla g-g\nabla f]$; general shapes require spin.
+Native radial closure has a finite-spacing remainder. The fixed-flat matter
+brackets alone do not establish the full deformation algebra:
+$i[P[x],H[1]]=-H_{\rm kin}\ne0=H[x\cdot\nabla1]$.
+
+For the declared $-J$ row and $+v\cdot P$ coupling, set $u=v/N$ and
+$M=ru^2/(2G)>0$ for $r>0$, on a smooth branch with regular center
+$M(0)=0$, $E=M(\infty)$ and $N(\infty)=1$.
+The radial equations imply $M'=4\pi r^2(\rho+uJ)$,
+$(\log N)'=-4\pi GrJ/u$ and
+\[
+ \delta E=\int_0^\infty4\pi r^2
+             (N\,\delta\rho+v\,\delta J)\,dr .
+\]
+Let $A_\ell$ include angular projection and source averaging. The declared
+adjoint coupling gives $h=A_\ell^*(N,v)$ and
+$\delta E=\operatorname{Tr}[h(\delta C-\delta P_b)]$.
+On a differentiable fixed-occupation spectral sheet, $P_b^2=P_b$ and
+$[h,P_b]=0$ imply $\operatorname{Tr}(h\,\delta P_b)=0$.
+Thus $\delta E=\operatorname{Tr}(h\,\delta C)$ generates the native Hartree
+equation $i\dot C=[h,C]$ and conserves $E$, on the finite-charge trace domain.
+This establishes that generator, not its full quantum ordering.
+
+At fixed $E$, the exterior geometry obeys $rv^2=2GE$. Back-averaging still
+changes the matter field: for an even isotropic convolution control with second moment
+$\sigma_\ell^2\delta_{ij}$,
+$W_\ell^*v=v[1-9\sigma_\ell^2/(8r^2)]+O(\ell^4)$ outside the source.
+Exact generator consistency therefore does not itself prove independence
+of $\ell$ for matter observables; their averaging error remains to be checked.

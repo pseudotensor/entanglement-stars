@@ -1,0 +1,414 @@
+\documentclass[10pt]{article}
+\usepackage[margin=0.8in]{geometry}
+\usepackage{amsmath,amssymb,mathtools,xurl,hyperref}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\one}{\mathbf1}
+\title{AREA: three conditional proofs and their paper scope}
+\author{Lane solve --- original author and sole independent RED}
+\date{}
+\begin{document}
+\maketitle
+\noindent\textbf{[S; V:E,B,R,Q].}
+The massive rate, the massless-inclusive rate in a specified parent
+limit, and the flat support-function/ratio statement are proved below
+on explicit sufficient domains. The full constructive proofs are
+AP1--AP24 in the author source listed in SOURCES; the sole independent
+RED gives AR1--AR38. The subsequent supplied reviewer A route is reconciled
+in AP25--AP29 and RED AR39--AR46 after that independent packet closed.
+An operator-norm \texttt{dm-contact} estimate alone
+would not prove an area-normalized entropy estimate. The new steps are
+the boundary trace ideals, the low-energy rank transfer and the exact
+outer-boundary cancellation. No numerical interval or actual-history
+premise is certified by this result.
+
+\section{Objects, state and cut}
+In lattice units $a=1$, write $\mu=ma$ and
+\[
+ h_0(k)=\alpha\cdot\sin k+\mu\beta,\quad
+ E(k)^2=\mu^2+\sum_i\sin^2k_i,\quad
+ P_0(k)=\tfrac12(1-h_0/E),\quad q_i(k)=\sin k_i\cos k_i.
+\]
+The operator whose reference is compared is the actual native operator
+\[
+ h=\tfrac12\{n,h_0\}+\tfrac12\sum_i\{w_i,Q_i\},\qquad
+ n=W_0^\dagger N,\quad w=W_1^\dagger v,\quad Q_i=q_i(D).
+\]
+All bounds concern these adjoint-allocated fields. The full four-component
+Brillouin zone and one-face normalization are retained. Entropy is in nats.
+For a pure occupied projection $P$ and a finite spatial cut $A$, put
+\[
+ T_A(P)=\chi_AP\chi_{A^c},\quad C_A=\chi_AP\chi_A,\quad
+ S_A(P)=\Tr h_2(C_A)=\Tr g(|T_A(P)|),
+\]
+where $h_2(u)=-u\log u-(1-u)\log(1-u)$ and
+$g(t)=h_2((1-\sqrt{1-4t^2})/2)$, $0\leq t\leq1/2$.
+This follows from $T_AT_A^*=C_A(1-C_A)$.
+In particular $g(t)=O(t^2(1+|\log t|))$ and
+$|g'(t)|\leq C_\alpha t^\alpha$ for every fixed $0<\alpha<1$.
+Require regular cuts with a uniform crossing bound
+\[
+ N_A(z)=\#\{x\in A:x-z\notin A\}
+       \leq C_\partial\mathcal A(1+|z|),\qquad
+ \mathcal A=A_{\rm geom}/a^2.
+\]
+Both entropy differences below compare the \emph{same finite cut}.
+They are absolute differences of ordinary entropies, not a nonnegative
+reference-subtracted entropy or an evolved physical-state assertion.
+
+\section{Massive rate: global path gap and boundary-local response}
+\textbf{Assumed domain.} Fix $\mu>0$. On the infinite cubic parent,
+take a norm-continuous path of the displayed actual operators from $h_0$
+to $h$, with bounded real fields, $n\geq n_*>0$, and a uniform actual
+gap $\sigma(h_s)\cap(-\delta,\delta)=\varnothing$, $\delta>0$.
+Their spatial extensions satisfy
+$\|\partial^\alpha(n,w)\|_\infty\leq M_\alpha\eps^{|\alpha|}$,
+$1\leq|\alpha|\leq2$, uniformly on the path. The occupied projection
+is the negative sea continued on this path. These hypotheses are not
+deduced from positive mass or a local symbol gap.
+
+\textbf{Proved bound.} For sufficiently small $\eps$,
+\begin{equation}
+ \boxed{\displaystyle
+ \frac{|S_A(P)-S_A(P_0)|}{\mathcal A}
+       \leq C\eps^2(1+|\log\eps|)^4 .}             \tag{1}
+\end{equation}
+The constant is uniform in the cut radius and $\eps$ at the stated
+bounds; it may depend on $\mu,\delta,n_*,M_\alpha$ and the field bounds.
+It is not uniform as the mass or actual gap vanishes.
+
+\textbf{Proof.} Use the exponential row-and-column Schur algebra.
+Taylor expansion of $[f,K]_{xy}=(f(x)-f(y))K_{xy}$ has an explicitly
+summable error $C\|D^2f\|_\infty|x-y|^2\|K_{xy}\|$ for the analytic
+flat multipliers. Define
+\[
+ B_{ij}=-\frac{i h_0q_j\partial_iP_0}{2E^2},\qquad
+ P_1=\frac12\sum_{ij}\{\partial_iw_j/n,B_{ij}(D)\}.
+\]
+The identities $\{h_0,\partial_iP_0\}=0$ and
+$[h_0,B_{ij}]=-iq_j\partial_iP_0$ cancel the first native commutator.
+The lapse gradient vanishes at first order. Thus $P_1=O_\gamma(\eps)$,
+$[h,P_0+P_1]=O_\gamma(\eps^2)$ and
+$(P_0+P_1)^2-(P_0+P_1)=O_\gamma(\eps^2)$ in that algebra.
+The Riesz projection $Q$ of $P_0+P_1$ near 1 differs from it by
+$O_\gamma(\eps^2)$, because its correction factors through the
+idempotence defect. Then
+$h_d=QhQ+(1-Q)h(1-Q)$ differs from $h$ by $O_\gamma(\eps^2)$.
+
+The actual gap contour gives $\|[P_s,P_0]\|\leq C\eps$.
+For two projections, the off-diagonal principal-angle value is
+$\sin\theta\cos\theta$. Norm continuity from $P_0$ prevents an angle
+from crossing $\pi/4$ for small $\eps$, so $P_s-P_0=O(\eps)$.
+The negative selector $P_d$ of $h_d$ differs from $P$ by $O(\eps^2)$;
+it commutes with $Q$ and $\|P_d-Q\|<1$, hence $P_d=Q$.
+Conjugating resolvents by truncated $e^{\theta|x-x_0|}$ changes the
+operator by $O(\theta)$; choosing $\theta$ below the actual contour
+distance and taking the resolvent Neumann inverse gives exponential
+kernel bounds. The resolvent identity now yields
+\[
+ P=P_0+P_1+R_2,\qquad |(R_2)_{xy}|\leq C\eps^2e^{-c|x-y|}.
+\]
+Crossing counts give
+$\|T_A(R_2)\|_1\leq C\mathcal A\eps^2$ and
+$\|T_A(P-P_0)\|_2^2\leq C\mathcal A\eps^2$.
+For $Z(T)=\left(\begin{smallmatrix}0&T\\T^*&0\end{smallmatrix}\right)$,
+the entrywise Schatten inequality and exponential kernels give
+$\Tr|Z(T_A(P))|^p+\Tr|Z(T_A(P_0))|^p\leq C\mathcal A p^{-4}$,
+$0<p\leq1$. The power four is the three-dimensional radial sum
+with one additional crossing distance.
+
+Regularize $F(t)=g(|t|)$ only below $\eta$, so
+$|F-F_\eta|\leq C\eta^{2-p}|t|^p$,
+$\|F_\eta'\|\leq C$ and
+$\|F_\eta''\|\leq C(1+|\log\eta|)$.
+The finite-matrix trace Hessian is bounded by
+$\|F_\eta''\|\|D\|_2^2$; its coefficients are divided differences
+of $F_\eta'$. Onsite Dirac time reversal fixes the flat projector
+and cut and reverses $P_1$, so its real linear trace vanishes.
+The $R_2$ linear term is controlled in trace norm. Since
+$S_A(P)=\frac12\Tr F(Z(T_A(P)))$, the total error is at most
+\[
+ C\mathcal A\{\eps^2(1+|\log\eta|)+\eta^{2-p}p^{-4}\}.
+\]
+Take $\eta=\eps$, $p=1/|\log\eps|$. This proves (1) without a gap
+in the compressed covariance or a volume-rank entropy estimate.
+
+\section{Massless-inclusive rate: explicit AP-parent and ground-sheet domain}
+\textbf{Assumed domain.} Take even antiperiodic cubic parents of side
+$L_p\asymp\eps^{-1}$, nonwrapping regular cuts with
+$n_A\asymp\eps^{-3}$ and $\mathcal A\asymp\eps^{-2}$, and
+$0\leq\mu\leq\mu_*$. The actual bounded real fields obey
+\[
+ \inf n-\sup|w|\geq c_*>0,\qquad
+ \sum_q |q|_{\mathbb T}
+   (|\widehat n(q)|+\sum_i|\widehat w_i(q)|)\leq M\eps.
+\]
+This is a native Fourier-transfer moment with aliases included; constant
+fields cost zero. The actual occupied reference must equal the ground
+selector $P_-(h)$, with any zero-level choice included in the low-energy
+block. A continued sheet after occupation crossings is not automatically
+that selector.
+
+\textbf{Proved bound.} Uniformly in this mass interval and the stated
+families,
+\begin{equation}
+ \boxed{\displaystyle
+ \frac{|S_A(P)-S_A(P_0)|}{\mathcal A}\leq C\eps^{1/10}.} \tag{2}
+\end{equation}
+\textbf{Proof.} The exact lapse commutator transfer is
+$(E_k-E_l)[1-h_kh_l/(E_kE_l)]/4$ and is $O(|k-l|_{\mathbb T})$.
+For flow it is $(q_i(k)+q_i(l))(P_0(l)-P_0(k))/2$.
+Away from nodes use $\|\nabla P_0\|\leq C/E$; near a node
+$q_i=O(E)=O(|k-l|)$. Therefore $\|[h,P_0]\|\leq C\eps$ uniformly
+in mass. With $h_b=P_0hP_0+(1-P_0)h(1-P_0)$,
+$\|h-h_b\|\leq C\eps$ and
+$\|h\psi\|,\|h_b\psi\|\geq c_*\|E\psi\|-C\eps\|\psi\|$.
+The signed block forms are also controlled:
+\[
+ (1-P_0)h(1-P_0)\geq(1-P_0)(c_*E-C\eps)(1-P_0),\quad
+ P_0hP_0\leq P_0(-c_*E+C\eps)P_0.
+\]
+To obtain these forms, replace the lapse by $E^{1/2}nE^{1/2}$
+and flow by $E^{1/2}\{w_i,q_i/E\}E^{1/2}/2$.
+The transfer errors are products of the uniformly one-half H\"older
+functions $\sqrt E$ and $q_i/\sqrt E$, hence $O(|k-l|)$;
+$\sum_i(q_i/E)^2\leq1$ bounds the flow form. This signed estimate,
+not coercivity alone, controls the wrong occupied band.
+
+Counting the eight AP-grid nodes and using min--max gives low-energy
+rank $CL_p^3(\tau+\eps)^3$ for $h,h_b$, and wrong-sign rank
+$CL_p^3\eps^3$ for $h_b$ relative to $P_0$. A smooth negative-energy
+step and Fourier Duhamel then yield the distinct bounded/rank pieces
+\[
+ P-P_0=B_\tau+T_\tau,\quad
+ \|B_\tau\|\leq C\eps/\tau,\quad
+ \|T_\tau\|\leq3,\quad \rank T_\tau\leq CL_p^3(\tau+\eps)^3.
+\]
+Thus $\|T_A(P-P_0)\|_2\leq C\sqrt{n_A}d$,
+$d=\eps/\tau+(\tau+\eps)^{3/2}$.
+Dyadic nodal Fourier estimates, stopped at $L_p^{-1}$ before
+periodization, give $|P_0(z)|\leq C(1+d_{\mathbb T}(z,0))^{-3}$.
+Together with crossing counts this implies
+$\|T_A(P_0)\|_{5/3}^{5/3}\leq C\mathcal A$.
+Finite-rank interpolation bounds the difference's $5/3$ sum by
+$Cn_Ad^{5/3}$. Min--max gives
+$s_{2j-1}(X+Y)\leq s_j(X)+s_j(Y)$, so the perturbed sum has the
+same two bounds. The singular-value square inequality
+$\sum_j(s_j(X)-s_j(Y))^2\leq\|X-Y\|_2^2$, followed by
+$|g'(t)|\leq Ct^{5/6}$ and Cauchy--Schwarz, gives
+\[
+ |S_A(P)-S_A(P_0)|\leq
+ Cd\sqrt{n_A(\mathcal A+n_Ad^{5/3})}.
+\]
+Take $\tau=\eps^{2/5}$: $d=O(\eps^{3/5})$ and
+$n_Ad^{5/3}=O(\mathcal A)$, proving (2).
+The finite-matrix inequalities and the uniform dyadic/AP estimates are
+proved explicitly in AP13--AP18; no unproved gapless entropy-Lipschitz
+principle is used.
+
+\section{Flat convex support and the axial-to-sphere ratio}
+\textbf{Domain.} Fix $\mu\geq0$ and the same translation-invariant
+flat pure $P_0$ on the infinite cubic parent. Use its established
+one-face planar coefficient $\eta_\mu(n)$ and digital-ball theorem.
+No varying background or subtraction between masses is used here.
+
+\textbf{Boundary-cancelled proof.} For a finite cube $\Lambda_L$ set
+\[
+ b_L(B)=\tfrac12\{S(B)+S(\Lambda_L\setminus B)-S(\Lambda_L)\}.
+\]
+It is nonnegative, symmetric and submodular. In this Gaussian class
+submodularity has a direct finite-matrix proof: integrate
+\[
+ h_2(u)=\int_0^\infty\log
+       \frac{(u+t)(1-u+t)}{t(1+t)}\,dt.
+\]
+Each principal log determinant for $C+tI$ and $I-C+tI$ is submodular
+by a Schur complement; the dimension term is modular. The integral
+therefore proves the needed entropy inequality in the actual subsystem
+convention. Diminishing marginal increments imply that the threshold
+extension $\mathcal L_L(f)=\int b_L(\{f>t\})dt$ is the maximum
+of its finitely many greedy linear forms, hence convex and even.
+
+Approximate $h_2$ by symmetric endpoint-zero polynomials with
+$|h_2-p|\leq\xi[u(1-u)]^\alpha$, $2/3<\alpha<1$.
+The flat kernel and crossing counts give error $C\xi L^2$ uniformly
+for every half-space slice of the cube and its complement. Integrated
+over slicing levels and divided by cube volume, the error is at most
+$C\xi|v|$. For a closed polynomial path with offsets $Y$, weight
+$w(Y)$ and whole-cube anchor count $N_{\Lambda_L}(Y)$, the exact identity is
+\[
+ \int b_{L,p}(\Lambda_L\cap\{v\cdot x>t\})dt
+ =-\frac12\sum_{j,Y}c_jw(Y)N_{\Lambda_L}(Y)
+            [\max_Y v\cdot y-\min_Y v\cdot y].
+\]
+A path wholly inside the cube is split for exactly this level interval;
+a path outside it occurs in none of the three traces. Thus outer faces
+cancel exactly, before taking a limit. The first diameter moment is
+absolutely summable: for $k(z)=(1+|z|)^{-3}$,
+$k^{*j}(z)\leq C_jk(z)\log^{j-1}(2+|z|)$, and a marked closed-path
+edge is bounded by $\sum_z|z|k(z)k^{*(j-1)}(-z)<\infty$.
+Consequently $N_{\Lambda_L}/|\Lambda_L|\to1$ passes under the sum.
+For rational normals the one-face coefficient is the negative sum of
+the path maxima with the exact layer density; inversion of $P_0$
+makes that sum half the range sum. Uniform polynomial approximation
+extends the identification to every normal. Hence
+\[
+ \lim_{L\to\infty}\frac{\mathcal L_L(v\cdot x)}{|\Lambda_L|}
+ =F_\mu(v)=|v|\eta_\mu(v/|v|),\qquad F_\mu(0)=0.
+\]
+This finite pointwise limit is convex, even and homogeneous, so it is
+the support function of the compact centrally and cubic-symmetric body
+$K_\mu=\{x:x\cdot v\leq F_\mu(v)\ \forall v\}$.
+The supporting-functional construction and all uniform limits are given
+in AP19--AP22. No sign of an individual path weight is assumed.
+
+Let $a_\mu=\eta_\mu(e_1)>0$, a support value, not the lattice spacing.
+Cubic symmetry and convexity place the axial cross-polytope inside
+$K_\mu$ and the axial cube outside. Therefore
+\[
+ a_\mu\max_i|n_i|\leq\eta_\mu(n)\leq a_\mu\sum_i|n_i|.
+\]
+The two angular means are
+$M_1=3\sqrt2\arctan(1/\sqrt2)/\pi$ and $3/2$.
+The digital-ball theorem consequently gives
+\begin{equation}
+ \boxed{\displaystyle
+ M_1a_\mu\leq\eta_{\rm sph}(\mu)\leq\tfrac32a_\mu,\qquad
+ \frac{2L_0}{3a_\mu}\leq
+ \frac{\eta_{\rm sph}(0)}{\eta_{\rm sph}(\mu)}
+ \leq\frac{U_0}{M_1a_\mu}.}                         \tag{3}
+\end{equation}
+The ratio assumes valid inputs $0<L_0\leq\eta_{\rm sph}(0)\leq U_0$.
+For $a_-\leq a_\mu\leq a_+$, use $a_+$ in its lower denominator
+and $a_-$ in its upper denominator. No supplied numerical certificate
+is proved here. Mass differences and finite-part derivatives need not
+be convex support functions.
+
+\section{Usable paper scope}
+The two local-reference rates hold under their respective actual
+global-gap or subthreshold AP-parent/ground-selector hypotheses.
+They do not follow from the local symbol alone. For a limiting spherical
+coefficient, add the separate flat-cut remainder
+$|S_A(P_0)/\mathcal A-\eta_{\rm sph}(\mu)|$ and control the actual
+parent limit. A physical evolved covariance still requires its separate
+excitation estimate. Constants must be uniform over any time or allowed
+averaging family being used. Equation (3) is a fixed-$ma$ flat theorem;
+it neither evaluates an angular small-mass remainder nor solves the
+fixed-physical-mass equation $a^2=4G\eta_{\rm sph}(ma)$.
+These are proved analytic implications with assumed premises, not
+validation of a production history or a new independent numerical route.
+
+\section{Reconciliation of the subsequently supplied reviewer A proof}
+The complete supplied result and its separate code/output were read
+after the original proof packet closed, before the new original-pair
+comparison. Theorems B1 and B2 agree with (1)--(2) on their written
+actual-field, global-path-gap or subthreshold AP-parent/ground-selector
+domains. The boundary trace norm and reversal cancellation are real
+proof steps, not consequences of \texttt{dm-contact} alone. The
+supplied massive gap certificate is sufficient when positive uniformly
+on the actual path; it is not necessary. Domain-dependent constants
+absorb its Taylor factor-two and weighted-projection-norm precisions.
+For B2's square-root form error, the native one-half H\"older argument
+for $\sqrt E$ and $q_i/\sqrt E$ above supplies the justification
+missing from the phrase ``since $|q_i|\leq E$''.
+
+\textbf{The convexity disagreement has an exact repaired step.}
+The supplied leading-area modularity observation is correct but does
+not refute the finite-box construction above. For its centered quantity
+$b_L(B)$, each whole-box polynomial path contributes minus one only
+while the plane splits it; paths not wholly in the box occur in none
+of its three traces. The displayed range identity therefore cancels
+the outside faces exactly before any limit. The uniform
+$C\xi L^2$ entropy error integrates and normalizes to $C\xi|v|$;
+the first path-diameter moment then permits $L\to\infty$, followed
+by $\xi\downarrow0$. Convexity comes from the finite entropy
+functional, not from the signs of polynomial weights. Thus the
+support theorem and analytic fixed-mass ratio (3) remain proved.
+The supplied proposal to delete them is not supported by its
+leading-area argument. No directional numerical interval or fitted
+massive coefficient is recertified by this reconciliation.
+
+\textbf{Correct the proposed blanket trapping-cut exclusion.}
+At fixed $\mu>0$, the constant actual fields $n=1$, $w=e_1$ and
+path $h_\sigma=h_0+\sigma Q_1$, $0\leq\sigma\leq1$, have bands
+$\sigma q_1\pm E$ with
+\[
+ |\sigma q_1\pm E|\geq E-|q_1|
+ =\frac{E^2-q_1^2}{E+|q_1|}
+ \geq\frac{\mu^2}{2\sqrt{\mu^2+3}}>0.
+\]
+All derivatives vanish and the reference stays $P_0$, although
+$|w|=n$ at the endpoint. This tests the logical theorem domain,
+not a self-consistent spherical solution. Failure of the strict-margin
+certificate does not exclude the massive gap theorem. The appropriate
+paper qualification is that its actual gap, field path and reference
+premises remain to be verified on the solved cut. The massless
+strict-margin theorem does exclude an actual coefficient point with
+$|w|=n$; geometric and adjoint-field root conditions must not be
+identified without their matching statement.
+
+The supplied parent-to-infinite-parent comparison is separately valid
+for the same AP ball with diameter at most $cL_p$, fixed $c<1$:
+the flat entrywise difference $O(L_p^{-3})$ gives cut Hilbert--Schmidt
+error $O(1)$, trace-norm error $O(r^{3/2})$, and entropy error
+$O(r^{3/2}(1+\log r))$. This does not supply the infinite-parent
+ball's separate coefficient remainder or a numerical error constant.
+The check transcript's literal \verb|PASS 0<g'<=2 : False| is not an
+all-pass certificate; the exact inequality follows analytically from
+$g'=2u/\sinh u\leq2$. Finite sample checks were not executed or
+adopted as proof. The original pair agrees on these corrected steps
+and retains [S; V:E,B,R,Q], with no numerical or history upgrade.
+
+\section*{SOURCES}
+\begin{enumerate}
+\item Full author proof and sole independent comparison:
+\path{<internal>/AREA_proofs_v1.tex}, AP1--AP24;
+\path{<internal>/redteam_AREA_proofs_v1.tex},
+AR1--AR46 and the original-pair comparisons. Both independent first
+saves preceded new counterpart intake. The new reviewer A proof was unread
+at the first closure; both scientists then saved and self-read their
+post-intake reconciliations before the released comparison.
+\item Complete disclosed native baselines, including post-document comments:
+\path{<internal>/declared_local_area.tex};
+\path{<internal>/redteam_declared_local_area.tex};
+\path{<internal>/declared_area_law.tex};
+\path{<internal>/redteam_declared_area_law.tex}.
+The native multiplier and flat planar/ball theorem are openly reused;
+the new boundary and convexity proofs are given in the author source.
+\item Existing support and ratio targets:
+\path{<internal>/ETA_sphere_enclosure_v1.tex}
+and its \path{<internal>/redteam_ETA_sphere_enclosure_v1.tex};
+\path{<internal>/ETA_massive_directions_v1.tex},
+E4--E5 only; no new numerical acceptance.
+\item Binding task and served manuscript clauses:
+\path{<internal>/icloud.md}, entry100;
+\path{<internal>/requirements_new.txt};
+\path{<internal>/REVIEWA_reviewb_review_adjudication_v1.md};
+\path{<internal>/03_model.tex},
+\texttt{dm-contact}, and
+\path{<internal>/04_results.tex},
+local-reference and \texttt{dr-area-fixed-mass} paragraphs, inspected at
+commit \texttt{c4d6481f449ca56092bb2ce694dcbc86ad8a75f8}.
+\item Primary entropy source actually inspected: E. H. Lieb and M. B. Ruskai,
+\emph{Proof of the Strong Subadditivity of Quantum-Mechanical Entropy}
+(1973), Theorem2, Eq.(1.5) and SectionII,
+\url{https://numdam.org/item/RCP25_1973__19__A5_0.pdf}.
+The Gaussian log-determinant inequality actually used is reproduced above.
+\item Subsequent common comparison input, read completely through its
+proofs, proposed wording, code and EOF:
+\path{<internal>/REVIEWA_area_proofs_v1.md},
+Theorems B1--B3, Corollaries B1--B2, the convexity remark and section3.1(a);
+\path{<internal>/REVIEWA_area_proofs_v1_checks.py};
+\path{<internal>/REVIEWA_area_proofs_v1_checks.txt}.
+These are claims and saved finite examples tested against the explicit
+proofs, not an authority or independent numerical licence. No code was run.
+\end{enumerate}
+\noindent\textbf{Ending.} The original pair has completed the source,
+compact and subsequent reconciliation comparison at [S; V:E,B,R,Q].
+The exact repaired steps and qualifications agree, with no remaining
+mathematical correction within the pair. Final literal readback closes
+this same result. No computation,
+manuscript edit, actual-history or numerical-certificate upgrade
+accompanies this delivery.
+\end{document}

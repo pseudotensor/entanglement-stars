@@ -1,0 +1,421 @@
+{
+  "scope": "Finite-a UV candidate planar variance on one full parent sine Brillouin zone. The 4ln2 variance columns are numerical entropy lower-bound estimates, not full cut entropy or certified continuum coefficients.",
+  "normalization": {
+    "Omega": 1.0,
+    "projector": "P=(I-Gamma0 R-Gamma_i d_i)/2 after dividing each Bloch component by epsilon",
+    "R": "sqrt(m_s^2+(sum_i sin(q_i)^2/a^2)^4)",
+    "epsilon": "sqrt(m_s^2+sum_i sin(q_i)^2/a^2+(sum_i sin(q_i)^2/a^2)^4)",
+    "spatial_algebra": "original site CAR, four Dirac components per packet",
+    "extra_valley_factor": 1,
+    "four_packet_rule": "multiplicities (1,2,1), all contributions positive",
+    "normal_Fourier": "1/Nx sum exp(i q_x r), half-step-shifted full [-pi,pi) grid; offsite norm phase cancels",
+    "transverse_measure": "uniform midpoint dq_y dq_z/(2pi)^2 on full parent BZ",
+    "variance_per_plane": "sum_{r=1}^{Nx/2-1} r average_{qy,qz} ||C_r(qy,qz)||F^2",
+    "entropy_inequality": "eta >= 4 ln(2) variance per transverse site",
+    "physical_area_coefficient": "sigma_lower_estimate=eta_lower_estimate/(a Omega)^2"
+  },
+  "rows": [
+    {
+      "Nx": 256,
+      "Nperp": 64,
+      "a_Omega": 0.2,
+      "m_light_over_Omega": 0.0,
+      "packet_mass_squared": [
+        0.0,
+        0.5,
+        0.5,
+        1.0
+      ],
+      "normal_physical_period": 51.2,
+      "transverse_momentum_spacing_over_a_Omega": 0.4908738521234052,
+      "packets": [
+        {
+          "mass_squared": 0.0,
+          "mass": 0.0,
+          "cross_cut_variance_per_transverse_site": 0.005471138853800846,
+          "single_packet_entropy_lower_bound_eta_estimate": 0.01516921788385611,
+          "last_quarter_distance_variance": 1.7438861063884662e-07,
+          "last_quarter_distance_fraction": 3.187427979783357e-05,
+          "max_bloch_unit_norm_error": 6.661338147750939e-16,
+          "multiplicity": 1
+        },
+        {
+          "mass_squared": 0.5,
+          "mass": 0.7071067811865476,
+          "cross_cut_variance_per_transverse_site": 0.003059792894621187,
+          "single_packet_entropy_lower_bound_eta_estimate": 0.008483547272016119,
+          "last_quarter_distance_variance": 6.532455732277989e-09,
+          "last_quarter_distance_fraction": 2.1349339505171735e-06,
+          "max_bloch_unit_norm_error": 6.661338147750939e-16,
+          "multiplicity": 2
+        },
+        {
+          "mass_squared": 1.0,
+          "mass": 1.0,
+          "cross_cut_variance_per_transverse_site": 0.002455824708076251,
+          "single_packet_entropy_lower_bound_eta_estimate": 0.0068089918894100165,
+          "last_quarter_distance_variance": 3.06969171524162e-09,
+          "last_quarter_distance_fraction": 1.2499636904647957e-06,
+          "max_bloch_unit_norm_error": 6.661338147750939e-16,
+          "multiplicity": 1
+        }
+      ],
+      "four_packet_cross_cut_variance_per_transverse_site": 0.014046549351119472,
+      "four_packet_eta_entropy_lower_bound_estimate": 0.03894530431729836,
+      "four_packet_sigma_entropy_lower_bound_estimate": 0.9736326079324589,
+      "elapsed_seconds": 0.373731154948473
+    },
+    {
+      "Nx": 256,
+      "Nperp": 64,
+      "a_Omega": 0.2,
+      "m_light_over_Omega": 0.001,
+      "packet_mass_squared": [
+        1e-06,
+        0.5000005,
+        0.5000005,
+        1.0
+      ],
+      "normal_physical_period": 51.2,
+      "transverse_momentum_spacing_over_a_Omega": 0.4908738521234052,
+      "packets": [
+        {
+          "mass_squared": 1e-06,
+          "mass": 0.001,
+          "cross_cut_variance_per_transverse_site": 0.005471072258641331,
+          "single_packet_entropy_lower_bound_eta_estimate": 0.015169033242867882,
+          "last_quarter_distance_variance": 1.7440245627527754e-07,
+          "last_quarter_distance_fraction": 3.1877198477833324e-05,
+          "max_bloch_unit_norm_error": 6.661338147750939e-16,
+          "multiplicity": 1
+        },
+        {
+          "mass_squared": 0.5000005,
+          "mass": 0.7071071347398497,
+          "cross_cut_variance_per_transverse_site": 0.0030597920158794275,
+          "single_packet_entropy_lower_bound_eta_estimate": 0.008483544835626626,
+          "last_quarter_distance_variance": 6.532443966136359e-09,
+          "last_quarter_distance_fraction": 2.1349307182432276e-06,
+          "max_bloch_unit_norm_error": 6.661338147750939e-16,
+          "multiplicity": 2
+        },
+        {
+          "mass_squared": 1.0,
+          "mass": 1.0,
+          "cross_cut_variance_per_transverse_site": 0.002455824708076251,
+          "single_packet_entropy_lower_bound_eta_estimate": 0.0068089918894100165,
+          "last_quarter_distance_variance": 3.06969171524162e-09,
+          "last_quarter_distance_fraction": 1.2499636904647957e-06,
+          "max_bloch_unit_norm_error": 6.661338147750939e-16,
+          "multiplicity": 1
+        }
+      ],
+      "four_packet_cross_cut_variance_per_transverse_site": 0.014046480998476437,
+      "four_packet_eta_entropy_lower_bound_estimate": 0.03894511480353115,
+      "four_packet_sigma_entropy_lower_bound_estimate": 0.9736278700882784,
+      "elapsed_seconds": 0.3669961206614971
+    },
+    {
+      "Nx": 256,
+      "Nperp": 64,
+      "a_Omega": 0.1,
+      "m_light_over_Omega": 0.0,
+      "packet_mass_squared": [
+        0.0,
+        0.5,
+        0.5,
+        1.0
+      ],
+      "normal_physical_period": 25.6,
+      "transverse_momentum_spacing_over_a_Omega": 0.9817477042468103,
+      "packets": [
+        {
+          "mass_squared": 0.0,
+          "mass": 0.0,
+          "cross_cut_variance_per_transverse_site": 0.0013904037765309853,
+          "single_packet_entropy_lower_bound_eta_estimate": 0.0038550178301694107,
+          "last_quarter_distance_variance": 2.79792732069141e-07,
+          "last_quarter_distance_fraction": 0.0002012312802883888,
+          "max_bloch_unit_norm_error": 6.661338147750939e-16,
+          "multiplicity": 1
+        },
+        {
+          "mass_squared": 0.5,
+          "mass": 0.7071067811865476,
+          "cross_cut_variance_per_transverse_site": 0.0008073904334639619,
+          "single_packet_entropy_lower_bound_eta_estimate": 0.0022385616102664693,
+          "last_quarter_distance_variance": 6.925963811972368e-07,
+          "last_quarter_distance_fraction": 0.0008578208912208407,
+          "max_bloch_unit_norm_error": 6.661338147750939e-16,
+          "multiplicity": 2
+        },
+        {
+          "mass_squared": 1.0,
+          "mass": 1.0,
+          "cross_cut_variance_per_transverse_site": 0.0006274655183570631,
+          "single_packet_entropy_lower_bound_eta_estimate": 0.0017397038197911317,
+          "last_quarter_distance_variance": 3.6065228120447445e-07,
+          "last_quarter_distance_fraction": 0.0005747762556718584,
+          "max_bloch_unit_norm_error": 6.661338147750939e-16,
+          "multiplicity": 1
+        }
+      ],
+      "four_packet_cross_cut_variance_per_transverse_site": 0.0036326501618159724,
+      "four_packet_eta_entropy_lower_bound_estimate": 0.010071844870493481,
+      "four_packet_sigma_entropy_lower_bound_estimate": 1.0071844870493478,
+      "elapsed_seconds": 0.36728764697909355
+    },
+    {
+      "Nx": 256,
+      "Nperp": 64,
+      "a_Omega": 0.1,
+      "m_light_over_Omega": 0.001,
+      "packet_mass_squared": [
+        1e-06,
+        0.5000005,
+        0.5000005,
+        1.0
+      ],
+      "normal_physical_period": 25.6,
+      "transverse_momentum_spacing_over_a_Omega": 0.9817477042468103,
+      "packets": [
+        {
+          "mass_squared": 1e-06,
+          "mass": 0.001,
+          "cross_cut_variance_per_transverse_site": 0.0013904006694831007,
+          "single_packet_entropy_lower_bound_eta_estimate": 0.0038550092156034864,
+          "last_quarter_distance_variance": 2.798049611161714e-07,
+          "last_quarter_distance_fraction": 0.00020124052530857346,
+          "max_bloch_unit_norm_error": 6.661338147750939e-16,
+          "multiplicity": 1
+        },
+        {
+          "mass_squared": 0.5000005,
+          "mass": 0.7071071347398497,
+          "cross_cut_variance_per_transverse_site": 0.0008073901699594052,
+          "single_packet_entropy_lower_bound_eta_estimate": 0.002238560879676707,
+          "last_quarter_distance_variance": 6.925958448637467e-07,
+          "last_quarter_distance_fraction": 0.0008578205069038303,
+          "max_bloch_unit_norm_error": 6.661338147750939e-16,
+          "multiplicity": 2
+        },
+        {
+          "mass_squared": 1.0,
+          "mass": 1.0,
+          "cross_cut_variance_per_transverse_site": 0.0006274655183570631,
+          "single_packet_entropy_lower_bound_eta_estimate": 0.0017397038197911317,
+          "last_quarter_distance_variance": 3.6065228120447445e-07,
+          "last_quarter_distance_fraction": 0.0005747762556718584,
+          "max_bloch_unit_norm_error": 6.661338147750939e-16,
+          "multiplicity": 1
+        }
+      ],
+      "four_packet_cross_cut_variance_per_transverse_site": 0.0036326465277589743,
+      "four_packet_eta_entropy_lower_bound_estimate": 0.010071834794748033,
+      "four_packet_sigma_entropy_lower_bound_estimate": 1.0071834794748031,
+      "elapsed_seconds": 0.36919543892145157
+    },
+    {
+      "Nx": 512,
+      "Nperp": 128,
+      "a_Omega": 0.2,
+      "m_light_over_Omega": 0.0,
+      "packet_mass_squared": [
+        0.0,
+        0.5,
+        0.5,
+        1.0
+      ],
+      "normal_physical_period": 102.4,
+      "transverse_momentum_spacing_over_a_Omega": 0.2454369260617026,
+      "packets": [
+        {
+          "mass_squared": 0.0,
+          "mass": 0.0,
+          "cross_cut_variance_per_transverse_site": 0.005521818383509385,
+          "single_packet_entropy_lower_bound_eta_estimate": 0.01530973137637442,
+          "last_quarter_distance_variance": 4.6786552095478e-08,
+          "last_quarter_distance_fraction": 8.47303349114189e-06,
+          "max_bloch_unit_norm_error": 6.661338147750939e-16,
+          "multiplicity": 1
+        },
+        {
+          "mass_squared": 0.5,
+          "mass": 0.7071067811865476,
+          "cross_cut_variance_per_transverse_site": 0.003053853705709109,
+          "single_packet_entropy_lower_bound_eta_estimate": 0.008467080343819239,
+          "last_quarter_distance_variance": 1.0634689661644398e-13,
+          "last_quarter_distance_fraction": 3.482383469045387e-11,
+          "max_bloch_unit_norm_error": 6.661338147750939e-16,
+          "multiplicity": 2
+        },
+        {
+          "mass_squared": 1.0,
+          "mass": 1.0,
+          "cross_cut_variance_per_transverse_site": 0.0024554610270368787,
+          "single_packet_entropy_lower_bound_eta_estimate": 0.00680798355146176,
+          "last_quarter_distance_variance": 2.922654347974504e-14,
+          "last_quarter_distance_fraction": 1.1902670479365783e-11,
+          "max_bloch_unit_norm_error": 6.661338147750939e-16,
+          "multiplicity": 1
+        }
+      ],
+      "four_packet_cross_cut_variance_per_transverse_site": 0.014084986821964482,
+      "four_packet_eta_entropy_lower_bound_estimate": 0.03905187561547466,
+      "four_packet_sigma_entropy_lower_bound_estimate": 0.9762968903868663,
+      "elapsed_seconds": 3.453490909188986
+    },
+    {
+      "Nx": 512,
+      "Nperp": 128,
+      "a_Omega": 0.2,
+      "m_light_over_Omega": 0.001,
+      "packet_mass_squared": [
+        1e-06,
+        0.5000005,
+        0.5000005,
+        1.0
+      ],
+      "normal_physical_period": 102.4,
+      "transverse_momentum_spacing_over_a_Omega": 0.2454369260617026,
+      "packets": [
+        {
+          "mass_squared": 1e-06,
+          "mass": 0.001,
+          "cross_cut_variance_per_transverse_site": 0.005521591507627346,
+          "single_packet_entropy_lower_bound_eta_estimate": 0.01530910234286253,
+          "last_quarter_distance_variance": 4.678771871144026e-08,
+          "last_quarter_distance_fraction": 8.473592920955713e-06,
+          "max_bloch_unit_norm_error": 7.771561172376096e-16,
+          "multiplicity": 1
+        },
+        {
+          "mass_squared": 0.5000005,
+          "mass": 0.7071071347398497,
+          "cross_cut_variance_per_transverse_site": 0.003053852835396343,
+          "single_packet_entropy_lower_bound_eta_estimate": 0.00846707793079988,
+          "last_quarter_distance_variance": 1.0634675162946134e-13,
+          "last_quarter_distance_fraction": 3.482379713810249e-11,
+          "max_bloch_unit_norm_error": 7.771561172376096e-16,
+          "multiplicity": 2
+        },
+        {
+          "mass_squared": 1.0,
+          "mass": 1.0,
+          "cross_cut_variance_per_transverse_site": 0.0024554610270368787,
+          "single_packet_entropy_lower_bound_eta_estimate": 0.00680798355146176,
+          "last_quarter_distance_variance": 2.922654347974504e-14,
+          "last_quarter_distance_fraction": 1.1902670479365783e-11,
+          "max_bloch_unit_norm_error": 6.661338147750939e-16,
+          "multiplicity": 1
+        }
+      ],
+      "four_packet_cross_cut_variance_per_transverse_site": 0.014084758205456911,
+      "four_packet_eta_entropy_lower_bound_estimate": 0.03905124175592405,
+      "four_packet_sigma_entropy_lower_bound_estimate": 0.9762810438981011,
+      "elapsed_seconds": 3.4191926568746567
+    },
+    {
+      "Nx": 512,
+      "Nperp": 128,
+      "a_Omega": 0.1,
+      "m_light_over_Omega": 0.0,
+      "packet_mass_squared": [
+        0.0,
+        0.5,
+        0.5,
+        1.0
+      ],
+      "normal_physical_period": 51.2,
+      "transverse_momentum_spacing_over_a_Omega": 0.4908738521234052,
+      "packets": [
+        {
+          "mass_squared": 0.0,
+          "mass": 0.0,
+          "cross_cut_variance_per_transverse_site": 0.00136859068827526,
+          "single_packet_entropy_lower_bound_eta_estimate": 0.0037945391076743655,
+          "last_quarter_distance_variance": 4.174082845702953e-08,
+          "last_quarter_distance_fraction": 3.0499132293258993e-05,
+          "max_bloch_unit_norm_error": 6.661338147750939e-16,
+          "multiplicity": 1
+        },
+        {
+          "mass_squared": 0.5,
+          "mass": 0.7071067811865476,
+          "cross_cut_variance_per_transverse_site": 0.0007645688490226856,
+          "single_packet_entropy_lower_bound_eta_estimate": 0.002119834968176148,
+          "last_quarter_distance_variance": 1.635065551423934e-09,
+          "last_quarter_distance_fraction": 2.1385458660969066e-06,
+          "max_bloch_unit_norm_error": 6.661338147750939e-16,
+          "multiplicity": 2
+        },
+        {
+          "mass_squared": 1.0,
+          "mass": 1.0,
+          "cross_cut_variance_per_transverse_site": 0.0006134442254971415,
+          "single_packet_entropy_lower_bound_eta_estimate": 0.0017008285413364916,
+          "last_quarter_distance_variance": 8.740047270841059e-10,
+          "last_quarter_distance_fraction": 1.4247501089048537e-06,
+          "max_bloch_unit_norm_error": 6.661338147750939e-16,
+          "multiplicity": 1
+        }
+      ],
+      "four_packet_cross_cut_variance_per_transverse_site": 0.0035111726118177726,
+      "four_packet_eta_entropy_lower_bound_estimate": 0.009735037585363152,
+      "four_packet_sigma_entropy_lower_bound_estimate": 0.973503758536315,
+      "elapsed_seconds": 3.28057399392128
+    },
+    {
+      "Nx": 512,
+      "Nperp": 128,
+      "a_Omega": 0.1,
+      "m_light_over_Omega": 0.001,
+      "packet_mass_squared": [
+        1e-06,
+        0.5000005,
+        0.5000005,
+        1.0
+      ],
+      "normal_physical_period": 51.2,
+      "transverse_momentum_spacing_over_a_Omega": 0.4908738521234052,
+      "packets": [
+        {
+          "mass_squared": 1e-06,
+          "mass": 0.001,
+          "cross_cut_variance_per_transverse_site": 0.0013685739568585133,
+          "single_packet_entropy_lower_bound_eta_estimate": 0.0037944927183369867,
+          "last_quarter_distance_variance": 4.17443781899554e-08,
+          "last_quarter_distance_fraction": 3.0502098904305715e-05,
+          "max_bloch_unit_norm_error": 6.661338147750939e-16,
+          "multiplicity": 1
+        },
+        {
+          "mass_squared": 0.5000005,
+          "mass": 0.7071071347398497,
+          "cross_cut_variance_per_transverse_site": 0.0007645686291273171,
+          "single_packet_entropy_lower_bound_eta_estimate": 0.002119834358496729,
+          "last_quarter_distance_variance": 1.6350628728814308e-09,
+          "last_quarter_distance_fraction": 2.138542977819664e-06,
+          "max_bloch_unit_norm_error": 6.661338147750939e-16,
+          "multiplicity": 2
+        },
+        {
+          "mass_squared": 1.0,
+          "mass": 1.0,
+          "cross_cut_variance_per_transverse_site": 0.0006134442254971415,
+          "single_packet_entropy_lower_bound_eta_estimate": 0.0017008285413364916,
+          "last_quarter_distance_variance": 8.740047270841059e-10,
+          "last_quarter_distance_fraction": 1.4247501089048537e-06,
+          "max_bloch_unit_norm_error": 6.661338147750939e-16,
+          "multiplicity": 1
+        }
+      ],
+      "four_packet_cross_cut_variance_per_transverse_site": 0.003511155440610289,
+      "four_packet_eta_entropy_lower_bound_estimate": 0.009734989976666936,
+      "four_packet_sigma_entropy_lower_bound_estimate": 0.9734989976666935,
+      "elapsed_seconds": 3.355316184461117
+    }
+  ],
+  "complete": true,
+  "caveat": "Normal-distance truncation, periodic aliasing, transverse quadrature and finite-a-to-continuum errors are not interval certified. No cut/thermodynamic equality or stellar-state entropy claim."
+}

@@ -1,0 +1,93 @@
+{
+  "case": "c30",
+  "stage": "diagnostics",
+  "status": "completed",
+  "command": [
+    "timeout",
+    "-s",
+    "TERM",
+    "-k",
+    "5s",
+    "12386s",
+    "nice",
+    "-n",
+    "10",
+    "<internal>/python",
+    "<internal>/hold_recovered_readouts_repair.py",
+    "--descriptor",
+    "<internal>/c30_descriptor.json",
+    "--comparison",
+    "<internal>/origin_comparison_extract.json",
+    "--build",
+    "<internal>/build_v3",
+    "--origin",
+    "<internal>/recovered_origin_checks.json",
+    "--spectral-progress",
+    "<internal>/recovered_spectral_progress.json",
+    "--out",
+    "<internal>/diagnostics",
+    "--preparation-progress",
+    "<internal>/prepare_progress.json",
+    "--case",
+    "c30"
+  ],
+  "cpu_only": true,
+  "numerical_threads": 16,
+  "memory_limit_bytes": 68719476736,
+  "consumer_pins": {
+    "hold_error_bounds.py": "12bacc16d463d8906da8010acffc59497d6dfab810b2804bd23ef37e45ba58c8",
+    "hold_exact.py": "4b58467b3a76f14894885220b8cb247c964be0a086478958e856308a42c60598",
+    "hold_exact_readouts.py": "ee9189c0338634f464b7d7bce5a2f5657cf108c4bc5e89280931cbacec47f1f1",
+    "hold_geometry.py": "91581561b31eb389c86b48f46b3506aa4dec0763a9071c83796dadd7f0ec54e3",
+    "hold_interval_checks.py": "4056feb3fa9f2b523f94f9484842c5dca9322816ce95463f7aca962d61f2be64",
+    "hold_observables.py": "318f574d86bd2d38caffd79c0ed89e268850edd7605f5acbbc0775c97827b54b",
+    "hold_origin_diagnostics.py": "48a9c4c6aaba8c5d288c5bd7af6ed079faf70b3332ae35be4c2846586ddc1028",
+    "hold_recovered_diagnostics.py": "aa3c7e9833edb8b78eb9acc77b0d9a3feb1f284805a628f26614d921931863d8",
+    "hold_recovered_input.py": "9aa9e4fd8d2b117d8526a869f5269f4163f5d95271cdacee1d09afb68840add3",
+    "hold_recovered_origin.py": "d67685853ad3e98af44097656521c8e14a162e5d80d80fb8beab804373926088",
+    "hold_recovered_precision.py": "d077ac0421a379332e9e4a1d08cc492fdc7ae1d85c56af5334ca7a1778ff13d7",
+    "hold_recovered_prepare.py": "d45c736de558295fcc8fecc23ed273ed693c2edfdf6cba1a6b477f4e34e37dca",
+    "hold_recovered_readout_input.py": "1f2f9f38ecfb1f2fb9d49126d10b6d6de2772e0daa3da21f093cb5579c139acf",
+    "hold_recovered_spectrum.py": "da64b5788ddcaccdd306972968ce282474454637899b27af2df1753623cd9115",
+    "hold_tail_checks.py": "ad502b0d6c729dec1ef49b51033b2741fea958358c698ad1a05ea405fbb1fc1f"
+  },
+  "descriptor_pins": {
+    "c15": "46b8860894cad050c5a735e1af18a9983a698c3f16f0a8ed918972f1bdb70adc",
+    "c30": "51885ae993d657bada74ed59eb5ba2de8c941c3cbaf44221e7a7d21049226c70"
+  },
+  "origin_pins": {
+    "c15": "ebe81d4a28e35b803547d042381adf60c502c4646d788cb6e6e08b32bfad35a6",
+    "c30": "3f91f7d7192dbffb1f6d45eebffa4a9257137f866000a0562bd1d58d33fcad50"
+  },
+  "spectral_pins": {
+    "c15": "f6b895848c3cb398d916eb0fa0b4a79ffbc1a24d0fda90e9b8690729cb4a0a15",
+    "c30": "bcf5a3fc3c10bbcf3ceb83bc7fd855c1d7bcdf2c4999a82a23fa4aea008cb917"
+  },
+  "clock_pins": {
+    "c15": "27ce4284f0061ef3c33f5881255b28c8f750bed86bd22ce6a7ee822f1f8e13c8",
+    "c30": "75c49c25ea3345b25f8d6d44a9e19d30ec1f3b75354a3e14aa7281d961f4058b"
+  },
+  "case_budget_seconds": 14400,
+  "cumulative_prior_seconds": 2007.058034464717,
+  "conservative_header_inspection_charge_seconds": 0,
+  "charged_attempts": [
+    {
+      "path": "<internal>/c30_prepare_exit.json",
+      "elapsed_seconds": 2007.058034464717
+    }
+  ],
+  "original_runner_sha256": "d12f8d8de538ad0f4420b41e370ae7ffa9b78058d7680d9d356886cc1feb42f5",
+  "runner_sha256": "c7f252d08b482b896da34cd83cd248b2281afd1a61dc35fe1f97aaa7f083999d",
+  "adapter_sha256": "35fcf7258a03bf5ba0b31dcaa2a196224878dd68e279cbee4eb8e02ee468879a",
+  "stdout_path": "<internal>/c30_diagnostics.stdout.log",
+  "stderr_path": "<internal>/c30_diagnostics.stderr.log",
+  "started_unix": 1792328879.0686913,
+  "wrapper_pid": 3468367,
+  "explicit_resume": false,
+  "child_pid": 733366,
+  "returncode": 0,
+  "elapsed_seconds": 1927.9996022246778,
+  "maximum_child_rss_kib": 23198548,
+  "stdout_tail": "{\"event\": \"resources\", \"available_bytes\": 568656453632, \"estimated_bytes\": 51539607552, \"root_free_bytes\": 136847052800}\n{\"event\": \"resources\", \"available_bytes\": 568573968384, \"estimated_bytes\": 51539607552, \"root_free_bytes\": 136847044608}\n{\"event\": \"resources\", \"available_bytes\": 568559472640, \"estimated_bytes\": 51539607552, \"root_free_bytes\": 136847044608}\n{\"event\": \"resources\", \"available_bytes\": 568939458560, \"estimated_bytes\": 51539607552, \"root_free_bytes\": 136845791232}\n{\"event\": \"resources\", \"available_bytes\": 568903495680, \"estimated_bytes\": 51539607552, \"root_free_bytes\": 136845791232}\n{\"event\": \"resources\", \"available_bytes\": 565500743680, \"estimated_bytes\": 51539607552, \"root_free_bytes\": 136840069120}\n{\"event\": \"resources\", \"available_bytes\": 565441150976, \"estimated_bytes\": 51539607552, \"root_free_bytes\": 136840069120}\n{\"event\": \"resources\", \"available_bytes\": 568300974080, \"estimated_bytes\": 51539607552, \"root_free_bytes\": 136646483968}\n{\"event\": \"resources\", \"available_bytes\": 568405504000, \"estimated_bytes\": 51539607552, \"root_free_bytes\": 136608837632}\n{\"event\": \"resources\", \"available_bytes\": 568372240384, \"estimated_bytes\": 51539607552, \"root_free_bytes\": 136604413952}\n{\"event\": \"resources\", \"available_bytes\": 568666021888, \"estimated_bytes\": 51539607552, \"root_free_bytes\": 136921903104}\n{\"event\": \"resources\", \"available_bytes\": 568513880064, \"estimated_bytes\": 51539607552, \"root_free_bytes\": 136921903104}\n{\"event\": \"resources\", \"available_bytes\": 572536352768, \"estimated_bytes\": 51539607552, \"root_free_bytes\": 136920432640}\n{\"event\": \"resources\", \"available_bytes\": 572996214784, \"estimated_bytes\": 51539607552, \"root_free_bytes\": 136912998400}\n{\"event\": \"resources\", \"available_bytes\": 572873797632, \"estimated_bytes\": 51539607552, \"root_free_bytes\": 136910979072}\n",
+  "stderr_tail": ""
+}

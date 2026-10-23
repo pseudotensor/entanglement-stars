@@ -1,0 +1,150 @@
+{
+  "1.0": {
+    "full_eigenvector_checks": {
+      "residual_frobenius": 0.0,
+      "orthogonality_frobenius": 0.0,
+      "residual_upper_bound": 6.106226635438373e-16,
+      "orthogonality_upper_bound": 1.1102230246251583e-15,
+      "full_sorted_eigenvalue_error_bound": 1.6098233857064805e-15
+    },
+    "identity": {
+      "terms": {
+        "A_minus_A2": {
+          "frobenius": 0.25,
+          "max_abs_entry": 0.25,
+          "max_abs_row_sum": 0.25,
+          "unsymmetrized_hermiticity_frobenius": 0.0
+        },
+        "KKdagger": {
+          "frobenius": 0.2500000000000001,
+          "max_abs_entry": 0.2500000000000001,
+          "max_abs_row_sum": 0.2500000000000001,
+          "unsymmetrized_hermiticity_frobenius": 0.0
+        },
+        "impurity": {
+          "frobenius": 1.1102230246251568e-16,
+          "max_abs_entry": 1.1102230246251568e-16,
+          "max_abs_row_sum": 1.1102230246251568e-16,
+          "unsymmetrized_hermiticity_frobenius": 0.0
+        }
+      },
+      "residual_frobenius": 2.465190328815662e-32,
+      "residual_spectral_norm_diagnostic": 2.465190328815662e-32,
+      "relative_residual_frobenius": 2.465190328815662e-32
+    },
+    "row_entropy": {
+      "evaluated_clipped_entropy": 0.6931471805599453,
+      "n_eigenvalues": 1,
+      "minimum": 0.5000000000000001,
+      "maximum": 0.5000000000000001,
+      "outside_count": 0,
+      "maximum_excursion": 0.0,
+      "endpoint_tolerance": 1e-08,
+      "within_endpoint_tolerance": true,
+      "clipping_displacement": 0.0,
+      "clipping_continuity_allowance": 0.0,
+      "continuity_scope": "Evaluation diagnostic only; raw covariance and unbounded eigensolver error are not certified."
+    },
+    "gram_entropy": {
+      "evaluated_clipped_entropy": 0.6931471805599453,
+      "n_eigenvalues": 1,
+      "minimum": 0.5000000000000001,
+      "maximum": 0.5000000000000001,
+      "outside_count": 0,
+      "maximum_excursion": 0.0,
+      "endpoint_tolerance": 1e-08,
+      "within_endpoint_tolerance": true,
+      "clipping_displacement": 0.0,
+      "clipping_continuity_allowance": 0.0,
+      "continuity_scope": "Evaluation diagnostic only; raw covariance and unbounded eigensolver error are not certified."
+    }
+  },
+  "0.37": {
+    "full_eigenvector_checks": {
+      "residual_frobenius": 0.0,
+      "orthogonality_frobenius": 0.0,
+      "residual_upper_bound": 2.2593038551121967e-16,
+      "orthogonality_upper_bound": 1.1102230246251583e-15,
+      "full_sorted_eigenvalue_error_bound": 5.956346527113976e-16
+    },
+    "identity": {
+      "terms": {
+        "A_minus_A2": {
+          "frobenius": 0.150775,
+          "max_abs_entry": 0.150775,
+          "max_abs_row_sum": 0.150775,
+          "unsymmetrized_hermiticity_frobenius": 0.0
+        },
+        "KKdagger": {
+          "frobenius": 0.034225,
+          "max_abs_entry": 0.034225,
+          "max_abs_row_sum": 0.034225,
+          "unsymmetrized_hermiticity_frobenius": 0.0
+        },
+        "impurity": {
+          "frobenius": 0.11655,
+          "max_abs_entry": 0.11655,
+          "max_abs_row_sum": 0.11655,
+          "unsymmetrized_hermiticity_frobenius": 0.0
+        }
+      },
+      "residual_frobenius": 1.3877787807814457e-17,
+      "residual_spectral_norm_diagnostic": 1.3877787807814457e-17,
+      "relative_residual_frobenius": 1.3877787807814457e-17
+    },
+    "row_entropy": {
+      "evaluated_clipped_entropy": 0.47889113905134384,
+      "n_eigenvalues": 1,
+      "minimum": 0.185,
+      "maximum": 0.185,
+      "outside_count": 0,
+      "maximum_excursion": 0.0,
+      "endpoint_tolerance": 1e-08,
+      "within_endpoint_tolerance": true,
+      "clipping_displacement": 0.0,
+      "clipping_continuity_allowance": 0.0,
+      "continuity_scope": "Evaluation diagnostic only; raw covariance and unbounded eigensolver error are not certified."
+    },
+    "gram_entropy": {
+      "evaluated_clipped_entropy": 0.47889113905134384,
+      "n_eigenvalues": 1,
+      "minimum": 0.185,
+      "maximum": 0.185,
+      "outside_count": 0,
+      "maximum_excursion": 0.0,
+      "endpoint_tolerance": 1e-08,
+      "within_endpoint_tolerance": true,
+      "clipping_displacement": 0.0,
+      "clipping_continuity_allowance": 0.0,
+      "continuity_scope": "Evaluation diagnostic only; raw covariance and unbounded eigensolver error are not certified."
+    }
+  },
+  "empty": {
+    "evaluated_clipped_entropy": 0.0,
+    "n_eigenvalues": 2,
+    "minimum": 0.0,
+    "maximum": 0.0,
+    "outside_count": 0,
+    "maximum_excursion": 0.0,
+    "endpoint_tolerance": 1e-08,
+    "within_endpoint_tolerance": true,
+    "clipping_displacement": 0.0,
+    "clipping_continuity_allowance": 0.0,
+    "continuity_scope": "Evaluation diagnostic only; raw covariance and unbounded eigensolver error are not certified."
+  },
+  "log2": 0.6931471805599453,
+  "independent_reference_cut": {
+    "evaluated_clipped_entropy": 0.6931471805599453,
+    "n_eigenvalues": 1,
+    "minimum": 0.5,
+    "maximum": 0.5,
+    "outside_count": 0,
+    "maximum_excursion": 0.0,
+    "endpoint_tolerance": 1e-08,
+    "within_endpoint_tolerance": true,
+    "clipping_displacement": 0.0,
+    "clipping_continuity_allowance": 0.0,
+    "continuity_scope": "Evaluation diagnostic only; raw covariance and unbounded eigensolver error are not certified."
+  },
+  "self_vacuum_excess": 0.0
+}

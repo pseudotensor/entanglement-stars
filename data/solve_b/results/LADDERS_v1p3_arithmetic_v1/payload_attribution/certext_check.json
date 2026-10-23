@@ -1,0 +1,6347 @@
+[
+  {
+    "path": "/certext_check",
+    "version_status": "added",
+    "node_kind": "container",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "list",
+      "length": 27
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "named_roster_agrees",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 30,
+        "target": {
+          "type": "list",
+          "length": 27
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/0",
+    "version_status": "added",
+    "node_kind": "container",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "object",
+      "keys": [
+        "agrees",
+        "banded_in_extent_certext",
+        "banded_in_extent_producer",
+        "certext_extent",
+        "followup_extent",
+        "name",
+        "producer_extent"
+      ],
+      "length": 7
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "object_shape_agrees",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 31,
+        "target": {
+          "type": "object",
+          "keys": [
+            "agrees",
+            "banded_in_extent_certext",
+            "banded_in_extent_producer",
+            "certext_extent",
+            "followup_extent",
+            "name",
+            "producer_extent"
+          ],
+          "length": 7
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/0/agrees",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "boolean",
+      "value": true
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 36,
+        "target": {
+          "type": "boolean",
+          "value": true
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/0/banded_in_extent_certext",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 38,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/0/banded_in_extent_producer",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 37,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/0/certext_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 33,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/0/followup_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 34,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/0/name",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "string",
+      "value": "M3b_s4"
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 32,
+        "target": {
+          "type": "string",
+          "value": "M3b_s4"
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/0/producer_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 35,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/1",
+    "version_status": "added",
+    "node_kind": "container",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "object",
+      "keys": [
+        "agrees",
+        "banded_in_extent_certext",
+        "banded_in_extent_producer",
+        "certext_extent",
+        "followup_extent",
+        "name",
+        "producer_extent"
+      ],
+      "length": 7
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "object_shape_agrees",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 39,
+        "target": {
+          "type": "object",
+          "keys": [
+            "agrees",
+            "banded_in_extent_certext",
+            "banded_in_extent_producer",
+            "certext_extent",
+            "followup_extent",
+            "name",
+            "producer_extent"
+          ],
+          "length": 7
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/1/agrees",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "boolean",
+      "value": true
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 44,
+        "target": {
+          "type": "boolean",
+          "value": true
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/1/banded_in_extent_certext",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 46,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/1/banded_in_extent_producer",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 45,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/1/certext_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 41,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/1/followup_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 42,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/1/name",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "string",
+      "value": "P64_s4"
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 40,
+        "target": {
+          "type": "string",
+          "value": "P64_s4"
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/1/producer_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 43,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/10",
+    "version_status": "added",
+    "node_kind": "container",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "object",
+      "keys": [
+        "agrees",
+        "banded_in_extent_certext",
+        "banded_in_extent_producer",
+        "certext_extent",
+        "followup_extent",
+        "name",
+        "producer_extent"
+      ],
+      "length": 7
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "object_shape_agrees",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 111,
+        "target": {
+          "type": "object",
+          "keys": [
+            "agrees",
+            "banded_in_extent_certext",
+            "banded_in_extent_producer",
+            "certext_extent",
+            "followup_extent",
+            "name",
+            "producer_extent"
+          ],
+          "length": 7
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/10/agrees",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "boolean",
+      "value": true
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 116,
+        "target": {
+          "type": "boolean",
+          "value": true
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/10/banded_in_extent_certext",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 118,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/10/banded_in_extent_producer",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 117,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/10/certext_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 16.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 113,
+        "target": {
+          "type": "float",
+          "value": 16.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/10/followup_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 16.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 114,
+        "target": {
+          "type": "float",
+          "value": 16.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/10/name",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "string",
+      "value": "M3a_s4_tau4"
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 112,
+        "target": {
+          "type": "string",
+          "value": "M3a_s4_tau4"
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/10/producer_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 16.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 115,
+        "target": {
+          "type": "float",
+          "value": 16.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/11",
+    "version_status": "added",
+    "node_kind": "container",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "object",
+      "keys": [
+        "agrees",
+        "banded_in_extent_certext",
+        "banded_in_extent_producer",
+        "certext_extent",
+        "followup_extent",
+        "name",
+        "producer_extent"
+      ],
+      "length": 7
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "object_shape_agrees",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 119,
+        "target": {
+          "type": "object",
+          "keys": [
+            "agrees",
+            "banded_in_extent_certext",
+            "banded_in_extent_producer",
+            "certext_extent",
+            "followup_extent",
+            "name",
+            "producer_extent"
+          ],
+          "length": 7
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/11/agrees",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "boolean",
+      "value": true
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 124,
+        "target": {
+          "type": "boolean",
+          "value": true
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/11/banded_in_extent_certext",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 126,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/11/banded_in_extent_producer",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 125,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/11/certext_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 22.083333333333332
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 121,
+        "target": {
+          "type": "float",
+          "value": 22.083333333333332
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/11/followup_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 22.083333333333332
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 122,
+        "target": {
+          "type": "float",
+          "value": 22.083333333333332
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/11/name",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "string",
+      "value": "M3c_s4_plain"
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 120,
+        "target": {
+          "type": "string",
+          "value": "M3c_s4_plain"
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/11/producer_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 22.083333333333332
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 123,
+        "target": {
+          "type": "float",
+          "value": 22.083333333333332
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/12",
+    "version_status": "added",
+    "node_kind": "container",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "object",
+      "keys": [
+        "agrees",
+        "banded_in_extent_certext",
+        "banded_in_extent_producer",
+        "certext_extent",
+        "followup_extent",
+        "name",
+        "producer_extent"
+      ],
+      "length": 7
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "object_shape_agrees",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 127,
+        "target": {
+          "type": "object",
+          "keys": [
+            "agrees",
+            "banded_in_extent_certext",
+            "banded_in_extent_producer",
+            "certext_extent",
+            "followup_extent",
+            "name",
+            "producer_extent"
+          ],
+          "length": 7
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/12/agrees",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "boolean",
+      "value": true
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "source_summary_format_unresolved",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 132,
+        "target": {
+          "type": "boolean",
+          "value": true
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/12/banded_in_extent_certext",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 134,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/12/banded_in_extent_producer",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 133,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/12/certext_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 129,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/12/followup_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "null",
+      "value": null
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "inapplicable_followup_encoding",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 130,
+        "target": {
+          "type": "null",
+          "value": null
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/12/name",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "string",
+      "value": "P64_s2"
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 128,
+        "target": {
+          "type": "string",
+          "value": "P64_s2"
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/12/producer_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 131,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/13",
+    "version_status": "added",
+    "node_kind": "container",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "object",
+      "keys": [
+        "agrees",
+        "banded_in_extent_certext",
+        "banded_in_extent_producer",
+        "certext_extent",
+        "followup_extent",
+        "name",
+        "producer_extent"
+      ],
+      "length": 7
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "object_shape_agrees",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 135,
+        "target": {
+          "type": "object",
+          "keys": [
+            "agrees",
+            "banded_in_extent_certext",
+            "banded_in_extent_producer",
+            "certext_extent",
+            "followup_extent",
+            "name",
+            "producer_extent"
+          ],
+          "length": 7
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/13/agrees",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "boolean",
+      "value": true
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 140,
+        "target": {
+          "type": "boolean",
+          "value": true
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/13/banded_in_extent_certext",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 142,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/13/banded_in_extent_producer",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 141,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/13/certext_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 137,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/13/followup_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 138,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/13/name",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "string",
+      "value": "P64_s8"
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 136,
+        "target": {
+          "type": "string",
+          "value": "P64_s8"
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/13/producer_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 139,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/14",
+    "version_status": "added",
+    "node_kind": "container",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "object",
+      "keys": [
+        "agrees",
+        "banded_in_extent_certext",
+        "banded_in_extent_producer",
+        "certext_extent",
+        "followup_extent",
+        "name",
+        "producer_extent"
+      ],
+      "length": 7
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "object_shape_agrees",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 143,
+        "target": {
+          "type": "object",
+          "keys": [
+            "agrees",
+            "banded_in_extent_certext",
+            "banded_in_extent_producer",
+            "certext_extent",
+            "followup_extent",
+            "name",
+            "producer_extent"
+          ],
+          "length": 7
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/14/agrees",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "boolean",
+      "value": true
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 148,
+        "target": {
+          "type": "boolean",
+          "value": true
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/14/banded_in_extent_certext",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 150,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/14/banded_in_extent_producer",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 1
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 149,
+        "target": {
+          "type": "integer",
+          "value": 1
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/14/certext_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 145,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/14/followup_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 146,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/14/name",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "string",
+      "value": "P64_s4_tau4"
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 144,
+        "target": {
+          "type": "string",
+          "value": "P64_s4_tau4"
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/14/producer_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 147,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/15",
+    "version_status": "added",
+    "node_kind": "container",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "object",
+      "keys": [
+        "agrees",
+        "banded_in_extent_certext",
+        "banded_in_extent_producer",
+        "certext_extent",
+        "followup_extent",
+        "name",
+        "producer_extent"
+      ],
+      "length": 7
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "object_shape_agrees",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 151,
+        "target": {
+          "type": "object",
+          "keys": [
+            "agrees",
+            "banded_in_extent_certext",
+            "banded_in_extent_producer",
+            "certext_extent",
+            "followup_extent",
+            "name",
+            "producer_extent"
+          ],
+          "length": 7
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/15/agrees",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "boolean",
+      "value": true
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 156,
+        "target": {
+          "type": "boolean",
+          "value": true
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/15/banded_in_extent_certext",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 158,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/15/banded_in_extent_producer",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 157,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/15/certext_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 12.78125
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 153,
+        "target": {
+          "type": "float",
+          "value": 12.78125
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/15/followup_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 12.75
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 154,
+        "target": {
+          "type": "float",
+          "value": 12.75
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/15/name",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "string",
+      "value": "P64_s4_tau2"
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 152,
+        "target": {
+          "type": "string",
+          "value": "P64_s4_tau2"
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/15/producer_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 12.75
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 155,
+        "target": {
+          "type": "float",
+          "value": 12.75
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/16",
+    "version_status": "added",
+    "node_kind": "container",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "object",
+      "keys": [
+        "agrees",
+        "banded_in_extent_certext",
+        "banded_in_extent_producer",
+        "certext_extent",
+        "followup_extent",
+        "name",
+        "producer_extent"
+      ],
+      "length": 7
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "object_shape_agrees",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 159,
+        "target": {
+          "type": "object",
+          "keys": [
+            "agrees",
+            "banded_in_extent_certext",
+            "banded_in_extent_producer",
+            "certext_extent",
+            "followup_extent",
+            "name",
+            "producer_extent"
+          ],
+          "length": 7
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/16/agrees",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "boolean",
+      "value": true
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 164,
+        "target": {
+          "type": "boolean",
+          "value": true
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/16/banded_in_extent_certext",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 166,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/16/banded_in_extent_producer",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 165,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/16/certext_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 161,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/16/followup_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 162,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/16/name",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "string",
+      "value": "P64_s4_c19"
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 160,
+        "target": {
+          "type": "string",
+          "value": "P64_s4_c19"
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/16/producer_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 163,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/17",
+    "version_status": "added",
+    "node_kind": "container",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "object",
+      "keys": [
+        "agrees",
+        "banded_in_extent_certext",
+        "banded_in_extent_producer",
+        "certext_extent",
+        "followup_extent",
+        "name",
+        "producer_extent"
+      ],
+      "length": 7
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "object_shape_agrees",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 167,
+        "target": {
+          "type": "object",
+          "keys": [
+            "agrees",
+            "banded_in_extent_certext",
+            "banded_in_extent_producer",
+            "certext_extent",
+            "followup_extent",
+            "name",
+            "producer_extent"
+          ],
+          "length": 7
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/17/agrees",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "boolean",
+      "value": true
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 172,
+        "target": {
+          "type": "boolean",
+          "value": true
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/17/banded_in_extent_certext",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 174,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/17/banded_in_extent_producer",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 173,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/17/certext_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 169,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/17/followup_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 170,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/17/name",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "string",
+      "value": "S4_16_s2"
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 168,
+        "target": {
+          "type": "string",
+          "value": "S4_16_s2"
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/17/producer_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 171,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/18",
+    "version_status": "added",
+    "node_kind": "container",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "object",
+      "keys": [
+        "agrees",
+        "banded_in_extent_certext",
+        "banded_in_extent_producer",
+        "certext_extent",
+        "followup_extent",
+        "name",
+        "producer_extent"
+      ],
+      "length": 7
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "object_shape_agrees",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 175,
+        "target": {
+          "type": "object",
+          "keys": [
+            "agrees",
+            "banded_in_extent_certext",
+            "banded_in_extent_producer",
+            "certext_extent",
+            "followup_extent",
+            "name",
+            "producer_extent"
+          ],
+          "length": 7
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/18/agrees",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "boolean",
+      "value": true
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 180,
+        "target": {
+          "type": "boolean",
+          "value": true
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/18/banded_in_extent_certext",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 182,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/18/banded_in_extent_producer",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 181,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/18/certext_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 16.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 177,
+        "target": {
+          "type": "float",
+          "value": 16.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/18/followup_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 16.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 178,
+        "target": {
+          "type": "float",
+          "value": 16.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/18/name",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "string",
+      "value": "S4_16_s4_tau1"
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 176,
+        "target": {
+          "type": "string",
+          "value": "S4_16_s4_tau1"
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/18/producer_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 16.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 179,
+        "target": {
+          "type": "float",
+          "value": 16.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/19",
+    "version_status": "added",
+    "node_kind": "container",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "object",
+      "keys": [
+        "agrees",
+        "banded_in_extent_certext",
+        "banded_in_extent_producer",
+        "certext_extent",
+        "followup_extent",
+        "name",
+        "producer_extent"
+      ],
+      "length": 7
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "object_shape_agrees",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 183,
+        "target": {
+          "type": "object",
+          "keys": [
+            "agrees",
+            "banded_in_extent_certext",
+            "banded_in_extent_producer",
+            "certext_extent",
+            "followup_extent",
+            "name",
+            "producer_extent"
+          ],
+          "length": 7
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/19/agrees",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "boolean",
+      "value": true
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "source_summary_format_unresolved",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 188,
+        "target": {
+          "type": "boolean",
+          "value": true
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/19/banded_in_extent_certext",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 1
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 190,
+        "target": {
+          "type": "integer",
+          "value": 1
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/19/banded_in_extent_producer",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 1
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 189,
+        "target": {
+          "type": "integer",
+          "value": 1
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/19/certext_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 185,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/19/followup_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "null",
+      "value": null
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "inapplicable_followup_encoding",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 186,
+        "target": {
+          "type": "null",
+          "value": null
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/19/name",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "string",
+      "value": "RS32_s2"
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 184,
+        "target": {
+          "type": "string",
+          "value": "RS32_s2"
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/19/producer_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 187,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/2",
+    "version_status": "added",
+    "node_kind": "container",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "object",
+      "keys": [
+        "agrees",
+        "banded_in_extent_certext",
+        "banded_in_extent_producer",
+        "certext_extent",
+        "followup_extent",
+        "name",
+        "producer_extent"
+      ],
+      "length": 7
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "object_shape_agrees",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 47,
+        "target": {
+          "type": "object",
+          "keys": [
+            "agrees",
+            "banded_in_extent_certext",
+            "banded_in_extent_producer",
+            "certext_extent",
+            "followup_extent",
+            "name",
+            "producer_extent"
+          ],
+          "length": 7
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/2/agrees",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "boolean",
+      "value": true
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 52,
+        "target": {
+          "type": "boolean",
+          "value": true
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/2/banded_in_extent_certext",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 54,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/2/banded_in_extent_producer",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 53,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/2/certext_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 49,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/2/followup_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 50,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/2/name",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "string",
+      "value": "M3a_s4"
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 48,
+        "target": {
+          "type": "string",
+          "value": "M3a_s4"
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/2/producer_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 51,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/20",
+    "version_status": "added",
+    "node_kind": "container",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "object",
+      "keys": [
+        "agrees",
+        "banded_in_extent_certext",
+        "banded_in_extent_producer",
+        "certext_extent",
+        "followup_extent",
+        "name",
+        "producer_extent"
+      ],
+      "length": 7
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "object_shape_agrees",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 191,
+        "target": {
+          "type": "object",
+          "keys": [
+            "agrees",
+            "banded_in_extent_certext",
+            "banded_in_extent_producer",
+            "certext_extent",
+            "followup_extent",
+            "name",
+            "producer_extent"
+          ],
+          "length": 7
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/20/agrees",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "boolean",
+      "value": true
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 196,
+        "target": {
+          "type": "boolean",
+          "value": true
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/20/banded_in_extent_certext",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 198,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/20/banded_in_extent_producer",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 197,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/20/certext_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 193,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/20/followup_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 194,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/20/name",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "string",
+      "value": "RS32_s4_tau1"
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 192,
+        "target": {
+          "type": "string",
+          "value": "RS32_s4_tau1"
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/20/producer_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 195,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/21",
+    "version_status": "added",
+    "node_kind": "container",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "object",
+      "keys": [
+        "agrees",
+        "banded_in_extent_certext",
+        "banded_in_extent_producer",
+        "certext_extent",
+        "followup_extent",
+        "name",
+        "producer_extent"
+      ],
+      "length": 7
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "object_shape_agrees",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 199,
+        "target": {
+          "type": "object",
+          "keys": [
+            "agrees",
+            "banded_in_extent_certext",
+            "banded_in_extent_producer",
+            "certext_extent",
+            "followup_extent",
+            "name",
+            "producer_extent"
+          ],
+          "length": 7
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/21/agrees",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "boolean",
+      "value": true
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "source_summary_format_unresolved",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 204,
+        "target": {
+          "type": "boolean",
+          "value": true
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/21/banded_in_extent_certext",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 206,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/21/banded_in_extent_producer",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 205,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/21/certext_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 2.875
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 201,
+        "target": {
+          "type": "float",
+          "value": 2.875
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/21/followup_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "null",
+      "value": null
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "inapplicable_followup_encoding",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 202,
+        "target": {
+          "type": "null",
+          "value": null
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/21/name",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "string",
+      "value": "S4_128_s4_nk_v36m"
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 200,
+        "target": {
+          "type": "string",
+          "value": "S4_128_s4_nk_v36m"
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/21/producer_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 2.875
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 203,
+        "target": {
+          "type": "float",
+          "value": 2.875
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/22",
+    "version_status": "added",
+    "node_kind": "container",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "object",
+      "keys": [
+        "agrees",
+        "banded_in_extent_certext",
+        "banded_in_extent_producer",
+        "certext_extent",
+        "followup_extent",
+        "name",
+        "producer_extent"
+      ],
+      "length": 7
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "object_shape_agrees",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 207,
+        "target": {
+          "type": "object",
+          "keys": [
+            "agrees",
+            "banded_in_extent_certext",
+            "banded_in_extent_producer",
+            "certext_extent",
+            "followup_extent",
+            "name",
+            "producer_extent"
+          ],
+          "length": 7
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/22/agrees",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "boolean",
+      "value": true
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "source_summary_format_unresolved",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 212,
+        "target": {
+          "type": "boolean",
+          "value": true
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/22/banded_in_extent_certext",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 214,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/22/banded_in_extent_producer",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 213,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/22/certext_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 2.75
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 209,
+        "target": {
+          "type": "float",
+          "value": 2.75
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/22/followup_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "null",
+      "value": null
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "inapplicable_followup_encoding",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 210,
+        "target": {
+          "type": "null",
+          "value": null
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/22/name",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "string",
+      "value": "S4_128_s4_nk_v36q"
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 208,
+        "target": {
+          "type": "string",
+          "value": "S4_128_s4_nk_v36q"
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/22/producer_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 2.75
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 211,
+        "target": {
+          "type": "float",
+          "value": 2.75
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/23",
+    "version_status": "added",
+    "node_kind": "container",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "object",
+      "keys": [
+        "agrees",
+        "banded_in_extent_certext",
+        "banded_in_extent_producer",
+        "certext_extent",
+        "followup_extent",
+        "name",
+        "producer_extent"
+      ],
+      "length": 7
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "object_shape_agrees",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 215,
+        "target": {
+          "type": "object",
+          "keys": [
+            "agrees",
+            "banded_in_extent_certext",
+            "banded_in_extent_producer",
+            "certext_extent",
+            "followup_extent",
+            "name",
+            "producer_extent"
+          ],
+          "length": 7
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/23/agrees",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "boolean",
+      "value": true
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 220,
+        "target": {
+          "type": "boolean",
+          "value": true
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/23/banded_in_extent_certext",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 222,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/23/banded_in_extent_producer",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 221,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/23/certext_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 217,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/23/followup_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 218,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/23/name",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "string",
+      "value": "S4_128_s8"
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 216,
+        "target": {
+          "type": "string",
+          "value": "S4_128_s8"
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/23/producer_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 219,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/24",
+    "version_status": "added",
+    "node_kind": "container",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "object",
+      "keys": [
+        "agrees",
+        "banded_in_extent_certext",
+        "banded_in_extent_producer",
+        "certext_extent",
+        "followup_extent",
+        "name",
+        "producer_extent"
+      ],
+      "length": 7
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "object_shape_agrees",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 223,
+        "target": {
+          "type": "object",
+          "keys": [
+            "agrees",
+            "banded_in_extent_certext",
+            "banded_in_extent_producer",
+            "certext_extent",
+            "followup_extent",
+            "name",
+            "producer_extent"
+          ],
+          "length": 7
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/24/agrees",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "boolean",
+      "value": true
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 228,
+        "target": {
+          "type": "boolean",
+          "value": true
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/24/banded_in_extent_certext",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 230,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/24/banded_in_extent_producer",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 229,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/24/certext_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 225,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/24/followup_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 226,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/24/name",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "string",
+      "value": "S4_128_s16"
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 224,
+        "target": {
+          "type": "string",
+          "value": "S4_128_s16"
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/24/producer_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 227,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/25",
+    "version_status": "added",
+    "node_kind": "container",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "object",
+      "keys": [
+        "agrees",
+        "banded_in_extent_certext",
+        "banded_in_extent_producer",
+        "certext_extent",
+        "followup_extent",
+        "name",
+        "producer_extent"
+      ],
+      "length": 7
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "object_shape_agrees",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 231,
+        "target": {
+          "type": "object",
+          "keys": [
+            "agrees",
+            "banded_in_extent_certext",
+            "banded_in_extent_producer",
+            "certext_extent",
+            "followup_extent",
+            "name",
+            "producer_extent"
+          ],
+          "length": 7
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/25/agrees",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "boolean",
+      "value": true
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 236,
+        "target": {
+          "type": "boolean",
+          "value": true
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/25/banded_in_extent_certext",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 2
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 238,
+        "target": {
+          "type": "integer",
+          "value": 2
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/25/banded_in_extent_producer",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 237,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/25/certext_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 233,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/25/followup_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 6.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 234,
+        "target": {
+          "type": "float",
+          "value": 6.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/25/name",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "string",
+      "value": "S4_R2_m0p2"
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 232,
+        "target": {
+          "type": "string",
+          "value": "S4_R2_m0p2"
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/25/producer_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 6.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 235,
+        "target": {
+          "type": "float",
+          "value": 6.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/26",
+    "version_status": "added",
+    "node_kind": "container",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "object",
+      "keys": [
+        "agrees",
+        "banded_in_extent_certext",
+        "banded_in_extent_producer",
+        "certext_extent",
+        "followup_extent",
+        "name",
+        "producer_extent"
+      ],
+      "length": 7
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "object_shape_agrees",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 239,
+        "target": {
+          "type": "object",
+          "keys": [
+            "agrees",
+            "banded_in_extent_certext",
+            "banded_in_extent_producer",
+            "certext_extent",
+            "followup_extent",
+            "name",
+            "producer_extent"
+          ],
+          "length": 7
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/26/agrees",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "boolean",
+      "value": true
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 244,
+        "target": {
+          "type": "boolean",
+          "value": true
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/26/banded_in_extent_certext",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 2
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 246,
+        "target": {
+          "type": "integer",
+          "value": 2
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/26/banded_in_extent_producer",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 2
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 245,
+        "target": {
+          "type": "integer",
+          "value": 2
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/26/certext_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 32.125
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 241,
+        "target": {
+          "type": "float",
+          "value": 32.125
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/26/followup_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 32.125
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 242,
+        "target": {
+          "type": "float",
+          "value": 32.125
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/26/name",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "string",
+      "value": "S4_R2_m0p1"
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 240,
+        "target": {
+          "type": "string",
+          "value": "S4_R2_m0p1"
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/26/producer_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 32.125
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 243,
+        "target": {
+          "type": "float",
+          "value": 32.125
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/3",
+    "version_status": "added",
+    "node_kind": "container",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "object",
+      "keys": [
+        "agrees",
+        "banded_in_extent_certext",
+        "banded_in_extent_producer",
+        "certext_extent",
+        "followup_extent",
+        "name",
+        "producer_extent"
+      ],
+      "length": 7
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "object_shape_agrees",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 55,
+        "target": {
+          "type": "object",
+          "keys": [
+            "agrees",
+            "banded_in_extent_certext",
+            "banded_in_extent_producer",
+            "certext_extent",
+            "followup_extent",
+            "name",
+            "producer_extent"
+          ],
+          "length": 7
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/3/agrees",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "boolean",
+      "value": true
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "source_summary_format_unresolved",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 60,
+        "target": {
+          "type": "boolean",
+          "value": true
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/3/banded_in_extent_certext",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 1
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 62,
+        "target": {
+          "type": "integer",
+          "value": 1
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/3/banded_in_extent_producer",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 1
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 61,
+        "target": {
+          "type": "integer",
+          "value": 1
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/3/certext_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 22.083333333333332
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 57,
+        "target": {
+          "type": "float",
+          "value": 22.083333333333332
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/3/followup_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "null",
+      "value": null
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "inapplicable_followup_encoding",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 58,
+        "target": {
+          "type": "null",
+          "value": null
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/3/name",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "string",
+      "value": "M3c_s4_nk"
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 56,
+        "target": {
+          "type": "string",
+          "value": "M3c_s4_nk"
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/3/producer_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 22.083333333333332
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 59,
+        "target": {
+          "type": "float",
+          "value": 22.083333333333332
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/4",
+    "version_status": "added",
+    "node_kind": "container",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "object",
+      "keys": [
+        "agrees",
+        "banded_in_extent_certext",
+        "banded_in_extent_producer",
+        "certext_extent",
+        "followup_extent",
+        "name",
+        "producer_extent"
+      ],
+      "length": 7
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "object_shape_agrees",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 63,
+        "target": {
+          "type": "object",
+          "keys": [
+            "agrees",
+            "banded_in_extent_certext",
+            "banded_in_extent_producer",
+            "certext_extent",
+            "followup_extent",
+            "name",
+            "producer_extent"
+          ],
+          "length": 7
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/4/agrees",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "boolean",
+      "value": true
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 68,
+        "target": {
+          "type": "boolean",
+          "value": true
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/4/banded_in_extent_certext",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 70,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/4/banded_in_extent_producer",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 69,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/4/certext_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 0.49079754601226994
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 65,
+        "target": {
+          "type": "float",
+          "value": 0.49079754601226994
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/4/followup_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 0.49079754601226994
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 66,
+        "target": {
+          "type": "float",
+          "value": 0.49079754601226994
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/4/name",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "string",
+      "value": "M3d_s4"
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 64,
+        "target": {
+          "type": "string",
+          "value": "M3d_s4"
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/4/producer_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 0.49079754601226994
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 67,
+        "target": {
+          "type": "float",
+          "value": 0.49079754601226994
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/5",
+    "version_status": "added",
+    "node_kind": "container",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "object",
+      "keys": [
+        "agrees",
+        "banded_in_extent_certext",
+        "banded_in_extent_producer",
+        "certext_extent",
+        "followup_extent",
+        "name",
+        "producer_extent"
+      ],
+      "length": 7
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "object_shape_agrees",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 71,
+        "target": {
+          "type": "object",
+          "keys": [
+            "agrees",
+            "banded_in_extent_certext",
+            "banded_in_extent_producer",
+            "certext_extent",
+            "followup_extent",
+            "name",
+            "producer_extent"
+          ],
+          "length": 7
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/5/agrees",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "boolean",
+      "value": true
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 76,
+        "target": {
+          "type": "boolean",
+          "value": true
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/5/banded_in_extent_certext",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 78,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/5/banded_in_extent_producer",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 77,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/5/certext_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 73,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/5/followup_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 74,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/5/name",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "string",
+      "value": "S4_16_s4"
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 72,
+        "target": {
+          "type": "string",
+          "value": "S4_16_s4"
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/5/producer_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 75,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/6",
+    "version_status": "added",
+    "node_kind": "container",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "object",
+      "keys": [
+        "agrees",
+        "banded_in_extent_certext",
+        "banded_in_extent_producer",
+        "certext_extent",
+        "followup_extent",
+        "name",
+        "producer_extent"
+      ],
+      "length": 7
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "object_shape_agrees",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 79,
+        "target": {
+          "type": "object",
+          "keys": [
+            "agrees",
+            "banded_in_extent_certext",
+            "banded_in_extent_producer",
+            "certext_extent",
+            "followup_extent",
+            "name",
+            "producer_extent"
+          ],
+          "length": 7
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/6/agrees",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "boolean",
+      "value": true
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 84,
+        "target": {
+          "type": "boolean",
+          "value": true
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/6/banded_in_extent_certext",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 86,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/6/banded_in_extent_producer",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 85,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/6/certext_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 81,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/6/followup_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 82,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/6/name",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "string",
+      "value": "RS32_s4"
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 80,
+        "target": {
+          "type": "string",
+          "value": "RS32_s4"
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/6/producer_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 83,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/7",
+    "version_status": "added",
+    "node_kind": "container",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "object",
+      "keys": [
+        "agrees",
+        "banded_in_extent_certext",
+        "banded_in_extent_producer",
+        "certext_extent",
+        "followup_extent",
+        "name",
+        "producer_extent"
+      ],
+      "length": 7
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "object_shape_agrees",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 87,
+        "target": {
+          "type": "object",
+          "keys": [
+            "agrees",
+            "banded_in_extent_certext",
+            "banded_in_extent_producer",
+            "certext_extent",
+            "followup_extent",
+            "name",
+            "producer_extent"
+          ],
+          "length": 7
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/7/agrees",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "boolean",
+      "value": true
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 92,
+        "target": {
+          "type": "boolean",
+          "value": true
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/7/banded_in_extent_certext",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 2
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 94,
+        "target": {
+          "type": "integer",
+          "value": 2
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/7/banded_in_extent_producer",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 93,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/7/certext_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 3.8125
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 89,
+        "target": {
+          "type": "float",
+          "value": 3.8125
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/7/followup_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 3.5625
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 90,
+        "target": {
+          "type": "float",
+          "value": 3.5625
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/7/name",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "string",
+      "value": "S4_128_s4"
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 88,
+        "target": {
+          "type": "string",
+          "value": "S4_128_s4"
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/7/producer_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 3.5625
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 91,
+        "target": {
+          "type": "float",
+          "value": 3.5625
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/8",
+    "version_status": "added",
+    "node_kind": "container",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "object",
+      "keys": [
+        "agrees",
+        "banded_in_extent_certext",
+        "banded_in_extent_producer",
+        "certext_extent",
+        "followup_extent",
+        "name",
+        "producer_extent"
+      ],
+      "length": 7
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "object_shape_agrees",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 95,
+        "target": {
+          "type": "object",
+          "keys": [
+            "agrees",
+            "banded_in_extent_certext",
+            "banded_in_extent_producer",
+            "certext_extent",
+            "followup_extent",
+            "name",
+            "producer_extent"
+          ],
+          "length": 7
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/8/agrees",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "boolean",
+      "value": true
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 100,
+        "target": {
+          "type": "boolean",
+          "value": true
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/8/banded_in_extent_certext",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 102,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/8/banded_in_extent_producer",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 101,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/8/certext_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 97,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/8/followup_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 98,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/8/name",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "string",
+      "value": "M3b_s8"
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 96,
+        "target": {
+          "type": "string",
+          "value": "M3b_s8"
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/8/producer_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 40.0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 99,
+        "target": {
+          "type": "float",
+          "value": 40.0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/9",
+    "version_status": "added",
+    "node_kind": "container",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "object",
+      "keys": [
+        "agrees",
+        "banded_in_extent_certext",
+        "banded_in_extent_producer",
+        "certext_extent",
+        "followup_extent",
+        "name",
+        "producer_extent"
+      ],
+      "length": 7
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "object_shape_agrees",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 103,
+        "target": {
+          "type": "object",
+          "keys": [
+            "agrees",
+            "banded_in_extent_certext",
+            "banded_in_extent_producer",
+            "certext_extent",
+            "followup_extent",
+            "name",
+            "producer_extent"
+          ],
+          "length": 7
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/9/agrees",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "boolean",
+      "value": true
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 108,
+        "target": {
+          "type": "boolean",
+          "value": true
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/9/banded_in_extent_certext",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 8
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 110,
+        "target": {
+          "type": "integer",
+          "value": 8
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/9/banded_in_extent_producer",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "integer",
+      "value": 0
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 109,
+        "target": {
+          "type": "integer",
+          "value": 0
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/9/certext_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "float",
+      "value": 1.375
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 105,
+        "target": {
+          "type": "float",
+          "value": 1.375
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/9/followup_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "null",
+      "value": null
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 106,
+        "target": {
+          "type": "null",
+          "value": null
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/9/name",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "string",
+      "value": "M3a_s2"
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 104,
+        "target": {
+          "type": "string",
+          "value": "M3a_s2"
+        }
+      }
+    }
+  },
+  {
+    "path": "/certext_check/9/producer_extent",
+    "version_status": "added",
+    "node_kind": "scalar",
+    "old": {
+      "type": "absent"
+    },
+    "current": {
+      "type": "null",
+      "value": null
+    },
+    "attribution": "documentary_order_or_admission_bookkeeping",
+    "own_bindings": {
+      "old": {
+        "status": "absent_in_target_version"
+      },
+      "current": {
+        "status": "exact_primitive_or_discrete_agreement",
+        "file": "<internal>/payload_top_bindings.json",
+        "entry_index": 107,
+        "target": {
+          "type": "null",
+          "value": null
+        }
+      }
+    }
+  }
+]

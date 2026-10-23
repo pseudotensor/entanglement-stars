@@ -1,0 +1,111 @@
+{
+  "scope": "Original-A preliminary geometry from the certified center residual/J. Whole-box derivative and source inequalities are not executed.",
+  "candidate": [
+    1.0000000000000047,
+    1.0000148907685387
+  ],
+  "Y": [
+    [
+      -3.252951295847569,
+      3.6447259717480485e-14
+    ],
+    [
+      6.5060284713133605,
+      -3.252951295847569
+    ]
+  ],
+  "Y_operator_norm_upper": 9.758979767160945,
+  "Y_infinity_norm_upper": 9.75897976716093,
+  "beta": [
+    6.57419907950549e-10,
+    6.652543540800026e-09
+  ],
+  "center_defect": [
+    [
+      1.9091005264549377e-06,
+      6.632802788405441e-07
+    ],
+    [
+      1.0712102439426084e-05,
+      3.2356867512471046e-06
+    ]
+  ],
+  "radius_factor": 4.0,
+  "minimum_radius": 1e-12,
+  "proposed_radii": [
+    2.629679631802196e-09,
+    2.6610174163200105e-08
+  ],
+  "proposed_rectangle_contained_in_D0": true,
+  "postprocess_arithmetic_prerequisite_passed": true,
+  "archive_correspondence": {
+    "scope": "Exact archive fields and directed normalization checks. Ground-state certification is inherited from the audited writer; no Hamiltonian/eigenpair recomputation is performed.",
+    "checks": {
+      "exact_schema": true,
+      "full_state_shape": true,
+      "complex128_state": true,
+      "finite_state": true,
+      "full_integer_pair_ordering": true,
+      "candidate_coordinates": true,
+      "all_ruler_fields": true,
+      "all_lapse_fields": true,
+      "excitation_energy_interval": true,
+      "all_source_centers": true,
+      "state_radius_includes_eigenvector_error": true,
+      "unit_squared_norm_in_state_norm_interval": true,
+      "state_ball_contains_a_unit_vector": true
+    },
+    "passed": true,
+    "archive_state_radius": 1.2764401676308916e-09,
+    "JSON_eigenvector_error": 1.2764390574078667e-09,
+    "additional_normalization_radius_lower": 1.1102230248319517e-15,
+    "point_norm_interval": [
+      0.9999999999999999,
+      1.0000000000000002
+    ],
+    "unit_normalization_distance_upper": 2.220446049250313e-16,
+    "point_squared_norm": {
+      "center": 1.0000000000000002,
+      "lower": 1.0,
+      "upper": 1.0000000000000004,
+      "radius": 9.757374914393651e-17
+    },
+    "state_ball_squared_norm": {
+      "center": 1.0000000000000002,
+      "lower": 0.9999999974471198,
+      "upper": 1.0000000025528808,
+      "radius": 2.552880434464833e-09
+    }
+  },
+  "sharpened_source_geometry": {
+    "scope": "Released P8/P9 feasibility diagnostic. The source transport interval fixes s=s0; the full two-variable source box is not certified.",
+    "center_amplitude_lower": 3.567559457750018e-08,
+    "center_amplitude_upper": 3.999223243202506e-08,
+    "L_s_strict_pass_threshold_lower": 13.566517436593847,
+    "required_s_condition": "A whole-box P7 bound must satisfy L_s < this threshold.",
+    "whole_D0_clock_coefficient": 75,
+    "clock_multiplier_bounds": [
+      0.9999980042389292,
+      1.0000019957650539
+    ],
+    "clock_interval_contained_in_D0": true,
+    "source_interval_at_fixed_s0": [
+      1.2727455083571522e-15,
+      1.5993818468811442e-15
+    ],
+    "P5_P7_whole_box_norms_computed": false,
+    "full_source_box_passed": false
+  },
+  "arithmetic_assumptions": [
+    "The deterministic CUDA double or NumPy real ufuncs implement IEEE elementary operations; CUDA fast math/FMA are disabled and CuPy's added FTZ is covered by the2^-1022 absolute underflow allowance.",
+    "Explicit NumPy longdouble ufunc accumulation uses its reported>=64-bit significand; each dot has8k elementary operations."
+  ],
+  "FTZ_clarification": "NVRTC --ftz applies to single precision. The explicit double kernels preserve subnormal inputs/results; the absolute allowance covers result underflow. Elementary-operation assumptions remain required.",
+  "FTZ_sources": [
+    "https://docs.nvidia.com/cuda/archive/12.8.0/nvrtc/index.html",
+    "https://docs.nvidia.com/cuda/archive/12.8.0/parallel-thread-execution/index.html#floating-point-instructions"
+  ],
+  "root_enclosure_passed": false,
+  "stellar_type_passed": false,
+  "operator_claim": false
+}

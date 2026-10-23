@@ -1,0 +1,193 @@
+\documentclass[10pt]{article}
+\usepackage[margin=0.8in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\newcommand{\Tr}{\operatorname{Tr}}
+\begin{document}
+\begin{center}\textbf{The clock row: flux identity and selecting principle}\end{center}
+
+\paragraph{Finite law and the question.}
+Use one finite sine parent, its native CAR, all crossing matrix
+elements and the declared positive ordinary-adjoint completion.
+Rulers are prescribed commuting scalars, $0<s_-\leq\psi_x\leq s_+$;
+all packet masses are positive. No continuum expansion is used.
+With $A_s=m_s\Psi^{-1}+i\Psi^{-3}D_a$, define
+\begin{align}
+ E_{s0}&=|A_s|,\qquad E_{s1}=|A_s^\dagger|
+                    =U_sE_{s0}U_s^\dagger,\notag\\
+ t_x&=\operatorname{tr}_2\sum_s\eta_s(E_{s1}-E_{s0})_{xx},
+       &\sum_xt_x&=0,\label{eq:fg-trace}\\
+ H_*[N,\psi]&=\sum_xN_xC_x,\qquad
+ C_x=\psi_x(t_x\mathbf1+\rho_x),
+       &\rho_x&=\sum_rQ_{rx}^\dagger Q_{rx}\succeq0.
+ \label{eq:fg-law}
+\end{align}
+Here $Q_{rx}$ includes the reference, moving filter, unit-lapse
+denominator and complete dressing, all independent of $N$.
+The formulas hold as finite matrices or positive forms with finite
+expectations on their common domain. The trace equality follows
+packet by packet from the common singular values; a resolvent
+similarity gives the same equality. It does not assert $C_x=0$.
+% [X]: polar singular values and resolvent similarity, at the stated
+% finite scalar domain; see the accepted bridge proof, Sec. 1.
+
+\paragraph{A Gauss form follows; a Gauss constraint does not.}
+There are two explicit flux representations. For any connected
+oriented graph on these sites, let $B$ be its outgoing incidence
+matrix, $M$ a positive diagonal edge matrix and ${}^+$ the
+Moore--Penrose inverse. Then
+\[
+ F=M B^T(BMB^T)^+(-t),\qquad BF=-t.
+\]
+The zero-sum identity in \eqref{eq:fg-trace} proves the second
+equality. Edge cycles can be added freely; this construction is
+generally nonlocal and depends on $M$.
+
+A second route uses the same polar law directly:
+$E_{s1}-E_{s0}=[U_s,E_{s0}U_s^\dagger]$. Put $V_s=E_{s0}U_s^\dagger$
+and
+\[
+ j_{xy}=\sum_s\eta_s\Re\operatorname{tr}_2
+       \bigl[(U_s)_{xy}(V_s)_{yx}-(V_s)_{xy}(U_s)_{yx}\bigr].
+\]
+Finite spin-trace cyclicity gives $j_{yx}=-j_{xy}$ and
+$\sum_yj_{xy}=t_x$. Thus $F_{xy}=-j_{xy}$ is an exact, generally
+dense crossing flux. In particular, for $L_x=N_x\psi_x$,
+\[
+ W_0=\sum_xL_xt_x=\frac12\sum_{x,y}(L_x-L_y)j_{xy}.
+\]
+Both routes express the vacuum density as a divergence without
+imposing any equation on a state. The additional clock equation
+$C_x=0$ would give
+\begin{equation}
+ (\operatorname{div}F)_x=\rho_x=e_x/\psi_x,
+ \qquad e_x=\psi_x\rho_x.
+ \label{eq:fg-gauss}
+\end{equation}
+For mean constraints the same statement uses expectations. Neither
+representation identifies a unique local physical flux or a
+canonical flux--readout commutator.
+% [X]: graph pseudoinverse and native polar commutator routes.
+
+For an open parent $\Lambda=I\sqcup B_\partial$ with
+$\psi_b=1$, $N_b=N_\infty>0$, let
+$H_\partial=\partial_{N_\infty}H_*=\sum_bC_b$, so
+$H_*=N_\infty H_\partial+\sum_{i\in I}N_iC_i$.
+The exact weighted trace yields
+\[
+ H_\partial=\sum_x\rho_x-\sum_{i\in I}C_i/\psi_i.
+\]
+Hence the boundary expectation is nonnegative on the mean clock
+surface, retaining collar source. At unit external clock the
+comparison lapse $N_x^*=\psi_x^{-1}$ independently gives the same
+bound. On a closed parent imposing every mean row instead forces
+$\sum_x\langle\rho_x\rangle=0$. These are conditional consequences
+of the row, not arguments that every quantum state obeys it.
+% [X]: weighted trace and constant-allocation comparison lapse.
+
+\paragraph{A native counterfamily to weaker static premises.}
+Take a periodic sine lattice with $V$ sites, uniform
+$\psi=P>0$, $N=N_0>0$, and one massive light excitation at $p=0$.
+Its protected zero/one-excitation law is free, and
+\[
+ E(p)=N_0\sqrt{m^2+P^{-4}a^{-2}\sum_i\sin^2(ap_i)},
+ \qquad E(0)=N_0m.
+\]
+The sea energy is zero on every uniform background. Translation
+covariance makes each local ruler expectation derivative equal;
+their sum is $\partial_PE(0)=0$. The eigenstate therefore satisfies
+state stationarity and $\langle\partial_{\psi_x}H_*\rangle=0$,
+but
+\begin{equation}
+ \langle C_x\rangle=m/V>0.\label{eq:fg-counter}
+\end{equation}
+One check is $\sum_x\langle C_x\rangle=\partial_{N_0}E=m$
+and translation invariance. Directly, the positive one-particle
+block is $E_0^{1/2}NPE_0^{1/2}$; its local clock derivative is
+$PE_0^{1/2}|x\rangle\langle x|E_0^{1/2}$ and
+$E_0|p=0\rangle=(m/P)|p=0\rangle$, again giving $m/V$.
+The vacuum clock derivative vanishes at this uniform background.
+This is an unconstrained diagnostic, not a loaded periodic H2
+sector. It proves that positive norms, positive excitation and
+clock forms, lapse affinity, vacuum protection, state stationarity
+and mean ruler stationarity do not imply the clock Gauss equation.
+% [X]: dispersion/Hellmann--Feynman plus translation; direct positive
+% block differentiation. No numerical control is used.
+
+\paragraph{Two precise additional selecting principles.}
+Set the external clock to $N_\infty=1$ in this paragraph.
+If every compactly supported interior $N_x(t)$ is freely varied
+as an auxiliary variable in the state action
+\[
+ I=\int dt\,\bigl(i\langle\Psi|\dot\Psi\rangle
+       -\langle H_\partial+\sum_{x\in I}N_xC_x\rangle\bigr),
+\]
+with the exterior clock fixed, lapse variation gives
+$\langle C_x\rangle=0$. Small variations of either sign are
+allowed about a strictly positive lapse. This mean equation
+requires an auxiliary-clock variational principle; self-adjoint
+quantum evolution alone does not provide it. It does not imply
+$C_x|\Psi\rangle=0$. Time reparametrization alone is weaker still:
+the parametrized action
+$\int(p\dot q+p_T\dot T-N[p_T+C])dt$ imposes $p_T+C=0$, permitting
+$C\ne0$ unless a clock-momentum sector is separately fixed.
+
+A strong constraint follows from a specified operational
+redundancy. Assume a common invariant physical sector $\mathcal P$
+for the self-adjoint generators at every interior lapse, on a
+finite regulator or a common invariant domain. Require its
+evolution operator, with fixed exterior clock, to equal boundary
+evolution for every compact interior lapse change. Differentiating
+a short time interval, or using the Duhamel insertion
+\[
+ \frac{\delta U(t_f,t_i)}{\delta N_x(t)}
+       =-iU(t_f,t)C_xU(t,t_i),
+\]
+gives $C_x\mathcal P=0$. Conversely that invariant kernel removes
+the interior lapse dependence. Equality only of physical rays
+allows $C_x|_{\mathcal P}=c_x\mathbf1$; setting such sector-dependent
+central charges to zero needs a normalization principle. With
+$P_{\mathcal P}$ the sector's orthogonal projector, a compressed
+equality $P_{\mathcal P}C_xP_{\mathcal P}=0$ without invariance
+does not exclude leakage out of the sector.
+% [X]: short-time generator differentiation and Duhamel insertion.
+
+Thus the scalar law supplies an exact Gauss \emph{form}; a mean
+constraint can be selected by auxiliary-clock stationarity, and a
+strong constraint by the stated interior-clock redundancy with
+zero central charge. These assumptions are weaker in scope than
+the full H2 physical bridge, but are not consequences of the
+counterexample's static premises. Identifying the physical sector,
+its preservation and a native local flux algebra remains a
+separate choice or theorem. No untraced operator partial trace or
+noncommuting-ruler constraint is inferred from the scalar identity.
+
+\paragraph{SOURCES and scope.}
+\begin{enumerate}
+\item Governing duty 4(7):
+\path{<internal>/GOAL_alt.md}.
+The H2 and static source entries of
+\path{<internal>/STATE.tex}
+are resolved at the finite prescribed-field and conditional
+clock-surface scopes stated here.
+\item Exact scalar law, trace and protected sectors:
+\path{<internal>/rederivation_final3_bridge.tex},
+Section 1, equations \texttt{br-polar}--\texttt{br-scalar-bound};
+\path{<internal>/rederivation_final3_main_theorem.tex},
+Section 4, both finite-collar proofs and the closed-parent conclusion.
+These sources distinguish scalar identities, an ordered internal
+lift and a physical constraint sector.
+\item Positive ordinary-adjoint source and unchanged zero/one sectors:
+\path{<internal>/DERIVATION.md},
+Section 1, Theorem 1 and uniform packet dispersion. No inventory,
+entropy or numerical claim from its other sections is used.
+\item Gauss-row selection and auxiliary-algebra distinctions:
+\path{<internal>/result.md},
+Sections 1.1--1.5;
+\path{<internal>/P16_derivation.md},
+Sections 1 and 5. The graph flux, native commutator allocation,
+rest-mode counterfamily and mean/strong selecting implications
+are derived explicitly above, not imported as physical closure.
+\end{enumerate}
+\end{document}

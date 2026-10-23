@@ -1,0 +1,63 @@
+{
+  "status": "finished",
+  "purpose": "I6a fixed-mass unchanged-code environment continuation",
+  "prior_exit_path": "<internal>/fixed_mass_sharp_repair_exit.json",
+  "prior_exit_sha256": "613fcaff816e4a9dc8e9372eec8ac0255053427175766972acc5afdad11687e3",
+  "prior_elapsed_seconds": 0.06138305366039276,
+  "pins": {
+    "fixed_mass_interval_sharp_repair.py": "d962ea9b594c2495284069eb2814ba6d6263786c374bd1b51475d15b29f3e870",
+    "stable_result.json": "71c5df353b17ecde07d69872c611ce8c998fa419243d5151f71ca1713213bf52",
+    "fixed_mass_sharp_repair_result.json": "53ad011b7e46d3c6128c0cd130e109696fcaf22b383ec80ec1373a2f187f5ed4"
+  },
+  "wrapper_sha256": "55a5e609fd0d259a311531d7e9323f5c9faddfadb670da734e11dd4872814ae9",
+  "wrapper_pid": 1442874,
+  "selected_cpu": 0,
+  "command": [
+    "timeout",
+    "--foreground",
+    "-s",
+    "KILL",
+    "299s",
+    "nice",
+    "-n",
+    "10",
+    "taskset",
+    "-c",
+    "0",
+    "<internal>/python",
+    "<internal>/fixed_mass_interval_sharp_repair.py"
+  ],
+  "environment_settings": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "CUDA_VISIBLE_DEVICES": "",
+    "PYTHONPATH": "<internal>/python_flint_0_9_0"
+  },
+  "wall_seconds": 299,
+  "original_aggregate_wall_seconds": 300,
+  "producer_internal_save_seconds": 295,
+  "producer_address_space_bytes": 805306368,
+  "child_pid": 1442882,
+  "exit_code": 1,
+  "elapsed_seconds": 296.1859793551266,
+  "aggregate_elapsed_seconds": 296.247362408787,
+  "maximum_child_rss_kib": 175356,
+  "fixed_mass_sharp_repair_result.json": {
+    "size": 17246832,
+    "sha256": "0f28c5a62b55b59f6ad3eba202fa04c563b077da4bd0a1a74df96f20a69fcd3e"
+  },
+  "stdout.log": {
+    "size": 565,
+    "sha256": "a86b3f08b44772e61ea351724dfb8b923722c1aec86b65d8fd943fffef35f595"
+  },
+  "stderr.log": {
+    "size": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "original_inputs_unchanged": true
+}

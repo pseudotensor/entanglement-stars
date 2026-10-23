@@ -1,0 +1,60 @@
+{
+  "status": "finished",
+  "producer_sha256": "df015df26a507cf05b54f0ac2e1101d536427d0353271f6fe787a5e5e828223f",
+  "wrapper_sha256": "f17dc6d6b8fa2e6c3632d80e47700d12128d0ffd05b0d3073874c046291f8f49",
+  "command": [
+    "timeout",
+    "--foreground",
+    "-s",
+    "KILL",
+    "30s",
+    "nice",
+    "-n",
+    "10",
+    "taskset",
+    "-c",
+    "8",
+    "<internal>/python",
+    "<internal>/b110_factorized_images_v1.py"
+  ],
+  "wrapper_pid": 3767933,
+  "environment_settings": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1",
+    "CUDA_VISIBLE_DEVICES": "",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONPATH": "<internal>/python_flint_0_9_0"
+  },
+  "resources": {
+    "wall_seconds": 30,
+    "handled_deadline_seconds": 25,
+    "cpu_soft_seconds": 18,
+    "cpu_hard_seconds": 20,
+    "address_space_bytes": 805306368,
+    "threads": 1
+  },
+  "child_pid": 3767968,
+  "exit_code": 0,
+  "elapsed_seconds": 2.8449032306671143,
+  "maximum_child_rss_kib": 43528,
+  "stdout.log": {
+    "size": 280,
+    "sha256": "051f5082c284eb97616ebebea8736b3f82a6f3317d59977ecbd63cd6cbb9c465"
+  },
+  "stderr.log": {
+    "size": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "factorized_images_result.json": {
+    "size": 23339,
+    "sha256": "526925c5747a73e2d53e73a78dab77d1dd540d053b8c8040f77bc080ab2a90e8"
+  },
+  "factorized_stages.jsonl": {
+    "size": 129342,
+    "sha256": "c544c50e784a996afb5001748dc7d290faaeafb0201b6830883788ddb287761e"
+  }
+}

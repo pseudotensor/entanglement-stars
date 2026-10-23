@@ -1,0 +1,357 @@
+{
+  "scope": "Independent binding of already prescribed cached fit/rank/power outputs, fixed raw member predicates and elementary query bases only; no refitting, new dynamics or physical-law calibration. Unprinted derived tails are diagnostic.",
+  "input_sources": {
+    "files": [
+      {
+        "path": "<internal>/ladders_readout_v1_2.json",
+        "sha256": "bf3ecf93d2f5fb5900173c519a2a091d644a6629f3beb29f69fac1f1484086d0",
+        "md5": "10668910124199e89fb54d92c266e546"
+      },
+      {
+        "path": "<internal>/ladders_readout_v1_3.json",
+        "sha256": "1c1034d3bf165a57648b63f529b9207a0edb83fd78d248d3b57b634e77b8bb99",
+        "md5": "930e75da87c1559f0318ed7a8a5206ed"
+      },
+      {
+        "path": "<internal>/scalar_tables.json",
+        "sha256": "ec881addf685efc53990c4abe0c09d1cbb115b107607f92508230d916931c703",
+        "md5": "bbd779733b0cd2c76a449c4c78ff296a"
+      },
+      {
+        "path": "<internal>/residual_series.json",
+        "sha256": "aa88dba5b65538d7cefd7d80da8b6ce59de43a000a1517f52467103a637c6e1f",
+        "md5": "31429414e4980798c3d0ddd1780cba3f"
+      },
+      {
+        "path": "<internal>/record_diagnostics.json",
+        "sha256": "af00af49acaddfa31947cf8588d4cfd6d46459af4e13c57fd98fc126c7e3e568",
+        "md5": "dcacb62fc0c28890ea6ea0ebbc29007e"
+      },
+      {
+        "path": "<internal>/controls_catalogs.json",
+        "sha256": "f4fce3b6de42d9f82ea9990d3256c9731fbfafeee3ff6dc2f4370521aa60096c",
+        "md5": "d6e018bcee3726214d2f7cfa59d39abf"
+      },
+      {
+        "path": "<internal>/descriptive_arithmetic.json",
+        "sha256": "b2cd5c528c595e877ecf8e85b4ca0374962dbd6d0cc3e3f9cde16fb9de7f4a13",
+        "md5": "8fec8bdbafe7762999fc47a7b5f7a508"
+      },
+      {
+        "path": "<internal>/historical_width_direct_control.json",
+        "sha256": "947c5b5009784f27723ac33a85d42abd4fa32414a7b1c5bd5bcd71520ffc8f18",
+        "md5": "4be4760210c4bc3ae7aba8d526d9f576"
+      }
+    ],
+    "raw_file_identity_audit": "<internal>/source_audit.json",
+    "complete_metadata_binding": "<internal>/source_metadata_audit.json",
+    "crosswalk": "LADDERS_v1p3_manual_occurrence_map_v1.md section8.5"
+  },
+  "known_answers": [
+    {
+      "name": "absent differs from null",
+      "passed": true
+    },
+    {
+      "name": "false differs from zero",
+      "passed": true
+    },
+    {
+      "name": "empty object differs from empty list",
+      "passed": true
+    },
+    {
+      "name": "list order preserved",
+      "passed": true
+    },
+    {
+      "name": "semantic join survives changed list position",
+      "passed": true
+    },
+    {
+      "name": "changed descendant retained under ancestor",
+      "passed": true
+    },
+    {
+      "name": "nonempty list versus numeric-key object detected",
+      "passed": true
+    },
+    {
+      "name": "duplicate object keys rejected",
+      "passed": true
+    },
+    {
+      "name": "both-absent subtree cannot pass",
+      "passed": true
+    },
+    {
+      "name": "null target cannot hide available root-free row",
+      "passed": true
+    },
+    {
+      "name": "absent row null differs from empty object",
+      "passed": true
+    },
+    {
+      "name": "representation-only clock match retains difference",
+      "passed": true
+    },
+    {
+      "name": "different saved-step clock not substituted",
+      "passed": true
+    },
+    {
+      "name": "empty-prefix sentinel is never a final-row index",
+      "passed": true
+    },
+    {
+      "name": "empty minimum cannot hide a nonempty prefix",
+      "passed": true
+    },
+    {
+      "name": "complete query sets independently checked",
+      "passed": true
+    },
+    {
+      "name": "missing query cannot disappear during child traversal",
+      "passed": true
+    },
+    {
+      "name": "null cannot hide a present minimum or bracket",
+      "passed": true
+    },
+    {
+      "name": "complete episode tail cannot disappear",
+      "passed": true
+    },
+    {
+      "name": "episode row type and order checked",
+      "passed": true
+    },
+    {
+      "name": "old plain confirmer inapplicable, current retained",
+      "passed": true
+    },
+    {
+      "name": "old-only Newton confirming failure",
+      "passed": true
+    },
+    {
+      "name": "all current gate reasons ordered",
+      "passed": true
+    },
+    {
+      "name": "local band beyond prefix retained",
+      "passed": true
+    },
+    {
+      "name": "plain empty Newton null old absent stay distinct",
+      "passed": true
+    },
+    {
+      "name": "last-kept exception retained with null following",
+      "passed": true
+    },
+    {
+      "name": "target identity does not imply own agreement",
+      "passed": true
+    }
+  ],
+  "status_counts": {
+    "fit_shape_agrees": 401,
+    "exact_primitive_or_discrete_agreement": 385,
+    "derived_value_diagnostic": 822,
+    "adopted_definition": 13
+  },
+  "complete_fit_key_checks": {
+    "old": {
+      "status": "object_shape_agrees",
+      "expected_keys": [
+        "mass_formed_certified",
+        "mass_diag_iso",
+        "mass_diag_own",
+        "mass_power3_iso",
+        "size_formed_certified",
+        "size_diag_third",
+        "size_diag_third_with_uncertified",
+        "size_power3_with_uncertified",
+        "width_cross_certified",
+        "width_cross_with_uncertified",
+        "width_per_doubling",
+        "design_rank",
+        "width_cross_with_s2"
+      ],
+      "target_type": "object",
+      "actual_keys": [
+        "mass_formed_certified",
+        "mass_diag_iso",
+        "mass_diag_own",
+        "mass_power3_iso",
+        "size_formed_certified",
+        "size_diag_third",
+        "size_diag_third_with_uncertified",
+        "size_power3_with_uncertified",
+        "width_cross_certified",
+        "width_cross_with_s2",
+        "width_cross_with_uncertified",
+        "width_per_doubling",
+        "design_rank"
+      ]
+    },
+    "current": {
+      "status": "object_shape_agrees",
+      "expected_keys": [
+        "mass_formed_certified",
+        "mass_diag_iso",
+        "mass_diag_own",
+        "mass_power3_iso",
+        "size_formed_certified",
+        "size_diag_third",
+        "size_diag_third_with_uncertified",
+        "size_power3_with_uncertified",
+        "width_cross_certified",
+        "width_cross_with_uncertified",
+        "width_per_doubling",
+        "design_rank"
+      ],
+      "target_type": "object",
+      "actual_keys": [
+        "mass_formed_certified",
+        "mass_diag_iso",
+        "mass_diag_own",
+        "mass_power3_iso",
+        "size_formed_certified",
+        "size_diag_third",
+        "size_diag_third_with_uncertified",
+        "size_power3_with_uncertified",
+        "width_cross_certified",
+        "width_cross_with_uncertified",
+        "width_per_doubling",
+        "design_rank"
+      ]
+    }
+  },
+  "files": {
+    "design_rank": "<internal>/design_rank.json",
+    "mass_diag_iso": "<internal>/mass_diag_iso.json",
+    "mass_diag_own": "<internal>/mass_diag_own.json",
+    "mass_formed_certified": "<internal>/mass_formed_certified.json",
+    "mass_power3_iso": "<internal>/mass_power3_iso.json",
+    "size_diag_third": "<internal>/size_diag_third.json",
+    "size_diag_third_with_uncertified": "<internal>/size_diag_third_with_uncertified.json",
+    "size_formed_certified": "<internal>/size_formed_certified.json",
+    "size_power3_with_uncertified": "<internal>/size_power3_with_uncertified.json",
+    "width_cross_certified": "<internal>/width_cross_certified.json",
+    "width_cross_with_s2": "<internal>/width_cross_with_s2.json",
+    "width_cross_with_uncertified": "<internal>/width_cross_with_uncertified.json",
+    "width_per_doubling": "<internal>/width_per_doubling.json"
+  },
+  "query_basis_precision": [
+    {
+      "kind": "mass_iso",
+      "member": "M3a_s4",
+      "values": {
+        "80": [
+          "1.0",
+          "0.16563609572350675216885822907625249039059233146078516204512928409069812810849572"
+        ],
+        "160": [
+          "1.0",
+          "0.1656360957235067521688582290762524903905923314607851620451292840906981281084957234043488531785485173618709954731506811942436278008304630907467691431766683705811"
+        ]
+      }
+    },
+    {
+      "kind": "mass_iso",
+      "member": "M3d_s4",
+      "values": {
+        "80": [
+          "1.0",
+          "0.12000098347353818772590635793318597747672111244226313847361606484270932579193898"
+        ],
+        "160": [
+          "1.0",
+          "0.1200009834735381877259063579331859774767211124422631384736160648427093257919389782318050061760524444913315814637495034654061480582103037196803212619677636795882"
+        ]
+      }
+    },
+    {
+      "kind": "mass_own",
+      "member": "M3a_s4",
+      "values": {
+        "80": [
+          "1.0",
+          "0.53343122061842459154708725084977534910043080647786458333333333333333333333333333"
+        ],
+        "160": [
+          "1.0",
+          "0.5334312206184245915470872508497753491004308064778645833333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333"
+        ]
+      }
+    },
+    {
+      "kind": "mass_own",
+      "member": "M3d_s4",
+      "values": {
+        "80": [
+          "1.0",
+          "0.49874994366498393016939871813519857823848724365234375"
+        ],
+        "160": [
+          "1.0",
+          "0.49874994366498393016939871813519857823848724365234375"
+        ]
+      }
+    },
+    {
+      "kind": "size",
+      "member": "S4_16_s4",
+      "values": {
+        "80": [
+          "1.0",
+          "0.39685026299204986868792640981807706509787333197496325245207144045630412640605479"
+        ],
+        "160": [
+          "1.0",
+          "0.3968502629920498686879264098180770650978733319749632524520714404563041264060547933183860533155552392557336904203305044758744149745381880695350027611353616548439"
+        ]
+      }
+    },
+    {
+      "kind": "width",
+      "member": "S4_128_s4",
+      "values": {
+        "80": [
+          "1.0",
+          "-4.852030263919617165920624850207235976528500940521786778844760066453755353787863",
+          "1.3862943611198906188344642429163531361510002687205105082413600189867872439393894",
+          "-6.7263421948548199453394353685733096042277413223236382161360978707313153516376826"
+        ],
+        "160": [
+          "1.0",
+          "-4.852030263919617165920624850207235976528500940521786778844760066453755353787863009241043288974930812794010367143994800135798641650306913899228695261445531733515",
+          "1.386294361119890618834464242916353136151000268720510508241360018986787243939389431211726653992837375084002962041141371467371040471516261114065341503270151923861",
+          "-6.726342194854819945339435368573309604227741322323638216136097870731315351637682610799275688214977873058018367259024564737571797787015759044485774128331820071749"
+        ]
+      }
+    },
+    {
+      "kind": "width",
+      "member": "P64_s2",
+      "values": {
+        "80": [
+          "1.0",
+          "-4.1588830833596718565033927287490594084530008061615315247240800569603617318181683",
+          "0.69314718055994530941723212145817656807550013436025525412068000949339362196969472",
+          "-2.8827180835092085480026151579599898303833177095672735212011848017419922935590068"
+        ],
+        "160": [
+          "1.0",
+          "-4.158883083359671856503392728749059408453000806161531524724080056960361731818168293635179961978512125252008886123424114402113121414548783342196024509810455771584",
+          "0.6931471805599453094172321214581765680755001343602552541206800094933936219696947156058633269964186875420014810205706857336855202357581305570326707516350759619307",
+          "-2.882718083509208548002615157959989830383317709567273521201184801741992293559006833199689580663561945596293585968153384887530770480149611019065331769285065745035"
+        ]
+      }
+    }
+  ]
+}

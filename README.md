@@ -206,3 +206,12 @@ All pre-computed datasets are included in this repository and archived at
 
 All code in this repository is released under the MIT License.
 The manuscript text and figures are copyright the author.
+
+## Fermion paper: proofs, codes and data (2026-10 update)
+
+Material that supports the fermion paper:
+
+- [`proofs/`](proofs/): derivations and theorems behind the paper's statements, including the lattice momentum non-conservation theorem, the conversion-vertex gate, force and stress derivations, and the dark-codeword theorem. See `proofs/README.md`.
+- [`fermion_new_codes/`](fermion_new_codes/): the source code that produced the paper's numbers and figures, grouped by working group. See its README.
+- [`data/`](data/): small result files behind printed numbers and figures. See its README.
+- [`SKIPPED_LARGE.tsv`](SKIPPED_LARGE.tsv): result files too large for the repository, with size and md5. They are available on request.

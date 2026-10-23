@@ -1,0 +1,56 @@
+{
+  "case": "c30",
+  "status": "completed",
+  "command": [
+    "timeout",
+    "-s",
+    "TERM",
+    "-k",
+    "5s",
+    "4h",
+    "nice",
+    "-n",
+    "10",
+    "<internal>/python",
+    "<internal>/hold_recovered_spectrum.py",
+    "--descriptor",
+    "<internal>/c30_descriptor.json",
+    "--comparison",
+    "<internal>/origin_comparison_extract.json",
+    "--build",
+    "<internal>/build_v3",
+    "--origin",
+    "<internal>/recovered_origin_checks.json",
+    "--out",
+    "<internal>/c30"
+  ],
+  "cpu_only": true,
+  "numerical_threads": 16,
+  "memory_limit_bytes": 68719476736,
+  "consumer_pins": {
+    "hold_recovered_input.py": "9aa9e4fd8d2b117d8526a869f5269f4163f5d95271cdacee1d09afb68840add3",
+    "hold_recovered_origin.py": "d67685853ad3e98af44097656521c8e14a162e5d80d80fb8beab804373926088",
+    "hold_recovered_spectrum.py": "da64b5788ddcaccdd306972968ce282474454637899b27af2df1753623cd9115",
+    "hold_recovered_precision.py": "d077ac0421a379332e9e4a1d08cc492fdc7ae1d85c56af5334ca7a1778ff13d7",
+    "hold_source_seed_control.py": "d4a46f55cb5a361558723b834be605ed76f440776080ff8f0e6ca5bb115a740f",
+    "hold_spectral_checks.py": "cac12901c4a0f6815f0b22d2dbadc578ed9f1ad747692a1f871afe85e0155fbe",
+    "hold_error_bounds.py": "12bacc16d463d8906da8010acffc59497d6dfab810b2804bd23ef37e45ba58c8",
+    "hold_exact.py": "4b58467b3a76f14894885220b8cb247c964be0a086478958e856308a42c60598"
+  },
+  "descriptor_pins": {
+    "c15": "46b8860894cad050c5a735e1af18a9983a698c3f16f0a8ed918972f1bdb70adc",
+    "c30": "51885ae993d657bada74ed59eb5ba2de8c941c3cbaf44221e7a7d21049226c70"
+  },
+  "origin_pins": {
+    "c15": "ebe81d4a28e35b803547d042381adf60c502c4646d788cb6e6e08b32bfad35a6",
+    "c30": "3f91f7d7192dbffb1f6d45eebffa4a9257137f866000a0562bd1d58d33fcad50"
+  },
+  "runner_sha256": "bda5a87e7e7e74a629a3db8c82ce2a8d1ebdbd58e9dd516f93e9489e9e51c7a7",
+  "started_unix": 1792313042.2015812,
+  "explicit_resume": false,
+  "returncode": 0,
+  "elapsed_seconds": 1870.3523371368647,
+  "maximum_child_rss_kib": 12741056,
+  "stdout": "{\"event\": \"resources\", \"available_bytes\": 578195881984, \"estimated_bytes\": 51539607552, \"root_free_bytes\": 147317391360}\n{\"event\": \"recovered_spectral_stage_started\", \"stage\": \"operator\", \"endpoint\": 240}\n{\"event\": \"recovered_spectral_stage_completed\", \"stage\": \"operator\", \"seconds\": 0.3955068811774254}\n{\"event\": \"resources\", \"available_bytes\": 577827147776, \"estimated_bytes\": 51539607552, \"root_free_bytes\": 147317379072}\n{\"event\": \"recovered_spectral_stage_started\", \"stage\": \"spectrum\", \"endpoint\": 240}\n{\"event\": \"recovered_spectral_stage_completed\", \"stage\": \"spectrum\", \"seconds\": 1492.3794413991272}\n{\"event\": \"resources\", \"available_bytes\": 579522011136, \"estimated_bytes\": 51539607552, \"root_free_bytes\": 147423621120}\n{\"event\": \"recovered_spectral_stage_started\", \"stage\": \"coordinates\", \"endpoint\": 240}\n{\"event\": \"recovered_spectral_stage_completed\", \"stage\": \"coordinates\", \"seconds\": 64.57987325638533}\n{\"event\": \"resources\", \"available_bytes\": 579440250880, \"estimated_bytes\": 51539607552, \"root_free_bytes\": 147378929664}\n{\"event\": \"recovered_spectral_stage_started\", \"stage\": \"deviation\", \"endpoint\": 240}\n{\"event\": \"recovered_spectral_stage_completed\", \"stage\": \"deviation\", \"seconds\": 82.45796503126621}\n{\"event\": \"resources\", \"available_bytes\": 581298692096, \"estimated_bytes\": 51539607552, \"root_free_bytes\": 147331321856}\n{\"event\": \"recovered_spectral_stage_started\", \"stage\": \"residual\", \"endpoint\": 240}\n{\"event\": \"recovered_spectral_stage_completed\", \"stage\": \"residual\", \"seconds\": 27.908570915460587}\n{\"event\": \"resources\", \"available_bytes\": 582178443264, \"estimated_bytes\": 51539607552, \"root_free_bytes\": 147327184896}\n{\"event\": \"recovered_spectral_stage_started\", \"stage\": \"source_gram\", \"endpoint\": 240}\n{\"event\": \"recovered_spectral_stage_completed\", \"stage\": \"source_gram\", \"seconds\": 34.24057609587908}\n{\"event\": \"resources\", \"available_bytes\": 580655210496, \"estimated_bytes\": 51539607552, \"root_free_bytes\": 147315617792}\n{\"event\": \"recovered_spectral_stage_started\", \"stage\": \"vector_gram\", \"endpoint\": 240}\n{\"event\": \"recovered_spectral_stage_completed\", \"stage\": \"vector_gram\", \"seconds\": 84.1873068511486}\n{\"event\": \"resources\", \"available_bytes\": 583204986880, \"estimated_bytes\": 51539607552, \"root_free_bytes\": 147295993856}\n{\"event\": \"recovered_spectral_stage_started\", \"stage\": \"deviation_control\", \"endpoint\": 240}\n{\"event\": \"recovered_spectral_stage_completed\", \"stage\": \"deviation_control\", \"seconds\": 21.758910104632378}\n{\"event\": \"resources\", \"available_bytes\": 582210363392, \"estimated_bytes\": 51539607552, \"root_free_bytes\": 147291009024}\n{\"event\": \"recovered_spectral_stage_started\", \"stage\": \"assessment\", \"endpoint\": 240}\n{\"event\": \"recovered_spectral_stage_completed\", \"stage\": \"assessment\", \"seconds\": 0.559869546443224}\n{\"event\": \"recovered_spectral_products_complete\", \"endpoint\": 240, \"physical_rows_released\": false}\n",
+  "stderr": ""
+}

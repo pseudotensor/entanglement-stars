@@ -1,0 +1,56 @@
+{
+  "status": "finished",
+  "purpose": "Task2 missing110 T17--T20 positive moment",
+  "producer_sha256": "4f7380dfb33352f4dc2e8fd2d349175b63dfdb164f1687e47c730ef68db4d63d",
+  "wrapper_sha256": "477e0bcabf4d4dced37aa9e68829f2bde9532aad6c0e1896e87ec6dc7906b2f0",
+  "command": [
+    "timeout",
+    "--foreground",
+    "-s",
+    "KILL",
+    "360s",
+    "nice",
+    "-n",
+    "10",
+    "taskset",
+    "-c",
+    "8",
+    "<internal>/python",
+    "<internal>/repair_110_positive_moment_v1.py"
+  ],
+  "wrapper_pid": 734670,
+  "environment_settings": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1",
+    "CUDA_VISIBLE_DEVICES": "",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONPATH": "<internal>/python_flint_0_9_0"
+  },
+  "resources": {
+    "wall_seconds": 360,
+    "cpu_seconds": 300,
+    "threads": 1,
+    "address_space_bytes": 2147483648,
+    "internal_deadline_seconds": 345
+  },
+  "child_pid": 734747,
+  "exit_code": 1,
+  "elapsed_seconds": 50.89868006110191,
+  "maximum_child_rss_kib": 438980,
+  "positive_moment_result.json": {
+    "size": 48394032,
+    "sha256": "15b643497774b2919107666a6dae21f8f004c7013ad35f0f6fce7562d36d98e0"
+  },
+  "stdout.log": {
+    "size": 297,
+    "sha256": "e35eed6dd689d587b48db8b31e66bf00163039016f2a7846652d93d719be1266"
+  },
+  "stderr.log": {
+    "size": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

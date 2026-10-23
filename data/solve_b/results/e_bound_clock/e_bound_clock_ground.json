@@ -1,0 +1,97 @@
+{
+  "scope": "original sine-polar contact completion; externally prepared uniform K=0 pair",
+  "source": "solve/strand_E_clock_spec.tex",
+  "independent_source_review": "solve/review_E_clock_spec.tex",
+  "independent_ground_code_review": "solve/review_E_ground_code.tex",
+  "stage": "ground",
+  "fixed_parameters": {
+    "m_over_mP": "1/1000",
+    "a_over_lP": "1/1000",
+    "alpha": "1/1000000",
+    "Lambda_over_m": "1",
+    "ell_times_m": "1",
+    "gB": "0",
+    "sector": "even standard-spinor singlet, half-period character+, K=0, positive-charge two excitations",
+    "law": "H_t=exp(-gamma*T_t)*(2*epsilon_t)*exp(-gamma*T_t)",
+    "gamma_rule": "log(4*Emax)/(2*mu2), same exact trial compression at every refinement",
+    "sea": "W0=0; the unique fixed symmetric Newton-match rectangle is not refitted"
+  },
+  "backend": "python-flint0.9.0; Arb/Acb directed ball operations",
+  "admission": {
+    "assigned_gpu_uuid": "GPU-1c907351-ed3d-0d52-5072-e791dde9df56",
+    "cuda_allocation_bytes": 1048576,
+    "cuda_context_in_this_single_job_process": true,
+    "same_process_fresh_device_query_before_allocation": true,
+    "post_allocation_single_owned_compute_pid_verified": true,
+    "single_process_pid": 1735314,
+    "niceness": 10,
+    "threads_at_launch": 4,
+    "maximum_threads": 4
+  },
+  "predeclared_engineering_caps": {
+    "evaluations": 2000000,
+    "seconds": 900,
+    "resident_memory_MB": 4096,
+    "integrator_evaluations_per_call": 20000,
+    "one_worker": true,
+    "maximum_threads": 4,
+    "polynomial_rank": 2048,
+    "last_precision_decimal_digits": 2048,
+    "last_cutoff": 64
+  },
+  "status": "backend_or_arithmetic_error",
+  "model_evaluated": false,
+  "ground_preparation_certified": false,
+  "ramsey_certified": false,
+  "full_clock_certified": false,
+  "COM_response_or_triplet_gap_certified": false,
+  "mu2": null,
+  "gamma": null,
+  "E_g": null,
+  "E_e": null,
+  "Omega": null,
+  "tau": null,
+  "a1": null,
+  "a2": null,
+  "a2_minus_a1": null,
+  "unexecuted_outputs": [
+    "E_e",
+    "Omega",
+    "tau",
+    "a1",
+    "a2",
+    "a2_minus_a1"
+  ],
+  "unexecuted_controls": [
+    "excited_readout",
+    "source_jets",
+    "Ramsey_contours",
+    "finite_source_phase",
+    "constant_lapse"
+  ],
+  "attempts": [
+    {
+      "status": "attempted",
+      "configuration": {
+        "cutoff": 16,
+        "Legendre_order_per_panel": 16,
+        "positive_Gauss_order_per_panel": 32,
+        "precision_decimal_digits": 128,
+        "weight_series_last_power": 8,
+        "root_absolute_width_goal": "1e-14",
+        "total_rank": 96
+      },
+      "model_evaluated": true,
+      "ground_point_certified": false,
+      "ground_preparation_certified": false,
+      "ramsey_certified": false,
+      "full_clock_certified": false,
+      "excited_vector_status": "unexecuted",
+      "source_jets_status": "unexecuted",
+      "Ramsey_functional_calculus_status": "unexecuted"
+    }
+  ],
+  "unresolved_item": "AttributeError: 'int' object has no attribute 'is_finite'",
+  "elapsed_seconds": 0.04090840369462967,
+  "evaluation_count": 33
+}

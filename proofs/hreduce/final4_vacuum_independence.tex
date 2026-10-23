@@ -1,0 +1,156 @@
+\subsection*{All-amplitude vacuum coefficient: independence audit}
+
+\paragraph*{Recommended status.}
+\textbf{Derived by 2 distinct complete methods at continuum
+two-spatial-derivative bulk order}
+[X: resummed polar heat current; arbitrary-background Sylvester response
+with the isospectral trace identity].
+Use this one status wherever the result is used.
+P16 itself contains both methods.  The final3 author and RED reconstruct
+them; their separate readership supplies no additional method.
+Foundation item (d) displays the heat method and cites the longer
+reconstructions.  Its displayed argument alone is not a second method.
+% SOURCES: P16 response.md, Secs. 1 and 3; attachment
+% P16_nonlinear_polar_vacuum.md, Secs. 2.1--2.5 and 4.1--4.2;
+% P16_COPY_BACK.md, Main result.  Exact roots are registered below.
+% Audited local author, Secs. 2--3 and Earned check tags; local RED,
+% Duty 4 and Independent disposition; foundational_arguments_final3.tex (d).
+
+\paragraph*{Shared hypotheses and different decisive steps.}
+Choose the one-sided polar operator
+$A_s=m_s/\psi+i\psi^{-3}D_a$ for the one full sine operator,
+allocation $L=N\psi$, and squared-mass rectangle
+$x_s=(x_0,x_0+h_1,x_0+h_2,x_0+h_1+h_2)$ with
+$\eta=(+,-,-,+)$.
+Require $x_0,h_1,h_2>0$, a smooth real lapse and a smooth commuting ruler
+$0<P_-\leq\psi\leq P_+<\infty$, a compatible closed Dirac domain,
+and a grouped spin trace.  The density
+$X(x)=\sum_s\eta_s\operatorname{tr}_2
+ (|A_s^\dagger|-|A_s|)_{xx}$ includes all sine valleys and is
+independent of $N$.  In one continuum valley write
+$A_s=M+f\sigma\cdot\nabla$, $M=m_s/\psi$, $f=\psi^{-3}$.
+
+The heat route computes the two partner connections and potentials,
+then uses scalar and Pauli insertions in the resummed diagonal heat
+kernel.  Their difference is a divergence; its grouped square-root
+integral gives the coefficient.  The author and RED supply the
+radial-gauge argument excluding an order-two curvature insertion.
+That supplies a derivation of the heat step, but remains the same
+method as P16's heat calculation.
+
+The second route uses no such heat coefficient.  Its local expansion
+can be organized directly with, for either positive polar square $H$,
+\[
+ \sqrt H=\frac2\pi\int_0^\infty H(H+t^2)^{-1}\,dt .
+\]
+Expanding the resolvent symbol in slow spatial derivatives produces
+local functions of the ruler jets: its leading continuum inverse is
+$(M^2+f^2p^2+t^2)^{-1}$, and higher symbol-product terms carry
+further spatial derivatives.  The positive gap controls the
+infrared, and the grouped mass moments control the coefficient's
+ultraviolet limit.  This is the gapped derivative expansion used in
+both proofs, not an assumption of the desired coefficient or a
+uniform remainder bound on an arbitrary profile.
+% SOURCES: local author, Smooth domain and an operator gap, and
+% Why arbitrary uniform P fixes the two-derivative function; P16
+% attachment Secs. 1.3--1.4 and 4.2.  The scalar resolvent identity
+% follows by integrating lambda/(lambda+t^2) for lambda>0; its
+% symbol expansion explains locality without the heat-current identity.
+
+\paragraph*{Closure of the second route.}
+Cubic symmetry allows only
+$X^{[2]}=u(\psi)\Delta\psi+v(\psi)|\nabla\psi|^2$.
+The exact finite-regulator singular-value identity is
+$\operatorname{Tr}(|A^\dagger|-|A|)=0$.
+Isolating its two-derivative term on arbitrary slow periodic profiles
+gives
+\[
+ 0=\int [v(\psi)-u'(\psi)]|\nabla\psi|^2 .
+\]
+For $\psi=P+\delta\phi$, the $\delta^2$ coefficient forces
+$v(P)=u'(P)$ for every $P>0$.  Thus one coefficient function suffices;
+the trace identity alone does not determine it.
+
+At each uniform $P$, set $\delta\psi=\phi$.  Pauli multiplication and differentiation
+of $E_j^2=P_j$, where $P_0=A^\dagger A$, $P_1=AA^\dagger$, give
+\[
+ \begin{aligned}
+ \operatorname{tr}_2(\delta P_1-\delta P_0)_{p+q,p}
+   &=-6P^{-7}|d_a(p+q)-d_a(p)|^2\phi_q,\\
+ (\delta E_j)_{p+q,p}
+   &=\frac{(\delta P_j)_{p+q,p}}{e_{p+q}+e_p},\\
+ u_a(P)&=\frac3{P^4}\sum_s\eta_s\int_{\rm BZ}
+ \frac{d^3p}{(2\pi)^3}
+ \frac{\cos^2(ap_1)}{\sqrt{|d_a(p)|^2+x_sP^4}},
+ \end{aligned}
+\]
+where $d_{a,i}=a^{-1}\sin(ap_i)$ and
+$e_p=P^{-3}\sqrt{|d_a(p)|^2+x_sP^4}$ for each packet.
+This is the response at every positive background, not just $P=1$.
+
+The continuum integral can be evaluated without a heat representation.
+The rectangle is the double mass derivative, so in one valley
+\[
+ \begin{aligned}
+ \mathcal I(P)&:=\int\frac{d^3p}{(2\pi)^3}
+       \sum_s\eta_s(p^2+x_sP^4)^{-1/2}\\
+ &=\frac{3P^8}{4}\int_0^{h_1}\!du\int_0^{h_2}\!dv
+   \int\frac{d^3p}{(2\pi)^3}
+       [p^2+P^4(x_0+u+v)]^{-5/2}\\
+ &=\frac{P^4J}{8\pi^2},\qquad
+ J=\int_0^{h_1}\!du\int_0^{h_2}\!dv\,
+       (x_0+u+v)^{-1}>0 .
+ \end{aligned}
+\]
+The radial integral is $1/(6\pi^2c)$ for denominator
+$(p^2+c)^{5/2}$.  Counting the 8 valleys of the one sine operator
+once gives $u(P)=3J/\pi^2=:k$, hence $v=u'=0$.  Therefore
+\[
+ X^{[2]}=k\Delta\psi,\qquad
+ W_{0,\mathrm{bulk}}^{[2]}
+   =-k\int\nabla\psi\cdot\nabla(N\psi).
+\]
+The coefficient, its absence of additional amplitude functions, and
+its normalization follow without the heat-current identity.
+This closes a different complete method for this claim.
+% SOURCES: P16 attachment Secs. 4.1--4.2, Eqs. (28)--(31);
+% local author Sec. 3; local RED Duty 4, A separate arbitrary-background
+% coefficient check.  The positive double-difference radial evaluation
+% above makes explicit the heat-free evaluation of the shared integral.
+
+\paragraph*{Limits of the status.}
+The shared operator, grading, regulator, gap and local expansion are
+hypotheses, not independent physical evidence.  The result is exact
+in amplitude at two derivatives only.  At finite spacing $u_a(P)$
+runs with $aP^2$; a single reference normalization does not make it
+constant.  On a region with boundary retain
+$k\oint L\partial_n\psi$ and the domain's boundary terms.
+Neither method supplies the complete nonlocal functional, a
+massless uniform remainder, or a stellar approximation bound.
+No numerical check or [N] tag is used for this independence judgment;
+[R] is not assigned to this reviewer B derivation.
+
+\paragraph*{Exact source locators.}
+\begingroup\footnotesize
+Protected P16 root:
+\path{<internal>/}.
+Files: \path{response.md}, sections 1 and 3;
+\path{files/P16_nonlinear_polar_vacuum.md}, sections 1.3--2.5
+and 4.1--4.3, and section 9 for the nonlocal scope;
+\path{files/P16_COPY_BACK.md}, \emph{Main result}.
+Local audit root:
+\path{<internal>/}.
+Files: \path{rederivation_final3_vacuum_surface.tex}, sections 2--3
+and \emph{Earned check tags and exact limits};
+\path{redteam_final3_vacuum_surface.tex}, duty 4 and
+\emph{Independent disposition and exact check tags};
+\path{foundational_arguments_final3.tex}, item (d).
+\endgroup
+% Governing SOURCES read:
+% <internal>/GOAL_alt.md, duty 2;
+% <internal>/GOAL_lane_z.md;
+% <internal>/JUDGMENT_web40c.md,
+% Secs. 12--13, and NOTES_shift_and_spacing_window.md;
+% <internal>/DECISIONS_ADDENDUM.md, (g)--(r);
+% <internal>/JUDGMENT_gaps2.md;
+% <internal>/STATE.tex and DECISIONS.md.

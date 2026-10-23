@@ -1,0 +1,4314 @@
+{
+  "old": [
+    {
+      "path": "/spreads/2",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "object",
+        "keys": [
+          "Rt_common_count",
+          "Rt_common_from",
+          "Rt_common_to",
+          "common_clocks",
+          "common_from",
+          "common_to",
+          "control",
+          "kind",
+          "max_abs_dEE0",
+          "max_abs_dRc_over_rs",
+          "max_abs_dRt",
+          "max_abs_dminNv",
+          "max_rel_dRt",
+          "max_rel_dRt_at",
+          "member",
+          "raw_Rt_common_count",
+          "raw_common_clocks",
+          "raw_max_abs_dRt",
+          "raw_max_rel_dRt",
+          "raw_max_rel_dRt_at",
+          "raw_rel_dRt_at_16"
+        ],
+        "length": 21
+      },
+      "own_arithmetic": {
+        "status": "control_shape_agrees",
+        "event_encoding": {
+          "status": "absent_event_encoding",
+          "member_formation_present": false,
+          "control_formation_present": false,
+          "present_event_fields": [],
+          "reason": "All seven event fields are required for two own formations; their joint absence is an explicit encoding only when an own formation is missing. Null is not absence."
+        },
+        "locator": {
+          "file": "record_diagnostics.json historical.old_report.control_pairs",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "old",
+          "path": "",
+          "maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own_shape": {
+          "type": "object",
+          "keys": [
+            "Rt_common_count",
+            "Rt_common_from",
+            "Rt_common_to",
+            "common_clocks",
+            "common_from",
+            "common_to",
+            "control",
+            "kind",
+            "max_abs_dEE0",
+            "max_abs_dRc_over_rs",
+            "max_abs_dRt",
+            "max_abs_dminNv",
+            "max_rel_dRt",
+            "max_rel_dRt_at",
+            "member",
+            "raw_Rt_common_count",
+            "raw_common_clocks",
+            "raw_max_abs_dRt",
+            "raw_max_rel_dRt",
+            "raw_max_rel_dRt_at",
+            "raw_rel_dRt_at_16"
+          ],
+          "length": 21
+        },
+        "target_shape": {
+          "type": "object",
+          "keys": [
+            "Rt_common_count",
+            "Rt_common_from",
+            "Rt_common_to",
+            "common_clocks",
+            "common_from",
+            "common_to",
+            "control",
+            "kind",
+            "max_abs_dEE0",
+            "max_abs_dRc_over_rs",
+            "max_abs_dRt",
+            "max_abs_dminNv",
+            "max_rel_dRt",
+            "max_rel_dRt_at",
+            "member",
+            "raw_Rt_common_count",
+            "raw_common_clocks",
+            "raw_max_abs_dRt",
+            "raw_max_rel_dRt",
+            "raw_max_rel_dRt_at",
+            "raw_rel_dRt_at_16"
+          ],
+          "length": 21
+        }
+      }
+    },
+    {
+      "path": "/spreads/2/member",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "string",
+        "value": "M3a_s4"
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "record_diagnostics.json historical.old_report.control_pairs",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "old",
+          "path": "member",
+          "maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "string",
+          "value": "M3a_s4"
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/spreads/2/control",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "string",
+        "value": "M3a_s4_tau4"
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "record_diagnostics.json historical.old_report.control_pairs",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "old",
+          "path": "control",
+          "maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "string",
+          "value": "M3a_s4_tau4"
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/spreads/2/kind",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "string",
+        "value": "control_step"
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "record_diagnostics.json historical.old_report.control_pairs",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "old",
+          "path": "kind",
+          "maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "string",
+          "value": "control_step"
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/spreads/2/raw_common_clocks",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "integer",
+        "value": 129
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "record_diagnostics.json historical.old_report.control_pairs",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "old",
+          "path": "raw_common_clocks",
+          "maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "integer",
+          "value": 129
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/spreads/2/raw_Rt_common_count",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "integer",
+        "value": 0
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "record_diagnostics.json historical.old_report.control_pairs",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "old",
+          "path": "raw_Rt_common_count",
+          "maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "integer",
+          "value": 0
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/spreads/2/raw_max_abs_dRt",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "null",
+        "value": null
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "record_diagnostics.json historical.old_report.control_pairs",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "old",
+          "path": "raw_max_abs_dRt",
+          "maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "null",
+          "value": null
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/spreads/2/raw_max_rel_dRt",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "null",
+        "value": null
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "record_diagnostics.json historical.old_report.control_pairs",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "old",
+          "path": "raw_max_rel_dRt",
+          "maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "null",
+          "value": null
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/spreads/2/raw_max_rel_dRt_at",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "null",
+        "value": null
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "record_diagnostics.json historical.old_report.control_pairs",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "old",
+          "path": "raw_max_rel_dRt_at",
+          "maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "null",
+          "value": null
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/spreads/2/raw_rel_dRt_at_16",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "null",
+        "value": null
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "record_diagnostics.json historical.old_report.control_pairs",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "old",
+          "path": "raw_rel_dRt_at_16",
+          "maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "null",
+          "value": null
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/spreads/2/common_clocks",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "integer",
+        "value": 129
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "record_diagnostics.json historical.old_report.control_pairs",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "old",
+          "path": "common_clocks",
+          "maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "integer",
+          "value": 129
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/spreads/2/common_from",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "float",
+        "value": 0.0
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "record_diagnostics.json historical.old_report.control_pairs",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "old",
+          "path": "common_from",
+          "maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "float",
+          "value": 0.0
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/spreads/2/common_to",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "float",
+        "value": 16.0
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "record_diagnostics.json historical.old_report.control_pairs",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "old",
+          "path": "common_to",
+          "maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "float",
+          "value": 16.0
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/spreads/2/max_abs_dEE0",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "float",
+        "value": 5.3086539381075326e-05
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "record_diagnostics.json historical.old_report.control_pairs",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "old",
+          "path": "max_abs_dEE0",
+          "maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "float",
+          "value": 5.308653938103269e-05
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "4.263625043299246186734308139421045780181884765625E-17",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/spreads/2/max_abs_dminNv",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "float",
+        "value": 0.00039581580800668315
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "record_diagnostics.json historical.old_report.control_pairs",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "old",
+          "path": "max_abs_dminNv",
+          "maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "float",
+          "value": 0.00039581580800668315
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "0E-54",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/spreads/2/max_abs_dRc_over_rs",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "float",
+        "value": 0.003116838333377281
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "record_diagnostics.json historical.old_report.control_pairs",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "old",
+          "path": "max_abs_dRc_over_rs",
+          "maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "float",
+          "value": 0.003116838333377281
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "0E-50",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/spreads/2/Rt_common_count",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "integer",
+        "value": 0
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "record_diagnostics.json historical.old_report.control_pairs",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "old",
+          "path": "Rt_common_count",
+          "maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "integer",
+          "value": 0
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/spreads/2/max_abs_dRt",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "null",
+        "value": null
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "record_diagnostics.json historical.old_report.control_pairs",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "old",
+          "path": "max_abs_dRt",
+          "maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "null",
+          "value": null
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/spreads/2/max_rel_dRt",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "null",
+        "value": null
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "record_diagnostics.json historical.old_report.control_pairs",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "old",
+          "path": "max_rel_dRt",
+          "maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "null",
+          "value": null
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/spreads/2/max_rel_dRt_at",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "null",
+        "value": null
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "record_diagnostics.json historical.old_report.control_pairs",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "old",
+          "path": "max_rel_dRt_at",
+          "maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "null",
+          "value": null
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/spreads/2/Rt_common_from",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "null",
+        "value": null
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "record_diagnostics.json historical.old_report.control_pairs",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "old",
+          "path": "Rt_common_from",
+          "maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "null",
+          "value": null
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/spreads/2/Rt_common_to",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "null",
+        "value": null
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "record_diagnostics.json historical.old_report.control_pairs",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "old",
+          "path": "Rt_common_to",
+          "maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.000053086539381032690751545234886292544949294140659585623569638252179329881509291526",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "null",
+          "value": null
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    }
+  ],
+  "current": [
+    {
+      "path": "/spreads/2",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "object",
+        "keys": [
+          "Rt_common_count",
+          "Rt_common_from",
+          "Rt_common_to",
+          "common_clocks",
+          "common_from",
+          "common_to",
+          "control",
+          "kind",
+          "max_abs_dEE0",
+          "max_abs_dRc_over_rs",
+          "max_abs_dRt",
+          "max_abs_dminNv",
+          "max_rel_dRt",
+          "max_rel_dRt_at",
+          "member",
+          "raw_Rt_common_count",
+          "raw_common_clocks",
+          "raw_max_abs_dRt",
+          "raw_max_rel_dRt",
+          "raw_max_rel_dRt_at",
+          "raw_rel_dRt_at_16"
+        ],
+        "length": 21
+      },
+      "own_arithmetic": {
+        "status": "control_shape_agrees",
+        "event_encoding": {
+          "status": "absent_event_encoding",
+          "member_formation_present": false,
+          "control_formation_present": false,
+          "present_event_fields": [],
+          "reason": "All seven event fields are required for two own formations; their joint absence is an explicit encoding only when an own formation is missing. Null is not absence."
+        },
+        "locator": {
+          "file": "controls_catalogs.json",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "current",
+          "path": "",
+          "maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own_shape": {
+          "type": "object",
+          "keys": [
+            "Rt_common_count",
+            "Rt_common_from",
+            "Rt_common_to",
+            "common_clocks",
+            "common_from",
+            "common_to",
+            "control",
+            "kind",
+            "max_abs_dEE0",
+            "max_abs_dRc_over_rs",
+            "max_abs_dRt",
+            "max_abs_dminNv",
+            "max_rel_dRt",
+            "max_rel_dRt_at",
+            "member",
+            "raw_Rt_common_count",
+            "raw_common_clocks",
+            "raw_max_abs_dRt",
+            "raw_max_rel_dRt",
+            "raw_max_rel_dRt_at",
+            "raw_rel_dRt_at_16"
+          ],
+          "length": 21
+        },
+        "target_shape": {
+          "type": "object",
+          "keys": [
+            "Rt_common_count",
+            "Rt_common_from",
+            "Rt_common_to",
+            "common_clocks",
+            "common_from",
+            "common_to",
+            "control",
+            "kind",
+            "max_abs_dEE0",
+            "max_abs_dRc_over_rs",
+            "max_abs_dRt",
+            "max_abs_dminNv",
+            "max_rel_dRt",
+            "max_rel_dRt_at",
+            "member",
+            "raw_Rt_common_count",
+            "raw_common_clocks",
+            "raw_max_abs_dRt",
+            "raw_max_rel_dRt",
+            "raw_max_rel_dRt_at",
+            "raw_rel_dRt_at_16"
+          ],
+          "length": 21
+        }
+      }
+    },
+    {
+      "path": "/spreads/2/member",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "string",
+        "value": "M3a_s4"
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "controls_catalogs.json",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "current",
+          "path": "member",
+          "maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "string",
+          "value": "M3a_s4"
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/spreads/2/control",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "string",
+        "value": "M3a_s4_tau4"
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "controls_catalogs.json",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "current",
+          "path": "control",
+          "maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "string",
+          "value": "M3a_s4_tau4"
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/spreads/2/kind",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "string",
+        "value": "control_step"
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "controls_catalogs.json",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "current",
+          "path": "kind",
+          "maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "string",
+          "value": "control_step"
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/spreads/2/raw_common_clocks",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "integer",
+        "value": 129
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "controls_catalogs.json",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "current",
+          "path": "raw_common_clocks",
+          "maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "integer",
+          "value": 129
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/spreads/2/raw_Rt_common_count",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "integer",
+        "value": 0
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "controls_catalogs.json",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "current",
+          "path": "raw_Rt_common_count",
+          "maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "integer",
+          "value": 0
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/spreads/2/raw_max_abs_dRt",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "null",
+        "value": null
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "controls_catalogs.json",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "current",
+          "path": "raw_max_abs_dRt",
+          "maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "null",
+          "value": null
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/spreads/2/raw_max_rel_dRt",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "null",
+        "value": null
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "controls_catalogs.json",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "current",
+          "path": "raw_max_rel_dRt",
+          "maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "null",
+          "value": null
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/spreads/2/raw_max_rel_dRt_at",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "null",
+        "value": null
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "controls_catalogs.json",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "current",
+          "path": "raw_max_rel_dRt_at",
+          "maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "null",
+          "value": null
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/spreads/2/raw_rel_dRt_at_16",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "null",
+        "value": null
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "controls_catalogs.json",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "current",
+          "path": "raw_rel_dRt_at_16",
+          "maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "null",
+          "value": null
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/spreads/2/common_clocks",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "integer",
+        "value": 129
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "controls_catalogs.json",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "current",
+          "path": "common_clocks",
+          "maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "integer",
+          "value": 129
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/spreads/2/common_from",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "float",
+        "value": 0.0
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "controls_catalogs.json",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "current",
+          "path": "common_from",
+          "maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "float",
+          "value": 0.0
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/spreads/2/common_to",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "float",
+        "value": 16.0
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "controls_catalogs.json",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "current",
+          "path": "common_to",
+          "maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "float",
+          "value": 16.0
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/spreads/2/max_abs_dEE0",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "float",
+        "value": 5.3086539381075326e-05
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "controls_catalogs.json",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "current",
+          "path": "max_abs_dEE0",
+          "maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "float",
+          "value": 5.308653938103269e-05
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "4.263625043299246186734308139421045780181884765625E-17",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/spreads/2/max_abs_dminNv",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "float",
+        "value": 0.00039581580800668315
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "controls_catalogs.json",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "current",
+          "path": "max_abs_dminNv",
+          "maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "float",
+          "value": 0.00039581580800668315
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "0E-54",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/spreads/2/max_abs_dRc_over_rs",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "float",
+        "value": 0.003116838333377281
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "controls_catalogs.json",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "current",
+          "path": "max_abs_dRc_over_rs",
+          "maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "float",
+          "value": 0.003116838333377281
+        },
+        "status": "derived_value_diagnostic",
+        "target_minus_own": "0E-50",
+        "reason": "Complete unprinted scalar tail is diagnostic; the published precision uses its separate occurrence check."
+      }
+    },
+    {
+      "path": "/spreads/2/Rt_common_count",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "integer",
+        "value": 0
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "controls_catalogs.json",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "current",
+          "path": "Rt_common_count",
+          "maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "integer",
+          "value": 0
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/spreads/2/max_abs_dRt",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "null",
+        "value": null
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "controls_catalogs.json",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "current",
+          "path": "max_abs_dRt",
+          "maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "null",
+          "value": null
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/spreads/2/max_rel_dRt",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "null",
+        "value": null
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "controls_catalogs.json",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "current",
+          "path": "max_rel_dRt",
+          "maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "null",
+          "value": null
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/spreads/2/max_rel_dRt_at",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "null",
+        "value": null
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "controls_catalogs.json",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "current",
+          "path": "max_rel_dRt_at",
+          "maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "null",
+          "value": null
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/spreads/2/Rt_common_from",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "null",
+        "value": null
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "controls_catalogs.json",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "current",
+          "path": "Rt_common_from",
+          "maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "null",
+          "value": null
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    },
+    {
+      "path": "/spreads/2/Rt_common_to",
+      "semantic_identity": [
+        "M3a_s4",
+        "M3a_s4_tau4",
+        "control_step"
+      ],
+      "target": {
+        "type": "null",
+        "value": null
+      },
+      "own_arithmetic": {
+        "locator": {
+          "file": "controls_catalogs.json",
+          "pair": "M3a_s4__M3a_s4_tau4",
+          "version": "current",
+          "path": "Rt_common_to",
+          "maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "diagnostic_maximum_locators": {
+            "E": {
+              "value": "0.0000530865393810326907515452348862925449492941406595856235696382521793298815092913874241382540471054075298987823237643016899013846337644650478382783721100803381391",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "F": {
+              "value": "0.000395815808006683145237047938280738890171051025390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "centroid": {
+              "value": "0.00311683833337728088963558548130095005035400390625",
+              "T_over_rs": "16.0",
+              "indices": [
+                [
+                  128,
+                  256
+                ]
+              ]
+            },
+            "R_t": null,
+            "relative": null
+          },
+          "denominator_scope": "Signed first-event differences are control minus member; relative radii use the fixed member denominator; at16 is absolute. Raw diagnostic uses local masks, primary uses both prefixes."
+        },
+        "own": {
+          "type": "null",
+          "value": null
+        },
+        "status": "exact_primitive_or_discrete_agreement"
+      }
+    }
+  ]
+}

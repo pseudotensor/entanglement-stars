@@ -1,0 +1,28 @@
+{
+  "serves": "WEB40E H3 / approved D1 elementary-proton comparison scope sentence",
+  "purpose": "Literal bounded arithmetic; no new physics fit or observational analysis",
+  "decimal_precision": 80,
+  "inputs": {
+    "Planck_mass_energy_GeV": "1.220890E+19",
+    "a_in_Planck_lengths": "2",
+    "SME_proton_interval_GeV_minus_2": [
+      "-3.4E-45",
+      "3.4E-42"
+    ],
+    "mapping_from_original_pair": "delta_E=-c*k^3 maps to positive SME c; use positive upper endpoint"
+  },
+  "isotropic_c_GeV_minus_2": "2.6835328637508044719138468739387568856877930900461899142670965346668586000037187E-39",
+  "ratio_to_positive_upper_endpoint": "789.27437169141307997466084527610496637876267354299703360796956901966429411874079",
+  "eta_p": "-0.80000000000000000000000000000000000000000000000000000000000000000000000000000001",
+  "checks": {
+    "coefficient_positive": true,
+    "coefficient_range": true,
+    "ratio_range": true,
+    "eta_exact_to_decimal_roundoff": true
+  },
+  "scope": "Direct elementary-proton identification under cited reaction assumptions; no composite bound-state prediction",
+  "source_sha256": "ac212c395e6e84addbda21f68ba2fa36254f69fa251f914a4bc4b0b91a2d16db",
+  "wall_seconds": 9.75579023361206e-05,
+  "cpu_seconds": 0.042820845,
+  "max_rss_KiB": 14976
+}

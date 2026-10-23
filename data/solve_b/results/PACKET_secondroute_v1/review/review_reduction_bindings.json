@@ -1,0 +1,38 @@
+{
+  "runtime": {
+    "host": "compute-host",
+    "pid": 2235781,
+    "threads": 1,
+    "niceness": 10,
+    "device": "CPU"
+  },
+  "frozen_summary_sha256": "ce120ea2e77d214070789f7dd785c946da2b4762f503269121cb91fd485b9926",
+  "formatting_code_sha256": "19f3255b41077aee0d61e3e4d7eaf2000bca4ab4dfb2c582ab956a7847198d48",
+  "scope": "literal serialization of frozen saved values; complete scalar and locator data remain in summary.json",
+  "outputs": {
+    "distance_summary_v1.json": {
+      "sha256": "3158d6535fac12b36430f94ce1ea9a1a5b31e818f300f6513940dc671b573135",
+      "bytes": 14870
+    },
+    "free_preparation_k1_v1.json": {
+      "sha256": "34da55987a0c3f533aa6d3fe5af88534a44bf8528ca6769f28af30f866496e87",
+      "bytes": 35891
+    },
+    "free_preparation_k5_v1.json": {
+      "sha256": "485858b43707d65106156ba007c11c148ac4a2a656e1e9af6cc25eeb2ed8c333",
+      "bytes": 18152
+    },
+    "reversals_v1.json": {
+      "sha256": "88ef96a64758bf68c4d9931a8625f4567b4827fe95d96319fd667a6d6dbb0d82",
+      "bytes": 263017
+    },
+    "sensitivities_v1.tsv": {
+      "sha256": "c3f717ef010d58462b6077c4d6daf40bcd1c08681ad9f33c647fcd0bda667d88",
+      "bytes": 309487
+    },
+    "trajectory_summary_v1.tsv": {
+      "sha256": "037341b135742d4b90be5c41aec9bda391d215b82ab34719d80cc2c9c20f0f04",
+      "bytes": 119820
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "check": "reviewer B declared-exterior symbolic SPEC",
+  "sympy_version": "1.14.0",
+  "nice": 10,
+  "elapsed_seconds": 1.2784084528684616,
+  "arithmetic": "exact rational symbolic differentiation; zero residual required",
+  "domain": "r>0, C>0; periodic xy orbit at rs=2/3, r=L=1, pr=sqrt(2)",
+  "checks": [
+    {
+      "name": "stencil_hessian_trace",
+      "passed": true
+    },
+    {
+      "name": "stencil_hessian_radial_contraction",
+      "passed": true
+    },
+    {
+      "name": "particular_scalar_equation",
+      "passed": true
+    },
+    {
+      "name": "velocity2_component_0",
+      "passed": true
+    },
+    {
+      "name": "velocity2_component_1",
+      "passed": true
+    },
+    {
+      "name": "velocity2_component_2",
+      "passed": true
+    },
+    {
+      "name": "velocity2_radial",
+      "passed": true
+    },
+    {
+      "name": "squared_speed_coefficient",
+      "passed": true
+    },
+    {
+      "name": "periodic_ray_geometry_forcing",
+      "passed": true
+    },
+    {
+      "name": "periodic_ray_dispersion_forcing",
+      "passed": true
+    },
+    {
+      "name": "periodic_ray_geometry_ode",
+      "passed": true
+    },
+    {
+      "name": "periodic_ray_dispersion_ode",
+      "passed": true
+    }
+  ],
+  "all_passed": true
+}

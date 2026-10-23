@@ -1,0 +1,93 @@
+\subsection*{Grading and the attractive sign}
+Choose finite positive-mass, positive-clock, positive-ruler polar packets
+$A=UE_0$, $E_1=UE_0U^\dagger$ and
+$B_j=E_j^{1/2}(N\psi)E_j^{1/2}>0$.
+There are 2 canonical realizations:
+\[
+ h_0=\begin{pmatrix}0&B_0U^\dagger\\UB_0&0\end{pmatrix},
+ \qquad
+ h_1=\begin{pmatrix}0&U^\dagger B_1\\B_1U&0\end{pmatrix}.
+\]
+Their filled-band energies are $-\operatorname{Tr}B_0$ and
+$-\operatorname{Tr}B_1$.
+Putting the compensating boson oscillators in the opposite channel
+gives respectively
+$\pm\operatorname{Tr}[(N\psi)(E_1-E_0)]$.
+Both realizations have positive norms and nonnegative excitation
+forms: their one-body eigenvectors are $(f,\pm Uf)$, and independently
+$h_0^2=\operatorname{diag}(B_0^2,UB_0^2U^\dagger)$, with the
+corresponding reversed formula for $h_1$.
+A number-conserving Hermitian dressing which kills excitation
+numbers 0 and 1 keeps $F^\dagger BF\ge0$ in either realization.
+[X: band isometries; squared-block spectral calculus.]
+
+Reverse every packet orientation in the mass rectangle.
+This changes the law's nonuniform couplings but preserves its
+uniform readout, the 2 mass sum rules, positive source forms and
+constant-allocation null identity.
+It sends $W_0\mapsto-W_0$ and $k\mapsto-k$, where
+$W_0^{[2]}=-k\int\nabla\psi\cdot\nabla(N\psi)$.
+The canonical channel assignments above are an explicit
+counterfamily to selection by positive norm or spectral boundedness.
+They are not a mere sign relabelling of an unchanged Hamiltonian.
+
+The constrained boundary bound also admits both orientations.
+On a finite open graph let $w_x$ be the signed vacuum density,
+$\sum_xw_x=0$, and impose the interior clock rows
+$C_x=\psi_xw_x+e_x=0$, with $e_x\ge0$.
+At a unit collar, retaining its source, the same-law charge is
+\[
+ E_{\rm bdy}=\sum_{x\in{\rm collar}}(w_x+e_x)
+            =\sum_{\rm all\ x}\frac{e_x}{\psi_x}\ge0 .
+\]
+Alternatively the comparison lapse $N_x=\psi_x^{-1}$ makes the
+vacuum trace vanish and gives the same source sum.
+[X: weighted collar sum; constant-allocation comparison lapse.]
+This bound assumes an actual solution and the stated open exterior.
+It proves neither existence nor an unrestricted off-constraint
+lower bound; varying a positive lapse against a negative vacuum
+clock coefficient can make the unreduced energy unbounded.
+
+A concrete additional selecting principle is attraction of a weak
+positive rest source in the declared clock chart.
+At continuum leading order its rows give
+$k\Delta f+\rho=0$ and $n=-2f$, with
+$\psi=1+f$, $N=1+n$ and vanishing perturbations at infinity.
+Thus
+\[
+ n(x)=-\frac1{2\pi k}\int
+       \frac{\rho(y)}{|x-y|}\,d^3y .
+\]
+The test energy $m(1+n)$ attracts toward the source precisely for
+$k>0$; the reversed law gives the opposite force.
+$G$ is defined by Cavendish measurement.
+The selected inventory must satisfy its single Newton normalization;
+energy positivity does not supply the attractive orientation.
+
+\paragraph*{SOURCES.}
+\begingroup\footnotesize
+\path{<internal>/DERIVATION.md},
+sections 1--2: explicit canonical channel assignments, Gram sources
+and signed scalar weight.  The sign counterfamily is reconstructed
+above without adopting a numerical inventory.
+\path{<internal>/rederivation_final3_vacuum_surface.tex},
+section 1, and
+\path{<internal>/redteam_final3_vacuum_surface.tex},
+boundary identity: finite-collar and comparison-lapse methods.
+\path{<internal>/STATE.tex},
+model definition and the source/bridge entry tagged [S] for the
+unrestricted positive-clock energy; and
+\path{<internal>/DECISIONS.md},
+section (d): grading and attractive sign.
+The unrestricted-energy statement and the constrained bound have
+different domains; neither is an internal-ruler dynamical stability
+theorem.
+\endgroup
+% Governing source: <internal>/GOAL_alt.md,
+% duty 4(2). Counterfamily uses ordinary positive CCR/CAR realizations.
+% The positive Gram source is e_x=psi_x sum_r Q_rx^dagger Q_rx
+% in the prescribed commuting representative, with all collar terms.
+% Weak-rest-source derivation: the vacuum ruler row is
+% k Delta n+2k Delta f=0 and the leading rest-mass ruler derivative
+% vanishes; this gives n=-2f under the isolated boundary conditions.
+% Delta(1/|x-y|)=-4pi delta(x-y) fixes the displayed sign and factor.

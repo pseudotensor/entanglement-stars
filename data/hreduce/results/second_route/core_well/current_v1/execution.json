@@ -1,0 +1,43 @@
+{
+  "purpose": "Owner66 L: paper applied-root outward dust-current sentence; dense-cut control",
+  "host": "compute-host",
+  "producer_sha256": "79af0c51d45218c8c85b130d789fec265e1d4c35aa2bceffa4b58e4f883e943e",
+  "remote_code": "<internal>/core_well_current_v1_79af0c51d452.py",
+  "remote_result": "<internal>/core_well_current_v1.json",
+  "remote_command": [
+    "env",
+    "OPENBLAS_NUM_THREADS=1",
+    "OMP_NUM_THREADS=1",
+    "MKL_NUM_THREADS=1",
+    "NUMEXPR_NUM_THREADS=1",
+    "CUDA_VISIBLE_DEVICES=",
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=2s",
+    "30s",
+    "nice",
+    "-n",
+    "10",
+    "<internal>/python",
+    "<internal>/core_well_current_v1_79af0c51d452.py"
+  ],
+  "limits": {
+    "wall_seconds": 30,
+    "kill_grace_seconds": 2,
+    "cpu_threads": 1,
+    "cpu_seconds": 30,
+    "address_space_bytes": 536870912,
+    "nice": 10
+  },
+  "status": "command_finished",
+  "started_unix": 1792321691.636915,
+  "returncode": 0,
+  "stdout": "{\"status\": \"completed\", \"output\": \"<internal>/core_well_current_v1.json\", \"elapsed_seconds\": 0.2953951694071293, \"error\": null}\n",
+  "stderr": "",
+  "command_elapsed_seconds": 0.708817042876035,
+  "mirror_returncode": 0,
+  "mirror_stderr": "",
+  "mirrored_sha256": "5798c16fc31fb2fdf640341b15362cbeb9c3e7fe1c7b658c1b96f22e330ef99f",
+  "mirrored_bytes": 308627,
+  "producer_status": "completed"
+}

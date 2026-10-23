@@ -1,0 +1,53 @@
+{
+  "two_mode_rows": [
+    {
+      "occupation": 1.0,
+      "identity_residual": {
+        "frobenius": 0.0,
+        "operator": 0.0
+      },
+      "known_scalar_error": 0.0,
+      "entropy": 0.6931471805599453,
+      "expected_entropy": 0.6931471805599453
+    },
+    {
+      "occupation": 0.37,
+      "identity_residual": {
+        "frobenius": 1.3877787807814457e-17,
+        "operator": 1.3877787807814457e-17
+      },
+      "known_scalar_error": 0.0,
+      "entropy": 0.47889113905134384,
+      "expected_entropy": 0.47889113905134384
+    },
+    {
+      "occupation": 0.0,
+      "identity_residual": {
+        "frobenius": 0.0,
+        "operator": 0.0
+      },
+      "known_scalar_error": 0.0,
+      "entropy": 0.0,
+      "expected_entropy": 0.0
+    }
+  ],
+  "vacuum_excess": 0.0,
+  "vacuum_log2_error": 0.0,
+  "mixed_product_control": {
+    "occupations": [
+      0.37,
+      0.61
+    ],
+    "cross_block_frobenius": 0.0,
+    "local_entropy": 0.6687480868518094,
+    "expected_entropy": 0.6687480868518094,
+    "identity_residual": {
+      "frobenius": 0.0,
+      "operator": 0.0
+    },
+    "physical_impurity": {
+      "frobenius": 0.2379,
+      "operator": 0.2379
+    }
+  }
+}

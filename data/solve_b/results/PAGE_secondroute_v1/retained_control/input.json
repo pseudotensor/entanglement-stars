@@ -1,0 +1,29 @@
+{
+  "source": "<internal>/v6o_B2_k17to18_k18_columns_T0012.0000_k18.pt",
+  "payload_key": "Phi",
+  "shape": [
+    16384,
+    8192
+  ],
+  "dtype": "complex128",
+  "metadata": {
+    "k": 96,
+    "t": 768.0,
+    "t_over_rs": 12.0,
+    "rs_nominal": 64.0,
+    "nsites": 8192,
+    "n2": 16384,
+    "n_occ": 8192,
+    "layout": "flattened index 2 n + a (site n from 0, component a), R_n = n + 1; the chain's h = (1/2){N, h_0} + (1/2){v, Q} of page_ops_v6 at m = 0, kappa; columns orthonormal to rounding",
+    "what": "the occupied columns Phi of the propagated pure Gaussian state (C = Phi Phi^dagger) at the record's clock, before step_record(k)",
+    "record_json": "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096.json",
+    "fields_npz": "<internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_B2n4096_fields.npz"
+  },
+  "runtime": {
+    "host": "compute-host",
+    "pid": 3698721,
+    "threads": 1,
+    "niceness": 10,
+    "device": "CPU"
+  }
+}

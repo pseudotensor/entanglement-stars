@@ -1,0 +1,93 @@
+{
+  "status": "finished",
+  "purpose": "owner66 L missing-work continuation; owner88 takeover",
+  "command": [
+    "timeout",
+    "--foreground",
+    "-s",
+    "KILL",
+    "888.9981352649629s",
+    "nice",
+    "-n",
+    "10",
+    "taskset",
+    "-c",
+    "0,1,2,3",
+    "<internal>/python",
+    "<internal>/continue_core_well_profiles_v1.py"
+  ],
+  "producer_sha256": "d2b4540bd16e3e95304d57b2a4641597923021b70b94402a749e93783cb1f3b7",
+  "prior_execution_path": "<internal>/execution.json",
+  "prior_execution_sha256": "3aa2a0082652c47d8d214da71ea9b66d6d7ba5d898a424a4f94d9473798b029d",
+  "wrapper_sha256": "8f88e3e2d549270760cedbae78451a55c972785776530c34ed0f524dc1cb28a9",
+  "wrapper_pid": 1683888,
+  "started_unix": 1792346440.6035335,
+  "selected_cpus": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "resources": {
+    "cpu_threads": 4,
+    "wall_seconds": 890,
+    "cpu_seconds": 3560,
+    "internal_deadline_seconds": 870,
+    "address_space_bytes": 1610612736,
+    "original_wall_seconds": 900,
+    "original_cpu_seconds": 3600,
+    "prior_wall_seconds": 9.88800534978509,
+    "prior_cpu_seconds_upper_bound": 39.55202139914036,
+    "final_save_reserve_seconds": 1,
+    "accounting_scope": "outer whole-wrapper hard 890s guard required; four CPUs bound total CPU",
+    "nice": 10,
+    "cuda": "disabled"
+  },
+  "environment_settings": {
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4",
+    "NUMEXPR_NUM_THREADS": "4",
+    "VECLIB_MAXIMUM_THREADS": "4",
+    "BLIS_NUM_THREADS": "4",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "CUDA_VISIBLE_DEVICES": ""
+  },
+  "preflight": {
+    "mem_available_bytes": 573313286144,
+    "root_free_bytes": 133372616704,
+    "data_free_bytes": 802377605120,
+    "load_average": [
+      45.2490234375,
+      33.65625,
+      30.55810546875
+    ]
+  },
+  "stdout_path": "<internal>/profiles.stdout.log",
+  "stderr_path": "<internal>/profiles.stderr.log",
+  "child_pid": 1684353,
+  "exit_code": 124,
+  "stdout_bytes": 0,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_tail": "",
+  "stderr_bytes": 0,
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_tail": "",
+  "result_identity": {
+    "path": "<internal>/core_well_profiles_v1.json",
+    "size": 45016,
+    "sha256": "93024674443168e17c357cc7917ab3f789330ceaff19ecbc0d8f021a16927e9c"
+  },
+  "producer_status": "incomplete",
+  "elapsed_seconds_before_final_save": 889.0213551484048,
+  "elapsed_seconds_charged": 890.0213551484048,
+  "aggregate_elapsed_seconds_charged": 899.9093604981899,
+  "child_cpu_seconds": 1176.550377,
+  "wrapper_cpu_seconds_before_final_save": 0.05223599999999999,
+  "aggregate_cpu_seconds_charged_upper_bound": 1220.1546343991404,
+  "whole_wrapper_cpu_cap_by_affinity": 3560,
+  "maximum_child_rss_kib": 618032,
+  "rss_scope": "fresh wrapper; maximum over this sole command and descendants",
+  "within_original_budget_with_final_save_reserve": false,
+  "termination_rule": "missing final record or outer timeout means incomplete or uncertain; no retry"
+}
