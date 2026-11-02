@@ -1,0 +1,160 @@
+\subsection{Singularities without a smooth geometry}\label{sec:singularity}
+
+Here a dynamical singularity is failure of unique joint continuation
+of \(C,N,v\) at finite lattice time, with norm-preserving state
+evolution, under unchanged laws, reference convention and boundary
+conditions, without new interior-boundary data. The test concerns
+the specified coupled lattice equations, even where their motivating
+derivative expansion is uncontrolled; failure of that expansion,
+or of a gauge or clock choice alone, is not a singularity.
+General relativity tests inextendible causal geodesics of finite
+proper or affine length~\cite{ChoquetBruhat2009}; fixed-spacetime
+quantum probes~\cite{HorowitzMarolf1995} and quantum-cosmology
+bounces~\cite{AshtekarPawlowskiSingh2006} provide other tests,
+not a universal definition.
+
+A slice is admitted when it carries a spherical solution of the
+rows with \(N>0\), a regular centre and nonnegative, absolutely
+continuous enclosed energy, \(\mathcal M(0)=0\). Negative enclosed
+energy, or zero enclosed energy on a sphere carrying radial
+momentum, obstructs such a solution. Exclusion bounds the
+prepared-sea part of the sources, not the polarization moments.
+At a regular centre,
+\(K_t^2(0)=8\pi G\rho_\ell(0)/3\); the bare bound
+\(\bar\rho\) of Sec.~\ref{sec:results-filling} therefore bounds
+this angular curvature only after the polarization energy is
+also bounded. Full spacetime curvature additionally needs the
+tidal contribution, including stress and the evolution residual.
+Bounded density establishes neither bounded full curvature nor
+continuation.
+
+Normal ordering does not ensure positive local energy, even for
+excitations confined to the prepared bands. The flat symbol bound
+\(|q(p)|\le\varepsilon(p)\) of Appendix~\ref{app:charge} supplies
+no universal local bound on the full sources, which also contain
+coherence and polarization response. Exclusion does not establish
+persistence of admission. No invariant regular domain, and no
+self-consistent counterexample to continuation over all admitted
+data, is established here.
+
+On a finite realization, unique joint continuation follows while
+the solution stays in a compact regular positive-clock domain
+with bounded required reference derivatives and a uniformly
+invertible boundary-normalized constraint Jacobian. The reduced
+covariance evolution is then locally Lipschitz and preserves its
+spectrum. A prescribed Hermitian generator with locally
+time-integrable norm already has a unitary propagator; this
+weaker statement does not establish coupled-field continuation.
+
+A sufficient clock condition needs neither local energy positivity
+nor a band decomposition. On a regular inward branch with
+\(\mathcal M>0\) for \(r>0\), put
+\(k=(2G\mathcal M/r^3)^{1/2}\) and normalize \(N(L)=1\).
+The rows give \((\ln N)'=4\pi GJ_{\ell r}/k\). If the full sources
+satisfy, with a finite enclosed \(\Gamma_j\ge0\),
+\begin{equation}
+ rJ_{\ell r}(r,t)^2\le\Gamma_j\mathcal M(r,t),
+ \qquad t\in[t_j,t_{j+1}],
+ \label{eq:sg-current-mass}
+\end{equation}
+then
+\begin{equation}
+ |\ln N(r,t)|\le B_j,\qquad
+ B_j=\pi L^2\sqrt{2G\Gamma_j}.
+ \label{eq:sg-clock-bound}
+\end{equation}
+This bounds the clock above and away from zero without a density
+floor; it is sufficient, not necessary, need not be uniform in
+parent size, and must be proved throughout an interval, not
+inferred from endpoint samples.
+
+The reference collapse has positive stored clocks through
+\(T/r_s=40\), with sampled minimum \(0.068\).
+At 573 records of three histories, the implemented constraint
+Jacobian has verified inverse norm at most \(2.90\), with bounded
+double-precision rounding and assembly errors.
+Two reported independent, no-density-floor current--mass scans
+cover 894 records in four histories. Their reported clock floor
+is \(e^{-50}\), far below the sampled minima of about
+0.07--0.11; these are record tests, not interval enclosures.
+The reference collapse uses a held projector without light;
+other histories have different light rules, including a
+counterterm at half the printed law's weight. These tests certify
+neither a trajectory under Eq.~\eqref{eq:dm-reference} nor a
+full-weight-light evolution. The stored-slice agreement of
+Sec.~\ref{sec:results-lattice} remains a consistency check.
+
+Two routes reconstruct reference-collapse rays and angular
+curvature from stored fields: all 36 tested ingoing rays cross
+the regular centre at finite affine length, and the sampled
+angular-curvature maximum is \(0.14/a^2\) near the centre at
+\(T/r_s=13.25\). On two routes, test packets without back-reaction
+over \(T/r_s=12.125\)--40 preserve norm to \(2\times10^{-11}\).
+No dynamical singularity is observed within the computed time;
+these probes, beyond the hydrodynamic description's tested limit,
+certify neither unique joint continuation between records,
+affine completeness nor an infinite-time extension.
+
+The deciding calculation is a validated coupled-trajectory
+enclosure on every consecutive record interval.
+Let \(F(C,u)=0\), \(u=(N,v)\), denote the boundary-normalized
+constraints with the stated averaging and full reference response.
+The enclosure must satisfy \(i\dot C=[\bar h(u),C]\) and
+\(F_u\dot u=-F_C\dot C\), and connect to the next interval.
+Its four-part pass rule is:
+\begin{enumerate}[label=(\roman*),leftmargin=*]
+\item
+\emph{Source and trajectory consistency.}
+Enclose a solution under Eq.~\eqref{eq:dm-reference}, including
+the propagated sea, all active species and copy weights, and
+initial-data, assembly, quadrature and evolution errors.
+Constraint and evolution defects, boundary charge and covariance
+spectra must be enclosed consistently.
+
+\item
+\emph{Admission and clock control.}
+Throughout \([t_j,t_{j+1}]\), certify a regular inward branch and
+a positive margin
+\(\mu_3=\mathcal M(r,t)/r^3\ge\mu_{*,j}>0\) for \(0<r\le L\).
+Its regular-centre limit is \(4\pi\rho_\ell(0,t)/3\), implying
+\(\rho_\ell(0,t)\ge3\mu_{*,j}/(4\pi)\) and
+\(k^2\ge2G\mu_{*,j}\).
+Certify Eq.~\eqref{eq:sg-current-mass} on the same enclosure,
+including every tail and low-density cell. At the centre use
+\(j_1=J_{\ell r}/r\) and \(j_1^2\le\Gamma_j\mu_3\), with enclosed
+regular limits. Use the full constraint mass, not enclosed rest
+mass. Discrete rows require the corresponding clock estimate
+or a bounded radial reconstruction defect.
+
+\item
+\emph{Field solvability.}
+In fixed, printed coordinates and norms, certify a uniform
+inverse bound for the full \(F_u\), including reference response.
+For example, an approximate inverse \(Z_j\) with
+\(\sup\|I-Z_jF_u\|\le q_j<1\) throughout the enclosure gives
+\(\|F_u^{-1}\|\le\|Z_j\|/(1-q_j)\).
+A clock bound alone does not establish this condition, nor do
+the inverses verified at stored records.
+
+\item
+\emph{No other exit.}
+Bound the fields, required spatial regularity and reference
+derivatives, and close the trajectory enclosure on itself
+throughout the interval, not only at its endpoints.
+Successive enclosures must continue the same branch.
+\end{enumerate}
+The positive margin in (ii) selects a sufficient nondegenerate
+domain; regular degenerate centres and mass-zero vacuum components
+need separate matching and uniqueness arguments. Failure of a
+sufficient inequality means not certified, not singular.
+
+Stored held-projector histories may seed a certificate only with
+enclosed defects under the printed law; otherwise re-evolution is
+required. Interpolating stored fields and propagating test matter
+is not this calculation. No complete between-record certificate
+under the printed law, or general bound on polarization moments
+over admitted cubic slices, is established.
+The leading laws supply no lattice-scale geometric law once
+their gradient expansion fails, so a Pauli-supported interior
+remains a possible outcome, not an assumption that closes the
+continuation question.
