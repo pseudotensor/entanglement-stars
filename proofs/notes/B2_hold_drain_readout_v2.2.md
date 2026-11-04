@@ -1,0 +1,81 @@
+# B2_hold_drain_readout_v2.2: B2's held record to T/r_s 500 (Reorientation 6, busi ready_jobs sec. 16 (b.0); decision D2')
+
+
+**v2.2 (#247; icloud's review_B2_secV_d80c7834c4):** the increment band 0.021 to 0.024 per 10 r_s from 360 to 500 (and its steadiness) is the 2 r_s cut's sequence, now stated as such; 'at every cut' stays only where it is true (the excess rises at every cut at every readout). Send readers here.
+
+
+**v2.1 (#245; reviewer A's delta reading deliveries/lead_gaps/FableAPI_reading_deltas_COMP1v1.1_B2v2_PAGEv4.2.1.md, B1 and B2):** the 'Not here' clause no longer presents the second-route check as done; the change list names M2 and M4, which v2 applied. Nothing else changes; send readers here.
+
+Solve lane, 20 Oct 2026. Supersedes v1 (which stays as issued). reviewer A's correctness reading (deliveries/lead_gaps/FableAPI_reading_B2_hold_drain_v1.md) reproduced every delivered number (the end values at 500 r_s on two routes) and ruled D2' NO FALL; this version applies its required corrections R1 to R3 (its section 5 pastes) and minors M1, M3, M5, M6. The bound-block projection (its M8) and the two checks its section 8 left UNCHECKED follow as a separate second-route note.
+
+**Changes from v1:** R1 every number is per CHAIN (two sectors), not per channel: the channel kappa = 1 carries 16 chains, so its values are 16 times these; R2 'the end state' replaced by 'the held record's state at the end of the hold (500 r_s)', which is not the drain's end state; R3 the rate is steady at 0.021 to 0.024 per 10 r_s from 360 to 500 at the 2 r_s cut, not slowing; M1 the cut spread's path; M2 the pre-hold pace 69.2 s per r_s; M3 the collar flow's settling from 140 r_s; M4 the appended exterior follows the record's charge; M5 the floors named; M6 the chain-length control stated.
+
+**The run.** page_history_v6s (611d190f, interior 15e08e28) on R1, PV_B2_hold_v6s, 11:30:13 to 16:03:44 UTC, rc 0: kappa 1, 32768-site chain, B2's record (json 417a4018, fields cb26fcfa), the fields held from the 100 r_s record to 500 r_s, the lean interior, cuts 2, 16, 24, 30, 48 r_s, 51 readouts (every 10 r_s), init cache 50873677 (h_+ 85d93d62). The appended exterior follows the record's charge (History.fields appends the vacuum form at the record's own E). 4000 records; propagation 10,683.8 s (21.4 s per r_s over the run; 69.2 s per r_s before the hold). Files on the box <internal>/B2_hold_v6s (md5 equal to R1: summary.json 817c3375, interior.md 45ab942d, the final lean state istate.pt 1529e5f4 (8.6 GB, record 4000), log db0269a3).
+
+**What it shows (the table below: the run's own interior readout, kappa 1, per chain (two sectors; the channel's 16 chains give 16 times these values)).** Through the hold (100 to 500 r_s) the invariant energy E_inv is held at 4.023526e-2 per chain to seven digits (the channel's 0.644). The collar flow L is -2.5e-8, 4.6e-7 and 6.6e-8 at the 110, 120 and 130 readouts, then 1.0 to 1.7e-7 at the readouts from 140 r_s on (mean 1.3e-7 over the hold, 1.2 times the comparator L_H(T_H) of one chain); over the hold it carries 3.4 to 3.5e-3 of energy out through the collar, 8.4 to 8.7 percent of E_inv. The impurity grows from 3.1e-9 to 1.1e-8. The excess RISES at every cut at every readout of the hold, with no turnover by 500: at 2 r_s from 0.5149 (100) to 1.7142 (500) per chain; at 16 r_s 0.4727 -> 1.6659; 24 r_s 0.4584 -> 1.6430; 30 r_s 0.4482 -> 1.6260; 48 r_s 0.2924 -> 1.5764. The rate per 10 r_s at the 2 r_s cut rises from 0.026 just after the hold to 0.045 to 0.047 over 180 to 230, falls to 0.021 by 360 and is steady at 0.021 to 0.024 from 360 to 500 (the 2 r_s cut's sequence; 0.0023 nats per r_s per chain, 0.037 for the channel), with no sign of a turnover or of further slowing by 500. The 48 r_s cut catches up with the inner four (its lag behind the 16 r_s cut halves from 0.18 to 0.09), the inner four keeping their 0.04 to 0.06 ordering; the 2-to-48 spread is not monotone (0.2225, 0.2370, 0.2097, 0.1264, 0.1378 at 100, 200, 300, 400, 500). So the held record's state at the end of the hold (500 r_s), not the drain's end state, which the hold does not reach, is a still-rising excess of 1.58 to 1.71 nats per chain across the cuts, 25.2 to 27.4 for the channel against 4.7 to 8.2 at 100 r_s, with the rise no longer slowing over the last 140 r_s.
+
+**Floors.** The excess's floors: low, the measured impurity's entropy (5.5e-7 at 500 at the 2 r_s cut); high, the a priori Chebyshev allowance (1.7e-3 at the 2 r_s cut, 2.0e-3 at the outer cuts, set by the held steps' K = 141 per 1 r_s); the rise of 1.2 is 600 to 700 times the high floor.
+
+**Chain-length control.** The 32768-site chain's rows at 0 to 100 r_s reproduce the 8192-site production's kappa = 1 excess per chain at 100 r_s to 1e-5 at every cut (0.514916, 0.472655, 0.458378, 0.448166, 0.292446 against 2 x 0.25746, 0.2363, 0.2292, 0.2241, 0.1462).
+
+**Not here (one route or not done):** the end state the held operator's bound block fixes and the inversion's constancy over the hold (reviewer A's one-route reading: 2.10 to 1.96 per chain; the lane's second route in progress); the energy inside the cuts (no lean-mode print; to be checked in the second-route note, together with the bound-block projection and the projection of the production's stored 100 r_s state); the convergence in kappa (one channel by design).
+
+---
+
+# v6s_B2hold_k1: the lean interior run (final); all values per chain (two sectors)
+
+page_history_v6s.py --lean-interior; chain 32768 sites; channels [1]; hold from T/r_s 100.000; cuts [2.0, 16.0, 24.0, 30.0, 48.0] r_s; readouts by the interior side (purity), the vacuum block by the contour.
+
+| T/r_s | held | kappa | E_inv | L (collar) | impurity | excess 2 | excess 16 | excess 24 | excess 30 | excess 48 | readout s | wall s | device peak GiB |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 0.000 | no | 1 | 2.182787e-11 | -7.2777e-17 | 1.50e-10 | -0.000000 | -0.000000 | -0.000000 | -0.000000 | -0.000000 | 208.0 | 220 | 8.00 |
+| 10.000 | no | 1 | 2.681023e-06 | -4.6266e-12 | 1.50e-10 | 0.006827 | -0.000072 | -0.000021 | -0.000010 | -0.000002 | 240.8 | 1152 | 12.03 |
+| 20.000 | no | 1 | 5.306852e-02 | 5.7856e-10 | 1.50e-10 | 0.073706 | -0.001025 | -0.000723 | -0.000542 | -0.000274 | 211.7 | 2105 | 12.03 |
+| 30.000 | no | 1 | 1.972462e-02 | -2.3496e-09 | 1.50e-10 | 0.174383 | 0.000367 | -0.000685 | -0.000852 | -0.000652 | 229.3 | 3071 | 12.03 |
+| 40.000 | no | 1 | 5.875305e-02 | 2.0675e-06 | 1.50e-10 | 0.288332 | 0.002276 | 0.000675 | -0.000009 | -0.000710 | 212.4 | 4033 | 12.03 |
+| 50.000 | no | 1 | 2.636779e-02 | 8.0806e-06 | 8.62e-10 | 0.320679 | 0.191294 | 0.001624 | 0.000867 | -0.000415 | 243.9 | 5024 | 12.03 |
+| 60.000 | no | 1 | 5.148112e-02 | 3.7080e-06 | 8.62e-10 | 0.444100 | 0.277568 | 0.189259 | 0.224555 | 0.000444 | 218.2 | 5986 | 12.03 |
+| 70.000 | no | 1 | 4.564630e-02 | 1.6268e-07 | 8.62e-10 | 0.454839 | 0.322324 | 0.276083 | 0.218167 | 0.000880 | 189.7 | 6909 | 12.03 |
+| 80.000 | no | 1 | 4.146839e-02 | 4.4786e-07 | 8.62e-10 | 0.470391 | 0.439930 | 0.323105 | 0.290290 | 0.097720 | 187.5 | 7831 | 12.03 |
+| 90.000 | no | 1 | 3.446079e-02 | 4.9459e-07 | 8.62e-10 | 0.492152 | 0.458396 | 0.439865 | 0.390855 | 0.198135 | 198.6 | 8757 | 12.03 |
+| 100.000 | no | 1 | 4.023527e-02 | 3.9573e-07 | 3.13e-09 | 0.514916 | 0.472655 | 0.458378 | 0.448166 | 0.292446 | 214.2 | 9700 | 12.03 |
+| 110.000 | yes | 1 | 4.023527e-02 | -2.5438e-08 | 3.13e-09 | 0.540558 | 0.489024 | 0.472879 | 0.462140 | 0.343401 | 22.8 | 9860 | 12.03 |
+| 120.000 | yes | 1 | 4.023527e-02 | 4.5834e-07 | 3.13e-09 | 0.567259 | 0.511685 | 0.489238 | 0.474343 | 0.445343 | 22.9 | 10013 | 12.03 |
+| 130.000 | yes | 1 | 4.023527e-02 | 6.5583e-08 | 3.13e-09 | 0.596232 | 0.534661 | 0.512116 | 0.503186 | 0.460018 | 32.5 | 10185 | 12.03 |
+| 140.000 | yes | 1 | 4.023527e-02 | 1.0733e-07 | 3.13e-09 | 0.632163 | 0.563495 | 0.534431 | 0.521060 | 0.472347 | 31.5 | 10358 | 12.03 |
+| 150.000 | yes | 1 | 4.023527e-02 | 1.0847e-07 | 3.90e-09 | 0.669221 | 0.594581 | 0.563312 | 0.542413 | 0.496931 | 33.6 | 10537 | 12.03 |
+| 160.000 | yes | 1 | 4.023527e-02 | 1.1476e-07 | 3.90e-09 | 0.703517 | 0.629308 | 0.594864 | 0.573689 | 0.518858 | 34.0 | 10712 | 12.03 |
+| 170.000 | yes | 1 | 4.023526e-02 | 1.2364e-07 | 3.90e-09 | 0.740822 | 0.663661 | 0.629495 | 0.606254 | 0.538234 | 27.8 | 10882 | 12.03 |
+| 180.000 | yes | 1 | 4.023526e-02 | 1.3233e-07 | 3.90e-09 | 0.785071 | 0.698355 | 0.663557 | 0.637350 | 0.568968 | 23.2 | 11038 | 12.03 |
+| 190.000 | yes | 1 | 4.023526e-02 | 1.4074e-07 | 3.90e-09 | 0.830249 | 0.737499 | 0.698292 | 0.670941 | 0.602429 | 33.9 | 11205 | 12.03 |
+| 200.000 | yes | 1 | 4.023526e-02 | 1.4907e-07 | 4.93e-09 | 0.871834 | 0.780815 | 0.737728 | 0.709962 | 0.634818 | 44.9 | 11382 | 12.03 |
+| 210.000 | yes | 1 | 4.023526e-02 | 1.5648e-07 | 4.93e-09 | 0.914375 | 0.823793 | 0.781026 | 0.751328 | 0.667488 | 38.9 | 11552 | 12.03 |
+| 220.000 | yes | 1 | 4.023526e-02 | 1.6200e-07 | 4.93e-09 | 0.960836 | 0.865839 | 0.823745 | 0.791748 | 0.704750 | 38.0 | 11734 | 12.03 |
+| 230.000 | yes | 1 | 4.023526e-02 | 1.6543e-07 | 4.93e-09 | 1.005924 | 0.910162 | 0.865812 | 0.833526 | 0.746434 | 35.1 | 11924 | 12.03 |
+| 240.000 | yes | 1 | 4.023526e-02 | 1.6733e-07 | 4.93e-09 | 1.046115 | 0.956145 | 0.910376 | 0.878886 | 0.788094 | 32.0 | 12105 | 12.03 |
+| 250.000 | yes | 1 | 4.023526e-02 | 1.6753e-07 | 5.98e-09 | 1.085220 | 0.999784 | 0.956342 | 0.924628 | 0.829257 | 44.2 | 12292 | 12.03 |
+| 260.000 | yes | 1 | 4.023526e-02 | 1.6546e-07 | 5.98e-09 | 1.125509 | 1.040667 | 0.999767 | 0.967658 | 0.873229 | 27.5 | 12460 | 12.03 |
+| 270.000 | yes | 1 | 4.023526e-02 | 1.6146e-07 | 5.98e-09 | 1.163092 | 1.081406 | 1.040666 | 1.009806 | 0.919419 | 22.9 | 12616 | 12.03 |
+| 280.000 | yes | 1 | 4.023526e-02 | 1.5638e-07 | 5.98e-09 | 1.195704 | 1.121547 | 1.081588 | 1.052779 | 0.963690 | 23.0 | 12769 | 12.03 |
+| 290.000 | yes | 1 | 4.023526e-02 | 1.5044e-07 | 5.98e-09 | 1.226467 | 1.158252 | 1.121707 | 1.094037 | 1.005538 | 22.3 | 12920 | 12.03 |
+| 300.000 | yes | 1 | 4.023526e-02 | 1.4352e-07 | 7.04e-09 | 1.257342 | 1.191539 | 1.158247 | 1.131422 | 1.047639 | 34.1 | 13081 | 12.03 |
+| 310.000 | yes | 1 | 4.023526e-02 | 1.3606e-07 | 7.04e-09 | 1.285898 | 1.223627 | 1.191545 | 1.166619 | 1.089475 | 31.4 | 13247 | 12.03 |
+| 320.000 | yes | 1 | 4.023526e-02 | 1.2891e-07 | 7.04e-09 | 1.310682 | 1.254503 | 1.223765 | 1.201132 | 1.127983 | 26.9 | 13422 | 12.03 |
+| 330.000 | yes | 1 | 4.023526e-02 | 1.2240e-07 | 7.04e-09 | 1.334060 | 1.282433 | 1.254628 | 1.233382 | 1.163100 | 26.6 | 13579 | 12.03 |
+| 340.000 | yes | 1 | 4.023526e-02 | 1.1639e-07 | 7.04e-09 | 1.357894 | 1.307637 | 1.282436 | 1.262102 | 1.197091 | 32.0 | 13741 | 12.03 |
+| 350.000 | yes | 1 | 4.023526e-02 | 1.1112e-07 | 8.11e-09 | 1.380811 | 1.331970 | 1.307638 | 1.288766 | 1.229846 | 45.6 | 13921 | 12.03 |
+| 360.000 | yes | 1 | 4.023526e-02 | 1.0718e-07 | 8.11e-09 | 1.401602 | 1.355825 | 1.332069 | 1.314806 | 1.259458 | 22.9 | 14087 | 12.03 |
+| 370.000 | yes | 1 | 4.023526e-02 | 1.0468e-07 | 8.11e-09 | 1.421877 | 1.378152 | 1.355927 | 1.339462 | 1.286129 | 35.7 | 14255 | 12.03 |
+| 380.000 | yes | 1 | 4.023526e-02 | 1.0324e-07 | 8.11e-09 | 1.443378 | 1.399045 | 1.378165 | 1.361937 | 1.311771 | 29.5 | 14419 | 12.03 |
+| 390.000 | yes | 1 | 4.023526e-02 | 1.0281e-07 | 8.11e-09 | 1.465255 | 1.419963 | 1.399044 | 1.383334 | 1.336709 | 28.5 | 14585 | 12.03 |
+| 400.000 | yes | 1 | 4.023526e-02 | 1.0360e-07 | 9.19e-09 | 1.486185 | 1.441470 | 1.420039 | 1.404984 | 1.359809 | 45.4 | 14758 | 12.03 |
+| 410.000 | yes | 1 | 4.023526e-02 | 1.0550e-07 | 9.19e-09 | 1.507127 | 1.462746 | 1.441566 | 1.426563 | 1.381214 | 33.9 | 14925 | 12.03 |
+| 420.000 | yes | 1 | 4.023526e-02 | 1.0802e-07 | 9.19e-09 | 1.529592 | 1.483567 | 1.462772 | 1.447327 | 1.402455 | 37.0 | 15091 | 12.03 |
+| 430.000 | yes | 1 | 4.023526e-02 | 1.1080e-07 | 9.19e-09 | 1.552873 | 1.504976 | 1.483571 | 1.467927 | 1.424078 | 35.0 | 15261 | 12.03 |
+| 440.000 | yes | 1 | 4.023526e-02 | 1.1399e-07 | 9.19e-09 | 1.575503 | 1.527472 | 1.505045 | 1.489470 | 1.445262 | 34.0 | 15427 | 12.03 |
+| 450.000 | yes | 1 | 4.023526e-02 | 1.1733e-07 | 1.03e-08 | 1.598004 | 1.550211 | 1.527567 | 1.511719 | 1.465593 | 31.3 | 15595 | 12.03 |
+| 460.000 | yes | 1 | 4.023526e-02 | 1.2040e-07 | 1.03e-08 | 1.621619 | 1.572688 | 1.550250 | 1.533788 | 1.486929 | 22.7 | 15745 | 12.03 |
+| 470.000 | yes | 1 | 4.023526e-02 | 1.2291e-07 | 1.03e-08 | 1.645695 | 1.595607 | 1.572664 | 1.555811 | 1.509281 | 21.0 | 15895 | 12.03 |
+| 480.000 | yes | 1 | 4.023525e-02 | 1.2784e-07 | 1.03e-08 | 1.668820 | 1.619218 | 1.595781 | 1.579131 | 1.531702 | 24.8 | 16039 | 12.03 |
+| 490.000 | yes | 1 | 4.023525e-02 | 1.2660e-07 | 1.03e-08 | 1.691420 | 1.643123 | 1.619550 | 1.602773 | 1.553813 | 21.6 | 16184 | 12.03 |
+| 500.000 | yes | 1 | 4.023525e-02 | 1.2727e-07 | 1.14e-08 | 1.714198 | 1.665917 | 1.642989 | 1.625953 | 1.576388 | 37.8 | 16345 | 12.03 |

@@ -1,0 +1,78 @@
+% Structure of the entanglement star: a cut from the regular centre outward, one REVTeX column.
+% Body only (to be \input inside a figure environment). Plain TikZ, no libraries; \footnotesize text; black, red, blue.
+% Radii: linear out to r_s (3.0 cm), then logarithmic (0.85 cm per doubling); the interior is the T/r_s = 15 slice of Fig. 1(a).
+% Every label rests on a paper sentence listed in review_output/paperapi/STAR_FIGURE_NOTE_20261104.md.
+% Layout (owner, 2026-11-04): left column = structure, right column = what moves and the key insights, band names inside the wedge.
+\begin{tikzpicture}[x=1cm,y=1cm,font=\footnotesize,>=latex,line cap=round,line join=round,inner sep=1pt]
+% wedge edges (degrees) and the radii (cm): inner trapping radius, trapping surface R_t, 2GE, 3GE, 4 r_s, 16 r_s cut, open top
+\def\aR{63}\def\aL{117}
+\def\rIn{0.36}\def\rT{2.63}\def\rGE{2.77}\def\rBar{3.48}\def\rFour{4.70}\def\rCut{6.30}\def\rTop{6.78}
+% lattice mode of short wavelength crossing outward (red zigzag): angle, from, to
+\newcommand{\lattmode}[3]{\draw[red,thick,->] (#1:#2) \foreach \k in {1,...,12}{ -- ({(#2+\k*(#3-#2)/12)*cos(#1)+(\k<12)*(2*mod(\k,2)-1)*0.06*cos(#1+90)},{(#2+\k*(#3-#2)/12)*sin(#1)+(\k<12)*(2*mod(\k,2)-1)*0.06*sin(#1+90)}) };}
+% outgoing light field (blue wave): angle, from, to (length 0.5625 ends the wave at a crest)
+\newcommand{\lightwave}[3]{\draw[blue!70!black,thick,->] plot[domain=#2:#3,samples=70,variable=\t] ({\t*cos(#1)+0.06*sin((\t-#2)*1440)*cos(#1+90)},{\t*sin(#1)+0.06*sin((\t-#2)*1440)*sin(#1+90)});}
+% ---- regions ----
+\fill[black!20] (\aR:\rIn) arc (\aR:\aL:\rIn) -- (\aL:\rT) arc (\aL:\aR:\rT) -- cycle;      % trapped region, N<|v| (grey as in Fig. 1)
+\fill[red!15]   (\aR:\rGE) arc (\aR:\aL:\rGE) -- (\aL:\rBar) arc (\aL:\aR:\rBar) -- cycle;  % near-surface exterior, 2GE to 3GE
+\fill[blue!6]   (\aR:\rBar) arc (\aR:\aL:\rBar) -- (\aL:\rTop) arc (\aL:\aR:\rTop) -- cycle; % Schwarzschild vacuum exterior
+% ---- the collapsing dust: 640 fermions, concentrated inside, a tail past the surface (no dot under the band name) ----
+\pgfmathsetseed{20261104}
+\foreach \i in {1,...,75}{
+  \pgfmathsetmacro{\u}{rnd}
+  \pgfmathsetmacro{\rr}{0.10+2.35*\u^1.3}
+  \pgfmathsetmacro{\aa}{\aR+3+(\aL-\aR-6)*rnd}
+  \pgfmathparse{int((\rr*sin(\aa)>2.15) && (abs(\rr*cos(\aa))<1.08))}
+  \ifnum\pgfmathresult=0 \fill (\aa:\rr) circle (0.03); \fi
+}
+\foreach \p in {(70:2.86),(112:2.85),(70:3.6),(115:3.55)}{ \fill \p circle (0.03); }
+% ---- radii ----
+\draw[thin] (\aR:\rIn) arc (\aR:\aL:\rIn);                               % inner trapping radius
+\draw[line width=1.3pt] (\aR:\rT) arc (\aR:\aL:\rT);                      % trapping surface R_t
+\draw[dotted,line width=0.8pt] (\aR:\rGE) arc (\aR:\aL:\rGE);             % 2GE = r_s
+\draw[dashed,thin] (\aR:\rBar) arc (\aR:\aL:\rBar);                       % centrifugal barrier near 3GE
+\draw[dash dot,thin] (\aR:\rFour) arc (\aR:\aL:\rFour);                   % 4 r_s
+\draw[dashed,blue!70!black,line width=0.7pt] (\aR:\rCut) arc (\aR:\aL:\rCut); % 16 r_s cut
+\draw[dashed,black!50] (\aR:\rTop) arc (\aR:\aL:\rTop);                   % open top: to infinity
+\draw[thin] (0,0) -- (\aR:\rTop); \draw[thin] (0,0) -- (\aL:\rTop);
+\fill (0,0) circle (0.045);
+% ---- what moves ----
+\draw[->,thick,black!80] (90:2.10) -- (90:1.40);                           % outgoing long waves move inward (trapped region)
+\lattmode{65}{2.3}{3.15}\lattmode{115}{2.3}{3.15}                            % lattice modes cross the surface outward, clear of the edges
+\lightwave{77}{4.12}{4.6825}\lightwave{103}{4.12}{4.6825}                  % outgoing light field
+\draw[->,thick] (65:4.65) -- (65:3.95); \draw[->,thick] (115:4.65) -- (115:3.95); % dust falling in from 4 r_s
+% ---- band names inside the wedge, one line per band, plus the cut and the open top ----
+\node[fill=black!20] at (0,2.38) {trapped region};
+\node at (0,3.13) {near-surface exterior};
+\node at (0,5.28) {Schwarzschild vacuum exterior};
+\node at (0,5.78) {$16r_s$ cut: light field read};
+\node at (0,6.97) {infinity: $N=1$, charge $E$};
+% ---- left column: structure (leaders end just outside the wedge edge) ----
+\draw[black!60,thin] (-0.38,0.47) -- (118:\rIn);
+\node[anchor=east] at (-0.42,0.50) {inner trapping radius};
+\draw[black!60,thin] (-0.76,0.95) -- (114:1.05);
+\node[anchor=east] at (-0.80,0.95) {dust};
+\draw[black!60,thin] (-1.41,1.98) -- (119:\rT);
+\node[anchor=east,align=right] at (-1.45,1.79) {trapping surface\\$R_t=0.95\,(2GE)$};
+\draw[black!60,thin] (-1.44,2.56) -- (119:\rGE);
+\node[anchor=east] at (-1.48,2.58) {$2GE$};
+\draw[black!60,thin] (-1.69,3.11) -- (118:\rBar);
+\node[anchor=east] at (-1.73,3.12) {barrier near $3GE$};
+\draw[black!60,thin] (-2.01,3.88) -- (118:\rFour);
+\node[anchor=east] at (-2.05,3.85) {release at $4r_s$};
+% ---- right column: what moves and the key insights ----
+\draw[black!60,thin] (0.81,1.12) -- (66:1.30);
+\node[anchor=west,align=left] at (0.85,0.93) {outgoing long waves\\move inward};
+\draw[black!60,thin] (1.14,1.80) -- (61:\rT);
+\node[anchor=west,align=left] at (1.18,1.61) {flat-sea match $A/4G$\\at $a\approx2\ell_P$};
+\draw[black!60,thin] (1.39,2.48) -- (65:2.95);
+\node[anchor=west,align=left] at (1.43,2.29) {lattice modes cross\\outward, log delay};
+\draw[black!60,thin] (1.65,3.14) -- (62.5:3.42);
+\node[anchor=west,align=left] at (1.69,2.96) {exponential ray map\\$T_H=1/(8\pi GE)$};
+\draw[black!60,thin] (2.15,3.95) -- (1.86,3.91);
+\node[anchor=west] at (2.19,3.95) {dust falls in};
+\draw[black!60,thin] (2.55,4.60) -- (1.20,4.60);
+\node[anchor=west,align=left] at (2.59,4.57) {outgoing\\light field};
+% ---- below the wedge: the apex and the radial scale ----
+\node at (0,-0.28) {regular centre};
+\node at (0,-0.60) {linear to $r_s$, log beyond, nominal $r_s=2GmN_B=64a$};
+\end{tikzpicture}

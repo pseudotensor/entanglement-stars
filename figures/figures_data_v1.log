@@ -1,0 +1,24 @@
+source 876dd5c6dee34b1c290b33eaeb4d25b1  <internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_r11_fields.npz
+source e27e457d37615cff8d5216f05a494f89  <internal>/collapse_c19_rs64_A_R2_tau8_ell4_avg_r11.json
+source 01444a399b9466047a5b0f118af61f77  <internal>/collapse_c32_rs64_A_R2_tau8_ell4_prep4_avg_plain_v36d_from0_to40_fields.npz
+source f172431d6a99447f27bdd046a6482af3  <internal>/ladders_readout_v1_3.npz
+source 63d46f940870542526e597984668964d  <internal>/ladders_readout_v1_3.json
+source 817c33756ce68561c81ce17070ec78a1  <internal>/v6s_B2hold_k1_summary.json
+source 45ab942d16fb35879019e6e2bc171905  <internal>/v6s_B2hold_k1_interior.md
+source 5119ffa229c003ebb7eb69e13b96962c  <internal>/PAGE_fig_v4.1_data.npz
+source 8636ce15063259bcf8502c90aed028ca  in/PAGE_v4.1_readout_export.tsv
+check: c19 vs P64_s4 node fields max|dN| 5.363e-10 max|dv| 1.103e-08 sign-mask cells differing 0
+check: node min(N-|v|) vs readout P64_s4: sign disagreements 0, max |diff| 1.036e-02
+fig1(a): stored zeros at 15 (r/r_s): [0.11012479 0.80875633]
+fig1: R_t(15)/r_s 0.8088, R_t/2GE at 15 0.9512, formation 12.125, closes 17.375, reopens 18.375, 2gE0 59.0689
+fig1(c): s4 P64_s4 to T/r_s 40.000, min -0.4410
+fig1(c): s2 P64_s2 to T/r_s 40.000, min -0.6618
+fig1(c): s8 P64_s8 to T/r_s 40.000, min -0.1908
+check: fig npz sums vs readout export tsv: 93 pairs (40-100), max |diff| 0.000e+00
+fig2(a): cut 2 at 100: 9.504 nats; light [12.70105977 14.61571211]
+fig2(a): cut 16 at 100: 8.738 nats; light [35.08184732 36.99649965]
+fig2(a): cut 30 at 100: 8.259 nats; light [52.62219558 54.53684792]
+fig2(b): |ratio| range on 10-100: 9.190e-05 to 5.805e+02; negatives 13; mean>0 points 35
+fig2(c): at 500: 2 27.427, 16 26.655, 30 26.015
+wrote 941fa62180cd9799e0fed0c18059e62f  out/fig_item5_collapse_v3_data.npz  104762 bytes
+wrote 0cc932f3376506c341584c74c50b8e65  out/fig_page_v5_data.npz  8453 bytes

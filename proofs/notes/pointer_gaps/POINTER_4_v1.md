@@ -1,0 +1,3 @@
+# POINTER 4 (07_page_curve:31): the explicit C_*(kappa_f) in |S_A(C) - S_A(P_0)| <= C_*(kappa_f) L^{7/4}
+
+Derivation with the explicit constant: deliveries/alt/api/r7/A_r7open4.md (reviewer B, round-7 edit 4, md5 4fd30bf7), section 5 "The massless window theorem, with an explicit constant": 5.1 window contraction, 5.2 point-node counting, 5.3 localization remainder, 5.4 optimization, 5.5 entropy and the explicit constant C_*(kappa_f), plus the replacement text. checked line by line in deliveries/alt/api/r7/F_r7open4_val.md (reviewer A, a16b597a) and confirmed in A_r7open4_confirm.md (00d206e0). Also checked in round 8: deliveries/lead_gaps/REVIEWVERIFY_r8_cac75467fb8_fable.md, item 4.

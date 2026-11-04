@@ -1,0 +1,38 @@
+{
+  "started_utc": "2026-10-18T20:37:42.849763+00:00",
+  "finished_utc": "2026-10-18T20:37:43.118442+00:00",
+  "outer_wall_seconds": 0.26871708035469055,
+  "actual_outer_returncode": 0,
+  "command": [
+    "timeout",
+    "-s",
+    "KILL",
+    "10s",
+    "taskset",
+    "-c",
+    "4",
+    "nice",
+    "-n",
+    "10",
+    "<internal>/python",
+    "<internal>/combine_WEB40I_ray_window_v1.py",
+    "--directory",
+    "<internal>/WEB40I_ray_window_v1",
+    "--output",
+    "<internal>/combined_content.json",
+    "--report",
+    "<internal>/combined_content.md"
+  ],
+  "code_sha256": "a754316c18f0db0c11170478049c66af0774296efd3410db1da43340d523ada2",
+  "root_free_bytes_before": 132963811328,
+  "mem_available_bytes_before": 565404581888,
+  "stdout": "{\"complete\": true, \"output_sha256\": \"44f05aa0dea69184182f30079bd6227ffd289bf13696ed3188f1e02ed7e15caa\", \"prior_whole_outer_wall_seconds\": 150.57315525785089, \"prior_ode_solves\": 322, \"prior_rhs\": 9281834}\n",
+  "stderr": "",
+  "child_usage": {
+    "user_cpu_seconds": 0.21276399999999998,
+    "system_cpu_seconds": 0.054352,
+    "peak_rss_kib": 30308
+  },
+  "output_sha256": "44f05aa0dea69184182f30079bd6227ffd289bf13696ed3188f1e02ed7e15caa",
+  "report_sha256": "e7e24649a850a3a68a6bf4e45b85eaf0091551781eee2208dbcf0706b6a927be"
+}

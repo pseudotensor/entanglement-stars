@@ -1,0 +1,56 @@
+\subsection*{Dressed-excitation count}
+Fix a classical ruler $0<p\leq\psi\leq P$, minimum packet mass $m>0$,
+and $M$ canonical modes.  The factorization
+$A=\psi^{-2}(m+iK)\psi$, $K=\psi^{-1}D\psi^{-1}=K^\dagger$,
+gives both polar moduli the lapse-independent gap $\Delta_0=mp/P^2$.
+For the number-preserving Hermitian similarity $T=e^{S_*}>0$,
+$F_i=T^{-1}d_iT$ need not be canonical.
+The boundary charge is $Q=F^\dagger\mathcal E F$ with
+$\mathcal E\geq\Delta_0I$.  Sectorwise,
+$F_iv=T_{n-1}^{-1}d_iT_nv$ and
+$\sum_i\|d_iT_nv\|^2=n\|T_nv\|^2$, hence
+\[
+ Q\geq\Delta_*n,\qquad
+ \Delta_*=\Delta_0\min\!\left(1,\inf_{n\geq1}
+ \frac{\sigma_{\min}(T_n)^2}{\|T_{n-1}\|^2}\right)>0 .
+\]
+Uniform $\Delta_*>0$ in region size is an additional premise,
+not a consequence of the polar gap.
+For an invariant constraint restriction in this Fock space, put
+$B=(E+\delta E)/\Delta_*$.
+Bosonic occupation counting and the independent thermal trace bound
+$\Omega\leq e^{\beta(E+\delta E)}\operatorname{Tr}e^{-\beta Q}$
+give respectively
+\[
+ \Omega\leq {M+\lfloor B\rfloor\choose\lfloor B\rfloor},
+ \qquad \Omega\leq z^{-B}(1-z)^{-M}\quad(0<z<1).
+\]
+Here $z=e^{-\beta\Delta_*}$.  Choosing $z=B/(M+B)$ yields
+$\log\Omega=O(E\log E)$ on nonempty windows with $\delta E=O(E)$
+and polynomial $M(E)$ at fixed microscopic parameters.
+[X: occupation count; thermal trace bound.]
+This counts positive-norm dressed excitations, not graded sea-cut
+entropy or additional quantum-ruler registers.
+
+\paragraph*{SOURCES.}
+\begingroup\footnotesize
+Protected root:
+\path{<internal>/}.
+\path{FRESH1272_20261014-2029_microcanonical-state-count/files/p22_work/P22_technical_note.md},
+sections 1--3 and 6: charge, gap, canonical-space count, and
+nonunitary similarity bound.  Its section 6 counterexample excludes
+inferring uniform coercivity from positivity and a unique vacuum.
+\path{FRESH1274_20261014-2034_gravity-emergence-programme/files/p24_flux_entropy/DERIVATION.md},
+sections 2, 7--8: independent singular-value factorization, the free
+count's scope, and distinction from a physical flux-algebra count.
+The uniform $\Delta_*>0$ premise for the actual finite-coupling completion
+is not supplied by these sources.
+\endgroup
+% Governing source:
+% <internal>/GOAL_alt.md, duty 3(a).
+% Derivation: ||(m+iK)u||^2=m^2||u||^2+||Ku||^2; the two
+% positive multiplication bounds give mp/P^2.  Equality of nonzero
+% singular spectra gives the same bound for both moduli.
+% The count uses one fixed-profile Hilbert space.  Any physical
+% reduction must be an isometric restriction with no additional
+% register multiplicity; profiles are not added as independent states.

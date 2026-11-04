@@ -1,0 +1,741 @@
+% Declared-model duty 2(c). Author source; not manuscript text.
+% CURRENT BINDING SCOPE -- full GOAL_alt.md read on 2026-10-15.
+% The actual flat sine-covariance planar/sphere theorems and verified
+% [100] number are unchanged. Their use in an inhomogeneous continued
+% spectral sea needs the separate local-area/reference comparison;
+% literal transported numerical states retain their recorded scopes.
+% The entropy match now fixes 4 eta G/a^2=1 as the declared physical
+% spacing. No uncomputed sphere decimal is supplied by that ruling.
+% STATUS [R]: chain/mass derivations and the native infinite-parent sphere
+% asymptotic, including massless point nodes. [N] bounded 100 quadrature/
+% covariance checks complete. [X] exact planar reduction and matched 100
+% values agree with the actual native producer. [S] controlled tilted and
+% spherical numerical coefficients and finite-parent convergence remain.
+\noindent\textbf{[R] The free sea's cut coefficient.}
+Put $\mu=|m|a$ and use nats.  Restrict the occupied projector of
+$a h_0(\mathbf k)=\sum_i\alpha_i\sin k_i+\mu\beta$ to the actual
+three-dimensional set of sites $A$:
+$C_A=\Pi_A(1-h_0/|h_0|)\Pi_A/2$ and
+$S_A=\operatorname{tr}h(C_A)$, where
+$h(c)=-c\log c-(1-c)\log(1-c)$.
+For one planar boundary, transverse Fourier transformation gives exactly
+\[
+ \eta_{100}(\mu)=\int_{-\pi}^{\pi}\!\frac{d k_y\,d k_z}{(2\pi)^2}
+ s_4\!\left(\sqrt{\mu^2+\sin^2 k_y+\sin^2 k_z}\right),\quad
+ s_4(M)=4\sum_{j\geq0}h_F((2j+1)\epsilon_M),
+\]
+where $h_F(z)=\log(1+e^{-z})+z/(e^z+1)$ and
+$\epsilon_M=\pi K(M^2/(1+M^2))/K(1/(1+M^2))$; $K$ uses the
+elliptic parameter.  The Calabrese--Cardy anchor is
+$s_4(M)=\tfrac23\log(1/M)+O(1)$: two spin copies and two longitudinal
+valleys, already counted.  For each fixed primitive plane in physical-area units,
+\[
+ \eta_{\mathbf n}(\mu)=\eta_{\mathbf n}(0)
+       +\frac{\mu^2}{3\pi}\log\mu^2+O(\mu^2).
+\]
+For $[100]$ the remainder is $b\mu^2+O(\mu^4\log\mu)$.
+\textbf{[N]} The one-boundary, four-component
+$[100]$ calculation gives $\eta_{100}(0)=0.78658339$ with these conventions.
+\textbf{[R]} For $[110]$ and $[111]$ the exact chain Bloch phases are
+$(k,k+\theta,\phi)$ and $(k,k+\theta,k+\phi)$; divide the transverse
+average of their four-component half-chain entropies by $\sqrt2$ and
+$\sqrt3$.  On the infinite parent, the actual ball
+$A_R=\{x:|ax-x_0|<R\}$ obeys
+$S(A_R)=(R^2/a^2)\int_{S^2}\eta_{\mathbf n}(\mu)\,d\Omega
++o(R^2/a^2)$ at each fixed $\mu\geq0$, uniformly in its centre offset.
+The proof retains the massless point nodes and digital boundary counts.
+Shell-degeneracy weights cannot replace that cut.
+\textbf{[S]} The other orientations and the sphere await genuine-cut
+numerical agreement; no spherical decimal is inherited.
+
+% DERIVATION / CHECK DETAIL.
+% All momenta in this file are dimensionless k=ap. h_0 denotes the physical
+% one-body Hamiltonian when it occurs in its spectral projector; multiplying
+% it by a positive a changes no projector. The mass may be taken positive by
+% a constant on-site Clifford rotation. The field has four complex orbitals
+% per cubic site. The eight zeros of the one sine operator are NOT an
+% additional species multiplier after a full Brillouin-zone integration.
+%
+% [R] At fixed transverse momenta the normalized matrix
+% B=(alpha_y sin k_y+alpha_z sin k_z+beta mu)/M anticommutes with alpha_x.
+% A site-local, k_perp-dependent unitary decomposes this Cl_2 pair into two
+% identical 2-component chains h_2=alpha sin k+beta M. Fourier transformation
+% in the tangent directions acts separately within A and A^c for a plane,
+% and so preserves the bipartite entropy. This is why the decomposition is
+% exact for planes and not for a sphere. An open chain cut at its center has
+% one entangling boundary; a long periodic half-ring has two and its entropy
+% must be divided by two before comparing. The spin factor two survives
+% either convention. A single h_2 half-chain has 2 sum_{j>=0} h_F((2j+1)eps),
+% so the full h_4 half-chain has the displayed 4 sum. No occupation, valley,
+% or boundary factor is implicit in eta.
+% Primary-source mapping: on the h_2 chain apply the on-site unitary
+% U_j=alpha_x^j and the scalar phase (-i)^j. Hopping becomes -I/2 and
+% the mass becomes (-1)^j M beta. Diagonalizing beta gives two independent
+% scalar staggered-potential chains of masses +M and -M. Both unitaries
+% factor across the spatial cut. Eisler, arXiv:2410.16433v1 section V,
+% equations (64)--(72), proves their half-chain spectrum
+% eps_l=(4l-1)eps for M>0, l in Z (opposite sign for -M), with
+% eps=pi K(k')/K(k). Its absolute values are every positive odd multiple
+% of eps exactly once. Thus each scalar chain contributes sum_j h_F,
+% h_2 contributes twice, and h_4 contributes four times. This derivation
+% uses the exact staggered-chain spectrum, not a presumed CTM mapping.
+%
+% [R] Equivalent elliptic expression (K now temporarily written by modulus):
+% s_4(M)=(1/3){log[4/(k k')]+(k^2-k'^2) 2 K(k)K(k')/pi},
+% k=(1+M^2)^(-1/2), k'=M(1+M^2)^(-1/2).
+% In parameter notation replace K(k) by K(k^2). Small-M checks:
+% s_4=(2/3)log(4/M)+M^2[5/12-(1/2)log(4/M)]+O(M^4 log M).
+% Large-M check: s_4=[1+log(16 M^2)]/(4 M^2)+O(M^-4 log M),
+% from four small Schmidt occupations 1/(16 M^2). These tests distinguish
+% the four-component one-boundary convention from a factor-two error.
+% The four-component longitudinal critical chain has total central charge
+% c=4; the half-line coefficient c/6=2/3 is the CC anchor. CC fixes this
+% infrared logarithm, not the ultraviolet number eta(0); the full chain
+% spectrum is needed for that number.
+%
+% [R] A useful one-dimensional quadrature is
+% eta_100(mu)=int_0^2 dw rho(w) s_4(sqrt(mu^2+w)),
+% rho(w)=2 K(w(2-w))/pi^2, int rho=1, rho(0)=1/pi.
+% Four transverse Dirac points give rho(0)=4*pi/(2*pi)^2=1/pi.
+% With x=mu^2, d s_4(sqrt(x+w))/dx=-1/[3(x+w)]+O(log(x+w)).
+% Thus d eta/dx=(1/(3*pi))log x+O(1), and integrating proves the displayed
+% x log x term. Its sign is negative for small mass. The coefficient per
+% continuum four-component cone is m^2 log(ma)/(12*pi); eight cones give
+% 2m^2 log(ma)/(3*pi), agreeing with the direct chain result. The finite
+% O(mu^2) coefficient is regulator- and orientation-dependent.
+% For 100 the finite coefficient is fixed without fitting a small-mass
+% decimal. Put F(w)=s_4(sqrt(w)) and c=1/(3pi). Subtract the endpoint
+% singularity in eta'(y)=int_0^2 rho(w)F'(w+y)dw, y=mu^2:
+% b=int_0^2 [rho(w)F'(w)+c/w]dw-c(log2+1).
+% The bracket is integrable at w=0, since F'(w)=-1/(3w)+O(log w)
+% and rho(w)=1/pi+O(w); the density's logarithm at w=1 is integrable.
+% Indeed eta'(y)=c log y+int[rho F'+c/w]-c log2+O(y log y), so
+% eta(y)=eta(0)+c y log y+b y+O(y^2 log y). The elliptic expansion
+% F(w)=2log4/3-(log w)/3+w[5/12-log2+(log w)/4]+...
+% fixes the remainder order. No numerical b has been computed here.
+% This finite-part formula was checked directly by endpoint subtraction
+% after the existing RED supplied its independently derived expression.
+%
+% [R] Primitive-plane construction: let n be a primitive integer normal,
+% choose integer t,u,v with n.t=1, n.u=n.v=0 and det(t,u,v)=1. Coordinates
+% x=j t+l u+s v give physical layer spacing a/|n| and one site per tangent
+% cell of physical area |n| a^2. The half-space is j>=0. Fourier transform
+% l,s, retain all four orbitals at every j, and compute the actual half-chain
+% covariance. eta_n=(1/|n|) int dtheta dphi/(2*pi)^2 S_half[h_n(theta,phi)].
+% For 100 choose (t,u,v)=(e_x,e_y,e_z).
+% For 110 choose (e_x,-e_x+e_y,e_z), hence phase triple (k,k+theta,phi).
+% For 111 choose (e_x,-e_x+e_y,-e_x+e_z), hence (k,k+theta,k+phi).
+% These are exact integer changes of the actual lattice, with no omitted
+% internal layers and no arbitrary area normalization. For a general
+% integer n, hopping by e_i shifts j by n_i; the chain can have longer range.
+% The 110 and 111 chain symbols are specified without assuming the 100
+% elliptic answer applies to them. The infrared mass logarithm is invariant
+% under these coordinate changes after division by physical area.
+%
+% [R] For the actual sphere A_R={x in Z^3: |a x-x0|<R}, the native proof
+% below establishes S(A_R)=(R^2/a^2)int_{S^2}eta_n(mu)dOmega+o(R^2/a^2)
+% on the infinite parent at each fixed mu>=0, including the massless sea,
+% uniformly in the digital centre offset. Hence
+% eta_sphere=(1/(4*pi))int eta_n dOmega. A numerical sphere extrapolation
+% still needs its finite-parent/state, lattice-position/shape and
+% subleading infrared controls rather than an imposed area-only fit.
+% Three high-symmetry normals do not determine the angular average.
+% The decimal 0.9116 has no validated sphere producer in the source record
+% read here and cannot stand in for this calculation. No g_n-weighted
+% radial/shell chain computes this actual 3D bipartition.
+%
+% GENUINE NATIVE SPHERE ASYMPTOTIC: INDEPENDENT CONTINUATION [R].
+% This derivation was saved before reading the existing RED's new sphere
+% source or the primary continuum point-singularity theorem supplied as a
+% literature pointer. It uses the actual three-dimensional covariance,
+% a positive finite-range Fourier approximation, and a lattice-point
+% discrepancy estimate proved below. No shell or angular multiplicity
+% replacement of the cut is made.
+%
+% SA1. Domain and native kernel. Work on the infinite cubic parent,
+% a=1 temporarily, at each FIXED mu>=0. Let P be the full four-component
+% occupied projector and P_z its translation-invariant matrix kernel.
+% At mu=0 the eight point nodes have measure zero and their assigned
+% values do not change this infinite-parent operator. There is a constant
+% C_mu such that ||P_z||<=C_mu(1+|z|)^(-3) for z!=0. For mu>0 this
+% follows already from smoothness of the gapped periodic symbol, and
+% exponential decay is available but unnecessary. At mu=0 partition a
+% neighborhood of each node into dyadic annuli of radius delta. On each,
+% the normalized Dirac symbol has derivatives of order j bounded by
+% C_j delta^(-j). Its Fourier contribution is bounded by
+% C_N delta^3(1+delta|z|)^(-N). Summing annuli below and above
+% delta=1/|z|, with N>3, gives C|z|^(-3); the smooth complement decays
+% faster. This proves the bound from the sine symbol rather than from
+% a continuum cone substituted into the ultraviolet covariance.
+%
+% Let A_r(theta)={x in Z^3:|x-theta|<r}, r=R/a, theta=x_0/a,
+% and T_A=1_A P 1_Ac. Since P is a projector,
+% S(A)=Tr F(|T_A|), F(s)=h((1-sqrt(1-4s^2))/2), 0<=s<=1/2.
+% This is an exact singular-value identity for the actual finite C_A.
+% The matrix size is four times the actual number of sites in A.
+%
+% SA2. Uniform surface bounds and a controlled finite-range approximation.
+% For 0<p<=2, the block-entry Schatten bound is
+% ||T_A||_p^p<=sum_{x in A,y outside A}Tr|P_(x-y)|^p.
+% One proof applies trace subadditivity of X^(p/2) first to columns and
+% then to the four-dimensional column Gram matrices. For 0<q<1 the
+% needed subadditivity follows from
+% X^q=(sin(pi q)/pi)int_0^infinity t^(q-1)X(t+X)^(-1)dt:
+% in each positive summand replace (t+sum X_j)^(-1) by the larger
+% (t+X_j)^(-1) inside its trace. Finite truncation and monotone bounds
+% justify the infinite exterior. For a digital ball, uniformly in theta,
+% #{x in A:x-z outside A}<=C r^2 |z| for r>=1,z!=0.
+% The boundary-tube count proves this for |z|<=r; the volume bound
+% proves it for |z|>r. Thus ||T_A||_p^p<=C_mu,p r^2 whenever p>4/3.
+% In particular p=3/2 supplies the uniform bound needed below.
+%
+% Define the three-dimensional Fejer approximation by
+% P^(L)_z=w_L(z)P_z,
+% w_L(z)=product_i (1-|z_i|/(L+1))_+.
+% Its symbol is the convolution of P(k) with a nonnegative normalized
+% product Fejer kernel. Therefore 0<=P^(L)<=1, it has actual finite
+% hopping range L in each coordinate, and ||1_A P^(L)1_Ac||<=1/2.
+% It is not asserted to be a projector or a different reference state.
+% Put T_L=1_A P^(L)1_Ac and S_L(A)=Tr F(|T_L|).
+% The preceding Schatten-3/2 bound also holds for T_L, uniformly in L.
+% The exact kernel bound and 1-w_L(z)<=C min(1,|z|/L) imply
+% ||T_A-T_L||_2^2<=C_mu r^2 log(2+L)/L^2.                (SA2)
+% Indeed the radial sum below L is L^(-2)sum_{s<=L}s^(-1),
+% and the remaining sum is O(L^(-2)).
+%
+% F'(s)=2s log[(1+sqrt(1-4s^2))/(1-sqrt(1-4s^2))]
+%            /sqrt(1-4s^2)
+% has a finite limit at 1/2 and is bounded by C s^(3/4) at zero and
+% throughout this interval. The singular-value Hilbert-Schmidt inequality
+% sum_j(s_j(T)-s_j(T_L))^2<=||T-T_L||_2^2 follows directly from the
+% trace inequality Re Tr(T^dag T_L)<=sum_j s_j(T)s_j(T_L).
+% Applying the scalar mean-value bound, Cauchy--Schwarz and the two
+% Schatten-3/2 bounds gives the UNIFORM entropy error
+% |S(A_r)-S_L(A_r)|<=C_mu r^2 sqrt(log(2+L))/L.           (SA3)
+% This step handles the entropy singularity at occupation 0 and 1.
+% A volume-times-uniform-projector error would not prove the area limit.
+%
+% SA3. Finite-range polynomial surface functional.
+% Write g(t)=F(sqrt(t)), 0<=t<=1/4. Its modulus of continuity is at
+% most C delta(1+|log delta|), since g'(t)<=C(1+|log t|).
+% The degree-J Bernstein polynomial p_J(t) for g(t), after rescaling
+% x=4t, obeys p_J(0)=0 and
+% ||g-p_J||_infinity<=C log(2+J)/sqrt(J).
+% This follows by applying that modulus to the binomial variance bound.
+% T_L T_L^dag has rows only within distance sqrt(3)L of the boundary,
+% so its rank is <=C r^2(L+1), for r>=2sqrt(3)L. Consequently
+% |S_L(A_r)-Tr p_J(T_L T_L^dag)|/r^2
+%       <=C(L+1)log(2+J)/sqrt(J).                        (SA4)
+%
+% Expand p_J(t)=sum_{j=1}^J c_j t^j. Each trace is a finite sum of
+% closed, alternating inside/outside paths of 2j native matrix steps.
+% For one such path let I be its finite set of inside offsets, containing
+% the starting offset 0, and O its outside offsets. Every offset has
+% length <=2sqrt(3)jL. Its coefficient is the actual spin trace of the
+% ordered product P^(L)_(z_1)...P^(L)_(z_(2j)).
+% For a unit normal n define its permitted normal-depth interval length
+% b_(I,O)(n)=[min_{u in O} n.u-max_{v in I} n.v]_+.
+% Define eta_(L,J)(n) by the same full path sum with its anchor count
+% replaced by b_(I,O)(n). This is a finite continuous function of n,
+% with physical normal length and all four orbitals retained.
+%
+% SA4. Digital sphere count, including the offset error.
+% For any fixed finite I,O, and B bounding their offsets,
+% N_r(I,O;theta)
+%  =r^2 int_(S^2)b_(I,O)(n)dOmega+O_(I,O)(r^(3/2)+r B^2), (SA5)
+% uniformly in theta and in the convention for points exactly on the
+% sphere, for r>=4B. Here N counts the actual lattice anchors satisfying
+% every inside and outside condition. The following direct lattice proof
+% avoids assuming a smooth area expansion for the digital cut.
+%
+% First let K_r(S)=intersection_{t in S}(B_r-t), with M=|S|.
+% Its boundary consists of at most M spherical patches. On the patch
+% of the sphere centred at -t_i the other ball conditions are caps
+% n.(t_j-t_i)<=-|t_j-t_i|^2/(2r). For a Fourier direction e and
+% u=e.n, a cap's allowed azimuthal arc is nested as its threshold
+% (c-a u)/(b sqrt(1-u^2)) changes; that threshold has at most one
+% critical point, since its derivative has numerator c u-a.
+% Hence the total variation in u of its azimuthal length is <=4pi.
+% The symmetric difference bound for intersections of arcs gives
+% total variation <=C M for the patch's azimuthal length l_i(u).
+% This remains valid for b=0 by the direct step-function limit.
+% The divergence theorem and one-dimensional integration by parts then
+% give, for |xi|r>=1,
+% |Fourier[1_Kr](xi)|
+% <=(r^2/|xi|)sum_i |int_-1^1 u l_i(u)exp(-ir|xi|u)du|
+% <=C M^2 r/|xi|^2.                                    (SA6)
+% Edges have zero surface measure and require no additional facet term.
+%
+% Convolve with a nonnegative smooth radius-delta mollifier. The resulting
+% counts for K_(r-delta) and K_(r+delta) sandwich the exact lattice count.
+% Their volume difference is <=C M r^2 delta. Poisson summation and
+% (SA6) bound the nonzero Fourier modes by C M^2 r/delta, uniformly
+% under translations because their phase has modulus 1. Choosing
+% delta=r^(-1/2) proves
+% |#(Z^3 intersection(theta+K_r))-Vol K_r|<=C M^2 r^(3/2).
+% Apply inclusion--exclusion to the outside conditions, using at most
+% 2^|O| intersections. Finally write an anchor as (r+s)n:
+% |(r+s)n+t|<r is s<-n.t+O(B^2/r), uniformly for |s|<=2B.
+% Its mixed inside/outside interval therefore has length b_(I,O)(n)
+% up to O(B^2/r), and its radial Jacobian is r^2+O(rB).
+% This proves (SA5). In particular the leading answer is independent
+% of the digital centre offset, not merely of an average over offsets.
+%
+% Summing the paths gives, for r>=8sqrt(3)JL,
+% |Tr p_J(T_L T_L^dag)/r^2-int eta_(L,J)(n)dOmega|
+%        <=C_(mu,L,J) r^(-1/2).                         (SA7)
+% The constant is finite and can be bounded directly by the finite path
+% sum. For example, with Z_L=sum_z||P^(L)_z||<=C_mu log(2+L),
+% it is bounded by a universal multiple of
+% sum_(j=1)^J |c_j| 2^j(1+jL)^2 Z_L^(2j).
+% This explicitly retains growing path length; an r limit is never
+% taken with an uncontrolled truncation radius.
+%
+% SA5. Identification with actual planes and removal of the approximations.
+% The same path density for a half-space is b_(I,O)(n). For primitive
+% integer normal n_0, the normal offsets n_0.x are integers. The permitted
+% interval has an integer number of layers and each layer has physical
+% site density 1/|n_0|. Thus its count per face area is exactly b for
+% every offset of the cut, agreeing with the unimodular-chain area factor.
+% For an irrational normal, smoothed tangential counting and Poisson
+% summation leave no nonzero reciprocal lattice vector parallel to n.
+% This gives the same strip density, independently of its translation.
+% To justify that limit, smooth both the bounded normal strip and the
+% tangential test. Their Fourier factors are bounded by
+% C_N(1+|n.k|)^(-N)(1+|Pi_tan k|)^(-N) for tangent scale >=1,
+% a summable majorant for N>3; then use dominated convergence and remove
+% the normal smoothing. Rational normals use the exact layer count above
+% instead of discarding their reciprocal-lattice resonances.
+%
+% One can define the planar entropy density using finite slabs: take the
+% tangential thermodynamic limit first, then send the face separation
+% to infinity and divide by the two physical face areas. Side faces
+% disappear in the first limit. Spatial inversion combined with the
+% on-site matrix beta preserves P and P^(L), so eta_n=eta_(-n) and
+% the two faces have the same coefficient. Per face, the crossing-pair
+% density is at most |z|, so the Schatten and Fejer errors above are
+% uniform in the face separation. For fixed L,J the two faces decouple
+% once their separation exceeds the path diameter. This proves that
+% the actual planar coefficient eta_n(mu) exists and
+% sup_n |eta_n-eta_(L,J)(n)|
+% <=C_mu[sqrt(log(2+L))/L+(L+1)log(2+J)/sqrt(J)].          (SA8)
+% In particular eta_n is the uniform limit of continuous functions of
+% the unit physical normal. For rational normals it is exactly the
+% full four-component half-chain coefficient already derived above;
+% no extra valley or shell count is introduced.
+%
+% Combining (SA3),(SA4),(SA7),(SA8) proves the genuine native theorem:
+% S(A_r(theta))/r^2 -> int_(S^2)eta_n(mu)dOmega             (SA9)
+% uniformly in theta, at each fixed mu>=0, INCLUDING mu=0. An explicit
+% error bound is
+% C_mu[sqrt(log(2+L))/L+(L+1)log(2+J)/sqrt(J)]
+%                  +C_(mu,L,J)r^(-1/2), r>=8sqrt(3)JL.
+% First choose L, then J, then r. If desired a very slow single-parameter
+% rate follows: the Bernstein coefficients have sum|c_j|<=C 9^J, so
+% J=ceil(L^4), L=floor[(log r)^(1/5)] makes C_(mu,L,J)=exp[o(log r)]
+% and yields an O_mu(log log r/(log r)^(1/5)) normalized error for large r.
+% This is a conservative proof rate, not a proposed finite-size fit.
+%
+% Restoring a gives S=(R^2/a^2)int eta_n(ma)dOmega+o(R^2/a^2);
+% eta_sphere=(1/(4pi))int eta_n dOmega. The result determines the leading
+% coefficient and excludes an area-times-log(R/a) leading term for the
+% point-node sea. It does not determine subleading logarithms, a spherical
+% decimal, or a uniform simultaneous small-mass expansion of the angular
+% integral. The constants here may depend on fixed mu. The matter vacuum
+% cut is independent of g=G/a^2; its entropy ratio to A/(4G) is 4g eta_sphere.
+% The parent is infinite: a finite-parent numerical joint limit still
+% needs control of its actual covariance and boundary conditions. A
+% different rough digital shape is not covered merely by calling it a
+% sphere. The exact ball convention and arbitrary centre offsets are covered.
+%
+% SHORT REMOTE CHECK SPECIFICATION (no implementation/execution by author).
+% Decision: establish current declared-operator agreement, count and shape.
+% Concrete evaluation: ellipk takes its PARAMETER. Put x=1/(1+M^2),
+% y=M^2/(1+M^2), Kx=ellipkm1(y) near y=0 and otherwise ellipk(x),
+% Ky=ellipk(y). Then s4={log4-(log x+log y)/2+(x-y)2 Kx Ky/pi}/3.
+% rho(w)=2 ellipk(w(2-w))/pi^2; near w=1 use the stable equivalent
+% 2 ellipkm1((1-w)^2)/pi^2 so rounding does not set its parameter to 1.
+% Evaluate eta_100(mu) at
+% mu=0,0.1,0.3,1,2 by the one-dimensional w quadrature, split at 0,1,2;
+% do not evaluate a singular endpoint literally. Refine tolerances and
+% endpoint treatment until successive answers differ by <=1e-9. Compare
+% eta_100(0) to 0.78658(1), tolerance 1e-5; report actual quadrature errors
+% and refinement, not extra fitted digits. Check int_0^2 rho(w)dw=1.
+% Four-component covariance controls in a=1 units: h_on=mu beta+
+% alpha_2 sin k_y+alpha_3 sin k_z and forward hopping T=-i alpha_1/2.
+% Use triples (mu,k_y,k_z)=(0,0.37,0.82),(0.2,0.11,0.29),(0.7,1.1,0.4),
+% L=64,128 open sites, fill the 2L negative modes, restrict to L/2 sites.
+% With M=sqrt(mu^2+sin^2 k_y+sin^2 k_z), require the length shift and
+% discrepancy with s4(M) each <=1e-8 nats. At the first triple also
+% compare twice the two-component open-chain answer and the periodic
+% half-ring answer divided by two, tolerance 1e-8. Zero hopping, mu=1 is
+% an exact product control, entropy <=1e-10. Use entropy eigenvalues
+% with a numerical endpoint rule that does not itself add appreciable S.
+% Check -[s4(2M)-s4(M)]/log2 at M=1e-4 is within 1e-6 of 2/3.
+% At M=100,200, s4*4M^2/[1+log(16M^2)] approaches 1: error at 100
+% <=5e-4 and decreases on doubling. No small-M finite-chain estimate
+% is requested. Independent RED verified this bounded specification;
+% implementation and remote execution are Sol's, no scientific job here.
+% 110/111 and full 3D spheres belong to the solve lane, not this short run:
+% integer-plane chains, one cut and sqrt2/sqrt3 area factors must agree
+% with literal 3D planar cuts; spheres use actual C_A and variations in
+% R/a, parent size and center registry. No local scientific execution.
+% [N] Actual bounded-run files declared_area_short_check.py and
+% declared_area_short_check.json read in full by author and RED. All 22
+% specified controls pass. The final quadrature gives eta_100(mu)=
+% (0.7865833865531384,0.7775665001787156,0.7283689543728176,
+%  0.4779741959713022,0.2485203024963171) for the five listed masses.
+% The largest final refinement shift is 1.10e-13, with no integration
+% warnings. Full four-component finite-chain errors are <=2.69e-11 nats;
+% the independent two-component multiplicity check differs by 1.45e-10,
+% and the periodic two-boundary check by 2.14e-12. Omitted numerical
+% endpoint entropy is <=8.0e-12. The density normalization, product state,
+% c/6 slope and four-Schmidt heavy-mass checks all meet the stated limits.
+% These checks establish this 100 number and its count conventions only.
+% The printed eight decimals are justified by quadrature refinement and
+% convention checks; they do not purport to certify a separate 3D solver.
+%
+% Actual native planar and sphere-control intake, at matched scope.
+% [X] The executed planar producer uses the full four-component occupied
+% projector, an integer unimodular basis with the primitive normal as
+% the last inverse-basis row, a transverse Fourier transform, and a long
+% interval entropy divided by two. Its physical-area divisor is |p|.
+% These are exactly the reduction/count conventions derived above, checked
+% independently by coordinate transformation and by inspection of the
+% actual interval_covariance in full_numerics/orient/lattice_entropy.py,
+% the strandS_sphere_v5/v6 and flat-table routines, and the J1 aggregation.
+% The factor 8 in its quarter-domain integral comes from four transverse
+% zeros and inversion, not an extra field/valley multiplier. This proves
+% method agreement for planes, not that a radial chain computes a sphere.
+%
+% The actual J1_sphere_perray_v1 records and producer give the 100 flat
+% table 0.7865833865649032, agreeing with the independent exact-chain
+% quadrature 0.7865833865531384 to about 1.2e-11. Its separate per-ray
+% reassembly is 0.786583288259068, differing by about 9.8e-8. These are
+% distinct numerical controls and are not averaged into extra precision.
+% The raw 110 and 111 values are 0.8691788362387852 and
+% 0.9233818782026293. The aggregator combines six normals with fixed
+% angular weights into 0.9010502938344216. That is a six-normal surface
+% quadrature, not an actual spherical restriction or a converged angular
+% integral. Its mesh name alone does not supply an angular error bound.
+%
+% The per-ray inner approximation uses the correct massless leading log,
+% with each ray's subleading coefficients fitted on a massless gap ladder.
+% For nonzero mass it then substitutes the total gap sqrt(m^2+g_0(q)^2).
+% A tilted chain is not in general a function only of that total gap, so
+% the substitution needs a separate error control. That control DOES
+% exist as obs_innerform_control_v1.py and its actual md/json: eight saved
+% quadrature nodes per normal at m=0.035355339059327 and 0.05 compare
+% direct chain entropies at the ladder length and at L=1600 with the form.
+% The tilted sampled differences reach about 0.001--0.005 nats; multiplied
+% by the inner-disc weight about 0.000796, the reported relative indicators
+% are up to 4.31e-6. These are useful sample checks. A maximum over eight
+% selected nodes is not a certified supremum over the disc, so the field
+% named implied_rel_bound_perray is a coverage indicator, not a proved
+% quadrature error bound. Outer quadrature, interval size and angle
+% refinement remain separate controls. No full tilted/sphere acceptance
+% follows solely from this statistic or from massive_check=null in a
+% different file; the actual external control has been considered.
+%
+% Actual genuine 3D cut control: the remote J45 smoke is produced by
+% obs_box3d_v1.py, as its list_smoke_v1.txt and executed log specify;
+% it is not the later v2 candidate. Read the native operator, initial
+% projector, CF4 evolution, region/Gram entropy and executed smoke paths,
+% plus launch list and actual smoke_L32 JSON/md/log. The operator has
+% all four native components, nearest-neighbor sine hopping, endpoint-
+% averaged two-step flow, and antiperiodic wrap signs in all directions.
+% Its initial flat projector uses the corresponding shifted momenta.
+% For a literal ball A it computes C_A=Z^dag Z with
+% Z=P_in U^dag Pi_A (in an orthonormal occupied-band representation).
+% This is an actual 3D restriction; no shell degeneracy surrogate appears.
+%
+% At a=1,L=32,R=8,m=0 the ball has 8704 native modes and flat entropy
+% 753.3870744650644. The prescribed formation gives 756.217798800413
+% at zero hold and 756.9099747651015 at hold 12/kappa; the fp64-Gram
+% value for the latter is 756.9098311740368, formed from stored complex64
+% propagated vectors, not a full complex128 propagation. These are finite-box state
+% results, not a large-R coefficient. The full L=12 pure-parent control
+% gives complement differences about 6.0e-11 and 3.4e-9 in complex128;
+% the complex64 discrepancies are 0.0137 and 0.0236. FFT/dense and
+% compressed-Gram controls agree near machine precision. The smaller
+% R<5 time-step comparison changes entropy by 0.00491, while its precision
+% comparison changes it by 0.00368; no full R=8 time-step ladder is supplied.
+%
+% The L=32 flow profile has face speed 0.6484 and maximum speed 1.9156.
+% The nominal truncation radius 20 exceeds the box half-width 15.5, so
+% this is an antiperiodic finite-parent profile with appreciable boundary
+% flow, not an isolated exterior with a negligible boundary collar.
+% Its long hold 12/kappa=192 and the formation interval do not exclude
+% returns across this small parent. The evolved state is the transported
+% flat sea on that prescribed history, not its instantaneous ground state.
+% With that sea as the declared reference its own mean sources vanish;
+% these data therefore neither self-source the profile nor establish a
+% Gauss-energy emission flux. They do supply a genuine finite 3D cut
+% algorithm/control, while the requested size/parent/registry asymptotic
+% and its matching planar/spherical coefficient remain to be computed.
+%
+% Further actual 3D cut controls, with executed paths kept separate.
+% Read compute-host:<internal>/J45
+% list_v3_v1.txt, out/j4test3_{gram,direct}.log and
+% out/j4_L24_test3{g,d}.json, together with the executed
+% code/obs_box3d_v3.py profile/stencil/propagator/sea, region/Gram/direct,
+% entropy and mode_j4 paths. The list and traceback identify v3; both
+% JSON records were saved before the markdown writer's NoneType failure.
+% The actual v3-to-v4 source diff is also read, without assigning v4 to
+% those results. The continuum geometry is prescribed: L/a=24, r_s/a=4,
+% R_m/a=2, ma=0, N=1; a quintic taper already acts from r/a=2 to 10.
+% It therefore modifies the exterior near the nominal r_s itself.
+% The physical state is the flat sea transported through the imposed
+% ramp t_r/a=8, dt/a=1 and holds kappa t=0,1. This is a full4 Cartesian
+% covariance restriction to actual ball sites, with no shell multiplicity.
+%
+% The direct result is not an admissible covariance: on the r_s ball
+% its first hold has lambda_min=-.134973 and 554 negative eigenvalues,
+% with pre-symmetrization maximum asymmetry .0305414. The next hold
+% remains defective. The producer's entropy routine clips eigenvalues
+% to [0,1]; that does not turn these values into physical entropies.
+% v3 feeds the inverse-FFT projection into a CUDA kernel that assumes
+% contiguous memory; clone/empty_like preserve the possible permuted
+% strides. v4 explicitly makes those operands contiguous. The direct
+% and partner forward legs use the affected path. This defect does not
+% invalidate the separate Gram route merely by sharing the source file:
+% that route only propagates the contiguous site basis before its FFT.
+%
+% The Gram record gives S_ball=187.833946 and 187.466382 against the
+% same parent's flat value 186.143947. The particle/hole spectral-pair
+% defects are 3.33e-7 and 2.93e-7; its PH and plain entropies differ by
+% .000436 and .000399. Z is stored in complex64 and slab products use
+% complex64 before accumulation in complex128. Larger-ball eigenvalues
+% cross [0,1] by order 1e-7, so PSD in exact Gram algebra is not itself
+% a finite-precision error certificate. The r_s ball's displayed spectrum
+% lies inside [0,1]. These are finite-control observations with their
+% stated precision, not a demonstrated asymptotic area coefficient or
+% a matched converged direct/Gram comparison. No solved Gauss state,
+% ell independence, g dependence, large-radius/parent/time convergence
+% or collapse-state universality follows. Its profile fixes r_s/a and
+% leaves g=G/a^2 unspecified; a self-consistent g-dependent interpretation
+% remains a separate requirement. The smallball3 result is assessed in
+% declared_local_area.tex as an instantaneous spectral comparator.
+%
+% SOURCES (read-only predecessor scope; no retired construction imported).
+% Binding GOAL_alt.md duties 2(c), 6; THINK_simpler_than_induced.md
+% sections 8,9,12. Their numerical requests are claims to check, not inputs.
+% Ledger predecessor backfill/review_output/validation_requotes_reviewa_20260910:
+% <internal>/result.md
+% sections 1a--1d read, and original full_numerics/ee_area_3d.py read in full.
+% It explicitly tests two two-component chains against one full four-
+% component chain and corrects 0.786 to 0.7866. Only this operator/count and
+% its numerical planar result carry over; none of its gravity comparisons.
+% Ledger predecessor web/fresh-934, original response section 1 read:
+% review_output/web_returns/71_20261004_p5_r3/FRESH934_20261004-2206_derive-area-law/response.md.
+% Its native free Gaussian chain integral is relevant; its changed operator,
+% interactions, geometry selectors and other branches are not used.
+% Ledger predecessors lane_z/W-002 and lane_z/W-008 and supersedes edge
+% read; original w09_dynamic_entropy_and_exact_vacuum_v3.py header read.
+% The exact single-sea chain formula supersedes a spurious linear-in-mass
+% chain artifact; no signed inventory or gravitational matching is imported.
+% Ledger lane_z/paper-P5-0-inventory-result-20261013 and relevant edges:
+% sphere coefficient lacks a located producer; no sphere evidence inherited.
+% Primary sources actually read: Eisler, arXiv:2410.16433v1 section V
+% (64)--(72), https://arxiv.org/html/2410.16433v1#S5; the explicit on-site
+% mapping and component/boundary count are derived above. Calabrese--Cardy,
+% hep-th/0405152v3, section IV.A equations (43)--(55) and its concluding
+% scope read fully at https://arxiv.org/pdf/hep-th/0405152: the stress-tensor
+% scaling argument supplies c/6 for one boundary, only in the scaling
+% limit. It does not supply eta(0). The current full author source, all
+% SOURCES, independent redteam_declared_area_law.tex, and the numerical
+% implementation/output were actually read; mandatory RED repairs made.
+% Actual raw J1 source/result paths read under
+% <internal>/: code/obs/obs_sphere_perray_v1.py,
+% code/obs/obs_innerform_control_v1.py, code/strandS/strandS_sphere_v5.py,
+% strandS_sphere_v6.py and the flat-table dependency, together with
+% results/task4/J1/J1_sphere_perray_v1.md/json and the actual per-normal
+% records, J1_innerform_control_v1.md/json, and the stated observable spec.
+% The native basis/projector dependency
+% <internal>/lattice_entropy.py
+% was read fully. Only its free single-field covariance is used.
+% Remote J45 inputs were read in place at
+% compute-host:<internal>/:
+% code/obs_box3d_v1.py, code/launch_obs_J45_v1.sh, list_smoke_v1.txt and
+% out/smoke_L32.json, .md and .log. Source identity is taken from the
+% executed launch/log, not from a version label or an inferred live job.
+%
+% ACTUAL SPHERE PROOF / SOURCES COMPARISON AFTER INDEPENDENT SAVES.
+% The complete current redteam_declared_area_law.tex and all SOURCES
+% were read. Its independently saved SP1--SP5 proof uses a weighted
+% polynomial approximation of h(C_A), rather than the Fejer/Schatten
+% crossing-block construction above. I checked its diagonal Jensen bound
+% Tr[C_A(1-C_A)]^alpha<=C R^2 for alpha>1/3, the endpoint-weighted
+% polynomial error, and the absolute first-diameter moment of closed
+% paths: the marked-edge radial sum is bounded by
+% sum_x |x|(1+|x|)^(-6)log(2+|x|)^(j-2), which converges in dimension 3.
+% Its curved-height second-derivative sum gives O_l(R^(3/2)) for each
+% fixed nonzero Fourier harmonic, uniformly in offset. Equidistribution
+% then supplies the digital erosion count and controls exact boundary
+% hits. This agrees with the independently checked spherical-patch
+% Fourier/mollifier discrepancy proof in SA4.
+%
+% Integrating its true half-space local entropy over normal depth gives
+% the same eta_n: for primitive normals the layer width and area are
+% exactly 1/|n_0| and |n_0|; continuity and the strip count identify
+% irrational normals. I also checked its positivity bound
+% eta_n>=2 I_mu^2 sum_i|n_i|>0, where
+% I_mu=int_BZ sin^2(k_i)/sqrt(mu^2+sum_j sin^2(k_j))d^3k/(2pi)^3:
+% h(c)>=2c(1-c) and P_(e_i)=-(i/2)alpha_i I_mu give it directly.
+% This is a fixed finite-mu statement, not a mass-uniform lower bound.
+% Its finite-parent sufficient condition d_R h(epsilon_R/d_R)=o(R^2),
+% with d_R=4|A_R| and actual restricted-covariance trace error epsilon_R,
+% follows from eigenvalue trace-norm control and binary-entropy concavity.
+% No existing numerical sequence is asserted to meet that condition.
+% The two named native methods agree on the fixed-mu, infinite-parent,
+% offset-uniform sphere theorem. This is original-pair [R] agreement;
+% it does not supply a new external [X] or a numerical sphere coefficient.
+%
+% Primary context checked after the independent save: Finster--Lottner--
+% Sobolev, arXiv:2310.03493v3, Conditions 3.2/3.3 and Theorems 3.4/3.5,
+% https://arxiv.org/html/2310.03493v3. These allow finitely many singular
+% points of matrix symbols and an endpoint-singular entropy function,
+% but assume decaying continuum symbols on R^d. They are not invoked
+% as a lattice/torus theorem. The actual native decay, site restriction,
+% physical-normal coefficient and offset arithmetic are proved above.
+%
+% ACTUAL CPU V5 CUT CONTROL [N, FINITE PRESCRIBED STATE].
+% SOURCES read in place at compute-host:<internal>/:
+% cputest_v5b.sh, status.txt, out_cpu/b_j4_{gram,direct}.log,
+% out_cpu/j4_L10_b_{gram,direct}.json and .md, and the actual executed
+% code/obs_box3d_v5.py profile, native stencil/CPU dispatch, CF4 and
+% Chebyshev propagation, FlatSea, Gram/direct, entropy, partner, spectral
+% filter, mode_j4 and writer/main paths. The launcher and both completed
+% logs identify v5 on the CPU. That route calls apply_h_ref and does
+% not exercise the CUDA forward-leg contiguity repair.
+%
+% The matched records have L/a=10, nominal r_s/a=2, R_m/a=1, ma=0,
+% N=1, ramp duration 4a, dt=a and holds kappa t=0,1. They restrict
+% the actual full-four-component covariance to cell-centred balls of
+% radii 1.5a,2a,2.5a,3a, with 32,128,224,544 modes. Their quintic
+% taper has R1/a=-5,R2/a=3, so it modifies every physical radius;
+% the recorded maximum site speed is .14937065. No untapered horizon
+% or hydrodynamic large-ball limit is tested by these named radii.
+%
+% The direct complex128 blocks have maximum asymmetry <=5.40e-16,
+% and every reported restricted eigenvalue is strictly between 0 and 1.
+% At radius 2a their entropies at the two holds are 40.47592599336
+% and 40.47451057749, against the same-parent flat 40.47409909557.
+% The matched particle/hole Gram entropies are 40.47591695071 and
+% 40.47450582741. Across all eight ball/hold comparisons the largest
+% direct/PH-Gram difference is 7.83e-5 nats; direct/plain-Gram differs
+% by at most 2.55e-6. The producer explicitly stores the Gram amplitudes
+% and slab products in complex64 despite complex128 propagation, while
+% direct blocks remain complex128. Its PH pair defects are <=9.26e-8.
+% This is a useful matched finite-route control at its stated precision,
+% not an area-coefficient measurement or a validation of the GPU branch.
+% The common partner routine also obeys ||Cw-<w,Cw>w||^2=n(1-n)
+% to about 1.1e-17; it is the same routine in both route records.
+%
+% The R0 comparator is the frozen erf-filtered spectral sea at widths
+% .4/a and .2/a, not the transported reference. Its generic note about
+% Fermi pockets does not describe this executed L10 matrix: the flat
+% antiperiodic gap is sqrt(3)sin(pi/10)/a, while the two-step flow obeys
+% ||V||<=sum_i||v_i||_infinity/(2a)<=3 v_max/(2a). Thus the actual
+% matrix has a gap greater than .31/a. The width-dependent radius-3a
+% entropy changes from 113.86912093 to 111.65568149; two widths and the
+% printed diagonal projector-defect statistic are not a certified
+% zero-width entropy limit. Neither this spectral comparison nor a
+% four-radius alpha R^2+beta R^2 log R fit establishes a large-radius
+% transported-state law. The JSON holds contain the actual shell
+% observations; write_j4_md reuses its later fits/R0 rows in the shell
+% table, so that displayed table does not report the shell observations.
+%
+% The state is the prescribed transported flat sea itself. Relative to
+% that same declared reference its mean source is zero. The run gives
+% neither a solved g=G/a^2-dependent geometry nor an emission energy
+% balance, ell limit, parent/time convergence or new spherical decimal.
+% FINAL CPU COMPARISON: the complete current author/RED sources and
+% SOURCES were read. Their executed-route, precision, actual-gap and
+% finite-state interpretations agree; no mandatory repair remains.
+% This [N/R] control does not extend the existing planar [X] scope.
+%
+% REQUIRED J7 V3 COEFFICIENT INTAKE / SOURCES [R,N; supplied records].
+% This substantive author judgment was saved before reading the original
+% RED's new J7-v3 comments or judgment. It serves the already named
+% 04_results.tex:219--235 and 07_page_curve.tex:128--134 coefficient
+% sentences. No new calculation, run, mesh, fit or foreign copy was made;
+% the delivered rendered core and sphere proof are unchanged.
+%
+% Actual full sources read:
+% <internal>/solve_a
+% TASK4_J7_note_v3.md;
+% <internal>/review_output
+% reviewb_azure_redteam_R25b_20261015_103852/result.md;
+% that worktree's code/obs/obs_J7_assemble_v2.py,
+% results/obs/J7/J7_assemble_v2.{json,md},
+% code/strandS/strandS_sphere_v7.py and
+% code/strandS/launch_J7_mesh{2,3,4}_v1.sh.
+% The complete executed remote producer
+% compute-host:<internal>/code
+% strandS_sphere_v7.py equals the read local source. Its imported
+% s3_entropy/code/orient/{lattice_entropy.py,sphere.py} were read in place.
+% The normal, norm, pnorm_rule, fit-residual, symmetry/gap-control and
+% eta_massless fields of all 22 contributing t4b/J7/sphere_*_{m3,m4}.json
+% records were read in place, together with the relevant fit coefficients
+% and producer parameters; their massless values match the assembler.
+%
+% There is actual mathematical agreement on the target and normalization.
+% lattice_entropy.py uses the same four-component sine projector over
+% the full native Brillouin zone. The v7 interval covariance has two
+% faces, so entropy/2 is the one-face coefficient; the unimodular
+% transverse transform and divisor |p| give physical-area units.
+% Its corner/inversion multiplicity is already inside that integral:
+% no further spin, valley or face multiplier belongs in J7.
+% The cubic fundamental spherical triangle has area pi/12. The
+% assembler's solid-angle weights 12*area/pi sum to one and average
+% the three vertex coefficients. It therefore approximates exactly
+% eta_sph(0)=(4pi)^(-1) int_S2 eta_n(0)dOmega, which is the leading
+% infinite-parent digital-ball coefficient proved in SA1--SA9.
+% This is a matched analytic identification and a supplied numerical
+% quadrature of its integrand, not two independent numerical evaluations
+% of the decimal or a direct digital-ball covariance calculation.
+%
+% The actual assembler records q2=0.901050844913132,
+% q3=0.9110206892763673 and q4=0.9144758924050518, with respectively
+% 6,10,15 normals and 22 distinct normals in their union. Meshes 2 and
+% 4 are nested; mesh 3 is not. The delivered 0.9145 is the appropriate
+% rounding of q4, with the reported mesh3-to4 change about +0.0035.
+% R25b's assumed q_M=q_infinity+c/M^2 gives about 0.91895 from
+% meshes 2 and 4 and predicts mesh 3 to about 2.54e-5. This supports
+% the stated consistency with second-order angular convergence.
+% Neither the assembler nor R25b proves that expansion or bounds the
+% limiting error. The reported 0.5 percent is only q4's distance from
+% that labelled extrapolation, not a certified total accuracy.
+%
+% The per-normal values also retain their actual numerical scope.
+% The launchers use v7's default L<=480, nfft=4L, muL=24 and
+% pnorm_rule=false. The inner massless integral uses the phi=0 fit
+% throughout, although the separate phi=pi/4 fit is also recorded and
+% its subleading coefficients differ. The largest stored fit-ladder
+% residual is about 2.73e-5; this is a sampled residual, not a uniform
+% inner-disc or angular error. The 32-point corner/inversion test is
+% at mass 0.1, while J7 reads only eta_massless. These records do not
+% aggregate finite-interval/FFT, inner-fit and outer-quadrature errors
+% into a certified error on q4. sphere.py's unused error/convergence
+% routines cannot supply such a bound to this assembler.
+%
+% Paper-facing disposition: a flat massless estimate eta_sph about
+% 0.9145, explicitly labelled mesh 4 with the +0.0035 resolution change
+% and optional assumed-order extrapolation about 0.919, is supported
+% at this numerical scope and targets the theorem's actual coefficient.
+% Calling the theorem plus J7 two independent decimal determinations,
+% or the extrapolation distance a true 0.5-percent accuracy, would
+% overstate the evidence. The genuine J4-cut/parent comparison remains
+% separate. No new mandatory repair of the sphere theorem follows.
+% This massless flat calculation does not itself measure eta_sph(ma)
+% at nonzero fixed physical mass or transfer the coefficient to a
+% formed inhomogeneous continued-reference state. Those are the
+% existing local-area/accounting domains, not new gates for reporting
+% the supplied quadrature. No numerical physical spacing is selected
+% here, and no changed entropy or other source is part of this save.
+% ACTUAL J7-V3 PAIR COMPARISON: complete current author and RED sources,
+% rendered cores, every SOURCES block and actual endings were read after
+% both independent saves. Native normalization, mesh/extrapolation error
+% scope and flat-massless versus formed/fixed-physical-mass domains agree.
+% No mandatory repair remains; the rendered core is unchanged.

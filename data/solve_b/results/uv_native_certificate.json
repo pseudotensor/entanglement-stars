@@ -1,0 +1,169 @@
+{
+  "scope": "T10 order-four polar-law arithmetic; reviewed analytic bounds plus directed interval evaluation",
+  "execution": {
+    "single_process_pid": 932011,
+    "niceness": 10,
+    "assigned_gpu_uuid": "GPU-1c907351-ed3d-0d52-5072-e791dde9df56",
+    "cuda_allocation_bytes": 1048576,
+    "cuda_context_in_this_single_job_process": true
+  },
+  "arithmetic": {
+    "library": "mpmath.iv",
+    "decimal_precision": 80,
+    "nodes_weights": {
+      "order": 32,
+      "all_roots_certified_by_disjoint_exact_sign_brackets": true,
+      "maximum_root_bracket_width": "0.0000000000000000000000000000000000007524",
+      "weight_sum": {
+        "lower": "1.999999999999999999999999",
+        "upper": "2.000000000000000000000001"
+      }
+    },
+    "binary64_contract": {
+      "FE_TONEAREST": true,
+      "ties_to_even_checks": true,
+      "gradual_underflow_and_FTZ_DAZ_off_checks": true,
+      "sqrt": "Seed only; every output certified by outward squared-endpoint inequalities",
+      "basic_operations": "IEEE binary64; one nextafter outward per +,-,*,/ primitive",
+      "reduction": "Pairwise additions, each widened outward; no BLAS or arithmetic vendor reductions",
+      "kernel_reference_cases_enclosed": 6,
+      "reference_cases_are_diagnostics_not_a_replacement_for_the_interval_operation_proof": true
+    },
+    "outer_aggregation": "Sequential outward mpmath.iv scalar additions; dense binary64 reductions alone are pairwise",
+    "constants": {
+      "recipe": "Exact rational Machin arctan brackets, positive atanh sums with bounded tails, integer-square sqrt2 brackets",
+      "pi": {
+        "lower": "3.141592653589793238462643",
+        "upper": "3.141592653589793238462644"
+      },
+      "log2": {
+        "lower": "0.693147180559945309417232",
+        "upper": "0.693147180559945309417233"
+      },
+      "sqrt2": {
+        "lower": "1.414213562373095048801688",
+        "upper": "1.414213562373095048801689"
+      },
+      "log40": {
+        "lower": "3.688879454113936302852455",
+        "upper": "3.688879454113936302852456"
+      },
+      "log1000": {
+        "lower": "6.907755278982137052053974",
+        "upper": "6.907755278982137052053975"
+      }
+    },
+    "serialization": "Exact dyadic endpoints rounded outward to decimal strings",
+    "compact_nodes_weights": {
+      "order": 24,
+      "all_roots_certified_by_disjoint_exact_sign_brackets": true,
+      "maximum_root_bracket_width": "0.0000000000000000000000000000000000007524",
+      "weight_sum": {
+        "lower": "1.999999999999999999999999",
+        "upper": "2.000000000000000000000001"
+      }
+    }
+  },
+  "newton": {
+    "scope": "Continuum full-source Newton coefficient k0/Omega^2; same symmetric rectangle with delta=0",
+    "finite_interval": [
+      "0",
+      "4"
+    ],
+    "panels": 18,
+    "panel_tiling": "Exact rational [0,1/10] and geometric panels through4, ratio<=5/4",
+    "quadrature_arithmetic_enclosure": {
+      "lower": "0.622436620041682668403225",
+      "upper": "0.622436620041682668403226"
+    },
+    "analytic_Gauss_absolute_error_upper": "0.000000000000487653933655",
+    "positive_radial_tail_upper_T22f": "0.000000131765431320549660",
+    "k0_enclosure": {
+      "lower": "0.622436620041195014469571",
+      "upper": "0.622436751807601642886540"
+    },
+    "mass_change_upper_T22f2_at_delta_001": "0.000075442845345857394805",
+    "k_delta_enclosure_uniform_0_lt_delta_le_001": {
+      "lower": "0.622361177195849157074767",
+      "upper": "0.622436751807601642886540"
+    },
+    "native_spacing_condition_threshold": {
+      "lower": "0.586708782213962965778413",
+      "upper": "0.586708782213962965778414"
+    },
+    "native_spacing_condition_pass": true,
+    "T22l_conservative_k0_lower_minus_0001": "0.622336620041195014469571",
+    "T22l_conservative_spacing_condition_pass": true
+  },
+  "native_entropy": {
+    "scope": "T22i compact positive native planar lower integral; Omega=m4=1, P=1",
+    "mass_squared_pilot": [
+      "0.000001",
+      "0.5000005",
+      "0.5000005",
+      "1"
+    ],
+    "Q_interval": [
+      "0.1",
+      "4"
+    ],
+    "Q_split": "1",
+    "normal_interval": [
+      "-96",
+      "96"
+    ],
+    "normal_panel_center": [
+      "-0.0125",
+      "0.0125"
+    ],
+    "panel_ratio": "1.25",
+    "Gauss_order_per_panel": 24,
+    "Bernstein_ellipse_parameter": "3",
+    "layout": {
+      "normal_panels_full": 83,
+      "normal_positive_nodes": 996,
+      "normal_triangle_pairs": 496506,
+      "transverse_panels": 18,
+      "transverse_nodes": 432,
+      "worker_threads": 4,
+      "worker_FP_contract_checks": {
+        "workers_checked": 4,
+        "FE_TONEAREST_ties_to_even_gradual_underflow_FTZ_DAZ_off": true,
+        "np_seterr_over_invalid_divide_raise_underflow_ignore_in_every_worker": true,
+        "interval_kernel_reference_cases_enclosed_in_every_worker": 6
+      },
+      "panel_tiling_exact_rational_verified": true,
+      "symmetry": "Exact reflected Gauss nodes; 4 times off-diagonal plus 2 times diagonal for F(p,q)+F(p,-q)"
+    },
+    "quadrature_arithmetic_enclosure": {
+      "lower": "0.983877165195772093350993",
+      "upper": "0.983877168611403412462710"
+    },
+    "single_variable_ellipse_bound_T22j": {
+      "lower": "15320259245.698870309563217421438773",
+      "upper": "15320259245.698870309563217421438774"
+    },
+    "analytic_tensor_absolute_error_upper_T22k": "0.000000497033266827499313",
+    "pilot_positive_lower_bound": "0.983876668162505265851680",
+    "mass_stability_D_upper_T22g": "0.000007703276259014010599",
+    "positive_native_lower_bound_uniform_0_lt_delta_le_001": {
+      "lower": "0.978378347908246440649850",
+      "upper": "0.978378347908246440649851"
+    },
+    "matched_target_upper_from_k0": "0.977721363401527389214928",
+    "uniform_margin_over_matched_target": {
+      "lower": "0.000656984506719051434922",
+      "upper": "0.000656984506719051434923"
+    },
+    "uniform_ratio_lower_bound": {
+      "lower": "1.000671954742231855275114",
+      "upper": "1.000671954742231855275115"
+    },
+    "strict_entropy_excess_pass": true,
+    "omissions": "Q outside[0.1,4], normal momenta outside[-96,96], w-1 and excess native kernel are nonnegative and discarded",
+    "status": "Executed arithmetic enclosure; independent source/result audit still required before adopting the physics conclusion"
+  },
+  "complete": true,
+  "elapsed_seconds": 578.280554626137,
+  "caveat": "The executed enclosure concerns only the declared uniform native planar cut and mass/spacing scope. It supplies no stellar-state, spherical-cut, thermodynamic or general mass-rectangle result. Adoption requires independent source/result review."
+}

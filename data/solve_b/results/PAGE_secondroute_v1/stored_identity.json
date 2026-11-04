@@ -1,0 +1,58 @@
+{
+  "scope": "Algebraic identity on the actual saved heavy covariance; not a contraction of a light production state.",
+  "runtime": {
+    "host": "compute-host",
+    "pid": 1786091,
+    "threads": 1,
+    "niceness": 10,
+    "device": "CPU"
+  },
+  "source": "<internal>/orbitals_c19_rs64_A_R2_tau8_ell4_avg_r11_T0012.00.npz",
+  "channel": 1,
+  "clock_rs": 12.0,
+  "cut_rs": 2,
+  "cut_convention": "X consists of stored R < 2 r_s; both components",
+  "selected_site_count": 127,
+  "occupation_min": 1.0,
+  "occupation_max": 1.0,
+  "orthogonality": {
+    "sea_gram": {
+      "frobenius": 6.7348228884227545e-12,
+      "operator": 8.19781572279854e-13
+    },
+    "dust_gram": {
+      "frobenius": 5.014216203503301e-14,
+      "operator": 3.854594427215421e-14
+    },
+    "sea_dust_frobenius": 1.9336534224537207e-12,
+    "sea_dust_operator": 1.07656276040178e-12
+  },
+  "term_scales": {
+    "lhs": {
+      "frobenius": 0.24376493896772544,
+      "operator": 0.15640262662777604
+    },
+    "KK": {
+      "frobenius": 0.24376493896772583,
+      "operator": 0.15640262662779647
+    },
+    "impurity": {
+      "frobenius": 1.037365242194863e-12,
+      "operator": 3.7719220061998594e-13
+    },
+    "physical_impurity": {
+      "frobenius": 0.0,
+      "operator": 0.0
+    }
+  },
+  "identity_residual": {
+    "frobenius": 2.4842653898596207e-15,
+    "operator": 7.025246185526992e-16
+  },
+  "relative_operator_residual": 7.025246185526992e-16,
+  "general_minus_physical_impurity": {
+    "frobenius": 1.037365242194863e-12,
+    "operator": 3.7719220061998594e-13
+  },
+  "entropy_interpretation": "requires separate covariance physicality control"
+}

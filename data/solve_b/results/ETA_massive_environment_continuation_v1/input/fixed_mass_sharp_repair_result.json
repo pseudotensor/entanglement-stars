@@ -1,0 +1,57 @@
+{
+  "status": "incomplete",
+  "science_specification": "ETA_massive_directions_v2.tex V2.5, V2.8 and necessary repair V2.10",
+  "purpose": "insert I6a; item 7 light-cut ratio",
+  "y": "1/25",
+  "scope": "eta110 and eta111 at fixed mass, then support and conditional ratio",
+  "resources": {
+    "wall_seconds": 300,
+    "internal_save_deadline_seconds": 295,
+    "address_space_bytes": 805306368,
+    "threads": 1,
+    "nice": 10,
+    "cuda": "disabled"
+  },
+  "quadrature": {
+    "bits": 192,
+    "rule110": "8x8 Gauss-Legendre",
+    "complex_rectangle_halfwidth_factor": 4,
+    "analytic_error110": "(16/3)*4^-16*cell_area*M",
+    "cell_sum_width110": "1e-4",
+    "final_direction_width": "2e-4",
+    "piece_width111": "2e-5",
+    "evaluation_limit": 1000000,
+    "created_cell_limit110": 10000,
+    "real_bound_fallback": "nonnegative S<7"
+  },
+  "finite_sums": {
+    "central": "2*hF(delta)",
+    "paired_terms": "j=1..31",
+    "tail_start": 32,
+    "complex_tail": "V2.5a before density and Jacobian"
+  },
+  "counts": {
+    "evaluations": 0,
+    "created_cells": 0,
+    "refused_images": 0,
+    "refusals_by_reason": {}
+  },
+  "guard_samples": {},
+  "tail_radius_maxima": {},
+  "attempts111": [],
+  "panels": [],
+  "results": {},
+  "pieces111": [],
+  "accepted_subcharts111": [],
+  "enclosure_repair": {
+    "sqrt": "V2.10a rectangle intersected with midpoint disk and finite raw principal image",
+    "phase": "V2.9a C,D,U,V,k; V2.10b chi and principal chi root",
+    "Kc": "V2.9 midpoint radius rho/(2a), intersected with finite raw image",
+    "RF": "V2.9 midpoint radius (rho_x+rho_y)/(6a^(3/2)), intersected with finite raw image",
+    "complex_box110": "V2.10c entire entropy modulus, including all j",
+    "point_and_111": "unchanged central and j1..31 terms with J32 tail"
+  },
+  "error": "ModuleNotFoundError: No module named 'flint'",
+  "elapsed_seconds": 0.00032440200448036194,
+  "peak_rss_kib": 13248
+}

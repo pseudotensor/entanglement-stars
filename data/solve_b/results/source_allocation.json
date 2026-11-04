@@ -1,0 +1,239 @@
+{
+  "scope": "A0 single free positive-orientation polar packet on prescribed commuting fields; no interacting completion, full T1 inventory, internal ruler, or stellar claim.",
+  "ring": {
+    "parameters": {
+      "nsite": 8,
+      "spin_dimension": 2,
+      "a": 1.0,
+      "m": 0.7,
+      "psi": [
+        1.0,
+        1.07,
+        0.96,
+        1.02,
+        1.04,
+        0.99,
+        1.03,
+        0.97
+      ],
+      "N": [
+        1.0,
+        0.98,
+        1.02,
+        1.01,
+        0.99,
+        1.03,
+        1.0,
+        0.97
+      ],
+      "orientation": "+"
+    },
+    "algebra": {
+      "min_singular_value_A": 0.6829152807093594,
+      "unitarity_error_frobenius": 9.685700544627982e-15,
+      "E0_square_error_frobenius": 9.116326196905827e-15,
+      "E1_square_error_frobenius": 7.469727963645822e-15,
+      "E1_polar_conjugacy_error_frobenius": 5.901029261277633e-15,
+      "block_diagonalization_error_frobenius": 1.3411215172164728e-14,
+      "base_sea_projector_error_frobenius": 7.26780234493268e-15,
+      "lapse_change_sea_projector_error_frobenius": 5.905866087263428e-15,
+      "base_sea": {
+        "rank": 16,
+        "spectral_gap": 0.6882967557452184,
+        "min_eigenspace_overlap_singular_value": 0.9999999999999997,
+        "max_eigenspace_overlap_deviation": 4.440892098500626e-16
+      },
+      "unit_lapse_sea": {
+        "rank": 16,
+        "spectral_gap": 0.6917982856917981,
+        "min_eigenspace_overlap_singular_value": 0.9999999999999994,
+        "max_eigenspace_overlap_deviation": 6.661338147750939e-16
+      }
+    },
+    "vacuum": {
+      "W0": -0.030905264149466663,
+      "clock_derivative": [
+        0.03334659012803487,
+        -0.24915374771001425,
+        0.23024063409584197,
+        -0.06522361069464479,
+        -0.09827082214137572,
+        0.11555414328068012,
+        -0.1397531923769852,
+        0.13295851259792943
+      ],
+      "clock_affinity_error_absolute": 4.163336342344337e-17,
+      "constant_L_W0": 2.3314683517128287e-15,
+      "inverse_psi_weighted_clock_derivative_sum": 2.3314683517128287e-15
+    },
+    "finite_differences": [
+      {
+        "step": 0.001,
+        "max_particle_source_error_frobenius": 2.3672268741397823e-13,
+        "max_hole_transpose_error_frobenius": 2.3672268741397823e-13,
+        "max_projected_dirac_source_error_frobenius": 5.409218607191754e-13,
+        "max_vacuum_source_error_absolute": 3.1780134079895106e-14,
+        "max_perturbed_sea_projector_error_frobenius": 7.923640362352134e-15
+      },
+      {
+        "step": 0.0001,
+        "max_particle_source_error_frobenius": 2.3393069813403502e-12,
+        "max_hole_transpose_error_frobenius": 2.3393069813403502e-12,
+        "max_projected_dirac_source_error_frobenius": 5.383698643693291e-12,
+        "max_vacuum_source_error_absolute": 1.8443579996585413e-13,
+        "max_perturbed_sea_projector_error_frobenius": 8.688822170674177e-15
+      },
+      {
+        "step": 1e-05,
+        "max_particle_source_error_frobenius": 1.771355141144575e-11,
+        "max_hole_transpose_error_frobenius": 1.771355141144575e-11,
+        "max_projected_dirac_source_error_frobenius": 4.48707409041716e-11,
+        "max_vacuum_source_error_absolute": 1.6171231020933874e-12,
+        "max_perturbed_sea_projector_error_frobenius": 8.815503459506382e-15
+      }
+    ],
+    "midpoint_comparison": {
+      "scope": "Two different nonuniform-clock laws in the same polar positive-excitation chart.",
+      "site_rows": [
+        {
+          "site": 0,
+          "polar_source_frobenius": 1.358072897629724,
+          "midpoint_source_frobenius": 1.2113700624507218,
+          "difference_frobenius": 0.6763432126366358,
+          "difference_relative_to_polar": 0.4980168692100941,
+          "polar_min_eigenvalue": -8.518396050806995e-17,
+          "hole_min_eigenvalue": -8.518396050806995e-17,
+          "midpoint_min_eigenvalue": -0.008683052258384815
+        },
+        {
+          "site": 1,
+          "polar_source_frobenius": 1.4716779396945465,
+          "midpoint_source_frobenius": 1.2084349090477273,
+          "difference_frobenius": 0.6592973670143993,
+          "difference_relative_to_polar": 0.4479902492465434,
+          "polar_min_eigenvalue": -7.052178319307432e-17,
+          "hole_min_eigenvalue": -7.052178319307432e-17,
+          "midpoint_min_eigenvalue": -0.008189265986038065
+        },
+        {
+          "site": 2,
+          "polar_source_frobenius": 1.2816735705671838,
+          "midpoint_source_frobenius": 1.226975407759948,
+          "difference_frobenius": 0.7022319096634903,
+          "difference_relative_to_polar": 0.5479023097532775,
+          "polar_min_eigenvalue": -4.035891983628786e-16,
+          "hole_min_eigenvalue": -4.035891983628786e-16,
+          "midpoint_min_eigenvalue": -0.007384009933186033
+        },
+        {
+          "site": 3,
+          "polar_source_frobenius": 1.404052536140471,
+          "midpoint_source_frobenius": 1.2103422241061854,
+          "difference_frobenius": 0.6720951112192228,
+          "difference_relative_to_polar": 0.47868230989896654,
+          "polar_min_eigenvalue": -1.6190652352235676e-17,
+          "hole_min_eigenvalue": -1.6190652352235676e-17,
+          "midpoint_min_eigenvalue": -0.008315476139094922
+        },
+        {
+          "site": 4,
+          "polar_source_frobenius": 1.3995712872993729,
+          "midpoint_source_frobenius": 1.1986261795216169,
+          "difference_frobenius": 0.6538618588929479,
+          "difference_relative_to_polar": 0.46718724857141536,
+          "polar_min_eigenvalue": -4.3650080142997196e-16,
+          "hole_min_eigenvalue": -4.3650080142997196e-16,
+          "midpoint_min_eigenvalue": -0.007723544182738957
+        },
+        {
+          "site": 5,
+          "polar_source_frobenius": 1.314491852185995,
+          "midpoint_source_frobenius": 1.2075292054608584,
+          "difference_frobenius": 0.6741334475056833,
+          "difference_relative_to_polar": 0.5128471860701167,
+          "polar_min_eigenvalue": -4.7186619478069276e-17,
+          "hole_min_eigenvalue": -4.7186619478069276e-17,
+          "midpoint_min_eigenvalue": -0.007356038659024591
+        },
+        {
+          "site": 6,
+          "polar_source_frobenius": 1.4432914251208973,
+          "midpoint_source_frobenius": 1.2142941043729691,
+          "difference_frobenius": 0.6768194496578174,
+          "difference_relative_to_polar": 0.4689416412219893,
+          "polar_min_eigenvalue": -1.195780144426935e-16,
+          "hole_min_eigenvalue": -1.195780144426935e-16,
+          "midpoint_min_eigenvalue": -0.00812722049508823
+        },
+        {
+          "site": 7,
+          "polar_source_frobenius": 1.3356497785834258,
+          "midpoint_source_frobenius": 1.2248117450981693,
+          "difference_frobenius": 0.7014467765307413,
+          "difference_relative_to_polar": 0.5251726820744038,
+          "polar_min_eigenvalue": -4.263034402463722e-17,
+          "hole_min_eigenvalue": -4.263034402463722e-17,
+          "midpoint_min_eigenvalue": -0.007653637588910933
+        }
+      ],
+      "uniform_clock_polar_source_sum_error_frobenius": 6.755247338785821e-17
+    }
+  },
+  "uniform_vertices": {
+    "parameters": {
+      "p": 0.0,
+      "m": 0.7,
+      "psi": 1.2,
+      "a": 0.1
+    },
+    "rows": [
+      {
+        "q": 0.04,
+        "d_a_q": 0.03999989333341867,
+        "omega_q": 0.7005509266449185,
+        "raw_spin_trace_vertex_difference_over_d_squared": 0.3441278715137728,
+        "half_spin_trace_vertex_difference_over_d_squared": 0.1720639357568864,
+        "half_spin_trace_target": 0.1722332451499118,
+        "half_spin_trace_error_absolute": 0.00016930939302542414,
+        "half_spin_trace_singular_square_difference_over_d_squared": -0.12046843969449673,
+        "singular_square_scalar_target": -0.12056327160493828,
+        "singular_square_target_error_absolute": 9.483191044154515e-05,
+        "singular_square_isotropy_error_frobenius": 4.7910821394252946e-17
+      },
+      {
+        "q": 0.02,
+        "d_a_q": 0.01999998666666933,
+        "omega_q": 0.7001377728542907,
+        "raw_spin_trace_vertex_difference_over_d_squared": 0.34438176031211143,
+        "half_spin_trace_vertex_difference_over_d_squared": 0.17219088015605571,
+        "half_spin_trace_target": 0.1722332451499118,
+        "half_spin_trace_error_absolute": 4.236499385609771e-05,
+        "half_spin_trace_singular_square_difference_over_d_squared": -0.12053954604076715,
+        "singular_square_scalar_target": -0.12056327160493828,
+        "singular_square_target_error_absolute": 2.37255641711287e-05,
+        "singular_square_isotropy_error_frobenius": 9.81398149089086e-14
+      },
+      {
+        "q": 0.01,
+        "d_a_q": 0.009999998333333416,
+        "omega_q": 0.7000344457900388,
+        "raw_spin_trace_vertex_difference_over_d_squared": 0.3444453030890088,
+        "half_spin_trace_vertex_difference_over_d_squared": 0.1722226515445044,
+        "half_spin_trace_target": 0.1722332451499118,
+        "half_spin_trace_error_absolute": 1.0593605407421824e-05,
+        "half_spin_trace_singular_square_difference_over_d_squared": -0.1205573391120681,
+        "singular_square_scalar_target": -0.12056327160493828,
+        "singular_square_target_error_absolute": 5.932492870175388e-06,
+        "singular_square_isotropy_error_frobenius": 3.9252426664097597e-13
+      }
+    ]
+  },
+  "validation_flags": {
+    "algebra_errors_below_1e_minus_10": true,
+    "clock_fd_errors_below_1e_minus_8": true,
+    "constant_L_W0_below_1e_minus_10": true,
+    "polar_source_nonnegative_to_1e_minus_10": true,
+    "scalar_vertex_error_decreases_under_halving_q": true,
+    "singular_square_error_decreases_under_halving_q": true
+  }
+}

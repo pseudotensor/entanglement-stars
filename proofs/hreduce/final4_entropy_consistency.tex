@@ -1,0 +1,353 @@
+\documentclass[10pt]{article}
+\usepackage[margin=0.8in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\newcommand{\Tr}{\operatorname{Tr}}
+\begin{document}
+\begin{center}\textbf{Which entropy is tied to the Newton coefficient?}\end{center}
+
+\paragraph{Consistency target.}
+Use $\hbar=c=k_B=1$ and $\ell_P^2=G$.
+$G$ is defined by the Cavendish measurement; the single condition
+$k_a(1)=(2\pi G)^{-1}$ constrains the inventory of $H_*$ at its chosen
+spacing. Suppose the physical exterior is the locked Schwarzschild
+exterior, its regular quantum state has the surface-gravity temperature,
+and the quasistationary first law holds at fixed charges and fixed $G$.
+Then, with energy $E$ read at infinity,
+\[
+ R_H=2GE,\quad \mathcal A=16\pi G^2E^2,\quad
+ T_H=\frac1{8\pi GE},\qquad
+ dS=\frac{dE}{T_H}=d\!\left(\frac{\mathcal A}{4G}\right).
+\]
+Thus $S=\mathcal A/(4G)+S_0$ on that family. An additive constant
+cannot repair an incorrect leading area coefficient. This is a
+consistency requirement conditional on the stated exterior,
+temperature and thermodynamic regime, not a temperature calculation
+for the microscopic flow law. It contains no entropy calibration or
+choice of spacing in Planck units.
+
+\paragraph{The precise regulated replica identity.}
+Fix a finite regulator, a positive Hilbert space and a specified
+factorizing regional algebra. For a state with finite entropy and reduced density
+matrix $\rho_A$, cyclic gluing of the \emph{same} transfer operator
+defines $Z_a(n)/Z_a(1)^n=\Tr\rho_A^n$. Writing $W_a=-\log Z_a$ gives
+the exact spectral identity
+\begin{equation}
+ S_A=\left.\partial_n[W_a(n)-nW_a(1)]\right|_{n=1}.
+ \label{eq:ec-replica}
+\end{equation}
+It holds by diagonalizing $\rho_A$; zero eigenvalues use $0\log0=0$.
+It is an identity about the chosen algebra, fields, state and cutoff,
+not an identity for an arbitrary stiffness functional.
+
+To identify its leading local area term with Newton renormalization,
+require that the same gluing has a covariant effective-action
+description at the retained scale, with one curvature term
+\[
+ W_{a,\mathrm{loc}}[g]=-Z_R(a)\int\sqrt g\,R+\cdots,
+ \qquad \delta(1/G)_a=16\pi Z_R(a),
+\]
+and no unaccounted independent seam term, boundary term, edge sector
+or curvature-contact contribution. Smooth the cone compatibly with
+the same regulator and take its controlled local-area limit.
+For a planar or locally stationary bifurcation cut,
+\[
+ \int\sqrt{g_n}R_n-n\int\sqrt{g_1}R_1
+        =4\pi(1-n)\mathcal A+O((n-1)^2).
+\]
+Equation~\eqref{eq:ec-replica} then gives
+\begin{equation}
+ S_{\mathrm{area},a}=4\pi Z_R(a)\mathcal A
+       =\frac{\mathcal A}{4}\,\delta(1/G)_a.
+ \label{eq:ec-same-fields}
+\end{equation}
+This is the conditional lattice version: the regulated replica
+identity is exact, while identifying its area response with the
+bulk curvature coefficient requires the stated effective-action
+and cut-matching properties. A spatial lattice or a uniform
+relativistic dispersion alone does not establish them. Higher
+curvature and nonlocal entropy terms are outside the area identity.
+For nonminimal couplings or a constrained algebra the appropriate
+contact and edge contributions must be included explicitly; they
+cannot silently be called ordinary site entropy.
+
+If the entire Newton coefficient is induced by these same fields
+with this cutoff, \eqref{eq:ec-same-fields} is
+$\mathcal A/(4G)$. If there is an independent gravitational term,
+its area contribution must be counted as well; the field entropy
+alone is not generally the entire result. The conical curvature
+calculation and the exterior first-law calculation agree on the
+target coefficient under their respective stated premises.
+% [X]: conical-curvature entropy and surface-gravity first law for
+% the conditional area target. No exact finite-a covariance of H_*
+% or black-object temperature is inferred.
+
+\paragraph{The polar coefficient is a different known object.}
+For the actual scalar-source law,
+\[
+ W_0=\sum_s\eta_s\Tr[N\psi(E_{s1}-E_{s0})],\qquad
+ k_a(1)\longrightarrow\frac{3J}{\pi^2},\qquad
+ J=\sum_s\eta_sm_s^2\log(m_s^2/\mu^2)>0.
+\]
+The strictly positive nondegenerate rectangle has
+$\eta=(+,-,-,+)$ and $\sum\eta=\sum\eta m_s^2=0$.
+This coefficient is the gradient splitting between chosen fermion
+and boson polar channels. It is not obtained by integrating all
+physical packets with minimal covariant metric coupling.
+
+There is a finite-lattice test independent of continuum terminology.
+At homogeneous unit fields the positive and reversed fermion packets
+have Hamiltonians related by the site-local Dirac-block swap
+$\tau_1\otimes I$. This unitary factorizes across the site cut, so
+the two orientations have identical cut spectra and entropy.
+Reversing every orientation instead sends the scalar-source vacuum
+functional and its stiffness to their negatives. The same-field
+site entropy is unchanged. Thus the polar stiffness and the native
+cut entropy cannot obey a universal orientation-independent
+same-field identity across this explicit positive-norm family.
+
+The bosons make the distinction sharper. Each native oscillator
+block is $b^\dagger B b+\tfrac12\Tr B$. Its empty state is the
+product annihilated by every site $b_x$, even when $B$ is nonlocal;
+its native-site cut entropy is zero. The assigned zero-point term
+still contributes to the polar gradient response. A covariant
+scalar-field cut uses a different local field algebra and coupling;
+it cannot be substituted for these oscillators by counting their
+components.
+
+The coefficient comparison is explicit. For one minimally coupled
+4-component Dirac cone, the spin connection and $R/4$ potential in
+its square give $\operatorname{tr}_4a_1=-R/3$. Consequently
+\[
+ S_D/\mathcal A=\frac1{24\pi}\int_0^\infty\frac{dt}{t^2}e^{-m^2t},
+ \qquad \delta(1/G)_D=\frac1{6\pi}
+                   \int_0^\infty\frac{dt}{t^2}e^{-m^2t},
+\]
+with the same regulator in both expressions. Grouping the rectangle
+\emph{before} removing the regulator replaces the integral by $J$.
+The 8 sine valleys then give
+\begin{equation}
+ \lim_{a\to0}\frac{S_{\rm gr}(a)}{\mathcal A}=\frac{J}{3\pi},\qquad
+ k_{\mathrm{Dirac,gr}}:=\frac{\delta(1/G)_{\mathrm{Dirac,gr}}}{2\pi}
+       =\frac{2J}{3\pi^2},\qquad
+ \frac{k_{\mathrm{Dirac,gr}}}{k_{*,\mathrm{cont}}}=\frac29.
+ \label{eq:ec-coefficients}
+\end{equation}
+The native cut coefficient is also established without a cone input
+by its exact half-chain Toeplitz spectrum and shifted transverse
+measure. The covariant Dirac check therefore identifies the
+coefficient paired with that formal graded entropy; it does not
+identify it with the polar coefficient. This is a factor $9/2$
+discrepancy, not a free normalization to be fitted.
+% [X]: native Toeplitz/CTM and grouped Dirac-cone coefficient;
+% finite orientation-swap test independently distinguishes the
+% native cut from the chosen polar gradient response.
+
+\paragraph{An analytic lower bound on the unsigned cut.}
+Use $N=\psi=1$, the planar $[100]$ native site cut, one interface,
+and the thermodynamic limits of the graded-cut proof, adding all
+4 packet entropies positively. Write $C_A=P_A P^-P_A$ for one
+packet's restricted sea projector. The elementary binary-entropy
+inequality $h(\lambda)\geq2\lambda(1-\lambda)$ gives
+\[
+ S_s\geq2\Tr C_A(1-C_A)
+ =2\sum_{x\in A,\,y\notin A}\|P^-_{xy}\|_F^2.
+\]
+Retain just the nearest-neighbor bond crossing each boundary cell.
+For $\mu=a m_s\leq1/2$, the full sine-zone projector gives
+\[
+ P^-_{\boldsymbol e_1}=-\frac{i\alpha_1}{2}c_m,\qquad
+ c_m=\int_{[-\pi,\pi]^3}\frac{d^3\theta}{(2\pi)^3}
+ \frac{\sin^2\theta_1}{\sqrt{\sum_j\sin^2\theta_j+\mu^2}}
+ \geq\frac1{\sqrt{13}}.
+\]
+Here $\operatorname{tr}_4\alpha_1^\dagger\alpha_1=4$, so
+$\|P^-_{\boldsymbol e_1}\|_F^2=c_m^2\geq1/13$.
+The denominator is at most $\sqrt{13}/2$ and the zone average
+of $\sin^2\theta_1$ is $1/2$. Thus
+\begin{equation}
+ \eta_+:=a^2\frac{S_+}{\mathcal A}\geq\frac8{13},\qquad
+ \frac{S_+}{\mathcal A/(4G)}\geq
+ \frac{32}{13}\left(\frac{\ell_P}{a}\right)^2>10^4
+ \quad\begin{matrix}a/\ell_P\leq0.0059,\\a m_{\max}\leq1/2.\end{matrix}
+ \label{eq:ec-overshoot}
+\end{equation}
+The full zone and the 4-component Frobenius norm already count the
+8 valleys and internal multiplicities; no extra valley factor is
+inserted. Reversing a packet orientation preserves the bond norm.
+
+The independent exact half-chain spectrum gives the same large
+discrepancy with a weaker bound. Its transverse parameter satisfies
+$t^2=\sin^2\theta_2+\sin^2\theta_3+a^2m_s^2\leq9/4$.
+Put $k=(1+t^2)^{-1/2}$, $k'=\sqrt{1-k^2}$ and
+$\varepsilon=\pi K(k')/K(k)$. The elementary elliptic-integral
+bounds $K(k)\geq\pi/2$ and $K(k')\leq\pi/(2k)$ give
+$\varepsilon\leq C:=\pi\sqrt{13}/2<6$.
+For $F(v)=\log(1+e^{-v})+v/(1+e^v)$,
+$F(v)\geq(1+v)e^{-v}/2$ and $F$ decreases. Retaining only the
+first CTM level, the half-chain factor $2$ and the transverse
+Dirac factor $2$ therefore give
+\[
+ \eta_+\geq16F(C)\geq8(1+C)e^{-C}>\frac7{64}.
+\]
+The last bound uses $C<6$ and $e^6<512$. All 8 sine valleys and
+one interface are already counted by this exact spectral formula.
+It independently yields a ratio greater than $10^4$ under the same
+two scale conditions. These are native planar-cut bounds, not
+microcanonical or horizon-state theorems.
+% [X]: restricted-covariance crossing-bond variance and exact
+% Toeplitz/CTM lowest-level bounds independently establish the large
+% unsigned-cut mismatch. Binary entropy follows from -log x >=1-x.
+% CTM check: K(k') <= pi/(2k), F decreasing,
+% log(1+x)>=x/2 for 0<=x<=1; e<11/4<sqrt8 gives e^6<512.
+% No numerical execution is used.
+
+\paragraph{Positive-state multiplicities cannot be graded.}
+The protected reference is a tensor product over the physical
+packets, so at the native site cut
+\[
+ \rho_A=\bigotimes_s\rho_{A,s},\qquad
+ S(\rho_A)=\sum_sS(\rho_{A,s}),
+\]
+with no orientation signs; the boson factors have zero entropy.
+The formal replica ratio $\prod_s(\Tr\rho_{A,s}^n)^{\eta_s}$
+generates $\sum_s\eta_sS_s$, but is not the replica trace of that
+positive product state. Pauli--Villars subtraction can define an
+effective-action regulator; it does not turn actual positive-norm
+packets into negative multiplicities.
+
+For a specified invariant physical sector with orthogonal projector
+$P_{\rm phys}$ and self-adjoint boundary charge $Q$,
+$[P_{\rm phys},Q]=0$, its finite microcanonical multiplicity is
+\[
+ \Omega(E,\delta E)=
+ \Tr\bigl(P_{\rm phys}\,\mathbf1_{[E,E+\delta E]}(Q)\bigr)
+       \in\{0,1,2,\ldots\}.
+\]
+Every admitted state contributes $+1$, including states involving
+near-surface modes. A signed trace is an index-like quantity, not
+this dimension; adding the sea modes cannot change that fact.
+Neither this positivity nor the vacuum cut proves area scaling of
+$\log\Omega$. A unique gapped entangled vacuum already has one
+global ground state and nonzero regional entropy. For the dressed
+count, an $O(E\log E)$ upper bound requires the stated common-Fock
+restriction, polynomial mode count and region-uniform dressed gap;
+that uniform gap is not supplied by positivity alone.
+% [X]: entropy tensor-product additivity and positive spectral-rank
+% counting; the frozen count note gives occupation/thermal-trace
+% routes for its explicitly conditional upper bound.
+
+Likewise, a temperature divided by an entropy ``overshoot'' follows
+only if the \emph{actual thermodynamic} entropy is
+$S(E)=r\mathcal A(E)/(4G)$ with $r$ independent of $E$ at fixed
+$G$ and cutoff, and with the relevant work terms absent:
+then $T^{-1}=dS/dE=r/T_H$. A vacuum cut ratio by itself does not
+establish that entropy or detailed-balance temperature.
+For an energy-dependent ratio the derivative instead gives
+$T^{-1}=[r+(E/2)r']/T_H$, at fixed $G$ and cutoff.
+
+\paragraph{Scope of the reference coefficient comparison.}
+The source-reported ratio $1.0011$ compares a spherical area density
+with a weighted polarization-sector stiffness under an explicitly
+adopted entanglement-first-law normalization. The source states that
+$\delta S_A=\Tr(\delta\rho_A K_0)$ does not alone fix an absolute
+area coefficient, and reports the planar comparison $0.8638$
+separately. This is a conditional numerical agreement within that
+normalization and state prescription. It is not an independent
+absolute-coefficient theorem for the native $H_*$ cut, and its
+normalization cannot be imported to repair
+\eqref{eq:ec-overshoot}.
+% [S]: actual recovered 06/07 source statements and the flatslice
+% referee's F2.27--F2.29; no numerical execution is claimed here.
+
+\paragraph{Diagnosis and remaining identification.}
+The huge unsigned native-cut excess under the displayed conditions is a
+failed identification with the required first-law entropy, not an
+acceptable entropy of a theory claimed to have that gravity limit.
+The graded diagnostic cancels its cutoff terms but gives $2/9$ of
+the matched area density in the continuum; it is also not a count
+of this positive Hilbert space. Neither result supplies the physical
+entropy required by the exterior consistency test. A consistent
+realization must identify its physical regional algebra and boundary
+state count, and show that their area response is paired with the
+same effective-action coefficient measured by Cavendish. The known
+static polar splitting does not establish this pairing. A change of
+algebra, covariant completion or minimal model change would need
+that demonstration with the same fields and cutoff, not an entropy
+normalization. Tens-of-percent agreement is the stated tolerance;
+an exact rational coefficient is not required, while an orders-of-
+magnitude excess cannot be accepted.
+The physical boundary-charge entropy, its relation to the native
+cut, and the temperature of a self-consistent $H_*$ configuration
+are not supplied by these results. The established conditional
+identity and the explicit failed native-cut identification therefore
+do not constitute a consistent black-object thermodynamics.
+
+\paragraph{SOURCES and check scope.}
+\begin{enumerate}
+\item Governing consistency task:
+\path{<internal>/GOAL_alt.md}, duty 1,
+and \path{<internal>/JUDGMENT_web40c.md},
+Section 14. Its structural proposal is tested here: positivity makes
+state counts unsigned, but does not itself give area scaling or a
+detailed-balance temperature. Those additional assertions require
+the thermodynamic identification explicitly stated above.
+\item Native cut, source law and positive-sector scopes:
+\path{<internal>/final4_graded_cut.tex},
+Sections 1--5 and primary coefficient checks;
+\path{<internal>/final4_foundation_sign.tex},
+the two positive canonical orientations;
+\path{<internal>/final4_count_short.tex},
+the singular-value coercivity condition and two counting bounds.
+These actual frozen sources are read; their computations are not rerun.
+\item Primary Dirac coefficient check already read for the cut proof:
+Frolov--Fursaev--Zelnikov, \url{https://arxiv.org/abs/hep-th/9607104},
+equations (2.11), (3.8)--(3.9), (4.29)--(4.30), including the
+nonminimal-scalar contact distinction. Local extracted source:
+\path{<internal>/FFZ_9607104.txt}.
+The same-field identity is derived above with its own exact premises;
+this source is a coefficient and contact-term check, not a proof
+of a native polar Einstein--Hilbert coefficient.
+\item Susskind--Uglum,
+\url{https://arxiv.org/abs/hep-th/9401070}, Section 3,
+equations (3.11), (3.15)--(3.16), (3.22): same covariant effective
+action, compatible smoothing of the cone, and the curvature
+renormalization underlying the leading area term. Read actual
+Section 3 in
+\path{<internal>/SU_9401070.txt}.
+The continuum argument supplies the conditional effective-action
+check; a finite spatial regulator does not inherit its covariance
+without a separate matching statement.
+\item Jacobson,
+\url{https://arxiv.org/abs/gr-qc/9404039}, pages 1--5, including
+the covariant-cutoff qualification and the entirely induced-gravity
+hypothesis; complete main text read in
+\path{<internal>/Jacobson_9404039.txt}.
+Jacobson--Satz, \url{https://arxiv.org/abs/1212.6824}, Section 2,
+equation (14), footnote 4, and Sections 5--6: nonminimal Wald
+contacts, bulk/boundary matching, and the distinction between a
+Wilsonian partial entropy and an ordinary reduced-state entropy.
+Those actual sections are read in
+\path{<internal>/JacobsonSatz_12126824.txt}.
+Neither paper establishes the required identification for the
+native polar source law or a graded positive-state multiplicity.
+\item Exact source of the $1.0011$ comparison: read-only files
+\path{<internal>/06_hda_einstein.tex},
+the static-sector normalization paragraph, lines 349--378, and
+\path{<internal>/07_spherical_star.tex},
+the sphere-coefficient and entropy-match paragraphs, lines 573--606.
+These are source copies recovered by Sol from
+\path{486f6db9d90:fermion_new/06_hda_einstein.tex} and
+\path{486f6db9d90:fermion_new/07_spherical_star.tex} in the protected
+repository. The actual paragraphs, including the explicit
+normalization limitation, are read here. Corroborating source:
+\path{<internal>/result.md},
+Sections F1.1--F1.4 and F2.25--F2.29; F2.29 explicitly limits its
+first-law check. The history note
+\path{<internal>/NOTES_prior_temperature_entropy_wavelength.md},
+the entropy-normalization discussion, supplies a locator rather
+than an independent numerical check. No source program is executed
+or represented as independently validated by this reconstruction.
+\end{enumerate}
+\end{document}

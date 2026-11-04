@@ -1,0 +1,340 @@
+% Bookkeeping [R]: inbox57/60 PURIFICATION, original AUTHOR second route.
+% Targets/premises were supplied as statements only. Complete independent
+% save/full self-read preceded original-RED and delivered-summary intake;
+% P8 records that bounded comparison. Not a blind prediction of targets.
+\documentclass[10pt]{article}
+\usepackage[margin=0.85in]{geometry}
+\usepackage{amsmath,amssymb}
+\begin{document}
+\setlength{\abovedisplayskip}{4pt}
+\setlength{\belowdisplayskip}{4pt}
+\noindent\textbf{Held evolution: local entropy relaxation and a conditional window.}
+Hold the complete regular self-adjoint native $h$ fixed, including its
+interior and actual source-adjoint fields. For a pure number-conserving
+Gaussian covariance $C_0$, let $U=e^{-iht}$, $C_t=UC_0U^*$, and let
+$P_g$ be its commuting Killing-ground projector,
+with a fixed pure filling of zero modes. This diagnostic is distinct from
+the continued source reference. For the complete complementary cut
+$X=Y^c$, $Q=\Pi_Y$ of finite rank $d$, write
+$s(x)=-x\ln x-(1-x)\ln(1-x)$ and
+$F_d(z)=d\,s(\min\{z/d,1/2\})$. Then, in nats,
+\[
+ |S_X(C_t)-S_X(P_g)|
+ \leq F_d(\|Q(C_t-P_g)Q\|_1)
+ \leq F_d\!\left(\operatorname{Tr}QU|C_0-P_g|U^*Q\right).
+\]
+On an infinite parent, compact $C_0-P_g$ supported in the absolutely
+continuous sector makes the right side tend to zero, with no rate.
+Bound content, its coherences and singular-continuous content remain
+separate. A finite closed parent supplies no such asymptotic conclusion.
+
+Suppose a pure Gaussian comparison $\widetilde C_t$ is obtained from
+$P_g$ by separate side unitaries and a remaining unitary acting on
+$r_X,r_Y$ modes across the cut. If
+$\|Q(C_t-\widetilde C_t)Q\|_1\leq\epsilon$, then
+\[
+ |S_X(C_t)-S_X(P_g)|
+ \leq2\min(r_X,r_Y)\ln2+F_d(\epsilon).
+\]
+Only an actual common-history completion bound $\tau_*$ restricts these
+unfinished modes to first crossings in $(t-\tau_*,t]$. Independent,
+isolated Schmidt pairs with fixed weights give the sharper sum
+$\sum_{j\,\mathrm{unfinished}}s(\nu_j)$, with the stated background and
+residual terms. Entropy is not signed energy or expected particle count.
+Neither the one-ended stationary-vacuum theorem nor the conditional
+annulus estimate $2r_s\ln(1/(a\omega))+O(r_s)$ supplies $\tau_*$.
+These results give no
+area-capacity law or finite deadline for an evolving collapse.
+\end{document}
+
+% P1. Complete state, cut and entropy domain; paired baseline reused.
+% The full native one-particle space contains all actual internal/channel
+% copies, counted once. C0 and Pg are orthogonal projectors. Pg includes
+% the negative spectral subspace and a declared PROJECTOR on ker(h), not
+% a half-filled mixed zero mode. Therefore [h,Pg]=0 and Ct-Pg=U D0 U*,
+% D0=C0-Pg. h is the actual self-adjoint held generator, with regular
+% interior, adjoint fields and complete boundary realization; a held
+% exterior with an evolving interior is not the same hypothesis.
+%
+% With the complete split X+Y=I, the paired projector-block identities
+% imply equal fractional cut occupations up to lambda <->1-lambda.
+% Thus S_X(C)=S_Y(C)=Tr_Y s(QCQ) for each pure Gaussian projector C.
+% Since rank Q=d<infinity, these entropies are finite, <=d ln2, even
+% when X is infinite. The entropy of the cofinite algebra is understood
+% in its pure-state bipartite realization, equivalently by these paired
+% fractional modes. Extra zero/unit modes contribute zero. No subtraction
+% of two infinite entropies is required. If Y grows without bound, the
+% entropy traces and limiting estimates must be established separately.
+% For d=0 all entropies/bounds here are zero by convention.
+%
+% Two finite slabs are not this split. An omitted Z gives the additional
+% X C Z C X contribution in C_X(1-C_X), and missing purifiers cannot be
+% replaced by a canonical auxiliary purification of a stored block.
+% Gaussianity and full purity are essential to the complementary-entropy
+% step; an interacting state's covariance entropy is generally only an
+% upper bound, and a mixed full Gaussian state need not have S_X=S_Y.
+
+% P2. Derivation of both inequalities, with the full one-body trace norm.
+% For contractions A,B on d modes, put delta=||A-B||_1. Ordered eigenvalue
+% differences delta_j=|lambda_j(A)-lambda_j(B)| obey sum delta_j<=delta.
+% Binary entropy satisfies |s(x)-s(y)|<=s(|x-y|): for fixed gap z, the
+% concave function's increment s(x+z)-s(x) is decreasing in x, with
+% endpoint extremes +/-s(z). Hence
+% |Tr s(A)-Tr s(B)|<=sum_j s(delta_j)
+% <=d s(sum_j delta_j/d). If delta<=d/2, concavity and increasing s
+% on[0,1/2] bound this by d s(delta/d); if delta>d/2 use d ln2.
+% This proves F_d(delta). No factor1/2 convention for density-matrix
+% trace distance is used: delta is the ONE-PARTICLE nuclear norm.
+%
+% Now D_t=U D0 U* and -U|D0|U*<=D_t<=U|D0|U*. Compress by Q.
+% If B=B* and -A<=B<=A with A>=0 on the finite interior, let P_+,P_-
+% be B's positive/negative spectral projections. Then
+% Tr|B|=Tr(P_+ B)-Tr(P_- B)
+% <=Tr[(P_++P_-)A]<=Tr A. Thus
+% ||Q D_t Q||_1<=b(t):=Tr[Q U|D0|U* Q].
+% Since F_d is increasing with its plateau, the displayed chain follows.
+% This uses the full coherent D0, not only diagonal particle/hole counts.
+% Finite Q makes b(t) meaningful for every bounded D0; global trace-class
+% disturbance or finite total excitation energy is not needed for this
+% finite-cut inequality. Neither global hypothesis is asserted for an
+% actual prepared state by the local inequality alone.
+
+% P3. Infinite-parent local decay and the retained spectral remainder.
+% Let P_a,P_b,P_s be the a.c., pure-point and singular-continuous spectral
+% projections of the COMPLETE h. A vector psi in H_ac has U(t)psi weakly
+% tending to0: each scalar spectral pairing has an L1 density (by the
+% direct-integral Cauchy--Schwarz inequality), so Riemann--Lebesgue applies.
+% Consequently ||Q U(t)psi||->0 for finite-rank Q.
+%
+% If D0 is compact and D0=P_a D0 P_a, then A=|D0| is compact positive
+% and supported in H_ac. Approximate A in operator norm by finite-rank
+% positive spectral sums A_n=sum_{j<=n} a_j|psi_j><psi_j| in H_ac.
+% Each Tr Q U A_n U* Q tends to0, and the positive tail is bounded by
+% d||A-A_n||, uniformly in t. Taking t then n proves b(t)->0, hence
+% |S_X(Ct)-S_X(Pg)|->0. Trace-class summability is not required here;
+% compactness and FINITE Q are sufficient. This is no quantitative rate,
+% uniform-in-parent/cut result, or monotonic purification statement. The
+% limit is the held ground's cut entropy, generally not zero entropy.
+%
+% More generally set A=|D0| and b_j(t)=Tr[Q U P_j A P_j U* Q]. Then
+% b(t)=||Q U A^(1/2)||_HS^2
+% <=(sqrt(b_a(t))+sqrt(b_b(t))+sqrt(b_s(t)))^2.          (P3.1)
+% This follows by the Hilbert--Schmidt triangle inequality; equivalently
+% each mixed block is bounded by sqrt(b_i b_j). If P_a A P_a is compact,
+% b_a tends to0. The bound block, including internal bound coherences,
+% can remain or oscillate; no decay of b_s is assumed. Even small tails
+% of individual bound modes do not bound an uncontrolled subspace sum.
+% Fixed zero-mode filling belongs to this explicitly retained sector.
+%
+% A finite closed parent has a discrete spectrum and recurrent/quasiperiodic
+% evolution; the a.c. hypothesis is absent. A finite-time approximation to
+% an infinite parent needs its own boundary/no-return error, not an infinite
+% time conclusion for that box. On an infinite parent the a.c. argument
+% likewise does not establish a finite completion clock: arbitrarily slow
+% threshold components and resonances can obstruct any rate furnished by
+% these premises. An actual prepared profile may still determine a rate.
+
+% P4. Finite unfinished-mode bound and its factor2.
+% State the comparison premise precisely: for side-local Gaussian
+% unitaries V_loc,V'_loc and a number-conserving Gaussian unitary W,
+% Ctilde=V_loc W V'_loc Pg V'_loc* W* V_loc*. W acts as the identity
+% outside A directsum B, where A is an r_X-mode subspace of X and B
+% an r_Y-mode subspace of Y. These are actual complex modes, including
+% their multiplicities once; they need not be site basis vectors. The
+% corresponding even Fock unitaries give the usual bipartite entropy.
+% Both side-local factors preserve the cut entropy, so compare the states
+% immediately before/after W. The X\A marginal is unchanged. Subadditivity
+% and Araki--Lieb give -r_X ln2<=S(X)-S(X\A)<=r_X ln2 on either state.
+% Therefore the entropy change is <=2r_X ln2. Both states are pure, so
+% use S_X=S_Y to obtain also2r_Y ln2 and hence2min(r_X,r_Y)ln2.
+% This proof needs no independence among the unfinished modes.
+%
+% The factor2 cannot be dropped for an arbitrary entangled background:
+% take occupied orbitals (x0+x1)/sqrt2 and(y0+y1)/sqrt2, initially local
+% to X and Y. Swapping x1 and y1 acts on one mode on each side but turns
+% both orbitals into cross-cut Schmidt pairs, raising S_X from0 to2ln2.
+% This number-conserving Slater example realizes equality in the bound.
+%
+% If the ACTUAL full pure Ct obeys ||Q(Ct-Ctilde)Q||_1<=epsilon, P2 and
+% purity give |S_X(Ct)-S_X(Ctilde)|<=F_d(epsilon). Triangle inequality
+% proves the displayed window estimate. Epsilon is a covariance nuclear
+% norm against THIS comparison, not an unspecified many-body trace
+% distance, particle count, or an error of a different reference. The
+% whole expression may also be capped by d ln2. A mixed/truncated actual
+% state needs its omitted-purity/purifier estimate; it is not silently
+% completed into the same physical pure state.
+
+% P5. What makes the comparison a time window; stronger independent pairs.
+% Assign actual common-history first crossings t_j to the comparison's
+% unfinished factors. Assume a proved completion time t_j+tau_j with
+% 0<=tau_j<=tau_*: after completion their net correlation action is
+% side-local relative to the held background, modulo the error already
+% assigned to epsilon or a separate retained remainder. Then any still
+% active j at time t obeys t-tau_*<t_j<=t. The supports of just these
+% factors bound r_X,r_Y by the dimensions of their spans (or by the sum
+% of the component support dimensions). Initial in-flight correlations,
+% bound components and tails outside that completion premise remain
+% explicit. Repeated crossings of one history are not new independent
+% factors counted on each passage. A ray or a particle returning alone
+% does not prove the required correlation factorization/completion.
+% After original-RED P4 intake, the current-time content was made explicit:
+% every older factor must be absorbable into the side-local factors AT THE
+% OBSERVATION TIME, including recrossings and interleaved operations; a
+% completed earlier instant is insufficient. Independently, take modes
+% x0,x1 in X and y in Y, h=E0 I+J(|x1><y|+|y><x1|), E0>J>0, and one
+% occupied orbital sqrt(nu)x0+sqrt(1-nu)x1. Its Y occupation is
+% (1-nu)sin^2(Jt): a full return at pi/J is followed by renewed splitting.
+% Pg=0 here. This elementary held Gaussian example tests the first-return
+% inference, not an asserted native profile or a new numerical control.
+%
+% Under the STRONGER exact product premise, a fixed background cut state
+% and independent occupied Schmidt orbitals live on disjoint modes. Each
+% unfinished orbital has weights nu_j,1-nu_j across X,Y; side propagation
+% does not change these weights. If its reference modes have zero cut
+% entropy, its contribution is exactly s(nu_j), and once both components
+% lie on one side it contributes zero. Thus
+% S_X(Ctilde)-S_X(Pg)=sum_(j unfinished) s(nu_j).
+% Nonzero reference entropy on those modes must instead be subtracted;
+% overlap, interpair correlations or varying Schmidt weights invalidate
+% this additive formula. Physical truncation/comparison error adds its
+% F_d(epsilon); bound or uncompleted factors require their own entropy
+% or mode-rank bound. No count of a single two-point block replaces it.
+% With tau_j<=tau_*, the positive ENTRY measure sum_j s(nu_j)delta_(t_j)
+% bounds this sum by its mass on(t-tau_*,t]. It is not the generally signed
+% derivative of the actual cut entropy, which also contains exits.
+% The RED P4 reference-block example was also reproduced: nu=0 and
+% nu_g=1/2 give absolute difference ln2 while s(nu)=0. Thus the previously
+% stated reference premise cannot be dropped merely because the current
+% blocks are independent. In general subtract sum_j s(nu_j^g) and retain
+% any change of the reference remainder; this is no obstruction to the
+% conditional formula when its actual reference-block premises hold.
+
+% P6. Entropy, energy and particle number are distinct allocations.
+% The paired two-mode rotation has expected created-pair number p but
+% entropy s(p); s(p)/p diverges as p->0. Thus no universal linear entropy
+% bound follows from an expected particle count. An arbitrary signed
+% collar/source energy also need not be a positive excitation allocation.
+% For a genuinely positive once-counted allocation of M independent
+% pair factors, suppose their excitation probabilities p_j give energies
+% E_j>=omega_min p_j, with omega_min>0 in the SAME clock and state/channel
+% convention. If their allocated total is <=E_window, concavity gives
+% sum_j s(p_j)<=M s(min{E_window/(M omega_min),1/2}).       (P6.1)
+% This conditional conversion requires both that identification of p_j
+% with the entropy factors and a controlled M. For fixed sum p_j=n>0,
+% taking M factors with p_j=n/M gives entropy asymptotic to n log(M/n)+n;
+% energy and a positive frequency lower bound without mode-count control
+% do not bound it uniformly. Massless/threshold support may supply no
+% positive omega_min at all. Neither a signed energy cancellation nor a
+% multiplicity omitted from M can be used as an entropy budget. This
+% derivation introduces no mode-count/area law for an actual object.
+
+% P7. Conditional logarithm, stationary supply, and the missing clock.
+% Reuse the paired native principal symbol openly, then derive only its
+% characteristic statement. Take an exactly maintained point-PG vacuum
+% annulus r_-<r_s<r_+, with both endpoint ratios fixed, N=1,
+% v=-w=-sqrt(r_s/r), zero transverse momentum and the MASSLESS positive
+% axial symbol a omega=sin q-w sin q cos q on0<q<pi/2. Put x=a omega>0.
+% This is a scalar Hamilton characteristic control, not exact quantum
+% propagation of the native endpoint/adjoint operator.
+% At fixed omega, w(q)=sec q-x/(sin q cos q). Hamilton's equation gives
+% dq/dt=w'(r)sin q cos q=-w(q)^3 sin q cos q/(2r_s).
+% Along the outgoing branch, as x->0, q_-=arccos(1/w_-)+O(x) at the
+% inner endpoint, while q_+=x/(1-w_+)+O(x^3) at the outer endpoint.
+% The branch is outgoing: dw/dq=[(1-2sin^2q)x+sin^3q]/(sin^2q cos^2q)
+% is positive along it for small x on this fixed annulus; equivalently
+% it connects the positive-velocity root at each endpoint without a
+% turning point. For q<=pi/4 the numerator is positive; for q>pi/4
+% its sin^3q term uniformly dominates the O(x) term.
+% Hence its traversal time is
+% Delta t=2r_s integral_(q_+)^(q_-) dq/[w(q)^3 sin q cos q].
+% Since w>=w_+>0, q_- stays below pi/2, and
+% 1/[w(q)^3 sin q cos q]=1/q+O(q+x/q^2) uniformly on this interval,
+% the integrated error is O(1): integral q dq is bounded and
+% integral x/q^2 dq<=x/q_+=O(1). Thus
+% Delta t=2r_s log(1/(a omega))+O(r_s).                  (P7.1)
+% Constants depend on the fixed annulus endpoints. No finite part is
+% evaluated. This is the regular h/PG clock, normalized at infinity.
+% A shift t'=t+f(r) changes the result by its fixed endpoint offset only
+% when it defines a regular clock along the characteristic; no horizon-
+% crossing time in a singular static coordinate is asserted.
+%
+% The exact native symbol uses actual adjoint fields and endpoint averages;
+% an actual packet additionally has angular/mass, spectral, interband,
+% finite-width and scattering effects. No error estimate for substituting
+% those by this massless point-annulus control is supplied. Arbitrary
+% massive/threshold packets are not covered by (P7.1). As omega->0 even
+% this control has no uniform time ceiling. An interior residence bound,
+% actual channel/frequency support, packet transfer, the full chosen cut,
+% boundary conditions and the completion/correlation premise of P5 are
+% separate requirements for identifying a tau_* for an actual history.
+%
+% For complete one-ended unit-flux stationary scattering with a vacuum
+% incoming occupation, S(omega)Theta(-omega)I S(omega)*=Theta(-omega)I
+% almost everywhere on regular open channels. The previously paired
+% theorem therefore gives no stationary excitation supply, but it gives
+% no bound on transient residence or completion times. Bound and singular
+% sectors are not incoming open channels. The long-range tail belongs to
+% the complete scattering realization, not an invented finite-radius lead.
+%
+% If the complete h changes, U Pg U* need not equal Pg. Even with a fixed
+% diagnostic Pg one then has the extra exact term
+% Ct-Pg=U(C0-Pg)U*+(U Pg U*-Pg).
+% The latter's local nuclear norm must be retained in P2; nearly static
+% exterior coefficients or finite held records do not remove it. A moving
+% instantaneous ground also differs from the binding continued reference.
+% Even in the held case, comparison with that reference retains the fixed
+% offset |S_X(Pg)-S_X(P_ref)| in addition to F_d(b(t)). The present limit
+% neither identifies Pg's entropy with a flat-area coefficient nor gives
+% an area-capacity law. d ln2 is a finite-interior mode bound, not area
+% scaling. No whole-model impossibility of evaporation or new production
+% criterion follows from these conditional statements.
+
+% P8. Actual bounded delivered comparison after the independent save.
+% After reading the entire original-RED source, all113 lines of the shared
+% PURIFICATION_bound_v1.tex named below were read, including SOURCES/end.
+% Its finite-cut inequality, compact-a.c. limit, explicit spectral limits,
+% small-support factor2 bound and stationary/characteristic distinctions
+% agree with P1--P7. Its lines49--51 expressly REQUIRE that the actual
+% return bound restrict the unfinished factor: they are not an inference
+% from a first return alone. The current-time interpretation above states
+% exactly that premise and includes recrossings rather than banning them.
+% For lines52--55's pair sum to bound the displayed EXCESS, make explicit
+% P5's unchanged reference remainder and side-product reference pair
+% blocks; otherwise subtract their actual entropies. No repair of the
+% general factor2 theorem is needed. The annulus formula is checked only
+% on P7's massless point-characteristic domain, not all native packets.
+% No underlying foreign PU1--PU11/RED proof, recorded-collapse or held-
+% field result was opened; their actual numerical applicability is not
+% cleared by this statement comparison. No new method or numerical credit.
+
+% SOURCES / complete independent statement-stage access, then comparison.
+% Parent supplied the PURIFICATION setup/targets as statements only after
+% the completed CORE comparison. The complete independent draft and full
+% self-read preceded any new original-RED or foreign PURIFICATION intake.
+% Owned already paired sources used openly (not new independent evidence):
+% <internal>/web40f_single_object_identity.tex,
+% exact SO1--SO3 at61--155: complementary projector/entropy domain.
+% <internal>/EVOLVEDCUT_theorem_v1.tex,
+% EC1--EC2 at61--123: entropy continuity and pair/count distinction.
+% <internal>/web40f_one_ended_scattering.tex,
+% OE1--OE3 at91--205: actual generator, unit-flux scattering and energy.
+% <internal>/HELD_drain_envelope_v1.tex,
+% complete254-line paired source: compact local decay, coherent current,
+% positive allocation, slow tails and the lack of a budget-derived clock.
+% <internal>/declared_scaling_asymptotics.tex,
+% actual AS3 at204--244: endpoint/adjoint symbol versus point-PG principal
+% branch. P7 derives its fixed-annulus logarithm without a new numeric or
+% finite-part calculation, and does not reuse the distinct emitter clock.
+% The initial combined read was truncated; all needed identity and
+% one-ended ranges above were recovered explicitly in separate outputs.
+% Old own-source locator output included previously paired supplied
+% checks/clock numbers; none is used as new evidence or numerical input.
+% Subsequent actual complete sources read in the sole released process:
+% <internal>/redteam_PURIFICATION_second_route_v1.tex,
+% initial252-line source through core/P1--P6/SOURCES/EOF; the adopted
+% explicit recrossing and reference-block precisions are attributed in P5.
+% <internal>/PURIFICATION_bound_v1.tex,
+% all113 lines, limited to the delivered common statements as in P8.
+% No new physical history/readout, foreign solver, scientific execution,
+% underlying foreign proof/RED or other source edit was used.
+% Permanent LIGHTSPECIES derivation-text blinding remains in force.

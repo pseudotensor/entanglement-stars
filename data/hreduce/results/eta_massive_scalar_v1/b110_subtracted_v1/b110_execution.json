@@ -1,0 +1,60 @@
+{
+  "status": "finished",
+  "purpose": "Task2 SecIII G5 first b110 E19--E20 subtracted-derivative integral",
+  "producer_sha256": "3a3ed16ffce277b8109f9ff16abe70b7231c73e9ed6ad5ebd386aa8bea0b4992",
+  "wrapper_sha256": "a9cfa04ee08cb0f9dd941a725b79fe1186107742fb6340f846bb3bb499bd2b92",
+  "command": [
+    "timeout",
+    "--foreground",
+    "-s",
+    "KILL",
+    "300s",
+    "nice",
+    "-n",
+    "10",
+    "taskset",
+    "-c",
+    "8",
+    "<internal>/python",
+    "<internal>/p110_interval_check.py"
+  ],
+  "wrapper_pid": 2444201,
+  "environment_settings": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1",
+    "CUDA_VISIBLE_DEVICES": "",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONPATH": "<internal>/python_flint_0_9_0"
+  },
+  "resources": {
+    "wall_seconds": 300,
+    "cpu_seconds": 300,
+    "threads": 1,
+    "address_space_bytes": 805306368,
+    "internal_deadline_seconds": 295
+  },
+  "child_pid": 2444208,
+  "exit_code": 1,
+  "elapsed_seconds": 224.14834156259894,
+  "maximum_child_rss_kib": 194724,
+  "p110_result.json": {
+    "size": 19556643,
+    "sha256": "5a272465b133303b29220a33c7f68437963741259e43f3ea7468356dccd8d938"
+  },
+  "p110_attempts.jsonl": {
+    "size": 82711365,
+    "sha256": "09c06f02730006e6a1a37e13b3b3d1414866d8b915e943f96ebb0af0448dff47"
+  },
+  "b110_stdout.log": {
+    "size": 410,
+    "sha256": "a530fb2ccf1d5f982bf3a007cae8c046a3a718cc2c7aac7044e8d9a1b57a8b25"
+  },
+  "b110_stderr.log": {
+    "size": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

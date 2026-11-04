@@ -1,0 +1,222 @@
+\subsection*{A minimal flow replacement: necessary changes}
+Quantum mechanics is the starting level; H2 is a separate declared
+hypothesis.  Use $\hbar=c=1$.
+A spatial Gauss equation does not itself specify a
+readout's equal-time algebra or a change of time slicing.
+
+For the chosen flat free sine Hamiltonian
+$h(\mathbf p)=\beta m+\sum_i\alpha_i\sin(ap_i)/a$, its symmetrically
+allocated energy dipole fixes the bulk current:
+\[
+ \begin{aligned}
+ Q_i&=i[h,\tfrac12\{X_i,h\}]
+       =\frac{[X_i,h^2]}{2i}\\
+    &=\tfrac12\partial_{p_i}(h^2)
+       =\frac{\sin(2ap_i)}{2a}\,I .
+ \end{aligned}
+\]
+Independently, the band energy-velocity current
+$\{h,\partial_{p_i}h\}/2$ gives the same scalar operator by the
+Clifford anticommutators.
+[X: energy-dipole commutator; Clifford band-current identity.]
+Here $X_i=i\partial_{p_i}$ is the infinite-lattice bulk position
+operator, not a periodic position matrix.
+Using this current removes a separate stencil choice at this free
+scope.  It does not identify the completed interacting energy
+current with a conserved momentum or supply a momentum flux.
+
+\emph{Changing the stencil alone cannot supply spatial gauge symmetry.}
+
+Consider any positive prescribed-background six-component metric
+$\gamma$, scalar clock $N$, volume ruler $\psi$ and complete static
+polar vacuum $W$, with
+\[
+ \psi=(\det\gamma)^{1/12},\qquad
+ W=\langle N\psi,X[\gamma]\rangle .
+\]
+Here $X_x$ is the full packet-weighted spin trace of
+$(|A^\dagger|-|A|)_{xx}$.
+The finite-matrix singular-value identity gives $\sum_xX_x=0$,
+including the collar; normality gives $X=0$ at the flat reference.
+For $\gamma=I+f$, $N=1+n$, and $X=Rf+O(f^2)$,
+\[
+ W^{(2)}=\langle n+\ell f,Rf\rangle,
+ \qquad \ell f=\tfrac1{12}\operatorname{tr}f .
+\]
+At a nonzero Fourier mode of a translation-invariant flat regulator,
+write $r=R(q)\ne0$.  Require the symmetry to map the flat vacuum
+to stationary vacua.  Its displacement is then a full
+vacuum-Hessian null vector and obeys
+\[
+ r\,\delta f=0,\qquad
+ r^\dagger(\delta n+\ell\delta f)+\ell^\dagger r\,\delta f=0,
+\]
+so $\delta n+\ell\delta f=0$.
+An ordinary spatial relabeling keeps a uniform scalar clock fixed
+but has $\delta f_{ij}=i(k_i\xi_j+k_j\xi_i)$, with $k_i(q)$ the
+chosen nonzero difference symbol, tending to $q_i$ in the continuum.
+Its longitudinal part violates this necessary condition.
+Nonzero long-wavelength scalar stiffness supplies $r\ne0$;
+no particular tensor hopping placement was used.
+
+An independent continuum check assumes the full compact spatial Lie
+action.  At $N=\psi^{-1}$, the volume weight gives
+$\delta(N\psi)=(\nabla\cdot\xi)/6$, whereas $\int\delta X=0$.
+Consequently
+\[
+ \delta W=\tfrac16\int X\,\nabla\cdot\xi
+          =-\tfrac16\int\xi\cdot\nabla X .
+\]
+Spatial Ward invariance would force $X$ constant, hence zero on a
+periodic regulator or with flat asymptotic data, contradicting the
+nonzero scalar response.
+[X: full Hessian factorization; constant-allocation Lie variation,
+for the spatial Ward exclusion.]
+Thus changes solely inside $A$ cannot achieve that symmetry.
+One must change a stated vacuum/allocation/clock premise, or forgo
+this symmetry; H2 alone does not demand it.
+
+\emph{A spatial gauge action would still not select a flat slice.}
+For the mass-locked two-derivative continuum exterior
+$\psi=1+A/r$, $A>0$,
+\[
+ \begin{aligned}
+ \operatorname{Ric}_{rr}[\psi^4\delta]
+       &=-\frac{4A}{\psi^2r^3}\ne0,\\
+ \frac{d(r\psi^2)}{d\ell}&=\frac{r-A}{r+A},
+ \qquad d\ell=\psi^2\,dr .
+ \end{aligned}
+\]
+The Ricci tensor and the areal-radius slope both exclude a
+Euclidean spatial metric on $r>A$.
+[X: conformal Ricci tensor; invariant areal-radius slope.]
+A spatial coordinate change preserves this curvature.
+A flat-ruler flow description therefore requires a different time
+foliation with its own consistent temporal law, or an explicitly
+restricted physical configuration space.
+
+\emph{A concrete small alternative fails as a standalone closure.}
+Choose a real auxiliary flow $v$ on the fixed lattice, coupled to
+the energy current above, and a quadratic field cost.
+At isotropic continuum derivative order its fixed-state energy
+may be chosen as
+\[
+ \begin{aligned}
+ \mathcal F[v]&=E_0+\langle v,j\rangle\\
+ &\quad+\tfrac12\int
+ \left[\mu^2|v|^2+\kappa_T|\nabla\times v|^2
+                 +\kappa_L(\nabla\cdot v)^2\right],
+ \end{aligned}
+\]
+with $\mu,\kappa_T,\kappa_L\ge0$ and prescribed compact source
+$j$ independent of the varied $v$.
+This is an added energy law; its coefficients are not derived
+from $H_*$.
+Its Euler equation is
+\[
+ \mu^2v+\kappa_T\nabla\times(\nabla\times v)
+       -\kappa_L\nabla(\nabla\cdot v)=-j .
+\]
+It supplies a constitutive equation, not a gauge generator or a
+derivation of H2's momentum constraint.
+Retaining the protected uniform-flow vacuum cancellation requires
+$\mu=0$ in this added vacuum cost.
+In a source-free spherical exterior, $v=w(r)\hat r$ gives
+\[
+ \mu^2w-\kappa_L\left(w''+\frac{2w'}r-\frac{2w}{r^2}\right)=0 .
+\]
+For $\mu=0$, $\kappa_L>0$, its solutions are $w=c_1r+c_2/r^2$;
+decay removes $c_1$.  For $\mu>0$, $\kappa_L>0$, the decaying
+tail is screened.
+Independently, the longitudinal Green function
+$(\mu^2+\kappa_Lq^2)^{-1}$ gives a Coulomb or Yukawa potential;
+its radial gradient gives these same decaying tails.
+[X: radial Euler equation; longitudinal Green function.]
+Neither tail supplies the flat-ruler, unit-clock exterior
+comparator $w^2=2GE/r$, where $G$ is defined solely by the
+Cavendish measurement.
+If $\mu=\kappa_L=0$, this row leaves every radial profile
+undetermined; if $\kappa_L=0<\mu$, it gives $w=0$ outside.
+These are continuum, prescribed-source statements, not exact
+radial identities of a cubic lattice.
+
+A coupled lapse equation or a self-consistent induced source
+$j[v]$ can change that conclusion.  Neither is supplied by this
+quadratic test.  No replacement of all 3 flow declarations is
+established: a model retaining ordinary spatial gauge symmetry
+must change a premise of the polar theorem, and a physical
+flat-ruler foliation needs a temporal construction.
+[V: momentum alternative, microscopic vacuum and temporal law.]
+
+\paragraph*{SOURCES.}
+\begingroup\footnotesize
+\path{<internal>/P16_derivation.md},
+actual attachment, sections 1--2:
+the conformal readout, finite polar trace, flat Hessian and compact
+Lie-action obstruction; sections 3 and 5--6 distinguish the
+translation charge, an auxiliary algebra and a physical flux.
+The fixed-clock obstruction is conditional on the stated
+law-compatible spatial symmetry, not a consequence of H2 alone.
+The flat Hessian argument is exact at finite regulator size;
+the compact Lie calculation is a continuum statement.
+\par
+\path{<internal>/final4_foundation_momentum.tex}
+and
+\path{<internal>/redteam_final4_foundation_momentum.tex},
+actual complete notes:
+the independently derived free energy-current vertex, its
+interacting limitation and the auxiliary-orbit counterfamily.
+The latter is not a physical chart or a microscopic flux
+construction.
+\par
+\path{<internal>/rederivation_final3_obstructions.tex},
+external-frame characteristic subsection, and
+\path{<internal>/hstar_scaling_short.tex},
+isolated exterior paragraph:
+the positive smooth continuum exterior $\psi=1+A/r$ under the
+same-law boundary identification and matter Ward mass lock.
+The curvature and areal-radius tests above are evaluated directly
+on that spatial metric; no time-slicing equivalence is presumed.
+\par
+\path{<internal>/final4_flow_ward_short.tex},
+actual complete note:
+uniform-flow cancellation in the protected reference/eigenstate
+domain, distinct from ground-state selection and a completed
+gradient functional.
+The auxiliary quadratic cost is a specified test in this note,
+not the computed $H_*$ vacuum response.
+Its current is held fixed in the variation; no actual coupled
+collapse solution or quantum-correlation claim follows.
+\par
+\path{<internal>/STATE.tex},
+model extension, Frozen surface and O2 entries:
+the [S] polar-energy-current candidate is strengthened only at
+the free scope stated above.
+The momentum flux, temporal completion and physical chart are
+not consequences of that free identity.
+\endgroup
+% Governing source:
+% <internal>/GOAL_alt.md, duty 4(6).
+% For gamma=psi^4 delta in three dimensions:
+% Ric_ij=-2 psi^-1 psi_ij+6 psi^-2 psi_i psi_j
+%        -2 delta_ij(psi^-1 Delta psi+psi^-2 |grad psi|^2).
+% At psi=1+A/r, Delta psi=0 and
+% Ric_rr=-4A/(psi r^3)+4A^2/(psi^2 r^4)
+%       =-4A/(psi^2 r^3).
+% Flat spherical space requires |dR/dell|=1; R=r psi^2 here.
+% The full Lie-action check has a stronger premise than the
+% linear fixed-clock null test; both exclude a full spatial Ward
+% symmetry in the explicitly stated polar-allocation class.
+% For the quadratic auxiliary test, write radial j=grad J with
+% compact J(r)=-int_r^infinity j_rad(s) ds and v=grad Phi.
+% With decay, (mu^2-kappa_L Delta)Phi=-J.
+% Its free Green function is
+% exp(-mu r/sqrt(kappa_L))/(4 pi kappa_L r).
+% Taking its exterior radial gradient gives r^-2 for mu=0
+% and exp(-mu r/sqrt(kappa_L))(r^-2+mu/(sqrt(kappa_L)r))
+% for mu>0, agreeing with the component ODE.
+% In the flat-ruler, unit-clock operational comparator,
+% ds^2=-dt^2+(dr-w dt)^2+r^2 dOmega^2, so
+% g_tt=-(1-w^2). The isolated GR exterior comparator therefore
+% requires w^2=2GE/r. This comparator is not derived by adopting
+% an Einstein coefficient ratio or by fitting an auxiliary cost.

@@ -1,0 +1,132 @@
+{
+ "kat": "rdbB_rAii_v4",
+ "history": "M1dt",
+ "w": "g",
+ "step": 13253,
+ "inputs": {
+  "asm": [
+   "<internal>/RA_ASM_s0013253_v5.json",
+   "81598d302a369d1876e3c7511634fd0b"
+  ],
+  "trc": [
+   "<internal>/RA_TRC_s0013253_v1.json",
+   "cacd4cffbd9ce573094f316ab786cbbf"
+  ],
+  "ckpt": [
+   "<internal>/ckpt_M1dt_s013253.pt",
+   "6b7716824977d85bc365d830f7e7cbc6"
+  ],
+  "certrec": [
+   "<internal>/cr_s0013253.npz",
+   "89d86f0f0aeaa0fe198382cb75922216"
+  ]
+ },
+ "statement": "on T (tangent space at P_j, no charge projection); certified for every root in the certified box (R = S V^-1, eps_R), for the projector of the stored orbitals (e_0 gated <= 1e-11)",
+ "spec": "reviewer A rung3F d7e6b6fe sec. 6",
+ "W_stage": "not run",
+ "mu_T_lower": "not run",
+ "e0": {
+  "QR_projector_vs_certrec": {
+   "('h', 0)": 5.454525720006898e-13,
+   "('h', 1)": 9.336975645372418e-13,
+   "('h', 2)": 4.2610359685139413e-13,
+   "('h', 3)": 6.574740751832722e-13,
+   "('h', 4)": 3.2596148003042983e-13,
+   "('l', 0)": 1.8351986598448194e-12
+  },
+  "trc_bands_vs_certrec": {
+   "('h', 0)": 5.455635943017092e-13,
+   "('h', 1)": 9.321432523009636e-13,
+   "('h', 2)": 4.245492847097587e-13,
+   "('h', 3)": 6.576961197883298e-13,
+   "('h', 4)": 3.2585045772848496e-13,
+   "('l', 0)": 1.8320900353468595e-12
+  },
+  "max": 1.8351986598448194e-12,
+  "gate": 1e-11
+ },
+ "chains": {
+  "('h', 0)": {
+   "g": 16.0,
+   "w": 16.0,
+   "g_over_w": 1.0
+  },
+  "('h', 1)": {
+   "g": 32.0,
+   "w": 32.0,
+   "g_over_w": 1.0
+  },
+  "('h', 2)": {
+   "g": 48.0,
+   "w": 48.0,
+   "g_over_w": 1.0
+  },
+  "('h', 3)": {
+   "g": 64.0,
+   "w": 64.0,
+   "g_over_w": 1.0
+  },
+  "('h', 4)": {
+   "g": 80.0,
+   "w": 80.0,
+   "g_over_w": 1.0
+  },
+  "('l', 0)": {
+   "g": 32.0,
+   "w": 32.0,
+   "g_over_w": 1.0
+  }
+ },
+ "exactness_checks": {
+  "AfrakT_Vu_vs_matrixfree_rel": 1.2964365299019859e-09,
+  "AfrakW_Vu_rel": 1.357656785327494e-09,
+  "AfrakT_rand0_vs_matrixfree_rel": 1.4535998798377562e-13,
+  "AfrakT_rand1_vs_matrixfree_rel": 1.5729716658419837e-13,
+  "AfrakT_rand2_vs_matrixfree_rel": 3.126479429564082e-13,
+  "MfrakT_Vu_vs_matrixfree_rel": 6.564663429201253e-12
+ },
+ "alpha_P": {
+  "theta_est": 7.58595240797878,
+  "upper": 7.585968936141503,
+  "trace_err_2": 0.00025070616201938956,
+  "pd_tries": 1
+ },
+ "b_T": {
+  "theta_est": 0.15138040897529959,
+  "R0VAT_upper": 0.1637127330404922,
+  "VAT_upper": 7.585968936141498,
+  "VAT_theta_est": 7.585952407978775,
+  "eps_R": 2.0904968631337446e-09,
+  "upper": 0.16371274889893644,
+  "e_B": 0.003885830713728922,
+  "pd_tries": [
+   1,
+   1
+  ]
+ },
+ "product": {
+  "alphaP_up_times_bT_up": 1.241919827597666,
+  "centre": 1.1483645779869864
+ },
+ "rung1": {
+  "L_T_upper": 0.10226220141096491,
+  "L_T_upper_v3_rule": 0.47531098476422645,
+  "L_T_float": 0.04778407928123527,
+  "Lambda_L": 0.002283318235343368,
+  "e_Y": 8.01996057162765e-12,
+  "e_B_congruence": {
+   "trace": 0.008174166551613852,
+   "gemm": 4.8436755157128314e-08,
+   "sym": 2.4473482511536184e-16,
+   "total": 0.008174214988369254
+  },
+  "e_B_v3_rule_times_LG2": 0.22363709962779937,
+  "eps_G": 0.002508105592638815,
+  "e_chol_G": 1.2142333063414486e-10,
+  "epsR_term": 1.2030690864118097e-07,
+  "pd_tries": 1
+ },
+ "mu_T_upper": 0.10226220141096491,
+ "pass_0p49": true,
+ "wall_s": 1708.4
+}

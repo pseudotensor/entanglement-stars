@@ -1,0 +1,49 @@
+{
+  "serves": "REVIEWA_REVIEW_web40e.md H3 / approved owner D1 factual primary-source check",
+  "checked_utc": "2026-10-16",
+  "data_tables": {
+    "url": "https://arxiv.org/pdf/0801.0287v19",
+    "edition": "January 2026",
+    "revision": "2026-02-05",
+    "table": "D13",
+    "printed_page": 42,
+    "coefficient": "c_ring_UR_6_proton",
+    "lower_GeV_minus_2": -3.4e-45,
+    "upper_GeV_minus_2": 3.4e-42,
+    "references": [
+      123,
+      22
+    ],
+    "table_image_inspected": true
+  },
+  "definition": {
+    "url": "https://arxiv.org/pdf/1308.4973",
+    "equations": [
+      146,
+      147,
+      148,
+      151
+    ],
+    "printed_page": 21,
+    "c_term_in_delta_E_UR": "-|p|^(d-3) c_ring_UR(d)",
+    "same_paper_bound_table": "VI",
+    "same_paper_bound_printed_page": 26,
+    "lower_GeV_minus_2": -3.4e-45,
+    "upper_GeV_minus_2": 3.4e-42
+  },
+  "underlying_threshold_analysis": {
+    "url": "https://arxiv.org/pdf/0902.1756",
+    "dispersion": "E_p^2=p^2+m_p^2+eta_p p^4/M_Pl^2",
+    "final_constraint_equation": 22,
+    "confidence_level": "99 percent",
+    "eta_p_approximate_lower": -0.001,
+    "eta_p_approximate_upper": 1e-06
+  },
+  "scientific_mapping_status": "Raw source facts only; sign mapping and scope assigned to independent original mechanics author and RED.",
+  "constants": {
+    "url": "https://physics.nist.gov/cuu/Constants/Table/allascii.txt",
+    "adjustment": "2022 CODATA",
+    "Planck_mass_energy_GeV": 1.22089e+19,
+    "standard_uncertainty_GeV": 140000000000000.0
+  }
+}

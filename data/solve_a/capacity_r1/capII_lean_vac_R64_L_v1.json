@@ -1,0 +1,78 @@
+{
+ "case": "vac_R64",
+ "species": "L",
+ "m": 0.0,
+ "family": {
+  "proxy": "N = 1, w^2 = R/r",
+  "R": 64.0
+ },
+ "R_t": 64.0,
+ "L": 64.0,
+ "E0": 128.0,
+ "E_max_U": 128.0,
+ "M_R": 128.0,
+ "B": 45465.08867036552,
+ "H": 65,
+ "dimX": 4396544,
+ "a": 15.3,
+ "a0": 3.06,
+ "M": 1923,
+ "MS": 1200,
+ "NV": 6,
+ "resolution": 0.02499551097239929,
+ "mu0_over_dimX": 1.0,
+ "trace_Pb_over_dimX": 0.4998501853577113,
+ "w_max": 8.0,
+ "E_refill_trace": 4695.465001444332,
+ "E_refill_trace_sem": 1.8302250261177933,
+ "E_refill_banddiag": 4700.669344498315,
+ "interband_remainder": -5.204343053982484,
+ "E_refill_over_E0": 36.683320323783846,
+ "hbu_frob2_per_dimX": 0.00023264618820620456,
+ "dos": {
+  "0.05": {
+   "nu0": 300826.2700864922,
+   "c_nu": 1.1475611499271094,
+   "D_free0": 341715.4503280957,
+   "D_pocket0": 259937.08984488875,
+   "D_K0": 601652.5401729844
+  },
+  "0.1": {
+   "nu0": 289794.4370596679,
+   "c_nu": 1.1054780466448513,
+   "D_free0": 362924.4319947628,
+   "D_pocket0": 216664.44212457296,
+   "D_K0": 579588.8741193359
+  },
+  "0.2": {
+   "nu0": 280705.14540226804,
+   "c_nu": 1.0708051506129,
+   "D_free0": 399652.33171751123,
+   "D_pocket0": 161757.95908702482,
+   "D_K0": 561410.2908045361
+  }
+ },
+ "S_plus_U": 12209.62424397347,
+ "beta_U": 50.171654724591576,
+ "rho_U": 0.26854944312319784,
+ "S_U_somm_Dfree": 12362.386947560342,
+ "S_U_somm_nu0": 11046.870232199402,
+ "F_K_unrestricted": 99356.98221390994,
+ "beta_unrestricted": 11.243916062831607,
+ "rho_unrestricted": 2.1853467159005358,
+ "S_loc": "not computed (cell-resolved local Gibbs sum; route I-NEW object)",
+ "U_leakage": "n/a: no covariance on the cubic ball (stored runs are radial chains; light carries no stored excitation)",
+ "identity_C_minus_Pb_vs_MR": "n/a (same reason)",
+ "nu0_symbol_8K": 165687.20874250037,
+ "c_nu_symbol_8K": 0.6320465421390548,
+ "chain_reduction": {
+  "k_max": 13,
+  "nu0": {
+   "0.05": 148480.0,
+   "0.1": 151040.0,
+   "0.2": 135200.0
+  },
+  "note": "half-bond clock-normalized chain (N = 1, flow w), all levels, no cutoff"
+ },
+ "t_total": 334.13138151168823
+}

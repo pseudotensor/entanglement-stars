@@ -1,0 +1,165 @@
+{
+ "script": "items13_I1_weighted_v1.py",
+ "md5": "79b80a33",
+ "dir": "<internal>/D3",
+ "inputs": {
+  "I1v8_T11_k1.json": "990cbf0c42b1527cb07a95ee56646b15",
+  "I1v8_T11_k2.json": "8759f65d0e3723e386ec790c4c3252ac",
+  "I1v8_T11_k3.json": "9ecb5baa5c41b46c14f614dca097e4a3",
+  "I1v8_T11_k4.json": "88bb2e32776eb1b95ca9da27a573b7a5",
+  "I1v8_T11_k5.json": "55afcaaa98a7f7b7c56683026d78f744",
+  "I1v8_T11_k6.json": "5c7912c352e53dd5b48549345ddc9570",
+  "I1v8_T11_k7.json": "8babb2aeaf695e9fdfd4bd6b9cab5b7c",
+  "I1v8_T11_k8.json": "7406e0a7c773db7e5c28942329ca0ba2",
+  "I1v8_T11_k9.json": "1875b613555fe11bbf35c203a5500c08",
+  "I1v8_T11_k10.json": "320d18ddb44b21987393319e85635610",
+  "I1v8_T15_k1.json": "8fd724f271196af3341eb38b3d233ff0",
+  "I1v8_T15_k2.json": "025d58b2efa9b118c9b537469371378e",
+  "I1v8_T15_k3.json": "5f1b3d90e41bf442d4b633f8951866f5",
+  "I1v8_T15_k4.json": "5da31e49803ba7508a8515d87e6b288c",
+  "I1v8_T15_k5.json": "4956e28a853645742e803b7d000cb0cd",
+  "I1v8_T15_k6.json": "a5e82ca71e22e009075020bfc653948a",
+  "I1v8_T15_k7.json": "ff2048f8b466e345f36049c458e4695b",
+  "I1v8_T15_k8.json": "7389bad4650424554f096e158fedfcaf",
+  "I1v8_T15_k9.json": "d1f5b106bab215a4b9934d4ad080c218",
+  "I1v8_T15_k10.json": "7471bd26b7a4e656abf4e87d79abdca3",
+  "I1v8_T40_k1.json": "4ff7740450eeab7aa2911244ff1f04b1",
+  "I1v8_T40_k2.json": "6173bca1b4f3919b8d16dbd78c6fd061",
+  "I1v8_T40_k3.json": "adc46671517aef0af67c9c827e0619df",
+  "I1v8_T40_k4.json": "eb6f782324428a4654a0ce27be59f94e",
+  "I1v8_T40_k5.json": "20869af548bf7dec53374cde92370aa5",
+  "I1v8_T40_k6.json": "9f61155deb8680e768b01f2698fab228",
+  "I1v8_T40_k7.json": "edd43fe114cd0b3704a003ae4c2822b9",
+  "I1v8_T40_k8.json": "9eeb20eb9272bb00014a5e71a8e06c1d",
+  "I1v8_T40_k9.json": "e782f6b43c4abc2a243107e5be048890",
+  "I1v8_T40_k10.json": "fc711da88168e1b65f3a300e1ce397a6"
+ },
+ "slices": {
+  "T11": {
+   "Delta_r_density_a^-4": {
+    "h1": {
+     "max_abs_Delta_rho": 9.963185748535733e-11,
+     "r_at_rho": 64.0,
+     "max_abs_Delta_Jr": 5.567069027754882e-10,
+     "r_at_Jr": 64.0,
+     "printed": 5.567069027754882e-10
+    },
+    "h2": {
+     "max_abs_Delta_rho": 1.0022067347349046e-10,
+     "r_at_rho": 64.0,
+     "max_abs_Delta_Jr": 8.433295044443962e-11,
+     "r_at_Jr": 77.0,
+     "printed": 1.0022067347349046e-10
+    },
+    "realization_h1_vs_h2": 6.057788217691245e-10,
+    "context_rs_to_last_minus_128_h1": 5.567069027754882e-10
+   },
+   "weighted_hessian_probe_span": {
+    "rs_5rs": {
+     "norm2_dH_tot_h1": 0.23175036783151792,
+     "norm2_W2B_tot_h1": 1.6711807152104678,
+     "norm2_dH_tot_h2": 0.23175034362702962,
+     "norm2_W2B_tot_h2": 1.6711806964257894,
+     "err_realization": 6.641858245457025e-06,
+     "err_dropped_part": 3.214038419463398e-07,
+     "err_eigen_estimate": 2.0248602158981241e-07,
+     "norm2_chi_tot": 1.642019737800965
+    },
+    "rs_9rs": {
+     "norm2_dH_tot_h1": 0.015543050460309448,
+     "norm2_W2B_tot_h1": 0.41819024786725545,
+     "norm2_dH_tot_h2": 0.015543038798669718,
+     "norm2_W2B_tot_h2": 0.41819024457993936,
+     "err_realization": 1.2966458052396024e-06,
+     "err_dropped_part": 3.214038419463398e-07,
+     "err_eigen_estimate": 5.128040275543926e-08,
+     "norm2_chi_tot": 0.4153531373026408
+    }
+   }
+  },
+  "T15": {
+   "Delta_r_density_a^-4": {
+    "h1": {
+     "max_abs_Delta_rho": 2.665726385364328e-10,
+     "r_at_rho": 69.0,
+     "max_abs_Delta_Jr": 8.112102104531315e-10,
+     "r_at_Jr": 64.0,
+     "printed": 8.112102104531315e-10
+    },
+    "h2": {
+     "max_abs_Delta_rho": 2.615737915995414e-10,
+     "r_at_rho": 68.0,
+     "max_abs_Delta_Jr": 2.901900850256838e-10,
+     "r_at_Jr": 64.0,
+     "printed": 2.901900850256838e-10
+    },
+    "realization_h1_vs_h2": 1.1014002954788153e-09,
+    "context_rs_to_last_minus_128_h1": 8.112102104531315e-10
+   },
+   "weighted_hessian_probe_span": {
+    "rs_5rs": {
+     "norm2_dH_tot_h1": 0.2294902998910602,
+     "norm2_W2B_tot_h1": 1.6624968812558858,
+     "norm2_dH_tot_h2": 0.2294903207946838,
+     "norm2_W2B_tot_h2": 1.6624969108015264,
+     "err_realization": 3.7442911043589597e-06,
+     "err_dropped_part": 2.878931655319183e-07,
+     "err_eigen_estimate": 2.3970128528975415e-07,
+     "norm2_chi_tot": 1.6322243723987904
+    },
+    "rs_9rs": {
+     "norm2_dH_tot_h1": 0.015380827116852734,
+     "norm2_W2B_tot_h1": 0.41747227777369317,
+     "norm2_dH_tot_h2": 0.015380835553654817,
+     "norm2_W2B_tot_h2": 0.41747228373859946,
+     "err_realization": 9.434627154160968e-07,
+     "err_dropped_part": 2.878931655319183e-07,
+     "err_eigen_estimate": 6.075351158712618e-08,
+     "norm2_chi_tot": 0.4144996062156252
+    }
+   }
+  },
+  "T40": {
+   "Delta_r_density_a^-4": {
+    "h1": {
+     "max_abs_Delta_rho": 3.9449447768854687e-10,
+     "r_at_rho": 74.0,
+     "max_abs_Delta_Jr": 1.3613803023344356e-09,
+     "r_at_Jr": 64.0,
+     "printed": 1.3613803023344356e-09
+    },
+    "h2": {
+     "max_abs_Delta_rho": 3.9228104651634176e-10,
+     "r_at_rho": 74.0,
+     "max_abs_Delta_Jr": 4.5188228950296016e-10,
+     "r_at_Jr": 64.0,
+     "printed": 4.5188228950296016e-10
+    },
+    "realization_h1_vs_h2": 1.8132625918373958e-09,
+    "context_rs_to_last_minus_128_h1": 1.3613803023344356e-09
+   },
+   "weighted_hessian_probe_span": {
+    "rs_5rs": {
+     "norm2_dH_tot_h1": 0.22554799509573675,
+     "norm2_W2B_tot_h1": 1.7160763459091428,
+     "norm2_dH_tot_h2": 0.2255477895893289,
+     "norm2_W2B_tot_h2": 1.7160763755144972,
+     "err_realization": 5.830614749444188e-06,
+     "err_dropped_part": 3.3926372428505855e-07,
+     "err_eigen_estimate": 1.0719627503350346e-07,
+     "norm2_chi_tot": 1.6707230224472487
+    },
+    "rs_9rs": {
+     "norm2_dH_tot_h1": 0.015380906054811357,
+     "norm2_W2B_tot_h1": 0.42842486947008057,
+     "norm2_dH_tot_h2": 0.015380942019474828,
+     "norm2_W2B_tot_h2": 0.42842487244760225,
+     "err_realization": 8.909743720660524e-07,
+     "err_dropped_part": 3.3926372428505855e-07,
+     "err_eigen_estimate": 2.7208705300247657e-08,
+     "norm2_chi_tot": 0.42484058322661544
+    }
+   }
+  }
+ }
+}

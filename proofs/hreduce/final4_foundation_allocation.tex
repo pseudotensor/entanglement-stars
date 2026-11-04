@@ -1,0 +1,115 @@
+\subsection*{What selects the allocation exponent}
+Choose the power family
+$A_z=m\psi^{-z}+i\psi^{-(z+2)}D$,
+$L_z=N\psi^z$, positive prescribed rulers and clocks, and the
+common grouped mass rectangle.
+$D$ is one full cubic sine operator, with its 8 continuum valleys
+counted once; the positive squared masses are
+$(x_0,x_0+h_1,x_0+h_2,x_0+h_1+h_2)$ with weights $(+,-,-,+)$.
+Write $X_z=\sum_s\eta_s(|A_{s,z}^\dagger|-|A_{s,z}|)$.
+Every $z$ has the same uniform excitation readout
+$N\sqrt{m^2+\psi^{-4}d(p)^2}$ and the exact isospectral identity
+$W_z=0$ at constant $L_z$.
+Neither property selects $z$.
+At a flat stationary reference, twice differentiating this null curve
+gives the finite-matrix identity
+\[
+ K_{\psi\psi}=z(K_{N\psi}+K_{\psi N}),\qquad K_{NN}=0.
+\]
+Direct expansion of $\operatorname{Tr}[(N\psi^z)X_z[\psi]]$, with
+$X_z[1]=0$ and $\operatorname{Tr}X_z=0$, gives the same identity.
+[X: null-curve Hessian; direct trace expansion.]
+
+In the smooth, pole-free continuum domain at 2 spatial derivatives,
+compensated coordinate covariance makes the local bulk form
+$-\int[aN|\nabla\psi|^2+b\psi\nabla N\cdot\nabla\psi]$;
+the constant-$L_z$ identity imposes $a=zb$.
+The flat Sylvester response fixes
+$b=\kappa_z=(z+2)J/\pi^2$, where
+$J=\int_0^{h_1}\int_0^{h_2}(x_0+u+v)^{-1}du\,dv>0$.
+Consequently
+\[
+ \begin{aligned}
+ W_z^{[2]}&=-\kappa_z\!\int
+ [zN|\nabla\psi|^2+\psi\nabla N\cdot\nabla\psi],\\
+ (W_z^{[2]})_N&=\kappa_z
+ [\psi\Delta\psi+(1-z)|\nabla\psi|^2].
+ \end{aligned}
+\]
+An independent density reconstruction writes the grouped spin trace
+$x_z^{[2]}=u_z(\psi)\Delta\psi+v_z(\psi)|\nabla\psi|^2$.
+The Sylvester response at every uniform $P$, with $p=P^2k$,
+gives $u_z(P)=\kappa_zP^{1-z}$; the exact integrated trace
+identity on arbitrary slow periodic profiles gives $v_z=u_z'$.
+Then $(W_z^{[2]})_N=\psi^zx_z^{[2]}$ directly, without varying
+the reconstructed functional.
+[X: covariant functional/null identity; arbitrary-$P$ Sylvester
+density/trace identity.]
+Requiring every positive nonconstant harmonic ruler on a source-free
+patch to satisfy this clock row selects $z=1$, provided
+$\kappa_z\ne0$.
+For example,
+$\psi_\epsilon=(1-2\epsilon c\cdot x+
+\epsilon^2|c|^2|x|^2)^{-1/2}$
+is harmonic away from its pole; its clock residual at $x=0$ is
+$\kappa_z(1-z)\epsilon^2|c|^2$.
+The degenerate $z=-2$ has zero stiffness and cannot meet a nonzero
+Newton normalization.
+The necessary selecting input is this harmonic-vacuum condition;
+it is not supplied by quantum mechanics or positivity.
+At finite spacing, even the selected $z=1$ has its coefficient-running
+correction, so the exact local harmonic statement has only the stated
+continuum scope.
+
+The first-order elastic light response supplies no independent
+2-parameter selector.
+For kinetic placement
+$i\psi^{-\alpha}D\psi^{-(z+2-\alpha)}$,
+$\alpha=(z+2)(1-\theta)$, its allocation-only band vertex at fixed
+$\alpha$ for $\psi=1+f$ and
+$\epsilon_p=\sqrt{m^2+d(p)^2}$ is
+\[
+ M_z=-\frac z2 f_q(\sqrt{\epsilon'}-\sqrt{\epsilon})^2 I .
+\]
+It vanishes on the elastic shell; $(z,\theta)=(1,0)$ and
+$(2,1/4)$ are explicit indistinguishable examples there.
+At fixed $\theta$, an informative elastic channel can constrain $z$
+through $\alpha$; off-shell responses retain the displayed term.
+[X: full polar-band projection; polar-Sylvester band differentiation.]
+
+\paragraph*{SOURCES.}
+\begingroup\footnotesize
+\path{<internal>/STATE.tex},
+section \emph{What the forty web returns added}, item 1, and
+\path{<internal>/DECISIONS.md},
+section (d): reviewer A's written trace and harmonic arguments [R].
+The derivations above distinguish their finite-matrix Hessian from
+their continuum harmonic claim.
+\path{<internal>/rederivation_p39_class_s.tex},
+allocation and harmonic derivations;
+\path{<internal>/rederivation_final3_ledger.tex},
+constant-allocation tangent calculation;
+\path{<internal>/rederivation_final3_selector_filter.tex},
+section 1, equations for $M_z$ and the elastic vertex, and
+\path{<internal>/redteam_final3_selector_filter.tex},
+independent full band projection and commutator check.
+The stiffness normalization is the grouped Sylvester integral,
+not an additional Newton match; $G$ is defined by Cavendish measurement.
+No physical source existence theorem is assumed.
+\endgroup
+% Governing source: <internal>/GOAL_alt.md,
+% duty 4(1). All results concern the stated family and prescribed domain.
+% Continuum covariance: T_lambda f(x)=lambda^(3/2)f(lambda x),
+% psi_lambda=lambda^(1/2)psi(lambda x), N_lambda=N(lambda x);
+% A_z,lambda=lambda^(-z/2)T_lambda A_z T_lambda^dagger.
+% Clock affinity and the scalar two-derivative basis give functions
+% a(psi), b(psi); covariance fixes a constant and b proportional to psi.
+% At unit ruler tr_2 delta(E1-E0)=-2(z+2)q^2 f/(epsilon'+epsilon).
+% At arbitrary P the corresponding vertex is multiplied by P^(-z-5),
+% with epsilon evaluated at p/P^2. The integration measure contributes
+% P^6, proving u_z(P)=P^(1-z)u_z(1) independently of covariance of W.
+% Eight valleys and the grouped radial integral
+% sum eta int d^3p/(2pi)^3 [1/(2sqrt(p^2+m_s^2))]=J/(16pi^2)
+% give kappa_z=(z+2)J/pi^2. No heat-current identity is used here.
+% This continuum normalization is distinct from the finite-a
+% single inventory condition at z=1.

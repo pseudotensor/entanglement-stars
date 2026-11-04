@@ -1,0 +1,123 @@
+{
+  "control": "WEB40E I2 / paper insert 12: native full-band benchmark",
+  "cuda_visible_devices": "",
+  "domain": "Normal-band full-filling benchmark with the reference premises stated in the author source",
+  "elapsed_seconds": 0.02557508274912834,
+  "error_scope": "Refinement differences and identity residuals are observed controls, not certified error radii",
+  "eta_scope": "eta=0.919 is supplied only as an illustrative conditional entropy-match input",
+  "formula_provenance": "Independent reviewer B I2 specification recorded in solve/STATUS.md",
+  "host": "gpu",
+  "maximum_resident_kib": 33408,
+  "measure": "(2/pi)^3 integral over [0,pi/2]^3, equivalent to the normalized full Brillouin zone",
+  "method": "Tensor Gauss-Legendre, first-axis slabs streamed; orders 24,48,96; no fit",
+  "numpy_version": "2.2.6",
+  "rows": [
+    {
+      "aH_at_g_0_25": 2.2361982121080315,
+      "aH_conditional_eta_0_919": 2.3326658974565695,
+      "cosine_identity_residual_C_plus_P": -4.6434606160161707e-11,
+      "homogeneous_residual_over_H2": 1.6382148326893744,
+      "ma": 0.0,
+      "normalized_weight_sum": 1.0,
+      "order": 24,
+      "p_Q_a4": 0.22000136301386497,
+      "p_Q_over_rho": 0.0921432217929163,
+      "rho_a4": 2.387602242824746,
+      "twice_mean_cos2theta1_e": -0.22000136306029958
+    },
+    {
+      "aH_at_g_0_25": 2.252936567971642,
+      "aH_conditional_eta_0_919": 2.350126331728954,
+      "cosine_identity_residual_C_plus_P": 4.718447854656915e-16,
+      "homogeneous_residual_over_H2": 1.6335207100137572,
+      "ma": 0.2,
+      "normalized_weight_sum": 1.0,
+      "order": 24,
+      "p_Q_a4": 0.21572311800498128,
+      "p_Q_over_rho": 0.08901380667583803,
+      "rho_a4": 2.4234793012569513,
+      "twice_mean_cos2theta1_e": -0.2157231180049808
+    },
+    {
+      "aH_at_g_0_25": 2.236198212124278,
+      "aH_conditional_eta_0_919": 2.3326658974735173,
+      "cosine_identity_residual_C_plus_P": -2.025601908428598e-13,
+      "homogeneous_residual_over_H2": 1.638214832694614,
+      "ma": 0.0,
+      "normalized_weight_sum": 1.0,
+      "observed_absolute_change_from_previous_order": {
+        "p_Q_a4": 1.1536577249060542e-11,
+        "rho_a4": 3.469358134111644e-11,
+        "twice_mean_cos2theta1_e": 3.4695468720258305e-11
+      },
+      "order": 48,
+      "p_Q_a4": 0.22000136302540155,
+      "p_Q_over_rho": 0.09214322179640927,
+      "rho_a4": 2.3876022428594394,
+      "twice_mean_cos2theta1_e": -0.2200013630256041
+    },
+    {
+      "aH_at_g_0_25": 2.252936567971642,
+      "aH_conditional_eta_0_919": 2.350126331728954,
+      "cosine_identity_residual_C_plus_P": -1.8041124150158794e-15,
+      "homogeneous_residual_over_H2": 1.6335207100137565,
+      "ma": 0.2,
+      "normalized_weight_sum": 1.0,
+      "observed_absolute_change_from_previous_order": {
+        "p_Q_a4": 1.1102230246251565e-15,
+        "rho_a4": 4.440892098500626e-16,
+        "twice_mean_cos2theta1_e": 1.1657341758564144e-15
+      },
+      "order": 48,
+      "p_Q_a4": 0.21572311800498017,
+      "p_Q_over_rho": 0.08901380667583758,
+      "rho_a4": 2.423479301256951,
+      "twice_mean_cos2theta1_e": -0.21572311800498198
+    },
+    {
+      "aH_at_g_0_25": 2.2361982121243487,
+      "aH_conditional_eta_0_919": 2.3326658974735905,
+      "cosine_identity_residual_C_plus_P": -1.4988010832439613e-15,
+      "homogeneous_residual_over_H2": 1.6382148326946369,
+      "ma": 0.0,
+      "normalized_weight_sum": 1.0,
+      "observed_absolute_change_from_previous_order": {
+        "p_Q_a4": 5.059841434729151e-14,
+        "rho_a4": 1.5010215292932116e-13,
+        "twice_mean_cos2theta1_e": 1.5046297541232434e-13
+      },
+      "order": 96,
+      "p_Q_a4": 0.22000136302545215,
+      "p_Q_over_rho": 0.09214322179642466,
+      "rho_a4": 2.3876022428595896,
+      "twice_mean_cos2theta1_e": -0.22000136302545364
+    },
+    {
+      "aH_at_g_0_25": 2.252936567971642,
+      "aH_conditional_eta_0_919": 2.350126331728954,
+      "cosine_identity_residual_C_plus_P": -1.0547118733938987e-15,
+      "homogeneous_residual_over_H2": 1.6335207100137565,
+      "ma": 0.2,
+      "normalized_weight_sum": 1.0,
+      "observed_absolute_change_from_previous_order": {
+        "p_Q_a4": 4.996003610813204e-16,
+        "rho_a4": 4.440892098500626e-16,
+        "twice_mean_cos2theta1_e": 2.498001805406602e-16
+      },
+      "order": 96,
+      "p_Q_a4": 0.21572311800498067,
+      "p_Q_over_rho": 0.08901380667583778,
+      "rho_a4": 2.4234793012569513,
+      "twice_mean_cos2theta1_e": -0.21572311800498173
+    }
+  ],
+  "source_sha256": "9e3bf0d4816216d1e911bed11ecd54d93aa8b595f8d33281d4725ae87362887c",
+  "spin_factor": 2,
+  "thread_settings": {
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1"
+  },
+  "valley_counting": "Already included by full-zone normalization; no extra factor of eight"
+}

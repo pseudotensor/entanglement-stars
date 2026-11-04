@@ -1,0 +1,107 @@
+{
+ "case": "vac_R32",
+ "species": "H",
+ "m": 0.2,
+ "family": {
+  "proxy": "N = 1, w^2 = R/r",
+  "R": 32.0
+ },
+ "R_t": 32.0,
+ "L": 32.0,
+ "E0": 64.0,
+ "E_max_U": 64.0,
+ "M_R": 64.0,
+ "B": 11366.27216759138,
+ "H": 33,
+ "dimX": 549504,
+ "a": 11.918987001723343,
+ "a0": 3.2640000000000002,
+ "M": 1498,
+ "MS": 1200,
+ "NV": 6,
+ "resolution": 0.024996396530604998,
+ "mu0_over_dimX": 1.0,
+ "trace_Pb_over_dimX": 0.49993065138578385,
+ "w_max": 5.656854249492381,
+ "E_refill_trace": 524.7305493193368,
+ "E_refill_trace_sem": 5.286696319025025,
+ "E_refill_banddiag": 525.5254249451015,
+ "interband_remainder": -0.7948756257646892,
+ "E_refill_over_E0": 8.198914833114637,
+ "hbu_frob2_per_dimX": 0.0004755352635361699,
+ "dos": {
+  "0.05": {
+   "nu0": 18656.94681473785,
+   "c_nu": 0.5693648319927322,
+   "D_free0": 20867.838114228463,
+   "D_pocket0": 16446.055515247226,
+   "D_K0": 37313.89362947569
+  },
+  "0.1": {
+   "nu0": 19344.954234424633,
+   "c_nu": 0.5903611521736033,
+   "D_free0": 23811.186280241673,
+   "D_pocket0": 14878.72218860759,
+   "D_K0": 38689.908468849266
+  },
+  "0.2": {
+   "nu0": 21582.75452842809,
+   "c_nu": 0.6586533974740018,
+   "D_free0": 30970.642057008074,
+   "D_pocket0": 12194.866999848104,
+   "D_K0": 43165.50905685617
+  }
+ },
+ "S_plus_U": 2598.9793001802827,
+ "beta_U": 24.5261173543004,
+ "rho_U": 0.22865714122091368,
+ "S_U_somm_Dfree": 2239.0807109186894,
+ "S_U_somm_nu0": 2018.1948129339721,
+ "F_K_unrestricted": 10986.948122914055,
+ "beta_unrestricted": 11.176716034665889,
+ "rho_unrestricted": 0.966627224908542,
+ "S_loc": "not computed (cell-resolved local Gibbs sum; route I-NEW object)",
+ "U_leakage": "n/a: no covariance on the cubic ball (stored runs are radial chains; light carries no stored excitation)",
+ "identity_C_minus_Pb_vs_MR": "n/a (same reason)",
+ "E_cross_cut_global_vacuum": -7608.081342997455,
+ "E_cross_cut_sem": 33.79281186397611,
+ "gibbs_operator": "compressed Pi_X h Pi_X (cross-cut half bonds excluded from the Gibbs bound; their energy printed as E_cross_cut)",
+ "E_refill_exact_trace": 524.7305493193368,
+ "E_refill_bandblock_pocket_sum": 525.5254249451015,
+ "block_mixing_hbu": -0.7948756257646892,
+ "trace_PbhX": -327981.4640498071,
+ "sigma_X": {
+  "Tr_Pb_hX": -327981.4640498071,
+  "r_sum": "unavailable on the cubic ball (the source-defined reference moments r = D_u W are radial-chain quantities)",
+  "C_term": "unavailable (no covariance on the cubic ball)",
+  "eps_X": "unavailable (needs the C term)"
+ },
+ "hbu_trace_norm_bound": {
+  "frob": 16.16504034805294,
+  "trace_norm_le_sqrt_dimX_frob": 11982.907917913308,
+  "Tr_C_minus_Pb_hbu": "unavailable without C; |Tr[(C-P_b)h_bu]| <= ||C-P_b||_op ||h_bu||_1 <= ||h_bu||_1 (bound printed)"
+ },
+ "U_leakage_note": "U-leakage includes pocket-projector motion and intraband transport, not only interband transitions (capst4a)",
+ "identity_flag": "any identity check on stored data is OLD-BACKGROUND (stored sources used a level-following projector)",
+ "normalized_to_M_R": {
+  "E0": 1.0,
+  "E_max_U": 1.0,
+  "E_refill_trace": 8.198914833114637,
+  "E_refill_banddiag": 8.21133476476721,
+  "interband_remainder": -0.012419931652573268,
+  "E_cross_cut_global_vacuum": -118.87627098433524,
+  "trace_PbhX": -5124.710375778236
+ },
+ "nu0_symbol_8K": 11588.006809605195,
+ "c_nu_symbol_8K": 0.3536379031251585,
+ "chain_reduction": {
+  "k_max": 7,
+  "nu0": {
+   "0.05": 10880.0,
+   "0.1": 9600.0,
+   "0.2": 12480.0
+  },
+  "note": "half-bond clock-normalized chain (N = 1, flow w), all levels, no cutoff"
+ },
+ "t_total": 208.04456567764282
+}

@@ -1,0 +1,78 @@
+{
+ "case": "vac_R128",
+ "species": "H",
+ "m": 0.2,
+ "family": {
+  "proxy": "N = 1, w^2 = R/r",
+  "R": 128.0
+ },
+ "R_t": 128.0,
+ "L": 128.0,
+ "E0": 256.0,
+ "E_max_U": 256.0,
+ "M_R": 256.0,
+ "B": 181860.35468146208,
+ "H": 129,
+ "dimX": 35135392,
+ "a": 20.573974003446686,
+ "a0": 3.2640000000000002,
+ "M": 2586,
+ "MS": 1200,
+ "NV": 6,
+ "resolution": 0.02499421716333159,
+ "mu0_over_dimX": 1.0,
+ "trace_Pb_over_dimX": 0.5000134724005049,
+ "w_max": 11.313708498984761,
+ "E_refill_trace": 29523.99321267071,
+ "E_refill_trace_sem": 32.3622395767229,
+ "E_refill_banddiag": 29543.86539017116,
+ "interband_remainder": -19.872177500448743,
+ "E_refill_over_E0": 115.32809848699496,
+ "hbu_frob2_per_dimX": 0.00010669931265776355,
+ "dos": {
+  "0.05": {
+   "nu0": 1221940.5594407013,
+   "c_nu": 0.5826666638568407,
+   "D_free0": 1377154.7233076685,
+   "D_pocket0": 1066726.395573734,
+   "D_K0": 2443881.1188814025
+  },
+  "0.1": {
+   "nu0": 1268535.4865018968,
+   "c_nu": 0.6048848564633831,
+   "D_free0": 1583917.9012432361,
+   "D_pocket0": 953153.071760557,
+   "D_K0": 2537070.9730037935
+  },
+  "0.2": {
+   "nu0": 1423815.0833158535,
+   "c_nu": 0.6789279381350772,
+   "D_free0": 2065441.1925161064,
+   "D_pocket0": 782188.9741156005,
+   "D_K0": 2847630.166631707
+  }
+ },
+ "S_plus_U": 34523.80566574314,
+ "beta_U": 73.30788164306568,
+ "rho_U": 0.18983689835100886,
+ "S_U_somm_Dfree": 36523.7668320372,
+ "S_U_somm_nu0": 32685.90682874599,
+ "F_K_unrestricted": 600884.3310697121,
+ "beta_unrestricted": 11.877930776485199,
+ "rho_unrestricted": 3.3040974330122275,
+ "S_loc": "not computed (cell-resolved local Gibbs sum; route I-NEW object)",
+ "U_leakage": "n/a: no covariance on the cubic ball (stored runs are radial chains; light carries no stored excitation)",
+ "identity_C_minus_Pb_vs_MR": "n/a (same reason)",
+ "nu0_symbol_8K": 740378.4099460135,
+ "c_nu_symbol_8K": 0.35303993699360536,
+ "chain_reduction": {
+  "k_max": 26,
+  "nu0": {
+   "0.05": 665600.0,
+   "0.1": 700160.0,
+   "0.2": 801440.0
+  },
+  "note": "half-bond clock-normalized chain (N = 1, flow w), all levels, no cutoff"
+ },
+ "t_total": 7769.3857135772705
+}

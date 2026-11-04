@@ -1,0 +1,123 @@
+\subsection*{A selecting principle for the bond vertex}
+Choose the canonical coordinate CAR field $c$, the proper regulator
+$R_\psi=\exp[-(\psi^{-1}D\psi^{-1})^2/(2\Lambda^2)]$,
+physical range $\ell$, and a ruler-distance scalar kernel.
+For the compensated continuum dilation
+$\psi_\lambda(x)=\lambda^{1/2}\psi(\lambda x)$,
+$N_\lambda(x)=N(\lambda x)$ and
+$c_\lambda(x)=\lambda^{3/2}c(\lambda x)$, with
+$T_\lambda f(x)=\lambda^{3/2}f(\lambda x)$,
+spectral calculus gives $R_{\psi_\lambda}=T_\lambda R_\psi T_\lambda^\dagger$.
+The distance satisfies
+$d_{\psi_\lambda}(x,y)=d_\psi(\lambda x,\lambda y)$.
+Thus the frame bilinear
+$j_{B,a}=(R_\psi c)^\dagger\alpha_a(R_\psi c)$ has weight 3,
+and its bilocal interaction with contraction $\delta_{ab}$ has
+weight $3+3-6=0$.
+
+This convention follows from a more explicit, sufficient microscopic
+principle: use the proper-volume field
+$\chi_\Lambda=\psi^{-3}R_\psi c$, proper measures
+$dV=\psi^6d^3x$, and contract the 2 frame bilinears with the
+chosen common frame alignment.
+The 2 volume factors cancel their 2 density factors exactly,
+leaving the coordinate interaction built from $j_B$.
+This principle specifies the vertex; it is not a consequence of H2.
+In particular $j_B$ is not identified with the full Noether current
+or momentum density of the completed nonlocal law.
+
+For a counterfamily replace each endpoint by
+$j_b=\psi^{-b}j_B$, retaining the same scalar kernel and contraction.
+The seed weight becomes $-b$.
+An independent infinitesimal check gives the pair-field weight
+$6-b$; integration of
+$(x\cdot\nabla_x+y\cdot\nabla_y)(\mathcal K j_bj_b)$
+contributes $-6$, again leaving $-b$.
+[X: finite field/kernel pullback; canonical pair-kernel virial.]
+Each $b$ permits the same positive completion and retains vacuum
+and 1-excitation protection, lapse affinity and Gram clock sources.
+These properties therefore do not select $b=0$.
+The apparent alternative $b=2$ is exactly the original law if its
+contraction is also changed:
+\[
+ \begin{aligned}
+ \mathcal G_{ij'}(x,y)&=\psi^2(x)\psi^2(y)\delta_{ij'},
+ &j_{\rm tr}^i&=\psi^{-2}j_{B,i},\\
+ \mathcal G_{ij'}j_{\rm tr}^i(x)j_{\rm tr}^{j'}(y)
+   &=\delta_{ab}j_{B,a}(x)j_{B,b}(y).
+ \end{aligned}
+\]
+Changing only the current is a different interaction.
+
+For the transported spectral filter and the physical unit-lapse
+positive-sum denominator, the full completion inherits this covariance:
+\[
+ \mathscr U_\lambda^\dagger
+ H_{\rm exc}^{(b)}[N_\lambda,\psi_\lambda;g_B]\mathscr U_\lambda
+   =H_{\rm exc}^{(b)}[N,\psi;\lambda^{-b}g_B].
+\]
+Indeed the pair-energy Sylvester equation
+$E_2S_2+S_2E_2=V_{\rm ret}$ intertwines; its unique solution and
+the Hermitian similarity exponential intertwine with it.
+All other physical parameters are fixed.
+Independently, differentiating the Sylvester equation gives
+$\delta S=[G,S]-b g_B\partial_{g_B}S$ for the anti-Hermitian
+canonical dilation generator $G$; the exponential Fr\'echet derivative gives the same
+formula for $H_{\rm exc}$.
+For an isolated differentiable stationary state with vanishing
+matter dilation boundary terms, set
+$F=\langle H_{\rm exc}^{(b)}\rangle$ and take its derivatives at
+fixed canonical state.  The complete source integral is
+\[
+ \begin{aligned}
+ \mathcal D_m^{(b)}
+ &=\int [F_N\,x\cdot\nabla N+
+            F_\psi(\psi/2+x\cdot\nabla\psi)]\,d^3x\\
+ &=-b g_B\langle\partial_{g_B}H_{\rm exc}^{(b)}\rangle .
+ \end{aligned}
+\]
+[X: finite spectral transport; complete Sylvester/Fr\'echet response.]
+It vanishes identically for the selected $b=0$ construction.
+At finite coupling the right side is not generally
+$-b\langle V_B\rangle$.
+The regulator, moving free projector, excitation filter and dressing
+derivatives are part of this identity.
+It is a continuum matter identity before gravitational rows or masses
+are used, not a fixed-spacing symmetry or a physical mass-lock theorem.
+
+\paragraph*{SOURCES.}
+\begingroup\footnotesize
+\path{<internal>/P15_current_and_dilation.md},
+sections 1--5, actual attachment read completely: regulator covariance,
+endpoint coframes, the $b$ counterfamily, physical unit-lapse
+denominator, moving-filter term and all-coupling defect.
+\path{<internal>/rederivation_final3_ledger.tex}
+and
+\path{<internal>/redteam_final3_ledger.tex},
+conditional Ward derivations: finite spectral intertwining,
+canonical generator/virial, and complete Fr\'echet response.
+These named methods support the completed $b=0$ identity [X];
+the $b$ extension changes its seed covariance as displayed.
+\path{<internal>/STATE.tex},
+matter-law and dilation entries: the source-only dilation-weight
+statement is sharpened here to the full coupling derivative.
+Positive rulers, a common differentiable spectral domain and a valid
+stationary-state commutator trace are required.
+No source-reported numerical checks are counted as executions here.
+\endgroup
+% Governing source: <internal>/GOAL_alt.md,
+% duty 4(3). The chosen scalar kernel may include the stated symmetric
+% clock placement; N has zero compensated weight.
+% Direct virial check uses the canonical field variation
+% delta c=(3/2+x.grad)c, obtained from its dilation generator.
+% Two endpoints give 6 before the explicit psi^(-b) factors give -b.
+% With fixed masses, ell, Lambda and g, delta R=[G,R] follows also
+% from the Duhamel derivative of exp[-K^2/(2Lambda^2)].
+% The complete moving-filter variation is
+% delta Pi=[ad_G,Pi], rather than zero.
+% E2=epsilon tensor I+I tensor epsilon on the antisymmetric pair
+% space, epsilon the physical B[1,psi] excitation operator.
+% The four-leg denominator is its positive Sylvester sum, not |A|.
+% At fixed finite excitation number, bounded retained pair operators
+% and a positive one-body gap suffice for the exponential construction;
+% no bounded full-Fock similarity is assumed.

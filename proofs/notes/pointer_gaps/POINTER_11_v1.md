@@ -1,0 +1,6 @@
+# POINTER 11 (08_discussion:65): I_4^iso = -3.816e-3 at ma = 0.2 and the mixed integral for lambda_2
+
+- Definition and recipe for I_4^iso: deliveries/alt/LAMBDA_I4_SPEC_v1.md (955a986a), integrand from deliveries/alt/api/r7/A_brk_lambda.md eqs. 6-8, 15, 24-30 (8695b547), recipe checked in api/r7/F_brk_lambda_val.md sec. 3 (f0df0d48).
+- Value from two independent quadratures that agree: LAMBDA_I4_ROUTE_A_v1.md (first calculation) (Trap_288, 7a8e0ece; [-0.0038160088336, -0.0038160087403]) and LAMBDA_I4_ROUTE_B_v1.md (second calculation, GL_512, d8555479; [-0.00381600879138, -0.00381600878250]), with comparison LAMBDA_I4_COMPARE_v1.md (b9ce34cc): I_4^iso = -3.8160088e-3, negative. Scripts and outputs are in LAMBDA_I4_ROUTE_B_v1_files/ and <internal>/lambda_i4 on the box.
+- The mixed integral M_4^{sea,iso} for lambda_2 (lambda_2's sea share is I_4^iso - M_4^{sea,iso}/2) is defined as a fully specified three-vertex zone integral in deliveries/alt/api/r7/A_lambda12.md, eq. 8 (c0af8b3c), with its normalisation check, checked in F_lambda12_confirm.md (8e5c39a8). Its value is not computed; the paper asserts neither its size nor its sign.
+- Full agreed paragraph: LAMBDA_OUTLOOK_TEXT_v2.md (d3d3c4a2).

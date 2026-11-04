@@ -1,0 +1,536 @@
+{
+  "check": "reviewed reviewer B bounded area-law SPEC",
+  "numpy_version": "2.2.6",
+  "scipy_version": "1.17.0",
+  "nice": 10,
+  "elapsed_seconds": 1.1396744139492512,
+  "units": "a=1, natural-log entropy, full four-component one-boundary convention",
+  "eta_100": [
+    {
+      "mu": 0.0,
+      "refinements": [
+        {
+          "value": 0.7865833865531302,
+          "reported_error": 1.3741166537961647e-08,
+          "segment_values": [
+            0.4947333900877571,
+            0.2918499964653732
+          ],
+          "segment_errors": [
+            5.36866989753193e-09,
+            8.372496640429716e-09
+          ],
+          "tolerance": 1e-07,
+          "warnings": []
+        },
+        {
+          "value": 0.7865833865531384,
+          "reported_error": 7.582823258189819e-14,
+          "segment_values": [
+            0.49473339008776296,
+            0.2918499964653755
+          ],
+          "segment_errors": [
+            6.06736882957648e-14,
+            1.5154544286133387e-14
+          ],
+          "tolerance": 1e-09,
+          "warnings": []
+        },
+        {
+          "value": 0.7865833865531384,
+          "reported_error": 7.582823258189819e-14,
+          "segment_values": [
+            0.49473339008776296,
+            0.2918499964653755
+          ],
+          "segment_errors": [
+            6.06736882957648e-14,
+            1.5154544286133387e-14
+          ],
+          "tolerance": 1e-11,
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "mu": 0.1,
+      "refinements": [
+        {
+          "value": 0.7775665002153134,
+          "reported_error": 1.743006028398497e-08,
+          "segment_values": [
+            0.48696436130676696,
+            0.29060213890854636
+          ],
+          "segment_errors": [
+            9.159360880861556e-09,
+            8.270699403123416e-09
+          ],
+          "tolerance": 1e-07,
+          "warnings": []
+        },
+        {
+          "value": 0.7775665001786061,
+          "reported_error": 2.1379775727581318e-10,
+          "segment_values": [
+            0.4869643612700579,
+            0.2906021389085482
+          ],
+          "segment_errors": [
+            2.1378276926498074e-10,
+            1.4988010832439613e-14
+          ],
+          "tolerance": 1e-09,
+          "warnings": []
+        },
+        {
+          "value": 0.7775665001787156,
+          "reported_error": 1.2589929099249275e-13,
+          "segment_values": [
+            0.48696436127016746,
+            0.2906021389085482
+          ],
+          "segment_errors": [
+            1.1091128016005314e-13,
+            1.4988010832439613e-14
+          ],
+          "tolerance": 1e-11,
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "mu": 0.3,
+      "refinements": [
+        {
+          "value": 0.7283689543728116,
+          "reported_error": 1.5053817803423186e-08,
+          "segment_values": [
+            0.44731902924113454,
+            0.2810499251316771
+          ],
+          "segment_errors": [
+            7.529353418522788e-09,
+            7.524464384900398e-09
+          ],
+          "tolerance": 1e-07,
+          "warnings": []
+        },
+        {
+          "value": 0.7283689543728176,
+          "reported_error": 3.602673714908633e-14,
+          "segment_values": [
+            0.4473190292411387,
+            0.2810499251316789
+          ],
+          "segment_errors": [
+            2.142730437526552e-14,
+            1.459943277382081e-14
+          ],
+          "tolerance": 1e-09,
+          "warnings": []
+        },
+        {
+          "value": 0.7283689543728176,
+          "reported_error": 3.5638159090467525e-14,
+          "segment_values": [
+            0.4473190292411387,
+            0.2810499251316789
+          ],
+          "segment_errors": [
+            2.1038726316646716e-14,
+            1.459943277382081e-14
+          ],
+          "tolerance": 1e-11,
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "mu": 1.0,
+      "refinements": [
+        {
+          "value": 0.4779741959712996,
+          "reported_error": 6.714727301959655e-09,
+          "segment_values": [
+            0.2705326182597252,
+            0.2074415777115744
+          ],
+          "segment_errors": [
+            3.3578005376178055e-09,
+            3.35692676434185e-09
+          ],
+          "tolerance": 1e-07,
+          "warnings": []
+        },
+        {
+          "value": 0.4779741959713034,
+          "reported_error": 1.3429842515844115e-09,
+          "segment_values": [
+            0.27053261825972763,
+            0.20744157771157581
+          ],
+          "segment_errors": [
+            6.715435985071849e-10,
+            6.714406530772266e-10
+          ],
+          "tolerance": 1e-09,
+          "warnings": []
+        },
+        {
+          "value": 0.4779741959713022,
+          "reported_error": 2.6117996654306808e-14,
+          "segment_values": [
+            0.2705326182597268,
+            0.2074415777115754
+          ],
+          "segment_errors": [
+            1.6986412276764895e-14,
+            9.131584377541913e-15
+          ],
+          "tolerance": 1e-11,
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "mu": 2.0,
+      "refinements": [
+        {
+          "value": 0.248520302496318,
+          "reported_error": 1.6752867426639284e-09,
+          "segment_values": [
+            0.13174209474518186,
+            0.11677820775113616
+          ],
+          "segment_errors": [
+            8.375579119146437e-10,
+            8.377288307492847e-10
+          ],
+          "tolerance": 1e-07,
+          "warnings": []
+        },
+        {
+          "value": 0.248520302496318,
+          "reported_error": 1.6752867426639284e-09,
+          "segment_values": [
+            0.13174209474518186,
+            0.11677820775113616
+          ],
+          "segment_errors": [
+            8.375579119146437e-10,
+            8.377288307492847e-10
+          ],
+          "tolerance": 1e-09,
+          "warnings": []
+        },
+        {
+          "value": 0.2485203024963171,
+          "reported_error": 1.1088352458443751e-14,
+          "segment_values": [
+            0.1317420947451805,
+            0.11677820775113659
+          ],
+          "segment_errors": [
+            6.522560269672795e-15,
+            4.565792188770956e-15
+          ],
+          "tolerance": 1e-11,
+          "warnings": []
+        }
+      ]
+    }
+  ],
+  "density_normalization": {
+    "value": 0.9999999999999996,
+    "reported_error": 1.4325762798250707e-12,
+    "segment_values": [
+      0.4999999999999999,
+      0.4999999999999997
+    ],
+    "segment_errors": [
+      7.166489623955385e-13,
+      7.159273174295322e-13
+    ],
+    "tolerance": 1e-11,
+    "warnings": []
+  },
+  "finite_chain_controls": [
+    {
+      "mu": 0.0,
+      "ky": 0.37,
+      "kz": 0.82,
+      "effective_mass": 0.8156837285138383,
+      "formula": 0.847807955727907,
+      "open_chains": [
+        {
+          "entropy": 0.8478079557292938,
+          "minimum_eigenvalue": -9.664067145442978e-16,
+          "maximum_eigenvalue": 1.0000000000000115,
+          "endpoint_omitted_entropy": 2.876840498620463e-12,
+          "sites": 64,
+          "components": 4,
+          "periodic": false,
+          "occupied_modes": 128,
+          "gap_to_zero": 0.8160415623888697
+        },
+        {
+          "entropy": 0.8478079557325783,
+          "minimum_eigenvalue": -1.4920009820208364e-15,
+          "maximum_eigenvalue": 1.0000000000000324,
+          "endpoint_omitted_entropy": 6.721231506216801e-12,
+          "sites": 128,
+          "components": 4,
+          "periodic": false,
+          "occupied_modes": 256,
+          "gap_to_zero": 0.8157746073761205
+        }
+      ],
+      "two_component_open": {
+        "entropy": 0.42390397793873813,
+        "minimum_eigenvalue": -7.984444948446814e-16,
+        "maximum_eigenvalue": 1.000000000000362,
+        "endpoint_omitted_entropy": 6.446237868852762e-13,
+        "sites": 128,
+        "components": 2,
+        "periodic": false,
+        "occupied_modes": 128,
+        "gap_to_zero": 0.8157746073761177
+      },
+      "four_component_periodic": {
+        "entropy": 1.695615911460889,
+        "minimum_eigenvalue": -1.3321901610340075e-15,
+        "maximum_eigenvalue": 1.0000000000000426,
+        "endpoint_omitted_entropy": 6.224559593057814e-12,
+        "sites": 128,
+        "components": 4,
+        "periodic": true,
+        "occupied_modes": 256,
+        "gap_to_zero": 0.8156837285138372
+      }
+    },
+    {
+      "mu": 0.2,
+      "ky": 0.11,
+      "kz": 0.29,
+      "effective_mass": 0.3658140926442061,
+      "formula": 1.496040523847979,
+      "open_chains": [
+        {
+          "entropy": 1.496040523821144,
+          "minimum_eigenvalue": -1.1780131673114636e-15,
+          "maximum_eigenvalue": 1.0000000000000129,
+          "endpoint_omitted_entropy": 1.8606726559329282e-12,
+          "sites": 64,
+          "components": 4,
+          "periodic": false,
+          "occupied_modes": 128,
+          "gap_to_zero": 0.36661128864362375
+        },
+        {
+          "entropy": 1.4960405238517427,
+          "minimum_eigenvalue": -2.1011668111761545e-15,
+          "maximum_eigenvalue": 1.000000000000068,
+          "endpoint_omitted_entropy": 5.684925816500808e-12,
+          "sites": 128,
+          "components": 4,
+          "periodic": false,
+          "occupied_modes": 256,
+          "gap_to_zero": 0.36601668739899346
+        }
+      ]
+    },
+    {
+      "mu": 0.7,
+      "ky": 1.1,
+      "kz": 0.4,
+      "effective_mass": 1.1982892822495286,
+      "formula": 0.5671916492324588,
+      "open_chains": [
+        {
+          "entropy": 0.5671916492356106,
+          "minimum_eigenvalue": -1.0245625010996908e-15,
+          "maximum_eigenvalue": 1.0000000000000249,
+          "endpoint_omitted_entropy": 2.79481004621456e-12,
+          "sites": 64,
+          "components": 4,
+          "periodic": false,
+          "occupied_modes": 128,
+          "gap_to_zero": 1.1985328908869894
+        },
+        {
+          "entropy": 0.5671916492417945,
+          "minimum_eigenvalue": -1.5611904234790947e-15,
+          "maximum_eigenvalue": 1.0000000000001446,
+          "endpoint_omitted_entropy": 7.986122028318276e-12,
+          "sites": 128,
+          "components": 4,
+          "periodic": false,
+          "occupied_modes": 256,
+          "gap_to_zero": 1.1983511459632834
+        }
+      ]
+    }
+  ],
+  "product_control": {
+    "entropy": 0.0,
+    "minimum_eigenvalue": 0.0,
+    "maximum_eigenvalue": 1.0,
+    "endpoint_omitted_entropy": 0.0,
+    "sites": 64,
+    "components": 4,
+    "periodic": false,
+    "occupied_modes": 128,
+    "gap_to_zero": 1.0
+  },
+  "cc_slope": 0.6666668579486583,
+  "heavy_mass_controls": [
+    {
+      "M": 100.0,
+      "ratio": 0.9999478455717298
+    },
+    {
+      "M": 200.0,
+      "ratio": 0.9999868620221578
+    }
+  ],
+  "checks": [
+    {
+      "name": "eta_refinement_mu_0.0",
+      "error": 0.0,
+      "tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "eta_refinement_mu_0.1",
+      "error": 1.0957901253050295e-13,
+      "tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "eta_refinement_mu_0.3",
+      "error": 0.0,
+      "tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "eta_refinement_mu_1.0",
+      "error": 1.2212453270876722e-15,
+      "tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "eta_refinement_mu_2.0",
+      "error": 9.159339953157541e-16,
+      "tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "historical_massless_coefficient",
+      "error": 3.3865531384735803e-06,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "name": "transverse_density_normalization",
+      "error": 4.440892098500626e-16,
+      "tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "finite_chain_length_shift_0",
+      "error": 3.284483796051063e-12,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "finite_chain_formula_0_L64",
+      "error": 1.386779580059283e-12,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "finite_chain_formula_0_L128",
+      "error": 4.671263376110346e-12,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "two_component_multiplicity",
+      "error": 1.4489798250139074e-10,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "periodic_two_boundary_count",
+      "error": 2.1337376310270884e-12,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "finite_chain_length_shift_1",
+      "error": 3.0598634737089014e-11,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "finite_chain_formula_1_L64",
+      "error": 2.6834978683609734e-11,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "finite_chain_formula_1_L128",
+      "error": 3.763656053479281e-12,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "finite_chain_length_shift_2",
+      "error": 6.183942247162122e-12,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "finite_chain_formula_2_L64",
+      "error": 3.151812144608357e-12,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "finite_chain_formula_2_L128",
+      "error": 9.335754391770479e-12,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "zero_hopping_product",
+      "error": 0.0,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "small_mass_cc_slope",
+      "error": 1.912819916904951e-07,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "name": "large_mass_schmidt_count",
+      "error": 5.215442827022354e-05,
+      "tolerance": 0.0005,
+      "passed": true
+    },
+    {
+      "name": "large_mass_refinement",
+      "passed": true,
+      "errors": [
+        5.215442827022354e-05,
+        1.3137977842192505e-05
+      ]
+    }
+  ],
+  "all_passed": true,
+  "scope": "No tilted or spherical three-dimensional cuts; no coupled evolution"
+}

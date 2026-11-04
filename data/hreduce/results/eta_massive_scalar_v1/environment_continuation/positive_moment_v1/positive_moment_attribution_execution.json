@@ -1,0 +1,55 @@
+{
+  "status": "finished",
+  "purpose": "Task2 read-only exact saved T20 floor attribution",
+  "producer_sha256": "4e82f4d76f481f6d5d14b75851bcda1bb2a0d26d06333419dbe97abd6ef35d0e",
+  "wrapper_sha256": "eeb70f58e622b05429ae12feaf0e9fbdddfdd705aa975887660eff97245a159d",
+  "command": [
+    "timeout",
+    "--foreground",
+    "-s",
+    "KILL",
+    "90s",
+    "nice",
+    "-n",
+    "10",
+    "taskset",
+    "-c",
+    "8",
+    "<internal>/python",
+    "<internal>/attribute_positive_moment_floor_v1.py"
+  ],
+  "wrapper_pid": 1311647,
+  "environment_settings": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1",
+    "CUDA_VISIBLE_DEVICES": "",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "resources": {
+    "wall_seconds": 90,
+    "cpu_seconds": 60,
+    "threads": 1,
+    "address_space_bytes": 2147483648,
+    "internal_deadline_seconds": 85
+  },
+  "child_pid": 1311686,
+  "exit_code": 0,
+  "elapsed_seconds": 5.806139353662729,
+  "maximum_child_rss_kib": 233384,
+  "saved_positive_moment_floor_attribution.json": {
+    "size": 1556807,
+    "sha256": "ccdae92f5b296efc28ca8e2c70c496ffee7e3d33b49e94a5788badbecc2a87b6"
+  },
+  "positive_moment_attribution_stdout.log": {
+    "size": 34,
+    "sha256": "e3b17199552c86cd6c78adf4ce5c213a707aa4bf0bd7a14608ffd45e50bc6067"
+  },
+  "positive_moment_attribution_stderr.log": {
+    "size": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

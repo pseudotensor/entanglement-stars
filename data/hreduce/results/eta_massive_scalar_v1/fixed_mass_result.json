@@ -1,0 +1,284 @@
+{
+  "status": "incomplete",
+  "science_specification": "ETA_massive_directions_v2.tex V2.5",
+  "purpose": "insert I6a; item 7 light-cut ratio",
+  "y": "1/25",
+  "scope": "eta110 and eta111 at fixed mass, then support and conditional ratio",
+  "resources": {
+    "wall_seconds": 300,
+    "internal_save_deadline_seconds": 295,
+    "address_space_bytes": 805306368,
+    "threads": 1,
+    "nice": 10,
+    "cuda": "disabled"
+  },
+  "quadrature": {
+    "bits": 192,
+    "rule110": "8x8 Gauss-Legendre",
+    "complex_rectangle_halfwidth_factor": 4,
+    "analytic_error110": "(16/3)*4^-16*cell_area*M",
+    "cell_sum_width110": "1e-4",
+    "final_direction_width": "2e-4",
+    "piece_width111": "2e-5",
+    "evaluation_limit": 1000000,
+    "created_cell_limit110": 10000,
+    "real_bound_fallback": "nonnegative S<7"
+  },
+  "finite_sums": {
+    "central": "2*hF(delta)",
+    "paired_terms": "j=1..31",
+    "tail_start": 32,
+    "complex_tail": "V2.5a before density and Jacobian"
+  },
+  "counts": {
+    "evaluations": 2664,
+    "created_cells": 0,
+    "refused_images": 894,
+    "refusals_by_reason": {
+      "nonpositive_real_sqrt_argument": 39,
+      "nonpositive_real_delta": 2,
+      "nonpositive_real_density_complement": 6,
+      "nonpositive_real_p": 80,
+      "nonfinite_elliptic_value": 36,
+      "nonpositive_real_m": 2,
+      "denominator_contains_zero": 308,
+      "epsilon_real_guard": 421
+    }
+  },
+  "guard_samples": {
+    "nonpositive_real_sqrt_argument": {
+      "direction": "111",
+      "piece": 0,
+      "kind": "acb_integral",
+      "analytic": false,
+      "z": "[+/- 32.1]",
+      "t": null,
+      "tested_image": "[+/- 0.501]",
+      "tested_input": null
+    },
+    "nonpositive_real_delta": {
+      "direction": "111",
+      "piece": 0,
+      "kind": "acb_integral",
+      "analytic": false,
+      "z": "[+/- 8.76]",
+      "t": null,
+      "tested_image": "[+/- 14.2]",
+      "tested_input": null
+    },
+    "nonpositive_real_density_complement": {
+      "direction": "111",
+      "piece": 0,
+      "kind": "acb_integral",
+      "analytic": false,
+      "z": "[+/- 2.94]",
+      "t": null,
+      "tested_image": "[+/- 1.13]",
+      "tested_input": null
+    },
+    "nonpositive_real_p": {
+      "direction": "111",
+      "piece": 0,
+      "kind": "acb_integral",
+      "analytic": true,
+      "z": "[1e+0 +/- 0.364] + [+/- 0.210]j",
+      "t": null,
+      "tested_image": "[+/- 15.7] + [+/- 13.3]j",
+      "tested_input": null
+    },
+    "nonfinite_elliptic_value": {
+      "direction": "111",
+      "piece": 0,
+      "kind": "acb_integral",
+      "analytic": true,
+      "z": "[+/- 8.27] + [+/- 0.839]j",
+      "t": null,
+      "tested_image": "nan + nanj",
+      "tested_input": "[+/- 0.921] + [+/- 0.457]j"
+    },
+    "nonpositive_real_m": {
+      "direction": "111",
+      "piece": 0,
+      "kind": "acb_integral",
+      "analytic": true,
+      "z": "[6e+0 +/- 0.883] + [+/- 0.420]j",
+      "t": null,
+      "tested_image": "[+/- 0.900] + [+/- 0.650]j",
+      "tested_input": null
+    },
+    "denominator_contains_zero": {
+      "direction": "111",
+      "piece": 0,
+      "kind": "acb_integral",
+      "analytic": true,
+      "z": "[+/- 9.24] + [+/- 0.839]j",
+      "t": null,
+      "tested_image": "[+/- 14.2] + [+/- 6.30]j",
+      "tested_input": null
+    },
+    "epsilon_real_guard": {
+      "direction": "111",
+      "piece": 0,
+      "kind": "acb_integral",
+      "analytic": true,
+      "z": "[1e+1 +/- 2.15] + [+/- 0.839]j",
+      "t": null,
+      "tested_image": "[+/- 1.06e+2] + [+/- 59.4]j",
+      "tested_input": null
+    }
+  },
+  "tail_radius_maxima": {
+    "entropy_series": {
+      "ball": "[5.2595764565167559879520229796432400569187713667508073027994483386e-36 +/- 4.21e-101]",
+      "lower": "0.0000000000000000000000000000000000052595",
+      "upper": "0.0000000000000000000000000000000000052596",
+      "lower_exact": {
+        "numerator": "1371385147162430302546130290937667756260234051860868235029",
+        "denominator": "260740604970814219042361048116400404614587954389239840081425977517360806369707098391474864128"
+      },
+      "upper_exact": {
+        "numerator": "1371385147162430302546130290937667756260234051860868235029",
+        "denominator": "260740604970814219042361048116400404614587954389239840081425977517360806369707098391474864128"
+      },
+      "width_upper": "0.0000000000000000000000000000000000000000"
+    }
+  },
+  "attempts111": [
+    {
+      "piece": 0,
+      "bits": 192,
+      "z": [
+        "1",
+        "32"
+      ],
+      "queue_limit": 384,
+      "calls": {
+        "total": 1140,
+        "refused_images": 383
+      },
+      "accepted": false,
+      "real": {
+        "ball": "[0.31315115211094705002647213544882650111372332212382159502616689353 +/- 3.62e-3]",
+        "lower": "0.3095380082899620624844389399532210323637",
+        "upper": "0.3167642959319320375685053309444319698638",
+        "lower_exact": {
+          "numerator": "1943001569005057638987021529453978343741638288276833457299",
+          "denominator": "6277101735386680763835789423207666416102355444464034512896"
+        },
+        "upper_exact": {
+          "numerator": "1988361711702870694830215518768909443800171493592251520147",
+          "denominator": "6277101735386680763835789423207666416102355444464034512896"
+        },
+        "width_upper": "0.0072262876419699750840663909912109375000"
+      },
+      "imaginary": {
+        "ball": "[+/- 3.41e-39]",
+        "lower": "-0.0000000000000000000000000000000000000035",
+        "upper": "0.0000000000000000000000000000000000000035",
+        "lower_exact": {
+          "numerator": "-155310129",
+          "denominator": "45671926166590716193865151022383844364247891968"
+        },
+        "upper_exact": {
+          "numerator": "155310129",
+          "denominator": "45671926166590716193865151022383844364247891968"
+        },
+        "width_upper": "0.0000000000000000000000000000000000000069"
+      }
+    },
+    {
+      "piece": 0,
+      "bits": 256,
+      "z": [
+        "1",
+        "32"
+      ],
+      "queue_limit": 512,
+      "calls": {
+        "total": 1524,
+        "refused_images": 511
+      },
+      "accepted": false,
+      "real": {
+        "ball": "[0.31314065443709406755371961462582022189529282679875817930875950208 +/- 2.71e-3]",
+        "lower": "0.3104383228701146574269143091448631906452",
+        "upper": "0.3158429860040734776805249201067772531453",
+        "lower_exact": {
+          "numerator": "35946301984459093550191528596698858953811242284399888826917469023848428171781",
+          "denominator": "115792089237316195423570985008687907853269984665640564039457584007913129639936"
+        },
+        "upper_exact": {
+          "numerator": "36572119220364086279829752029112072553815135907110894099033135014573893710341",
+          "denominator": "115792089237316195423570985008687907853269984665640564039457584007913129639936"
+        },
+        "width_upper": "0.0054046631339588202536106109619140625000"
+      },
+      "imaginary": {
+        "ball": "[+/- 3.31e-39]",
+        "lower": "-0.0000000000000000000000000000000000000034",
+        "upper": "0.0000000000000000000000000000000000000034",
+        "lower_exact": {
+          "numerator": "-603280059",
+          "denominator": "182687704666362864775460604089535377456991567872"
+        },
+        "upper_exact": {
+          "numerator": "603280059",
+          "denominator": "182687704666362864775460604089535377456991567872"
+        },
+        "width_upper": "0.0000000000000000000000000000000000000067"
+      }
+    }
+  ],
+  "panels": [],
+  "results": {},
+  "implementation": {
+    "python": "3.12.12",
+    "python_flint": "0.9.0",
+    "box": "compute-host",
+    "pid": 1277970,
+    "nice_actual": 10,
+    "cuda_visible_devices": ""
+  },
+  "omitted_integral_bounds": {
+    "cut": "2^-32",
+    "eta111_nonnegative": {
+      "ball": "[1.6741917323826602595807984024903881479884686888819297489065616488e-7 +/- 1.62e-72]",
+      "lower": "0.0000001674191732382660259580798402490388",
+      "upper": "0.0000001674191732382660259580798402490389",
+      "lower_exact": {
+        "numerator": "4407824200744243880144339738589616094672347520487590829929",
+        "denominator": "26328072917139296674479506920917608079723773850137277813577744384"
+      },
+      "upper_exact": {
+        "numerator": "4407824200744243880144339738589616094672347520487590829929",
+        "denominator": "26328072917139296674479506920917608079723773850137277813577744384"
+      },
+      "width_upper": "0.0000000000000000000000000000000000000000"
+    },
+    "eta110_nonnegative": {
+      "ball": "[1.1524528889697586816749327198448458861079652709465749226794128630e-9 +/- 4.21e-74]",
+      "lower": "0.0000000011524528889697586816749327198448",
+      "upper": "0.0000000011524528889697586816749327198449",
+      "lower_exact": {
+        "numerator": "1941879276439273243773389321368106837384896708044755966371",
+        "denominator": "1684996666696914987166688442938726917102321526408785780068975640576"
+      },
+      "upper_exact": {
+        "numerator": "1941879276439273243773389321368106837384896708044755966371",
+        "denominator": "1684996666696914987166688442938726917102321526408785780068975640576"
+      },
+      "width_upper": "0.0000000000000000000000000000000000000000"
+    }
+  },
+  "elapsed_seconds": 1.0916776694357395,
+  "peak_rss_kib": 25344,
+  "active_piece111": {
+    "piece": 0,
+    "bits": 256,
+    "calls": {
+      "total": 1524,
+      "refused_images": 511
+    }
+  },
+  "error": "ArithmeticError: a fixed-mass111 piece failed the prescribed test"
+}

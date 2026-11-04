@@ -1,0 +1,125 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,xurl}
+\newcommand{\Tr}{\operatorname{Tr}}
+\title{Purification at a geometric exterior cut: the conditional bound}
+\author{reviewer B A; sole independent RED: reviewer B D}
+\date{}
+\begin{document}
+\maketitle
+
+\paragraph{Scope [S; V:E,B,R,Q].}
+Inbox 73's stationary-object escaping-entropy sentence has the following
+conditional mathematical form.  No numerical calculation, physical
+Page law or restriction on printing the computed curve is supplied.
+
+\paragraph{Exact bound.}
+Let the complete regular native operator \(h\), including its interior
+and actual HA fields, be held fixed.  For a pure number-conserving
+Gaussian physical state \(C(t)=e^{-iht}C_0e^{iht}\), use a complete
+geometric split into the exterior \(X\) beyond the collar and the
+finite interior \(Y\), with \(Q=\Pi_Y\) of rank \(d\).
+Let \(P_g\) be the held Killing-ground projector with declared
+zero-mode filling, not the continued spectral subtraction sheet.
+In nats, put \(s(x)=-x\ln x-(1-x)\ln(1-x)\) and
+\(F_d(z)=d\,s(\min\{z/d,1/2\})\).  Then
+\[
+ \left|S_X(C(t))-S_X(P_g)\right|
+ \le F_d\!\left(\|Q(C(t)-P_g)Q\|_1\right)
+ \le F_d\!\left(\Tr Qe^{-iht}|C_0-P_g|e^{iht}Q\right).
+\]
+The finite-interior entropy formula and the binary-entropy continuity
+bound prove this exactly.  On an infinite parent, a compact covariance
+disturbance supported in the absolutely continuous sector makes the
+right side tend to zero by local spectral decay, with no rate.
+Bound-sector deviations and coherences leave an explicit remainder;
+singular-continuous content needs separate control.  A finite closed
+parent does not have this asymptotic scattering limit.
+
+\paragraph{What a finite return window additionally needs.}
+Assume that completed correlations are side-local relative to the held
+vacuum, and the unfinished joint factor acts on only \(r_X,r_Y\)
+modes on the two sides.  If its pure Gaussian comparison differs from
+the actual interior covariance by at most \(\epsilon\) in trace norm,
+\[
+ \left|S_X(C(t))-S_X(P_g)\right|
+ \le 2\min(r_X,r_Y)\ln2+F_d(\epsilon).
+\]
+The factor two follows from the range of conditional entropy; vacuum
+entanglement cannot be discarded.  If an actual common-history return
+bound \(\tau_*\) restricts this unfinished factor to packets first
+crossing in \((t-\tau_*,t]\), it becomes a window bound.  Completion
+must hold at the observation time, including interleaving and recrossings,
+not merely at an earlier first return.  In the stronger isolated
+independent-pair realization, require constant unfinished Schmidt
+weights, side-product reference pair blocks in the same current cut
+basis, and unchanged remainder entropy.  Then each block contributes
+\(s(\nu_j)\) to the excess, and the bound is the entropy content
+\(\sum_{s_j\in(t-\tau_*,t]}s(\nu_j)\), plus controlled tails and
+bound-sector terms.  Otherwise subtract the reference pair entropies
+\(s(\nu_j^g)\) and retain the remainder's change; the nonnegative
+pair-sum identity need not hold.  Its rate is in nats per infinity-clock time.
+It is not the signed energy flux or an expected particle count:
+\(s(\nu)/\nu\) is unbounded as \(\nu\to0\).  Converting energy
+to entropy requires a positive once-counted allocation, a positive
+frequency lower bound and a controlled number of modes.
+
+\paragraph{Paper-usable conclusion and present applicability.}
+Complete unit-flux one-ended scattering with only incoming vacuum
+gives no stationary excitation supply.  It does not bound a transient
+return time; absolute exterior entropy also contains the nonzero held
+vacuum baseline.  The paper's
+\(2r_s\ln(1/(a\omega))+O(r_s)\) is the maintained vacuum-annulus
+characteristic comparison, not a joint quantum return certificate.
+Its use as a window needs actual interior residence, channel/frequency,
+packet-tail, cut and boundary controls.  The supplied collapse has a
+changing complete operator even where its exterior is nearly stationary;
+the separate held-field records establish neither that joint return
+bound nor an infinite-exterior bound-state decomposition.  Thus the
+conditional theorem applies as stated, without implying an area-scale
+entropy limit or a purification deadline on that history.  Physical
+entropy, the continued spectral source subtraction and nonlinear
+boundary charge remain distinct.
+
+\paragraph{SOURCES.}
+\begin{itemize}
+\item \path{<internal>/PURIFICATION_bound_v1.tex},
+PU1--PU11, proofs, full assumptions and record applicability;
+\path{<internal>/redteam_PURIFICATION_bound_v1.tex},
+sole independent derivation and same-pair scoped agreement at [S];
+\path{<internal>/icloud.md}, inbox 73;
+\path{<internal>/REVIEWA_annals_clarify_v1.md},
+section 2 point 3, supplied claim corrected here.
+\item \path{<internal>/strand_R_single_object_correlations.tex},
+SO1--SO3;
+\path{<internal>/strand_R_web40f_reservoir.tex},
+WR3--WR5/WR12;
+\path{<internal>/web40f_one_ended_scattering.tex},
+OE1--OE9;
+\path{<internal>/HELD_drain_envelope_v1.tex}
+and \path{<internal>/redteam_HELD_drain_envelope_v1.tex},
+local decay, bound tails, actual collar allocation and no universal clock.
+\item \path{<internal>/strand_R_positive_branch_delay.tex};
+\path{<internal>/05_star.tex},
+Eq.~\texttt{star-crossing-delay};
+\path{<internal>/review_HORIZON_single_object_v2.tex};
+\path{<internal>/review_TRANSFER_class_v1.tex},
+released record and transport limits, not new numerical evidence.
+\item \path{<internal>/GOAL_lane.md};
+\path{<internal>/requirements_new.txt};
+\path{<internal>/REVIEWA_REORIENT_4.md},
+physical geometric cut and held-vacuum baseline.
+\item \path{<internal>/PURIFICATION_second_route_v1.tex};
+\path{<internal>/redteam_PURIFICATION_second_route_v1.tex},
+complete statements and post-document proofs, read in the bounded
+inbox-73b comparison.  Their summary comparison prompted the explicit
+reference-pair and observation-time wording above; general bounds and
+all physical limitations are unchanged, with no method upgrade.
+\end{itemize}
+
+\paragraph{Ending.}
+The same original author/RED pair has completed the bounded inbox-73b
+comparison and agrees at [S; V:E,B,R,Q].  The actual compact and full proof are read
+through SOURCES/end after the final save.  No numerical or unconditional
+finite-return result is adopted.
+\end{document}

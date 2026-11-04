@@ -1,0 +1,66 @@
+\subsection*{Uniform-flow vacuum identity}
+Choose the identical-Dirac-block insertion
+$h_v=h_0+\operatorname{diag}(s[v],s[v])$,
+$s[v]=\tfrac12\{v^i,Q_i\}$, $Q_i(p)=\sin(2ap_i)/(2a)$,
+on one full periodic sine lattice per positive-mass packet.
+Let $H_*[v]$ add its canonical shift lift to $H_*$.
+For uniform positive $N,\psi$ and constant $v$, the scalar
+$s(p)=v\cdot Q(p)$ commutes with each band projector.
+The filled sea therefore remains an eigenstate, and paired momenta give
+\[
+ \delta W=\operatorname{Tr}
+   [P_-\operatorname{diag}(s,s)]
+   =\operatorname{Tr}s=0,\qquad
+ H_*[v]|\Omega\rangle=W_0|\Omega\rangle .
+\]
+The trace identity also follows from the two diagonal blocks
+$P_{-,11}=P_{-,22}=I/2$; empty number-conserving bosons contribute zero.
+[X: paired band-spectrum sum; polar-projector trace.]
+Ground-energy equality additionally requires that this state remain
+the ground state; unchanged free-band occupation does not establish
+that for an interacting spectrum.
+
+For arbitrary positive prescribed rulers and $v(x)$ the reference
+expectation still obeys $W_{\rm ref}=W_0$, without guaranteeing
+an invariant sea.  About a homogeneous gapped reference with
+oriented polar factor $U$, the interband vertex is
+\[
+ \mathcal V_{+-}(p+q,p)
+ =\tfrac12s_{p+q,p}
+       [I-U^\dagger(p+q)U(p)]=O(q).
+\]
+Thus a local analytic \emph{quadratic relaxed-ground response} has
+$K_{vv}(q)=O(q^2)$ by its spectral sum of squared vertices over
+positive excitation gaps.  This is the justified gradient onset.
+The uniform identity alone fixes no nonzero gradient coefficient,
+no all-amplitude flow functional, and no conserved interacting
+lattice momentum.
+
+\paragraph*{SOURCES.}
+\begingroup\footnotesize
+\path{<internal>/result.md},
+sections 1.1--1.2: chosen endpoint current, exact reference trace,
+relaxed-ground spectral response, and polar transport criterion.
+Its theorem 4 is a separate positive-clock obstruction to a charged
+flat-ruler shift-only configuration.
+\path{<internal>/result.md},
+sections 2.1, 2.4 and 2.7: theorem E's complete protected-current
+null, theorem F's loss of protection under a vacuum-active added
+interaction, and the $O(q^2)$ response at a homogeneous reference.
+These distinguish reference expectation, protected eigenvalue, and
+relaxed ground energy; they do not equate them on arbitrary fields.
+\endgroup
+% Governing source:
+% <internal>/GOAL_alt.md, duty 3(c).
+% Independent algebra: on a homogeneous profile both h0(p) and s(p)I
+% are diagonal in momentum, so the occupied eigenspaces are unchanged.
+% The many-body shift annihilates the filled sea because its scalar
+% eigenvalue is Tr s=0.  Odd full-zone pairing, not packet grading,
+% gives that trace; finite collars require their actual boundary terms.
+% For free packets the sufficient no-crossing condition is
+% |v.Q(p)| < N sqrt(m_s^2+psi^{-4}|d_a(p)|^2) at every momentum;
+% no corresponding interacting lower bound is asserted here.
+% At q=0 the interband vertex vanishes. Smooth gapped projectors give
+% U(p+q)-U(p)=O(q), so the quadratic spectral response is O(q^2).
+% The fixed-reference functional instead has zero flow response at
+% every q for this insertion and cannot supply nonzero stiffness.

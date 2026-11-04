@@ -1,0 +1,35 @@
+**The two sentences** (LaTeX as it should be pasted):
+
+> On the computed collapse no information is lost in principle: the Hartree evolution is unitary and keeps the state of both fields pure at every step, so the partner of every escaped mode is retained rather than destroyed, lattice modes cross the trapping surface outward (Eq.~\eqref{eq:dr-crossing-ray}, Sec.~\ref{sec:page-transfer}), so the surface is operationally no horizon, and the clock stays positive on every stored slice (Sec.~\ref{sec:singularity}), so no singularity is met within the computed time. What remains open is how and when the partner correlations reach the exterior, the shape and timing of the release that a Page curve tracks.
+
+**Where they go.** 08_discussion.tex line 28, at the end of the paragraph, directly after "Permeability therefore moves the firewall question to the partner accounting, not to a decoupling of the two sides." The paragraph then closes on what is established and what is open, and the next paragraph ("Hartree evolution by itself moves no information from the heavy field to the light field...") answers the "how" part, so no bridge is needed. Do not put them before the "Permeability therefore..." sentence, whose "therefore" would then hang on the new material.
+
+**One existing sentence to shorten.** The fifth sentence of the paragraph now duplicates the new "partner ... retained" clause. Cut its middle clause:
+
+> The accounting is exact because the light field's state is pure: a later block lowers the escaped entropy exactly when it is more entangled with the earlier output than it has entropy of its own (Sec.~\ref{sec:page-effective}).
+
+Nothing else needs cutting. Paragraphs two and three of the Discussion already state "operationally has no horizon" and "positive clock ... within the computed time", but the new sentence only names those facts with cross-references rather than restating their numbers, which is the normal relation of a synthesis to a scope summary.
+
+**Consistency with the paragraph's Mathur point.** The first sentence claims no decrease of the radiation entropy and the second leaves the release open, so the weak-monotonicity sentence ("adds nearly ln 2 ... however permeable") stands untouched: retained partners are exactly the case it describes, and only their release would bring the entropy down.
+
+**Claim-by-claim check against the manuscript.**
+
+1. "the Hartree evolution is unitary and keeps the state of both fields pure at every step." Sec. VI: "along the Hartree evolution i Ċ=[h̄,C] the boundary charge ... generates the matter's evolution" (text at Eq. dr-boundary-variation). Sec. IV.B: "Quadratic matter evolution preserves number-conserving Gaussian states" and "the pure Hartree states and comparator projectors used here". Sec. VII method (label sec:results-lattice): "The stepping is exact for the state ... each covariance being conjugated by its exponential." Sec. VIII.A: C = C_h ⊕ C_l "a product state". Sec. VIII.C: "Unitary quadratic evolution preserves the global purity of the initially pure light covariance." Sec. IX.D: "Gaussian unitary whose one-particle propagator U ... carries the prepared sea to the pure covariance C_L=UP_⋆U†" and "At product Hartree order the light field's state is pure." The statement is about the equations; the manuscript's remark that the integrator's purity defect is "taken as negligible" is a numerical assumption and does not touch it.
+
+2. "so the partner of every escaped mode is retained rather than destroyed." Purity of the complete pure partition (B, E_u, S_u) and S_esc = S_ret, Sec. IX.D, including "Gaussian Schmidt pairs across the trapping cut"; the (now shortened) Discussion sentence "The accounting is exact because the light field's state is pure".
+
+3. "lattice modes cross the trapping surface outward." Eq. dr-crossing-ray with "an outgoing lattice mode exists at every inward speed"; Eq. star-crossing-delay (the logarithmic delay, on the vacuum exterior, which is why the new sentence does not attach the delay to the computed collapse); Sec. VII.C: "Eq. dr-comoving sends modes at π/4<ap<π/2 outward at every inward flow speed"; Sec. VIII.D: slabs 4.7 and 5.8 times the vacuum's, frozen-field cubic transfer of 0.68 to 0.90 of an interior source past the trapping radius, k=1 columns at order-one weight beyond 16r_s by 47.5.
+
+4. "so the surface is operationally no horizon." Abstract ("Operationally the surface is no horizon"), Sec. IV.D ("The surface is therefore no horizon"), Discussion paragraph two.
+
+5. "the clock stays positive on every stored slice." Sec. VII.D: 321 stored slices through T/r_s=40, minimum 0.1020, and 894 slices in four histories with floor e^{-50}; Eq. sg-current-mass gives the reason; abstract.
+
+6. "so no singularity is met within the computed time." Sec. VII.D: definition of a dynamical singularity, 36 ingoing rays crossing the regular centre at finite affine length, test packets keeping their norm to 2×10^{-11}; Discussion paragraph three uses the same words. The support is slice-wise plus traced rays.
+
+7. "What remains open is how and when the partner correlations reach the exterior." Sec. VIII.B: "The stored histories carry no computed value of S_esc." Sec. IX.D: "no entropy-reducing arrival is established on the stored slices", "Neither supports a turnover or a Page time, and none of the diagnostics identifies the emission mechanism", the release mechanism "assumed, not proved"; next Discussion paragraph: Hartree moves no heavy information and beyond Hartree "fixes no rate of coherent transfer".
+
+8. "the shape and timing of the release that a Page curve tracks." Sec. IX.D first sentence ("A Page curve tracks the no-return entropy S_esc ... against the clock at infinity"); Sec. VIII.C: "no Page curve."
+
+**Three things the sentences deliberately do not say.** (a) Not "no event horizon": the manuscript establishes operational permeability only, a global event horizon needs the whole future, and the requirements list it as open and forbid the absolute form. (b) Not the between-slice bound: the attached manuscript says "No stored slice carries this bound" (Sec. VII.D) and "remain to be established" (Discussion paragraph three). If the 5-of-10 result is to be used, those two places must change first, and even then a partial bound would not strengthen the sentence, whose clause rests on the slice tests and still holds. (c) Not "only": paragraph three keeps the between-slice bound open and the next paragraph keeps heavy-to-light transfer open, so "what remains open is" without "only" is the accurate form.
+
+Rule check: no semicolons, no em-dashes, none of the banned words, the single scoping phrases "operationally" and "within the computed time" are the manuscript's own, and nothing claims the paradox solved or a Page curve computed.

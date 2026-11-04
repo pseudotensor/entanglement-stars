@@ -1,0 +1,94 @@
+{
+  "status": "complete",
+  "serves": "WEB40E H4 / duty8 / insert5 DM6",
+  "conventions": {
+    "metric": "-N^2 dt^2+(dr-v dt)^2+r^2 dOmega^2",
+    "residuals": "ADM equation residuals divided by N",
+    "fields": "arbitrary smooth N(t,r),v(t,r),s_r(t,r),s_t(t,r)",
+    "constraints": "rho and J substituted from both coherent constraints"
+  },
+  "producer_sha256": "3d7609d1c5a4773b4ca03ae100fc2782d72f8dd9d173d1b4676b98dfe60a0f4d",
+  "sympy_version": "1.14.0",
+  "assertions": [
+    {
+      "name": "01_normal_constraint",
+      "zero": true,
+      "residual_numerator": "0"
+    },
+    {
+      "name": "02_momentum_constraint",
+      "zero": true,
+      "residual_numerator": "0"
+    },
+    {
+      "name": "03_radial_einstein_vs_tangent_ADM",
+      "zero": true,
+      "residual_numerator": "0"
+    },
+    {
+      "name": "04_angular_einstein_vs_ADM_trace",
+      "zero": true,
+      "residual_numerator": "0"
+    },
+    {
+      "name": "05_coordinate_energy_divergence",
+      "zero": true,
+      "residual_numerator": "0"
+    },
+    {
+      "name": "06_coordinate_momentum_divergence",
+      "zero": true,
+      "residual_numerator": "0"
+    },
+    {
+      "name": "07_first_source_defect_identity",
+      "zero": true,
+      "residual_numerator": "0"
+    },
+    {
+      "name": "08_second_source_defect_identity",
+      "zero": true,
+      "residual_numerator": "0"
+    },
+    {
+      "name": "09_quadrature_differential_identity",
+      "zero": true,
+      "residual_numerator": "0"
+    },
+    {
+      "name": "10_covariant_quadrature",
+      "zero": true,
+      "residual_numerator": "0"
+    },
+    {
+      "name": "11_zero_flow_radial_exception",
+      "zero": true,
+      "residual_numerator": "0"
+    },
+    {
+      "name": "12_zero_flow_tangent_exception",
+      "zero": true,
+      "residual_numerator": "0"
+    },
+    {
+      "name": "13_zero_flow_energy_defect",
+      "zero": true,
+      "residual_numerator": "0"
+    },
+    {
+      "name": "14_zero_flow_momentum_defect",
+      "zero": true,
+      "residual_numerator": "0"
+    },
+    {
+      "name": "15_mass_balance_normalization",
+      "zero": true,
+      "residual_numerator": "0"
+    }
+  ],
+  "passed": true,
+  "elapsed_seconds": 1.4128243327140808,
+  "cpu_seconds": 1.598744,
+  "maximum_resident_KiB": 57600,
+  "scope": "Exact arbitrary-field identities only; no native history, stress or time/ell error certification."
+}

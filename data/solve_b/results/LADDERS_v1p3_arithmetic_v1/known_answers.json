@@ -1,0 +1,150 @@
+[
+  {
+    "name": "plain converged",
+    "expected": {
+      "kept": 2e-05,
+      "confirming": null,
+      "counts": true,
+      "banded": false
+    },
+    "actual": {
+      "kept": 2e-05,
+      "confirming": null,
+      "contract": "plain converged final entry",
+      "kept_index": 1,
+      "counts": true,
+      "kept_pass": true,
+      "banded": false,
+      "reasons": []
+    },
+    "passed": true
+  },
+  {
+    "name": "following fails",
+    "expected": {
+      "kept": 5e-05,
+      "confirming": 0.002,
+      "counts": false,
+      "banded": false
+    },
+    "actual": {
+      "kept": 5e-05,
+      "confirming": 0.002,
+      "kept_index": 1,
+      "contract": "plain following entry",
+      "counts": false,
+      "kept_pass": true,
+      "banded": false,
+      "reasons": [
+        "confirming"
+      ]
+    },
+    "passed": true
+  },
+  {
+    "name": "Newton precedence",
+    "expected": {
+      "kept": 0.0002,
+      "confirming": 0.0003,
+      "counts": true,
+      "banded": true
+    },
+    "actual": {
+      "kept": 0.0002,
+      "confirming": 0.0003,
+      "contract": "Newton explicit",
+      "kept_index": null,
+      "counts": true,
+      "kept_pass": true,
+      "banded": true,
+      "reasons": []
+    },
+    "passed": true
+  },
+  {
+    "name": "inclusive upper",
+    "expected": {
+      "kept": 0.001,
+      "confirming": null,
+      "counts": true,
+      "banded": true
+    },
+    "actual": {
+      "kept": 0.001,
+      "confirming": null,
+      "contract": "plain converged final entry",
+      "kept_index": 0,
+      "counts": true,
+      "kept_pass": true,
+      "banded": true,
+      "reasons": []
+    },
+    "passed": true
+  },
+  {
+    "name": "strict lower band",
+    "expected": {
+      "kept": 0.0001,
+      "confirming": null,
+      "counts": true,
+      "banded": false
+    },
+    "actual": {
+      "kept": 0.0001,
+      "confirming": null,
+      "contract": "plain converged final entry",
+      "kept_index": 0,
+      "counts": true,
+      "kept_pass": true,
+      "banded": false,
+      "reasons": []
+    },
+    "passed": true
+  },
+  {
+    "name": "plain last kept",
+    "expected": {
+      "kept": 0.0003,
+      "confirming": null,
+      "counts": true,
+      "banded": true
+    },
+    "actual": {
+      "kept": 0.0003,
+      "confirming": null,
+      "kept_index": 0,
+      "contract": "plain kept last entry",
+      "counts": true,
+      "kept_pass": true,
+      "banded": true,
+      "reasons": []
+    },
+    "passed": true
+  },
+  {
+    "name": "inconsistent kept identity rejected",
+    "passed": true
+  },
+  {
+    "name": "negative norm rejected",
+    "passed": true
+  },
+  {
+    "name": "missing Newton metadata rejected",
+    "passed": true
+  },
+  {
+    "name": "later pass does not repair prefix",
+    "actual": [
+      true,
+      false,
+      false
+    ],
+    "expected": [
+      true,
+      false,
+      false
+    ],
+    "passed": true
+  }
+]

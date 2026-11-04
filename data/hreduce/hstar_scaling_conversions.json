@@ -1,0 +1,43 @@
+{
+  "scope": "central-value unit conversions; no stellar solution or uncertainty enclosure",
+  "constants": {
+    "h_J_s": "6.62607015e-34",
+    "c_m_s": "299792458",
+    "G_m3_kg_s2": "6.67430e-11",
+    "nominal_GM_sun_m3_s2": "1.3271244e20",
+    "e_C": "1.602176634e-19"
+  },
+  "sources": [
+    "https://physics.nist.gov/cuu/pdf/wall_2022.pdf",
+    "https://www.iau.org/common/Uploaded%20files/IAUGA2015-Resolution-B3-recommended-nominal-conversion.pdf"
+  ],
+  "formulas": {
+    "hbar": "h/(2*pi)",
+    "lP": "sqrt(hbar*G/c^3)",
+    "mP": "sqrt(hbar*c/G)",
+    "nominal_M_sun": "nominal_GM_sun/G",
+    "radius_per_nominal_solar_mass": "2*nominal_GM_sun/c^2",
+    "planck_energy": "mP*c^2",
+    "constituent_mass_energy_prefactor_GeV": "sqrt(mP^3/nominal_M_sun)*c^2/(e*1e9)"
+  },
+  "checks": {
+    "all_positive_finite": true,
+    "solar_planck_ratio_relative_difference": "0.0",
+    "radius_identity_relative_difference": "0.0",
+    "relative_difference_limit": "1e-25"
+  },
+  "arithmetic_decimal_places": 50,
+  "nice": 10,
+  "values": {
+    "hbar_J_s": "1.054571817646156391262428003302280744723e-34",
+    "planck_length_m": "1.616255024423705286500047697249314156917e-35",
+    "planck_mass_kg": "0.00000002176434342717898213927914919024147041117",
+    "planck_energy_J": "1956081636.698372829061018199962984260994",
+    "spacing_0p0055_lP_m": "8.889402634330379075750262334871227863046e-38",
+    "spacing_0p0004_lP_m": "6.46502009769482114600019078899725662767e-39",
+    "nominal_solar_mass_kg": "1988409870698050731911960804878.414215723",
+    "nominal_solar_mass_over_planck_mass": "91360893902039545485201757242625860044.48",
+    "schwarzschild_radius_per_nominal_solar_mass_m": "2953.250076100249459255959680289872702612",
+    "constituent_mass_energy_prefactor_GeV": "1.277310293931863255415878153671551686056"
+  }
+}

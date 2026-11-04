@@ -1,0 +1,551 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,mathtools,mathrsfs,url}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlength{\emergencystretch}{2em}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\CAR}{CAR}
+\begin{document}
+\paragraph{Strand X: light-algebra entropy and correlations on the
+same external-frame history [X/S; V:X,W,D].}
+The result is an exact finite-parent readout interface and a bounded
+interpretation theorem, not a computed collapse or a prescribed Page
+curve.  The native state, clock and ruler are those of the X evolution.
+The zero-coupling Gaussian control admits covariance readouts.  The
+interacting light law requires its actual state; its positive source
+operators are not substituted for canonical fermion modes.
+Algebra, surface and detector choices below are declared readout
+choices and do not change a field row or the time generator.
+No preparation checkpoint supplies a time curve.
+Exactly two claim-specific [X] groups apply: pure Gaussian
+entropy/cross-block normalization, and the dressed reduced-entropy
+upper bound.  Their different agreeing routes are given in SOURCES;
+the remaining checked formulas have supporting [S] scope.
+
+\paragraph{1. One dynamical system, with no entropy feedback law.}
+On a finite native parent $\Lambda=I\sqcup B$ retain all crossing
+coefficients, fix $N_B=\psi_B=1$, and use its clock $T$.  In a fixed
+native CAR chart the retained X system is
+\begin{equation}
+\begin{gathered}
+ C_x=w_x(\psi)+\Tr(\rho e_x(\psi)),\quad e_x\geq0,\quad C_I=0,\\
+ J_{xy}=\partial_{\psi_y}C_x\big|_\rho,\quad
+ J_{II}^{T}N_I=-J_{BI}^{T}{\bf1}_B,\quad
+ i\dot\rho=[H_{\rm exc}^{\rm nat}(N,\psi),\rho],\\
+ H_{\rm exc}^{\rm nat}=\sum_xN_xe_x,\qquad
+ {\cal E}=\sum_{b\in B}C_b
+          =\sum_x\frac{\Tr(\rho e_x)}{\psi_x}\geq0,\qquad
+ \dot{\cal E}=0 .
+ \tag{XP1}
+\end{gathered}
+\end{equation}
+These are exact on the regular positive branch and the finite-domain
+conditions of XN1--XN10.  The native fermionic Fock space is complete;
+the invariant empty sector of the untruncated bosons retains their
+vacuum scalar.  Other boson states require the stated domain and
+moment bounds.  The isolated and spherical limits are additional
+constructions.  The primary vacuum row is
+$W_2=-k_*\int\nabla\psi\cdot\nabla(N\psi)$ with its single match;
+the finite nonlocal and higher-gradient remainders are not removed
+from (XP1).
+
+At nonzero light coupling use the full W5--W15 source, including the
+moving excitation filter, regulator and ruler-distance derivatives,
+four-$B_1$ denominator and every intermediate-sector completion.
+In a polar chart the same state equation has generator
+$H_{\rm exc}-i{\cal T}_\psi^\dagger\dot{\cal T}_\psi$.
+The complete connection is included once; it is not replaced by a
+number-preserving or pair-only projection.  The auxiliary mean-state
+time prescription and its physical scope remain those of Strand X.
+All readouts below are evaluated on this same $\rho(T),N(T),\psi(T)$.
+The self-consistent mean-state map is nonlinear in its input state.
+Unitary evolution along each solved history preserves that history's
+global spectrum, but does not by itself define a state-independent
+quantum channel on ensembles or external ancillas.  The result is a
+history readout, not an information-recovery theorem.
+
+\paragraph{2. Declare the spatial algebra and the surface.}
+The native light one-particle space is
+$\mathfrak h_\ell=\ell^2(\Lambda)\otimes{\mathbb C}^4$.
+Its four modes per site contain both carrier blocks and all native
+momenta; the eight sine valleys are not eight independent fields.
+The vacuum inventory signs $\eta_s$ do not weight the light-state
+entropy or its correlation functions.
+Write $c_i$, $i=(x,\alpha)$, for its canonical annihilators.
+Trace the other packets from $\rho$ to obtain $\rho_\ell$.
+Assume native charge invariance $[\rho_\ell,\sum_i c_i^\dagger c_i]=0$,
+as in the stated preparations and charge-preserving law.  This implies
+zero native anomalous covariance; a state without this property needs
+its full Majorana covariance in the Gaussian case.
+
+Use the material surface $r_m(T)$ supplied by the same collapse
+calculation, with center fixed by the declared preparation, and set
+\begin{equation}
+ A(T)=\{x:|x|\leq r_m(T)\},\quad
+ \bar A(T)=\Lambda\setminus A(T),\quad
+ {\cal A}_{A}=\CAR(\ell^2(A)\otimes{\mathbb C}^4).
+ \tag{XP2}
+\end{equation}
+The equality convention at a site crossing is the displayed
+``$\leq$'' rule.  All exterior modes up to and including the collar
+belong to the complement.  Fix site, carrier and spin order once.
+The reductions use the graded fermionic tensor decomposition, or
+equivalently the occupation basis after a fermionic permutation
+grouping the modes in $A$ and $\bar A$.  A qubit partial trace in an
+unadjusted interleaved ordering is not this prescription.
+The even parts of the two local CAR algebras commute.
+Their parity or charge centers and the operational restrictions
+they impose are distinguished from the mode entropy below.
+These are the matter CAR algebras on the solved numerical-field
+history, not a constructed algebra of a further quantum
+constraint reduction; such a reduction could change the
+factorization and requires its own stated observable algebra.
+The outer parent and collar are retained parts of the light state.
+An absorbing boundary or deletion of escaped modes changes this
+unitary/algebraic prescription unless an explicit environment and
+its evolution are retained.
+
+For the specified Gaussian control, reuse its positive marked
+particle density and declared 90-percent radius.  If
+$P_g$ is its rank-two native initial packet projector, the marker
+is $\lambda{\cal U}(T,T_0)P_g{\cal U}(T,T_0)^\dagger$,
+with total trace $2\lambda$.  Its normalized quantile is defined
+only for $\lambda>0$; at zero marked load report that material
+surface undefined.  Its radius is a readout and does not enter
+the equations.
+This one-particle marker is not an independent material evolution
+law at finite coupling.  A shell or controlled matter description
+can supply its own material surface.  If no such surface is defined,
+a fully specified alternative readout is the smallest native radius
+enclosing 90 percent of the positive weights
+$\Tr(\rho e_x)/\psi_x$, when their sum is positive; a zero sum
+does not define this surface.  This energy-quantile cut includes produced
+excitations and is not a material world line.  It cannot be used
+to infer the inward speed of matter without an additional separation
+estimate.  The cut choice is fixed before interpreting its curve.
+Neither choice sets the cut to $2G{\cal E}$.
+
+\paragraph{3. Exact Gaussian entropy and its mixed-state qualification.}
+For a native, gauge-invariant quasifree light state define
+\begin{equation}
+ C_{ij}(T)=\Tr(\rho_\ell c_j^\dagger c_i),\quad
+ 0\leq C\leq1,\quad
+ C_A=P_A C P_A\big|_{\mathfrak h_A},\quad
+ G_{A\bar A}=P_A C P_{\bar A},\quad
+ s(t)=-t\log t-(1-t)\log(1-t).
+ \tag{XP3}
+\end{equation}
+Here and below $0\log0=0$ and entropies use natural logarithms.
+Diagonalizing $C_A$ gives independent Bernoulli occupations,
+and hence
+\begin{equation}
+ S_A=\tr s(C_A),\quad S_{\bar A}=\tr s(C_{\bar A}),\quad
+ S_\ell=\tr s(C),\quad
+ {\cal I}(A:\bar A)=S_A+S_{\bar A}-S_\ell .
+ \tag{XP4}
+\end{equation}
+Equivalently the restricted Gaussian density is the normalized
+exponential of a quadratic number operator with one-mode
+occupation eigenvalues equal to those of $C_A$.  This derivation
+does not use the source allocation or a continuum limit.
+
+If $C^2=C$, the full light state is a pure Slater state and
+$S_A=S_{\bar A}={\cal I}/2$ is its mode entanglement entropy.
+The cosine--sine decomposition of its occupied subspace gives
+independent occupied modes
+$\sqrt{\nu_j}a_j^\dagger+\sqrt{1-\nu_j}b_j^\dagger$ across the cut,
+and the same entropy $\sum_j s(\nu_j)$.
+For a pure state of fixed total native number the further
+charge-resolved decomposition is
+\[
+ S_A=H(\{p_n\})+\sum_n p_n S(\rho_{A,n}),\qquad
+ p_n=\Tr(\rho_A\Pi_{A,n}).
+\]
+Reporting the within-sector average instead of the full mode
+entropy is an additional declared local-charge readout convention;
+the two quantities must not be conflated.
+
+The actual fractional-load Gaussian preparation is
+$C(T_0)=P_-+\lambda P_g$, with $0\leq\lambda\leq1$,
+$P_-P_g=0$ and
+$\operatorname{rank}P_g=2$.  Consequently, exactly,
+\begin{equation}
+ S_\ell(T)=2s(\lambda),\qquad
+ \tr\{C(T)(1-C(T))\}=2\lambda(1-\lambda).
+ \tag{XP5}
+\end{equation}
+The native unitary evolution preserves these values even when
+its one-body generator depends self-consistently on the state.
+Thus $0<\lambda<1$ is a mixed preparation: $S_A$ alone is not
+interior--exterior entanglement and ${\cal I}$ is total correlation,
+not an entanglement measure.  A pure-light entanglement curve
+requires a pure initial light state and dynamics preserving its
+purity.  Factorized packet dynamics with classical solved fields
+has this property when the packets start in a product state.
+It cannot be assumed after tracing an initially correlated packet.
+
+For a mixed light state an exact possible mode-entanglement
+definition is the entanglement of formation in the declared
+occupation tensor convention,
+$E_F(\rho_{A\bar A})=\inf_{\rho=\sum_jp_j|\varphi_j\rangle
+\langle\varphi_j|}\sum_jp_jS(\rho_{A,j})$.
+This requires the joint density matrix and an optimization;
+(XP4) is not a formula for it.  Restricting the decomposition
+or local operations by superselection defines a different
+operational quantity and must be stated.  The finite-parent
+Gaussian algorithm reports (XP4)--(XP5) without such an
+unperformed mixed-state entanglement claim.
+
+\paragraph{4. Cross-surface correlations and an exact purity identity.}
+The canonical equal-time two-point function across the surface
+is precisely $G_{A\bar A}$.  For disjoint native modes $i,j$,
+Wick contraction gives
+\begin{equation}
+ \langle n_i n_j\rangle_c=-|C_{ij}|^2,\qquad
+ \Cov(N_A,N_{\bar A})=-\|G_{A\bar A}\|_{\rm HS}^2,\qquad
+ C_A(1-C_A)=G_{A\bar A}G_{A\bar A}^\dagger
+             +P_A(C-C^2)P_A .
+ \tag{XP6}
+\end{equation}
+The last identity follows independently by multiplying the
+two-by-two block matrix $C$; it isolates mixedness from
+cross-surface correlation.  For a pure Slater state its last
+term is zero.  In that case the singular values $g_j$ of
+$G_{A\bar A}$ obey $g_j^2=\nu_j(1-\nu_j)$, and
+\[
+ S_A=\sum_j s\!\left(\frac{1-\sqrt{1-4g_j^2}}2\right).
+\]
+Zero singular values contribute zero.  This is a useful independent
+readback of the pure Gaussian entropy, not a formula for a mixed
+or non-Gaussian state.
+
+For site fields normalized in coordinate volume,
+$\Psi_\ell(x)=a^{-3/2}c_x$, the reported spinor kernel is
+$a^{-3}C_{x\alpha,y\beta}$.  Proper-volume normalization instead
+adds $\psi_x^{-3}\psi_y^{-3}$ to this kernel.
+Entropy always uses the canonical mode matrix (XP3), not that
+rescaled kernel with an unchanged counting measure.
+For normalized canonical detector modes $f,g$, the two-point
+readout is $f^\dagger Cg$.  Local spin-basis changes transform
+the two endpoints and leave singular-value or Hilbert--Schmidt
+readouts invariant.
+
+Along the same Gaussian history let ${\cal U}(T,T')$ solve
+$i\partial_T{\cal U}=h[N(T),\psi(T)]{\cal U}$.  With no extra
+factor of $i$ in the Wightman convention, the unequal-time kernels are
+\begin{equation}
+ \begin{aligned}
+ G^<(T,T')&={\cal U}(T,T')C(T'),&
+ G^>(T,T')&={\cal U}(T,T')(1-C(T')),\\
+ G^<_{A\bar A}(T,T')&=P_{A(T)}G^<(T,T')P_{\bar A(T')},&
+ G^<+G^>&={\cal U}(T,T').
+ \end{aligned}\tag{XP7}
+\end{equation}
+For example $G^<_{ij}(T,T')=\langle c_j^\dagger(T')c_i(T)\rangle$.
+The two-time prescription holds the solved background history
+fixed in these operator insertions; it does not solve new fields
+for a measurement-conditioned state after each insertion.
+Such a conditional measurement law is not determined by
+the history-dependent mean-state evolution alone.
+The anticommutator in the last line checks the common evolution
+and normalization.  A polar calculation uses both endpoint
+frames, $W^\dagger(T)G^{\lessgtr}(T,T')W(T')$, and the
+transported projectors $W^\dagger(T)P_AW(T)$.
+Keeping a site-diagonal cut after this nonlocal frame change
+defines a different algebra.  Soft spatial masks are not
+orthogonal subsystem projectors.
+Only for disjoint sets at equal time does the projected
+anticommutator vanish and give $G^>_{A\bar A}=-G^<_{A\bar A}$.
+
+\paragraph{5. Dynamics and motion of the cut are distinct.}
+Between site-crossing times, $P_A$ is constant and
+$\dot C=-i[h,C]$.  With every spectral or nonlocal term crossing
+the cut retained,
+\begin{equation}
+ \begin{aligned}
+ \dot C_A&=-i\{[h_{AA},C_A]+h_{A\bar A}C_{\bar A A}
+                              -C_{A\bar A}h_{\bar A A}\},\\
+ \frac{d}{dT}\langle N_A\rangle
+     &=2\,\operatorname{Im}\tr(h_{A\bar A}C_{\bar A A}),\\
+ \dot S_A&=-i\,\tr\!\left[
+       \log\frac{1-C_A}{C_A}
+       (h_{A\bar A}C_{\bar A A}-C_{A\bar A}h_{\bar A A})
+                                      \right].
+ \end{aligned}\tag{XP8}
+\end{equation}
+The internal commutator drops out of the last line because the
+logarithm commutes with $C_A$.  Use that line when the active
+eigenvalues stay away from zero and one, or first replace the
+logarithm by $\log[(1-C_A+\epsilon)/(C_A+\epsilon)]$ and control
+the limit.  The continuous entropy formula (XP4) remains valid
+at pure eigenvalues; a finite entropy derivative is not assumed.
+
+At a hard-cut jump $A_-\to A_+$ the state has no jump.
+Record separately
+\begin{equation}
+ \Delta_{\rm cut}S=S_{A_+}(C(T_*))-S_{A_-}(C(T_*)),\qquad
+ \Delta_{\rm cut}N=\tr\{(P_{A_+}-P_{A_-})C(T_*)\}.
+ \tag{XP9}
+\end{equation}
+These changes reassign modes; they are not pair production or
+an entropy source.  A sampled calculation must either locate $T_*$
+with controlled interpolation of this same history, or use the
+exact endpoint decomposition
+\[
+ \begin{split}
+ S_{A_{n+1}}(C_{n+1})-S_{A_n}(C_n)
+ ={}&[S_{A_n}(C_{n+1})-S_{A_n}(C_n)]\\
+   &+[S_{A_{n+1}}(C_{n+1})-S_{A_n}(C_{n+1})].
+ \end{split}
+\]
+The second term is endpoint reassignment, not a located physical
+crossing.  For number the two terms are respectively
+$\tr[P_{A_n}(C_{n+1}-C_n)]$ and
+$\tr[(P_{A_{n+1}}-P_{A_n})C_{n+1}]$.
+An endpoint decomposition alone does not resolve intermediate
+multiple crossings.  For a smooth family of orthonormal detector
+isometries $Q_A(T)$ of fixed rank, the corresponding alternative
+readout has
+$\dot C_A=\dot Q_A^\dagger C Q_A+Q_A^\dagger\dot C Q_A+
+Q_A^\dagger C\dot Q_A$.  Its first and last terms are retained.
+It is not obtained by treating a soft mask as a partial trace.
+
+A spatial exterior at each time is not automatically a nested
+algebra of accumulated outgoing radiation.  Such a radiation
+readout needs separately declared orthonormal outgoing detector
+modes or a detector model.  Reusing the same mode at successive
+times does not create independent tensor factors, and entropies
+of successive samples cannot be added.  The handoff curve here
+is the declared spatial-cut entropy/correlation curve.
+
+\paragraph{6. What survives for the actual dressed light state.}
+For the complete interacting law use
+$\rho_A=\Tr_{\bar A}\rho_\ell$ in the declared fermionic convention,
+$S_A=-\Tr\rho_A\log\rho_A$ and
+$C_{ij}=\Tr\rho_\ell c_j^\dagger c_i$.
+The evolution of $C$ is
+$\dot C_{ij}=i\Tr\rho_\ell[H_\ell,c_j^\dagger c_i]$,
+with the corresponding full-state expectations if other sectors
+are not factorized.  It is not a closed one-body equation.
+Unequal-time kernels use the actual many-body Heisenberg
+operators and their ordered insertions.  There is no one-body
+propagator replacement of (XP7) for a general interacting state.
+A pure interacting light state still has bipartite entropy
+$S_A=S_{\bar A}$, but need not be Gaussian or satisfy $C^2=C$.
+
+Let $\rho_A^G$ be the Gaussian state with the same native
+$C_A$, and assume charge invariance.  Its logarithm is quadratic,
+so $\Tr\rho_A\log\rho_A^G=\Tr\rho_A^G\log\rho_A^G$.  Therefore
+\begin{equation}
+ \tr s(C_A)-S(\rho_A)
+       =D(\rho_A\Vert\rho_A^G)\geq0 .
+ \tag{XP10}
+\end{equation}
+Eigenvalues zero or one impose an exactly empty or occupied mode
+on every state with that covariance; restrict to the remaining
+support or take the continuous limit.  Thus a covariance-only
+entropy is an upper bound for the actual reduced entropy,
+with a specified non-Gaussian deficit.  This does not make a
+Gaussian mutual information an upper or lower bound on the
+interacting mutual information.
+Independently, diagonalize $C_A$ by a unitary acting inside $A$.
+The single-mode density matrices have occupations $\nu_j$ and
+entropies $s(\nu_j)$.  Repeated subadditivity then gives
+$S(\rho_A)\leq\sum_j s(\nu_j)$ without a Gaussian-state assumption.
+This proves the same upper bound by a different route.
+For $i\ne j$ the connected four-point remainder
+$\langle n_i n_j\rangle-C_{ii}C_{jj}+|C_{ij}|^2$
+is also retained; (XP6)'s Wick covariance formula is not
+an interacting identity.
+
+The source amplitudes $F_i=e^{-S}d_i e^S$ have ordinary adjoints
+$F_i^\dagger=e^S d_i^\dagger e^{-S}$.
+The similarity transform does not in general preserve
+$\{F_i,F_j^\dagger\}=\delta_{ij}$.
+Consequently a matrix $\langle F_j^\dagger F_i\rangle$ is not
+a canonical occupation matrix for (XP3)--(XP4).
+The overlapping Walsh masks are likewise not independent
+subsystem modes.  Canonical polar modes may be used only
+with their exact transformed algebra and connection.
+The signed difference $C-P_-[\psi]$ is not a covariance either.
+It may be used for an excess two-point signal, but not inside
+the entropy function.
+
+At fixed finite $a$ one may additionally report
+$S_A-S_A^{\rm ref}$ with
+$S_A^{\rm ref}=\tr s(P_A P_-[\psi]P_A)$.
+This is a signed, reference- and cut-dependent excess entropy,
+not an entanglement measure.  Neither the ultraviolet sea
+entropy nor its change is thereby proved to have a universal
+continuum limit.
+
+\paragraph{7. Error statements and the finite-spacing scope.}
+If $C_A,\widehat C_A$ are positive contractions on $m_A$ modes
+and $\|C_A-\widehat C_A\|\leq\epsilon\leq1/2$, the eigenvalue
+variation and binary-entropy modulus give
+\begin{equation}
+ |\tr s(C_A)-\tr s(\widehat C_A)|\leq m_A s(\epsilon),\qquad
+ \|P_A(C-\widehat C)P_{\bar A}\|\leq\|C-\widehat C\|.
+ \tag{XP11}
+\end{equation}
+A time-step comparison is not such an enclosure by itself.
+Covariance eigenvalues outside $[0,1]$ require an error account;
+unrecorded clipping is not a validation.
+For actual density matrices with trace distance
+$t=\|\rho_A-\widehat\rho_A\|_1/2$ and dimension $d_A=2^{m_A}$,
+an elementary bound is
+$|S(\rho_A)-S(\widehat\rho_A)|
+\leq t\log d_A+(1+t)s(t/(1+t))$.
+It follows by writing the positive and negative parts of
+$\rho_A-\widehat\rho_A$ as two mixtures with a common state
+and applying the entropy-of-mixture bounds.
+This explicit dimension cost is not supplied by one-body
+covariance accuracy in the interacting problem.
+
+If two spatial cuts differ by $m_D$ modes, successive partial
+traces and the entropy triangle inequality give
+$|S_A-S_{A'}|\leq m_D\log2$ at the same state.
+Report this geometric ambiguity, the site-crossing jumps,
+cubic angular variation, and the finite collar separately
+from dynamical error.  Native-spacing entropy is a finite
+quantity; a near-surface sea contribution may depend strongly
+on $a$.  A long-wavelength $(\kappa a)^2$ dispersion estimate
+does not automatically bound the full ultraviolet entropy.
+Parent enlargement, the same readout algebra and controlled
+source/boundary tails are required for an isolated transfer.
+No coordinate or polar transformation deletes those conditions.
+
+\paragraph{8. Builder handoff: system, scheme and stopping statements.}
+Use (XP1) and the exact W rows for one self-consistent history,
+or label the stated $g_M=g_B=0$ Gaussian specialization.
+Reuse the same accepted native state, field root and boundary
+clock at each sample; do not run a separately fitted geometry
+to generate an entropy curve.
+For the Gaussian calculation:
+\begin{enumerate}
+\item Preserve the specified initial covariance, its $\lambda$,
+global mixedness and surface rule.  Advance it by the existing
+unitary midpoint state scheme with clock and transpose-ruler
+solves at its required iterates and endpoints.
+\item At accepted endpoints compress the native light covariance
+to $A,\bar A$, compute (XP4)--(XP6), and retain the mode counts,
+cut labels, reference readout if used, and global entropy.
+Record controlled crossing jumps or the exact endpoint
+reassignment decomposition separately.  The observable can be sampled
+more sparsely than the evolution without changing the state.
+\item Compose the very same unitary step factors for (XP7),
+or propagate only a predeclared orthonormal detector-mode set.
+For prescribed $(T,T')$ store both endpoint cuts and both
+lesser/greater kernels; check their anticommutator sum.
+No extra independent modes are created by sampling in time.
+\item Compare fixed-step trajectories that share the declared
+initial state and algebra.  Carry state, field, detector and
+surface errors into the readouts.  Keep the running finite-parent
+control's existing caps, guard values and target loads unchanged.
+There is no authorization here for another long runtime.
+\end{enumerate}
+The equal-time Gaussian work is dense matrix compression and
+diagonalization on at most $4|\Lambda|$ light modes.  Storing
+the full unequal-time propagator has a quadratic mode cost;
+a declared detector subspace reduces readout storage, not the
+underlying source/state system.
+At nonzero coupling the same scheme instead needs the actual
+many-body state and complete generator/rows.  Exact full-light
+density matrices have dimension $2^{4|\Lambda|}$.
+A controlled state representation may reduce this cost, but
+discarding completion terms, resetting the sea, imposing Wick
+factorization, or truncating moving excitation sectors changes
+the calculation and needs an explicit error or approximation
+statement.  The Gaussian control alone supplies none.
+A hydrodynamic or TF occupation closure alone does not supply
+the dressed reduced density or its entanglement.
+
+The common monitors are the clock and ruler residuals; native
+state positivity, trace and purity/mixedness; full Jacobian
+conditioning and the positive-field branch; collar charge and
+its positive-volume identity including residuals and boundary
+flux; material size and angular distortion; $N\psi$ and
+$c_{\rm out}=N\psi^{-2}$ on the declared material surface;
+the exterior coefficient/dilation-work defect without setting
+$A=B$; and the actual finite-frequency source response against
+spatial stiffness, with the completed light pair resolvent.
+Add the entropies, mutual information, cross two-point functions,
+connected density correlations, cut motion and detector errors
+defined here.  The finite-parent coupling control is not a
+physical spherical or dressed collapse.
+On a controlled spherical ruler history the material areal-radius
+readout is $R_m=r_m\psi(r_m,T)^2$.  Only for an actual material
+surface record $-\dot r_m/(N\psi^{-2})$ as its inward speed in
+local light-speed units.  When ${\cal E}>0$ and
+$R_m-2G{\cal E}>0$ is resolved,
+record $-\partial_T\log[(R_m-2G{\cal E})/(2G{\cal E})]$ as an
+approach-rate diagnostic, without fixing it to a target constant.
+These formulas do not turn an energy-quantile cut into a material
+surface or a finite collar energy into an isolated charge.
+
+A purported charge drift must first be separated from row,
+time-discretization and boundary errors.  The requested physical
+collapse mechanism fails in its stated approximation if a
+controlled material history crosses the candidate
+long-wavelength trapping radius with nonzero outgoing native
+speed, or its isolated total charge fails the derived balance;
+the failing ingredient is then identified from the same rows,
+state law, connection and causal-response monitors.
+No such test is available from a preparation checkpoint.
+Failure of Gaussian purity, absent state control at nonzero
+coupling, an untracked algebra change or an unresolved cut
+ambiguity instead stops the corresponding entanglement claim.
+It does not establish failure of the microscopic law.
+
+Outgoing production and a thermal claim require a produced-state
+and detector calculation on this same history.  The unequal-time
+readouts permit spectral and stationarity tests; neither a
+rise-and-fall entropy shape nor a thermal factor is inserted.
+Massive thresholds, the finite lattice dispersion, the actual
+limiting inward speed, an exponential approach rate and its
+range of causal/quasistatic validity remain outputs to derive.
+The entropy of a spatial exterior is not by itself a temperature
+or an evaporation law.
+
+\paragraph{Paper handoff and SOURCES.}
+On a specified charge-invariant pure Gaussian light history, the interior--exterior
+mode entanglement is $\tr s(C_A)$ and its cross-surface two-point
+function is $P_A C P_{\bar A}$; mixed preparations require separate
+total-correlation readouts, and for the dressed state the
+covariance entropy is only an upper bound on the true reduced
+entropy.  These quantities are defined on the same self-consistent
+X history, with moving-cut and finite-spacing effects retained;
+no collapse/Page/thermal trajectory is inferred from preparation.
+
+SOURCES: the native CAR derivations and error identities are
+(XP2)--(XP11) here.  The first [X] group is the pure Gaussian
+entropy and cross-block normalization: the CAR/block-restriction
+calculation agrees with the cosine--sine occupied-subspace
+decomposition and its Schmidt entropy.  The second [X] group
+is the dressed reduced-entropy upper bound: the quadratic-log
+relative-entropy argument agrees with the single-mode marginal
+and repeated-subadditivity argument.  The precise deficit
+identity, mixed-load, unequal-time, cut-balance and error
+formulas are checked supporting [S] deductions.
+The single independent red team is
+\path{solve/review_X_page_correlations.tex}; the author repairs
+retain positive-weight quantiles and the explicit sampled-cut
+decomposition.  The common nonlinear state/field system and
+Gaussian preparation are XN1--XN16 of
+\path{solve/strand_X_nonlinear_response.tex}, with
+\path{solve/review_X_nonlinear_response.tex}.
+The causal source/response limitations are XS1--XS18 of
+\path{solve/strand_X_causal_sea.tex}, with
+\path{solve/review_X_causal_sea.tex}; the external-frame
+charge/speed/lock interface is
+\path{solve/strand_X.tex}, with \path{solve/review_X.tex}.
+The actual dressed source and frame/filter derivative are
+W1--W15 of \path{solve/strand_W.tex}, with
+\path{solve/review_W.tex}.
+The readout choices are declared, and a physical trajectory,
+dressed state approximation, isolated limit and thermal
+application remain [V:X,W,D].  No new [R] or [N] result is claimed.
+\end{document}

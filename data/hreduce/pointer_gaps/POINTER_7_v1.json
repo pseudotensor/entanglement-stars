@@ -1,0 +1,222 @@
+{
+  "BOX_metadata_cost": {
+    "cpu_seconds": "0.0031672330000000054",
+    "wall_seconds": "0.023793503642082214"
+  },
+  "array_data_decoded": false,
+  "file_pins": {
+    "archived_provenance": {
+      "bytes": 737903,
+      "md5": "f2b70ef8895f004f2c2c60276440f996",
+      "path": "<internal>/REPO_DERIVATIONS_20261102.md",
+      "sha256": "f5a374cd50b73376157042dd6b0a6a296db2823ebb74906f1cbad4e9dfe790ac"
+    },
+    "delivered_Page_R1_note": {
+      "bytes": 38239,
+      "md5": "85ae0f07a40fb03f4d0389de370b0dd8",
+      "path": "<internal>/PAGE_FIGURE_R1_v1.md",
+      "sha256": "70fdb04c2f6bb2e9f29c415185cdca1ccdefa85d1028fd8459aa1643cda6463e"
+    },
+    "delivered_Page_R1_script": {
+      "bytes": 323121,
+      "md5": "737b822b025c2dc2d5c69b8ef20c49f0",
+      "path": "<internal>/page_curve_amps_R1.py",
+      "sha256": "259d449f96def51a949edcca2f1ce685c84427e1e59cc1b8b607e078c99b9478"
+    },
+    "delivered_Page_R2_data_script": {
+      "bytes": 37646,
+      "md5": "16cc9c6e68fffea2069313d774479a16",
+      "path": "<internal>/page_curve_amps_R2_data.py",
+      "sha256": "58a7816478c230e50d459a8e935553c971a000977169fa87fc5a6b32c48648ac"
+    },
+    "delivered_Page_R2_script": {
+      "bytes": 6599,
+      "md5": "3dde8e512e6a9f41840948a0451be2d4",
+      "path": "<internal>/page_curve_amps_R2.py",
+      "sha256": "4c31d159ec0f3708ffb96d80a11a6058899c581d24acb50c91ab042caaa6f140"
+    },
+    "legacy_gaussian_circuit_script": {
+      "bytes": 8545,
+      "md5": "37f77c8361949cceb62aa09e3cd03a4f",
+      "path": "<internal>/evaporation_gaussian_dynamics.py",
+      "sha256": "28ef9defad4f4bf53598c6d06d6eb42dfb5a5a9425b47ee6b596584f73d76881"
+    },
+    "legacy_prescribed_horizon_script": {
+      "bytes": 9310,
+      "md5": "b7ccbfdb3dfb2a06241794fa5bf5b8ee",
+      "path": "<internal>/gaussian_page.py",
+      "sha256": "2938e5f40fcec481c07326a1aa4c1ecec5128db6160de9d1af30c6bd373d4aba"
+    },
+    "older_provenance_comment": {
+      "bytes": 29822,
+      "md5": "4d63a8604372b7bc812a593c684153a6",
+      "path": "<internal>/07_page_curve.tex",
+      "sha256": "d4f4df543b0aceb9f84c13e87bc7693b28b78a11030d7c8bea2ab8c8befc52eb"
+    },
+    "own_asymptotic_script": {
+      "bytes": 23003,
+      "md5": "d6e856b3947cc46f5b481b2521753cb3",
+      "path": "<internal>/page_asym_checks_v1.py",
+      "sha256": "7c238863f1132f359dab32d598cca649108410f3d3ad7dfa59b6030fdd2b535b"
+    },
+    "own_coordinates_script": {
+      "bytes": 1920,
+      "md5": "fc9bf1e974e29dceede23fbbc05d3b33",
+      "path": "<internal>/page_coordinates_v1.py",
+      "sha256": "2d68ca9b2a02dfe33216b6b5084c09f08f55c8c2aec30752d94a5905d8e7ecd5"
+    },
+    "pointer_request": {
+      "bytes": 4381,
+      "md5": "a12f824375fb6d64d990a6c1696d41bc",
+      "path": "<internal>/POINTER_GAPS_v1.md",
+      "sha256": "f294d00a3df21758cb576ccaf0bdbda4260ebaf6e919e495ad154cc4775016d8"
+    },
+    "printed_claim": {
+      "bytes": 69365,
+      "md5": "16a323a8da17f7c4fd577d019aca4089",
+      "path": "<internal>/06_scaling.tex",
+      "sha256": "ee9ce3b45fa62b72f8b5d6a56cdd0efa990daa6245788f1e45a110a7084aad28"
+    }
+  },
+  "findings": {
+    "Gaussian_pointer_reference": {
+      "file_pin_key": "archived_provenance",
+      "line": 4218
+    },
+    "candidate": {
+      "height_text": "0.350 S_0",
+      "linked_to_a_computed_Gaussian_result": false,
+      "producer_statement": "producer not located",
+      "references": [
+        {
+          "file_pin_key": "older_provenance_comment",
+          "line": 56
+        },
+        {
+          "file_pin_key": "archived_provenance",
+          "line": 4184
+        }
+      ],
+      "status": "DOCUMENTARY_QUOTE_ONLY_PRODUCER_ABSENT",
+      "time_text": "0.566 t_*"
+    },
+    "computed_values_artifact_located": false,
+    "documentary_candidate_located": true,
+    "generating_script_located": false,
+    "printed_claim": {
+      "citation_keys": [
+        "Page1993",
+        "BianchiHacklKieburg2021",
+        "McKinneyCode2026"
+      ],
+      "file_pin_key": "printed_claim",
+      "line": 98
+    }
+  },
+  "new_API_call": false,
+  "new_derivation": false,
+  "other_blind_CUT_data_read": false,
+  "own_BOX_files": [
+    {
+      "bytes": 34203,
+      "host": "192.168.1.93",
+      "md5": "f1d327ae820ce2fae6e74f8a65277909",
+      "path": "<internal>/page_asym_result.json",
+      "scope": "Existing first-two algebra checks; not linked to the requested Gaussian pair",
+      "sha256": "6dba38b2b2457407db151ee14f2539e3b6ab29279b7ec395e1fa4ff65ccae016"
+    },
+    {
+      "bytes": 856,
+      "host": "192.168.1.93",
+      "md5": "7ccec7c29b07244c8b96c6813dfdc3c5",
+      "path": "<internal>/result.json",
+      "scope": "Stored metadata describes conditional P5 arithmetic; not adopted for the Gaussian claim",
+      "sha256": "07d025da3e98ac949450f62c7a0e3d24178ef59e2531c192afadf1584d209cc9"
+    }
+  ],
+  "paper_files_changed": false,
+  "purpose": "Revision repository pointer response; engineering provenance only",
+  "request": {
+    "item": 7,
+    "line": 11,
+    "pointer_file": {
+      "bytes": 4381,
+      "md5": "a12f824375fb6d64d990a6c1696d41bc",
+      "path": "<internal>/POINTER_GAPS_v1.md",
+      "sha256": "f294d00a3df21758cb576ccaf0bdbda4260ebaf6e919e495ad154cc4775016d8"
+    },
+    "wanted": [
+      "computed Gaussian maximum height",
+      "computed Gaussian maximum time",
+      "generating script"
+    ]
+  },
+  "schema": "POINTER_7_SEARCH_V1",
+  "scientific_execution": false,
+  "scope_limit": "NOT LOCATED applies to the listed search scope. The documentary pair is not a recovered computed result.",
+  "search_scope": [
+    {
+      "area": "Own worktree",
+      "locations": [
+        "research/paper_package_20261013/STATUS_paper_package.md",
+        "NOTES.md",
+        "progress_astra_max.md",
+        "research/paper_package_20261013/page_asym_checks_v1",
+        "research/paper_package_20261013/page_owner147_v1",
+        "full_numerics",
+        "research/paper_package_20261013/results/LARGE_FILES.tsv"
+      ],
+      "methods": [
+        "filename search",
+        "targeted text search",
+        "byte hashing"
+      ]
+    },
+    {
+      "area": "Allowed PR3 source, read only",
+      "locations": [
+        "<internal>/06_scaling.tex",
+        "<internal>/07_page_curve.tex",
+        "<internal>/REPO_DERIVATIONS_20261102.md"
+      ],
+      "methods": [
+        "targeted text search",
+        "byte hashing"
+      ]
+    },
+    {
+      "area": "Previously shared Page figure files",
+      "locations": [
+        "<internal>/PAGE_FIGURE_R1_v1.md",
+        "<internal>/page_curve_amps_R1.py",
+        "<internal>/page_curve_amps_R2.py",
+        "<internal>/page_curve_amps_R2_data.py"
+      ],
+      "methods": [
+        "filename and targeted text search",
+        "byte hashing"
+      ],
+      "requested_Gaussian_pair_join": "NOT_LOCATED"
+    },
+    {
+      "Page_family_names_found": [
+        "page_asym_checks_v1",
+        "page_balance_compare_v1",
+        "page_design_owner145_v1",
+        "page_owner147_v1"
+      ],
+      "area": "Own BOX metadata",
+      "host": "192.168.1.93",
+      "locations": [
+        "<internal>/codex_hreduce_bulk",
+        "<internal>/qi2_hreduce_runs"
+      ],
+      "methods": [
+        "shallow family-name listing",
+        "existing small JSON metadata",
+        "byte hashing"
+      ]
+    }
+  ],
+  "status": "COMPUTED_VALUES_AND_SCRIPT_NOT_LOCATED"
+}

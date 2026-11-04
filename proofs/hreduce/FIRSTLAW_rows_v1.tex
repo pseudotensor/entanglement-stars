@@ -1,0 +1,126 @@
+\documentclass[10pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\begin{document}
+\setlength{\abovedisplayskip}{4pt}
+\setlength{\belowdisplayskip}{4pt}
+\noindent\textbf{First-law variation from the declared spherical rows.}
+Set $u=v/N<0$, $M=ru^2/(2G)$, $N_\infty=1$, $E=M_\infty$;
+$\rho,J$ are the averaged, normal-ordered sources. At fixed $G$ and
+averaging prescription, the declared rows
+$M'=4\pi r^2(\rho+uJ)$, $N'/N=-4\pi GrJ/u$ and
+$\delta u=G\delta M/(ru)$ give, for smooth Eulerian variations with $N,M>0$,
+\[
+ (N\delta M)'=4\pi r^2(N\delta\rho+v\delta J).
+\]
+At a differentiable simple dense root $u(R)=-1$,
+$\delta M_R=(1/(2G)-M'_R)\delta R$. With $A=4\pi R^2$ and convergent integrals,
+\begin{gather*}
+ \delta E=\frac{\kappa_R}{8\pi G}\delta A+W_{\rm ext},\qquad
+ W_{\rm ext}=4\pi\int_R^\infty r^2(N\delta\rho+v\delta J)\,dr,\\
+ \kappa_R=\frac{N_R}{2R}\{1-8\pi GR^2(\rho_R-J_R)\}
+          =\left.\partial_r(N+v)\right|_R=\kappa_0.
+\end{gather*}
+This is the same-field dense collar slope $\kappa_T$, not a temperature
+claim. A double root gives $8\pi G R^2(\rho_R-J_R)=1$; a fold also needs
+radial second-derivative and parameter-transversality nondegeneracy.
+
+For applied fields (tildes), define
+$e=\widetilde M'-4\pi r^2(\rho+\widetilde uJ)$ and
+$g=\widetilde N'/\widetilde N+4\pi GrJ/\widetilde u$.
+The applied simple-root identity retains both row defects:
+\begin{align*}
+ \delta\widetilde E
+ &=\frac{\widetilde\kappa}{8\pi G}\delta\widetilde A
+   +\widetilde W_{\rm ext}
+   +\int_{\widetilde R}^{\infty}\widetilde N
+                    (\delta e+g\delta\widetilde M)\,dr,\\
+ \widetilde\kappa
+ &=\left.\frac{\widetilde N}{2r}
+       \{1-8\pi Gr^2(\rho-J)-2Ge\}\right|_{\widetilde R}
+   =\left.\partial_r(\widetilde N+\widetilde v)\right|_{\widetilde R}.
+\end{align*}
+$\widetilde E=E$ requires preserved asymptotic charge and normalization.
+For time tangents, converting $W_{\rm ext}/dt$ to outward energy fluxes
+$\mathcal F(R)-\mathcal F(\infty)$ also retains
+$4\pi\int_R^\infty r^2(NW_0+vW_r)\,dr$, with the same-field energy
+and momentum continuity residuals. Neither pair of defects is presumed zero.
+
+% Independent inputs, read before deriving:
+% <internal>/GOAL_alt.md (entire file;
+% deliverable 4 is the target statement, not its proof).
+% <internal>/requirements_new.txt, section 2
+% (declared tensor Gauss rows, coherent momentum sign, source averaging).
+% <internal>/AGENTS.md
+% <internal>/COMMS.md
+% <internal>/STATUS_paper_package.md
+% No P21, first-law review/stand-in, counterpart source or manuscript
+% first-law passage is an input to this independent derivation.
+%
+% Necessary proof details and domains:
+% For K eigenvalues v'/N, v/(Nr), v/(Nr), the energy row gives
+% (rv^2)'=8 pi G r^2 N^2 rho. The radial momentum divergence is
+% 2vN'/(N^2 r), hence vN'/(4 pi G N^2 r)=-J. These imply the two
+% displayed M,N rows. Vary M' at fixed r. The term 4 pi r^2 J delta u
+% equals (4 pi GrJ/u) delta M and cancels (N'/N) delta M.
+% Variations of rho,J are total source variations, including the
+% continued-reference subtraction; they are not held fixed by declaration.
+% Fix the asymptotic lapse normalization and require finite boundary
+% charge, convergent exterior integrals, and a differentiable root branch.
+% All values at R without delta R in a subscript are background values.
+% Vary M(R)=R/(2G) to get the displayed Eulerian delta M_R. Since
+% u'=(G/(ru))(M'-M/r), at u=-1 one has
+% (N+v)'=Nu'=N(1-2GM')/(2R). This proves both the area coefficient
+% and its equality to the same-field collar slope. It does not establish
+% an evolving object's thermal temperature. W_ext is the exterior
+% source-variation one-form; its flux interpretation needs continuity.
+% At a fold the simple-root variation need not exist; only the double-root
+% density identity is asserted there. Equality kappa=0 by itself does not
+% prove the usual fold nondegeneracy conditions.
+%
+% For arbitrary applied fields, define tilde u=tilde v/tilde N and
+% tilde M=r tilde u^2/(2G), with the same asymptotic normalization and
+% branch domain. Vary the e row and use the g row without setting either
+% defect to zero. This gives
+% (tilde N delta tilde M)' = 4 pi r^2(tilde N delta rho+tilde v delta J)
+%                           +tilde N(delta e+g delta tilde M).
+% At its root, 1-2G tilde M' contains the displayed -2G e correction.
+% The source integral tilde W_ext uses tilde fields and lower limit tilde R.
+% A smoothing/back-application need not preserve the dense root or solve
+% the dense constraints with the same sources; those are precisely the
+% hypotheses that would be needed to omit these terms.
+%
+% Continuity residuals and their independent weighted cancellation:
+% Let P_r,P_t denote the normal-frame radial and tangential source stresses.
+% Define, for the same fields and averaged, subtracted sources,
+% W_0 = dot rho + r^{-2}[r^2(NJ+v rho)]'
+%                 +N'J+v'P_r+2vP_t/r,
+% W_r = dot J + r^{-2}[r^2(NP_r+vJ)]'
+%                 -2NP_t/r+rho N'+Jv'.
+% Multiply the first by N and the second by v. The tangential stresses
+% cancel; product differentiation cancels N'(NJ+v rho) and
+% v'(NP_r+vJ) against the force terms. Thus
+% N dot rho+v dot J = -r^{-2}(r^2 F)'+N W_0+v W_r,
+% F=(N^2+v^2)J+Nv(rho+P_r), yielding the stated boundary-plus-defect form.
+% The outward energy flux in the rendered core is mathcal F=4 pi r^2 F.
+% These definitions do not assert continuum conservation for the finite
+% lattice or a changing reference. The two source continuity defects
+% are distinct from the two constraint residuals e,g; setting one pair
+% to zero does not set the other pair to zero. For time variations the
+% applied identity retains both the continuity integral and the row
+% residual integral. No numerical size for any of them is inferred.
+%
+% Reciprocal comparison after independent save and full actual self-read:
+% <internal>/redteam_FIRSTLAW_rows_v1.tex
+% uses source-unit defects eps_rho,eps_J. Directly,
+% e=4 pi r^2(eps_rho+u eps_J), g=-4 pi Gr eps_J/u;
+% N(delta e+g delta M)=4 pi r^2(N delta eps_rho+v delta eps_J).
+% At u=-1 the surface correction -2Ge equals
+% -8 pi G R^2(eps_rho-eps_J). Both continuity definitions expand
+% identically. No scientific repair was needed; the rendered core was
+% compressed and the averaging prescription made explicitly fixed.
+% Target definition read only after the independent stage, at root's request:
+% <internal>/ITEM7_page_curve_ca41ce2bfc.tex
+% lines 437--441 identify this same dense slope as kappa_R and kappa_T.
+% No P21, review, stand-in or first-route derivation was read.
+\end{document}

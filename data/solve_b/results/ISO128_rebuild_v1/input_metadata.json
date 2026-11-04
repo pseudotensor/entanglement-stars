@@ -1,0 +1,1428 @@
+{
+  "scope": "file identities, run configuration, and archive headers only",
+  "runtime": {
+    "host": "compute-host",
+    "pid": 3369910,
+    "threads": 1,
+    "niceness": 10,
+    "device": "CPU"
+  },
+  "run_json_keys": [
+    "script",
+    "args",
+    "head",
+    "records"
+  ],
+  "args": {
+    "m": 0.2,
+    "g": 0.25,
+    "rs": 128.0,
+    "R0_over_rs": 4.0,
+    "reading": "A",
+    "shell": null,
+    "nsites": 4096,
+    "ell": 4,
+    "prep_ell": 4,
+    "field_rtol": 1e-12,
+    "field_atol": 1e-16,
+    "kappa_sea": 10,
+    "tau": 8.0,
+    "T_over_rs": 40.0,
+    "reference": "R2",
+    "half_offset": 0,
+    "benchmark": false,
+    "collar_policy": "flag",
+    "support_rel": 1e-14,
+    "gpu": 0,
+    "out": "<internal>/run_h2",
+    "tag": "lad_ISO_128_s4_nkqh2_m0p2_rs128_n4096_R04_k10_tau8_ell4_prep4_A_R2_avg_newton_v36nq",
+    "site_fields": "averaged",
+    "stop_E": 1e-07,
+    "stop_fields": 1e-06,
+    "maxit": 20,
+    "mix": "newton",
+    "nk_maxiter": 30,
+    "nk_inner": 15,
+    "mix_alpha": 0.5,
+    "delta_rtol_every": 10,
+    "commutator_every": 1,
+    "streams": 0,
+    "m1_simpson_steps": "auto",
+    "c_LZ": 1.0,
+    "window_max": 4,
+    "resume_from": null,
+    "resume_T_over_rs": null,
+    "resume_grandparent": null,
+    "slices_c128": "3.0000000000,5.0000000000,11.5000000000,11.9375000000,12.0000000000,12.5000000000,13.0000000000,14.0000000000,16.0000000000,18.0000000000,20.0000000000,22.0000000000,24.0000000000,26.0000000000,28.0000000000,30.0000000000,32.0000000000,34.0000000000,36.0000000000,38.0000000000,40.0000000000",
+    "slices_c64": "",
+    "slice_dir": "<internal>/states_h2",
+    "nk_line_search": "halving",
+    "nk_halvings": 6,
+    "nk_krylov": 40,
+    "nk_restarts": 2,
+    "source_continuation": null,
+    "end_above": 0.001,
+    "massless_ball": false,
+    "ball_R0_over_rs": 4.0,
+    "ball_x0_over_R0": 0.5,
+    "ball_sigma_over_R0": 0.25,
+    "ball_orbitals": "1:6",
+    "ball_E_target": null,
+    "ball_k0_max": 0.5,
+    "ball_E_tol": 1e-10,
+    "ball_passes": 200,
+    "ball_tol": 1e-10,
+    "fields_v17": false,
+    "s11_collars": "8,16",
+    "s11_stop": 1,
+    "resume_slice": "<internal>/orbitals_lad_ISO_128_s4_nkq_m0p2_rs128_n4096_R04_k10_tau8_ell4_prep4_A_R2_avg_newton_v36nq_T0003.00.npz",
+    "resume_run": "<internal>/lad_ISO_128_s4_nkq_m0p2_rs128_n4096_R04_k10_tau8_ell4_prep4_A_R2_avg_newton_v36nq",
+    "segment_end_T_over_rs": null,
+    "weyl_certified": null,
+    "weyl_refine_max": 10,
+    "weyl_oracle": false,
+    "field_kernel_cache": true,
+    "v36_fixes": true,
+    "nk_jvp": "exact",
+    "pair_workers": 0,
+    "nk_set": "resolve",
+    "dust_set": "isotropic",
+    "dust_kappa_max": null,
+    "dust_multiplicity": 1,
+    "iter_cache": "drop",
+    "prep_memory": "lean",
+    "nk_host_release": "on",
+    "nk_plain_fallback": "on"
+  },
+  "run_identity": {
+    "path": "<internal>/collapse_lad_ISO_128_s4_nkqh2_m0p2_rs128_n4096_R04_k10_tau8_ell4_prep4_A_R2_avg_newton_v36nq.json",
+    "bytes": 3629991,
+    "sha256": "d7fa15299499a1971c709ae0241a21dc42628409a47961bcedbbc4027b6eb491"
+  },
+  "archives": {
+    "T0005.00": {
+      "identity": {
+        "path": "<internal>/orbitals_lad_ISO_128_s4_nkqh2_m0p2_rs128_n4096_R04_k10_tau8_ell4_prep4_A_R2_avg_newton_v36nq_T0005.00.npz",
+        "bytes": 10741476466,
+        "sha256": "25e754f2a17eb96f99874f5f94f394484c02112b244df7c4d01877033102a96e"
+      },
+      "headers": {
+        "T.npy": {
+          "shape": [],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 136
+        },
+        "rs.npy": {
+          "shape": [],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 136
+        },
+        "N_applied.npy": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 32896
+        },
+        "v_applied.npy": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 32896
+        },
+        "R.npy": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 32896
+        },
+        "kappas.npy": {
+          "shape": [
+            10
+          ],
+          "dtype": "int64",
+          "fortran_order": false,
+          "uncompressed_bytes": 208
+        },
+        "weights.npy": {
+          "shape": [
+            10
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 208
+        },
+        "dtype.npy": {
+          "shape": [],
+          "dtype": "<U10",
+          "fortran_order": false,
+          "uncompressed_bytes": 168
+        },
+        "sea_1.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "dust_1.npy": {
+          "shape": [
+            8192,
+            6
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 786560
+        },
+        "f_1.npy": {
+          "shape": [
+            6
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 176
+        },
+        "R2_1.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "e_1.npy": {
+          "shape": [
+            8192
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 65664
+        },
+        "mask_1.npy": {
+          "shape": [
+            1024
+          ],
+          "dtype": "uint8",
+          "fortran_order": false,
+          "uncompressed_bytes": 1152
+        },
+        "sea_2.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "dust_2.npy": {
+          "shape": [
+            8192,
+            5
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 655488
+        },
+        "f_2.npy": {
+          "shape": [
+            5
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 168
+        },
+        "R2_2.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "e_2.npy": {
+          "shape": [
+            8192
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 65664
+        },
+        "mask_2.npy": {
+          "shape": [
+            1024
+          ],
+          "dtype": "uint8",
+          "fortran_order": false,
+          "uncompressed_bytes": 1152
+        },
+        "sea_3.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "dust_3.npy": {
+          "shape": [
+            8192,
+            4
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 524416
+        },
+        "f_3.npy": {
+          "shape": [
+            4
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 160
+        },
+        "R2_3.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "e_3.npy": {
+          "shape": [
+            8192
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 65664
+        },
+        "mask_3.npy": {
+          "shape": [
+            1024
+          ],
+          "dtype": "uint8",
+          "fortran_order": false,
+          "uncompressed_bytes": 1152
+        },
+        "sea_4.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "dust_4.npy": {
+          "shape": [
+            8192,
+            3
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 393344
+        },
+        "f_4.npy": {
+          "shape": [
+            3
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 152
+        },
+        "R2_4.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "e_4.npy": {
+          "shape": [
+            8192
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 65664
+        },
+        "mask_4.npy": {
+          "shape": [
+            1024
+          ],
+          "dtype": "uint8",
+          "fortran_order": false,
+          "uncompressed_bytes": 1152
+        },
+        "sea_5.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "dust_5.npy": {
+          "shape": [
+            8192,
+            3
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 393344
+        },
+        "f_5.npy": {
+          "shape": [
+            3
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 152
+        },
+        "R2_5.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "e_5.npy": {
+          "shape": [
+            8192
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 65664
+        },
+        "mask_5.npy": {
+          "shape": [
+            1024
+          ],
+          "dtype": "uint8",
+          "fortran_order": false,
+          "uncompressed_bytes": 1152
+        },
+        "sea_6.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "dust_6.npy": {
+          "shape": [
+            8192,
+            2
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 262272
+        },
+        "f_6.npy": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 144
+        },
+        "R2_6.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "e_6.npy": {
+          "shape": [
+            8192
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 65664
+        },
+        "mask_6.npy": {
+          "shape": [
+            1024
+          ],
+          "dtype": "uint8",
+          "fortran_order": false,
+          "uncompressed_bytes": 1152
+        },
+        "sea_7.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "dust_7.npy": {
+          "shape": [
+            8192,
+            1
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 131200
+        },
+        "f_7.npy": {
+          "shape": [
+            1
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 136
+        },
+        "R2_7.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "e_7.npy": {
+          "shape": [
+            8192
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 65664
+        },
+        "mask_7.npy": {
+          "shape": [
+            1024
+          ],
+          "dtype": "uint8",
+          "fortran_order": false,
+          "uncompressed_bytes": 1152
+        },
+        "sea_8.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "dust_8.npy": {
+          "shape": [
+            8192,
+            1
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 131200
+        },
+        "f_8.npy": {
+          "shape": [
+            1
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 136
+        },
+        "R2_8.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "e_8.npy": {
+          "shape": [
+            8192
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 65664
+        },
+        "mask_8.npy": {
+          "shape": [
+            1024
+          ],
+          "dtype": "uint8",
+          "fortran_order": false,
+          "uncompressed_bytes": 1152
+        },
+        "sea_9.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "dust_9.npy": {
+          "shape": [
+            8192,
+            0
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 128
+        },
+        "f_9.npy": {
+          "shape": [
+            0
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 128
+        },
+        "R2_9.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "e_9.npy": {
+          "shape": [
+            8192
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 65664
+        },
+        "mask_9.npy": {
+          "shape": [
+            1024
+          ],
+          "dtype": "uint8",
+          "fortran_order": false,
+          "uncompressed_bytes": 1152
+        },
+        "sea_10.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "dust_10.npy": {
+          "shape": [
+            8192,
+            0
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 128
+        },
+        "f_10.npy": {
+          "shape": [
+            0
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 128
+        },
+        "R2_10.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "e_10.npy": {
+          "shape": [
+            8192
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 65664
+        },
+        "mask_10.npy": {
+          "shape": [
+            1024
+          ],
+          "dtype": "uint8",
+          "fortran_order": false,
+          "uncompressed_bytes": 1152
+        }
+      }
+    },
+    "T0011.50": {
+      "identity": {
+        "path": "<internal>/orbitals_lad_ISO_128_s4_nkqh2_m0p2_rs128_n4096_R04_k10_tau8_ell4_prep4_A_R2_avg_newton_v36nq_T0011.50.npz",
+        "bytes": 10741476466,
+        "sha256": "3d2a1b0c18ba01386029f7e7fa5ed252fa6df743ba487d596c83b490746e0a32"
+      },
+      "headers": {
+        "T.npy": {
+          "shape": [],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 136
+        },
+        "rs.npy": {
+          "shape": [],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 136
+        },
+        "N_applied.npy": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 32896
+        },
+        "v_applied.npy": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 32896
+        },
+        "R.npy": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 32896
+        },
+        "kappas.npy": {
+          "shape": [
+            10
+          ],
+          "dtype": "int64",
+          "fortran_order": false,
+          "uncompressed_bytes": 208
+        },
+        "weights.npy": {
+          "shape": [
+            10
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 208
+        },
+        "dtype.npy": {
+          "shape": [],
+          "dtype": "<U10",
+          "fortran_order": false,
+          "uncompressed_bytes": 168
+        },
+        "sea_1.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "dust_1.npy": {
+          "shape": [
+            8192,
+            6
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 786560
+        },
+        "f_1.npy": {
+          "shape": [
+            6
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 176
+        },
+        "R2_1.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "e_1.npy": {
+          "shape": [
+            8192
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 65664
+        },
+        "mask_1.npy": {
+          "shape": [
+            1024
+          ],
+          "dtype": "uint8",
+          "fortran_order": false,
+          "uncompressed_bytes": 1152
+        },
+        "sea_2.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "dust_2.npy": {
+          "shape": [
+            8192,
+            5
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 655488
+        },
+        "f_2.npy": {
+          "shape": [
+            5
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 168
+        },
+        "R2_2.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "e_2.npy": {
+          "shape": [
+            8192
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 65664
+        },
+        "mask_2.npy": {
+          "shape": [
+            1024
+          ],
+          "dtype": "uint8",
+          "fortran_order": false,
+          "uncompressed_bytes": 1152
+        },
+        "sea_3.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "dust_3.npy": {
+          "shape": [
+            8192,
+            4
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 524416
+        },
+        "f_3.npy": {
+          "shape": [
+            4
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 160
+        },
+        "R2_3.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "e_3.npy": {
+          "shape": [
+            8192
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 65664
+        },
+        "mask_3.npy": {
+          "shape": [
+            1024
+          ],
+          "dtype": "uint8",
+          "fortran_order": false,
+          "uncompressed_bytes": 1152
+        },
+        "sea_4.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "dust_4.npy": {
+          "shape": [
+            8192,
+            3
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 393344
+        },
+        "f_4.npy": {
+          "shape": [
+            3
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 152
+        },
+        "R2_4.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "e_4.npy": {
+          "shape": [
+            8192
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 65664
+        },
+        "mask_4.npy": {
+          "shape": [
+            1024
+          ],
+          "dtype": "uint8",
+          "fortran_order": false,
+          "uncompressed_bytes": 1152
+        },
+        "sea_5.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "dust_5.npy": {
+          "shape": [
+            8192,
+            3
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 393344
+        },
+        "f_5.npy": {
+          "shape": [
+            3
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 152
+        },
+        "R2_5.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "e_5.npy": {
+          "shape": [
+            8192
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 65664
+        },
+        "mask_5.npy": {
+          "shape": [
+            1024
+          ],
+          "dtype": "uint8",
+          "fortran_order": false,
+          "uncompressed_bytes": 1152
+        },
+        "sea_6.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "dust_6.npy": {
+          "shape": [
+            8192,
+            2
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 262272
+        },
+        "f_6.npy": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 144
+        },
+        "R2_6.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "e_6.npy": {
+          "shape": [
+            8192
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 65664
+        },
+        "mask_6.npy": {
+          "shape": [
+            1024
+          ],
+          "dtype": "uint8",
+          "fortran_order": false,
+          "uncompressed_bytes": 1152
+        },
+        "sea_7.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "dust_7.npy": {
+          "shape": [
+            8192,
+            1
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 131200
+        },
+        "f_7.npy": {
+          "shape": [
+            1
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 136
+        },
+        "R2_7.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "e_7.npy": {
+          "shape": [
+            8192
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 65664
+        },
+        "mask_7.npy": {
+          "shape": [
+            1024
+          ],
+          "dtype": "uint8",
+          "fortran_order": false,
+          "uncompressed_bytes": 1152
+        },
+        "sea_8.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "dust_8.npy": {
+          "shape": [
+            8192,
+            1
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 131200
+        },
+        "f_8.npy": {
+          "shape": [
+            1
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 136
+        },
+        "R2_8.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "e_8.npy": {
+          "shape": [
+            8192
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 65664
+        },
+        "mask_8.npy": {
+          "shape": [
+            1024
+          ],
+          "dtype": "uint8",
+          "fortran_order": false,
+          "uncompressed_bytes": 1152
+        },
+        "sea_9.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "dust_9.npy": {
+          "shape": [
+            8192,
+            0
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 128
+        },
+        "f_9.npy": {
+          "shape": [
+            0
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 128
+        },
+        "R2_9.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "e_9.npy": {
+          "shape": [
+            8192
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 65664
+        },
+        "mask_9.npy": {
+          "shape": [
+            1024
+          ],
+          "dtype": "uint8",
+          "fortran_order": false,
+          "uncompressed_bytes": 1152
+        },
+        "sea_10.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "dust_10.npy": {
+          "shape": [
+            8192,
+            0
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 128
+        },
+        "f_10.npy": {
+          "shape": [
+            0
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 128
+        },
+        "R2_10.npy": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "complex128",
+          "fortran_order": false,
+          "uncompressed_bytes": 536871040
+        },
+        "e_10.npy": {
+          "shape": [
+            8192
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 65664
+        },
+        "mask_10.npy": {
+          "shape": [
+            1024
+          ],
+          "dtype": "uint8",
+          "fortran_order": false,
+          "uncompressed_bytes": 1152
+        }
+      }
+    },
+    "stored_fields": {
+      "identity": {
+        "path": "<internal>/collapse_lad_ISO_128_s4_nkqh2_m0p2_rs128_n4096_R04_k10_tau8_ell4_prep4_A_R2_avg_newton_v36nq_fields.npz",
+        "bytes": 33520066,
+        "sha256": "12c7f0093f24648dc2a218dc46f2da48b21daaf884945a9f10e4b475f7cc2813"
+      },
+      "headers": {
+        "R.npy": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 32896
+        },
+        "T.npy": {
+          "shape": [
+            181
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 1576
+        },
+        "N.npy": {
+          "shape": [
+            181,
+            4096
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 5931136
+        },
+        "v.npy": {
+          "shape": [
+            181,
+            4096
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 5931136
+        },
+        "eps_tot.npy": {
+          "shape": [
+            181,
+            4096
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 5931136
+        },
+        "J_tot.npy": {
+          "shape": [
+            181,
+            4096
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 5931136
+        },
+        "eps_pairs.npy": {
+          "shape": [
+            181,
+            4096
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 5931136
+        },
+        "J_pairs.npy": {
+          "shape": [
+            181,
+            4096
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 5931136
+        },
+        "N_applied.npy": {
+          "shape": [
+            181,
+            4096
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 5931136
+        },
+        "v_applied.npy": {
+          "shape": [
+            181,
+            4096
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 5931136
+        },
+        "N_cinit.npy": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 32896
+        },
+        "v_cinit.npy": {
+          "shape": [
+            4096
+          ],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 32896
+        },
+        "g.npy": {
+          "shape": [],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 136
+        },
+        "ell.npy": {
+          "shape": [],
+          "dtype": "int64",
+          "fortran_order": false,
+          "uncompressed_bytes": 136
+        },
+        "tau.npy": {
+          "shape": [],
+          "dtype": "float64",
+          "fortran_order": false,
+          "uncompressed_bytes": 136
+        },
+        "solver.npy": {
+          "shape": [],
+          "dtype": "<U782",
+          "fortran_order": false,
+          "uncompressed_bytes": 3256
+        },
+        "r_nodes.npy": {
+          "shape": [
+            181,
+            1025
+          ],
+          "dtype": "object",
+          "fortran_order": false,
+          "uncompressed_bytes": 1670600
+        },
+        "N_nodes.npy": {
+          "shape": [
+            181,
+            1025
+          ],
+          "dtype": "object",
+          "fortran_order": false,
+          "uncompressed_bytes": 1670600
+        },
+        "v_nodes.npy": {
+          "shape": [
+            181,
+            1025
+          ],
+          "dtype": "object",
+          "fortran_order": false,
+          "uncompressed_bytes": 1670600
+        },
+        "label.npy": {
+          "shape": [],
+          "dtype": "<U1766",
+          "fortran_order": false,
+          "uncompressed_bytes": 7192
+        }
+      }
+    }
+  }
+}

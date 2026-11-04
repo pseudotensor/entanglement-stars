@@ -1,0 +1,549 @@
+{
+  "scope": "Independent stationary continuum comparator on |k|<=8 and 0.001<=q<=3; low-frequency and infinite angular remainders are not certified.",
+  "runtime": {
+    "host": "compute-host",
+    "pid": 2030248,
+    "threads": 1,
+    "niceness": 10,
+    "device": "CPU"
+  },
+  "thermal_known_answers": {
+    "energy": {
+      "value": 0.8224670334241133,
+      "error_estimate": 8.131692607793725e-13,
+      "known_answer_residual": 1.1102230246251565e-16
+    },
+    "number": {
+      "value": 0.6931471805599454,
+      "error_estimate": 3.8529789921817334e-13,
+      "known_answer_residual": 1.1102230246251565e-16
+    },
+    "entropy": {
+      "value": 1.6449340668482266,
+      "error_estimate": 1.0338640490941545e-12,
+      "known_answer_residual": 2.220446049250313e-16
+    },
+    "R": 2.0
+  },
+  "free_control": {
+    "setting": "refined",
+    "kappa": 0,
+    "free_scattering": [
+      {
+        "kappa": 0,
+        "q": 0.001,
+        "potential_sign": 1,
+        "setting": "refined",
+        "Gamma": 1.0000000000080504,
+        "reflection": 5.710614152149516e-24,
+        "unitarity_residual": 8.050449196161935e-12,
+        "Jost_relative_residual": 0.0,
+        "inner_y": -70,
+        "outer_x": 80000.0,
+        "Jost_order": 12,
+        "rtol": 3e-12,
+        "atol": 3e-14,
+        "small_transmission_conditioning": false,
+        "solver_evaluations": 5654,
+        "reused_from": "<internal>/scattering_k0_refined.jsonl"
+      },
+      {
+        "kappa": 0,
+        "q": 0.1,
+        "potential_sign": 1,
+        "setting": "refined",
+        "Gamma": 1.0000000000112443,
+        "reflection": 5.813712471142785e-25,
+        "unitarity_residual": 1.1244338793403585e-11,
+        "Jost_relative_residual": 0.0,
+        "inner_y": -70,
+        "outer_x": 800.0,
+        "Jost_order": 12,
+        "rtol": 3e-12,
+        "atol": 3e-14,
+        "small_transmission_conditioning": false,
+        "solver_evaluations": 5642,
+        "reused_from": "<internal>/scattering_k0_refined.jsonl"
+      },
+      {
+        "kappa": 0,
+        "q": 1.0,
+        "potential_sign": 1,
+        "setting": "refined",
+        "Gamma": 1.0000000000292792,
+        "reflection": 2.096610878945515e-25,
+        "unitarity_residual": 2.927924569462448e-11,
+        "Jost_relative_residual": 0.0,
+        "inner_y": -70,
+        "outer_x": 400.0,
+        "Jost_order": 12,
+        "rtol": 3e-12,
+        "atol": 3e-14,
+        "small_transmission_conditioning": false,
+        "solver_evaluations": 28022
+      }
+    ]
+  },
+  "channels": [
+    {
+      "kappa": 1,
+      "weight": 64,
+      "setting": "refined",
+      "integrals": {
+        "energy": 0.005041211944906845,
+        "number": 0.01525058563720862,
+        "entropy": 0.10443276322646987
+      },
+      "quadrature_errors": {
+        "energy": 1.8777077657317258e-13,
+        "number": 1.492854963979304e-13,
+        "entropy": 1.1343745307956643e-12
+      },
+      "potential_pair_checks": [
+        {
+          "q": 0.001,
+          "Gamma_plus": 2.5079543758849505e-07,
+          "Gamma_minus": 2.5079543758601367e-07,
+          "relative_difference": -9.89408555085447e-12
+        },
+        {
+          "q": 0.03,
+          "Gamma_plus": 0.00025345619069978376,
+          "Gamma_minus": 0.0002534561906997661,
+          "relative_difference": -6.972200594645983e-14
+        },
+        {
+          "q": 0.1,
+          "Gamma_plus": 0.004344437615850524,
+          "Gamma_minus": 0.004344437615857156,
+          "relative_difference": 1.5265566588595902e-12
+        },
+        {
+          "q": 0.3,
+          "Gamma_plus": 0.2117496882589567,
+          "Gamma_minus": 0.21174968825813784,
+          "relative_difference": -3.867128839374345e-12
+        },
+        {
+          "q": 1.0,
+          "Gamma_plus": 0.9998904980089753,
+          "Gamma_minus": 0.9998904980087854,
+          "relative_difference": -1.8995915951336428e-13
+        }
+      ],
+      "low_frequency_controls": [
+        {
+          "kappa": 1,
+          "q": 0.001,
+          "potential_sign": 1,
+          "setting": "refined",
+          "Gamma": 2.5079543758849505e-07,
+          "reflection": 0.9999997492045622,
+          "unitarity_residual": -1.1102230246251565e-16,
+          "Jost_relative_residual": 9.610298589967284e-21,
+          "inner_y": -70,
+          "outer_x": 80000.0,
+          "Jost_order": 12,
+          "rtol": 3e-12,
+          "atol": 3e-14,
+          "small_transmission_conditioning": false,
+          "solver_evaluations": 6818,
+          "reused_from": "<internal>/scattering_k1_refined.jsonl"
+        },
+        {
+          "kappa": 1,
+          "q": 0.0005,
+          "potential_sign": 1,
+          "setting": "refined",
+          "Gamma": 6.259882483379114e-08,
+          "reflection": 0.9999999374011744,
+          "unitarity_residual": -7.771561172376096e-16,
+          "Jost_relative_residual": 4.650138142624478e-21,
+          "inner_y": -70,
+          "outer_x": 160000.0,
+          "Jost_order": 12,
+          "rtol": 3e-12,
+          "atol": 3e-14,
+          "small_transmission_conditioning": false,
+          "solver_evaluations": 6830,
+          "reused_from": "<internal>/scattering_k1_refined.jsonl"
+        },
+        {
+          "kappa": 1,
+          "q": 0.00025,
+          "potential_sign": 1,
+          "setting": "refined",
+          "Gamma": 1.5637313913822193e-08,
+          "reflection": 0.9999999843626862,
+          "unitarity_residual": 2.220446049250313e-16,
+          "Jost_relative_residual": 8.433913562090892e-22,
+          "inner_y": -70,
+          "outer_x": 320000.0,
+          "Jost_order": 12,
+          "rtol": 3e-12,
+          "atol": 3e-14,
+          "small_transmission_conditioning": false,
+          "solver_evaluations": 6866,
+          "reused_from": "<internal>/scattering_k1_refined.jsonl"
+        }
+      ],
+      "R": 1.6485113768158906
+    },
+    {
+      "kappa": 2,
+      "weight": 128,
+      "setting": "refined",
+      "integrals": {
+        "energy": 0.00019226224059381455,
+        "number": 0.00028751349386342144,
+        "entropy": 0.003381643239593047
+      },
+      "quadrature_errors": {
+        "energy": 6.356036019563349e-14,
+        "number": 4.641598543078318e-12,
+        "entropy": 5.8671935700654914e-12
+      },
+      "potential_pair_checks": [
+        {
+          "q": 0.001,
+          "Gamma_plus": 1.7416217519344299e-15,
+          "Gamma_minus": 1.741621751938616e-15,
+          "relative_difference": 2.403632848313464e-12
+        },
+        {
+          "q": 0.03,
+          "Gamma_plus": 1.5791248574375412e-09,
+          "Gamma_minus": 1.5791248574397932e-09,
+          "relative_difference": 1.426192497433476e-12
+        },
+        {
+          "q": 0.1,
+          "Gamma_plus": 2.9585672672116876e-07,
+          "Gamma_minus": 2.958567267223931e-07,
+          "relative_difference": 4.1382453019878085e-12
+        },
+        {
+          "q": 0.3,
+          "Gamma_plus": 0.00014955243810562202,
+          "Gamma_minus": 0.0001495524381052902,
+          "relative_difference": -2.2187807147133753e-12
+        },
+        {
+          "q": 1.0,
+          "Gamma_plus": 0.9754510822896474,
+          "Gamma_minus": 0.9754510822902875,
+          "relative_difference": 6.563638521583925e-13
+        }
+      ],
+      "low_frequency_controls": [],
+      "R": 1.3996644262863103
+    },
+    {
+      "kappa": 3,
+      "weight": 192,
+      "setting": "refined",
+      "integrals": {
+        "energy": 3.7839150020684634e-06,
+        "number": 3.679916767155274e-06,
+        "entropy": 6.124066628028888e-05
+      },
+      "quadrature_errors": {
+        "energy": 3.3508630804046277e-14,
+        "number": 2.8366020102277495e-14,
+        "entropy": 1.1096232247633676e-15
+      },
+      "potential_pair_checks": [],
+      "low_frequency_controls": [],
+      "R": 1.287919357520069
+    },
+    {
+      "kappa": 4,
+      "weight": 256,
+      "setting": "refined",
+      "integrals": {
+        "energy": 5.6631674320347e-08,
+        "number": 4.053763983572945e-08,
+        "entropy": 8.718036442581493e-07
+      },
+      "quadrature_errors": {
+        "energy": 6.599127193182278e-15,
+        "number": 4.210051196277771e-15,
+        "entropy": 7.340438895215085e-14
+      },
+      "potential_pair_checks": [],
+      "low_frequency_controls": [],
+      "R": 1.2250375876610895
+    },
+    {
+      "kappa": 5,
+      "weight": 320,
+      "setting": "refined",
+      "integrals": {
+        "energy": 7.30508179851166e-10,
+        "number": 4.1256022177896504e-10,
+        "entropy": 1.0875750931825035e-08
+      },
+      "quadrature_errors": {
+        "energy": 6.629658342497909e-15,
+        "number": 6.096713768375503e-14,
+        "entropy": 2.0485765051082056e-18
+      },
+      "potential_pair_checks": [],
+      "low_frequency_controls": [],
+      "R": 1.1847434213460153
+    },
+    {
+      "kappa": 6,
+      "weight": 384,
+      "setting": "refined",
+      "integrals": {
+        "energy": 8.586233397481833e-12,
+        "number": 3.998759481524991e-12,
+        "entropy": 1.2480792747373746e-10
+      },
+      "quadrature_errors": {
+        "energy": 5.355036493714646e-17,
+        "number": 1.7455141102275294e-17,
+        "entropy": 5.560743095226911e-16
+      },
+      "potential_pair_checks": [],
+      "low_frequency_controls": [],
+      "R": 1.156723657216547
+    },
+    {
+      "kappa": 7,
+      "weight": 448,
+      "setting": "refined",
+      "integrals": {
+        "energy": 9.399371206823699e-14,
+        "number": 3.726619571463026e-14,
+        "entropy": 1.3429121555518388e-12
+      },
+      "quadrature_errors": {
+        "energy": 6.302840779417345e-14,
+        "number": 2.0524768842404262e-14,
+        "entropy": 2.851883415980182e-15
+      },
+      "potential_pair_checks": [],
+      "low_frequency_controls": [],
+      "R": 1.1369436475660426
+    },
+    {
+      "kappa": 8,
+      "weight": 512,
+      "setting": "refined",
+      "integrals": {
+        "energy": 5.902641752507187e-16,
+        "number": 2.1257631392371064e-16,
+        "entropy": 8.711458878334411e-15
+      },
+      "quadrature_errors": {
+        "energy": 8.168497708974767e-21,
+        "number": 1.6987578824228412e-21,
+        "entropy": 6.077402720549493e-20
+      },
+      "potential_pair_checks": [
+        {
+          "q": 0.001,
+          "Gamma_plus": 2.273818701353448e-70,
+          "Gamma_minus": 2.2738187013764483e-70,
+          "relative_difference": 1.0115241977359801e-11
+        },
+        {
+          "q": 0.03,
+          "Gamma_plus": 1.0926469129727082e-46,
+          "Gamma_minus": 1.0926469129752237e-46,
+          "relative_difference": 2.3021584638627246e-12
+        },
+        {
+          "q": 0.1,
+          "Gamma_plus": 3.7791288598444245e-38,
+          "Gamma_minus": 3.779128859858351e-38,
+          "relative_difference": 3.6850522633358196e-12
+        },
+        {
+          "q": 0.3,
+          "Gamma_plus": 9.134538313614806e-30,
+          "Gamma_minus": 9.134538313601352e-30,
+          "relative_difference": -1.4728218644677327e-12
+        },
+        {
+          "q": 1.0,
+          "Gamma_plus": 2.579657265740645e-18,
+          "Gamma_minus": 2.579657265743168e-18,
+          "relative_difference": 9.78106484694763e-13
+        }
+      ],
+      "low_frequency_controls": [],
+      "R": 1.1744501870198936
+    },
+    {
+      "kappa": 1,
+      "weight": 64,
+      "setting": "base",
+      "integrals": {
+        "energy": 0.005041211947194384,
+        "number": 0.015250585643017097,
+        "entropy": 0.10443276326076532
+      },
+      "quadrature_errors": {
+        "energy": 1.8874411200141415e-13,
+        "number": 1.5094430339990568e-13,
+        "entropy": 1.1443019952444525e-12
+      },
+      "potential_pair_checks": [],
+      "low_frequency_controls": [],
+      "R": 1.6485113766092163
+    },
+    {
+      "kappa": 2,
+      "weight": 128,
+      "setting": "base",
+      "integrals": {
+        "energy": 0.00019226224071674304,
+        "number": 0.00028751349403490357,
+        "entropy": 0.0033816432414358975
+      },
+      "quadrature_errors": {
+        "energy": 6.36089660329862e-14,
+        "number": 4.6415173905371846e-12,
+        "entropy": 5.866670066272604e-12
+      },
+      "potential_pair_checks": [],
+      "low_frequency_controls": [],
+      "R": 1.3996644261541509
+    },
+    {
+      "kappa": 3,
+      "weight": 192,
+      "setting": "base",
+      "integrals": {
+        "energy": 3.7839150052171623e-06,
+        "number": 3.679916770104997e-06,
+        "entropy": 6.124066632632977e-05
+      },
+      "quadrature_errors": {
+        "energy": 3.3509936629145116e-14,
+        "number": 2.8367348170093157e-14,
+        "entropy": 4.085566563225954e-13
+      },
+      "potential_pair_checks": [],
+      "low_frequency_controls": [],
+      "R": 1.287919357416617
+    },
+    {
+      "kappa": 4,
+      "weight": 256,
+      "setting": "base",
+      "integrals": {
+        "energy": 5.6631674378055364e-08,
+        "number": 4.0537639876029965e-08,
+        "entropy": 8.718036450832209e-07
+      },
+      "quadrature_errors": {
+        "energy": 2.0039470138503202e-13,
+        "number": 1.7351022628497102e-13,
+        "entropy": 7.340050173540736e-14
+      },
+      "potential_pair_checks": [],
+      "low_frequency_controls": [],
+      "R": 1.2250375875721322
+    },
+    {
+      "kappa": 5,
+      "weight": 320,
+      "setting": "base",
+      "integrals": {
+        "energy": 7.305081807214611e-10,
+        "number": 4.12560222261885e-10,
+        "entropy": 1.0875750919590467e-08
+      },
+      "quadrature_errors": {
+        "energy": 6.629678848709855e-15,
+        "number": 6.096716708064436e-14,
+        "entropy": 8.970226794258558e-13
+      },
+      "potential_pair_checks": [],
+      "low_frequency_controls": [],
+      "R": 1.1847434186017989
+    },
+    {
+      "kappa": 6,
+      "weight": 384,
+      "setting": "base",
+      "integrals": {
+        "energy": 8.586233409271636e-12,
+        "number": 3.998759486945567e-12,
+        "entropy": 1.248079276372613e-10
+      },
+      "quadrature_errors": {
+        "energy": 5.3550351845182846e-17,
+        "number": 1.74551295145145e-17,
+        "entropy": 5.560740015853939e-16
+      },
+      "potential_pair_checks": [],
+      "low_frequency_controls": [],
+      "R": 1.1567236571437873
+    },
+    {
+      "kappa": 7,
+      "weight": 448,
+      "setting": "base",
+      "integrals": {
+        "energy": 9.39937122133846e-14,
+        "number": 3.7266195771630674e-14,
+        "entropy": 1.3429186454959857e-12
+      },
+      "quadrature_errors": {
+        "energy": 6.302840781116123e-14,
+        "number": 2.0524768845901516e-14,
+        "entropy": 6.863372099887898e-13
+      },
+      "potential_pair_checks": [],
+      "low_frequency_controls": [],
+      "R": 1.1369491403624101
+    },
+    {
+      "kappa": 8,
+      "weight": 512,
+      "setting": "base",
+      "integrals": {
+        "energy": 5.902641761975548e-16,
+        "number": 2.1257631426276944e-16,
+        "entropy": 8.711458891867277e-15
+      },
+      "quadrature_errors": {
+        "energy": 8.1684963280607e-21,
+        "number": 1.6987576837446135e-21,
+        "entropy": 6.077402177509895e-20
+      },
+      "potential_pair_checks": [],
+      "low_frequency_controls": [],
+      "R": 1.1744501869604276
+    }
+  ],
+  "rates": {
+    "base": {
+      "energy": 0.0052373154737797205,
+      "number": 0.015541820008058442,
+      "entropy": 0.10787652997408312,
+      "R": 1.6391110173649306
+    },
+    "refined": {
+      "energy": 0.005237315471366045,
+      "number": 0.015541820002075492,
+      "entropy": 0.10787652993789794,
+      "R": 1.6391110175705235
+    }
+  },
+  "high_frequency_tail_bounds": {
+    "number": 1.2375891586635574e-15,
+    "energy": 3.8112516920497946e-15,
+    "entropy": 4.913119042556477e-14
+  },
+  "high_frequency_relative_bounds": {
+    "number": 7.9629615997244e-14,
+    "energy": 7.277109261198865e-13,
+    "entropy": 4.554391066698982e-13
+  }
+}

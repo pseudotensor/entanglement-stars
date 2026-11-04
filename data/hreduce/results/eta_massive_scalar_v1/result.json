@@ -1,0 +1,78 @@
+{
+  "status": "incomplete",
+  "science_specification": "ETA_massive_directions_v1.tex E6",
+  "purpose": "insert I6a; item 7 light-cut ratio",
+  "parameters": {
+    "ma": "1/5",
+    "y": "1/25",
+    "delta": "2^-40"
+  },
+  "resources": {
+    "wall_seconds": 60,
+    "address_space_bytes": 268435456,
+    "threads": 1,
+    "nice": 10,
+    "cuda": "disabled"
+  },
+  "quadrature": {
+    "primary_bits": 192,
+    "failed_piece_retry_bits": 256,
+    "piece_width_limit": "2e-9",
+    "final_width_limit": "2e-8",
+    "absolute_tolerance": "1e-12",
+    "relative_tolerance": "1e-12",
+    "degree_limit": 64,
+    "evaluation_limit": 20000,
+    "depth_limit": 16
+  },
+  "massless_input": {
+    "lower": "0.91905664456747",
+    "upper": "0.91929747790884",
+    "premise": "conditional on the earlier supplied directional errors"
+  },
+  "attempts": [
+    {
+      "quantity": "b100_integral",
+      "piece": 0,
+      "bits": 192,
+      "variable": "u",
+      "endpoints": [
+        "1",
+        "40"
+      ],
+      "calls": {
+        "total": 29,
+        "refused_images": 25
+      },
+      "accepted": false,
+      "nonfinite": true
+    },
+    {
+      "quantity": "b100_integral",
+      "piece": 0,
+      "bits": 256,
+      "variable": "u",
+      "endpoints": [
+        "1",
+        "40"
+      ],
+      "calls": {
+        "total": 29,
+        "refused_images": 25
+      },
+      "accepted": false,
+      "nonfinite": true
+    }
+  ],
+  "tilted_coefficients": "not calculated; native-error and finite-mass remainder certificates missing",
+  "implementation": {
+    "python": "3.12.12",
+    "python_flint": "0.9.0",
+    "box": "compute-host",
+    "cuda_visible_devices": "",
+    "nice_actual": 10
+  },
+  "elapsed_seconds": 0.34897319972515106,
+  "peak_rss_kib": 13248,
+  "error": "ArithmeticError: a scalar piece failed the agreed finite/width test"
+}

@@ -1,0 +1,80 @@
+{
+  "scope": "Reviewed order-six Newton-only T28--30 numerical execution",
+  "execution": {
+    "single_process_pid": 1256738,
+    "assigned_gpu_uuid": "GPU-1c907351-ed3d-0d52-5072-e791dde9df56",
+    "cuda_allocation_bytes": 1048576,
+    "cuda_context_in_this_single_job_process": true,
+    "niceness": 10,
+    "total_threads_checked": 4,
+    "thread_limit": 16
+  },
+  "arithmetic": {
+    "helper_source": "solve/code/uv_native_certificate.py, frozen arithmetic helpers only",
+    "library": "mpmath.iv",
+    "decimal_precision": 80,
+    "sqrt": "Every endpoint verified by exact rational square comparisons",
+    "constants": "Exact rational Machin/atanh bounds and integer-square sqrt2 brackets",
+    "Gauss_nodes_weights": {
+      "order": 32,
+      "all_roots_certified_by_disjoint_exact_sign_brackets": true,
+      "maximum_root_bracket_width": "0.0000000000000000000000000000000000007524",
+      "weight_sum": {
+        "lower": "1.999999999999999999999999",
+        "upper": "2.000000000000000000000001"
+      }
+    },
+    "aggregation": "Sequential outward mpmath.iv scalar additions",
+    "serialization": "Exact dyadic endpoints rounded outward to decimal strings"
+  },
+  "newton": {
+    "scope": "Order-six continuum full-source Newton coefficient K3=kOmega/Omega^2, Omega=m4=1",
+    "massless_rectangle": [
+      "0",
+      "0.5",
+      "0.5",
+      "1"
+    ],
+    "positive_family_mass_squared": [
+      "delta^2",
+      "(1+delta^2)/2",
+      "(1+delta^2)/2",
+      "1"
+    ],
+    "delta_interval": "0<delta<=0.001",
+    "full_source_integrand": "12/pi^2 p^2 sum_eta (1+12p^22/(x+p^12))/sqrt(x+p^2+p^12)",
+    "finite_interval": [
+      "0",
+      "4"
+    ],
+    "Gauss_order_per_panel": 32,
+    "panels": 25,
+    "Bernstein_ellipse_parameter": "2",
+    "panel_tiling": "Exact [0,1/10] and ratio<=7/6 positive rational panels through4",
+    "quadrature_arithmetic_enclosure": {
+      "lower": "0.871314828232913053718563",
+      "upper": "0.871314828232913053718565"
+    },
+    "analytic_Gauss_absolute_error_upper_T28": "0.000000000236782580821519",
+    "positive_radial_tail_upper_T29": "0.000000000046834431563328",
+    "K3_massless_enclosure": {
+      "lower": "0.871314827996130472897045",
+      "upper": "0.871314828516530066103410"
+    },
+    "positive_mass_loss_upper_T30": "0.000160484818597106982852",
+    "K3_positive_family_enclosure": {
+      "lower": "0.871154343177533365914193",
+      "upper": "0.871314828516530066103410"
+    },
+    "native_spacing_applicability_threshold": {
+      "lower": "0.586708782213962965778413",
+      "upper": "0.586708782213962965778414"
+    },
+    "native_spacing_applicability_pass": true,
+    "status": "Executed Newton enclosure; independent source/result review required before adoption"
+  },
+  "newton_complete": true,
+  "entropy_complete": false,
+  "elapsed_seconds": 3.3704571798443794,
+  "caveat": "No order-six entropy, finite-spacing gravity, stellar, spherical-cut or thermodynamic result is implied by this Newton enclosure."
+}

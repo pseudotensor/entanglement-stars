@@ -1,0 +1,3 @@
+# POINTER 13 (A2:99, A.6): d_* = 2 kappa_f/zeta + O(C_phi^2), sketch and constants
+
+Derivation and constants: deliveries/alt/api/r7/A_r7open4.md section 4 (constructive weighted bounds for the massive estimate, 4.1-4.4) and the round-8 rederivation in deliveries/lead_gaps/REVIEWVERIFY_r8_cac75467fb8_fable.md, item 4 (lines 104-118). The steps there: Omega_0 >= zeta gives ||D||_2^2 <= E_phi/zeta; X - X_0 = Pi_A D Pi_{A^c} - Pi_A P_0 (1 - phi) Pi_{A^c}; with E_phi <= kappa_f L that yields d_* = 2 kappa_f/zeta + O(C_phi^2). Then Mirsky and Cauchy-Schwarz give |S_A(C) - S_A(P_0)| <= 2 sqrt(m_B d_* L) plus the two logarithmic terms, with m_B = O(L^2 log L). Every step is marked as checked in that item (Rotfel'd, Mirsky, concavity, d_*).

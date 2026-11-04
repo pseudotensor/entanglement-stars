@@ -1,0 +1,650 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,mathtools,url}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlength{\emergencystretch}{2em}
+\DeclareMathOperator{\Tr}{Tr}
+\begin{document}
+\paragraph{Causal sea, complete pair response and the scalar rows
+[X/S; V:X,W,D].}
+This result uses the original sine-polar $H_*$ and the auxiliary
+mean-state time prescription of \path{solve/strand_X.tex}.
+It introduces no coupling, shift, independent kinetic term or
+target exterior.  The bounded questions are whether the
+instantaneous protected vacuum has a controlled finite-frequency
+replacement, which clock and ruler sources that replacement
+generates, and which exact state equation supplies the alternative
+when the replacement fails.  Vacuum response is distinguished from
+finite-density matter response throughout.  No collapse or thermal
+spectrum is inferred from a vacuum susceptibility.
+Exactly two claim-specific [X] groups are established by the
+independent methods stated with the sources: the completed-pair
+causal ruler response with its static cancellation, and the
+positive adiabatic clock source with its energy normalization.
+The other checked calculations have supporting [S] scope.
+
+\paragraph{1. Exact finite-parent state and source system.}
+Use a finite native parent with fixed collar data and positive
+numerical $N,\psi$.  Fermionic Fock space is finite-dimensional.
+Bosonic Fock space is untruncated; require the common finite-particle
+core and the state moments needed by all displayed forms and
+derivatives.  The isolated limit requires its own source,
+state and boundary convergence.
+Write the original energy expectation as
+\begin{equation}
+ {\cal H}[N,\psi,\rho]
+ =W_2[N,\psi]+{\cal R}_a[N,\psi]
+       +\Tr(\rho\,H_{\rm exc}^{\rm nat}[N,\psi]),
+ \qquad
+ W_2=-k\int\nabla\psi\cdot\nabla(N\psi).
+ \tag{XS1}
+\end{equation}
+Here $k=k_a(1)=(2\pi G)^{-1}$ is the single matched coefficient.
+On a finite parent the integral denotes the specified primary
+functional and its boundary convention; ${\cal R}_a$ is the
+difference from the actual polar vacuum functional, with its
+boundary allocation.  In the continuum primary approximation
+use the continuum integral and keep the nonlocal,
+four-derivative and $k_\circ-k_a(1)$ contributions in the remainder,
+as in W33--W37.  Omitting this remainder is a named approximation.
+It does not change the excitation Hamiltonian.
+
+The state is native.  Field derivatives below hold that state
+fixed:
+\begin{equation}
+ \begin{aligned}
+ i\dot\rho&=[H_{\rm exc}^{\rm nat},\rho],\\
+ C_x&=\partial_{N_x}(W_2+{\cal R}_a)
+               +\Tr(\rho\,c_x)=0,\qquad
+ c_x=\partial_{N_x}H_{\rm exc}^{\rm nat}\geq0,\\
+ R_x&=\partial_{\psi_x}(W_2+{\cal R}_a)
+               +\Tr(\rho\,r_x)=0,\qquad
+ r_x=\partial_{\psi_x}H_{\rm exc}^{\rm nat}.
+ \end{aligned}\tag{XS2}
+\end{equation}
+Only interior fields are varied.  All collar-crossing
+coefficients and source labels remain.  The scalar vacuum
+term can be included in the state generator; it contributes
+only a phase.  The complete light forms are W9--W14,
+including the full $n-1$ middle exponential in each $n$ sector.
+The ruler derivative includes the moving excitation filter,
+the regulator and distance kernel, the four-energy denominator,
+the exponential derivatives and the native-frame commutator.
+W5--W15 specify these terms without a free-sector substitution.
+
+Let $T_\psi$ take a fixed excitation representation to native
+CAR and set ${\cal K}=T_\psi^\dagger\dot T_\psi$.
+The exactly equivalent state equation is
+\begin{equation}
+ i\dot\rho_{\rm pol}
+ =[\,H_{\rm exc}-i{\cal K},\,\rho_{\rm pol}\,],
+ \qquad \rho_{\rm pol}=T_\psi^\dagger\rho T_\psi .
+ \tag{XS3}
+\end{equation}
+For a packet with oriented polar pair $(E,V)$, its one-particle
+connection is the X6 matrix with
+$EK+KE=V^\dagger\dot{\cal A}-\dot{\cal A}^\dagger V$.
+The second-quantized connection retains pair creation,
+annihilation and within-band terms.  It is included once.
+Evolving $H_{\rm exc}$ alone in this moving representation
+does not implement (XS2).
+
+On a differentiable regular solution with fixed boundary data,
+the same-functional identity is
+\begin{equation}
+ \dot{\cal H}=\sum_{x\in I}
+           (\dot N_x C_x+\dot\psi_xR_x)=0.
+ \tag{XS4}
+\end{equation}
+The state contribution is the trace of a commutator.
+The clock functional is independent of $N$.  With
+$J_{xy}=\partial_{\psi_y}C_x|_\rho$, its necessary tangency
+equation is
+\[
+ \sum_{y\in I}J_{xy}\dot\psi_y
+       +i\Tr\{\rho[H_{\rm exc}^{\rm nat},c_x]\}=0 .
+\]
+Differentiating the ruler row also retains $\dot N$, explicit
+field derivatives and $i\Tr(\rho[H_{\rm exc}^{\rm nat},r_x])$.
+The mixed field derivative is the transpose of $J$ on a
+twice-differentiable common chart.  These equations diagnose
+preservation; they do not prove invertibility, positive lapse
+or a global collapsing branch.  In the isolated limit,
+charge conservation and regional exported energy require
+the boundary hypotheses of X3--X4.
+
+\paragraph{2. Protected sea and the actual completed pair inverse.}
+At a fixed background, let $\Omega_\psi$ be the normalized
+protected polar sea and put
+$Q_\Omega=1-|\Omega_\psi\rangle\langle\Omega_\psi|$.
+The excitation energy annihilates it for every positive lapse.
+For a real ruler profile $f$, define
+\begin{equation}
+ \eta_f=Q_\Omega\,\partial_f\Omega_\psi,\qquad
+ O_f=\partial_f H_{\rm exc}^{\rm nat}.
+ \quad
+ O_f\Omega_\psi=-H_2\eta_f,\qquad
+ c_x\Omega_\psi=0.
+ \tag{XS5}
+\end{equation}
+The sea derivative is a particle-hole pair, apart from its
+removable phase.  The full excitation law preserves excitation
+number at fixed fields.  Consequently the vacuum transition
+in (XS5) lies in its complete two-excitation space even though
+$O_f$ is not generally a free bilinear.  The identity follows
+by differentiating $H_{\rm exc}^{\rm nat}\Omega_\psi=0$.
+Omitting a derivative in W13 need not preserve it.
+
+For the light packet, the actual restriction and inverse are
+\begin{equation}
+ H_{2,\rm light}
+  =e^{S_2}{\cal B}_{N,2}e^{S_2},\qquad
+ H_{2,\rm light}^{-1}
+  =e^{-S_2}{\cal B}_{N,2}^{-1}e^{-S_2},\qquad
+ {\cal B}_{N,2}=d\Gamma_2(\operatorname{diag}(B_N,B_N^T)).
+ \tag{XS6}
+\end{equation}
+This is the exact $n=2$ consequence of W12, since $S_1=0$.
+It retains the actual full pp/ph/hh seed and its four
+$B_1$ denominator.  The unchanged packets use their actual
+free pair energies.  If $b=\lambda_{\min}({\cal B}_N)>0$,
+then $H_{2,\rm light}\geq2b e^{-2\|S_2\|}$.
+This finite-parent bound can be very small; the protected
+one-excitation gap is not the response gap.
+Let $\Delta_2>0$ be a valid lower bound on every pair block
+reached by $\eta_f$.  No gap uniform in all excitation numbers,
+volume or a vanishing-lapse limit is asserted.
+
+The finite polar sea has a locally flat Berry connection.
+For its occupied frame $W_-=(I,-V)^T/\sqrt2$,
+$i\langle\Omega,d\Omega\rangle=(i/2)\Tr(V^\dagger dV)$,
+summed over the actual fermionic packets.  It is locally
+an exact determinant phase; its exterior derivative is zero
+by the trace of the Maurer--Cartan commutator.  Empty fixed-CCR
+bosons contribute no tangent.  This local phase choice does
+not construct an infinite-sea Fock implementer.
+
+\paragraph{3. Exact causal linear response for a real profile.}
+Take a small prescribed variation $\phi(T)f$ about a fixed
+background and a retarded preparation in its protected sea.
+The linear moving-frame pair amplitude satisfies
+\begin{equation}
+ i\dot\zeta=H_2\zeta-i\eta_f\dot\phi,\qquad
+ \zeta(T)=e^{-iH_2(T-T_0)}\zeta(T_0)
+       -\int_{T_0}^T e^{-iH_2(T-t)}
+                              \eta_f\dot\phi(t)\,dt .
+ \tag{XS7}
+\end{equation}
+The initial term is retained unless the specified preparation
+removes it.  This equation is exact to first order about
+the fixed background.  On a finite-amplitude moving background,
+the pair-preserving connection and higher-excitation couplings
+in (XS3) cannot be dropped while calling a pair equation exact.
+The same linear solution fixes its leading excitation sources:
+\begin{equation}
+ \begin{aligned}
+ e_x^{(2)}(T)&=\langle\zeta,c_x|_2\zeta\rangle\geq0,\qquad
+ r_f^{(1)}(T)=-2\operatorname{Re}
+                         \langle\zeta,H_2\eta_f\rangle,\\
+ \sum_xN_xe_x^{(2)}&=\langle\zeta,H_2\zeta\rangle,\qquad
+ \frac{d}{dT}\langle\zeta,H_2\zeta\rangle
+                              =\dot\phi\,r_f^{(1)} .
+ \end{aligned}\tag{XS7a}
+\end{equation}
+The last identity is at the fixed background of (XS7).
+It follows directly from that equation and is the causal
+energy-work check.  The clock formula follows because every
+$c_x$ annihilates the instantaneous reference, so neither
+its normalization correction nor an unknown second-order
+state amplitude contributes at this order.  It sums all
+native source labels, including any collar.
+These are linear-response/quadratic-energy identities,
+not a nonlinear pair closure.
+
+Let $d\mu_f(\lambda)=d\langle\eta_f,
+{\bf1}_{(-\infty,\lambda]}(H_2)\eta_f\rangle$.
+Differentiating the zero excitation eigenvalue twice gives
+$\langle\partial_f^2H_{\rm exc}^{\rm nat}\rangle
+=2\langle\eta_f,H_2\eta_f\rangle$.
+This direct term cancels the static Lehmann term.  Thus for
+$\operatorname{Im}z>0$, the diagonal real-profile ruler response is
+\begin{equation}
+ \begin{aligned}
+ K^R_{ff}(z)
+  &=(W_2+{\cal R}_a)_{,ff}-z^2 Z_f(z),\\
+ Z_f(z)
+  &=2\langle\eta_f,H_2(H_2^2-z^2)^{-1}\eta_f\rangle
+    =2\int_{\Delta_2}^{\infty}
+             \frac{\lambda\,d\mu_f(\lambda)}{\lambda^2-z^2},\\
+ Z_f(0)&=2\langle\eta_f,H_2^{-1}\eta_f\rangle\geq0,\\
+ Z_f(0)&\leq Z_f(\omega)
+ \leq\frac{Z_f(0)}{1-\omega^2/\Delta_2^2}
+                       \quad(|\omega|<\Delta_2).
+ \end{aligned}\tag{XS8}
+\end{equation}
+The zero-frequency subtraction is supplied by the same
+Hamiltonian, not a selected counterterm.  The light inverse
+is (XS6).  Whole-packet orientation signs in the static
+vacuum trace do not reverse these excitation spectral weights.
+The complete clock has its signed polar row, but the
+excitation clock vacuum-transition vertex is zero.
+Its vacuum state-dependent linear clock response is therefore
+zero.  Causal sea clock excitation begins at quadratic order.
+
+Equation (XS8) is a causal linearization of the state-plus-row
+system, or equivalently an in-in response.  It is not the
+ordinary Hessian of a real single-history nonlocal action.
+Off-diagonal profile response can have odd imaginary terms;
+the flat Berry curvature removes the linear-frequency
+antisymmetric term, not every higher odd term.
+Only the stated diagonal real-profile theorem is used.
+
+\paragraph{4. Exact finite-$q$ free-packet insertion.}
+On a uniform prescribed background $\psi=P>0$, $N=N_0>0$,
+let
+\[
+ k_p=P^{-2}d_a(p),\qquad
+ \epsilon_p=(m^2+|k_p|^2)^{1/2},\qquad
+ V_p=(m+i\sigma\cdot k_p)/\epsilon_p .
+\]
+All momenta lie in the one full native Brillouin zone.
+For an additive ruler Fourier component $\phi_{p-p'}$,
+polar Sylvester differentiation gives
+\begin{equation}
+ (V^\dagger\delta V)_{pp'}
+       =\phi_{p-p'}\,{\cal A}_m(p,p'),\qquad
+ {\cal A}_m(p,p')
+ =\frac{(m-3i\sigma\cdot k_p)V_{p'}
+       -V_p^\dagger(m+3i\sigma\cdot k_{p'})}
+             {P(\epsilon_p+\epsilon_{p'})}.
+ \tag{XS9}
+\end{equation}
+Indeed $\delta A_{pp'}=-P^{-2}(m+3i\sigma\cdot k_{p'})
+\phi_{p-p'}$ and $E_p=\epsilon_p/P$ in the Sylvester equation.
+The sea pair amplitude is $-{\cal A}_m/2$.
+For the opposite orientation it is conjugated by the
+endpoint polar unitaries and changes sign; its squared
+Hilbert--Schmidt norm is identical.
+
+With the Fourier convention
+$V_{\rm box}^{-1}\int|\phi|^2=\sum_q|\phi_q|^2$,
+the response density of a real Fourier profile is
+\begin{equation}
+ \begin{aligned}
+ Z_m(q,z)&=\frac12\int_{\rm BZ}\frac{d^3p}{(2\pi)^3}
+ \frac{\Delta(p,q)\,
+       \Tr_2[{\cal A}_m(p+q,p)^\dagger{\cal A}_m(p+q,p)]}
+                 {\Delta(p,q)^2-z^2},\\
+ \Delta(p,q)&=N_0(\epsilon_{p+q}+\epsilon_p)\geq2N_0m .
+ \end{aligned}\tag{XS10}
+\end{equation}
+Momenta are taken modulo the native zone.  Exchange of the
+two endpoints gives the same integrated weight for $q$ and
+$-q$.  A cosine/sine standing-wave profile therefore has
+the real diagonal spectral form (XS8).
+No derivative expansion in $q$ has been made.
+For a finite periodic parent replace the integral by its
+actual normalized momentum sum.  The bulk integral is its
+thermodynamic limit, not a claim about every small grid.
+The full light formula at momentum $q$ is (XS8) with the
+actual pair-fiber inverse (XS6), not (XS10) at a dressed mass.
+
+At $q=0$,
+${\cal A}_m(p,p)=-2im\sigma\cdot k_p/(P\epsilon_p^2)$,
+so (XS10) recovers exactly
+\begin{equation}
+ Z_m(0,0)=\frac{2m^2}{N_0P^2}
+ \int_{\rm BZ}\frac{d^3p}{(2\pi)^3}
+              \frac{|k_p|^2}{(m^2+|k_p|^2)^{5/2}} .
+ \tag{XS11}
+\end{equation}
+This is the additive $\delta\psi$ response; a
+$\delta\log\psi$ perturbation multiplies it by $P^2$.
+Equations (XS9)--(XS11) keep the sine law, spin trace,
+all valleys and finite spacing explicitly.
+
+\paragraph{5. A finite-spacing lower bound and the scale comparison.}
+Put $\delta=amP^2$ and
+\[
+ {\cal L}(x)=\operatorname{arsinh}x
+ -\frac{x}{\sqrt{1+x^2}}
+ -\frac{x^3}{3(1+x^2)^{3/2}},\qquad x\geq0 .
+\]
+The elementary positive derivative is
+${\cal L}'(x)=x^4/(1+x^2)^{5/2}$.
+Changing to $u=ap$, folding the 8 sine cells, and then
+using $v_i=\sin u_i$ gives
+\begin{equation}
+ \begin{aligned}
+ Z_m(0,0)&=\frac{2m^2P^4}{N_0}
+ \int_{[-\pi,\pi]^3}\frac{d^3u}{(2\pi)^3}
+ \frac{\sum_i\sin^2u_i}
+       {(\delta^2+\sum_i\sin^2u_i)^{5/2}}\\
+ &\geq\frac{8m^2P^4}{\pi^2N_0}\,
+                                  {\cal L}(\delta^{-1}) .
+ \end{aligned}\tag{XS12}
+\end{equation}
+The inequality restricts the folded $v$ cube to its unit
+ball and uses
+$\prod_i(1-v_i^2)^{-1/2}\geq1$.
+It is a thermodynamic full-zone bound at every positive
+$a,m,P,N_0$, not an extra valley multiplier.
+
+At fixed positive $m,P,N_0$, the same integral yields
+\begin{equation}
+ Z_m(0,0)=
+ \frac{8m^2P^4}{\pi^2N_0}
+       \log\frac1{amP^2}
+       +O(m^2P^4/N_0)\qquad(a\to0).
+ \tag{XS13}
+\end{equation}
+To derive the coefficient, isolate small neighborhoods of
+the 8 sine zeros in local periodic coordinates.
+There $\sin u=u+O(|u|^3)$, and the leading radial integral
+is $\int r^4(\delta^2+r^2)^{-5/2}dr$.
+The Jacobian and sine corrections have a bounded integral,
+as does the complement of the neighborhoods.
+Thus the coefficient is fixed by the native spin count and
+zone, without a continuum cutoff fit.
+
+At fixed lapse the primary ruler Hessian has magnitude
+$2kN_0q^2$.  Define its real-profile comparison
+\[
+ {\mathfrak R}(q,\omega)
+       =\frac{\omega^2Z_{\rm vac}(q,\omega)}
+                        {2kN_0q^2}.
+\]
+First take $q\to0$ at fixed positive inputs with
+$\omega=vN_0|q|/P^2$ and fixed real $v$.
+This is subgap for sufficiently small $q$.
+The parameter $v$ specifies a comparison rate, not an imposed
+material or surface velocity.  For a statement about the total
+response, require existence of its homogeneous pair-response
+limit and a positive reached completed-light gap uniformly
+near $q=0$ in that thermodynamic or box limit, at this fixed
+spacing.  A positive gap on each finite parent alone does
+not imply this premise.  Without those inputs the following inequality
+is a result for the unchanged heavy contribution alone.
+The unchanged heavy packets alone then give
+\begin{equation}
+ \liminf_{q\to0}{\mathfrak R}(q,\omega)
+ \ \geq\
+ \frac{4v^2}{\pi^2k}
+       \sum_{s\ {\rm unchanged\ heavy}}m_s^2
+                  {\cal L}((am_sP^2)^{-1}) .
+ \tag{XS14}
+\end{equation}
+The interacting light vacuum adds a nonnegative diagonal
+subgap weight, provided its actual pair threshold is respected.
+For a fixed positive mass rectangle with
+$k_a(1)\to k_\circ=3J/\pi^2$, the right-hand side grows
+logarithmically as $a\to0$ when $v\ne0$.
+No coefficient is refitted in taking this diagnostic limit.
+At a fixed physical spacing (XS12),(XS14), or the full
+integral (XS10), is the test; the asymptotic is not a
+numerical evaluation there.
+
+This proves that a small frequency relative to a packet gap
+does not uniformly control the instantaneous approximation
+at a light-cone-scale rate.  It does not prove a scalar
+propagating mode, instability, collapse rate or frozen surface.
+The clock constraint also has to hold.  In particular, at a
+homogeneous vacuum background its linearization is
+$-kPq^2\phi+\delta e_{\rm mat}=0$.
+There is no independent vacuum conformal oscillation supplied
+by the inertia alone.
+The actual finite-$a$ spatial remainder and an inhomogeneous
+response enclosure are separate from (XS14).
+
+\paragraph{6. The adiabatic sources and a direct validity bound.}
+In a smooth finite-parent chart let
+$\eta_x=Q_\Omega\partial_{\psi_x}\Omega$ and
+$\eta_{\dot\psi}=\sum_x\dot\psi_x\eta_x$.
+The local subgap state elimination gives
+\begin{equation}
+ \begin{aligned}
+ L_{\rm ad}&=\langle\eta_{\dot\psi},
+                          H_2^{-1}\eta_{\dot\psi}\rangle
+      =\frac12Z_{xy}\dot\psi_x\dot\psi_y,\qquad
+ Z_{xy}=2\operatorname{Re}\langle\eta_x,H_2^{-1}\eta_y\rangle,\\
+ \xi&=H_2^{-1}\eta_{\dot\psi},\qquad
+ -\partial_{N_x}L_{\rm ad}
+       =\langle\xi,c_x|_2\,\xi\rangle\geq0 .
+ \end{aligned}\tag{XS15}
+\end{equation}
+The reference sea and its ruler tangents are independent
+of $N$.  Differentiating the inverse, with
+$\partial_{N_x}H_2=c_x|_2$, proves the last identity.
+Independently, the normalized state proportional to
+$\Omega+i\xi$ has excitation clock expectation
+$\langle\xi,c_x\xi\rangle/(1+\|\xi\|^2)$.
+It agrees through quadratic order in ruler velocity.
+This is a same-law positive source, not a negative vacuum
+subtraction or an added matter species.
+The homogeneity of $H_2$ in the complete lapse vector gives,
+with all native source labels including the collar retained,
+\[
+ \sum_xN_x(-\partial_{N_x}L_{\rm ad})
+     =\langle\xi,H_2\xi\rangle=L_{\rm ad}.
+\]
+There is no factor of two in this weighted clock energy.
+The nonlinear lapse dependence of $L_{\rm ad}$ (uniformly
+proportional to $N_0^{-1}$) results from eliminating the
+causal state.  The original Hamiltonian remains affine in
+$N$ at fixed native state.
+
+If a matter functional ${\cal F}_{\rm mat}$ has been separated
+from the eliminated vacuum modes with its approximation
+controlled, the effective field rows obtained from
+$L_{\rm ad}-(W_2+{\cal R}_a+{\cal F}_{\rm mat})$ are,
+at this derivative order and in the local Berry phase chart,
+\begin{equation}
+ \begin{aligned}
+ 0&=C_{{\rm vac},x}+e_{{\rm mat},x}
+                         +\langle\xi,c_x|_2\xi\rangle,\\
+ 0&=R_{{\rm vac},x}+r_{{\rm mat},x}
+       +\frac{d}{dT}(Z_{xy}\dot\psi_y)
+       -\frac12(\partial_{\psi_x}Z_{yz})\dot\psi_y\dot\psi_z .
+ \end{aligned}\tag{XS16}
+\end{equation}
+Repeated site labels are summed.  The time derivative
+retains $\dot N\,\partial_N Z$ as well as ruler derivatives.
+The coefficient derivative in the native chart is
+\[
+ \partial_f L_{\rm ad}
+  =2\operatorname{Re}
+       \langle\partial_f\eta_{\dot\psi},\xi\rangle
+       -\langle\xi,(\partial_fH_2)\xi\rangle ,
+\]
+at fixed velocities.  Derivatives of the embedded pair
+subspace and the native-frame connection are included;
+in a transported frame the corresponding covariant
+derivatives replace the ordinary ones.
+The actual $\partial_fH_2$ differentiates both exponentials
+in (XS6), the $B_N$ matrix and W9's full $S_2$ derivative.
+The moving-filter term is neither omitted nor added twice.
+There is no general sign for the ruler row in (XS16);
+the free principal comparison X9 consequently does not
+apply to this causal source by substitution.
+In the locally parallel flat-Berry chart the excitation
+ruler force in (XS16) can also be written
+\[
+ R_{{\rm ad},x}^{\rm exc}
+   =\langle\xi,r_x\xi\rangle
+                   +2\operatorname{Re}\langle\eta_x,\dot\xi\rangle .
+\]
+This follows by differentiating
+$\partial_{\dot\psi_x}L_{\rm ad}
+=2\operatorname{Re}\langle\eta_x,\xi\rangle$ and using
+$\partial_{\psi_x}\eta_y=\partial_{\psi_y}\eta_x$ in this
+chart.  It makes the acceleration contribution explicit.
+
+For a check not based solely on derivative counting, fix
+prescribed differentiable fields and choose the parallel sea
+phase.  Remove the common scalar $W_0$ phase from the native
+state equation.  With $\Phi_{\rm ad}=\Omega+i\xi$,
+\begin{equation}
+ (i\partial_T-H_{\rm exc}^{\rm nat})\Phi_{\rm ad}
+       =-\dot\xi,\qquad
+ \|\Psi(T)-\Phi_{\rm ad}(T)\|
+ \leq \|\Psi(T_0)-\Phi_{\rm ad}(T_0)\|
+                  +\int_{T_0}^T\|\dot\xi(t)\|dt .
+ \tag{XS17}
+\end{equation}
+This Duhamel estimate uses the full native propagator.
+$\Phi_{\rm ad}$ is deliberately unnormalized in the identity;
+normalization changes it by at most $\|\xi\|^2/2$.
+If the displayed error is $\varepsilon$, a bounded source $O$
+has expectation error at most
+$\|O\|\varepsilon(2\|\Phi_{\rm ad}\|+\varepsilon)$ before
+the stated normalization correction.
+For the ruler source this estimates the trial-state expectation
+$\langle\Phi_{\rm ad},r_x\Phi_{\rm ad}\rangle
+=\langle\xi,r_x\xi\rangle$ in the parallel chart.
+It does not by itself estimate the whole force in (XS16).
+A comparison with that force additionally budgets
+$2|\operatorname{Re}\langle\eta_x,\dot\xi\rangle|$ and the
+normalization error.  Alternatively its state approximation
+must include the next orthogonal correction
+$-H_{{\rm exc},\perp}^{-1}Q_\Omega\dot\xi$ and bound that
+approximation's residual, with its phase and normalization.
+No such higher-order residual estimate is asserted here.
+The derivative $\dot\xi$ is the full native derivative,
+including its components outside the instantaneous pair space.
+The estimate is useful only with an actually small bound over
+the time interval; it is not a uniform late-time adiabatic
+claim.  Unbounded bosonic observables need their corresponding
+moment/form bounds.  The empty reference bosons have no
+contribution to (XS15).
+
+Equations (XS15)--(XS17) are a vacuum elimination test, not
+a formula for the inertia of an occupied dressed star.
+Finite-density matter needs its own state response and W's
+complete clock/ruler expectation; adding a vacuum formula
+to a shared occupied sector does not establish that separation.
+If the state and force bounds above are not small,
+retain (XS2)--(XS3), rather than both adding $L_{\rm ad}$
+and evolving the same sea degrees of freedom.
+
+\paragraph{7. What pair production this calculation determines.}
+For a real pulse $\phi(T)f$ with $\phi(T)=\epsilon F(T)$,
+where $F$ is a fixed sufficiently smooth compact pulse,
+start in the protected sea and define
+$\widehat\phi(\lambda)=\int e^{i\lambda T}\phi(T)\,dT$.
+First-order transition amplitudes from (XS7) give
+\begin{equation}
+ {\cal P}_2=\int \lambda^2|\widehat\phi(\lambda)|^2
+                         d\mu_f(\lambda)+O(\epsilon^3),\qquad
+ {\cal E}_2=\int \lambda^3|\widehat\phi(\lambda)|^2
+                         d\mu_f(\lambda)+O(\epsilon^3).
+ \tag{XS18}
+\end{equation}
+Here ${\cal P}_2$ is probability in the two-excitation space
+at this order, not an outgoing particle flux.
+The remainder is as $\epsilon\to0$ with fixed finite-parent
+positive-field/domain bounds and fixed duration.
+It is not uniform in duration, volume, a closing gap or an
+infinite collapse history.
+For a free packet its massive pair threshold is the actual
+$\Delta(p,q)$ in (XS10).  For the light packet use its
+completed spectral measure, which can include bound pair
+states.  Outgoing flux further requires the channel/scattering
+readout, geometry and preparation.  The exact sine kernel
+permits a controlled low-$a$ expansion only after its occupied
+momentum and frequency ranges are bounded.  No universal
+thermal factor or order-$(\kappa a)^2$ outgoing coefficient
+follows from (XS18) without the nonlinear history and matching.
+
+\paragraph{Constructive collapse handoff and disposition.}
+Use the same boundary clock $T$ and regular solution of
+(XS2); evaluate matter and vacuum departure in that same
+native state.  At finite coupling the clock is W14 and the
+ruler source is W5--W15.  The primary radial field rows are
+W35 with the stated remainder derivatives.  Solve the clock
+row for $\psi$, the ruler row for $N$, and evolve the complete
+native state, or equivalently (XS3).  The regularity, positive
+lapse and isolated-limit controls are inputs to this
+differential-algebraic evolution, not conclusions of its notation.
+
+The bounded response test is (XS8)--(XS14) at the retained
+model masses, spacing and couplings, with the actual completed
+light pair inverse.  A free heavy lower contribution already
+of order the spatial stiffness rejects neglect of causal
+vacuum response at the stated rate.  The adiabatic alternative
+requires both the true pair-gap condition and the state/source
+error (XS17), and includes both rows of (XS16).  It cannot be
+adopted solely because $|\omega|a$ is small.
+
+Monitor the same-functional boundary charge and exported
+energy; both exterior coefficients and the conditional
+$\dot D=(B-A)/G$ identity with W's remainder/boundary defects;
+the full constraint residuals and tangency equations;
+positive lapse and field Jacobian; material-charge quantiles
+and resolved widths; $N\psi$ and the native speed
+$N\psi^{-2}$ as well as the time-dependent areal characteristics;
+the native momentum window; sea departure, pair spectral
+weight and outgoing readout; and the actual response/spatial
+stiffness ratio.  A lapse zero, target lock or material speed
+is not inserted into the equations.
+
+Causal sea response can supply a missing ruler acceleration
+and positive clock energy within the same $H_*$.  The exact
+clock identity and the response bounds show what this
+statement means; they do not establish that it supplies the
+required nonlinear surface behavior.  If the causal regular
+solution still exhibits resolved finite native light speed
+at the charge-scale material surface, the next named target
+is the complete matter source or this auxiliary mean-state
+time prescription.  A law change would have to be declared
+before its consequences.  No such change is made here.
+
+\paragraph{Scope and SOURCES.}
+[X/S; V:X,W,D.]  The result gives the finite-parent exact
+state/row coupling, a causal real-profile response with the
+actual light pair inverse, an exact finite-$q$ free-packet
+formula, a heavy-packet lower bound and logarithmic comparison,
+and the induced positive adiabatic clock source with its
+ruler companion and residual test.  These are vacuum response
+statements with specified domains.  They narrow the validity
+of the instantaneous-vacuum approximation and prescribe its
+same-law causal replacement.  They do not prove a nonlinear
+dressed collapsing branch, a charge-radius locking theorem,
+an isolated-limit dynamics or a thermal spectrum.
+The completed-pair causal ruler kernel and its static
+cancellation (XS5)--(XS8) have [X] scope from differentiation
+of the protected family followed by the Lehmann response,
+and independently the moving-sea Volterra equation with its
+direct force/work identity.
+The positive adiabatic clock source and weighted-energy
+normalization (XS15) have [X] scope from lapse differentiation
+of the inverse, and independently the normalized corrected-state
+expectation with the lapse-affine energy sum.
+The finite-$q$ Sylvester normalization, sine lower bound and
+logarithm, full-source transport, Duhamel and force budgets,
+pulse production and boundary/characteristic conditions are
+checked supporting [S] under their stated premises.
+The auxiliary time prescription, thermodynamic limits,
+uniform completed-light subgap condition, in-medium response
+and nonlinear collapse/production applications retain
+[V:X,W,D].  There is no new [R] or [N] result.
+
+The original completion and protected reference are
+\path{solve/strand_A_lattice.tex}, (A3)--(A7),(A14)--(A18).
+The exact finite-coupling derivative, denominator and middle
+factor are \path{solve/strand_W.tex}, W5--W15; its conditional
+continuum equivariance and primary/remainder distinction are
+W26--W37, independently reviewed in
+\path{solve/review_W.tex}.
+The time prescription, boundary/characteristic conditions and
+principal shell comparison are \path{solve/strand_X.tex} and
+\path{solve/review_X.tex}.
+The full pair-response and adiabatic-inverse input
+\path{solve/strand_N_vacuum_collective.tex}, N146--N148,
+is rederived here through (XS5)--(XS8),(XS15).
+The actual derivations of this result are (XS1)--(XS18).
+The single independent substantive review is
+\path{solve/review_X_causal_sea.tex}; its source and domain
+repairs are incorporated here.
+No web-return assertion is used as a proof or numerical input.
+\end{document}

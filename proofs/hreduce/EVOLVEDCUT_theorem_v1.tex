@@ -1,0 +1,430 @@
+% GOAL addendum G; entropy-match statements in abstract and Sections I/III/VI/VII.
+% Bookkeeping [R]: conditional evolved-area estimate and the exact missing
+% run-specific step; no numerical-result or new cross-route tag. Owned
+% paired locality, row and pure-cut results are disclosed inputs. The
+% completed initial independent save had no new G counterpart,
+% EVOLVEDCUT_slices, first-route derivation or numerical-readout input.
+% Permanent REVIEWA_LIGHTSPECIES derivation-text blinding is retained.
+\documentclass[10pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\begin{document}
+\setlength{\abovedisplayskip}{4pt}
+\setlength{\belowdisplayskip}{4pt}
+\noindent\textbf{An evolved cut: an exact excitation bound and a conditional area estimate.}
+Use the full native one-particle space, a complementary cut $X,X^c$, and
+the same mass $\mu=ma>0$, parent, applied adjoints and occupation convention.
+Let $C$ be the physical pure number-conserving Gaussian covariance and $P$ the compatible
+continued spectral projector. In nats, whenever the traces exist,
+\[
+ |S_X(C)-S_X(P)|\leq 2\|\Pi_X(C-P)\Pi_{X^c}\|_1
+ \leq\nu,\qquad \nu=\|C-P\|_1.
+\]
+A rank-$r$ covariance change, or addition/removal of $r$ cut modes, costs
+at most $r\log2$. A particle--hole rotation, or a unitary on one mode
+on each side, costs at most $2\log2$. Expected pair number alone gives
+no such linear bound.
+For mixed number-conserving Gaussian covariances on $d_X$ modes, with $h_2$
+the binary entropy, the valid bound is
+$d_X h_2(\min\{\|C_X-P_X\|_1/d_X,1/2\})$ instead.
+
+For $h=\{n,h_0\}/2+\sum_i\{w_i,Q_i\}/2$, the constant-coefficient
+band separation is $2n\sqrt{m^2+a^{-2}\sum_i\sin^2k_i}\geq2n_*m$,
+including $|w|=n$. This does not establish the global spectral-gap
+premise of the paired massive local-area theorem. Under that theorem's
+actual pathwise global gap, $n\geq n_*>0$, bounded fields, first and
+second derivatives of orders $L^{-1},L^{-2}$, infinite-parent and regular-cut
+premises, write $A_{\rm lat}=4\pi(R/a)^2$ and
+$e_{\rm flat}=|S_X(P_0)/A_{\rm lat}-\eta_{\rm sph}(\mu)|$. Then
+\[
+ \left|\frac{S_X(C)}{A_{\rm lat}}-\eta_{\rm sph}(\mu)\right|
+ \leq e_{\rm flat}
+ +C_{\rm loc}\left(\frac aL\right)^2
+       \left(1+\left|\log\frac aL\right|\right)^4
+ +\frac{\min\{\nu,r\log2,d_X\log2\}}{A_{\rm lat}}.
+\]
+Here $r=\operatorname{rank}(C_X-P_X)$ when finite. At $r_s/a=64$,
+$L=\lambda_Lr_s$, $R=\lambda_Rr_s$, the last two prefactors are exactly
+$(1+|\log(64\lambda_L)|)^4/(64\lambda_L)^2$ and
+$1/(16384\pi\lambda_R^2)$. The theorem supplies no numerical
+$C_{\rm loc}$ or actual-history $\nu$. Neither the local band gap nor
+positive lapse alone supplies them. For $L=R=r_s$, the local term is
+about $0.173C_{\rm loc}$. At the paired nominal solar conversion ($G/a^2=1/4$),
+$a/r_s=1.09456\,10^{-38}$, the same prefactors are about
+$7.3\,10^{-69}$ and $9.5\,10^{-78}$, only for a family with uniform
+hypotheses and controlled excitation content, not a history rescaling.
+The reference may not be replaced by an instantaneous Killing vacuum
+without its separate cut/projector comparison. No small evolved-area
+error at the run's parameters has thereby been established.
+\end{document}
+
+% EC1. EXACT PURE-GAUSSIAN TRACE-NORM BOUND (new elementary step).
+% Use the physical full spatial split, not two finite slabs with an omitted
+% complement. For any projection Z, Z_X(1-Z_X)=K_Z K_Z^*, where
+% K_Z=Pi_X Z Pi_Xc. The paired single-object result gives
+% S_X(Z)=sum_j F(sigma_j(K_Z)),
+% F(s)=h_2((1-sqrt(1-4s^2))/2), 0<=s<=1/2, with actual singular-value
+% multiplicities. Zero/unit eigenvalues add zero. Put d=sqrt(1-4s^2).
+% F'(s)=2 sqrt(1-d^2) artanh(d)/d. Since both sides vanish at d=0 and
+% d/dd[d/sqrt(1-d^2)]=(1-d^2)^(-3/2)>=(1-d^2)^(-1),
+% artanh(d)<=d/sqrt(1-d^2). Thus 0<=F'<=2, with endpoint limits 0,2.
+% The singular-value trace-norm perturbation inequality follows by the
+% self-adjoint off-diagonal dilation and the ordered-eigenvalue trace-norm
+% inequality. Pad singular-value lists by zeros if necessary. Consequently
+% |sum F(sigma(K_C))-sum F(sigma(K_P))|<=2||K_C-K_P||_1.
+% For D=C-P and J=Pi_X-Pi_Xc, the off-diagonal part is (D-JDJ)/2.
+% Its trace norm is 2||Pi_X D Pi_Xc||_1<=||D||_1. This proves the
+% rendered constant ONE for the full projector difference, without a
+% cut-size, entanglement-gap, adiabatic or energy assumption.
+% Finite X in an infinite parent is allowed. For an infinite X require
+% well-defined finite entropy traces, or controlled finite-cut limits;
+% infinity-minus-infinity is not an entropy difference. A trace-class
+% difference alone does not establish that the individual entropies are
+% finite. For an area density the normalized trace-norm bound must survive
+% the same parent/cut limit. All species, internal and angular multiplicities
+% must be included once. No truncated-channel sum is identified with the
+% genuine three-dimensional spatial cut by this inequality.
+
+% EC2. MIXED STATES, CROSSING RANK, AND PAIR NUMBER.
+% For general contractions C_X,P_X on d modes, let t=||C_X-P_X||_1.
+% Ordered eigenvalue differences sum to at most t. Binary entropy obeys
+% |h_2(x)-h_2(y)|<=h_2(|x-y|); concavity and its monotonicity on [0,1/2]
+% give d h_2(min(t/d,1/2)), capped by d log2. The pure bound from EC1
+% does NOT hold for arbitrary mixed Gaussian full states. For P=0 and
+% C=(nu/d)I, t=nu while S(C)~nu log(d/nu); no dimension-independent
+% linear constant is possible. Even for globally pure states, restricted
+% trace norm alone need not admit the EC1 bound: a two-mode example below
+% has restricted norm p but entropy h_2(p).
+%
+% A separate finite-rank bound needs no purity. If D=B-A has positive and
+% negative inertias r_+,r_-, its eigenvalue-counting functions satisfy
+% -r_-<=N_B(t)-N_A(t)<=r_+, 0<t<1, with N_A(t)=#(eigenvalues>t).
+% Integrate h_2'(t)[N_B(t)-N_A(t)]. The positive and negative parts of
+% h_2' each have integral magnitude log2. Therefore
+% |Tr h_2(B)-Tr h_2(A)|<=(r_++r_-)log2=rank(D)log2.
+% Compression cannot increase rank. A changed occupied complex mode is
+% rank one and costs <=log2; a number-conserving particle-hole rotation
+% has difference rank at most two and costs <=2log2. Degenerate crossings
+% count their full multiplicity. This is a finite-rank comparison, not
+% a statement that physical entropy jumps when an auxiliary reference is
+% refilled. Physical unitary C need not jump at an energy crossing.
+%
+% For equal-rank pure C,P, principal angles theta_j give
+% ||C-P||_1=2 sum sin(theta_j),
+% n_pair=Tr[(1-P)C]=sum sin^2(theta_j),
+% ||C-P||_2^2=2 n_pair. With k active rotations, nu<=2sqrt(k n_pair).
+% Explicitly choose y in Xc, x in X and psi=sqrt(1-p)y+sqrt(p)x.
+% P=|y><y| and C=|psi><psi| give n_pair=p, nu=2sqrt(p),
+% S_X(C)-S_X(P)=h_2(p). Hence no universal constant times expected pair
+% count, or times the diagonal particle-plus-hole count, controls entropy.
+% Coherent off-diagonal pair amplitudes belong in the full trace norm.
+% Gaussianity is essential to identifying Tr h_2(C_X) with the physical
+% entropy. In an interacting non-Gaussian state it is a covariance-based
+% upper bound, not an exact entropy difference to which these statements
+% automatically apply. Every comparison uses the SAME cut at that clock;
+% it does not estimate an entropy derivative of a moving cut by itself.
+%
+% If the physical preparation already contains seed matter, C-P includes
+% that too. Define Q(t)=U(t,0)P(0)U(t,0)^* and C(t)=U C(0)U^*.
+% Then ||C(t)-P(t)||_1<=||Q(t)-P(t)||_1+||C(0)-P(0)||_1.
+% If C(0)-P(0) is an orthogonal rank-N_seed Slater addition, the sharper
+% separate statement is |S_X(C)-S_X(P)|<=||Q-P||_1+N_seed log2.
+% This uses Q only to split the error; Q is not substituted for the
+% binding continued reference in the Hamiltonian or source subtraction.
+% Mixed seeds use the mixed bound instead. Initial holes, bound content,
+% returns, omitted channels and their correlations cannot be discarded.
+%
+% Post-peer crossing-mode precision, checked from RED G4 rather than
+% identified with the rank comparison: adding a Fock factor of r complex
+% modes to a cut gives |S(XZ)-S(X)|<=S(Z)<=r log2 by subadditivity and
+% Araki--Lieb. For a unitary acting only on one mode x in X and one y in
+% Xc, set R=X minus x. The reduced state on R is unchanged, while each
+% S(Rx)-S(R) lies in [-log2,log2], so its change is <=2log2. This allows
+% pre-existing correlations, and does not require the whole covariance
+% change to have rank two. The constant is attained by swapping x,y in
+% two occupied orbitals (a+x)/sqrt2 inside and (y+b)/sqrt2 outside: it
+% turns zero cut entropy into two crossing Schmidt blocks of log2 each.
+% A separately factorized single Schmidt block itself contributes <=log2.
+% Moving cut modes, covariance rank and physical two-mode transfer events
+% are distinct counts; no count is assigned from an unlabelled flux.
+
+% EC3. LOCAL SYMBOL VERSUS THE EXISTING LOCAL-AREA HYPOTHESIS.
+% With dimensionless k, a h(k)=n[alpha.sin(k)+mu beta]
+%                           +sum_i w_i sin(2k_i)/2 I.
+% The two double bands are w.q +/- n e, e=sqrt(mu^2+sum sin^2k_i).
+% Their direct separation is 2ne/a, independently of the tilt. At the
+% APPLIED local massless root |w|=n and mu=.2 it is at least .4n_*/a.
+% Since |q|<=|sin k|, that constant root symbol even has a gap about zero
+% at least n mu^2/[a(sqrt(mu^2+3)+sqrt3)]. This local assertion is not
+% a global spectral estimate for the inhomogeneous solved operator.
+% The dense N,v root and n=W_0^dag N,w=W_1^dag v root need not coincide.
+%
+% The failure of the proposed implication is explicit already for a
+% constant overtilted symbol: 2ne stays positive while sufficiently large
+% |w| produces zero-energy pockets, according to the paired native
+% threshold. Thus direct band separation cannot replace a spectral gap
+% about zero or actual separation of continued occupied/unoccupied sets.
+% In that constant example P_cont=P_0 exactly, so the example disproves
+% the inference, NOT the local-area conclusion or the binding model.
+% Nonconstant trapped interiors additionally require their actual spectral
+% continuation; a root symbol does not control all those eigenvalues.
+%
+% The paired sharp massive theorem is used literally: fixed mu>0;
+% infinite parent; norm-continuous path from h_0 with a uniform GLOBAL
+% gap (-delta,delta); actual bounded n,w with n>=n_*>0 and derivative
+% bounds through order two; regular-cut crossing counts. The continued
+% projector then stays on the selected negative sheet. Its estimate is
+% C_loc epsilon^2(1+|log epsilon|)^4, epsilon=a/L. Time reversal cancels
+% the first local entropy term; the covariance itself has first gradients.
+% C_loc depends on mu, spectral/resolvent separation, coefficient and
+% derivative bounds and cut geometry. The paired proof does not report
+% a numerical value. Finite parents require their own comparison to that
+% infinite parent and the flat cut limit; those remainders must be added.
+% A continued non-ground sheet can instead use the paired SC1--SC2
+% contour theorem, when its actual selecting contours and uniform
+% resolvent integral exist. It is not the sharp theorem merely because
+% the local direct bands are separated. No new gap/no-crossing prerequisite
+% for operating the model or its approved numerical work is imposed here.
+
+% EC4. WHAT THE SOLVED ROWS ACTUALLY GIVE FOR THE LAPSE AND GRADIENTS.
+% Use the declared dense rows at a fixed clock, with averaged/subtracted
+% sources and asymptotic normalization N(infinity)=1:
+% u=v/N<0, M=ru^2/(2G), M'=4pi r^2(rho+uJ),
+% (log N)'=-4pi GrJ/u.
+% Hence log N(r)=4pi G int_r^infinity s J(s)/u(s) ds. If
+% B=4pi G sup_(t,r) int_r^infinity s |J(t,s)/u(t,s)| ds < infinity,
+% then exp(-B)<=N<=exp(B) on that domain. This is an explicit lower
+% bound in terms of the actual profile, not a number inferred from N>0
+% at the root. An annular statement requires u nonzero there. Including
+% the centre requires the actual regular limits, for example u=O(r),
+% J=O(r), and convergence of the displayed integral. A finite outer
+% boundary substitutes its fixed lapse and actual remaining exterior
+% integral. No omitted collar or tail is set to zero by this argument.
+%
+% If the actual scalar adjoint is positivity- and constant-preserving,
+% it carries this bound to n=W_0^dag N. Otherwise the lower bound must
+% be established after its actual application; positivity of dense N
+% alone does not determine the required n_*. Vector back-averaging also
+% prevents identifying w/n with the unaveraged u. This is the same
+% dense/applied distinction retained in the paired FIRSTLAW result.
+%
+% Explicit derivative bookkeeping: x=r/r_s, M=(r_s/(2G))mcal(x),
+% j(x)=G r_s^2 J(r_s x), u=-sqrt(mcal/x). On an annulus set
+% A=mcal'/mcal-1/x, b=-4pi xj/u. Then
+% u_x=u A/2,
+% u_xx=u[A^2/4+(mcal''/mcal-(mcal'/mcal)^2+1/x^2)/2],
+% N_x=N b, N_xx=N(b^2+b'),
+% v_x=N(bu+u_x), v_xx=N[(b^2+b')u+2bu_x+u_xx].
+% Bounded dimensionless quantities on the RIGHT establish the actual
+% r_s^(-1),r_s^(-2) radial derivative bounds; Cartesian vector fields
+% also require the usual v/r and v/r^2 radial-geometry terms, with their
+% regular central limits. The mass row fixes mcal' from the sources,
+% but does not bound their gradients or mcal away from zero by itself.
+% A core or averaging transition may set L much smaller than r_s.
+% Actual back-averaging derivatives/collars must be retained. Thus
+% taking L=r_s and order-one derivative constants without profile bounds
+% is the second missing inference, not a consequence of being massive.
+% These are spatial estimates at each time; a uniform interval statement
+% requires the same bounds for the entire interval. No time-adiabatic
+% assumption has been used to identify C with the continued reference.
+
+% EC5. EXPLICIT RUN/SOLAR FACTORS AND THE PRECISE UNPROVED STEP.
+% Triangle inequality separates three independent quantities:
+% |S_X(C)/A_lat-eta_sph(mu)| <=
+% |S_X(C)-S_X(P)|/A_lat + |S_X(P)-S_X(P0)|/A_lat
+%                         + |S_X(P0)/A_lat-eta_sph(mu)|.
+% Use EC1/EC2 for the first and the paired SC6 theorem for the second
+% only in their stated domains. This proves the rendered conditional
+% statement. No massive coefficient has been supplied by the massless
+% enclosure, no finite digital sphere has been replaced by its leading
+% coefficient, and the separate flat finite-cut/parent remainder stays.
+% The exact scale coefficients are
+% f_loc(x,lambda_L)=(1+|log(x lambda_L)|)^4/(x lambda_L)^2,
+% f_exc(x,lambda_R)=1/(4pi x^2 lambda_R^2), x=r_s/a.
+% At x=64 and lambda_L=lambda_R=1 these are
+% (1+log64)^4/4096 (about .173), and 1/(16384pi) (about 1.94e-5).
+% The logarithm is part of the proved bound: using 1/4096 alone is not
+% its constant. The reference term is C_loc times f_loc; no numerical
+% C_loc was computed in the old local-area proof or inferred here.
+% Even the direct root-band lower bound .4n_*/a at mu=.2 is not numerical
+% until n_* is controlled, and is not the theorem's global delta.
+%
+% For comparison there is an entirely explicit, but coarse, finite-cut
+% bound requiring no local spectral estimate. A sphere R/a=64 centred
+% on a native site is contained in a 129^3-site cube, so d_X<=4*129^3.
+% Every Gaussian cut has 0<=S_X<=d_X log2, and
+% |S_X(C)-S_X(P)|/A_lat<=4*129^3 log2/(16384pi)<116.
+% This is not a small area-coefficient error or the requested vacuum
+% identification. For a shifted centre use its actual enclosing cube.
+%
+% The existing paired solar conversion fixes g=G/a^2=1/4, a=2 l_P,
+% r_s=2.95325 km for the nominal solar mass, a=3.23251e-35 m,
+% chi=a/r_s=1.09456e-38. With the same fixed mu and uniform dimensionless
+% profile/gap constants, substitute x=1/chi:
+% f_loc=(chi/lambda_L)^2(1+|log(chi/lambda_L)|)^4,
+% f_exc=chi^2/(4pi lambda_R^2). At lambda_L=lambda_R=1 their sizes are
+% about7.3e-69 and9.5e-78 respectively; these are algebraic scale factors,
+% not new measurements. They multiply C_loc and the actual excitation
+% norm/rank bound. If that content grows like area, its normalized effect
+% need not vanish; if it grows like volume it can grow with object size.
+% A different physical mass, shrinking gap, changing ell, nonuniform time
+% interval or unbounded profile derivatives defeats the stated uniform
+% extrapolation. The paired solar map was itself a parameter comparison,
+% not a theorem about a rescaled prepared many-body history.
+%
+% The missing run-specific step is therefore precise: establish for the
+% ACTUAL continued reference either the SC6 pathwise/global separation
+% and its numerical locality constants, or a replacement estimate that
+% really controls that reference; establish actual n_*, derivative/length
+% bounds and the flat cut/parent remainder; and bound the full physical
+% excitation comparison on that same cut. The local frozen gap, a formal
+% derivative order and an expected pair count do not provide these data.
+% No small numerical evolved-cut error at64 or numerical solar prediction
+% follows from the premises presently inspected. This leaves the actual
+% area conclusion open; it is not a counterexample to it, a model no-go,
+% or an added acceptance/production rule for the assigned computation.
+
+% EC5a. AN EXPLICIT KERNEL CONSTANT (post-peer RED G5, rederived here).
+% This is an alternative sufficient estimate for the same assigned gap
+% in numerical constants, not a new claimed decay theorem. Put Rbar=R/a.
+% Suppose actual native4-by-4 blocks obey
+% ||(P-P0)_(x,y)||_1<=D exp(-c|x-y|_1), c>0, on the infinite lattice.
+% For each coordinate unit translation of a digital Euclidean ball, one
+% endpoint exits per nonempty transverse column. Unit transverse squares
+% lie in a disk of radius Rbar+1/sqrt2, so the column count is at most
+% pi(Rbar+1/sqrt2)^2. For integer z, the indicator-difference triangle
+% inequality (the loss count is half that l1 difference) therefore gives
+% #{x in X:x+z notin X}<=pi(Rbar+1/sqrt2)^2 |z|_1.
+% This holds for any centre; a periodic wrapping cut is a different case.
+% Summing block trace norms bounds the cross-cut operator trace norm.
+% EC1 consequently yields
+% |S_X(P)-S_X(P0)|/A_lat <=
+%       (1+1/(sqrt2 Rbar))^2 D M(c)/2,
+% M(c)=sum_z |z|_1 exp(-c|z|_1)=6q(1+q)^2/(1-q)^4, q=exp(-c).
+% The sum is q d/dq of [(1+q)/(1-q)]^3; no displacement or internal
+% multiplicity is omitted. The block trace norm already includes all4
+% components. If the paired P1,R2 construction is supplied with actual
+% block constants D1,D2 and common c, set D=D1 epsilon+D2 epsilon^2.
+% At R=L=64a the explicit sufficient bound is
+% (1+1/(64sqrt2))^2 M(c)[D1/64+D2/4096]/2.
+% It is only first-order in epsilon and does not replace the sharp
+% time-reversal cancellation by a first-order equality. The constants
+% D1,D2,c are not supplied by 2ne or by the run label; M diverges as
+% c^(-4) when the actual decay rate tends to zero. This supplies an
+% explicit geometric constant CONDITIONAL on actual block bounds and
+% shows precisely what would have to be inserted to obtain a number.
+
+% EC6. REFERENCE AND READOUT MATCHING, WITHOUT READING THE NEW READOUT.
+% Let P_g=1_(h<0), with fixed zero-mode convention, denote an auxiliary
+% instantaneous Killing ground projector. The binding P is the occupied
+% spectral lift with occupations kept across zero, not P_g after a change
+% of signs. If a later record uses P_g, the valid comparison is
+% ||C-P||_1<=||C-P_g||_1+||P_g-P||_1, or the corresponding entropy
+% triangle with the separate reference-cut difference. A signed recorded
+% S_X(C)-S_X(P_g) is not a trace-norm bound and cannot erase the last term.
+% If the commuting reference occupations differ in k finite modes,
+% ||P_g-P||_1=k and its cut-entropy change is <=k log2; a degeneracy
+% requires the actual stated occupation convention, not an automatic count.
+% A reference refill is not physical entropy creation or a source reset.
+% Complete radial-channel sums with stated multiplicities can obey these
+% finite-mode inequalities in THEIR Hilbert space. Identifying such a sum
+% with the cubic native sphere coefficient additionally requires the actual
+% cross-description comparison; degeneracy weights alone do not prove it.
+% Gaussian entropy purity also requires the full retained physical space;
+% omitted exterior blocks, purification choices, absorbing/truncated ends
+% and finite-channel tails are not silently supplied. The assigned slices
+% and another lane's reading/derivation remain unopened at this stage.
+
+% EC7. RUNNABLE MATHEMATICAL ALTERNATIVE FOR THE ACTUAL CONTINUED BRANCH.
+% Root's same-process completion audit distinguishes this checked theorem
+% checkpoint from the still-unfinished actual64 bound. A finite-parent
+% reference certificate can avoid inferring any global gap from the local
+% symbol. Let s in[0,1] be the ACTUAL configuration continuation, h_s and
+% P_s continuously differentiable, P_s^2=P_s, [h_s,P_s]=0, P_0 the flat
+% reference. Fix the final geometric cut X throughout this comparison.
+% Write Q_s=1-P_s and B_s=Q_s P_s' P_s. Differentiating purity and
+% commutation gives
+% P_s'=B_s+B_s^*,
+% (Q_s h_s Q_s)B_s-B_s(P_s h_s P_s)=-Q_s h_s' P_s.
+% In occupied/unoccupied eigenbases, whenever lambda_o!=lambda_u,
+% (B_s)_uo=(h_s')_uo/(lambda_o-lambda_u).
+% At a cross-occupation degeneracy the numerator must vanish for a C1
+% commuting lift, but that equation alone does not fix B_s there. Use
+% the actual analytic limiting/declared degenerate-block transport;
+% do not divide by zero, set the block to zero, or refill occupations.
+% The differentiability/integrability of that continuation is a premise
+% of this sufficient estimate, not proved by a local frozen gap.
+%
+% Integrating EC1 along this path (or integrating P_s' and using EC1)
+% proves the explicit finite-parent certificate
+% |S_X(P_1)-S_X(P_0)| <=
+% T_X:=2 int_0^1 ||Pi_X P_s' Pi_Xc||_1 ds
+%       <=2 int_0^1 ||B_s||_1 ds=:T_ref.
+% If only squared matrix elements are accessible, with
+% r0=min(rank P_s,rank Q_s),
+% T_ref<=2sqrt(r0) int_0^1 [sum_(lambda_o!=lambda_u)
+% |(h_s')_uo/(lambda_o-lambda_u)|^2+||B_deg(s)||_2^2]^(1/2) ds.
+% Ranks are constant on the differentiable finite-parent path. Actual
+% full back-adjoint h_s', persistent-degeneracy transport and endpoint
+% conventions are retained. No total-energy fraction enters this bound.
+% The sharp-gradient term in the combined inequality may be REPLACED by
+% min(T_X,T_ref,d_X log2)/A_lat on this domain, with no claim that this
+% weaker bound has second-gradient scaling. At64 its area denominator
+% is exactly16384pi lambda_R^2. This is a fully specified constant once
+% its ACTUAL path data are bounded; those values have not been inspected.
+% It is not uniformly trace class on an infinite parent by declaration.
+%
+% The cheapest next critical action is the assigned slices/source intake,
+% once authorized: identify the physical full covariance, the reference
+% actually subtracted and its compatible-continued bridge, the same cut,
+% multiplicities and retained/omitted parent domain. If actual endpoint
+% P_1,P_0 are available, the still cheaper exact bound
+% 2||Pi_X(P_1-P_0)Pi_Xc||_1 needs no path integration. If only path or
+% field/resolvent data are available, EC7 or the prior paired contour
+% estimate gives a quantitative sufficient route. A table of signed
+% entropy excess over P_g alone supplies neither those reference bounds
+% nor the created-pair norm. Decide from the actual supplied definitions
+% what is available before requesting any additional computation. No
+% slices/result has yet been read, and no new run or acceptance gate is
+% introduced. The physical64 bound remains a live G task, not completed
+% merely by agreement on the conditional theorem or its failing inference.
+
+% SOURCES / INDEPENDENT ACCESS.
+% <internal>/GOAL_alt.md, full current file,
+% especially owner-approved addendum G; <internal>/hreduce.md,
+% complete entry54. These state the target; they are not proof authority.
+% <internal>/requirements_new.txt, binding section2,
+% continued spectral subtraction/full source adjoints (known full prior
+% read, current necessary opening clauses rechecked; no new LIGHT text).
+% <internal>/declared_local_area.tex,
+% current core1--53 and SC1--SC6 at3779--4076, old paired premises/proofs.
+% <internal>/web40f_single_object_identity.tex,
+% own core/SO1--SO2 through155: pure complementary block and singular values.
+% <internal>/FIRSTLAW_rows_v1.tex,
+% full actual source: dense coherent rows and separate applied-field defects.
+% <internal>/TWOFIELD_feedback_bound_v1.tex,
+% core/CF1 through165: actual adjoints and continued-reference distinction.
+% <internal>/declared_scaling_asymptotics.tex,
+%76--106 and467--501: already paired run/Sun parameter conversion, reused
+% only for chi and its fixed-g/fixed-mu scope, not for flux or temperature.
+% <internal>/declared_entropy.tex,
+%1--120: already paired conditional physical-parameter/entropy scope;
+% old transported comments are historical, not the binding reference here.
+% These are disclosed paired predecessors, not new independent agreement.
+% The initial entire GOAL/inbox54 read preceded the derivation. Before the
+% complete independent save and full actual self-read, no new G RED text,
+% EVOLVEDCUT_slices, foreign first-route derivations/results or separate
+% held-field spectral output was read. The sole original-pair process was
+% then opened by root. The actual full counterpart read was
+% <internal>/redteam_EVOLVEDCUT_theorem_v1.tex,
+% initial1--284, all core/G1--G6/SOURCES/EOF. EC2's cut/transfer-operation
+% precision and EC5a's explicit block-kernel constant are attributed to
+% its G4/G5 and independently reproduced above after that intake. The
+% originally derived pure bound, lapse/profile formulas and missing-global-
+% separation conclusion are unchanged. No new numerical result or method
+% count is inferred. EC7 was derived here during that same open process
+% in response to root's completion audit, before any new external readout;
+% it is not attributed to uninspected slice data or a first route.
+% REVIEWA_LIGHTSPECIES derivation text, EVOLVEDCUT_slices
+% and new foreign routes/results remain unread. No scientific code,
+% numerical run, manuscript or foreign edit; no blind numerical target claim.
